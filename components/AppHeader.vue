@@ -214,7 +214,6 @@ export default {
       await search({ slug: '' });
     });
     const menus = computed(() => [
-      ...categories.value,
       { id: 'blogs', title: 'Blogs', handle: context.$config.cms.blogs }
     ]);
 

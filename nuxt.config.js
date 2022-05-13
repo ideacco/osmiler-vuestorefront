@@ -254,6 +254,9 @@ const config = {
     icon: {
       iconSrc: 'src/static/android-icon-512x512.png'
     },
+    build:{
+      transpile:[/^@storefront-ui/],
+    },
     workbox: {
       offlineStrategy: 'StaleWhileRevalidate',
       runtimeCaching: [
