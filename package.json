@@ -43,6 +43,7 @@
     "jest": "^27.4.3",
     "lint-staged": "^11.1.2",
     "start-server-and-test": "^1.14.0",
+    "element-ui": "^2.15.6",
     "vue-jest": "^4.0.0-0"
   }
 }

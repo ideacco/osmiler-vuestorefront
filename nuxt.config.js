@@ -51,7 +51,7 @@ const config = {
     ]
   },
   loading: { color: '#fff' },
-  plugins: ["~/plugins/scrollToTop.client.js"],
+  plugins: ["~/plugins/scrollToTop.client.js", '@/plugins/element-ui'],
   buildModules: [
     // to core
     './modules/cms/build',
@@ -78,6 +78,9 @@ const config = {
         }
       }
     ]
+  ],
+  css: [
+    'element-ui/lib/theme-chalk/index.css'
   ],
   modules: [
     '@nuxtjs/i18n',
@@ -255,7 +258,7 @@ const config = {
       iconSrc: 'src/static/android-icon-512x512.png'
     },
     build:{
-      transpile:[/^@storefront-ui/],
+      transpile:[/^@storefront-ui/,/^element-ui/],
     },
     workbox: {
       offlineStrategy: 'StaleWhileRevalidate',
