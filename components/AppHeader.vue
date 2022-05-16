@@ -1,7 +1,96 @@
 <template>
   <div>
-         <el-button type="warning">警告按钮</el-button>
-  <el-button type="danger">危险按钮</el-button>
+    <SfHeader
+      data-cy="app-header"
+      :search-value="term"
+      :cart-items-qty="cartTotalItems"
+      :account-icon="accountIcon"
+      class="sf-header--has-mobile-search"
+      :class="{ 'header-on-top': isSearchOpen }"
+      @click:cart="toggleCartSidebar"
+      @click:wishlist="toggleWishlistSidebar"
+      @click:account="isUserAuthenticated ? $router.push(localePath({name:'my-account'})) : toggleLoginModal()"
+      @enter:search="changeSearchTerm"
+      @change:search="(p) => (term = p)"
+    >
+      <!-- TODO: add mobile view buttons after SFUI team PR -->
+      <template #logo>
+        <nuxt-link :to="localePath('/')" class="sf-header__logo">
+          <SfImage
+            src="/icons/logo.webp"
+            alt="Vue Storefront Next"
+            class="sf-header__logo-image"
+            :width="34"
+            :height="34"
+          />
+        </nuxt-link>
+      </template>
+
+      <template v-if="menus.length > 0" #navigation>
+        <div class="navigation-wrapper">
+          <SfHeaderNavigationItem
+            v-for="menu in menus"
+            :key="menu.id"
+            class="nav-item"
+            :data-cy="'app-header-url_' + menu.handle"
+            :label="menu.title"
+            :link="localePath(getMenuPath(menu))"
+          />
+        </div>
+      </template>
+      <template #aside>
+        <LocaleSelector class="smartphone-only" />
+      </template>
+      <template #header-icons>
+        <div class="sf-header__icons">
+          <SfButton
+            v-if="isUserAuthenticated"
+            class="sf-button--pure sf-header__action"
+            @click="$router.push(localePath({name:'my-account'}))"
+          >
+            <SfIcon :icon="accountIcon" size="1.25rem" />
+          </SfButton>
+          <SfButton
+            v-else
+            class="sf-button--pure sf-header__action"
+            @click="toggleLoginModal()"
+          >
+          <SfIcon :icon="accountIcon" size="1.25rem" />
+          </SfButton>
+          <SfButton
+            v-e2e="'app-header-cart'"
+            class="sf-button--pure sf-header__action"
+            @click="toggleCartSidebar"
+          >
+            <SfIcon class="sf-header__icon" icon="empty_cart" size="1.25rem" />
+            <SfBadge
+              v-if="cartTotalItems"
+              class="sf-badge--number cart-badge"
+              >{{ cartTotalItems }}</SfBadge
+            >
+          </SfButton>
+        </div>
+      </template>
+
+      <template #search>
+        <SfSearchBar
+          placeholder="Search for items"
+          :value="term"
+          :icon="{ size: '1.25rem', color: '#43464E' }"
+          aria-label="Search"
+          @keydown.esc="closeSearch"
+          @keydown.tab="hideSearch"
+          @input="handleSearch"
+          @focus="isSearchOpen = true"
+        ></SfSearchBar>
+      </template>
+    </SfHeader>
+    <SearchResults
+      v-if="isSearchOpen"
+      :visible="isSearchOpen"
+      :result="searchResults"
+    />
+    <SfOverlay :visible="isSearchOpen" @click="isSearchOpen = false" />
   </div>
 </template>
 
@@ -125,6 +214,7 @@ export default {
       await search({ slug: '' });
     });
     const menus = computed(() => [
+      ...categories.value,
       { id: 'blogs', title: 'Blogs', handle: context.$config.cms.blogs }
     ]);
 

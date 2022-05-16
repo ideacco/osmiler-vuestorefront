@@ -51,7 +51,7 @@ const config = {
     ]
   },
   loading: { color: '#fff' },
-  plugins: ["~/plugins/scrollToTop.client.js", '@/plugins/element-ui'],
+  plugins: ["~/plugins/scrollToTop.client.js", '@/plugins/element-ui','@/plugins/UIkit'],
   buildModules: [
     // to core
     './modules/cms/build',
@@ -80,7 +80,8 @@ const config = {
     ]
   ],
   css: [
-    'element-ui/lib/theme-chalk/index.css'
+    'element-ui/lib/theme-chalk/index.css',
+    'uikit/dist/css/uikit.min.css'
   ],
   modules: [
     '@nuxtjs/i18n',
@@ -89,7 +90,8 @@ const config = {
     '@vue-storefront/middleware/nuxt',
     '@nuxtjs/sitemap',
     './modules/cms/runtime',
-    '@nuxt/image'
+    '@nuxt/image',
+    '@nuxtjs/axios'
   ],
   device: {
     refreshOnResize: true
@@ -258,7 +260,7 @@ const config = {
       iconSrc: 'src/static/android-icon-512x512.png'
     },
     build:{
-      transpile:[/^@storefront-ui/,/^element-ui/],
+      transpile:[/^@storefront-ui/,/^element-ui/,/^UIkit/],
     },
     workbox: {
       offlineStrategy: 'StaleWhileRevalidate',
