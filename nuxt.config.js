@@ -1,11 +1,41 @@
 require('isomorphic-fetch');
 import webpack from 'webpack';
+import env from './env'
 const platformENV = process.env.NODE_ENV !== 'production' ? 'http' : 'https'
 const config = {
-  server: {
-    port: process.env.APP_PORT || 3001,
-    host: '0.0.0.0'
-  },
+  //nuxt.config.js中
+ // 环境变量
+ env: {
+  NODE_ENV: env[process.env.NODE_ENV].NODE_ENV,
+  // 统一登录地址 process.env.authURL
+  LOGIN_URL: env[process.env.NODE_ENV].LOGIN_URL,
+  // 请求前缀
+  BASE_PREFIX: env[process.env.NODE_ENV].BASE_PREFIX,
+  // 请求服务器地址
+  SERVER_URL: env[process.env.NODE_ENV].SERVER_URL,
+  // 前端系统的端口
+  SYSTEM_PORT: env[process.env.NODE_ENV].SYSTEM_PORT
+},
+server: {
+  port: env[process.env.NODE_ENV].SYSTEM_PORT,
+  host: '0.0.0.0'
+},
+axios: {
+  proxy: true, // 代理转发
+  debug: process.env.NODE_ENV === 'dev', // 开发模式下开启debug
+  prefix: env[process.env.NODE_ENV].BASE_PREFIX
+  // credentials: true // 凭证
+},
+// 匹配代理
+proxy: {
+  [env[process.env.NODE_ENV].BASE_PREFIX]: {
+    target: env[process.env.NODE_ENV].SERVER_URL,
+    changeOrigin: true,
+    pathRewrite: {
+      ['^' + env[process.env.NODE_ENV].BASE_PREFIX]: ''
+    }
+  }
+},
   publicRuntimeConfig: {
     appKey: 'vsf2spcon',
     appVersion: Date.now(),
@@ -51,7 +81,7 @@ const config = {
     ]
   },
   loading: { color: '#fff' },
-  plugins: ["~/plugins/scrollToTop.client.js", '@/plugins/element-ui','@/plugins/UIkit'],
+  plugins: ["~/plugins/scrollToTop.client.js", '@/plugins/element-ui','@/plugins/UIkit','@/plugins/interceptor'],
   buildModules: [
     // to core
     './modules/cms/build',

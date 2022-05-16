@@ -28,7 +28,7 @@ export default {
     CartSidebar,
     LoginModal
   }
-};
+}
 </script>
 
 <style lang="scss">
