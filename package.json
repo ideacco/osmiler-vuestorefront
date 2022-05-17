@@ -2,10 +2,11 @@
   "name": "@vue-storefront/shopify-theme",
   "version": "1.1.2",
   "scripts": {
-    "dev": "cross-env NODE_ENV=dev nuxt --open ",
-    "test": "cross-env NODE_ENV=test nuxt",
-    "build": "cross-env NODE_ENV=pro nuxt build",
-    "start": "cross-env NODE_ENV=pro nuxt start",
+    "dev": "nuxt ",
+    "test": "jest",
+    "build": "cross-env process.env.VUE_APP_TITLE=production nuxt build",
+    "build:test": "cross-env process.env.VUE_APP_TITLE=test nuxt build",
+    "start": "nuxt start",
     "generate": "nuxt generate"
   },
   "dependencies": {
