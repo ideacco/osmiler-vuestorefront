@@ -87,6 +87,7 @@ server: {
   ],
   css: [
     'element-ui/lib/theme-chalk/index.css',
+    'element-ui/lib/theme-chalk/display.css',
     'uikit/dist/css/uikit.min.css'
   ],
   modules: [

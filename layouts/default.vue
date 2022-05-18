@@ -2,16 +2,16 @@
   <div>
     <client-only>
       <BottomNavigation />
-    </client-only>  
-    <client-only>  
+    </client-only>
+    <client-only>
       <CartSidebar />
-    </client-only>  
-    <client-only>  
+    </client-only>
+    <client-only>
       <WishlistSidebar />
-    </client-only>  
-    <client-only>   
+    </client-only>
+    <client-only>
       <LoginModal />
-    </client-only>  
+    </client-only>
     <LazyHydrate when-visible>
       <Notification />
     </LazyHydrate>
@@ -86,10 +86,11 @@ export default {
 
 #layout {
   box-sizing: border-box;
-  @include for-desktop {
+    @include for-desktop {
     max-width: 1240px;
     margin: auto;
   }
+
 }
 
 .no-scroll {

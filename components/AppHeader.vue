@@ -1,293 +1,333 @@
 <template>
-  <div>
-    <SfHeader
-      data-cy="app-header"
-      :search-value="term"
-      :cart-items-qty="cartTotalItems"
-      :account-icon="accountIcon"
-      class="sf-header--has-mobile-search"
-      :class="{ 'header-on-top': isSearchOpen }"
-      @click:cart="toggleCartSidebar"
-      @click:wishlist="toggleWishlistSidebar"
-      @click:account="isUserAuthenticated ? $router.push(localePath({name:'my-account'})) : toggleLoginModal()"
-      @enter:search="changeSearchTerm"
-      @change:search="(p) => (term = p)"
-    >
-      <!-- TODO: add mobile view buttons after SFUI team PR -->
-      <template #logo>
-        <nuxt-link :to="localePath('/')" class="sf-header__logo">
-          <SfImage
-            src="/icons/logo.webp"
-            alt="Vue Storefront Next"
-            class="sf-header__logo-image"
-            :width="34"
-            :height="34"
-          />
-        </nuxt-link>
-      </template>
-
-      <template v-if="menus.length > 0" #navigation>
-        <div class="navigation-wrapper">
-          <SfHeaderNavigationItem
-            v-for="menu in menus"
-            :key="menu.id"
-            class="nav-item"
-            :data-cy="'app-header-url_' + menu.handle"
-            :label="menu.title"
-            :link="localePath(getMenuPath(menu))"
-          />
+  <div class="mxg-header">
+    <div class="mxg-nav mxg-header-fixed">
+      <el-row type="flex" justify="space-between">
+        <div class="menunav">
+          <el-col :xs="4" :sm="4" :md="4">
+            <nuxt-link to="/">
+              <img
+                src="https://cdn.shopify.com/s/files/1/0529/4112/7855/files/LOGO_ae78022a-64a3-4cbc-879d-af1b4b67df04_540x.png?v=1652778903"
+                alt=""
+                class="logo"
+              />
+            </nuxt-link>
+          </el-col>
+          <!-- 导航菜单 -->
+          <el-col class="hidden-sm-and-down">
+            <div class="elmenubox">
+              <el-menu
+                router
+                :default-active="this.$router.path"
+                background-color="#fafafa"
+                class="elmenulist"
+                style="border: none"
+              >
+                <el-menu-item index="/weclome" class="el-menu-demo">
+                  <span class="menusize">texttable1</span></el-menu-item
+                >
+                <el-menu-item index="2" class="el-menu-demo">
+                  <span class="menusize">texttable2</span></el-menu-item
+                >
+                <el-menu-item index="3" class="el-menu-demo">
+                  <span class="menusize">texttable3</span></el-menu-item
+                >
+              </el-menu>
+            </div>
+          </el-col>
         </div>
-      </template>
-      <template #aside>
-        <LocaleSelector class="smartphone-only" />
-      </template>
-      <template #header-icons>
-        <div class="sf-header__icons">
-          <SfButton
-            v-if="isUserAuthenticated"
-            class="sf-button--pure sf-header__action"
-            @click="$router.push(localePath({name:'my-account'}))"
-          >
-            <SfIcon :icon="accountIcon" size="1.25rem" />
-          </SfButton>
-          <SfButton
-            v-else
-            class="sf-button--pure sf-header__action"
-            @click="toggleLoginModal()"
-          >
-          <SfIcon :icon="accountIcon" size="1.25rem" />
-          </SfButton>
-          <SfButton
-            v-e2e="'app-header-cart'"
-            class="sf-button--pure sf-header__action"
-            @click="toggleCartSidebar"
-          >
-            <SfIcon class="sf-header__icon" icon="empty_cart" size="1.25rem" />
-            <SfBadge
-              v-if="cartTotalItems"
-              class="sf-badge--number cart-badge"
-              >{{ cartTotalItems }}</SfBadge
-            >
-          </SfButton>
-        </div>
-      </template>
-
-      <template #search>
-        <SfSearchBar
-          placeholder="Search for items"
-          :value="term"
-          :icon="{ size: '1.25rem', color: '#43464E' }"
-          aria-label="Search"
-          @keydown.esc="closeSearch"
-          @keydown.tab="hideSearch"
-          @input="handleSearch"
-          @focus="isSearchOpen = true"
-        ></SfSearchBar>
-      </template>
-    </SfHeader>
-    <SearchResults
-      v-if="isSearchOpen"
-      :visible="isSearchOpen"
-      :result="searchResults"
-    />
-    <SfOverlay :visible="isSearchOpen" @click="isSearchOpen = false" />
+        <!-- 购物车与登陆 -->
+        <el-col class="nav-sign" :xl="3" :lg="3" :xs="10" :sm="10" :md="8">
+         <div class="buttonbox">
+           <div class="buttonbox1">
+             <el-button type="text" class="button3">sign in</el-button>
+           </div>
+         </div>
+          <div class="buttonbox33">
+            <div class="buttonbox44">
+              <div class="buttonbox55"></div>
+              <el-button type="primary" class="button66">shop</el-button>
+            </div>
+          </div>
+        </el-col>
+      </el-row>
+    </div>
   </div>
 </template>
 
 <script type="module">
-import {
-  SfHeader,
-  SfImage,
-  SfButton,
-  SfBadge,
-  SfSearchBar,
-  SfIcon,
-  SfOverlay
-} from '@storefront-ui/vue';
-import SearchResultsComp from './SearchResults.vue';
-import debounce from 'lodash/debounce';
-import { onSSR } from '@vue-storefront/core';
-import {
-  computed,
-  ref,
-  watch,
-  useRoute,
-  useContext,
-} from '@nuxtjs/composition-api';
-import { useUiHelpers, useUiState } from '~/composables';
-import LocaleSelector from './LocaleSelector.vue';
-
-import {
-  searchGetters,
-  useCategory,
-  useSearch,
-  useContent
-} from '@vue-storefront/shopify';
-
-export default {
-  components: {
-    SearchResults: SearchResultsComp,
-    SfHeader,
-    SfImage,
-    SfIcon,
-    LocaleSelector,
-    SfButton,
-    SfOverlay,
-    SfBadge,
-    SfSearchBar
-  },
-  props: {
-    cartTotalItems: {
-      type: Number,
-      default: 0
-    },
-    isUserAuthenticated: Boolean
-  },
-  // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
-  setup(props) {
-    const context = useContext();
-    const { toggleCartSidebar, toggleWishlistSidebar, toggleLoginModal } =
-      useUiState();
-    const { changeSearchTerm, getFacetsFromURL } = useUiHelpers();
-    const { search: headerSearch, result } = useSearch('header-search');
-    const { search, categories } = useCategory('menuCategories');
-    const { search: getArticles, content: articlesContent } =
-      useContent('articles');
-
-    const curCatSlug = ref(getFacetsFromURL().categorySlug);
-    const accountIcon = computed(() =>
-      props.isUserAuthenticated ? 'profile_fill' : 'profile'
-    );
-
-    // #region Search Section
-    const isSearchOpen = ref(false);
-    const term = ref(getFacetsFromURL().term);
-    const route = useRoute();
-    const handleSearch = debounce(async (searchTerm) => {
-      if (!searchTerm.target) {
-        term.value = searchTerm;
-      } else {
-        term.value = searchTerm.target.value;
-      }
-
-      await headerSearch({
-        term: term.value
-      });
-      await getArticles({
-        contentType: 'article',
-        query: term.value,
-        first: 5
-      });
-    }, 500);
-
-    watch(route, () => {
-      hideSearch();
-      term.value = '';
-    });
-
-    const hideSearch = () => {
-      if (isSearchOpen.value) {
-        isSearchOpen.value = false;
-        if (document) {
-          document.body.classList.remove('no-scroll');
-        }
-      }
-    };
-
-    const closeSearch = () => {
-      if (!isSearchOpen.value) return;
-      term.value = '';
-      isSearchOpen.value = false;
-    };
-
-    const searchResults = computed(() =>
-      !term.value
-        ? { products: [], articles: [] }
-        : {
-            products: searchGetters.getItems(result.value),
-            articles: articlesContent?.value?.data
-          }
-    );
-    // #endregion Search Section
-
-    onSSR(async () => {
-      await search({ slug: '' });
-    });
-    const menus = computed(() => [
-      ...categories.value,
-      { id: 'blogs', title: 'Blogs', handle: context.$config.cms.blogs }
-    ]);
-
-    const getMenuPath = (menu) => {
-      if (menu.id === 'blogs') {
-        return { name: 'blogs' };
-      }
-
-      return { name: 'category', params: { slug_1: menu.handle } };
-    };
-
-    return {
-      getMenuPath,
-      accountIcon,
-      hideSearch,
-      closeSearch,
-      toggleLoginModal,
-      toggleCartSidebar,
-      toggleWishlistSidebar,
-      changeSearchTerm,
-      term,
-      handleSearch,
-      curCatSlug,
-      searchResults,
-      menus,
-      isSearchOpen
-    };
-  }
-};
 </script>
 
-<style lang="scss" scoped>
-.sf-header {
-  --header-padding: var(--spacer-sm);
-  @include for-desktop {
-    --header-padding: 0;
-  }
-  &__logo-image {
-    height: 100%;
-  }
+<style lang="css" scoped>
+.mxg-header {
+  width: 100%;
+  height: 122px;
+  background-color: #fafafa;
+  border-top: 3px solid #345dc2;
+  z-index: 1501;
 }
-.header-on-top {
-  z-index: 2;
+.mxg-header-fixed {
+  position: fixed;
 }
-.navigation-wrapper {
-  display: flex;
-  width: min-content;
+.mxg-header .mxg-nav {
+  position: relative;
+  max-width: 1340.37px;
+  margin: auto;
+  padding: 0 50px 0 20px;
 }
-.sf-search-bar {
-  @include for-desktop {
-    max-width: 20rem;
-    width: 100%;
-  }
+
+.el-menu .el-menu--horozontal {
+  border-bottom: 0px;
+  margin-top: -10px;
 }
-.nav-item {
-  flex: 0;
-  .sf-header-navigation-item__item--mobile {
-    display: none;
-  }
-  &--mobile {
-    padding: var(--spacer-xs) 0;
-  }
-  ::v-deep &__item--mobile {
-    display: block;
-  }
-  ::v-deep .nuxt-link-active {
-    color: var(--c-primary);
-    --header-navigation-item-border-color: var(--c-primary);
-  }
+.nav-right {
+  text-align: center;
 }
-.cart-badge {
+.nav-sign {
   position: absolute;
-  bottom: 40%;
-  left: 40%;
+  top: 30%;
+  right: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 0px;
+  gap: 24px;
+
+  width: 264px;
+  height: 44px;
+
+  /* Inside auto layout */
+
+  flex: none;
+  order: 1;
+  flex-grow: 0;
 }
+.menunav {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0px;
+  gap: 10px;
+
+  width: 716.98px;
+  height: 122px;
+
+  /* Inside auto layout */
+
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+}
+
+.logo {
+  width: 136.98px;
+  height: 40px;
+}
+.elmenubox {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 0px;
+
+  width: 570px;
+  height: 122px;
+
+  /* Inside auto layout */
+
+  flex: none;
+  order: 1;
+  flex-grow: 0;
+}
+.elmenulist {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 0px;
+  width: 570px;
+  height: 122px;
+  /* Inside auto layout */
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+}
+.el-menu-demo {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 49px 36px;
+  gap: 10px;
+
+  width: 110px;
+  height: 122px;
+
+  /* Inside auto layout */
+
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+}
+.menusize {
+  /* Tab1 */
+  height: 24px;
+  /* 中文-标准/正文2-16pt/正文2_Regular */
+
+  font-family: "Alibaba PuHuiTi";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  /* identical to box height, or 150% */
+
+  /* 浅色模式文本/Title Text */
+
+  color: #0c0b0e;
+
+  /* Inside auto layout */
+
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+}
+.buttonbox{
+  display: flex;
+flex-direction: row;
+justify-content: center;
+align-items: center;
+
+
+width: 109px;
+height: 44px;
+
+background: #FFFFFF;
+
+
+/* Inside auto layout */
+
+flex: none;
+order: 0;
+flex-grow: 0;
+}
+.buttonbox1{
+  display: flex;
+flex-direction: row;
+justify-content: center;
+align-items: center;
+padding: 0px;
+gap: 8px;
+
+width: 53px;
+height: 24px;
+
+
+/* Inside auto layout */
+
+flex: none;
+order: 0;
+flex-grow: 0;
+}
+.button3{
+/* 中文-标准/正文2-16pt/正文2_Mmedium */
+
+font-family: 'Alibaba PuHuiTi';
+font-style: normal;
+font-weight: 400;
+font-size: 16px;
+line-height: 24px;
+/* identical to box height, or 150% */
+
+display: flex;
+align-items: center;
+text-align: center;
+
+/* 功能色/品牌/Brand_light */
+
+color: #4132C7;
+
+
+/* Inside auto layout */
+
+flex: none;
+order: 0;
+flex-grow: 0;
+}
+.buttonbox33{
+  /* Auto layout */
+
+display: flex;
+flex-direction: row;
+justify-content: center;
+align-items: center;
+
+width: 131px;
+height: 44px;
+
+/* 功能色/品牌/Brand_light */
+
+background: #4132C7;
+border-radius: 22px;
+
+/* Inside auto layout */
+
+flex: none;
+order: 1;
+flex-grow: 0;
+}
+.buttonbox44{
+  display: flex;
+flex-direction: row;
+justify-content: center;
+align-items: center;
+padding: 0px;
+gap: 8px;
+
+width: 75px;
+height: 24px;
+
+
+/* Inside auto layout */
+
+flex: none;
+order: 0;
+flex-grow: 0;
+}
+.buttonbox55{
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+}
+.button66{
+background: #4132C7;
+width: 43px;
+height: 24px;
+border: none;
+
+/* 中文-标准/正文2-16pt/正文2_Mmedium */
+
+font-family: 'Alibaba PuHuiTi';
+font-style: normal;
+font-weight: 400;
+font-size: 16px;
+line-height: 24px;
+/* identical to box height, or 150% */
+
+display: flex;
+align-items: center;
+text-align: center;
+
+/* 浅色模式文本/Anti */
+
+color: #FFFFFF;
+
+margin-left: -30px;
+/* Inside auto layout */
+
+flex: none;
+order: 1;
+flex-grow: 0;
+}
+
 </style>
+
