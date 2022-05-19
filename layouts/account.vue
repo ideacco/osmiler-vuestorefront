@@ -42,7 +42,7 @@ body {
 #layout {
   box-sizing: border-box;
   @include for-desktop {
-    max-width: 1240px;
+    max-width: 1440px;
     margin: auto;
   }
 }
