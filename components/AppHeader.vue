@@ -122,8 +122,8 @@
   flex-grow: 0;
 }
 .logo {
-  width: 136.98px;
-  height: 40px;
+  /* width: 137px;
+  height: 40px; */
 }
 .elmenubox {
   display: flex;
@@ -168,7 +168,7 @@
   /* Tab1 */
   height: 24px;
   /* 中文-标准/正文2-16pt/正文2_Regular */
-  font-family: "Alibaba PuHuiTi";
+  font-family: "Overpass","Alibaba PuHuiTi",sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 16px;
@@ -210,7 +210,7 @@ flex-grow: 0;
 }
 .button3{
 /* 中文-标准/正文2-16pt/正文2_Mmedium */
-font-family: 'Alibaba PuHuiTi';
+font-family: "Overpass",'Alibaba PuHuiTi',sans-serif;
 font-style: normal;
 font-weight: 400;
 font-size: 16px;
@@ -268,7 +268,7 @@ width: 43px;
 height: 24px;
 border: none;
 /* 中文-标准/正文2-16pt/正文2_Mmedium */
-font-family: 'Alibaba PuHuiTi';
+font-family: "Overpass",'Alibaba PuHuiTi',sans-serif;
 font-style: normal;
 font-weight: 400;
 font-size: 16px;
@@ -343,7 +343,7 @@ flex-grow: 0;
   width: 32px;
 height: 24px;
 /* 中文-标准/正文2-16pt/正文2_Mmedium */
-font-family: 'Alibaba PuHuiTi';
+font-family: "Overpass","Alibaba PuHuiTi",sans-serif;
 font-style: normal;
 font-weight: 400;
 font-size: 16px;
