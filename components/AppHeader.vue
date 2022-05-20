@@ -22,13 +22,25 @@
                 class="elmenulist"
                 style="border: none"
               >
-                <el-menu-item index="/Product" class="el-menu-demo">
-                  <span class="menusize">texttable1</span></el-menu-item
+                <el-menu-item index="/music" class="el-menu-demo">
+                  <span class="menusize">music</span></el-menu-item
                 >
-                <el-menu-item index="2" class="el-menu-demo">
-                  <span class="menusize">texttable2</span></el-menu-item
+                <el-menu-item index="/Aboutus" class="el-menu-demo">
+                  <span class="menusize">关于我们</span></el-menu-item
                 >
-                <el-menu-item index="3" class="el-menu-demo">
+                <el-menu-item index="/ContactUs" class="el-menu-demo">
+                  <span class="menusize">联系我们</span></el-menu-item
+                >
+                 <el-menu-item index="3" class="el-menu-demo">
+                  <span class="menusize">texttable3</span></el-menu-item
+                >
+                 <el-menu-item index="3" class="el-menu-demo">
+                  <span class="menusize">texttable3</span></el-menu-item
+                >
+                 <el-menu-item index="3" class="el-menu-demo">
+                  <span class="menusize">texttable3</span></el-menu-item
+                >
+                 <el-menu-item index="3" class="el-menu-demo">
                   <span class="menusize">texttable3</span></el-menu-item
                 >
               </el-menu>
@@ -292,13 +304,9 @@ flex-direction: column;
 align-items: flex-start;
 padding: 0px;
 gap: 12px;
-
 width: 61px;
 height: 110px;
-
-
 /* Inside auto layout */
-
 flex: none;
 order: 0;
 flex-grow: 0;
@@ -334,24 +342,16 @@ flex-grow: 0;
 .titlegh1{
   width: 32px;
 height: 24px;
-
 /* 中文-标准/正文2-16pt/正文2_Mmedium */
-
 font-family: 'Alibaba PuHuiTi';
 font-style: normal;
 font-weight: 400;
 font-size: 16px;
 line-height: 24px;
 /* identical to box height, or 150% */
-
-
 /* 浅色模式文本/Title Text */
-
 color: #0C0B0E;
-
-
 /* Inside auto layout */
-
 flex: none;
 order: 0;
 flex-grow: 0;
@@ -362,13 +362,9 @@ flex-direction: column;
 align-items: flex-start;
 padding: 0px;
 gap: 4px;
-
 width: 61px;
 height: 74px;
-
-
 /* Inside auto layout */
-
 flex: none;
 order: 1;
 flex-grow: 0;
