@@ -6,15 +6,15 @@
         <div class="mxg-navleft">
           <!-- 左上 -->
           <div class="mxg-navlefttitle">
-            <img src="/homepage/LOGO.png" class="mxg-navlefttitleimg" alt="" />
+            <el-image src="/homepage/LOGO.jpg" class="mxg-navlefttitleimg" alt="" />
             <div class="logfontsize">Let your smile light up the world</div>
           </div>
           <!-- 左中 -->
           <div class="mxg-navmiddle">
-            <img src="/homepage/zhanwei.png" alt="" class="mxgclass" />
-            <img src="/homepage/zhanwei.png" alt="" class="mxgclass" />
-            <img src="/homepage/zhanwei.png" alt="" class="mxgclass" />
-            <img src="/homepage/zhanwei.png" alt="" class="mxgclass" />
+            <el-image src="/homepage/Ellipse.jpg" alt="" class="mxgclass" />
+            <el-image src="/homepage/Ellipse.jpg" alt="" class="mxgclass" />
+            <el-image src="/homepage/Ellipse.jpg" alt="" class="mxgclass" />
+            <el-image src="/homepage/Ellipse.jpg" alt="" class="mxgclass" />
           </div>
           <!-- 左右 -->
           <div class="mxg-navmiddleright">
@@ -62,10 +62,10 @@
            <span class="border-fontsiz31">Privacy policy 隐私</span></span>
           </el-col>
           <el-col class="borderimage">
-              <el-image src="/homepage/zhanwei.png" class="borderimage222"/>
-              <el-image src="/homepage/zhanwei.png" class="borderimage222"/>
-              <el-image src="/homepage/zhanwei.png" class="borderimage222"/>
-              <el-image src="/homepage/zhanwei.png" class="borderimage222"/>
+              <el-image src="/homepage/Ellipse.jpg" alt="" class="borderimage222"/>
+              <el-image src="/homepage/Ellipse.jpg" alt="" class="borderimage222"/>
+              <el-image src="/homepage/Ellipse.jpg" alt="" class="borderimage222"/>
+              <el-image src="/homepage/Ellipse.jpg" alt="" class="borderimage222"/>
 
           </el-col>
         </el-col>
@@ -81,7 +81,6 @@
 <style lang="css" scoped>
 .mxg-header {
   width: 100%;
-  background-color: red;
   z-index: 1501;
 }
 .mxg-header-fixed {
@@ -89,7 +88,7 @@
 }
 .mxg-header .mxg-nav {
   position: relative;
-  max-width: 1340.37px;
+  max-width: 1600px;
   margin: auto;
   padding: 60px 50px 161px 60px;
 }
@@ -215,7 +214,6 @@
 }
 
 /deep/.el-input__inner {
-  border-left: none;
   border-radius: 0px;
 }
 .buttonsize {
@@ -444,7 +442,7 @@ flex-direction: row;
 align-items: flex-start;
 padding: 0px;
 gap: 24px;
-margin-left:1124px;
+margin-left:1200px;
 width: 256px;
 height: 46px;
 

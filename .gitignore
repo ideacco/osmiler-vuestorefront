@@ -1,5 +1,6 @@
 lib
 server
+middleware.config.js
 .nuxt
 _theme
 node_modules
