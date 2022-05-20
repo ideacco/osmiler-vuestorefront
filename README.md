@@ -1,5 +1,6 @@
 # Vue Storefron Shopify Template
 
+
 ### Stay connected
 
 [![GitHub Repo stars](https://img.shields.io/github/stars/vuestorefront/vue-storefront?style=social)](https://github.com/vuestorefront/vue-storefront)
