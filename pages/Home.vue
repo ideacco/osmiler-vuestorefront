@@ -1,5 +1,5 @@
 <template>
-  <div id="home">
+  <div >
     <el-row class="bannerbox">
       <el-col :xs="24" :sm="24" :md="24" :lg="24" :xl="24">
         <el-image src="/homepage/background1.jpg" style="height: 960px" />
@@ -646,7 +646,7 @@
     </div>
     <!-- 页面标签排版 -->
     <div
-      class="uk-child-width-1-2 uk-child-width-1-4@s uk-grid-match uk-box1"
+      class="uk-child-width-1-2 uk-child-width-1-4@s uk-grid-match "
       uk-grid
     >
       <div class="uk-animation-toggle uk-box3">
@@ -681,7 +681,7 @@
           </div>
         </div>
       </div>
-      <div class="uk-animation-toggle uk-box3">
+      <div class="uk-animation-toggle uk-box4">
         <div class="uk-card uk-card-default uk-card-body uk-texttile-box1">
           <el-image src="/homepage/homeicon.jpg" class="homeicontext1" />
           <!-- <p class="uk-text-center">
@@ -697,7 +697,7 @@
           </div>
         </div>
       </div>
-      <div class="uk-animation-toggle uk-box3">
+      <div class="uk-animation-toggle uk-box5">
         <div class="uk-card uk-card-default uk-card-body uk-texttile-box1">
           <el-image src="/homepage/homeicon.jpg" class="homeicontext1" />
           <!-- <p class="uk-text-center">
@@ -714,10 +714,17 @@
         </div>
       </div>
     </div>
-
   </div>
+
 </template>
 <script type="module">
+export default {
+  name: 'DefaultLayout',
+  components: {
+    Lcoalfooter: () => import(/* webpackPrefetch: true */ '~/components/Lcoalfooter.vue'),
+  },
+
+};
 </script>
 <style lang="css" scoped>
 .bg-purple-dark {
@@ -836,7 +843,7 @@
   flex-grow: 0;
 }
 .uk-box1 {
-  height: 486px;
+  height: 526px;
   /* Background/White */
 }
 .uk-texttitle1 {
@@ -1890,6 +1897,14 @@ flex-grow: 0;
 }
 .uk-box3{
   margin-top: 76px;
+}
+.uk-box4{
+  margin-top: 76px;
+  margin-bottom: 30px;
+}
+.uk-box5{
+   margin-top: 76px;
+    margin-bottom: 30px;
 }
 
 </style>

@@ -22,7 +22,7 @@
                 class="elmenulist"
                 style="border: none"
               >
-                <el-menu-item index="/weclome" class="el-menu-demo">
+                <el-menu-item index="/Product" class="el-menu-demo">
                   <span class="menusize">texttable1</span></el-menu-item
                 >
                 <el-menu-item index="2" class="el-menu-demo">
@@ -53,10 +53,8 @@
     </div>
   </div>
 </template>
-
 <script type="module">
 </script>
-
 <style lang="css" scoped>
 .mxg-header {
   width: 100%;
@@ -74,7 +72,6 @@
   margin: auto;
   padding: 0 50px 0 20px;
 }
-
 .el-menu .el-menu--horozontal {
   border-bottom: 0px;
   margin-top: -10px;
@@ -92,12 +89,9 @@
   align-items: center;
   padding: 0px;
   gap: 24px;
-
   width: 264px;
   height: 44px;
-
   /* Inside auto layout */
-
   flex: none;
   order: 1;
   flex-grow: 0;
@@ -108,17 +102,13 @@
   align-items: center;
   padding: 0px;
   gap: 10px;
-
   width: 716.98px;
   height: 122px;
-
   /* Inside auto layout */
-
   flex: none;
   order: 0;
   flex-grow: 0;
 }
-
 .logo {
   width: 136.98px;
   height: 40px;
@@ -129,12 +119,9 @@
   justify-content: center;
   align-items: center;
   padding: 0px;
-
   width: 570px;
   height: 122px;
-
   /* Inside auto layout */
-
   flex: none;
   order: 1;
   flex-grow: 0;
@@ -158,12 +145,9 @@
   align-items: center;
   padding: 49px 36px;
   gap: 10px;
-
   width: 110px;
   height: 122px;
-
   /* Inside auto layout */
-
   flex: none;
   order: 0;
   flex-grow: 0;
@@ -172,20 +156,15 @@
   /* Tab1 */
   height: 24px;
   /* 中文-标准/正文2-16pt/正文2_Regular */
-
   font-family: "Alibaba PuHuiTi";
   font-style: normal;
   font-weight: 400;
   font-size: 16px;
   line-height: 24px;
   /* identical to box height, or 150% */
-
   /* 浅色模式文本/Title Text */
-
   color: #0c0b0e;
-
   /* Inside auto layout */
-
   flex: none;
   order: 0;
   flex-grow: 0;
@@ -195,16 +174,10 @@
 flex-direction: row;
 justify-content: center;
 align-items: center;
-
-
 width: 109px;
 height: 44px;
-
 background: #FFFFFF;
-
-
 /* Inside auto layout */
-
 flex: none;
 order: 0;
 flex-grow: 0;
@@ -216,60 +189,43 @@ justify-content: center;
 align-items: center;
 padding: 0px;
 gap: 8px;
-
 width: 53px;
 height: 24px;
-
-
 /* Inside auto layout */
-
 flex: none;
 order: 0;
 flex-grow: 0;
 }
 .button3{
 /* 中文-标准/正文2-16pt/正文2_Mmedium */
-
 font-family: 'Alibaba PuHuiTi';
 font-style: normal;
 font-weight: 400;
 font-size: 16px;
 line-height: 24px;
 /* identical to box height, or 150% */
-
 display: flex;
 align-items: center;
 text-align: center;
-
 /* 功能色/品牌/Brand_light */
-
 color: #4132C7;
-
-
 /* Inside auto layout */
-
 flex: none;
 order: 0;
 flex-grow: 0;
 }
 .buttonbox33{
   /* Auto layout */
-
 display: flex;
 flex-direction: row;
 justify-content: center;
 align-items: center;
-
 width: 131px;
 height: 44px;
-
 /* 功能色/品牌/Brand_light */
-
 background: #4132C7;
 border-radius: 22px;
-
 /* Inside auto layout */
-
 flex: none;
 order: 1;
 flex-grow: 0;
@@ -281,13 +237,9 @@ justify-content: center;
 align-items: center;
 padding: 0px;
 gap: 8px;
-
 width: 75px;
 height: 24px;
-
-
 /* Inside auto layout */
-
 flex: none;
 order: 0;
 flex-grow: 0;
@@ -303,6 +255,85 @@ background: #4132C7;
 width: 43px;
 height: 24px;
 border: none;
+/* 中文-标准/正文2-16pt/正文2_Mmedium */
+font-family: 'Alibaba PuHuiTi';
+font-style: normal;
+font-weight: 400;
+font-size: 16px;
+line-height: 24px;
+/* identical to box height, or 150% */
+display: flex;
+align-items: center;
+text-align: center;
+/* 浅色模式文本/Anti */
+color: #FFFFFF;
+margin-left: -30px;
+/* Inside auto layout */
+flex: none;
+order: 1;
+flex-grow: 0;
+}
+.mxgmiddlebox2{
+display: flex;
+flex-direction: row;
+align-items: flex-start;
+padding: 0px;
+gap: 60px;
+width: 389px;
+height: 162px;
+/* Inside auto layout */
+flex: none;
+order: 1;
+flex-grow: 0;
+}
+.mxgmiddlebox2-footer{
+ display: flex;
+flex-direction: column;
+align-items: flex-start;
+padding: 0px;
+gap: 12px;
+
+width: 61px;
+height: 110px;
+
+
+/* Inside auto layout */
+
+flex: none;
+order: 0;
+flex-grow: 0;
+}
+.mxgmiddlebox2-footer2{
+  /* Auto layout */
+display: flex;
+flex-direction: column;
+align-items: flex-start;
+padding: 0px;
+gap: 12px;
+width: 97px;
+height: 136px;
+/* Inside auto layout */
+flex: none;
+order: 1;
+flex-grow: 0;
+}
+.mxgmiddlebox2-footer3{
+  /* Auto layout */
+display: flex;
+flex-direction: column;
+align-items: flex-start;
+padding: 0px;
+gap: 12px;
+width: 111px;
+height: 162px;
+/* Inside auto layout */
+flex: none;
+order: 2;
+flex-grow: 0;
+}
+.titlegh1{
+  width: 32px;
+height: 24px;
 
 /* 中文-标准/正文2-16pt/正文2_Mmedium */
 
@@ -313,21 +344,33 @@ font-size: 16px;
 line-height: 24px;
 /* identical to box height, or 150% */
 
-display: flex;
-align-items: center;
-text-align: center;
 
-/* 浅色模式文本/Anti */
+/* 浅色模式文本/Title Text */
 
-color: #FFFFFF;
+color: #0C0B0E;
 
-margin-left: -30px;
+
+/* Inside auto layout */
+
+flex: none;
+order: 0;
+flex-grow: 0;
+}
+.framtitle74{
+  display: flex;
+flex-direction: column;
+align-items: flex-start;
+padding: 0px;
+gap: 4px;
+
+width: 61px;
+height: 74px;
+
+
 /* Inside auto layout */
 
 flex: none;
 order: 1;
 flex-grow: 0;
 }
-
 </style>
-
