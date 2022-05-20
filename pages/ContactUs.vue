@@ -12,7 +12,9 @@
       </el-col>
       <el-row class="conatactbox-twobox">
       <el-col class="conatactbox-twobox-one">
-        <el-col class="elispse1"></el-col>
+        <el-col class="elispse1">
+          <el-image src="/hom"></el-image>
+        </el-col>
          <el-col></el-col>
           <el-col></el-col>
            <el-col></el-col>
