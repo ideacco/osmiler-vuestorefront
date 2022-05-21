@@ -88,7 +88,7 @@
 }
 .mxg-header .mxg-nav {
   position: relative;
-  max-width: 1600px;
+  max-width: 1440px;
   margin: auto;
   padding: 60px 50px 161px 60px;
 }
@@ -442,7 +442,7 @@ flex-direction: row;
 align-items: flex-start;
 padding: 0px;
 gap: 24px;
-margin-left:1200px;
+margin-left:1124px;
 width: 256px;
 height: 46px;
 
