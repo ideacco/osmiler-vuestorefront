@@ -1,4 +1,56 @@
-# Vue Storefron Shopify Template
+# Osmiler 商城前端框架
+
+## 简介
+OSMILER的前端商城框架使用 Vue Storefron 作为基础前端框架,使用Shopify作为后端框架,并调用Shopify 前端接口实现店面系统.
+
+## 项目结构
+```
+vuestorefront
+├── .nuxt                     // nuxt 服务端渲染缓存,会根据文档更改自动更新
+├── api                       // 接口定义
+├── components                // 组件库
+│   ├── Checkout
+│   ├── MyAccount
+│   ├── utils
+│   ├── AppFooter.vue
+│   ├── ...
+├── composables
+├── helpers
+├── integrations
+├── lang                       // 多语言
+├── layouts
+├── middleware                 // 中间件(shopify key配置在这里)
+├── modules
+├── pages                      // 页面
+│   ├── Checkout               // 结账页面
+│   ├── MyAccount              // 我的账户页面
+│   ├── Home.vue
+│   ├── ...
+├── plugins                    // 第三方插件目录(第三方UI库的JS,工具JS)
+│   ├── UIkit.js
+│   ├── element-ui.js
+│   ├── ...
+├── server-middleware          // 服务器中间件
+├── static                     // 静态目录
+├── store                      // 状态管理
+├── .env                       // 环境配置
+├── .env.development
+├── .env.example
+├── .env.production
+├── README.md
+├── jest.config.js
+├── middleware.config.js       // nuxt中间件配置
+├── nuxt.config.js             // nuxt主要配置
+├── package.json
+├── tsconfig.json
+
+```
+
+## 技术栈说明
+vuestorefront 底层基础使用 (nuxt)[https://www.nuxtjs.org/] 作为基础支撑.
+
+(vuestorefront 文档地址)[https://docs.vuestorefront.io/v2/]
+(vuestorefront CSS 文档地址)[https://docs.storefrontui.io/?path=/docs/utilities-transitions--slide-left]
 
 
 ### Stay connected
@@ -10,7 +62,7 @@
 
 Vue Storefront 2 template for Shopify.
 
-## Setup
+## Shopify 安装 Setup
 
 1. Create a `.env` inline with `middleware.config.js` file and fill the following required variables
 

@@ -775,7 +775,7 @@ export default {
   width: 816px;
   height: 46px;
   /* 中文-标准/二级标题/二级标题_Medium */
-  font-family: "Alibaba PuHuiTi";
+  font-family: "Overpass",Verdana, Arial, Helvetica, sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 38px;
@@ -794,7 +794,7 @@ export default {
   width: 816px;
   height: 48px;
   /* 中文-标准/正文2-16pt/正文2_Regular */
-  font-family: "Alibaba PuHuiTi";
+  font-family: "Overpass",Verdana, Arial, Helvetica, sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 16px;
@@ -850,7 +850,7 @@ export default {
   width: 200px;
   height: 24px;
   /* 中文-标准/正文2-16pt/正文2_Mmedium */
-  font-family: "Alibaba PuHuiTi";
+  font-family: "Overpass",Verdana, Arial, Helvetica, sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 16px;
@@ -864,7 +864,7 @@ export default {
   width: 200px;
   height: 198px;
   /* 中文-标准/正文3-14pt/正文3_Regular */
-  font-family: "Alibaba PuHuiTi";
+  font-family: "Overpass",Verdana, Arial, Helvetica, sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 14px;
@@ -928,7 +928,7 @@ export default {
   width: 590px;
   height: 46px;
   /* 中文-标准/二级标题/二级标题_Medium */
-  font-family: "Alibaba PuHuiTi";
+  font-family: "Overpass",Verdana, Arial, Helvetica, sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 38px;
@@ -946,7 +946,7 @@ export default {
   width: 590px;
   height: 120px;
   /* 中文-标准/正文2-16pt/正文2_Regular */
-  font-family: "Alibaba PuHuiTi";
+  font-family: "Overpass",Verdana, Arial, Helvetica, sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 16px;
@@ -1037,7 +1037,7 @@ export default {
   width: 590px;
   height: 46px;
   /* 中文-标准/二级标题/二级标题_Medium */
-  font-family: "Alibaba PuHuiTi";
+  font-family: "Overpass",Verdana, Arial, Helvetica, sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 38px;
@@ -1056,7 +1056,7 @@ export default {
   width: 590px;
   height: 72px;
   /* 中文-标准/正文2-16pt/正文2_Regular */
-  font-family: "Alibaba PuHuiTi";
+  font-family: "Overpass",Verdana, Arial, Helvetica, sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 16px;
@@ -1144,7 +1144,7 @@ export default {
   width: 45px;
   height: 46px;
   /* 中文-标准/二级标题/二级标题_Medium */
-  font-family: "Alibaba PuHuiTi";
+  font-family: "Overpass",Verdana, Arial, Helvetica, sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 38px;
@@ -1162,7 +1162,7 @@ export default {
   width: 36px;
   height: 37px;
   /* 中文-标准/三级标题/三级标题_Medium */
-  font-family: "Alibaba PuHuiTi";
+  font-family: "Overpass",Verdana, Arial, Helvetica, sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 28px;
@@ -1212,7 +1212,7 @@ export default {
   width: 45px;
   height: 46px;
   /* 中文-标准/二级标题/二级标题_Medium */
-  font-family: "Alibaba PuHuiTi";
+  font-family: "Overpass",Verdana, Arial, Helvetica, sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 38px;
@@ -1230,7 +1230,7 @@ export default {
   width: 36px;
   height: 37px;
   /* 中文-标准/三级标题/三级标题_Medium */
-  font-family: "Alibaba PuHuiTi";
+  font-family: "Overpass",Verdana, Arial, Helvetica, sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 28px;
@@ -1247,7 +1247,7 @@ export default {
   width: 154px;
   height: 60px;
   /* 中文-标准/正文4-12pt/正文4_Regular */
-  font-family: "Alibaba PuHuiTi";
+  font-family: "Overpass",Verdana, Arial, Helvetica, sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 12px;
@@ -1294,7 +1294,7 @@ export default {
   width: 590px;
   height: 46px;
   /* 中文-标准/二级标题/二级标题_Medium */
-  font-family: "Alibaba PuHuiTi";
+  font-family: "Overpass",Verdana, Arial, Helvetica, sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 38px;
@@ -1307,7 +1307,7 @@ export default {
   width: 590px;
   height: 72px;
   /* 中文-标准/正文2-16pt/正文2_Regular */
-  font-family: "Alibaba PuHuiTi";
+  font-family: "Overpass",Verdana, Arial, Helvetica, sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 16px;
@@ -1338,7 +1338,7 @@ export default {
   width: 137px;
   height: 24px;
   /* 中文-标准/正文2-16pt/正文2_Mmedium */
-  font-family: "Alibaba PuHuiTi";
+  font-family: "Overpass",Verdana, Arial, Helvetica, sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 16px;
@@ -1403,7 +1403,7 @@ export default {
   width: 70px;
   height: 24px;
   /* 中文-标准/正文2-16pt/正文2_Regular */
-  font-family: "Alibaba PuHuiTi";
+  font-family: "Overpass",Verdana, Arial, Helvetica, sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 16px;
@@ -1420,7 +1420,7 @@ export default {
   width: 28px;
   height: 24px;
   /* 中文-标准/正文2-16pt/正文2_Regular */
-  font-family: "Alibaba PuHuiTi";
+  font-family: "Overpass",Verdana, Arial, Helvetica, sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 16px;
@@ -1464,7 +1464,7 @@ export default {
   width: 240px;
   height: 24px;
   /* 中文-标准/正文2-16pt/正文2_Regular */
-  font-family: "Alibaba PuHuiTi";
+  font-family: "Overpass",Verdana, Arial, Helvetica, sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 16px;
@@ -1480,7 +1480,7 @@ export default {
   width: 166px;
   height: 24px;
   /* 中文-标准/正文2-16pt/正文2_Regular */
-  font-family: "Alibaba PuHuiTi";
+  font-family: "Overpass",Verdana, Arial, Helvetica, sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 16px;
@@ -1562,7 +1562,7 @@ export default {
   width: 1049px;
   height: 92px;
   /* 中文-标准/二级标题/二级标题_Medium */
-  font-family: "Alibaba PuHuiTi";
+  font-family: "Overpass",Verdana, Arial, Helvetica, sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 38px;
@@ -1700,7 +1700,7 @@ export default {
 
   /* 中文-标准/四级标题/四级标题_Medium */
 
-  font-family: "Alibaba PuHuiTi";
+  font-family: "Overpass",Verdana, Arial, Helvetica, sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 24px;
@@ -1733,7 +1733,7 @@ export default {
 
   /* Paragraph Regular/16px */
 
-  font-family: "Overpass";
+  font-family: "Overpass",Verdana, Arial, Helvetica, sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 16px;
@@ -1852,7 +1852,7 @@ height: 22px;
 
 /* 中文-标准/正文3-14pt/正文3_Medium */
 
-font-family: 'Alibaba PuHuiTi';
+font-family: "Overpass",Verdana, Arial, Helvetica, sans-serif;
 font-style: normal;
 font-weight: 400;
 font-size: 14px;
@@ -1879,7 +1879,7 @@ height: 22px;
 
 /* 中文-标准/正文3-14pt/正文3_Regular */
 
-font-family: 'Alibaba PuHuiTi';
+font-family: "Overpass",Verdana, Arial, Helvetica, sans-serif;
 font-style: normal;
 font-weight: 400;
 font-size: 12px;

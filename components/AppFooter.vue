@@ -130,7 +130,7 @@
   width: 451.27px;
   height: 24px;
   /* 中文-标准/正文2-16pt/正文2_Regular */
-  font-family: "Overpass","Alibaba PuHuiTi",sans-serif;
+  font-family: "Overpass",Verdana, Arial, Helvetica, sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 16px;
@@ -180,7 +180,7 @@
   top: 0%;
   bottom: 0%;
   /* Desktop H6 */
-  font-family: "Raleway";
+  font-family: "Overpass",Verdana, Arial, Helvetica, sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 16px;
@@ -246,7 +246,7 @@
   width: 32px;
   height: 24px;
  /* 中文-标准/正文2-16pt/正文2_Mmedium */
- font-family: "Overpass","Alibaba PuHuiTi",sans-serif;
+ font-family: "Overpass",Verdana, Arial, Helvetica, sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 16px;
@@ -274,7 +274,7 @@
 }
 .layoutfontsize-font {
   /* 中文-标准/正文3-14pt/正文3_Regular */
- font-family: "Overpass","Alibaba PuHuiTi",sans-serif;
+ font-family: "Overpass",Verdana, Arial, Helvetica, sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 14px;
@@ -371,7 +371,7 @@ height: 22px;
 
 /* 中文-标准/正文3-14pt/正文3_Regular */
 
-font-family: "Overpass",'Alibaba PuHuiTi',sans-serif;
+font-family: "Overpass",Verdana, Arial, Helvetica, sans-serif;
 font-style: normal;
 font-weight: 400;
 font-size: 14px;
@@ -392,7 +392,7 @@ flex-grow: 0;
   width: 158px;
 height: 22px;
 
-font-family: "Overpass",'Alibaba PuHuiTi',sans-serif;
+font-family: "Overpass",Verdana, Arial, Helvetica, sans-serif;
 font-style: normal;
 font-weight: 400;
 font-size: 14px;
@@ -416,7 +416,7 @@ flex-grow: 0;
   width: 122px;
 height: 22px;
 
-font-family: "Overpass",'Alibaba PuHuiTi',sans-serif;
+font-family: "Overpass",Verdana, Arial, Helvetica, sans-serif;
 font-style: normal;
 font-weight: 400;
 font-size: 14px;
