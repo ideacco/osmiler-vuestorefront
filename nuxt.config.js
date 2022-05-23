@@ -88,7 +88,8 @@ server: {
   css: [
     'element-ui/lib/theme-chalk/index.css',
     'element-ui/lib/theme-chalk/display.css',
-    'uikit/dist/css/uikit.min.css'
+    'uikit/dist/css/uikit.min.css',
+    'normalize.css/normalize.css'
   ],
   modules: [
     '@nuxtjs/i18n',

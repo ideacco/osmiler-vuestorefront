@@ -26,6 +26,7 @@
     "cross-env": "^7.0.3",
     "ipx": "0.9.1",
     "isomorphic-fetch": "^2.2.1",
+    "normalize.css": "^8.0.1",
     "nuxt": "^2.13.3",
     "uikit": "^3.14.1",
     "vee-validate": "^3.2.3",

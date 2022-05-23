@@ -90,3 +90,15 @@ async asyncdata({$axios]}){
                   <span class="menusize">关于我们</span></el-menu-item
                 >
 页面路由的路径只需要 /about
+
+关于样式的文档解说说明
+Settings 维护整个网站的变量
+Tools  维护一些样式的工具库
+Base  对元素进行一些定制化处理
+Objects 通用模块的样式处理
+theme 样式的权重变高
+
+项目启动使用：
+yarn install
+
+yarn dev
