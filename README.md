@@ -62,43 +62,58 @@ vuestorefront 底层基础使用 (nuxt)[https://www.nuxtjs.org/] 作为基础支
 
 Vue Storefront 2 template for Shopify.
 
-接口的封装
-1，通过package.json 切换环境部署
-2，通过api的直接调用接口
-例如：export default({$axios},inject)=>{
-    inject('test',()=>$axios.$get('/test'))
-    inject('test2',()=>$axios.$get('/test'))
-}
-3，在页面中怎么调用接口
-类似案例如：
-async asyncdata({$axios,app}){
-    const respone=await app.$test()
-   console.log('respopnse‘,respone)
-   return {
-       data:respone.data
-   }
-}
-async asyncdata({$axios]}){
-    const response=await $axios.get()
-    return(data:response。data)
-}
-路由跳转放在appheader.vue文件中
-   <el-menu-item index="/music" class="el-menu-demo">
-                  <span class="menusize">music</span></el-menu-item
-                >
-                <el-menu-item index="/Aboutus" class="el-menu-demo">
-                  <span class="menusize">关于我们</span></el-menu-item
-                >
-页面路由的路径只需要 /about
+# 接口的封装
+  1. 通过package.json 切换环境部署
+  2. 通过api的直接调用接口
 
-关于样式的文档解说说明
+    ```
+
+    export default({$axios},inject)=>{
+          inject('test',()=>$axios.$get('/test'))
+          inject('test2',()=>$axios.$get('/test'))
+      }
+
+    ```
+  3. 在页面中怎么调用接口
+  类似案例如：
+
+  ```
+
+  async asyncdata({$axios,app}){
+      const respone=await app.$test()
+    console.log('respopnse‘,respone)
+    return {
+        data:respone.data
+    }
+  }
+  async asyncdata({$axios]}){
+      const response=await $axios.get()
+      return(data:response。data)
+  }
+
+  ```
+
+  路由跳转放在appheader.vue文件中
+
+  ```
+    <el-menu-item index="/music" class="el-menu-demo">
+                    <span class="menusize">music</span></el-menu-item
+                  >
+                  <el-menu-item index="/Aboutus" class="el-menu-demo">
+                    <span class="menusize">关于我们</span></el-menu-item
+                  >
+  ```
+
+  页面路由的路径只需要 /about
+
+## 关于样式
 Settings 维护整个网站的变量
 Tools  维护一些样式的工具库
 Base  对元素进行一些定制化处理
 Objects 通用模块的样式处理
 theme 样式的权重变高
 
-项目启动使用：
+## 项目启动使用：
 yarn install
 
 yarn dev
