@@ -31,17 +31,17 @@
                 <el-menu-item index="/ContactUs" class="el-menu-demo">
                   <span class="menusize">联系我们</span></el-menu-item
                 >
-                 <el-menu-item index="3" class="el-menu-demo">
-                  <span class="menusize">texttable3</span></el-menu-item
+                 <el-menu-item index="/News" class="el-menu-demo">
+                  <span class="menusize">News</span></el-menu-item
                 >
-                 <el-menu-item index="3" class="el-menu-demo">
-                  <span class="menusize">texttable3</span></el-menu-item
+                 <el-menu-item index="/Newsarticles" class="el-menu-demo">
+                  <span class="menusize">新闻文章</span></el-menu-item
                 >
-                 <el-menu-item index="3" class="el-menu-demo">
-                  <span class="menusize">texttable3</span></el-menu-item
+                 <el-menu-item index="/ShippingReturnPolicy" class="el-menu-demo">
+                  <span class="menusize">条款和条件</span></el-menu-item
                 >
-                 <el-menu-item index="3" class="el-menu-demo">
-                  <span class="menusize">texttable3</span></el-menu-item
+                 <el-menu-item index="/OrderTracking" class="el-menu-demo">
+                  <span class="menusize">订单</span></el-menu-item
                 >
               </el-menu>
             </div>

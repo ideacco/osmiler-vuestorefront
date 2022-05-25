@@ -89,7 +89,8 @@ server: {
     'element-ui/lib/theme-chalk/index.css',
     'element-ui/lib/theme-chalk/display.css',
     'uikit/dist/css/uikit.min.css',
-    'normalize.css/normalize.css'
+    'normalize.css/normalize.css',
+    {src:'~style/index.scss',lang:'scss'},
   ],
   modules: [
     '@nuxtjs/i18n',
@@ -191,7 +192,8 @@ server: {
     scss: [
       require.resolve('@storefront-ui/shared/styles/_helpers.scss', {
         paths: [process.cwd()]
-      })
+      }),
+      './style/index.scss',
     ]
   },
   build: {
