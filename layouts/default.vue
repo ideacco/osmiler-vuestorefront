@@ -16,9 +16,7 @@
       <Notification />
     </LazyHydrate>
     <TopBar class="desktop-only" />
-    <AppHeader
-      :cart-total-items="getCartTotalItems"
-      :is-user-authenticated="isAuthenticated"
+    <Header
     />
     <div id="layout">
       <nuxt :key="route.fullPath" />
@@ -30,7 +28,8 @@
 </template>
 
 <script>
-import AppHeader from '~/components/AppHeader.vue';
+
+import Header from '~/components/JHeader.vue';
 import TopBar from '~/components/TopBar.vue';
 import LazyHydrate from 'vue-lazy-hydration';
 import {
@@ -41,12 +40,13 @@ import {
 } from '@vue-storefront/shopify';
 import { computed, onBeforeMount, provide, useRoute, useContext } from '@nuxtjs/composition-api';
 import LoadWhenVisible from '~/components/utils/LoadWhenVisible';
+
 export default {
   name: 'DefaultLayout',
   components: {
     LazyHydrate,
     TopBar,
-    AppHeader,
+    Header,
     BottomNavigation: () => import(/* webpackPrefetch: true */ '~/components/BottomNavigation.vue'),
     AppFooter: () => import(/* webpackPrefetch: true */ '~/components/AppFooter.vue'),
     CartSidebar: () => import(/* webpackPrefetch: true */ '~/components/CartSidebar.vue'),
@@ -87,7 +87,6 @@ export default {
 #layout {
   box-sizing: border-box;
     @include for-desktop {
-    max-width: 1440px;
     margin: auto;
   }
 

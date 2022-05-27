@@ -2,7 +2,7 @@
   <div>
     <TopBar class="desktop-only" />
     <div id="layout" >
-      <AppHeader />
+      <Header />
       <nuxt />
       <BottomNavigation />
       <CartSidebar />
@@ -13,6 +13,8 @@
 
 <script>
 import AppHeader from '~/components/AppHeader.vue';
+import Header from '~/components/JHeader.vue';
+
 import BottomNavigation from '~/components/BottomNavigation.vue';
 import TopBar from '~/components/TopBar.vue';
 import CartSidebar from '~/components/CartSidebar.vue';
@@ -26,7 +28,8 @@ export default {
     AppHeader,
     BottomNavigation,
     CartSidebar,
-    LoginModal
+    LoginModal,
+    Header
   }
 }
 </script>

@@ -92,35 +92,32 @@
       text-align: center;
       vertical-align: middle;
       .conatactbox6 {
-      padding: 12px 28px;
-      width: 169px;
-      height: 44px;
-      /* 功能色/品牌/Brand_light */
-      background: #5d47ee;
-      border-radius: 22px;
-      /* Inside auto layout */
-      flex: none;
-      order: 0;
-      flex-grow: 1;
+        padding: 12px 28px;
+        width: 169px;
+        height: 44px;
+        /* 功能色/品牌/Brand_light */
+        background: #5d47ee;
+        border-radius: 22px;
+        /* Inside auto layout */
+        flex: none;
+        order: 0;
+        flex-grow: 1;
+      }
+      .conatactbox7 {
+        padding: 0px;
+      }
+      .conatactbox8 {
+        font-family: "Alibaba PuHuiTi";
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 16px;
+        /* identical to box height, or 150% */
+        /* 浅色模式文本/Anti */
+        color: #ffffff;
+        /* Inside auto layout */
+      }
     }
-    .conatactbox7 {
-      padding: 0px;
-    }
-    .conatactbox8{
-font-family: 'Alibaba PuHuiTi';
-font-style: normal;
-font-weight: 400;
-font-size: 16px;
-line-height: 16px;
-/* identical to box height, or 150% */
-/* 浅色模式文本/Anti */
-color: #FFFFFF;
-/* Inside auto layout */
-
-
-    }
-    }
-
   }
 }
 </style>

@@ -40,7 +40,7 @@
                  <el-menu-item index="/ShippingReturnPolicy" class="el-menu-demo">
                   <span class="menusize">条款和条件</span></el-menu-item
                 >
-                 <el-menu-item index="/OrderTracking" class="el-menu-demo">
+                 <el-menu-item index="/Toothbrushproducts" class="el-menu-demo">
                   <span class="menusize">订单</span></el-menu-item
                 >
               </el-menu>
@@ -51,7 +51,7 @@
         <el-col class="nav-sign" :xl="3" :lg="3" :xs="10" :sm="10" :md="8">
          <div class="buttonbox">
            <div class="buttonbox1">
-             <el-button type="text" class="button3">sign in</el-button>
+             <el-button type="text" class="button3"    @click="toggleLoginModal()">sign in</el-button>
            </div>
          </div>
           <div class="buttonbox33">
@@ -66,6 +66,7 @@
   </div>
 </template>
 <script type="module">
+
 </script>
 <style lang="css" scoped>
 .mxg-header {

@@ -1,0 +1,4 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="240" height="360" viewBox="0 0 240 360">
+  <circle cx="120" cy="120" r="120" fill="#f6a2b1"/>
+  <path class="uk-preserve" d="M120,240V360A120,120,0,0,1,0,240Z" fill="#fedf72"/>
+</svg>

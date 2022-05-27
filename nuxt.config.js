@@ -54,7 +54,8 @@ server: {
     ]
   },
   loading: { color: '#fff' },
-  plugins: ["~/plugins/scrollToTop.client.js", '@/plugins/element-ui','@/plugins/UIkit',
+  plugins: ["~/plugins/scrollToTop.client.js", '@/plugins/element-ui',
+ {src:'~/plugins/UIkit',ssr:false},
   '~/plugins/interceptor',
   '~/api/test'
 ],

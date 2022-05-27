@@ -1,5 +1,6 @@
 <template>
-  <div >
+  <div class="uk-section-default uk-light" tm-header-transparent="light"
+            uk-scrollspy="target:[uk-scrollspy-class]; cls: uk-animation-slide-bottom-medium; delay: false;">
     <el-row class="bannerbox">
       <el-col :xs="24" :sm="24" :md="24" :lg="24" :xl="24">
         <el-image src="/homepage/background1.jpg" style="height: 960px" />
@@ -717,7 +718,9 @@
   </div>
 
 </template>
+
 <script type="module">
+
 export default {
   name: 'DefaultLayout',
   components: {
