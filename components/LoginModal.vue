@@ -1,219 +1,261 @@
 <template>
-  <SfModal
-    v-e2e="'login-modal'"
-    :visible="isLoginModalOpen"
-    class="modal"
-    @close="closeModal"
-  >
-    <template #modal-bar>
-      <SfBar
-        class="sf-modal__bar smartphone-only"
-        :close="true"
-        :title="$t(barTitle)"
-        @click:close="closeModal"
-      />
-    </template>
-    <transition name="sf-fade" mode="out-in">
-      <div v-if="isLogin">
-        <ValidationObserver v-slot="{ handleSubmit }" key="log-in">
-          <form class="form" @submit.prevent="handleSubmit(handleLogin)">
-            <ValidationProvider v-slot="{ errors }" rules="required|email">
-              <SfInput
-                v-model="form.username"
-                v-e2e="'login-modal-email'"
-                :valid="!errors[0]"
-                :error-message="errors[0]"
-                name="email"
-                label="Your email"
-                class="form__element"
-              />
-            </ValidationProvider>
-            <ValidationProvider v-slot="{ errors }" rules="required">
-              <SfInput
-                v-model="form.password"
-                v-e2e="'login-modal-password'"
-                :valid="!errors[0]"
-                :error-message="errors[0]"
-                name="password"
-                label="Password"
-                type="password"
-                class="form__element"
-              />
-            </ValidationProvider>
-            <SfCheckbox
-              v-model="rememberMe"
-              v-e2e="'login-modal-remember-me'"
-              name="remember-me"
-              label="Remember me"
-              class="form__element checkbox"
-            />
-            <div v-if="error.login">
-              {{ error.login }}
-            </div>
-            <SfButton
-v-e2e="'login-modal-submit'"
-              type="submit"
-              class="sf-button--full-width form__button"
-              :disabled="loading"
-            >
-              <SfLoader :class="{ loader: loading }" :loading="loading">
-                <div>{{ $t('Login') }}</div>
-              </SfLoader>
-            </SfButton>
-          </form>
-        </ValidationObserver>
-        <div class="action">
-          <SfButton class="sf-button--text" @click="setIsForgottenValue(true)">
-            {{ $t('Forgotten password?') }}
-          </SfButton>
-        </div>
-        <div class="bottom">
-          <p class="bottom__paragraph">{{ $t('No account') }}</p>
-          <SfButton class="sf-button--text" @click="setIsLoginValue(false)">
-            {{ $t('Register today') }}
-          </SfButton>
-        </div>
-      </div>
-      <div v-else-if="isForgotten">
-        <p>{{ $t('Forgot Password') }}</p>
-        <ValidationObserver v-slot="{ handleSubmit }" key="log-in">
-          <form class="form" @submit.prevent="handleSubmit(handleForgotten)">
-            <ValidationProvider v-slot="{ errors }" rules="required|email">
-              <SfInput
-                v-model="form.username"
-                v-e2e="'forgot-modal-email'"
-                :valid="!errors[0]"
-                :error-message="errors[0]"
-                name="email"
-                :label="$t('Forgot Password Modal Email')"
-                class="form__element"
-              />
-            </ValidationProvider>
-            <div v-if="forgotPasswordError.request">
-              {{ forgotPasswordError.request.message }}
-            </div>
-            <SfButton
-              v-e2e="'forgot-modal-submit'"
-              type="submit"
-              class="sf-button--full-width form__button"
-              :disabled="forgotPasswordLoading"
-            >
-              <SfLoader :class="{ loader: forgotPasswordLoading }" :loading="forgotPasswordLoading">
-                <div>{{ $t('Reset Password') }}</div>
-              </SfLoader>
-            </SfButton>
-          </form>
-        </ValidationObserver>
-      </div>
-      <div v-else-if="isThankYouAfterForgotten" class="thank-you">
-        <i18n tag="p" class="thank-you__paragraph" path="forgotPasswordConfirmation">
-          <span class="thank-you__paragraph--bold">{{ userEmail }}</span>
-        </i18n>
-        <p class="thank-you__paragraph">{{ $t('Thank You Inbox') }}</p>
-      </div>
-      <div v-else class="form">
-        <ValidationObserver v-slot="{ handleSubmit }" key="sign-up">
-          <form class="form" autocomplete="off" @submit.prevent="handleSubmit(handleRegister)">
-            <ValidationProvider v-slot="{ errors }" rules="required|email">
-              <SfInput
-                v-model="form.email"
-                v-e2e="'login-modal-email'"
-                :valid="!errors[0]"
-                :error-message="errors[0]"
-                name="email"
-                label="Your email"
-                class="form__element"
-              />
-            </ValidationProvider>
-            <ValidationProvider v-slot="{ errors }" rules="required">
-              <SfInput
-                v-model="form.firstName"
-                v-e2e="'login-modal-firstName'"
-                :valid="!errors[0]"
-                :error-message="errors[0]"
-                name="first-name"
-                label="First Name"
-                class="form__element"
-              />
-            </ValidationProvider>
-            <ValidationProvider v-slot="{ errors }" rules="required">
-              <SfInput
-                v-model="form.lastName"
-                v-e2e="'login-modal-lastName'"
-                :valid="!errors[0]"
-                :error-message="errors[0]"
-                name="last-name"
-                label="Last Name"
-                class="form__element"
-              />
-            </ValidationProvider>
-            <ValidationProvider v-slot="{ errors }" rules="required">
-              <SfInput
-                v-model="form.password"
-                v-e2e="'login-modal-password'"
-                :valid="!errors[0]"
-                :error-message="errors[0]"
-                name="password"
-                label="Password"
-                type="password"
-                class="form__element"
-              />
-            </ValidationProvider>
-            <ValidationProvider v-slot="{ errors }" :rules="{ required: { allowFalse: false } }">
+  <div>
+    <SfModal
+      v-e2e="'login-modal'"
+      :visible="isLoginModalOpen"
+      class="modal"
+      @close="handleClose"
+    >
+      <template>
+        <SfBar
+          class="sf-modal__bar smartphone-only"
+          :close="true"
+          :title="$t(barTitle)"
+          @click:close="closeModal"
+        />
+      </template>
+      <transition name="sf-fade" mode="out-in">
+        <div v-if="isLogin">
+          <ValidationObserver v-slot="{ handleSubmit }" key="log-in">
+            <form class="form" @submit.prevent="handleSubmit(handleLogin)">
+              <ValidationProvider v-slot="{ errors }" rules="required|email">
+                <SfInput
+                  v-model="form.username"
+                  v-e2e="'login-modal-email'"
+                  :valid="!errors[0]"
+                  :error-message="errors[0]"
+                  name="email"
+                  label="Your email"
+                  class="form__element"
+                />
+              </ValidationProvider>
+              <ValidationProvider v-slot="{ errors }" rules="required">
+                <SfInput
+                  v-model="form.password"
+                  v-e2e="'login-modal-password'"
+                  :valid="!errors[0]"
+                  :error-message="errors[0]"
+                  name="password"
+                  label="Password"
+                  type="password"
+                  class="form__element"
+                />
+              </ValidationProvider>
               <SfCheckbox
-                v-model="createAccount"
-                v-e2e="'login-modal-create-account'"
-                :valid="!errors[0]"
-                :error-message="errors[0]"
-                name="create-account"
-                label="I want to create an account"
-                class="form__element"
+                v-model="rememberMe"
+                v-e2e="'login-modal-remember-me'"
+                name="remember-me"
+                label="Remember me"
+                class="form__element checkbox"
               />
-            </ValidationProvider>
-            <div v-if="error.register">
-              {{ error.register }}
-            </div>
+              <div v-if="error.login">
+                {{ error.login }}
+              </div>
+              <SfButton
+                v-e2e="'login-modal-submit'"
+                type="submit"
+                class="sf-button--full-width form__button"
+              >
+                <div>Login</div>
+
+              </SfButton>
+            </form>
+          </ValidationObserver>
+          <div class="action">
             <SfButton
-              type="submit"
-              class="sf-button--full-width form__button"
-              :disabled="loading"
+              class="sf-button--text"
+              @click="setIsForgottenValue(true)"
             >
-              <SfLoader :class="{ loader: loading }" :loading="loading">
-                <div>{{ $t('Create an account') }}</div>
-              </SfLoader>
+              Forgotten password
             </SfButton>
-          </form>
-        </ValidationObserver>
-        <div class="action">
-          {{ $t('or') }}
-          <SfButton class="sf-button--text back-to-login" @click="setIsLoginValue(true)">
-            {{ $t('login in to your account') }}
-          </SfButton>
+          </div>
+          <div class="bottom">
+            <p class="bottom__paragraph">No account</p>
+            <SfButton class="sf-button--text" @click="setIsLoginValue(false)">
+              Register today
+            </SfButton>
+          </div>
         </div>
-      </div>
-    </transition>
-  </SfModal>
+        <div v-else-if="isForgotten">
+          <p>Forgot Password</p>
+          <ValidationObserver v-slot="{ handleSubmit }" key="log-in">
+            <form class="form" @submit.prevent="handleSubmit(handleForgotten)">
+              <ValidationProvider v-slot="{ errors }" rules="required|email">
+                <SfInput
+                  v-model="form.username"
+                  v-e2e="'forgot-modal-email'"
+                  :valid="!errors[0]"
+                  :error-message="errors[0]"
+                  name="email"
+                  :label="$t('Forgot Password Modal Email')"
+                  class="form__element"
+                />
+              </ValidationProvider>
+              <div v-if="forgotPasswordError.request">
+                {{ forgotPasswordError.request.message }}
+              </div>
+              <SfButton
+                v-e2e="'forgot-modal-submit'"
+                type="submit"
+                class="sf-button--full-width form__button"
+                :disabled="forgotPasswordLoading"
+              >
+                <div>Reset Password</div>
+              </SfButton>
+            </form>
+          </ValidationObserver>
+        </div>
+        <div v-else-if="isThankYouAfterForgotten" class="thank-you">
+          <i18n
+            tag="p"
+            class="thank-you__paragraph"
+            path="forgotPasswordConfirmation"
+          >
+            <span class="thank-you__paragraph--bold">{{ userEmail }}</span>
+          </i18n>
+          <p class="thank-you__paragraph">Thank You Inbox</p>
+        </div>
+        <div v-else class="form">
+          <ValidationObserver v-slot="{ handleSubmit }" key="sign-up">
+            <form
+              class="form"
+              autocomplete="off"
+              @submit.prevent="handleSubmit(handleRegister)"
+            >
+              <ValidationProvider v-slot="{ errors }" rules="required|email">
+                <SfInput
+                  v-model="form.email"
+                  v-e2e="'login-modal-email'"
+                  :valid="!errors[0]"
+                  :error-message="errors[0]"
+                  name="email"
+                  label="Your email"
+                  class="form__element"
+                />
+              </ValidationProvider>
+              <ValidationProvider v-slot="{ errors }" rules="required">
+                <SfInput
+                  v-model="form.firstName"
+                  v-e2e="'login-modal-firstName'"
+                  :valid="!errors[0]"
+                  :error-message="errors[0]"
+                  name="first-name"
+                  label="First Name"
+                  class="form__element"
+                />
+              </ValidationProvider>
+              <ValidationProvider v-slot="{ errors }" rules="required">
+                <SfInput
+                  v-model="form.lastName"
+                  v-e2e="'login-modal-lastName'"
+                  :valid="!errors[0]"
+                  :error-message="errors[0]"
+                  name="last-name"
+                  label="Last Name"
+                  class="form__element"
+                />
+              </ValidationProvider>
+              <ValidationProvider v-slot="{ errors }" rules="required">
+                <SfInput
+                  v-model="form.password"
+                  v-e2e="'login-modal-password'"
+                  :valid="!errors[0]"
+                  :error-message="errors[0]"
+                  name="password"
+                  label="Password"
+                  type="password"
+                  class="form__element"
+                />
+              </ValidationProvider>
+              <ValidationProvider
+                v-slot="{ errors }"
+                :rules="{ required: { allowFalse: false } }"
+              >
+                <SfCheckbox
+                  v-model="createAccount"
+                  v-e2e="'login-modal-create-account'"
+                  :valid="!errors[0]"
+                  :error-message="errors[0]"
+                  name="create-account"
+                  label="I want to create an account"
+                  class="form__element"
+                />
+              </ValidationProvider>
+              <div v-if="error.register">
+                {{ error.register }}
+              </div>
+              <SfButton
+                type="submit"
+                class="sf-button--full-width form__button"
+              >
+                <div>Create an account</div>
+              </SfButton>
+            </form>
+          </ValidationObserver>
+          <div class="action">
+            or
+            <SfButton
+              class="sf-button--text back-to-login"
+              @click="setIsLoginValue(true)"
+            >
+              login in to your account
+            </SfButton>
+          </div>
+        </div>
+      </transition>
+    </SfModal>
+  </div>
 </template>
 <script>
-import { ref, watch, reactive, computed, useRouter, useContext } from '@nuxtjs/composition-api';
-import { SfModal, SfInput, SfButton, SfCheckbox, SfLoader, SfBar } from '@storefront-ui/vue';
-import { ValidationProvider, ValidationObserver, extend } from 'vee-validate';
-import { required, email } from 'vee-validate/dist/rules';
-import { useUser, useForgotPassword } from '@vue-storefront/shopify';
-import { useUiState, useUiNotification } from '~/composables';
+import {
+  ref,
+  watch,
+  reactive,
+  computed,
+  useRouter,
+  useContext,
+} from "@nuxtjs/composition-api";
+import {
+  SfModal,
+  SfInput,
+  SfButton,
+  SfCheckbox,
+  SfLoader,
+  SfBar,
+} from "@storefront-ui/vue";
+import { ValidationProvider, ValidationObserver, extend } from "vee-validate";
+import { required, email } from "vee-validate/dist/rules";
+import { useUser, useForgotPassword } from "@vue-storefront/shopify";
+import { useUiState, useUiNotification } from "~/composables";
 
-extend('email', {
+extend("email", {
   ...email,
-  message: 'Invalid email'
+  message: "Invalid email",
 });
 
-extend('required', {
+extend("required", {
   ...required,
-  message: 'This field is required'
+  message: "This field is required",
 });
 
 export default {
-  name: 'LoginModal',
+  name: "LoginModal",
+  data() {
+    return {
+      isLoginModalOpen: false,
+    };
+  },
+  props: {
+    visible: {
+      type: Boolean,
+      default: false,
+    },
+  },
+  watch: {
+    visible() {
+      this.isLoginModalOpen = this.visible;
+    },
+  },
   components: {
     SfModal,
     SfInput,
@@ -222,7 +264,7 @@ export default {
     SfLoader,
     ValidationProvider,
     ValidationObserver,
-    SfBar
+    SfBar,
   },
   setup() {
     const { isLoginModalOpen, toggleLoginModal } = useUiState();
@@ -230,22 +272,22 @@ export default {
     const isLogin = ref(false);
     const isForgotten = ref(false);
     const isThankYouAfterForgotten = ref(false);
-    const userEmail = ref('');
+    const userEmail = ref("");
     const createAccount = ref(false);
     const rememberMe = ref(false);
     const { register, login, loading, error: userError, user } = useUser();
-    const forgotPasswordError = ref(false)
-    const forgotPasswordLoading = ref(false)
-    const { request } = useForgotPassword()
-    const { send: sendNotification} = useUiNotification();
+    const forgotPasswordError = ref(false);
+    const forgotPasswordLoading = ref(false);
+    const { request } = useForgotPassword();
+    const { send: sendNotification } = useUiNotification();
     const router = useRouter();
     const context = useContext();
     // const { request } = useForgotPassword()
     // const { request, error: forgotPasswordError, loading: forgotPasswordLoading } = useForgotPassword();
-    
+
     const error = reactive({
       login: null,
-      register: null
+      register: null,
     });
 
     const resetErrorValues = () => {
@@ -255,11 +297,11 @@ export default {
 
     const barTitle = computed(() => {
       if (isLogin.value) {
-        return 'Sign in';
+        return "Sign in";
       } else if (isForgotten.value || isThankYouAfterForgotten.value) {
-        return 'Reset Password';
+        return "Reset Password";
       } else {
-        return 'Register';
+        return "Register";
       }
     });
 
@@ -284,50 +326,53 @@ export default {
     const handleForm = (fn) => async () => {
       resetErrorValues();
       await fn({ user: form.value });
-      if (user.value.error && user.value.error !== '') {
-        if (user.value.error === 'Unidentified customer') {
-          user.value.error = 'Invalid email id or password!';
-        } else if (user.value.error === 'Email has already been taken') {
-          user.value.error = 'This email address is already associated with an account. If this account is yours, you can reset your password';
+      if (user.value.error && user.value.error !== "") {
+        if (user.value.error === "Unidentified customer") {
+          user.value.error = "Invalid email id or password!";
+        } else if (user.value.error === "Email has already been taken") {
+          user.value.error =
+            "This email address is already associated with an account. If this account is yours, you can reset your password";
         }
         sendNotification({
-          key: 'login_failed',
+          key: "login_failed",
           message: user.value.error,
-          type: 'danger',
-          title: 'Failed!'
+          type: "danger",
+          title: "Failed!",
         });
-      } else if (user.value.token && user.value.token === 'forgotPassword') {
+      } else if (user.value.token && user.value.token === "forgotPassword") {
         sendNotification({
-          key: 'link_sent',
-          message: 'Reset password link has been successfully sent to ' + form.value.username,
-          type: 'success',
-          icon: 'check',
-          title: 'linkSent!'
+          key: "link_sent",
+          message:
+            "Reset password link has been successfully sent to " +
+            form.value.username,
+          type: "success",
+          icon: "check",
+          title: "linkSent!",
         });
         isForgotPassword.value = false;
         isLogin.value = true;
-      } else if (user.value.token && user.value.token === 'SignUpSuccess') {
+      } else if (user.value.token && user.value.token === "SignUpSuccess") {
         sendNotification({
-          key: 'signup_success',
-          message: 'Your registration is successfully done',
-          type: 'success',
-          icon: 'check',
-          title: 'Sign Up Success!'
+          key: "signup_success",
+          message: "Your registration is successfully done",
+          type: "success",
+          icon: "check",
+          title: "Sign Up Success!",
         });
         form.value = {};
         if (process.client) {
-          document.querySelector('button.back-to-login').click();
+          document.querySelector("button.back-to-login").click();
         }
       } else {
         toggleLoginModal();
         sendNotification({
-          key: 'login_success',
-          message: 'You are successfully logged in',
-          type: 'success',
-          title: 'Success!',
-          icon: 'check'
+          key: "login_success",
+          message: "You are successfully logged in",
+          type: "success",
+          title: "Success!",
+          icon: "check",
         });
-        router.push(context.app.localePath('/my-account'));
+        router.push(context.app.localePath("/my-account"));
       }
     };
 
@@ -339,7 +384,9 @@ export default {
 
     const handleRegister = () => handleForm(register)();
 
-    const handleLogin = () => handleForm(login)();
+    const handleLogin = async() => handleForm(login)(
+      await console.log(login,5545897878)
+    );
 
     const handleForgotten = async () => {
       userEmail.value = form.value.username;
@@ -372,14 +419,23 @@ export default {
       closeModal,
       isThankYouAfterForgotten,
       userEmail,
-      barTitle
+      barTitle,
     };
-  }
+  },
+  methods: {
+    init(data) {
+      this.isLoginModalOpen = true;
+      console.log(data);
+    },
+    handleClose() {
+      this.$emit("closeDialog");
+    },
+
+  },
 };
 </script>
 
 <style lang="scss" scoped>
-
 .modal {
   --modal-index: 3;
   --overlay-z-index: 3;
@@ -390,15 +446,26 @@ export default {
     margin: 0 0 var(--spacer-xl) 0;
   }
 }
+.form__button {
+  background: #5d47ee;
+}
+.bottom__paragraph {
+  color: #5d47ee !important ;
+}
+
 .action {
   display: flex;
   align-items: center;
   justify-content: center;
   margin: var(--spacer-xl) 0 var(--spacer-xl) 0;
-  font: var(--font-weight--light) var(--font-size--base) / 1.6 var(--font-family--secondary);
+  font: var(--font-weight--light) var(--font-size--base) / 1.6
+    var(--font-family--secondary);
   & > * {
     margin: 0 0 0 var(--spacer-xs);
   }
+}
+.will-changeL:hover {
+  color: #5d47ee !important ;
 }
 .action {
   margin: var(--spacer-xl) 0 var(--spacer-xl) 0;
@@ -419,6 +486,9 @@ export default {
       margin: 0;
     }
   }
+}
+.sf-button--text:hover {
+  color: #5d47ee;
 }
 .thank-you {
   &__paragraph {

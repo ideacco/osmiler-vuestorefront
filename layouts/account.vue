@@ -1,6 +1,6 @@
 <template>
   <div>
-    <TopBar class="desktop-only" />
+
     <div id="layout" >
       <Header />
       <nuxt />
@@ -16,7 +16,7 @@ import AppHeader from '~/components/AppHeader.vue';
 import Header from '~/components/JHeader.vue';
 
 import BottomNavigation from '~/components/BottomNavigation.vue';
-import TopBar from '~/components/TopBar.vue';
+
 import CartSidebar from '~/components/CartSidebar.vue';
 import LoginModal from '~/components/LoginModal.vue';
 
@@ -24,7 +24,6 @@ export default {
   name: 'AccountLayout',
 
   components: {
-    TopBar,
     AppHeader,
     BottomNavigation,
     CartSidebar,

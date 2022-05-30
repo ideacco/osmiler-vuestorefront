@@ -15,7 +15,7 @@
     <LazyHydrate when-visible>
       <Notification />
     </LazyHydrate>
-    <TopBar class="desktop-only" />
+
     <Header
     />
     <div id="layout">
@@ -30,7 +30,6 @@
 <script>
 
 import Header from '~/components/JHeader.vue';
-import TopBar from '~/components/TopBar.vue';
 import LazyHydrate from 'vue-lazy-hydration';
 import {
   useUser,
@@ -45,7 +44,6 @@ export default {
   name: 'DefaultLayout',
   components: {
     LazyHydrate,
-    TopBar,
     Header,
     BottomNavigation: () => import(/* webpackPrefetch: true */ '~/components/BottomNavigation.vue'),
     AppFooter: () => import(/* webpackPrefetch: true */ '~/components/AppFooter.vue'),
