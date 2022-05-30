@@ -7,7 +7,7 @@ VUE_APP_TITLE:process.env.VUE_APP_TITLE,
 },
 server: {
   port:8888,
-  host: '0.0.0.0'
+  host: 'localhost'
 },
   publicRuntimeConfig: {
     appKey: 'vsf2spcon',
@@ -22,7 +22,7 @@ server: {
     { path: '/custom', handler: '~/server-middleware/custom-features.js' }
   ],
   head: {
-    title: 'Shopify | Vue Storefront Next',
+    title: 'Osmiler',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
@@ -90,7 +90,7 @@ server: {
     'element-ui/lib/theme-chalk/index.css',
     'element-ui/lib/theme-chalk/display.css',
     'uikit/dist/css/uikit.min.css',
-    'normalize.css/normalize.css',
+    // 'normalize.css/normalize.css',
     {src:'~style/index.scss',lang:'scss'},
   ],
   modules: [

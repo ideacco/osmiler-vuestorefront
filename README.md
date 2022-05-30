@@ -53,20 +53,12 @@ vuestorefront 底层基础使用 (nuxt)[https://www.nuxtjs.org/] 作为基础支
 (vuestorefront CSS 文档地址)[https://docs.storefrontui.io/?path=/docs/utilities-transitions--slide-left]
 
 
-### Stay connected
-
-[![GitHub Repo stars](https://img.shields.io/github/stars/vuestorefront/vue-storefront?style=social)](https://github.com/vuestorefront/vue-storefront)
-[![Twitter Follow](https://img.shields.io/twitter/follow/vuestorefront?style=social)](https://twitter.com/vuestorefront)
-[![YouTube Channel Subscribers](https://img.shields.io/youtube/channel/subscribers/UCkm1F3Cglty3CE1QwKQUhhg?style=social)](https://www.youtube.com/c/VueStorefront)
-[![Discord](https://img.shields.io/discord/770285988244750366?label=join%20discord&logo=Discord&logoColor=white)](https://discord.vuestorefront.io)
-
-Vue Storefront 2 template for Shopify.
 
 # 接口的封装
   1. 通过package.json 切换环境部署
   2. 通过api的直接调用接口
 
-    ```
+    ```js
 
     export default({$axios},inject)=>{
           inject('test',()=>$axios.$get('/test'))
@@ -77,7 +69,7 @@ Vue Storefront 2 template for Shopify.
   3. 在页面中怎么调用接口
   类似案例如：
 
-  ```
+  ```js
 
   async asyncdata({$axios,app}){
       const respone=await app.$test()
@@ -95,7 +87,7 @@ Vue Storefront 2 template for Shopify.
 
   路由跳转放在appheader.vue文件中
 
-  ```
+  ```js
     <el-menu-item index="/music" class="el-menu-demo">
                     <span class="menusize">music</span></el-menu-item
                   >
@@ -106,14 +98,63 @@ Vue Storefront 2 template for Shopify.
 
   页面路由的路径只需要 /about
 
-## 关于样式
+## 如何自定义样式
+
+1. 首先在配置文件中,注册样式文件: `nuxt.config.js`
+
+```js
+styleResources: {
+    scss: [
+      require.resolve('@storefront-ui/shared/styles/_helpers.scss', {
+        paths: [process.cwd()]
+      })
+    ]
+  }
+
+```
+
+2. 编辑SCSS 文件 `/style/index.scss`
+
+
+
+
 Settings 维护整个网站的变量
 Tools  维护一些样式的工具库
 Base  对元素进行一些定制化处理
 Objects 通用模块的样式处理
 theme 样式的权重变高
 
+
+## ENV与环境配置
+默认的环境配置在`.env`文件中
+
+```
+SHOPIFY_DOMAIN=xxx.myshopify.com
+SHOPIFY_STOREFRONT_TOKEN= xxx
+BASE_URL=localhost:8888
+```
+
+请注意 `BASE_URL=localhost:8888`这个端口号应该与 `nuxt.config.js`中的`port`端口对应
+```json
+server: {
+  port:8888,
+  host: 'localhost'
+}
+```
+
+
 ## 项目启动使用：
 yarn install
 
 yarn dev
+
+
+### Stay connected (项目原始地址)
+
+[![GitHub Repo stars](https://img.shields.io/github/stars/vuestorefront/vue-storefront?style=social)](https://github.com/vuestorefront/vue-storefront)
+[![Twitter Follow](https://img.shields.io/twitter/follow/vuestorefront?style=social)](https://twitter.com/vuestorefront)
+[![YouTube Channel Subscribers](https://img.shields.io/youtube/channel/subscribers/UCkm1F3Cglty3CE1QwKQUhhg?style=social)](https://www.youtube.com/c/VueStorefront)
+[![Discord](https://img.shields.io/discord/770285988244750366?label=join%20discord&logo=Discord&logoColor=white)](https://discord.vuestorefront.io)
+
+Vue Storefront 2 template for Shopify.
+
