@@ -5,7 +5,7 @@
                 <div class="tm-grid-expand uk-grid-margin" uk-grid>
                     <div class="uk-width-1-2@s uk-width-1-5@m">
                         <div class="uk-margin uk-text-left@s uk-text-center">
-                            <a class="el-link" href="./../index.php"><img
+                            <a class="el-link" ><img
                                     src="../static/wp-content/uploads/2022/05/osmiler-logo-default.svg" style="width:120px"
                                     class="el-image" alt="Osmiler"></a>
                         </div>

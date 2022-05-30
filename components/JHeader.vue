@@ -223,7 +223,6 @@
                 <div class="uk-panel textwidget">
                   <p>
                     <a
-                      href="./../index.php?page_id=8"
                       class="uk-button uk-button-primary uk-width-1-1"
                       >Book Appointment</a
                     >
