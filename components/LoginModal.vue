@@ -385,7 +385,6 @@ export default {
     const handleRegister = () => handleForm(register)();
 
     const handleLogin = async() => handleForm(login)(
-      await console.log(login,5545897878)
     );
 
     const handleForgotten = async () => {
