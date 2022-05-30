@@ -30,7 +30,7 @@
                             <div class="uk-grid-item-match uk-flex-middle uk-width-1-3@l">
                                 <div class="uk-panel uk-width-1-1">
                                     <h2 class="uk-h5 uk-text-primary" uk-scrollspy-class> Tracklist </h2>
-                                    <div class="uk-overflow-auto" uk-scrollspy-class>
+                                    <div class="uk-overflow-auto" uk-scrollspy-class style="width:600px">
                                         <table class="uk-table uk-table-justify uk-table-small uk-table-middle">
                                             <tbody>
                                                 <tr class="el-item">
@@ -42,7 +42,14 @@
                                                     </td>
                                                     <td class="uk-text-nowrap uk-text-right uk-table-shrink"><a
                                                             class="el-link uk-button uk-button-primary uk-button-small"
-                                                            href="/wp-content/uploads/2022/05/06-Up.mp3">Sample</a>
+                                                            href="/wp-content/uploads/2022/05/06-Up.mp3"
+                                                            style="width: 129px;"
+
+                                                            >Sample</a>
+                                                    </td>
+                                                      <td class="uk-text-nowrap uk-text-right uk-table-shrink"><a
+                                                            class="el-link uk-button uk-button-primary uk-button-small"
+                                                              href="/wp-content/uploads/2022/05/06-Up.mp3" download=“Alpha.mp3“>download</a>
                                                     </td>
                                                 </tr>
                                                 <tr class="el-item">
@@ -54,7 +61,13 @@
                                                     </td>
                                                     <td class="uk-text-nowrap uk-text-right"><a
                                                             class="el-link uk-button uk-button-primary uk-button-small"
-                                                            href="#" uk-scroll>Sample</a></td>
+                                                            href="#"
+                                                            style="width: 129px;"
+                                                            uk-scroll>Sample</a></td>
+                                                               <td class="uk-text-nowrap uk-text-right uk-table-shrink"><a
+                                                            class="el-link uk-button uk-button-primary uk-button-small"
+                                                              href="/wp-content/uploads/2022/05/06-Up.mp3" download=“Alpha.mp3“>download</a>
+                                                    </td>
                                                 </tr>
                                                 <tr class="el-item">
                                                     <td class="uk-text-nowrap">
@@ -65,7 +78,13 @@
                                                     </td>
                                                     <td class="uk-text-nowrap uk-text-right"><a
                                                             class="el-link uk-button uk-button-primary uk-button-small"
-                                                            href="#" uk-scroll>Sample</a></td>
+                                                            href="#"
+                                                            style="width: 129px;"
+                                                            uk-scroll>Sample</a></td>
+                                                               <td class="uk-text-nowrap uk-text-right uk-table-shrink"><a
+                                                            class="el-link uk-button uk-button-primary uk-button-small"
+                                                              href="/wp-content/uploads/2022/05/06-Up.mp3" download=“Alpha.mp3“>download</a>
+                                                    </td>
                                                 </tr>
                                                 <tr class="el-item">
                                                     <td class="uk-text-nowrap">
@@ -76,7 +95,13 @@
                                                     </td>
                                                     <td class="uk-text-nowrap uk-text-right"><a
                                                             class="el-link uk-button uk-button-primary uk-button-small"
-                                                            href="#" uk-scroll>Sample</a></td>
+                                                            href="#"
+                                                            style="width: 129px;"
+                                                            uk-scroll>Sample</a></td>
+                                                               <td class="uk-text-nowrap uk-text-right uk-table-shrink"><a
+                                                            class="el-link uk-button uk-button-primary uk-button-small"
+                                                              href="/wp-content/uploads/2022/05/06-Up.mp3" download=“Alpha.mp3“>download</a>
+                                                    </td>
                                                 </tr>
                                                 <tr class="el-item">
                                                     <td class="uk-text-nowrap">
@@ -87,7 +112,13 @@
                                                     </td>
                                                     <td class="uk-text-nowrap uk-text-right"><a
                                                             class="el-link uk-button uk-button-primary uk-button-small"
-                                                            href="#" uk-scroll>Sample</a></td>
+                                                            href="#"
+                                                            style="width: 129px;"
+                                                            uk-scroll>Sample</a></td>
+                                                               <td class="uk-text-nowrap uk-text-right uk-table-shrink"><a
+                                                            class="el-link uk-button uk-button-primary uk-button-small"
+                                                              href="/wp-content/uploads/2022/05/06-Up.mp3" download=“Alpha.mp3“>download</a>
+                                                    </td>
                                                 </tr>
                                                 <tr class="el-item">
                                                     <td class="uk-text-nowrap">
@@ -98,7 +129,13 @@
                                                     </td>
                                                     <td class="uk-text-nowrap uk-text-right"><a
                                                             class="el-link uk-button uk-button-primary uk-button-small"
-                                                            href="#" uk-scroll>Sample</a></td>
+                                                            href="#"
+                                                            style="width: 129px;"
+                                                            uk-scroll>Sample</a></td>
+                                                               <td class="uk-text-nowrap uk-text-right uk-table-shrink"><a
+                                                            class="el-link uk-button uk-button-primary uk-button-small"
+                                                              href="/wp-content/uploads/2022/05/06-Up.mp3" download=“Alpha.mp3“>download</a>
+                                                    </td>
                                                 </tr>
                                                 <tr class="el-item">
                                                     <td class="uk-text-nowrap">
@@ -109,7 +146,13 @@
                                                     </td>
                                                     <td class="uk-text-nowrap uk-text-right"><a
                                                             class="el-link uk-button uk-button-primary uk-button-small"
-                                                            href="#" uk-scroll>Sample</a></td>
+                                                            href="#"
+                                                            style="width: 129px;"
+                                                            uk-scroll>Sample</a></td>
+                                                               <td class="uk-text-nowrap uk-text-right uk-table-shrink"><a
+                                                            class="el-link uk-button uk-button-primary uk-button-small"
+                                                              href="/wp-content/uploads/2022/05/06-Up.mp3" download=“Alpha.mp3“>download</a>
+                                                    </td>
                                                 </tr>
                                                 <tr class="el-item">
                                                     <td class="uk-text-nowrap">
@@ -120,7 +163,13 @@
                                                     </td>
                                                     <td class="uk-text-nowrap uk-text-right"><a
                                                             class="el-link uk-button uk-button-primary uk-button-small"
-                                                            href="#" uk-scroll>Sample</a></td>
+                                                            href="#"
+                                                            style="width: 129px;"
+                                                            uk-scroll>Sample</a></td>
+                                                               <td class="uk-text-nowrap uk-text-right uk-table-shrink"><a
+                                                            class="el-link uk-button uk-button-primary uk-button-small"
+                                                              href="/wp-content/uploads/2022/05/06-Up.mp3" download=“Alpha.mp3“>download</a>
+                                                    </td>
                                                 </tr>
                                             </tbody>
                                         </table>
@@ -166,6 +215,9 @@
                                     <td>
                                         <div class="el-content uk-panel uk-text-meta">fast</div>
                                     </td>
+                                       <td class="uk-text-nowrap uk-text-right@m uk-table-shrink"><a
+                                            class="el-link uk-button uk-button-primary" href="#" uk-scroll style="width:139px">play</a>
+                                    </td>
                                     <td class="uk-text-nowrap uk-text-right@m uk-table-shrink"><a
                                             class="el-link uk-button uk-button-primary" href="#" uk-scroll>Download</a>
                                     </td>
@@ -179,6 +231,9 @@
                                     </td>
                                     <td>
                                         <div class="el-content uk-panel uk-text-meta">Seattle, WA</div>
+                                    </td>
+                                      <td class="uk-text-nowrap uk-text-right@m uk-table-shrink"><a
+                                            class="el-link uk-button uk-button-primary" href="#" uk-scroll style="width:139px">play</a>
                                     </td>
                                     <td class="uk-text-nowrap uk-text-right@m"><a
                                             class="el-link uk-button uk-button-primary" href="#" uk-scroll>Download</a>
@@ -194,6 +249,9 @@
                                     <td>
                                         <div class="el-content uk-panel uk-text-meta">Denver, CO</div>
                                     </td>
+                                      <td class="uk-text-nowrap uk-text-right@m uk-table-shrink"><a
+                                            class="el-link uk-button uk-button-primary" href="#" uk-scroll style="width:139px">play</a>
+                                    </td>
                                     <td class="uk-text-nowrap uk-text-right@m"><a
                                             class="el-link uk-button uk-button-primary" href="#" uk-scroll>Download</a>
                                     </td>
@@ -207,6 +265,9 @@
                                     </td>
                                     <td>
                                         <div class="el-content uk-panel uk-text-meta">Miami, FL</div>
+                                    </td>
+                                      <td class="uk-text-nowrap uk-text-right@m uk-table-shrink"><a
+                                            class="el-link uk-button uk-button-primary" href="#" uk-scroll style="width:139px">play</a>
                                     </td>
                                     <td class="uk-text-nowrap uk-text-right@m"><a
                                             class="el-link uk-button uk-button-primary" href="#" uk-scroll>Download</a>
@@ -222,6 +283,9 @@
                                     <td>
                                         <div class="el-content uk-panel uk-text-meta">Austin, TX</div>
                                     </td>
+                                      <td class="uk-text-nowrap uk-text-right@m uk-table-shrink"><a
+                                            class="el-link uk-button uk-button-primary" href="#" uk-scroll style="width:139px">play</a>
+                                    </td>
                                     <td class="uk-text-nowrap uk-text-right@m"><a
                                             class="el-link uk-button uk-button-primary" href="#" uk-scroll>Download</a>
                                     </td>
@@ -235,6 +299,9 @@
                                     </td>
                                     <td>
                                         <div class="el-content uk-panel uk-text-meta">London, UK</div>
+                                    </td>
+                                      <td class="uk-text-nowrap uk-text-right@m uk-table-shrink"><a
+                                            class="el-link uk-button uk-button-primary" href="#" uk-scroll style="width:139px">play</a>
                                     </td>
                                     <td class="uk-text-nowrap uk-text-right@m"><a
                                             class="el-link uk-button uk-button-primary" href="#" uk-scroll>Download</a>
@@ -250,6 +317,9 @@
                                     <td>
                                         <div class="el-content uk-panel uk-text-meta">Dublin, IRE</div>
                                     </td>
+                                      <td class="uk-text-nowrap uk-text-right@m uk-table-shrink"><a
+                                            class="el-link uk-button uk-button-primary" href="#" uk-scroll style="width:139px">play</a>
+                                    </td>
                                     <td class="uk-text-nowrap uk-text-right@m"><a
                                             class="el-link uk-button uk-button-primary" href="#" uk-scroll>Download</a>
                                     </td>
@@ -263,6 +333,9 @@
                                     </td>
                                     <td>
                                         <div class="el-content uk-panel uk-text-meta">Paris, FRA</div>
+                                    </td>
+                                      <td class="uk-text-nowrap uk-text-right@m uk-table-shrink"><a
+                                            class="el-link uk-button uk-button-primary" href="#" uk-scroll style="width:139px">play</a>
                                     </td>
                                     <td class="uk-text-nowrap uk-text-right@m"><a
                                             class="el-link uk-button uk-button-primary" href="#" uk-scroll>Download</a>
@@ -278,6 +351,9 @@
                                     <td>
                                         <div class="el-content uk-panel uk-text-meta">Berlin, GER</div>
                                     </td>
+                                      <td class="uk-text-nowrap uk-text-right@m uk-table-shrink"><a
+                                            class="el-link uk-button uk-button-primary" href="#" uk-scroll style="width:139px">play</a>
+                                    </td>
                                     <td class="uk-text-nowrap uk-text-right@m"><a
                                             class="el-link uk-button uk-button-primary" href="#" uk-scroll>Download</a>
                                     </td>
@@ -292,6 +368,9 @@
                                     <td>
                                         <div class="el-content uk-panel uk-text-meta">Hamburg, GER</div>
                                     </td>
+                                      <td class="uk-text-nowrap uk-text-right@m uk-table-shrink"><a
+                                            class="el-link uk-button uk-button-primary" href="#" uk-scroll style="width:139px">play</a>
+                                    </td>
                                     <td class="uk-text-nowrap uk-text-right@m"><a
                                             class="el-link uk-button uk-button-primary" href="#" uk-scroll>Download</a>
                                     </td>
@@ -302,21 +381,7 @@
                 </div>
             </div>
         </div>
-        <div class="uk-section-default uk-section">
-            <div class="uk-container">
-                <div class="tm-grid-expand uk-child-width-1-1 uk-grid-margin" uk-grid>
-                    <div>
-                        <div>
-                            <audio src="/wp-content/uploads/2022/05/06-Up.mp3" controls controlslist="nodownload"
-                                oncontextmenu="return false">
-                                Your browser does not support the
-                                <code>audio</code> element.
-                            </audio>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+
   </div>
 </template>
   <script type="text/javascript"
