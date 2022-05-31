@@ -33,6 +33,27 @@
                                     <div class="uk-overflow-auto" uk-scrollspy-class>
                                         <table class="uk-table uk-table-justify uk-table-small uk-table-middle">
                                             <tbody>
+                                            
+                                                <tr class="el-item" v-for="(item, index) in mp3_info" :key="index">
+                                                
+                                                    <td class="uk-text-nowrap uk-table-shrink">
+                                                        <div class="el-meta uk-text-meta">{{index + 1}}</div>
+                                                    </td>
+                                                    <td class="uk-text-nowrap uk-table-shrink">
+                                                        <div class="el-title">{{item.music_name}}</div>
+                                                    </td>
+                                                    <td class="uk-text-nowrap uk-text-right uk-table-shrink">
+                                                        <a
+                                                            class="el-link uk-button uk-button-primary uk-button-small"
+                                                            href="#"
+                                                            :class="{'uk-button-secondary':isPlaying}"
+                                                            @click.prevent="play(item.music_url)">
+                                                            Sample
+                                                            </a>
+                                                    </td>
+                                                </tr>
+
+
                                                 <tr class="el-item">
                                                     <td class="uk-text-nowrap uk-table-shrink">
                                                         <div class="el-meta uk-text-meta">01</div>
@@ -306,14 +327,19 @@
             <div class="uk-container">
                 <div class="tm-grid-expand uk-child-width-1-1 uk-grid-margin" uk-grid>
                     <div>
-                        <div>
-                            <audio src="/wp-content/uploads/2022/05/06-Up.mp3" controls controlslist="nodownload"
-                                oncontextmenu="return false">
-                                Your browser does not support the
-                                <code>audio</code> element.
-                            </audio>
-                        </div>
+                        <audio src="/wp-content/uploads/2022/05/06-Up.mp3" controls controlslist="nodownload"
+                            oncontextmenu="return false">
+                            Your browser does not support the
+                            <code>audio</code> element.
+                        </audio>
                     </div>
+                    <!-- <div>
+                        <audio id="audio" height="100" width="100" style="opacity:0" preload="auto" controls hidden="true">
+                            <source src="/wp-content/uploads/2022/05/06-Up.mp3" type="audio/mpeg" />
+                            <embed height="50" width="100" src="/wp-content/uploads/2022/05/06-Up.mp3" />
+                        </audio>
+                        <button @click="test">点击播放</button>
+                    </div> -->
                 </div>
             </div>
         </div>
@@ -323,16 +349,67 @@
         src="static/wp-content/themes/yootheme/vendor/yootheme/theme-highlight/assets/highlight.js"
         id="script:highlight-js"></script>
 <script type="module">
-
+// let myAuto = document.getElementById('audio')
+// myAuto.play()
 
 export default {
     data() {
       return {
-
-
-
+          audio: null,
+          mp3_info:[
+            {
+                music_name:'Up',
+                mins:'3:00',
+                speed:'fast',
+                music_url:'/wp-content/uploads/2022/05/06-Up.mp3',
+            },
+            {
+                music_name:'Up2',
+                mins:'3:00',
+                speed:'fast',
+                music_url:'/wp-content/uploads/2022/05/06-Up.mp3',
+            },
+            {
+                music_name:'Up3',
+                mins:'3:00',
+                speed:'fast',
+                music_url:'/wp-content/uploads/2022/05/06-Up.mp3',
+            },
+            {
+                music_name:'Up4',
+                mins:'3:00',
+                speed:'fast',
+                music_url:'/wp-content/uploads/2022/05/06-Up.mp3',
+            },
+          ],
+          isPlaying:false,
+          isActive: true
       }
     },
+    mounted () {
+        let myAuto = this.$el.querySelector('#audio')
+        this.audio = new Audio()
+    },
+    methods: {
+        test() {
+            console.log('test')
+            let audio = new Audio()
+            audio.src = this.mp3
+            audio.play();
+        },
+        play(music_url) {
+            console.log(music_url)
+
+            if (this.isPlaying) {
+                this.audio.pause()
+                this.isPlaying = false
+            } else {
+                this.audio.src = music_url
+                this.audio.play()
+                this.isPlaying = true
+            }
+        }
+    }
   }
 </script>
 <style scoped>

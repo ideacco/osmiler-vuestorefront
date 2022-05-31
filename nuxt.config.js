@@ -19,7 +19,8 @@ server: {
     storeToken: process.env.SHOPIFY_STOREFRONT_TOKEN
   },
   serverMiddleware: [
-    { path: '/custom', handler: '~/server-middleware/custom-features.js' }
+    // { path: '/custom', handler: '~/server-middleware/custom-features.js' }, // 去掉了原版使用的express的中间件
+    { path: '/custom', handler: '~/server-middleware/custom-features-app.js' }, // 将后端中间件改为使用koa
   ],
   head: {
     title: 'Osmiler',
