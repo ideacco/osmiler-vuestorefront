@@ -47,8 +47,11 @@
                                                             class="el-link uk-button uk-button-primary uk-button-small"
                                                             href="#"
                                                             :class="{'uk-button-secondary':isPlaying}"
-                                                            @click.prevent="play(item.music_url)">
+                                                            @click.prevent="play(item.music_url,item.id)">
                                                             Sample
+                                                            
+                                                            <img v-if="isPlaying" src="../static/homepage/play.png" alt=""/>
+                                                            <img v-else src="../static/homepage/vieo.png" alt=""/>
                                                             </a>
                                                     </td>
                                                 </tr>
@@ -357,25 +360,29 @@ export default {
       return {
           audio: null,
           mp3_info:[
-            {
+            {   
+                id: 1,
                 music_name:'Up',
                 mins:'3:00',
                 speed:'fast',
                 music_url:'/wp-content/uploads/2022/05/06-Up.mp3',
             },
-            {
+            {   
+                id: 2,
                 music_name:'Up2',
                 mins:'3:00',
                 speed:'fast',
                 music_url:'/wp-content/uploads/2022/05/06-Up.mp3',
             },
-            {
+            {   
+                id:3,
                 music_name:'Up3',
                 mins:'3:00',
                 speed:'fast',
                 music_url:'/wp-content/uploads/2022/05/06-Up.mp3',
             },
-            {
+            {   
+                id:4,
                 music_name:'Up4',
                 mins:'3:00',
                 speed:'fast',
@@ -383,7 +390,8 @@ export default {
             },
           ],
           isPlaying:false,
-          isActive: true
+          isActive: true,
+          playingId: -1,
       }
     },
     mounted () {
@@ -397,16 +405,27 @@ export default {
             audio.src = this.mp3
             audio.play();
         },
-        play(music_url) {
+        play(music_url, id) {
             console.log(music_url)
 
-            if (this.isPlaying) {
+            // 播放中,且当前点击的音乐正在播放
+            if (this.isPlaying && this.playingId === id) {
                 this.audio.pause()
                 this.isPlaying = false
+            // 播放中,且当前播放的音乐不是点击的音乐
+            } else if (this.isPlaying && this.playingId !== id) {
+                this.audio.pause()
+                this.audio.src = music_url
+                this.audio.play()
+                this.isPlaying = true
+                this.playingId = id
+            // 没有播放中
             } else {
                 this.audio.src = music_url
                 this.audio.play()
                 this.isPlaying = true
+                this.playingId = id
+
             }
         }
     }
