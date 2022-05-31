@@ -38,19 +38,19 @@
                         <div class="uk-h5 uk-hidden@s"> Company </div>
                         <ul class="uk-list uk-list-collapse uk-hidden@s">
                             <li class="el-item">
-                                <div class="el-content uk-panel"><a href="./../index.php?page_id=4"
+                                <div class="el-content uk-panel"><a
                                         class="el-link uk-link-text uk-margin-remove-last-child">About Us</a></div>
                             </li>
                             <li class="el-item">
-                                <div class="el-content uk-panel"><a href="./../index.php?page_id=2"
+                                <div class="el-content uk-panel"><a
                                         class="el-link uk-link-text uk-margin-remove-last-child">Contact</a></div>
                             </li>
                             <li class="el-item">
-                                <div class="el-content uk-panel"><a href="./../index.php?page_id=8"
+                                <div class="el-content uk-panel"><a
                                         class="el-link uk-link-text uk-margin-remove-last-child">Imprint</a></div>
                             </li>
                             <li class="el-item">
-                                <div class="el-content uk-panel"><a href="./../index.php?page_id=8"
+                                <div class="el-content uk-panel"><a
                                         class="el-link uk-link-text uk-margin-remove-last-child">Privacy Policy</a>
                                 </div>
                             </li>
@@ -60,11 +60,11 @@
                         <div class="uk-h5"> Information </div>
                         <ul class="uk-list uk-list-collapse">
                             <li class="el-item">
-                                <div class="el-content uk-panel"><a href="./../index.php?page_id=6"
+                                <div class="el-content uk-panel"><a
                                         class="el-link uk-link-text uk-margin-remove-last-child">Services</a></div>
                             </li>
                             <li class="el-item">
-                                <div class="el-content uk-panel"><a href="./../index.php?page_id=2"
+                                <div class="el-content uk-panel"><a
                                         class="el-link uk-link-text uk-margin-remove-last-child">Doctors</a></div>
                             </li>
                         </ul>
@@ -73,11 +73,11 @@
                         <div class="uk-h5 uk-visible@s"> About </div>
                         <ul class="uk-list uk-list-collapse uk-visible@s">
                             <li class="el-item">
-                                <div class="el-content uk-panel"><a href="./../index.php?page_id=4"
+                                <div class="el-content uk-panel"><a
                                         class="el-link uk-link-text uk-margin-remove-last-child">About Us</a></div>
                             </li>
                             <li class="el-item">
-                                <div class="el-content uk-panel"><a href="./../index.php?page_id=8"
+                                <div class="el-content uk-panel"><a
                                         class="el-link uk-link-text uk-margin-remove-last-child">Contact</a></div>
                             </li>
                         </ul>
