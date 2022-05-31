@@ -192,31 +192,12 @@
         </div>
       </div>
     </div>
-    <div class="uk-section-default uk-section">
-      <div class="uk-container">
-        <div
-          class="tm-grid-expand uk-child-width-1-1 uk-grid-margin"
-          uk-grid
-        >
-          <div>
-            <audio
-              src="/wp-content/uploads/2022/05/06-Up.mp3"
-              controls
-              controlslist="nodownload"
-              oncontextmenu="return false"
-            >
-              Your browser does not support the
-              <code>audio</code> element.
-            </audio>
-          </div>
-        </div>
-      </div>
-    </div>
+    
   </div>
 </template>
   <script type="text/javascript"
-        src="static/wp-content/themes/yootheme/vendor/yootheme/theme-highlight/assets/highlight.js"
-        id="script:highlight-js"></script>
+        // src="static/wp-content/themes/yootheme/vendor/yootheme/theme-highlight/assets/highlight.js"
+        // id="script:highlight-js"></script>
 <script type="module">
 
 export default {
