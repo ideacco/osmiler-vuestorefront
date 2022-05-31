@@ -1,87 +1,38 @@
+
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<meta charset="UTF-8">
-<title></title>
+    <meta charset="UTF-8">
+    <title>js实现点击图片切换为另一图片，再次点击恢复到原图片</title>
 </head>
 <body>
-<!--这是导航条***************************************************************************-->
-<div class="uk-navbar-left" id="top">
-  <ul>
-    <li>1</li>
-    <li>2</li>
-  </ul>
-  </div>
-<!--***************************************************************************这是导航条-->
+
+    <div id="button">
+        <img id="picts" src="../static/homepage/play.png" alt="" style="background-color: red;">
+    </div>
+
+    <script>
+
+        function change_pic(){
+            var button = document.getElementById("button");
+
+            var picts = document.getElementById("picts");
+
+            button.onclick = function(){
+                if(picts.getAttribute("src",) == "../static/homepage/play.png"){
+
+                    picts.setAttribute("src","../static/homepage/vieo.png");
+
+                }else{
+
+                    picts.setAttribute("src","../static/homepage/play.png");
+
+                };
+            }
+        }
+        change_pic();
+
+    </script>
+
 </body>
 
-<style>
-
-.rongqi{
-/*background:lightblue;*/
-height:55px;
-width:100%;
-margin:80px 0px;
-}
-/*导航条里面各个a标签的总宽度，当前是六个a的宽度，每个a宽度默认是200px*/
-#top{
-
-margin:0px auto;
-width:1200px;
-height:55px;
-background: blueviolet;
-}
-/*hanghang是a标签的class*/
-#top a{
-font-size:20px;
-color:white;
-text-align:center;
-line-height:50px;
-float:left;
-width:200px;
-height:55px;
-margin-left:0px;
-list-style-type:none;
-
-text-decoration:none;
-}
-
-#top a:hover,
-#top a.active{
-list-style-type:none;
-color:#ffffff;
-font-weight:800;
-background:#0C8ED9;
-}
-
-#content1,#content2,#content3,#content4,#content5,#content6{
-position: relative;
-
-overflow: hidden;
-top: 36;
-width: 400px;
-
-height:100px;
-border: 1px solid #999;
-padding: 10px;
-
-display: none;
-}
-
-#content1:target,
-#content2:target,
-#content3:target,
-#content4:target,
-#content5:target,
-#content6:target{
-display: block;
-}
-
-</style>
-
-<script>
-      var  tablist=document.querySelector(' .uk-navbar-lef')
-      var  lis=tablist.querySelectorAll('li');
-console.log(lis,2222)
-</script>
-</html>

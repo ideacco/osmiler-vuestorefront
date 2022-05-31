@@ -331,7 +331,7 @@
                     :class="tabIndex === 2 ? 'uk-active' : ''"
                     @click="tabggle(2)"
                   >
-                    <nuxt-link to="/"> Services</nuxt-link>
+                    <nuxt-link to="/tabvue"> Services</nuxt-link>
                     <div class="uk-navbar-dropdown">
                       <div
                         class="uk-navbar-dropdown-grid uk-child-width-1-1"
@@ -530,13 +530,16 @@
         </div>
       </div>
     </div>
+
     <LoginModal
       :visible="visible"
       ref="Logins"
       @closeDialog="handleClose"
     ></LoginModal>
   </div>
+
 </template>
+<script src="../static/homepage/audiojs/audio.js"></script>
 <script type="module">
 import LoginModal from "./LoginModal.vue";
 
