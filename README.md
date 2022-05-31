@@ -141,7 +141,13 @@ server: {
   host: 'localhost'
 }
 ```
-
+## 关于代码格式化说明：
+请注意以下几点
+1,prettier 并不会根据 ESLint 的配置去格式化代码。当这两个工具同时工作时，产生的结果不一致，就会产生冲突。
+2,现象:例如，使用 vue-cli 创建一个项目，ESLint 配置为 standard 代码风格，prettier 没有设置规则（vue-cli 生成的项目里不包含 prettier 包，此时使用的 prettier 是 vscode 的扩展程序）。
+3,导致问题:这就导致了一个问题：保存文件时，ESLint 先 fix 了代码，之后 prettier 格式化了代码，导致代码变得不符合 ESLint 规则了。这份代码在保存时，ESLint 会先从初始状态变成正确的格式，然后 prettier 又把代码变成了错误的格式vscode 配置了在文件保存时进行格式化和 ESLint 自动修复：
+4,解决方案:只用 ESLint fix 就可以保证代码风格了，那么关掉 vscode 保存时的自动格式化：
+"editor.formatOnSave": false,
 
 ## 项目启动使用：
 yarn install

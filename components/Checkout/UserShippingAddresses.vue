@@ -12,18 +12,23 @@
         :name="String(userShippingGetters.getId(shippingAddress))"
       >
         <span
-          >{{ userShippingGetters.getFirstName(shippingAddress) }} {{ userShippingGetters.getLastName(shippingAddress) }}</span
+        >{{ userShippingGetters.getFirstName(shippingAddress) }}
+          {{ userShippingGetters.getLastName(shippingAddress) }}</span
         >
         <span
-          >{{ userShippingGetters.getStreetName(shippingAddress) }}
+        >{{ userShippingGetters.getStreetName(shippingAddress) }}
           {{ userShippingGetters.getApartmentNumber(shippingAddress) }}</span
         >
         <span>{{ userShippingGetters.getPostCode(shippingAddress) }}</span>
         <span
-          >{{ userShippingGetters.getCity(shippingAddress)
-          }}{{ userShippingGetters.getProvince(shippingAddress) ? `, ${userShippingGetters.getProvince(shippingAddress)}` : '' }}</span
+        >{{ userShippingGetters.getCity(shippingAddress)
+        }}{{
+          userShippingGetters.getProvince(shippingAddress)
+            ? `, ${userShippingGetters.getProvince(shippingAddress)}`
+            : ''
+        }}</span
         >
-        <span>{{ userShippingGetters.getCountry(shippingAddress)}}</span>
+        <span>{{ userShippingGetters.getCountry(shippingAddress) }}</span>
         <span>{{ userShippingGetters.getPhone(shippingAddress) }}</span>
       </SfAddress>
     </SfAddressPicker>
@@ -39,11 +44,8 @@
 </template>
 
 <script type="module">
-import {
-  SfCheckbox,
-  SfAddressPicker
-} from '@storefront-ui/vue';
-import { userShippingGetters } from '@vue-storefront/shopify';
+import { SfCheckbox, SfAddressPicker } from '@storefront-ui/vue'
+import { userShippingGetters } from '@vue-storefront/shopify'
 
 export default {
   name: 'UserShippingAddresses',
@@ -66,15 +68,15 @@ export default {
     }
   },
   // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
-  setup (_, { emit }) {
-    const setCurrentAddress = $event => emit('setCurrentAddress', $event);
+  setup(_, { emit }) {
+    const setCurrentAddress = ($event) => emit('setCurrentAddress', $event)
 
     return {
       setCurrentAddress,
       userShippingGetters
-    };
+    }
   }
-};
+}
 </script>
 
 <style lang="scss">
@@ -90,7 +92,8 @@ export default {
   }
 }
 
-.shipping-address-setAsDefault, .form__action-button--margin-bottom {
+.shipping-address-setAsDefault,
+.form__action-button--margin-bottom {
   margin-bottom: var(--spacer-xl);
 }
 </style>

@@ -1,13 +1,13 @@
 <template>
   <div>
-    <el-row class="conatactbox" >
+    <el-row class="conatactbox">
       <el-col>
         <h1 class="conatactboxh1">Contact US</h1>
       </el-col>
       <el-col>
         <p class="conatactboxp">
-          If you have questions or concerns then please do not hesitate to get
-          in contact with us. We would love to hear from you, contact us on:
+          If you have questions or concerns then please do not hesitate to get in contact with us.
+          We would love to hear from you, contact us on:
         </p>
       </el-col>
       <el-row class="conatactbox-twobox">
@@ -39,14 +39,10 @@
           <el-col class="conatactbox-box4-four">
             <el-col class="conatactbox-box4-fourfont">
               <el-col></el-col>
-              <p class="conatactbox-fontsize">
-                Osmail
-              </p>
-              <p class="conatactbox-fontsize"> Room 309,Building 5, QianHai E-Hub, ShenZhen,</p>
+              <p class="conatactbox-fontsize">Osmail</p>
+              <p class="conatactbox-fontsize">Room 309,Building 5, QianHai E-Hub, ShenZhen,</p>
               <p class="conatactbox-fontsize">China +86</p>
-              <p class="conatactbox-fontsize">
-                755-25827634 service@sleepon.cn
-              </p>
+              <p class="conatactbox-fontsize">755-25827634 service@sleepon.cn</p>
             </el-col>
           </el-col>
         </el-col>
@@ -54,14 +50,13 @@
     </el-row>
   </div>
 </template>
-<script>
-</script>
+<script></script>
 <style lang="scss" scoped>
 .conatactbox {
   position: relative;
   width: 1440px;
   height: 946px;
-background: #EFEFEF;
+  background: #efefef;
 }
 .conatactboxh1 {
   position: absolute;
@@ -70,7 +65,7 @@ background: #EFEFEF;
   left: 619px;
   top: 54px;
   /* 中文-标准/二级标题/二级标题_Heavy */
-  font-family: "Alibaba PuHuiTi";
+  font-family: 'Alibaba PuHuiTi';
   font-style: normal;
   font-weight: 400;
   font-size: 38px;
@@ -87,7 +82,7 @@ background: #EFEFEF;
   left: 424px;
   top: 124px;
   /* 中文-标准/正文3-14pt/正文3_Regular */
-  font-family: "Alibaba PuHuiTi";
+  font-family: 'Alibaba PuHuiTi';
   font-style: normal;
   font-weight: 400;
   font-size: 14px;
@@ -130,7 +125,7 @@ background: #EFEFEF;
   top: 34px;
   width: 80px;
   height: 22px;
-  font-family: "Alibaba PuHuiTi";
+  font-family: 'Alibaba PuHuiTi';
   font-style: normal;
   font-weight: 700;
   font-size: 14px;
@@ -146,7 +141,7 @@ background: #EFEFEF;
   left: 154px;
   top: 62px;
   /* 中文-标准/正文3-14pt/正文3_Regular */
-  font-family: "Alibaba PuHuiTi";
+  font-family: 'Alibaba PuHuiTi';
   font-style: normal;
   font-weight: 400;
   font-size: 14px;
@@ -187,9 +182,9 @@ background: #EFEFEF;
     width: 317px;
     height: 156px;
     .conatactbox-fontsize {
-      margin-top:10px ;
+      margin-top: 10px;
       margin-left: 10px;
-      font-family: "Alibaba PuHuiTi";
+      font-family: 'Alibaba PuHuiTi';
       font-style: normal;
       font-weight: 400;
       font-size: 18px;

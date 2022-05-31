@@ -3,9 +3,7 @@
     <div class="my-profile__title">
       <SfHeading :level="1" :title="title" />
       <template v-if="!isEdited">
-        <SfButton class="edit_action" @click="isEdited = true">
-          Edit Your Profile
-        </SfButton>
+        <SfButton class="edit_action" @click="isEdited = true"> Edit Your Profile </SfButton>
       </template>
     </div>
     <div v-if="isEdited" class="my-profile__content container-small">
@@ -47,11 +45,7 @@
                   />
                 </ValidationProvider>
               </div>
-              <ValidationProvider
-                v-slot="{ errors }"
-                tag="div"
-                rules="required|email"
-              >
+              <ValidationProvider v-slot="{ errors }" tag="div" rules="required|email">
                 <SfInput
                   v-model="form.email"
                   data-cy="my-profile-input_email"
@@ -66,8 +60,11 @@
               </ValidationProvider>
               <div class="my-account-bottom-action-wrap">
                 <div class="form__button_wrap">
-                  <SfButton data-cy="my-profile-btn_update" class="form__button" type="submit"
-                    >Update Profile</SfButton
+                  <SfButton
+                    data-cy="my-profile-btn_update"
+                    class="form__button"
+                    type="submit"
+                  >Update Profile</SfButton
                   >
                 </div>
                 <div class="form__button_wrap">
@@ -75,7 +72,7 @@
                     data-cy="my-profile-btn_cancel"
                     class="form__button"
                     @click="isEdited = false"
-                    >Cancel</SfButton
+                  >Cancel</SfButton
                   >
                 </div>
               </div>
@@ -126,7 +123,7 @@
                     data-cy="my-profile-btn_update-password"
                     class="form__button"
                     type="submit"
-                    >Change password</SfButton
+                  >Change password</SfButton
                   >
                 </div>
                 <div class="form__button_wrap">
@@ -134,7 +131,7 @@
                     data-cy="my-profile-btn_cancel"
                     class="form__button"
                     @click.native="isEdited = false"
-                    >Cancel</SfButton
+                  >Cancel</SfButton
                   >
                 </div>
               </div>
@@ -144,66 +141,50 @@
       </tabs>
     </div>
     <div v-else class="user_profile_detail my-profile__content">
-      <SfProperty
-        v-if="displayName"
-        class="my-profile-cname"
-        name="Name"
-        :value="displayName"
-      />
-      <SfProperty
-        v-if="email"
-        class="my-profile-cemail"
-        name="Email"
-        :value="email"
-      />
-      <SfProperty
-        v-if="phone"
-        class="my-profile-cmobile"
-        name="Mobile"
-        :value="phone"
-      />
+      <SfProperty v-if="displayName" class="my-profile-cname" name="Name" :value="displayName" />
+      <SfProperty v-if="email" class="my-profile-cemail" name="Email" :value="email" />
+      <SfProperty v-if="phone" class="my-profile-cmobile" name="Mobile" :value="phone" />
     </div>
   </div>
 </template>
 <script type="module">
-import { ref, computed } from '@nuxtjs/composition-api';
-import { ValidationProvider, ValidationObserver, extend } from 'vee-validate';
-import { email, required, min, confirmed } from 'vee-validate/dist/rules';
-import { SfInput, SfButton, SfProperty, SfHeading } from '@storefront-ui/vue';
-import { useUser, userGetters } from '@vue-storefront/shopify';
-import { onSSR } from '@vue-storefront/core';
-import { useUiNotification } from '~/composables';
-import Tab from '~/components/Tab.vue';
-import Tabs from '~/components/Tabs.vue';
+import { ref, computed } from '@nuxtjs/composition-api'
+import { ValidationProvider, ValidationObserver, extend } from 'vee-validate'
+import { email, required, min, confirmed } from 'vee-validate/dist/rules'
+import { SfInput, SfButton, SfProperty, SfHeading } from '@storefront-ui/vue'
+import { useUser, userGetters } from '@vue-storefront/shopify'
+import { onSSR } from '@vue-storefront/core'
+import { useUiNotification } from '~/composables'
+import Tab from '~/components/Tab.vue'
+import Tabs from '~/components/Tabs.vue'
 
 extend('email', {
   ...email,
   message: 'Invalid email'
-});
+})
 
 extend('required', {
   ...required,
   message: 'This field is required'
-});
+})
 
 extend('min', {
   ...min,
   message: 'The field should have at least {length} characters'
-});
+})
 
 extend('password', {
   validate: (value) =>
     String(value).length >= 8 &&
     String(value).match(/[A-Za-z]/gi) &&
     String(value).match(/[0-9]/gi),
-  message:
-    'Password must have at least 8 characters including one letter and a number'
-});
+  message: 'Password must have at least 8 characters including one letter and a number'
+})
 
 extend('confirmed', {
   ...confirmed,
   message: "Passwords don't match"
-});
+})
 
 export default {
   name: 'PersonalDetails',
@@ -230,14 +211,14 @@ export default {
   },
   // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
   setup() {
-    const { user, load: loadUser, changePassword, updateUser } = useUser();
-    const success = ref(null);
-    const error = ref(null);
-    const firstName = computed(() => userGetters.getFirstName(user.value));
-    const lastName = computed(() => userGetters.getLastName(user.value));
-    const email = computed(() => userGetters.getEmailAddress(user.value));
-    const phone = computed(() => userGetters.getPhone(user.value));
-    const displayName = computed(() => userGetters.getdisplayName(user.value));
+    const { user, load: loadUser, changePassword, updateUser } = useUser()
+    const success = ref(null)
+    const error = ref(null)
+    const firstName = computed(() => userGetters.getFirstName(user.value))
+    const lastName = computed(() => userGetters.getLastName(user.value))
+    const email = computed(() => userGetters.getEmailAddress(user.value))
+    const phone = computed(() => userGetters.getPhone(user.value))
+    const displayName = computed(() => userGetters.getdisplayName(user.value))
     const resetForm = () => ({
       firstName: firstName.value,
       lastName: lastName.value,
@@ -245,59 +226,59 @@ export default {
       phone: phone.value,
       displayName: displayName.value,
       newPassword: ''
-    });
-    const { send: sendNotification } = useUiNotification();
-    const isEdited = ref(false);
-    const form = ref(resetForm());
+    })
+    const { send: sendNotification } = useUiNotification()
+    const isEdited = ref(false)
+    const form = ref(resetForm())
     const handleForm = (fn, reset) => async () => {
       try {
         if (reset) {
           await fn({ current: '', new: form.value.newPassword }).then(() => {
-            loadUser();
+            loadUser()
             sendNotification({
               key: 'password_changed',
               message: 'Password changed successfully.',
               type: 'success',
               title: 'Success!',
               icon: 'check'
-            });
-          });
-          form.value.newPassword = '';
-          form.value.repeatPassword = '';
+            })
+          })
+          form.value.newPassword = ''
+          form.value.repeatPassword = ''
         } else {
           await fn({ user: form.value }).then(() => {
-            loadUser();
+            loadUser()
             sendNotification({
               key: 'profile_success',
               message: 'Profile updated successfully.',
               type: 'success',
               title: 'Success!',
               icon: 'check'
-            });
-          });
+            })
+          })
         }
-        isEdited.value = false;
+        isEdited.value = false
       } catch (e) {
         sendNotification({
           key: 'profile_failed',
           message: e.message,
           type: 'danger',
           title: 'Failed!'
-        });
-        return false;
+        })
+        return false
       }
-    };
+    }
 
-    const updatePassword = async () => await handleForm(changePassword, true)();
-    const updateProfile = async () => await handleForm(updateUser, false)();
+    const updatePassword = async () => await handleForm(changePassword, true)()
+    const updateProfile = async () => await handleForm(updateUser, false)()
     onSSR(async () => {
-      if (user.value === null){
-        await loadUser();
-        form.value.email = user.value.email;
-        form.value.firstName = user.value.firstName;
-        form.value.lastName = user.value.lastName;
+      if (user.value === null) {
+        await loadUser()
+        form.value.email = user.value.email
+        form.value.firstName = user.value.firstName
+        form.value.lastName = user.value.lastName
       }
-    });
+    })
     return {
       user,
       error,
@@ -311,7 +292,7 @@ export default {
       displayName,
       email,
       isEdited
-    };
+    }
   },
   // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
   head() {
@@ -326,9 +307,9 @@ export default {
             'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur convallis nisi nec sem dapibus vestibulum. Aliquam consectetur venenatis sem. In hac habitasse platea dictumst. Nam semper, quam vitae scelerisque iaculis, quam est ullamcorper ante, eget egestas nunc massa a odio. Fusce eget ligula tempus, luctus ex sit amet, ullamcorper ipsum. Ut id nunc malesuada, ultrices ipsum vel, eleifend metus. Donec vel luctus odio.'
         }
       ]
-    };
+    }
   }
-};
+}
 </script>
 <style lang="scss">
 .my-profile {

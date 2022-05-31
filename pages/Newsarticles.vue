@@ -5,31 +5,31 @@
         We are dedicated to creating better sleep products
       </el-col>
       <el-col class="conatactbox-title2"
-        >Written by SLEEPON on 09/23/2021. Posted in News&Updates.</el-col
+      >Written by SLEEPON on 09/23/2021. Posted in News&Updates.</el-col
       >
       <el-col class="conatactbox-title3"></el-col>
       <el-col class="conatactbox-title4"
-        ><p>Hi everyone,</p>
+      ><p>Hi everyone,</p>
         <p>
-          It is our pleasure to announce that Sleepon’s HRV (beta) is now
-          available on its app. You will be able to see the HRV data in your
-          report when you update the app.
+          It is our pleasure to announce that Sleepon’s HRV (beta) is now available on its app. You
+          will be able to see the HRV data in your report when you update the app.
         </p>
 
         <p>
-          Feedback and suggestions are really appreciated so that we can improve
-          the App and make sure you have a better user experience.
+          Feedback and suggestions are really appreciated so that we can improve the App and make
+          sure you have a better user experience.
         </p>
         <p>Thank you.</p>
         <p>Sleepon Team</p></el-col
       >
-      <el-col class="conatactbox-title5">
-        APP, go2sleep, hrv, sleepon, updates
-      </el-col>
+      <el-col class="conatactbox-title5"> APP, go2sleep, hrv, sleepon, updates </el-col>
     </el-row>
   </div>
 </template>
 <script>
+export default {
+  name: 'NewSarticles'
+}
 </script>
 <style lang="scss" scoped>
 .conatactbox {
@@ -43,7 +43,7 @@
     left: calc(50% - 816px / 2);
     top: 219px;
     /* 中文-标准/二级标题/二级标题_Medium */
-    font-family: "Alibaba PuHuiTi";
+    font-family: 'Alibaba PuHuiTi';
     font-style: normal;
     font-weight: 400;
     font-size: 38px;
@@ -60,7 +60,7 @@
     left: calc(50% - 816px / 2);
     top: 331px;
     /* 中文-标准/正文2-16pt/正文2_Regular */
-    font-family: "Alibaba PuHuiTi";
+    font-family: 'Alibaba PuHuiTi';
     font-style: normal;
     font-weight: 400;
     font-size: 16px;
@@ -86,7 +86,7 @@
     top: 812px;
     p {
       margin-top: 10px;
-      font-family: "Alibaba PuHuiTi";
+      font-family: 'Alibaba PuHuiTi';
       font-style: normal;
       font-weight: 400;
       font-size: 16px;
@@ -105,7 +105,7 @@
 
     /* 中文-标准/正文2-16pt/正文2_Regular */
 
-    font-family: "Alibaba PuHuiTi";
+    font-family: 'Alibaba PuHuiTi';
     font-style: normal;
     font-weight: 400;
     font-size: 16px;

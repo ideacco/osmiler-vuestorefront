@@ -319,7 +319,7 @@
                     :class="tabIndex === 1 ? 'uk-active' : ''"
                     @click="tabggle(1)"
                   >
-                    <nuxt-link to="/music"> Music community</nuxt-link>
+                    <nuxt-link to="/MuSic"> Music community</nuxt-link>
                   </li>
                   <li
                     class="
@@ -537,7 +537,6 @@
       @closeDialog="handleClose"
     ></LoginModal>
   </div>
-
 </template>
 <script src="../static/homepage/audiojs/audio.js"></script>
 <script type="module">
@@ -554,7 +553,7 @@ export default {
       visible: false,
     };
   },
-  mounted(){
+  mounted() {
     window.addEventListener("scroll", this.handleScroll);
   },
   methods: {
@@ -571,7 +570,7 @@ export default {
 };
 </script>
 
-<style lang="scss"  scoped>
+<style lang="scss" scoped>
 @import "../static/wp-includes/css/dist/block-library/style.min.css";
 @import "../static/wp-content/themes/yootheme/css/theme.1.css";
 @import "../static/wp-content/themes/yootheme/vendor/yootheme/theme-highlight/assets/styles/monokai.css";

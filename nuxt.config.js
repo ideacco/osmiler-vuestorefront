@@ -1,18 +1,18 @@
-require('isomorphic-fetch');
-import webpack from 'webpack';
-const platformENV = process.env.VUE_APP_TITLE!== 'production' ? 'http' : 'https'
+require('isomorphic-fetch')
+import webpack from 'webpack'
+const platformENV = process.env.VUE_APP_TITLE !== 'production' ? 'http' : 'https'
 const config = {
-env:{
-VUE_APP_TITLE:process.env.VUE_APP_TITLE,
-},
-server: {
-  port:8888,
-  host: 'localhost'
-},
+  env: {
+    VUE_APP_TITLE: process.env.VUE_APP_TITLE
+  },
+  server: {
+    port: 8888,
+    host: 'localhost'
+  },
   publicRuntimeConfig: {
     appKey: 'vsf2spcon',
     appVersion: Date.now(),
-    middlewareUrl:  `${platformENV}://${process.env.BASE_URL}/api/`
+    middlewareUrl: `${platformENV}://${process.env.BASE_URL}/api/`
   },
   privateRuntimeConfig: {
     storeURL: process.env.SHOPIFY_DOMAIN,
@@ -20,7 +20,7 @@ server: {
   },
   serverMiddleware: [
     // { path: '/custom', handler: '~/server-middleware/custom-features.js' }, // 去掉了原版使用的express的中间件
-    { path: '/custom', handler: '~/server-middleware/custom-features-app.js' }, // 将后端中间件改为使用koa
+    { path: '/custom', handler: '~/server-middleware/custom-features-app.js' } // 将后端中间件改为使用koa
   ],
   head: {
     title: 'Osmiler',
@@ -55,11 +55,11 @@ server: {
     ]
   },
   loading: { color: '#fff' },
-  plugins: ["~/plugins/scrollToTop.client.js", '@/plugins/element-ui',
- {src:'~/plugins/UIkit',ssr:false},
-  '~/plugins/interceptor',
-  '~/api/test'
-],
+  plugins: ['~/plugins/scrollToTop.client.js', '@/plugins/element-ui',
+    {src: '~/plugins/UIkit',ssr: false},
+    '~/plugins/interceptor',
+    '~/api/test'
+  ],
   buildModules: [
     // to core
     './modules/cms/build',
@@ -92,7 +92,7 @@ server: {
     'element-ui/lib/theme-chalk/display.css',
     'uikit/dist/css/uikit.min.css',
     // 'normalize.css/normalize.css',
-    {src:'~style/index.scss',lang:'scss'},
+    {src: '~style/index.scss',lang: 'scss'}
   ],
   modules: [
     '@nuxtjs/i18n',
@@ -104,15 +104,15 @@ server: {
     '@nuxt/image',
     '@nuxtjs/axios'
   ],
-  axios:{
-    proxy:true,
-    prefix:'/api'
+  axios: {
+    proxy: true,
+    prefix: '/api'
   },
-  proxy:{
-    '/api':{
-      target:process.env.VUE_APP_API_BASE_URL,
+  proxy: {
+    '/api': {
+      target: process.env.VUE_APP_API_BASE_URL,
       changeOrigin: true,
-      pathRewrite:{'^/api':''}
+      pathRewrite: {'^/api': ''}
     }
   },
   device: {
@@ -195,7 +195,7 @@ server: {
       require.resolve('@storefront-ui/shared/styles/_helpers.scss', {
         paths: [process.cwd()]
       }),
-      './style/index.scss',
+      './style/index.scss'
     ]
   },
   build: {
@@ -210,13 +210,13 @@ server: {
       })
     ],
     extend(config) {
-      config.resolve.extensions.push('.mjs');
+      config.resolve.extensions.push('.mjs')
 
       config.module.rules.push({
         test: /\.mjs$/,
         include: /node_modules/,
         type: 'javascript/auto'
-      });
+      })
     },
     extractCSS: {
       ignoreOrder: true
@@ -282,8 +282,8 @@ server: {
     icon: {
       iconSrc: 'src/static/android-icon-512x512.png'
     },
-    build:{
-      transpile:[/^@storefront-ui/,/^element-ui/,/^UIkit/],
+    build: {
+      transpile: [/^@storefront-ui/,/^element-ui/,/^UIkit/]
     },
     workbox: {
       offlineStrategy: 'StaleWhileRevalidate',
@@ -317,6 +317,6 @@ server: {
       ]
     }
   }
-};
+}
 
-export default config;
+export default config

@@ -1,11 +1,6 @@
 <template>
   <div>
-    <SfModal
-      v-e2e="'login-modal'"
-      :visible="isLoginModalOpen"
-      class="modal"
-      @close="handleClose"
-    >
+    <SfModal v-e2e="'login-modal'" :visible="isLoginModalOpen" class="modal" @close="handleClose">
       <template>
         <SfBar
           class="sf-modal__bar smartphone-only"
@@ -57,15 +52,11 @@
                 class="sf-button--full-width form__button"
               >
                 <div>Login</div>
-
               </SfButton>
             </form>
           </ValidationObserver>
           <div class="action">
-            <SfButton
-              class="sf-button--text"
-              @click="setIsForgottenValue(true)"
-            >
+            <SfButton class="sf-button--text" @click="setIsForgottenValue(true)">
               Forgotten password
             </SfButton>
           </div>
@@ -106,22 +97,14 @@
           </ValidationObserver>
         </div>
         <div v-else-if="isThankYouAfterForgotten" class="thank-you">
-          <i18n
-            tag="p"
-            class="thank-you__paragraph"
-            path="forgotPasswordConfirmation"
-          >
+          <i18n tag="p" class="thank-you__paragraph" path="forgotPasswordConfirmation">
             <span class="thank-you__paragraph--bold">{{ userEmail }}</span>
           </i18n>
           <p class="thank-you__paragraph">Thank You Inbox</p>
         </div>
         <div v-else class="form">
           <ValidationObserver v-slot="{ handleSubmit }" key="sign-up">
-            <form
-              class="form"
-              autocomplete="off"
-              @submit.prevent="handleSubmit(handleRegister)"
-            >
+            <form class="form" autocomplete="off" @submit.prevent="handleSubmit(handleRegister)">
               <ValidationProvider v-slot="{ errors }" rules="required|email">
                 <SfInput
                   v-model="form.email"
@@ -167,10 +150,7 @@
                   class="form__element"
                 />
               </ValidationProvider>
-              <ValidationProvider
-                v-slot="{ errors }"
-                :rules="{ required: { allowFalse: false } }"
-              >
+              <ValidationProvider v-slot="{ errors }" :rules="{ required: { allowFalse: false } }">
                 <SfCheckbox
                   v-model="createAccount"
                   v-e2e="'login-modal-create-account'"
@@ -184,20 +164,14 @@
               <div v-if="error.register">
                 {{ error.register }}
               </div>
-              <SfButton
-                type="submit"
-                class="sf-button--full-width form__button"
-              >
+              <SfButton type="submit" class="sf-button--full-width form__button">
                 <div>Create an account</div>
               </SfButton>
             </form>
           </ValidationObserver>
           <div class="action">
             or
-            <SfButton
-              class="sf-button--text back-to-login"
-              @click="setIsLoginValue(true)"
-            >
+            <SfButton class="sf-button--text back-to-login" @click="setIsLoginValue(true)">
               login in to your account
             </SfButton>
           </div>
@@ -207,54 +181,40 @@
   </div>
 </template>
 <script>
-import {
-  ref,
-  watch,
-  reactive,
-  computed,
-  useRouter,
-  useContext,
-} from "@nuxtjs/composition-api";
-import {
-  SfModal,
-  SfInput,
-  SfButton,
-  SfCheckbox,
-  SfLoader,
-  SfBar,
-} from "@storefront-ui/vue";
-import { ValidationProvider, ValidationObserver, extend } from "vee-validate";
-import { required, email } from "vee-validate/dist/rules";
-import { useUser, useForgotPassword } from "@vue-storefront/shopify";
-import { useUiState, useUiNotification } from "~/composables";
+import { ref, watch, reactive, computed, useRouter, useContext } from '@nuxtjs/composition-api'
+import { SfModal, SfInput, SfButton, SfCheckbox, SfLoader, SfBar } from '@storefront-ui/vue'
+import { ValidationProvider, ValidationObserver, extend } from 'vee-validate'
+import { required, email } from 'vee-validate/dist/rules'
+import { useUser, useForgotPassword } from '@vue-storefront/shopify'
+import { useUiState, useUiNotification } from '~/composables'
 
-extend("email", {
+extend('email', {
   ...email,
-  message: "Invalid email",
-});
+  message: 'Invalid email'
+})
 
-extend("required", {
+extend('required', {
   ...required,
-  message: "This field is required",
-});
+  message: 'This field is required'
+})
 
 export default {
-  name: "LoginModal",
+  name: 'LoginModal',
   data() {
     return {
-      isLoginModalOpen: false,
-    };
+      isLoginModalOpen: false
+    }
   },
   props: {
     visible: {
       type: Boolean,
-      default: false,
-    },
+      default: false
+    }
   },
   watch: {
     visible() {
-      this.isLoginModalOpen = this.visible;
-    },
+      this.isLoginModalOpen = this.visible
+    }
   },
   components: {
     SfModal,
@@ -264,138 +224,134 @@ export default {
     SfLoader,
     ValidationProvider,
     ValidationObserver,
-    SfBar,
+    SfBar
   },
   setup() {
-    const { isLoginModalOpen, toggleLoginModal } = useUiState();
-    const form = ref({});
-    const isLogin = ref(false);
-    const isForgotten = ref(false);
-    const isThankYouAfterForgotten = ref(false);
-    const userEmail = ref("");
-    const createAccount = ref(false);
-    const rememberMe = ref(false);
-    const { register, login, loading, error: userError, user } = useUser();
-    const forgotPasswordError = ref(false);
-    const forgotPasswordLoading = ref(false);
-    const { request } = useForgotPassword();
-    const { send: sendNotification } = useUiNotification();
-    const router = useRouter();
-    const context = useContext();
+    const { isLoginModalOpen, toggleLoginModal } = useUiState()
+    const form = ref({})
+    const isLogin = ref(false)
+    const isForgotten = ref(false)
+    const isThankYouAfterForgotten = ref(false)
+    const userEmail = ref('')
+    const createAccount = ref(false)
+    const rememberMe = ref(false)
+    const { register, login, loading, error: userError, user } = useUser()
+    const forgotPasswordError = ref(false)
+    const forgotPasswordLoading = ref(false)
+    const { request } = useForgotPassword()
+    const { send: sendNotification } = useUiNotification()
+    const router = useRouter()
+    const context = useContext()
     // const { request } = useForgotPassword()
     // const { request, error: forgotPasswordError, loading: forgotPasswordLoading } = useForgotPassword();
 
     const error = reactive({
       login: null,
-      register: null,
-    });
+      register: null
+    })
 
     const resetErrorValues = () => {
-      error.login = null;
-      error.register = null;
-    };
+      error.login = null
+      error.register = null
+    }
 
     const barTitle = computed(() => {
       if (isLogin.value) {
-        return "Sign in";
+        return 'Sign in'
       } else if (isForgotten.value || isThankYouAfterForgotten.value) {
-        return "Reset Password";
-      } else {
-        return "Register";
+        return 'Reset Password'
       }
-    });
+      return 'Register'
+    })
 
     watch(isLoginModalOpen, () => {
       if (isLoginModalOpen) {
-        form.value = {};
-        resetErrorValues();
+        form.value = {}
+        resetErrorValues()
       }
-    });
+    })
 
     const setIsLoginValue = (value) => {
-      resetErrorValues();
-      isLogin.value = value;
-    };
+      resetErrorValues()
+      isLogin.value = value
+    }
 
     const setIsForgottenValue = (value) => {
-      resetErrorValues();
-      isForgotten.value = value;
-      isLogin.value = !value;
-    };
+      resetErrorValues()
+      isForgotten.value = value
+      isLogin.value = !value
+    }
 
     const handleForm = (fn) => async () => {
-      resetErrorValues();
-      await fn({ user: form.value });
-      if (user.value.error && user.value.error !== "") {
-        if (user.value.error === "Unidentified customer") {
-          user.value.error = "Invalid email id or password!";
-        } else if (user.value.error === "Email has already been taken") {
+      resetErrorValues()
+      await fn({ user: form.value })
+      if (user.value.error && user.value.error !== '') {
+        if (user.value.error === 'Unidentified customer') {
+          user.value.error = 'Invalid email id or password!'
+        } else if (user.value.error === 'Email has already been taken') {
           user.value.error =
-            "This email address is already associated with an account. If this account is yours, you can reset your password";
+            'This email address is already associated with an account. If this account is yours, you can reset your password'
         }
         sendNotification({
-          key: "login_failed",
+          key: 'login_failed',
           message: user.value.error,
-          type: "danger",
-          title: "Failed!",
-        });
-      } else if (user.value.token && user.value.token === "forgotPassword") {
+          type: 'danger',
+          title: 'Failed!'
+        })
+      } else if (user.value.token && user.value.token === 'forgotPassword') {
         sendNotification({
-          key: "link_sent",
-          message:
-            "Reset password link has been successfully sent to " +
-            form.value.username,
-          type: "success",
-          icon: "check",
-          title: "linkSent!",
-        });
-        isForgotPassword.value = false;
-        isLogin.value = true;
-      } else if (user.value.token && user.value.token === "SignUpSuccess") {
+          key: 'link_sent',
+          message: 'Reset password link has been successfully sent to ' + form.value.username,
+          type: 'success',
+          icon: 'check',
+          title: 'linkSent!'
+        })
+        isForgotPassword.value = false
+        isLogin.value = true
+      } else if (user.value.token && user.value.token === 'SignUpSuccess') {
         sendNotification({
-          key: "signup_success",
-          message: "Your registration is successfully done",
-          type: "success",
-          icon: "check",
-          title: "Sign Up Success!",
-        });
-        form.value = {};
+          key: 'signup_success',
+          message: 'Your registration is successfully done',
+          type: 'success',
+          icon: 'check',
+          title: 'Sign Up Success!'
+        })
+        form.value = {}
         if (process.client) {
-          document.querySelector("button.back-to-login").click();
+          document.querySelector('button.back-to-login').click()
         }
       } else {
-        toggleLoginModal();
+        toggleLoginModal()
         sendNotification({
-          key: "login_success",
-          message: "You are successfully logged in",
-          type: "success",
-          title: "Success!",
-          icon: "check",
-        });
-        router.push(context.app.localePath("/my-account"));
+          key: 'login_success',
+          message: 'You are successfully logged in',
+          type: 'success',
+          title: 'Success!',
+          icon: 'check'
+        })
+        router.push(context.app.localePath('/my-account'))
       }
-    };
+    }
 
     const closeModal = () => {
-      setIsForgottenValue(false);
-      toggleLoginModal();
-      isThankYouAfterForgotten.value = false;
-    };
+      setIsForgottenValue(false)
+      toggleLoginModal()
+      isThankYouAfterForgotten.value = false
+    }
 
-    const handleRegister = () => handleForm(register)();
+    const handleRegister = () => handleForm(register)()
 
-    const handleLogin = async() => handleForm(login)(
-    );
+    const handleLogin = async () => handleForm(login)()
 
     const handleForgotten = async () => {
-      userEmail.value = form.value.username;
-      await request({ email: userEmail.value });
+      userEmail.value = form.value.username
+      await request({ email: userEmail.value })
 
       if (!forgotPasswordError.value.request) {
-        isThankYouAfterForgotten.value = true;
-        isForgotten.value = false;
+        isThankYouAfterForgotten.value = true
+        isForgotten.value = false
       }
-    };
+    }
 
     return {
       form,
@@ -405,6 +361,7 @@ export default {
       isLogin,
       createAccount,
       rememberMe,
+      // eslint-disable-next-line vue/no-dupe-keys
       isLoginModalOpen,
       toggleLoginModal,
       handleLogin,
@@ -418,20 +375,19 @@ export default {
       closeModal,
       isThankYouAfterForgotten,
       userEmail,
-      barTitle,
-    };
+      barTitle
+    }
   },
   methods: {
     init(data) {
-      this.isLoginModalOpen = true;
-      console.log(data);
+      this.isLoginModalOpen = true
+      console.log(data)
     },
     handleClose() {
-      this.$emit("closeDialog");
-    },
-
-  },
-};
+      this.$emit('closeDialog')
+    }
+  }
+}
 </script>
 
 <style lang="scss" scoped>
@@ -457,8 +413,7 @@ export default {
   align-items: center;
   justify-content: center;
   margin: var(--spacer-xl) 0 var(--spacer-xl) 0;
-  font: var(--font-weight--light) var(--font-size--base) / 1.6
-    var(--font-family--secondary);
+  font: var(--font-weight--light) var(--font-size--base) / 1.6 var(--font-family--secondary);
   & > * {
     margin: 0 0 0 var(--spacer-xs);
   }

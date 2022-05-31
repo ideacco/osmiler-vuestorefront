@@ -1,20 +1,13 @@
 <template>
-  <div>
-    Terms &amp; Conditions
-  </div>
+  <div>Terms &amp; Conditions</div>
 </template>
 
 <script lang="ts">
 import { defineComponent } from '@nuxtjs/composition-api'
 
 export default defineComponent({
-  name: 'TermsAndConditions',
-  setup() {
-    
-  },
+  name: 'TermsAndConditions'
 })
 </script>
 
-<style lang="scss">
-
-</style>
+<style lang="scss"></style>

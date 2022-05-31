@@ -1,7 +1,7 @@
 const Koa = require('koa')
 const Router = require('koa-router')
 // const bodyParser = require('koa-bodyparser'); // 解析post请求
-const axios = require('axios');
+const axios = require('axios')
 
 const app = new Koa()
 const router = new Router()
@@ -12,7 +12,7 @@ router.get('/cart.js', async (ctx, next) => {
   const options = {
     method: 'GET',
     url: `https://${process.env.SHOPIFY_DOMAIN}` + ctx.url
-  };
+  }
 
   console.log('获取前端请求', ctx.query)
   // console.log('获取前端请求', options)

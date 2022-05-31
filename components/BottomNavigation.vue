@@ -3,9 +3,7 @@
     <SfBottomNavigation class="navigation-bottom">
       <nuxt-link data-cy="bottom-navigation-url_home" to="/">
         <SfBottomNavigationItem
-          :class="
-            $route.path == '/' ? 'sf-bottom-navigation__item--active' : ''
-          "
+          :class="$route.path == '/' ? 'sf-bottom-navigation__item--active' : ''"
           icon="home"
           size="20px"
           label="Home"
@@ -49,11 +47,11 @@
 </template>
 
 <script type="module">
-import { SfBottomNavigation, SfIcon, SfCircleIcon } from '@storefront-ui/vue';
-import useUiState from '~/composables/useUiState';
-import { useRouter } from '@nuxtjs/composition-api';
-import MobileMenuSidebar from '~/components/MobileMenuSidebar.vue';
-import { useUser } from '@vue-storefront/shopify';
+import { SfBottomNavigation, SfIcon, SfCircleIcon } from '@storefront-ui/vue'
+import useUiState from '~/composables/useUiState'
+import { useRouter } from '@nuxtjs/composition-api'
+import MobileMenuSidebar from '~/components/MobileMenuSidebar.vue'
+import { useUser } from '@vue-storefront/shopify'
 
 export default {
   components: {
@@ -63,30 +61,26 @@ export default {
     MobileMenuSidebar
   },
   setup() {
-    const router = useRouter();
-    const {
-      toggleCartSidebar,
-      toggleWishlistSidebar,
-      toggleLoginModal,
-      toggleMobileMenu
-    } = useUiState();
-    const { isAuthenticated } = useUser();
+    const router = useRouter()
+    const { toggleCartSidebar, toggleWishlistSidebar, toggleLoginModal, toggleMobileMenu } =
+      useUiState()
+    const { isAuthenticated } = useUser()
 
     const handleAccountClick = () => {
       if (isAuthenticated.value) {
-        return router.push('/my-account');
+        return router.push('/my-account')
       }
-      toggleLoginModal();
-    };
+      toggleLoginModal()
+    }
 
     return {
       toggleWishlistSidebar,
       toggleCartSidebar,
       toggleMobileMenu,
       handleAccountClick
-    };
+    }
   }
-};
+}
 </script>
 
 <style lang="scss" scoped>

@@ -15,17 +15,14 @@
         ></el-input>
         <el-col class="conatactbox5">
           <el-col class="conatactbox6">
-            <el-col class="conatactbox7">
-              <el-col class="conatactbox8">TRACK </el-col></el-col
-            >
+            <el-col class="conatactbox7"> <el-col class="conatactbox8">TRACK </el-col></el-col>
           </el-col>
         </el-col>
       </el-col>
     </el-row>
   </div>
 </template>
-<script>
-</script>
+<script></script>
 <style lang="scss" scoped>
 .conatactbox {
   position: relative;
@@ -38,7 +35,7 @@
     left: 581px;
     top: 174px;
     /* 中文-标准/二级标题/二级标题_Heavy */
-    font-family: "Alibaba PuHuiTi";
+    font-family: 'Alibaba PuHuiTi';
     font-style: normal;
     font-weight: 400;
     font-size: 38px;
@@ -55,7 +52,7 @@
     left: 451px;
     top: 251px;
     p {
-      font-family: "Alibaba PuHuiTi";
+      font-family: 'Alibaba PuHuiTi';
       font-style: normal;
       font-weight: 400;
       font-size: 18px;
@@ -107,7 +104,7 @@
         padding: 0px;
       }
       .conatactbox8 {
-        font-family: "Alibaba PuHuiTi";
+        font-family: 'Alibaba PuHuiTi';
         font-style: normal;
         font-weight: 400;
         font-size: 16px;

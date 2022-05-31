@@ -40,11 +40,7 @@
   </SfBanner>
 </template>
 <script type="module">
-import {
-  SfBanner,
-  SfButton,
-  SfImage
-} from '@storefront-ui/vue';
+import { SfBanner, SfButton, SfImage } from '@storefront-ui/vue'
 export default {
   name: 'AppStoreBanner',
   components: {
@@ -52,10 +48,9 @@ export default {
     SfButton,
     SfImage
   }
-};
+}
 </script>
 <style lang="scss" scoped>
-
 .banner-app {
   --banner-title-margin: var(--spacer-base) 0 var(--spacer-xl) 0;
   --banner-padding: 0 0 var(--spacer-2xl);
@@ -85,5 +80,4 @@ export default {
     }
   }
 }
-
 </style>

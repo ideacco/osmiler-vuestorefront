@@ -11,15 +11,30 @@
       </div>
       <div class="right">
         <div class="words flex-between">
-          <div class="name">{{  audioName==null ? "未知": audioName}}</div>
+          <div class="name">{{ audioName == null ? '未知' : audioName }}</div>
           <div class="time">{{ formatCurrentTime }} / {{ formatTotalTime }}</div>
         </div>
         <div class="duration">
-          <input type="range" ref="range" @input="onChange" @change="onChange" min="0" max="360" value="0">
+          <input
+            type="range"
+            ref="range"
+            @input="onChange"
+            @change="onChange"
+            min="0"
+            max="360"
+            value="0"
+          />
         </div>
       </div>
     </div>
-    <audio style="display: none" :src="audioURL" ref="audio" controls @timeupdate="update" @canplay="loadingFinish"></audio>
+    <audio
+      style="display: none"
+      :src="audioURL"
+      ref="audio"
+      controls
+      @timeupdate="update"
+      @canplay="loadingFinish"
+    ></audio>
   </div>
 </template>
 
@@ -30,14 +45,14 @@ export default {
   props: {
     audioURL: {
       type: String,
-      default: '../未知',
-    },
+      default: '../未知'
+    }
   },
   data() {
     return {
       isPlay: false, // 控制icon切换
       totalTime: 0, // 播放总时间--秒
-      currentTime: 0, // 当前播放时间--秒
+      currentTime: 0 // 当前播放时间--秒
     }
   },
   computed: {
@@ -50,7 +65,7 @@ export default {
     // 音频名称
     audioName() {
       return this.getFilename(this.audioURL)
-    },
+    }
   },
   mounted() {
     this.$refs.audio.src = this.audioURL
@@ -79,7 +94,7 @@ export default {
     },
     // range--拖动进度条得到的回调
     onChange() {
-      let value = this.$refs.range.value
+      const value = this.$refs.range.value
       const persentage = ((value / 360) * 100).toFixed(1) + '%'
       this.$refs.range.style.backgroundSize = `${persentage} 100%`
       // 控制音频播放
@@ -115,8 +130,8 @@ export default {
     getFilename(url) {
       const arr = url.split('/')
       return arr[arr.length - 1]
-    },
-  },
+    }
+  }
 }
 </script>
 
@@ -142,7 +157,6 @@ export default {
   text-align: center;
   font-size: 16px;
   line-height: 28px;
-
 }
 .icon:hover {
   cursor: pointer;

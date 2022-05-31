@@ -14,8 +14,8 @@
 </template>
 
 <script>
-import { SfButton, SfTopBar } from '@storefront-ui/vue';
-import LocaleSelector from './LocaleSelector';
+import { SfButton, SfTopBar } from '@storefront-ui/vue'
+import LocaleSelector from './LocaleSelector'
 
 export default {
   components: {
@@ -23,8 +23,7 @@ export default {
     SfButton,
     LocaleSelector
   }
-};
-
+}
 </script>
 <style lang="scss" scoped>
 .topbar {

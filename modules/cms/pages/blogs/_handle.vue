@@ -1,9 +1,6 @@
 <template>
   <div id="blogs">
-    <SfBreadcrumbs
-      class="breadcrumbs desktop-only"
-      :breadcrumbs="breadcrumbs"
-    />
+    <SfBreadcrumbs class="breadcrumbs desktop-only" :breadcrumbs="breadcrumbs" />
     <div class="navbar section">
       <div class="navbar__aside desktop-only">
         <LazyHydrate never>
@@ -19,16 +16,14 @@
               :key="option.value"
               :value="option.value"
               class="sort-by__option"
-              >{{ option.label }}</SfComponentSelectOption
+            >{{ option.label }}</SfComponentSelectOption
             >
           </SfComponentSelect>
         </div>
         <div class="navbar__counter">
           <span class="navbar__label desktop-only">Showing: </span>
           <span class="desktop-only">{{ articles.length }}</span>
-          <span class="navbar__label smartphone-only"
-            >{{ articles.length }} Items</span
-          >
+          <span class="navbar__label smartphone-only">{{ articles.length }} Items</span>
         </div>
         <div class="navbar__view">
           <span class="navbar__view-label desktop-only">View</span>
@@ -53,7 +48,7 @@
           >
             <SfIcon
               class="navbar__view-icon"
-               :color="!isGridView ? 'var(--c-primary)' : 'black'"
+              :color="!isGridView ? 'var(--c-primary)' : 'black'"
               icon="list"
               size="12px"
             />
@@ -64,26 +59,13 @@
     <div class="main section">
       <div class="sidebar desktop-only">
         <LazyHydrate when-idle>
-          <SfLoader
-            :loading="isPageLoading"
-            :class="{ 'loading--categories': isPageLoading }"
-          >
-            <SfAccordion
-              :open="sidebarAccordion[0].header"
-              :show-chevron="true"
-            >
+          <SfLoader :loading="isPageLoading" :class="{ 'loading--categories': isPageLoading }">
+            <SfAccordion :open="sidebarAccordion[0].header" :show-chevron="true">
               <SfAccordionItem header="Categories">
                 <template #default>
                   <SfList class="list">
-                    <SfListItem
-                      v-for="(item, j) in blogs"
-                      :key="j"
-                      class="list__item"
-                    >
-                      <SfMenuItem
-                        :label="item.title"
-                        :link="localePath(item.link)"
-                      />
+                    <SfListItem v-for="(item, j) in blogs" :key="j" class="list__item">
+                      <SfMenuItem :label="item.title" :link="localePath(item.link)" />
                     </SfListItem>
                   </SfList>
                 </template>
@@ -161,13 +143,7 @@
               </template>
             </SfProductCard>
           </transition-group>
-          <transition-group
-            v-else
-            appear
-            name="blogs__slide"
-            tag="div"
-            class="blogs__list"
-          >
+          <transition-group v-else appear name="blogs__slide" tag="div" class="blogs__list">
             <SfProductCardHorizontal
               v-for="(article, i) in articles"
               :key="article.id"
@@ -227,12 +203,7 @@
                 :disabled="!hasNextPage"
                 @click="goNextPage"
               >
-                <SfIcon
-                  icon="arrow_right"
-                  size="xs"
-                  viewBox="0 0 24 24"
-                  :coverage="1"
-                />
+                <SfIcon icon="arrow_right" size="xs" viewBox="0 0 24 24" :coverage="1" />
               </SfButton>
             </template>
             <template #prev>
@@ -241,19 +212,11 @@
                 :disabled="!hasPrevPage"
                 @click="goPrevPage"
               >
-                <SfIcon
-                  icon="arrow_left"
-                  size="xs"
-                  viewBox="0 0 24 24"
-                  :coverage="1"
-                />
+                <SfIcon icon="arrow_left" size="xs" viewBox="0 0 24 24" :coverage="1" />
               </SfButton>
             </template>
           </SfPagination>
-          <div
-            v-if="articles.length !== 0"
-            class="blogs__show-on-page desktop-only"
-          >
+          <div v-if="articles.length !== 0" class="blogs__show-on-page desktop-only">
             <span class="blogs__show-on-page__label">Show on page:</span>
             <SfSelect
               :value="articlesPerPage"
@@ -290,27 +253,17 @@ import {
   SfProductCardHorizontal,
   SfSelect,
   SfLoader
-} from '@storefront-ui/vue';
-import { SortBy } from '~/modules/cms/enums/SortBy';
-import LazyHydrate from 'vue-lazy-hydration';
-import { useUiState } from '~/composables';
-import {
-  useRoute,
-  computed,
-  ref,
-  watchEffect,
-  useContext
-} from '@nuxtjs/composition-api';
-import { onSSR } from '@vue-storefront/core';
-import { useContent, ContentType } from '@vue-storefront/shopify';
-import {
-  getArticleImage,
-  getArticleLink,
-  getArticlePublishedAt
-} from '~/helpers/article';
+} from '@storefront-ui/vue'
+import { SortBy } from '~/modules/cms/enums/SortBy'
+import LazyHydrate from 'vue-lazy-hydration'
+import { useUiState } from '~/composables'
+import { useRoute, computed, ref, watchEffect, useContext } from '@nuxtjs/composition-api'
+import { onSSR } from '@vue-storefront/core'
+import { useContent, ContentType } from '@vue-storefront/shopify'
+import { getArticleImage, getArticleLink, getArticlePublishedAt } from '~/helpers/article'
 
 export default {
-  name: 'Category',
+  name: 'CateGory',
   components: {
     SfHeading,
     SfButton,
@@ -328,25 +281,21 @@ export default {
     SfLoader
   },
   setup() {
-    const route = useRoute();
-    const context = useContext();
-    const { articlesPerPage, setArticlesPerPage } = useUiState();
-    const {
-      search: getBlogs,
-      content: blogs,
-      loading: isBlogsLoading
-    } = useContent('blogs');
-    const { search: getBlog } = useContent('blog');
+    const route = useRoute()
+    const context = useContext()
+    const { articlesPerPage, setArticlesPerPage } = useUiState()
+    const { search: getBlogs, content: blogs, loading: isBlogsLoading } = useContent('blogs')
+    const { search: getBlog } = useContent('blog')
     const {
       search: getArticles,
       content: articlesContent,
       loading: isArticlesLoading
-    } = useContent('articles');
+    } = useContent('articles')
 
-    const currentHandle = ref(route?.value?.params?.handle);
-    const cursors = ref(['']);
+    const currentHandle = ref(route?.value?.params?.handle)
+    const cursors = ref([''])
 
-    const showOnPage = ['5', '10', '20', '40', '60'];
+    const showOnPage = ['5', '10', '20', '40', '60']
     const sortByOptions = [
       {
         value: 'latest',
@@ -356,18 +305,17 @@ export default {
         value: 'oldest',
         label: 'Oldest First'
       }
-    ];
-    const selectedSortBy = ref(SortBy.Latest);
+    ]
+    const selectedSortBy = ref(SortBy.Latest)
 
     onSSR(async () => {
-      await getBlogs({ contentType: ContentType.Blog });
-      currentHandle.value =
-        route?.value?.params?.handle ?? blogs?.value?.[0]?.handle;
+      await getBlogs({ contentType: ContentType.Blog })
+      currentHandle.value = route?.value?.params?.handle ?? blogs?.value?.[0]?.handle
 
       getBlog({
         contentType: ContentType.Blog,
         handle: currentHandle.value
-      });
+      })
 
       await getArticles({
         contentType: ContentType.Article,
@@ -375,37 +323,31 @@ export default {
         first: parseInt(articlesPerPage.value),
         reverse: true,
         sortKey: 'PUBLISHED_AT'
-      });
-    });
+      })
+    })
 
-    const articles = computed(() => articlesContent?.value?.data ?? []);
+    const articles = computed(() => articlesContent?.value?.data ?? [])
 
-    const hasNextPage = computed(
-      () => articlesContent.value.pageInfo?.hasNextPage
-    );
-    const hasPrevPage = computed(
-      () => articlesContent.value.pageInfo?.hasPreviousPage
-    );
+    const hasNextPage = computed(() => articlesContent.value.pageInfo?.hasNextPage)
+    const hasPrevPage = computed(() => articlesContent.value.pageInfo?.hasPreviousPage)
 
     const goNextPage = () => {
-      const last = articles?.value?.slice(-1)[0];
+      const last = articles?.value?.slice(-1)[0]
 
-      if (!last.cursor) return;
+      if (!last.cursor) return
 
-      cursors.value.push(last.cursor);
-    };
+      cursors.value.push(last.cursor)
+    }
 
     const goPrevPage = () => {
-      cursors.value.pop();
-    };
+      cursors.value.pop()
+    }
 
-    const isPageLoading = computed(
-      () => isBlogsLoading.value || isArticlesLoading.value
-    );
+    const isPageLoading = computed(() => isBlogsLoading.value || isArticlesLoading.value)
 
     const selectShowOnPage = (perPage) => {
-      setArticlesPerPage(perPage);
-    };
+      setArticlesPerPage(perPage)
+    }
 
     watchEffect(() => {
       const options = {
@@ -413,18 +355,18 @@ export default {
         query: `blog_title:${currentHandle.value}`,
         first: parseInt(articlesPerPage.value),
         sortKey: 'PUBLISHED_AT'
-      };
+      }
 
       if (selectedSortBy.value === SortBy.Latest) {
-        options.reverse = true;
+        options.reverse = true
       }
 
       if (cursors.value.length > 1) {
-        options.after = [...cursors.value].splice(-1)[0];
+        options.after = [...cursors.value].splice(-1)[0]
       }
 
-      getArticles(options);
-    });
+      getArticles(options)
+    })
 
     return {
       selectShowOnPage,
@@ -468,9 +410,9 @@ export default {
           })
         }
       ]
-    };
+    }
   }
-};
+}
 </script>
 <style lang="scss" scoped>
 #category {
@@ -489,8 +431,7 @@ export default {
   }
 }
 .breadcrumbs {
-  padding: var(--spacer-base) var(--spacer-base) var(--spacer-base)
-    var(--spacer-sm);
+  padding: var(--spacer-base) var(--spacer-base) var(--spacer-base) var(--spacer-sm);
 }
 .navbar {
   position: relative;
@@ -618,8 +559,7 @@ export default {
     }
     &-label {
       margin: 0 var(--spacer-sm) 0 0;
-      font: var(--font-weight--normal) var(--font-size--base) / 1.6
-        var(--font-family--secondary);
+      font: var(--font-weight--normal) var(--font-size--base) / 1.6 var(--font-family--secondary);
       text-decoration: none;
       color: var(--c-link);
     }

@@ -139,12 +139,12 @@
                     product,
                     quantity: parseInt(qty),
                     customQuery: [
-                      { key: 'CustomAttrKey', value: 'CustomAttrValue' }
-                    ]
+                      { key: 'CustomAttrKey', value: 'CustomAttrValue' },
+                    ],
                   })
                 "
               >
-                {{ $t( 'Add to Cart') }}
+                {{ $t("Add to Cart") }}
               </SfButton>
             </template>
           </SfAddToCart>
@@ -176,17 +176,17 @@
             >
               <div class="product__additional-info">
                 <p class="product__additional-info__title">
-                  {{ $t('Brand') }}
+                  {{ $t("Brand") }}
                 </p>
                 <p>{{ brand }}</p>
                 <p class="product__additional-info__title">
-                  {{ $t('Instruction1') }}
+                  {{ $t("Instruction1") }}
                 </p>
                 <p class="product__additional-info__paragraph">
-                  {{ $t('Instruction2') }}
+                  {{ $t("Instruction2") }}
                 </p>
                 <p class="product__additional-info__paragraph">
-                  {{ $t('Instruction3') }}
+                  {{ $t("Instruction3") }}
                 </p>
                 <p>{{ careInstructions }}</p>
               </div>
@@ -224,20 +224,26 @@ import {
   SfBreadcrumbs,
   SfLoader,
   SfButton,
-  SfColor
-} from '@storefront-ui/vue';
+  SfColor,
+} from "@storefront-ui/vue";
 
-import InstagramFeed from '~/components/InstagramFeed.vue';
-import RelatedProducts from '~/components/RelatedProducts.vue';
-import { ref, computed, watch, useRoute, useRouter } from '@nuxtjs/composition-api';
-import { useProduct, useCart, productGetters } from '@vue-storefront/shopify';
-import MobileStoreBanner from '~/components/MobileStoreBanner.vue';
-import LazyHydrate from 'vue-lazy-hydration';
-import { onSSR } from '@vue-storefront/core';
-import useUiNotification from '~/composables/useUiNotification';
+import InstagramFeed from "~/components/InstagramFeed.vue";
+import RelatedProducts from "~/components/RelatedProducts.vue";
+import {
+  ref,
+  computed,
+  watch,
+  useRoute,
+  useRouter,
+} from "@nuxtjs/composition-api";
+import { useProduct, useCart, productGetters } from "@vue-storefront/shopify";
+import MobileStoreBanner from "~/components/MobileStoreBanner.vue";
+import LazyHydrate from "vue-lazy-hydration";
+import { onSSR } from "@vue-storefront/core";
+import useUiNotification from "~/composables/useUiNotification";
 
 export default {
-  name: 'Product',
+  name: "ProDuct",
   components: {
     SfAlert,
     SfColor,
@@ -255,39 +261,39 @@ export default {
     InstagramFeed,
     RelatedProducts,
     MobileStoreBanner,
-    LazyHydrate
+    LazyHydrate,
   },
   beforeRouteEnter(__, from, next) {
     next((vm) => {
       vm.prevRoute = from;
     });
   },
-  transition: 'fade',
+  transition: "fade",
   setup() {
     const route = useRoute();
     const router = useRouter();
     const breadcrumbs = ref([]);
-    const atttLbl = '';
+    const atttLbl = "";
     const qty = ref(1);
     const { slug } = route?.value?.params;
     const {
       loading: productloading,
       products,
-      search
-    } = useProduct('products');
+      search,
+    } = useProduct("products");
     const { send: sendNotification } = useUiNotification();
     const {
       products: relatedProducts,
       search: searchRelatedProducts,
-      loading: relatedLoading
-    } = useProduct('relatedProducts');
+      loading: relatedLoading,
+    } = useProduct("relatedProducts");
     const { addItem, loading } = useCart();
 
     const product = computed(
       () =>
         productGetters.getFiltered(products.value, {
           master: true,
-          attributes: route?.value?.query
+          attributes: route?.value?.query,
         })[0]
     );
 
@@ -315,17 +321,17 @@ export default {
     const setBreadcrumb = () => {
       breadcrumbs.value = [
         {
-          text: 'Home',
-          link: '/'
+          text: "Home",
+          link: "/",
         },
         {
-          text: 'products',
-          link: '#'
+          text: "products",
+          link: "#",
         },
         {
           text: productTitle.value,
-          link: '#'
-        }
+          link: "#",
+        },
       ];
     };
 
@@ -342,14 +348,14 @@ export default {
       if (product.value && product.value.images.length === 0) {
         product.value.images.push({
           originalSrc:
-            'https://cdn.shopify.com/s/files/1/0407/1902/4288/files/placeholder_600x600.jpg?v=1625742127'
+            "https://cdn.shopify.com/s/files/1/0407/1902/4288/files/placeholder_600x600.jpg?v=1625742127",
         });
       }
       return productGetters.getGallery(product.value).map((img) => ({
         mobile: { url: img.small },
         desktop: { url: img.normal },
         big: { url: img.big },
-        alt: product.value._name || product.value.name
+        alt: product.value._name || product.value.name,
       }));
     });
     const stock = computed(() => {
@@ -365,7 +371,7 @@ export default {
         if (!productTitle.value) {
           return route?.value?.error({
             statusCode: 404,
-            message: 'This product could not be found'
+            message: "This product could not be found",
           });
         }
       });
@@ -387,8 +393,8 @@ export default {
         path: route?.value?.path,
         query: {
           ...configuration.value,
-          ...filter
-        }
+          ...filter,
+        },
       });
     };
 
@@ -417,7 +423,7 @@ export default {
       productGallery,
       productGetters,
       setBreadcrumb,
-      atttLbl
+      atttLbl,
     };
   },
   // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
@@ -425,39 +431,39 @@ export default {
     return {
       properties: [
         {
-          name: 'Product Code',
-          value: '578902-00'
+          name: "Product Code",
+          value: "578902-00",
         },
         {
-          name: 'Category',
-          value: 'Pants'
+          name: "Category",
+          value: "Pants",
         },
         {
-          name: 'Material',
-          value: 'Cotton'
+          name: "Material",
+          value: "Cotton",
         },
         {
-          name: 'Country',
-          value: 'Germany'
-        }
+          name: "Country",
+          value: "Germany",
+        },
       ],
       description:
-        'Find stunning women cocktail and party dresses. Stand out in lace and metallic cocktail dresses and party dresses from all your favorite brands.',
+        "Find stunning women cocktail and party dresses. Stand out in lace and metallic cocktail dresses and party dresses from all your favorite brands.",
       detailsIsActive: false,
       brand:
-        'Brand name is the perfect pairing of quality and design. This label creates major everyday vibes with its collection of modern brooches, silver and gold jewellery, or clips it back with hair accessories in geo styles.',
-      careInstructions: 'Do not wash!'
+        "Brand name is the perfect pairing of quality and design. This label creates major everyday vibes with its collection of modern brooches, silver and gold jewellery, or clips it back with hair accessories in geo styles.",
+      careInstructions: "Do not wash!",
     };
   },
   // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
   mounted() {
-    window.addEventListener('load', () => {
+    window.addEventListener("load", () => {
       this.setGalleryWidth();
     });
     this.$nextTick(() => {
       this.setGalleryWidth();
       this.setBreadcrumb();
-      window.addEventListener('resize', this.setGalleryWidth);
+      window.addEventListener("resize", this.setGalleryWidth);
     });
   },
   // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
@@ -470,11 +476,11 @@ export default {
     async addingToCart(Productdata) {
       await this.addItem(Productdata).then(() => {
         this.sendNotification({
-          key: 'product_added',
+          key: "product_added",
           message: `${Productdata.product.name} has been successfully added to your cart.`,
-          type: 'success',
-          title: 'Product added!',
-          icon: 'check'
+          type: "success",
+          title: "Product added!",
+          icon: "check",
         });
         this.qty = 1;
       });
@@ -485,19 +491,19 @@ export default {
     },
     // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
     setGalleryWidth() {
-      const gallary = document.getElementsByClassName('product__gallery');
+      const gallary = document.getElementsByClassName("product__gallery");
       const gallerySlider =
-        gallary.length > 0 && gallary[0].querySelectorAll('.glide__slides');
+        gallary.length > 0 && gallary[0].querySelectorAll(".glide__slides");
       const galleryAllSlides =
         gallerySlider.length > 0 &&
-        gallerySlider[0].querySelectorAll('.glide__slide');
-      typeof galleryAllSlides !== 'boolean' &&
+        gallerySlider[0].querySelectorAll(".glide__slide");
+      typeof galleryAllSlides !== "boolean" &&
         galleryAllSlides.length > 0 &&
         galleryAllSlides.forEach((gallerySlide) => {
           gallerySlide.style.flexBasis = gallerySlide.style.width;
         });
-    }
-  }
+    },
+  },
 };
 </script>
 

@@ -26,7 +26,10 @@
                 :image="cartGetters.getItemImage(product)"
                 :title="cartGetters.getItemName(product)"
                 :regular-price="$n(cartGetters.getItemPrice(product).regular, 'currency')"
-                :special-price="cartGetters.getItemPrice(product).special && $n(cartGetters.getItemPrice(product).special, 'currency')"
+                :special-price="
+                  cartGetters.getItemPrice(product).special &&
+                    $n(cartGetters.getItemPrice(product).special, 'currency')
+                "
                 :stock="99999"
                 class="collected-product"
                 @click:remove="removeItem({ product })"
@@ -34,7 +37,10 @@
                 <template #configuration>
                   <div class="collected-product__properties">
                     <SfProperty
-                      v-for="(attribute, key) in cartGetters.getItemAttributes(product, ['color', 'size'])"
+                      v-for="(attribute, key) in cartGetters.getItemAttributes(product, [
+                        'color',
+                        'size',
+                      ])"
                       :key="key"
                       :name="key"
                       :value="attribute"
@@ -89,7 +95,7 @@
                 :value="couponcode"
                 label="Apply coupon"
                 type="text"
-                :icon='{"icon":"","color":"","size":""}'
+                :icon="{ icon: '', color: '', size: '' }"
                 :valid="isValidCoupon"
                 :error-message="errorMsg"
                 :required="true"
@@ -98,27 +104,44 @@
                 class="coupon-code-input"
               />
               <SfButton
-                  class="sf-button--full-width color-secondary sf-apply-coupon"
-                  @click="handleApplyCoupon(couponcode)"
-                >
-                  {{ $t('Apply') }}
+                class="sf-button--full-width color-secondary sf-apply-coupon"
+                @click="handleApplyCoupon(couponcode)"
+              >
+                {{ $t('Apply') }}
               </SfButton>
             </div>
             <SfProperty
-            v-if="totalDiscount"
+              v-if="totalDiscount"
               class="sf-property--full-width sf-property--large my-cart__discount"
             >
-            <template #name>
-              <span class="sf-property__name applied-discount">{{displayDiscountStr}}<SfIcon v-if="appliedCoupon" class="remove-coupon" icon="cross" size="xxs" color="green-primary" @click="handleRemoveCoupon(couponcode)"/></span>
-            </template>
+              <template #name>
+                <span class="sf-property__name applied-discount"
+                >{{ displayDiscountStr
+                }}<SfIcon
+                  v-if="appliedCoupon"
+                  class="remove-coupon"
+                  icon="cross"
+                  size="xxs"
+                  color="green-primary"
+                  @click="handleRemoveCoupon(couponcode)"
+                  ˝
+                /></span>
+              </template>
               <template #value>
                 <SfPrice
                   v-if="!totalDiscount.percentage"
                   :regular="$n(totalDiscount.amount, 'currency')"
                 />
                 <SfPrice
-                v-else
-                :regular="$n(totals.subtotal * totalDiscount.percentage/ (100 - totalDiscount.percentage), 'currency')"/>
+                  v-else
+                  :regular="
+                    $n(
+                      (totals.subtotal * totalDiscount.percentage) /
+                        (100 - totalDiscount.percentage),
+                      'currency'
+                    )
+                  "
+                />
               </template>
             </SfProperty>
             <SfProperty
@@ -126,23 +149,22 @@
               class="sf-property--full-width sf-property--large my-cart__total-price"
             >
               <template #value>
-                <SfPrice
-                  :regular="$n(totals.subtotal, 'currency')"
-                />
+                <SfPrice :regular="$n(totals.subtotal, 'currency')" />
               </template>
             </SfProperty>
             <SfProperty
-            v-if="totalSavings"
+              v-if="totalSavings"
               name="Total Savings"
               class="sf-property--full-width sf-property--large my-cart__total-price"
             >
               <template #value>
-                <SfPrice
-                  :regular="$n(totalSavings, 'currency')"
-                />
+                <SfPrice :regular="$n(totalSavings, 'currency')" />
               </template>
             </SfProperty>
-            <SfLink link="javascript:void(0);" @click="handleCheckout(checkoutURL, parseFloat(totals.subtotal))">
+            <SfLink
+              link="javascript:void(0);"
+              @click="handleCheckout(checkoutURL, parseFloat(totals.subtotal))"
+            >
               <SfButton
                 class="sf-button--full-width color-secondary sf-proceed_to_checkout"
                 @click="toggleCartSidebar"
@@ -150,13 +172,11 @@
                 {{ $t('Go to checkout') }}
               </SfButton>
             </SfLink>
-            </div>
+          </div>
           <div v-else>
-            <SfButton
-              class="sf-button--full-width color-primary"
-              @click="toggleCartSidebar"
-            >{{ $t('Go back shopping') }}</SfButton
-            >
+            <SfButton class="sf-button--full-width color-primary" @click="toggleCartSidebar">{{
+              $t('Go back shopping')
+            }}</SfButton>
           </div>
         </transition>
       </template>
@@ -176,14 +196,14 @@ import {
   SfInput,
   SfQuantitySelector,
   SfIcon
-} from '@storefront-ui/vue';
-import { computed, ref, useRoute } from '@nuxtjs/composition-api';
-import { useCart, useUser, cartGetters } from '@vue-storefront/shopify';
-import { useUiState, useUiNotification } from '~/composables';
-import debounce from 'lodash.debounce';
+} from '@storefront-ui/vue'
+import { computed, ref, useRoute } from '@nuxtjs/composition-api'
+import { useCart, useUser, cartGetters } from '@vue-storefront/shopify'
+import { useUiState, useUiNotification } from '~/composables'
+import debounce from 'lodash.debounce'
 
 export default {
-  name: 'Cart',
+  name: 'CartSidebar',
   components: {
     SfSidebar,
     SfButton,
@@ -198,63 +218,73 @@ export default {
     SfIcon
   },
   setup() {
-    const route = useRoute();
-    const isValidCoupon = ref(true);
-    const errorMsg = ref("Invalid coupon code");
-    const { isCartSidebarOpen, toggleCartSidebar } = useUiState();
-    const { cart, removeItem, updateItemQty, loading, applyCoupon, removeCoupon } = useCart();
-    const { isAuthenticated } = useUser();
-    const { send: sendNotification, notifications } = useUiNotification();
-    const couponcode= '';
-    const products = computed(() => cartGetters.getItems(cart.value));
-    const totals = computed(() => cartGetters.getTotals(cart.value));
-    const lineItemsSubtotalPrice = computed(() => cartGetters.getSubTotal(cart.value));
-    const totalItems = computed(() => cartGetters.getTotalItems(cart.value));
-    const totalDiscount = computed(() => cartGetters.getTotalDiscount(cart.value));
+    const route = useRoute()
+    const isValidCoupon = ref(true)
+    const errorMsg = ref('Invalid coupon code')
+    const { isCartSidebarOpen, toggleCartSidebar } = useUiState()
+    const { cart, removeItem, updateItemQty, loading, applyCoupon, removeCoupon } = useCart()
+    const { isAuthenticated } = useUser()
+    const { send: sendNotification, notifications } = useUiNotification()
+    const couponcode = ''
+    const products = computed(() => cartGetters.getItems(cart.value))
+    const totals = computed(() => cartGetters.getTotals(cart.value))
+    const lineItemsSubtotalPrice = computed(() => cartGetters.getSubTotal(cart.value))
+    const totalItems = computed(() => cartGetters.getTotalItems(cart.value))
+    const totalDiscount = computed(() => cartGetters.getTotalDiscount(cart.value))
     const totalSavings = computed(() => {
-      let calculatedTotalSavings = 0;
+      let calculatedTotalSavings = 0
       products.value.forEach((item) => {
         if (item.variant.compareAtPriceV2 !== null) {
           calculatedTotalSavings +=
             (parseFloat(item.variant.compareAtPriceV2?.amount) -
               parseFloat(item.variant.priceV2.amount)) *
-            item.quantity;
+            item.quantity
         }
-      });
+      })
       if (totalDiscount.value > 0 || Object.keys(totalDiscount.value).length > 0) {
-        calculatedTotalSavings += totalDiscount.value.percentage ? cart.value.lineItemsSubtotalPrice.amount * totalDiscount.value.percentage/100 : parseFloat(totalDiscount.value.amount);
+        calculatedTotalSavings += totalDiscount.value.percentage
+          ? (cart.value.lineItemsSubtotalPrice.amount * totalDiscount.value.percentage) / 100
+          : parseFloat(totalDiscount.value.amount)
       }
-      return calculatedTotalSavings;
-    });
-    const checkoutURL = computed(() => cartGetters.getcheckoutURL(cart.value));
-    const appliedCoupon = computed(() => cartGetters.getCoupon(cart.value));
-    const displayDiscountStr = computed(() => appliedCoupon.value ? `Discount [${appliedCoupon.value}${totalDiscount.value.percentage ? ' | ' + route?.value?.$n(totalDiscount.value.percentage/100, 'percent'): ''}]`: 'Discount');
-    
+      return calculatedTotalSavings
+    })
+    const checkoutURL = computed(() => cartGetters.getcheckoutURL(cart.value))
+    const appliedCoupon = computed(() => cartGetters.getCoupon(cart.value))
+    const displayDiscountStr = computed(() =>
+      appliedCoupon.value
+        ? `Discount [${appliedCoupon.value}${
+          totalDiscount.value.percentage
+            ? ' | ' + route?.value?.$n(totalDiscount.value.percentage / 100, 'percent')
+            : ''
+        }]`
+        : 'Discount'
+    )
+
     const handleApplyCoupon = async (couponCode) => {
-      if(couponCode && couponCode !== ""){
-        await applyCoupon({couponCode}).then(() =>{
-          if(cart.value.checkoutUserErrors.length > 0){
-            errorMsg.value = cart.value.checkoutUserErrors[0];
-            isValidCoupon.value = false;
-          }else{
-            isValidCoupon.value = true;
+      if (couponCode && couponCode !== '') {
+        await applyCoupon({ couponCode }).then(() => {
+          if (cart.value.checkoutUserErrors.length > 0) {
+            errorMsg.value = cart.value.checkoutUserErrors[0]
+            isValidCoupon.value = false
+          } else {
+            isValidCoupon.value = true
           }
-        });
+        })
       }
     }
     const handleRemoveCoupon = async (couponCode) => {
-      await removeCoupon({couponCode}).then(() =>{
-          errorMsg.value = "Coupon removed";
-        });
+      await removeCoupon({ couponCode }).then(() => {
+        errorMsg.value = 'Coupon removed'
+      })
     }
     const handleCheckout = (checkoutUrl) => {
       setTimeout(() => {
-        window.location.href = checkoutUrl;
+        window.location.href = checkoutUrl
       }, 300)
     }
     const updateQuantity = debounce(async ({ product, quantity }) => {
-      await updateItemQty({ product, quantity });
-    }, 300);
+      await updateItemQty({ product, quantity })
+    }, 300)
 
     return {
       updateQuantity,
@@ -281,9 +311,9 @@ export default {
       appliedCoupon,
       handleRemoveCoupon,
       displayDiscountStr
-    };
+    }
   }
-};
+}
 </script>
 
 <style lang="scss" scoped>
@@ -312,7 +342,9 @@ export default {
     --price-font-weight: var(--font-weight--medium);
     margin: 0 0 var(--spacer-base) 0;
   }
-  &__discount {margin-bottom: 30px;}
+  &__discount {
+    margin-bottom: 30px;
+  }
 }
 .applied-discount {
   display: flex;
@@ -396,16 +428,16 @@ export default {
 ::v-deep .sf-collected-product__configuration {
   display: block;
 }
-.coupon-form-wrapper{
+.coupon-form-wrapper {
   display: flex;
   margin-bottom: 40px;
-  max-height:50px; 
+  max-height: 50px;
 }
-.coupon-code-input{
+.coupon-code-input {
   flex: 0 0 60%;
   max-width: 60%;
 }
-.sf-apply-coupon{
+.sf-apply-coupon {
   flex-grow: 1;
 }
 </style>

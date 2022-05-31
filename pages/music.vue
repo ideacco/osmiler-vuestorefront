@@ -68,10 +68,10 @@
                         >
 
                           <td class="uk-text-nowrap uk-table-shrink">
-                            <div class="el-meta uk-text-meta">{{index + 1}}</div>
+                            <div class="el-meta uk-text-meta">{{ index + 1 }}</div>
                           </td>
                           <td class="uk-text-nowrap uk-table-shrink">
-                            <div class="el-title">{{item.music_name}}</div>
+                            <div class="el-title">{{ item.music_name }}</div>
                           </td>
                           <td class="uk-text-nowrap uk-text-right uk-table-shrink">
                             <a
@@ -150,13 +150,13 @@
                 >
 
                   <td class="uk-text-nowrap uk-table-shrink">
-                    <div class="el-meta uk-text-muted">{{item.mins}}</div>
+                    <div class="el-meta uk-text-muted">{{ item.mins }}</div>
                   </td>
                   <td>
-                    <div class="el-title uk-h4">{{item.music_name}}</div>
+                    <div class="el-title uk-h4">{{ item.music_name }}</div>
                   </td>
                   <td>
-                    <div class="el-content uk-panel uk-text-meta">{{item.speed}}</div>
+                    <div class="el-content uk-panel uk-text-meta">{{ item.speed }}</div>
                   </td>
 
                   <td class="uk-text-nowrap uk-text-right@m uk-table-shrink">
@@ -192,41 +192,42 @@
         </div>
       </div>
     </div>
-    
+
   </div>
 </template>
-  <script type="text/javascript"
+<script type="text/javascript"
         // src="static/wp-content/themes/yootheme/vendor/yootheme/theme-highlight/assets/highlight.js"
         // id="script:highlight-js"></script>
 <script type="module">
 
 export default {
+  name:"MuSic",
     data() {
       return {
           audio: null,
           mp3_info:[
-            {   
+            {
                 id: 1,
                 music_name:"Alpha (Intro)",
                 mins:'3:00',
                 speed:'fast',
                 music_url:'/wp-content/uploads/2022/05/06-Up.mp3',
             },
-            {   
+            {
                 id: 2,
                 music_name:'We are not friends (ft. Goku)',
                 mins:'3:00',
                 speed:'fast',
                 music_url:'/wp-content/uploads/2022/05/06-Up.mp3',
             },
-            {   
+            {
                 id:3,
                 music_name:'Eat your Vegetables',
                 mins:'3:00',
                 speed:'fast',
                 music_url:'/wp-content/uploads/2022/05/06-Up.mp3',
             },
-            {   
+            {
                 id:4,
                 music_name:'Power Level 500K',
                 mins:'3:00',
@@ -244,7 +245,6 @@ export default {
     },
     methods: {
         play(music_url, id) {
-
             // 播放中,且当前点击的音乐正在播放
             if (this.isPlaying && this.playingId === id) {
                 this.audio.pause()

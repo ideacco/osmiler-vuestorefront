@@ -11,18 +11,23 @@
         :name="String(userBillingGetters.getId(billingAddress))"
       >
         <span
-          >{{ userBillingGetters.getFirstName(billingAddress) }} {{ userBillingGetters.getLastName(billingAddress) }}</span
+        >{{ userBillingGetters.getFirstName(billingAddress) }}
+          {{ userBillingGetters.getLastName(billingAddress) }}</span
         >
         <span
-          >{{ userBillingGetters.getStreetName(billingAddress) }}
+        >{{ userBillingGetters.getStreetName(billingAddress) }}
           {{ userBillingGetters.getApartmentNumber(billingAddress) }}</span
         >
         <span>{{ userBillingGetters.getPostCode(billingAddress) }}</span>
         <span
-          >{{ userBillingGetters.getCity(billingAddress)
-          }}{{ userBillingGetters.getProvince(billingAddress) ? `, ${userBillingGetters.getProvince(billingAddress)}` : '' }}</span
+        >{{ userBillingGetters.getCity(billingAddress)
+        }}{{
+          userBillingGetters.getProvince(billingAddress)
+            ? `, ${userBillingGetters.getProvince(billingAddress)}`
+            : ''
+        }}</span
         >
-        <span>{{ userBillingGetters.getCountry(billingAddress)}}</span>
+        <span>{{ userBillingGetters.getCountry(billingAddress) }}</span>
         <span>{{ userBillingGetters.getPhone(billingAddress) }}</span>
       </SfAddress>
     </SfAddressPicker>
@@ -38,11 +43,8 @@
 </template>
 
 <script type="module">
-import {
-  SfCheckbox,
-  SfAddressPicker
-} from '@storefront-ui/vue';
-import { userBillingGetters } from '@vue-storefront/shopify';
+import { SfCheckbox, SfAddressPicker } from '@storefront-ui/vue'
+import { userBillingGetters } from '@vue-storefront/shopify'
 
 export default {
   name: 'UserBillingAddresses',
@@ -65,24 +67,25 @@ export default {
     }
   },
   // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
-  setup (_, { emit }) {
-    const setCurrentAddress = $event => emit('setCurrentAddress', $event);
+  setup(_, { emit }) {
+    const setCurrentAddress = ($event) => emit('setCurrentAddress', $event)
 
     return {
       setCurrentAddress,
       userBillingGetters
-    };
+    }
   }
-};
+}
 </script>
 
 <style>
-  .billing__addresses {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    margin-bottom: var(--spacer-xl);
-  }
-  .billing-address-setAsDefault, .form__action-button--margin-bottom {
-    margin-bottom: var(--spacer-xl);
-  }
+.billing__addresses {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin-bottom: var(--spacer-xl);
+}
+.billing-address-setAsDefault,
+.form__action-button--margin-bottom {
+  margin-bottom: var(--spacer-xl);
+}
 </style>

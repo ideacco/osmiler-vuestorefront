@@ -7,32 +7,28 @@
       <el-col class="conatactbox4">
         <p>Welcome to SLEEPON (“Company”, “we”, “our”, “us”)!</p>
         <p>
-          These Terms of Service (“Terms”, “Terms of Service”) govern your use
-          of our website located at www.sleepon.us (together or individually
-          “Service”) operated by SLEEPON.
+          These Terms of Service (“Terms”, “Terms of Service”) govern your use of our website
+          located at www.sleepon.us (together or individually “Service”) operated by SLEEPON.
         </p>
         <p>
-          Our Privacy Policy also governs your use of our Service and explains
-          how we collect, safeguard and disclose information that results from
-          your use of our web pages.
+          Our Privacy Policy also governs your use of our Service and explains how we collect,
+          safeguard and disclose information that results from your use of our web pages.
         </p>
         <p>
-          Your agreement with us includes these Terms and our Privacy Policy
-          (“Agreements”). You acknowledge that you have read and understood
-          Agreements, and agree to be bound of them.
+          Your agreement with us includes these Terms and our Privacy Policy (“Agreements”). You
+          acknowledge that you have read and understood Agreements, and agree to be bound of them.
         </p>
         <p>
-          If you do not agree with (or cannot comply with) Agreements, then you
-          may not use the Service, but please let us know by emailing at
-          service@sleepon.us so we can try to find a solution. These Terms apply
-          to all visitors, users and others who wish to access or use Service.
+          If you do not agree with (or cannot comply with) Agreements, then you may not use the
+          Service, but please let us know by emailing at service@sleepon.us so we can try to find a
+          solution. These Terms apply to all visitors, users and others who wish to access or use
+          Service.
         </p></el-col
       >
     </el-row>
   </div>
 </template>
-<script>
-</script>
+<script></script>
 <style lang="scss" scoped>
 .conatactbox {
   position: relative;
@@ -45,7 +41,7 @@
     left: 541px;
     top: 174px;
     /* 中文-标准/二级标题/二级标题_Heavy */
-    font-family: "Alibaba PuHuiTi";
+    font-family: 'Alibaba PuHuiTi';
     font-style: normal;
     font-weight: 400;
     font-size: 38px;
@@ -62,7 +58,7 @@
     left: 50px;
     top: 226px;
     /* 中文-标准/正文4-12pt/正文4_Medium */
-    font-family: "Alibaba PuHuiTi";
+    font-family: 'Alibaba PuHuiTi';
     font-style: normal;
     font-weight: 700;
     font-size: 12px;
@@ -78,7 +74,7 @@
     left: 50px;
     top: 251px;
     /* 中文-标准/四级标题/四级标题_Regular */
-    font-family: "Alibaba PuHuiTi";
+    font-family: 'Alibaba PuHuiTi';
     font-style: normal;
     font-weight: 400;
     font-size: 24px;
@@ -95,7 +91,7 @@
     top: 314px;
     p {
       margin-top: 10px;
-      font-family: "Alibaba PuHuiTi";
+      font-family: 'Alibaba PuHuiTi';
       font-style: normal;
       font-weight: 400;
       font-size: 14px;

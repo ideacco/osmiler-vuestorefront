@@ -1,9 +1,6 @@
 <template>
   <div id="category">
-    <SfBreadcrumbs
-      class="breadcrumbs breadcrumbs-center"
-      :breadcrumbs="breadcrumbs"
-    >
+    <SfBreadcrumbs class="breadcrumbs breadcrumbs-center" :breadcrumbs="breadcrumbs">
       <template #link="{ breadcrumb }">
         <nuxt-link
           :data-testid="breadcrumb.text"
@@ -31,18 +28,14 @@
               :key="option.id"
               :value="option.id"
               class="sort-by__option"
-              >{{ option.value }}</SfSelectOption
+            >{{ option.value }}</SfSelectOption
             >
           </SfSelect>
         </div>
         <div class="navbar__counter">
-          <span class="navbar__label desktop-only"
-            >{{ $t('Products found') }}:
-          </span>
+          <span class="navbar__label desktop-only">{{ $t('Products found') }}: </span>
           <span class="desktop-only">{{ pagination.totalItems }}</span>
-          <span class="navbar__label smartphone-only"
-            >{{ pagination.totalItems }} Items</span
-          >
+          <span class="navbar__label smartphone-only">{{ pagination.totalItems }} Items</span>
         </div>
         <div class="navbar__view">
           <span class="navbar__view-label desktop-only">{{ $t('View') }}</span>
@@ -55,7 +48,7 @@
             role="button"
             aria-label="Change to grid view"
             :aria-pressed="isCategoryGridView"
-            v-on="isCategoryGridView ? {}: {click: toggleCategoryGridView}"
+            v-on="isCategoryGridView ? {} : { click: toggleCategoryGridView }"
           />
           <SfIcon
             data-cy="category-icon_list-view"
@@ -66,7 +59,7 @@
             role="button"
             aria-label="Change to list view"
             :aria-pressed="!isCategoryGridView"
-            v-on="!isCategoryGridView ? {}: {click: toggleCategoryGridView}"
+            v-on="!isCategoryGridView ? {} : { click: toggleCategoryGridView }"
           />
         </div>
       </div>
@@ -91,12 +84,10 @@
               :image="productGetters.getCoverImage(product)"
               :image-width="$device.isDesktopOrTablet ? 212 : 154"
               :image-height="$device.isDesktopOrTablet ? 320 : 232"
-              :regular-price="
-                $n(productGetters.getPrice(product).regular, 'currency')
-              "
+              :regular-price="$n(productGetters.getPrice(product).regular, 'currency')"
               :special-price="
                 productGetters.getPrice(product).special &&
-                $n(productGetters.getPrice(product).special, 'currency')
+                  $n(productGetters.getPrice(product).special, 'currency')
               "
               :max-rating="5"
               :score-rating="productGetters.getAverageRating(product)"
@@ -105,19 +96,13 @@
               :is-added-to-cart="isInCart({ product, currentCart })"
               :add-to-cart-disabled="!productGetters.getStockStatus(product)"
               :link="
-                localePath(
-                  `/p/${productGetters.getId(product)}/${productGetters.getSlug(
-                    product
-                  )}`
-                )
+                localePath(`/p/${productGetters.getId(product)}/${productGetters.getSlug(product)}`)
               "
               :wishlist-icon="false"
               class="products__product-card"
-              @click:add-to-cart="
-                handleAddToCart({ product, quantity: 1, currentCart })
-              "
+              @click:add-to-cart="handleAddToCart({ product, quantity: 1, currentCart })"
             >
-            <template #image="imageSlotProps">
+              <template #image="imageSlotProps">
                 <SfButton
                   :link="imageSlotProps.link"
                   aria-label="Go To Product"
@@ -148,13 +133,7 @@
               </template>
             </SfProductCard>
           </transition-group>
-          <transition-group
-            v-else
-            appear
-            name="products__slide"
-            tag="div"
-            class="products__list"
-          >
+          <transition-group v-else appear name="products__slide" tag="div" class="products__list">
             <SfProductCardHorizontal
               v-for="(product, i) in products"
               :key="productGetters.getId(product)"
@@ -165,12 +144,10 @@
               :image="productGetters.getCoverImage(product)"
               :image-width="$device.isDesktopOrTablet ? 85 : 140"
               :image-height="$device.isDesktopOrTablet ? 128 : 212"
-              :regular-price="
-                $n(productGetters.getPrice(product).regular, 'currency')
-              "
+              :regular-price="$n(productGetters.getPrice(product).regular, 'currency')"
               :special-price="
                 productGetters.getPrice(product).special &&
-                $n(productGetters.getPrice(product).special, 'currency')
+                  $n(productGetters.getPrice(product).special, 'currency')
               "
               :add-to-cart-disabled="!productGetters.getStockStatus(product)"
               :max-rating="5"
@@ -178,46 +155,37 @@
               :is-on-wishlist="false"
               class="products__product-card-horizontal"
               :link="
-                localePath(
-                  `/p/${productGetters.getId(product)}/${productGetters.getSlug(
-                    product
-                  )}`
-                )
+                localePath(`/p/${productGetters.getId(product)}/${productGetters.getSlug(product)}`)
               "
-              @click:add-to-cart="
-                handleAddToCart({ product, quantity: 1, currentCart })
-              "
+              @click:add-to-cart="handleAddToCart({ product, quantity: 1, currentCart })"
             ><template #image="imageSlotProps">
-                  <SfLink
-                    :link="imageSlotProps.link"
-                    class="
-                    sf-product-card-horizontal__link
-                    sf-product-card-horizontal__link--image
-                  "
-                  >
-                    <template v-if="Array.isArray(imageSlotProps.image)">
-                      <SfImage
-                        v-for="(picture, key) in imageSlotProps.image.slice(0, 2)"
-                        :key="key"
-                        image-tag="nuxt-img"
-                        :src="picture"
-                        :alt="imageSlotProps.title"
-                        :width="imageSlotProps.imageWidth"
-                        :height="imageSlotProps.imageHeight"
-                        class="sf-product-card-horizontal__picture"
-                      />
-                    </template>
-                    <SfImage
-                      v-else
-                      image-tag="nuxt-img"
-                      :src="imageSlotProps.image"
-                      :alt="imageSlotProps.title"
-                      :width="imageSlotProps.imageWidth"
-                      :height="imageSlotProps.imageHeight"
-                      class="sf-product-card-horizontal__image"
-                    />
-                  </SfLink>
-                </template>
+               <SfLink
+                 :link="imageSlotProps.link"
+                 class="sf-product-card-horizontal__link sf-product-card-horizontal__link--image"
+               >
+                 <template v-if="Array.isArray(imageSlotProps.image)">
+                   <SfImage
+                     v-for="(picture, key) in imageSlotProps.image.slice(0, 2)"
+                     :key="key"
+                     image-tag="nuxt-img"
+                     :src="picture"
+                     :alt="imageSlotProps.title"
+                     :width="imageSlotProps.imageWidth"
+                     :height="imageSlotProps.imageHeight"
+                     class="sf-product-card-horizontal__picture"
+                   />
+                 </template>
+                 <SfImage
+                   v-else
+                   image-tag="nuxt-img"
+                   :src="imageSlotProps.image"
+                   :alt="imageSlotProps.title"
+                   :width="imageSlotProps.imageWidth"
+                   :height="imageSlotProps.imageHeight"
+                   class="sf-product-card-horizontal__image"
+                 />
+               </SfLink>
+             </template>
               <template #configuration>
                 <SfProperty
                   class="desktop-only"
@@ -235,9 +203,7 @@
                   @click="
                     addItemToCart({
                       product,
-                      quantity: Number(
-                        productsQuantity[productData.getId(product)] || 1
-                      )
+                      quantity: Number(productsQuantity[productData.getId(product)] || 1),
                     })
                   "
                 />
@@ -253,10 +219,7 @@
             :total="pagination.totalPages"
             :visible="5"
           />
-          <div
-            v-show="pagination.totalPages > 1"
-            class="products__show-on-page"
-          >
+          <div v-show="pagination.totalPages > 1" class="products__show-on-page">
             <span class="products__show-on-page__label">Show on page:</span>
             <SfSelect
               :value="pagination.itemsPerPage.toString()"
@@ -290,11 +253,7 @@
             :title="facet.label"
             class="filters__title sf-heading--left"
           />
-          <div
-            v-if="isFacetColor(facet)"
-            :key="`${facet.id}-colors`"
-            class="filters__colors"
-          >
+          <div v-if="isFacetColor(facet)" :key="`${facet.id}-colors`" class="filters__colors">
             <SfColor
               v-for="option in facet.options"
               :key="`${facet.id}-${option.value}`"
@@ -338,13 +297,11 @@
       </SfAccordion>
       <template #content-bottom>
         <div class="filters__buttons">
-          <SfButton class="sf-button--full-width" @click="applyFilters"
-            >Done</SfButton
-          >
+          <SfButton class="sf-button--full-width" @click="applyFilters">Done</SfButton>
           <SfButton
             class="sf-button--full-width filters__button-clear"
             @click="clearFilters"
-            >Clear all</SfButton
+          >Clear all</SfButton
           >
         </div>
       </template>
@@ -371,18 +328,14 @@ import {
   SfAddToCart,
   SfLink,
   SfImage
-} from '@storefront-ui/vue';
-import { computed, onMounted, ref } from '@nuxtjs/composition-api';
-import {
-  useCart,
-  productGetters,
-  useFacet,
-  facetGetters
-} from '@vue-storefront/shopify';
-import { useUiHelpers, useUiState, useUiNotification } from '~/composables';
-import { onSSR } from '@vue-storefront/core';
+} from '@storefront-ui/vue'
+import { computed, onMounted, ref } from '@nuxtjs/composition-api'
+import { useCart, productGetters, useFacet, facetGetters } from '@vue-storefront/shopify'
+import { useUiHelpers, useUiState, useUiNotification } from '~/composables'
+import { onSSR } from '@vue-storefront/core'
 
 export default {
+  name: 'CateGory',
   components: {
     SfButton,
     SfSidebar,
@@ -404,28 +357,26 @@ export default {
   },
   transition: 'fade',
   setup(_, context) {
-    const th = useUiHelpers();
-    const uiState = useUiState();
-    const { addItem: addItemToCart, isInCart, cart: currentCart } = useCart();
-    const { send: sendNotification } = useUiNotification();
-    const { result, search, loading } = useFacet();
-    const products = computed(() => facetGetters.getProducts(result.value));
-    const sortBy = computed(() => facetGetters.getSortOptions(result.value));
-    const facets = computed(() =>
-      facetGetters.getGrouped(result.value, ['color', 'size'])
-    );
-    const pagination = computed(() => facetGetters.getPagination(result.value));
+    const th = useUiHelpers()
+    const uiState = useUiState()
+    const { addItem: addItemToCart, isInCart, cart: currentCart } = useCart()
+    const { send: sendNotification } = useUiNotification()
+    const { result, search, loading } = useFacet()
+    const products = computed(() => facetGetters.getProducts(result.value))
+    const sortBy = computed(() => facetGetters.getSortOptions(result.value))
+    const facets = computed(() => facetGetters.getGrouped(result.value, ['color', 'size']))
+    const pagination = computed(() => facetGetters.getPagination(result.value))
     onSSR(async () => {
-      await search(th.getFacetsFromURL());
-    });
-    const productsQuantity = ref({});
+      await search(th.getFacetsFromURL())
+    })
+    const productsQuantity = ref({})
 
-    const { isFacetColor } = useUiHelpers();
-    const { toggleCategoryGridView } = useUiState();
+    const { isFacetColor } = useUiHelpers()
+    const { toggleCategoryGridView } = useUiState()
 
     onMounted(() => {
-      context.root.$scrollTo(context.root.$el, 2000);
-    });
+      context.root.$scrollTo(context.root.$el, 2000)
+    })
 
     return {
       ...uiState,
@@ -443,7 +394,7 @@ export default {
       isInCart,
       isFacetColor,
       toggleCategoryGridView
-    };
+    }
   },
   // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
   data() {
@@ -458,7 +409,7 @@ export default {
           link: '#'
         }
       ]
-    };
+    }
   },
   methods: {
     // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
@@ -470,20 +421,20 @@ export default {
           type: 'success',
           title: 'Product added!',
           icon: 'check'
-        });
-      });
+        })
+      })
     },
     // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
     removeSpaceFromText(str) {
-      let i;
-      const frags = (str ?? '').split('-');
+      let i
+      const frags = (str ?? '').split('-')
       for (i = 0; i < frags.length; i++) {
-        frags[i] = frags[i].charAt(0).toUpperCase() + frags[i].slice(1);
+        frags[i] = frags[i].charAt(0).toUpperCase() + frags[i].slice(1)
       }
-      return frags.join(' ');
+      return frags.join(' ')
     }
   }
-};
+}
 </script>
 
 <style lang="scss" scoped>
@@ -629,8 +580,7 @@ export default {
     }
     &-label {
       margin: 0 var(--spacer-sm) 0 0;
-      font: var(--font-weight--normal) var(--font-size--base) / 1.6
-        var(--font-family--secondary);
+      font: var(--font-weight--normal) var(--font-size--base) / 1.6 var(--font-family--secondary);
       text-decoration: none;
       color: var(--c-link);
     }

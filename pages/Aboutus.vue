@@ -8,46 +8,37 @@
               We are dedicated to creating better sleep products
             </h1>
             <p class="headerbox-titletap-content">
-              Ant Design Landing platform has a variety of templates, download
-              template package, you can use it quickly, you can also use the
-              editor to quickly build a dedicated page for you.
+              Ant Design Landing platform has a variety of templates, download template package, you
+              can use it quickly, you can also use the editor to quickly build a dedicated page for
+              you.
             </p>
           </el-col>
         </el-col>
       </el-col>
       <el-col class="headerbox2-image">
-        <el-image
-          src="/homepage/backgroundimage.jpg"
-          class="headerbox2-image23"
-        ></el-image>
+        <el-image src="/homepage/backgroundimage.jpg" class="headerbox2-image23"></el-image>
       </el-col>
     </el-row>
     <el-row class="headerbox-box2">
       <el-col>
-        <h1 class="headerbox-fontsize1">
-          We’re Osmile 专注口腔健康，呵护你的口腔健康
-        </h1>
+        <h1 class="headerbox-fontsize1">We’re Osmile 专注口腔健康，呵护你的口腔健康</h1>
       </el-col>
       <el-col class="headerbox-box2-center">
         <el-col>
           <el-col class="headerbox-box2-font">
-            Osmile, a leading Asian all-round oral care brand owned by Guangzhou
-            Stars Pulse Co., Ltd., is committed to refining oral care experience
-            with a comprehensive range of products, including sonic toothbrush,
-            cordless water flosser, toothpaste, dental floss, and mouthwash.
+            Osmile, a leading Asian all-round oral care brand owned by Guangzhou Stars Pulse Co.,
+            Ltd., is committed to refining oral care experience with a comprehensive range of
+            products, including sonic toothbrush, cordless water flosser, toothpaste, dental floss,
+            and mouthwash.
           </el-col>
         </el-col>
         <el-col class="missibox">
           <h1 class="Missionh1">Mission</h1>
-          <el-col class="Missionh1-comntent">
-            Healthier Oral Condition For All
-          </el-col>
+          <el-col class="Missionh1-comntent"> Healthier Oral Condition For All </el-col>
         </el-col>
         <el-col class="missibox">
           <h1 class="Missionh1">Vision</h1>
-          <el-col class="Missionh1-comntent">
-            Osmile, Brighten Your Smile
-          </el-col>
+          <el-col class="Missionh1-comntent"> Osmile, Brighten Your Smile </el-col>
         </el-col>
         <el-col class="missibox">
           <h1 class="Missionh1">Tagline</h1>
@@ -61,20 +52,22 @@
       <el-col class="headerbox-box3-font">
         <h1 class="headerbox-box3-fontsize">Stay in Touch</h1>
         <p class="headerbox-box3-fontsix">
-          Be the first to receive the latest product updates, coupons, and free
-          product trials.
+          Be the first to receive the latest product updates, coupons, and free product trials.
         </p>
       </el-col>
       <el-col class="elinput">
-          <el-input placeholder="Email address"></el-input>
+        <el-input placeholder="Email address"></el-input>
       </el-col>
-      <el-col  class="elinputbutton">
-          <el-button  class="elinputbuttonfont">Subscribe</el-button>
+      <el-col class="elinputbutton">
+        <el-button class="elinputbuttonfont">Subscribe</el-button>
       </el-col>
     </el-row>
   </div>
 </template>
 <script type="module">
+export default {
+  name: 'AboutS'
+}
 </script>
 <style lang="css" scoped>
 .headerbox-image {
@@ -134,7 +127,7 @@
   flex-grow: 0;
 }
 .headerbox-titletap-h1 {
-  font-family: "Alibaba PuHuiTi";
+  font-family: 'Alibaba PuHuiTi';
   font-style: normal;
   font-weight: 400;
   font-size: 38px;
@@ -150,7 +143,7 @@
   flex-grow: 0;
 }
 .headerbox-titletap-content {
-  font-family: "Alibaba PuHuiTi";
+  font-family: 'Alibaba PuHuiTi';
   font-style: normal;
   font-weight: 400;
   font-size: 16px;
@@ -179,7 +172,7 @@
   top: 27.16%;
   bottom: 46.01%;
   /* 中文-标准/一级标题/一级标题_Heavy */
-  font-family: "Alibaba PuHuiTi";
+  font-family: 'Alibaba PuHuiTi';
   font-style: normal;
   font-weight: 400;
   font-size: 48px;
@@ -196,7 +189,7 @@
   top: 170px;
 }
 .headerbox-box2-font {
-  font-family: "Alibaba PuHuiTi";
+  font-family: 'Alibaba PuHuiTi';
   font-style: normal;
   font-weight: 400;
   font-size: 16px;
@@ -206,7 +199,7 @@
   color: #6f6b78;
 }
 .Missionh1 {
-  font-family: "Alibaba PuHuiTi";
+  font-family: 'Alibaba PuHuiTi';
   font-style: normal;
   font-weight: 700;
   font-size: 16px;
@@ -216,7 +209,7 @@
   color: #0c0b0e;
 }
 .Missionh1-comntent {
-  font-family: "Alibaba PuHuiTi";
+  font-family: 'Alibaba PuHuiTi';
   font-style: normal;
   font-weight: 400;
   font-size: 16px;
@@ -240,7 +233,7 @@
   margin-left: 80px;
 }
 .headerbox-box3-fontsize {
-  font-family: "Alibaba PuHuiTi";
+  font-family: 'Alibaba PuHuiTi';
   font-style: normal;
   font-weight: 400;
   font-size: 48px;
@@ -250,33 +243,33 @@
   color: rgba(255, 255, 255, 0.9);
 }
 .headerbox-box3-fontsix {
-  font-family: "Alibaba PuHuiTi";
+  font-family: 'Alibaba PuHuiTi';
   font-style: normal;
   font-weight: 400;
   font-size: 16px;
   line-height: 24px;
   /* or 150% */
- /* 浅色模式文本/Anti */
- color: #ffffff;
+  /* 浅色模式文本/Anti */
+  color: #ffffff;
 }
-.elinput{
-position: absolute;
-width: 261px;
-height: 55px;
-left: 730px;
-top: 100px;
+.elinput {
+  position: absolute;
+  width: 261px;
+  height: 55px;
+  left: 730px;
+  top: 100px;
 }
-.elinputbutton{
-position: absolute;
-top: 100px;
-left: 1038px;
-width: 143px;
-height: 38px;
-border-radius: 22px;
+.elinputbutton {
+  position: absolute;
+  top: 100px;
+  left: 1038px;
+  width: 143px;
+  height: 38px;
+  border-radius: 22px;
 }
-.elinputbuttonfont{
-    border-radius: 22px;
-    padding: 8px 24px;
-    height: 38px;
+.elinputbuttonfont {
+  border-radius: 22px;
+  padding: 8px 24px;
+  height: 38px;
 }
 </style>

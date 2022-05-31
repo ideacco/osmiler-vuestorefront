@@ -3,12 +3,8 @@
     <nav class="sf-breadcrumbs" aria-label="breadcrumbs">
       <ol class="sf-breadcrumbs__list">
         <li class="sf-breadcrumbs__list-item" :aria-current="false">
-          <vue-component-36-SfLink
-            class="sf-breadcrumbs__breadcrumb"
-            link="#"
-            data-testid="Home"
-          >
-         Product Collection
+          <vue-component-36-SfLink class="sf-breadcrumbs__breadcrumb" link="#" data-testid="Home">
+            Product Collection
           </vue-component-36-SfLink>
         </li>
       </ol>
@@ -47,13 +43,7 @@
             @click:colors="handleSelectedColor($event, i)"
           />
         </transition-group>
-        <transition-group
-          v-else
-          appear
-          name="products__slide"
-          tag="div"
-          class="products__list"
-        >
+        <transition-group v-else appear name="products__slide" tag="div" class="products__list">
           <SfProductCardHorizontal
             v-for="(product, i) in products"
             :key="product.id"
@@ -78,12 +68,7 @@
             @click:wishlist="toggleWishlist(i)"
           >
             <template #configuration>
-              <SfProperty
-                class="desktop-only"
-                name="Size"
-                value="XS"
-                style="margin: 0 0 1rem 0"
-              />
+              <SfProperty class="desktop-only" name="Size" value="XS" style="margin: 0 0 1rem 0" />
               <SfProperty class="desktop-only" name="Color" value="white" />
             </template>
             <template #actions>
@@ -106,9 +91,7 @@
         </transition-group>
       </div>
     </div>
-    <div class="footer">
-23123
-    </div>
+    <div class="footer">23123</div>
   </div>
 </template>
 <script>
@@ -129,10 +112,10 @@ import {
   SfColor,
   SfProperty,
   SfRadio,
-  SfSelect,
-} from "@storefront-ui/vue";
+  SfSelect
+} from '@storefront-ui/vue'
 export default {
-  name: "Category",
+  name: 'CateGory',
   components: {
     SfHeading,
     SfButton,
@@ -150,255 +133,254 @@ export default {
     SfColor,
     SfProperty,
     SfRadio,
-    SfSelect,
+    SfSelect
   },
   data() {
     return {
       currentPage: 1,
-      sortBy: "Latest",
+      sortBy: 'Latest',
       isFilterSidebarOpen: false,
       isGridView: true,
-      category: "Clothing",
-      displayOnPage: "40",
+      category: 'Clothing',
+      displayOnPage: '40',
       sortByOptions: [
         {
-          value: "Latest",
-          label: "Latest",
+          value: 'Latest',
+          label: 'Latest'
         },
         {
-          value: "Price-up",
-          label: "Price from low to high",
+          value: 'Price-up',
+          label: 'Price from low to high'
         },
         {
-          value: "Price-down",
-          label: "Price from high to low",
-        },
+          value: 'Price-down',
+          label: 'Price from high to low'
+        }
       ],
       sidebarAccordion: [
         {
-          header: "Clothing",
+          header: 'Clothing',
           items: [
-            { label: "All", count: "280" },
-            { label: "Skirts", count: "23" },
-            { label: "Sweaters", count: "54" },
-            { label: "Dresses", count: "34" },
-            { label: "T-shirts", count: "56" },
-            { label: "Pants", count: "7" },
-            { label: "Underwear", count: "12" },
-          ],
+            { label: 'All', count: '280' },
+            { label: 'Skirts', count: '23' },
+            { label: 'Sweaters', count: '54' },
+            { label: 'Dresses', count: '34' },
+            { label: 'T-shirts', count: '56' },
+            { label: 'Pants', count: '7' },
+            { label: 'Underwear', count: '12' }
+          ]
         },
         {
-          header: "Accessorries",
+          header: 'Accessorries',
           items: [
-            { label: "All", count: "280" },
-            { label: "Skirts", count: "23" },
-            { label: "Sweaters", count: "54" },
-            { label: "Dresses", count: "34" },
-            { label: "T-shirts", count: "56" },
-            { label: "Pants", count: "7" },
-            { label: "Underwear", count: "12" },
-          ],
+            { label: 'All', count: '280' },
+            { label: 'Skirts', count: '23' },
+            { label: 'Sweaters', count: '54' },
+            { label: 'Dresses', count: '34' },
+            { label: 'T-shirts', count: '56' },
+            { label: 'Pants', count: '7' },
+            { label: 'Underwear', count: '12' }
+          ]
         },
         {
-          header: "Shoes",
+          header: 'Shoes',
           items: [
-            { label: "All", count: "280" },
-            { label: "Skirts", count: "23" },
-            { label: "Sweaters", count: "54" },
-            { label: "Dresses", count: "34" },
-            { label: "T-shirts", count: "56" },
-            { label: "Pants", count: "7" },
-            { label: "Underwear", count: "12" },
-          ],
-        },
+            { label: 'All', count: '280' },
+            { label: 'Skirts', count: '23' },
+            { label: 'Sweaters', count: '54' },
+            { label: 'Dresses', count: '34' },
+            { label: 'T-shirts', count: '56' },
+            { label: 'Pants', count: '7' },
+            { label: 'Underwear', count: '12' }
+          ]
+        }
       ],
-      showOnPage: ["20", "40", "60"],
+      showOnPage: ['20', '40', '60'],
       products: [
         {
-          title: "Cream Beach Bag",
+          title: 'Cream Beach Bag',
           id: 1,
           description:
-            "Find stunning women cocktail and party dresses. Stand out in lace and metallic cocktail dresses and party dresses from all your favorite brands.",
-          image: "/homepage/productC.webp",
-          price: { regular: "$50.00" },
+            'Find stunning women cocktail and party dresses. Stand out in lace and metallic cocktail dresses and party dresses from all your favorite brands.',
+          image: '/homepage/productC.webp',
+          price: { regular: '$50.00' },
           rating: { max: 5, score: 5 },
           reviewsCount: 8,
-          isInWishlist: true,
+          isInWishlist: true
         },
         {
-          title: "Cream Beach Bag",
+          title: 'Cream Beach Bag',
           id: 2,
           description:
-            "Find stunning women cocktail and party dresses. Stand out in lace and metallic cocktail dresses and party dresses from all your favorite brands.",
-          image: "/homepage/productB.webp",
-          price: { regular: "$50.00" },
+            'Find stunning women cocktail and party dresses. Stand out in lace and metallic cocktail dresses and party dresses from all your favorite brands.',
+          image: '/homepage/productB.webp',
+          price: { regular: '$50.00' },
           rating: { max: 5, score: 4 },
           reviewsCount: 8,
-          isInWishlist: false,
+          isInWishlist: false
         },
         {
-          title: "Cream Beach Bag",
+          title: 'Cream Beach Bag',
           id: 3,
           description:
-            "Find stunning women cocktail and party dresses. Stand out in lace and metallic cocktail dresses and party dresses from all your favorite brands.",
-          image: "/homepage/productC.webp",
-          price: { regular: "$50.00" },
+            'Find stunning women cocktail and party dresses. Stand out in lace and metallic cocktail dresses and party dresses from all your favorite brands.',
+          image: '/homepage/productC.webp',
+          price: { regular: '$50.00' },
           rating: { max: 5, score: 4 },
           reviewsCount: 8,
-          isInWishlist: false,
+          isInWishlist: false
         },
         {
-          title: "Cream Beach Bag",
+          title: 'Cream Beach Bag',
           id: 4,
           description:
-            "Find stunning women cocktail and party dresses. Stand out in lace and metallic cocktail dresses and party dresses from all your favorite brands.",
-          image: "/homepage/productA.webp",
-          price: { regular: "$50.00" },
+            'Find stunning women cocktail and party dresses. Stand out in lace and metallic cocktail dresses and party dresses from all your favorite brands.',
+          image: '/homepage/productA.webp',
+          price: { regular: '$50.00' },
           rating: { max: 5, score: 4 },
           reviewsCount: 8,
-          isInWishlist: false,
+          isInWishlist: false
         },
         {
-          title: "Cream Beach Bag",
+          title: 'Cream Beach Bag',
           id: 5,
           description:
-            "Find stunning women cocktail and party dresses. Stand out in lace and metallic cocktail dresses and party dresses from all your favorite brands.",
-          image: "/homepage/productB.webp",
-          price: { regular: "$50.00" },
+            'Find stunning women cocktail and party dresses. Stand out in lace and metallic cocktail dresses and party dresses from all your favorite brands.',
+          image: '/homepage/productB.webp',
+          price: { regular: '$50.00' },
           rating: { max: 5, score: 4 },
           reviewsCount: 8,
-          isInWishlist: false,
+          isInWishlist: false
         },
         {
-          title: "Cream Beach Bag",
+          title: 'Cream Beach Bag',
           id: 6,
           description:
-            "Find stunning women cocktail and party dresses. Stand out in lace and metallic cocktail dresses and party dresses from all your favorite brands.",
-          image: "/homepage/productC.webp",
-          price: { regular: "$50.00" },
+            'Find stunning women cocktail and party dresses. Stand out in lace and metallic cocktail dresses and party dresses from all your favorite brands.',
+          image: '/homepage/productC.webp',
+          price: { regular: '$50.00' },
           rating: { max: 5, score: 4 },
           reviewsCount: 8,
-          isInWishlist: false,
+          isInWishlist: false
         },
         {
-          title: "Cream Beach Bag",
+          title: 'Cream Beach Bag',
           id: 7,
           description:
-            "Find stunning women cocktail and party dresses. Stand out in lace and metallic cocktail dresses and party dresses from all your favorite brands.",
-          image: "/homepage/productA.webp",
-          price: { regular: "$50.00" },
+            'Find stunning women cocktail and party dresses. Stand out in lace and metallic cocktail dresses and party dresses from all your favorite brands.',
+          image: '/homepage/productA.webp',
+          price: { regular: '$50.00' },
           rating: { max: 5, score: 4 },
           reviewsCount: 6,
-          isInWishlist: false,
+          isInWishlist: false
         },
         {
-          title: "Cream Beach Bag",
+          title: 'Cream Beach Bag',
           id: 8,
           description:
-            "Find stunning women cocktail and party dresses. Stand out in lace and metallic cocktail dresses and party dresses from all your favorite brands.",
-          image: "/homepage/productB.webp",
-          price: { regular: "$50.00" },
+            'Find stunning women cocktail and party dresses. Stand out in lace and metallic cocktail dresses and party dresses from all your favorite brands.',
+          image: '/homepage/productB.webp',
+          price: { regular: '$50.00' },
           rating: { max: 5, score: 4 },
           reviewsCount: 8,
-          isInWishlist: false,
-        },
+          isInWishlist: false
+        }
       ],
       filters: {
         collection: [
           {
-            label: "Summer fly",
-            value: "summer-fly",
-            count: "10",
-            selected: false,
+            label: 'Summer fly',
+            value: 'summer-fly',
+            count: '10',
+            selected: false
           },
           {
-            label: "Best 2018",
-            value: "best-2018",
-            count: "23",
-            selected: false,
+            label: 'Best 2018',
+            value: 'best-2018',
+            count: '23',
+            selected: false
           },
           {
-            label: "Your choice",
-            value: "your-choice",
-            count: "54",
-            selected: false,
-          },
+            label: 'Your choice',
+            value: 'your-choice',
+            count: '54',
+            selected: false
+          }
         ],
         size: [
-          { label: "Size 2 (XXS)", value: "xxs", count: "10", selected: false },
-          { label: "Size 4-6 (XS)", value: "xs", count: "23", selected: false },
-          { label: "Size 8-10 (S)", value: "s", count: "54", selected: false },
+          { label: 'Size 2 (XXS)', value: 'xxs', count: '10', selected: false },
+          { label: 'Size 4-6 (XS)', value: 'xs', count: '23', selected: false },
+          { label: 'Size 8-10 (S)', value: 's', count: '54', selected: false },
           {
-            label: "Size 12-14 (M)",
-            value: "m",
-            count: "109",
-            selected: false,
+            label: 'Size 12-14 (M)',
+            value: 'm',
+            count: '109',
+            selected: false
           },
-          { label: "Size 16-18 (L)", value: "l", count: "23", selected: false },
+          { label: 'Size 16-18 (L)', value: 'l', count: '23', selected: false },
           {
-            label: "Size 20-22(XL)",
-            value: "xl",
-            count: "12",
-            selected: false,
+            label: 'Size 20-22(XL)',
+            value: 'xl',
+            count: '12',
+            selected: false
           },
           {
-            label: "Size 24-26 (XXL)",
-            value: "xxl",
-            count: "2",
-            selected: false,
-          },
+            label: 'Size 24-26 (XXL)',
+            value: 'xxl',
+            count: '2',
+            selected: false
+          }
         ],
         price: [
           {
-            label: "Under $200",
-            value: "under-200",
-            count: "23",
-            selected: false,
+            label: 'Under $200',
+            value: 'under-200',
+            count: '23',
+            selected: false
           },
           {
-            label: "Under $300",
-            value: "under-300",
-            count: "54",
-            selected: false,
-          },
+            label: 'Under $300',
+            value: 'under-300',
+            count: '54',
+            selected: false
+          }
         ],
         material: [
-          { label: "Cotton", value: "coton", count: "33", selected: false },
-          { label: "Silk", value: "silk", count: "73", selected: false },
-        ],
+          { label: 'Cotton', value: 'coton', count: '33', selected: false },
+          { label: 'Silk', value: 'silk', count: '73', selected: false }
+        ]
       },
       breadcrumbs: [
         {
-          text: "Product Collection",
-        },
-      ],
-    };
+          text: 'Product Collection'
+        }
+      ]
+    }
   },
   methods: {
     clearAllFilters() {
-      const filters = Object.keys(this.filters);
+      const filters = Object.keys(this.filters)
       filters.forEach((name) => {
-        const prop = this.filters[name];
+        const prop = this.filters[name]
         prop.forEach((value) => {
-          value.selected = false;
-        });
-      });
+          value.selected = false
+        })
+      })
     },
     toggleWishlist(index) {
-      this.products[index].isInWishlist = !this.products[index].isInWishlist;
+      this.products[index].isInWishlist = !this.products[index].isInWishlist
     },
     handleSelectedColor(color, index) {
       this.products[index].colors.map((el) => {
-        el.selected = el.label === color.label ? !el.selected : false;
-      });
-    },
-  },
-};
+        el.selected = el.label === color.label ? !el.selected : false
+      })
+    }
+  }
+}
 </script>
 <style lang="scss" scoped>
-@import "~@storefront-ui/vue/styles";
-.footer{
-
+@import '~@storefront-ui/vue/styles';
+.footer {
 }
 #category {
   box-sizing: border-box;
@@ -416,7 +398,7 @@ export default {
   }
 }
 .breadcrumbs {
-  font-family: "Alibaba PuHuiTi";
+  font-family: 'Alibaba PuHuiTi';
   font-style: normal;
   font-weight: 400;
   font-size: 38px;
@@ -552,8 +534,7 @@ export default {
     }
     &-label {
       margin: 0 var(--spacer-sm) 0 0;
-      font: var(--font-weight--normal) var(--font-size--base) / 1.6
-        var(--font-family--secondary);
+      font: var(--font-weight--normal) var(--font-size--base) / 1.6 var(--font-family--secondary);
       text-decoration: none;
       color: var(--c-link);
     }
@@ -673,7 +654,7 @@ export default {
 }
 .sf-breadcrumbs__breadcrumb {
   top: 174px;
-  font-family: "Alibaba PuHuiTi";
+  font-family: 'Alibaba PuHuiTi';
   font-style: normal;
   font-weight: 400;
   font-size: 38px;
@@ -683,7 +664,7 @@ export default {
   /* 浅色模式文本/Title Text */
   color: #0c0b0e;
 }
-.sf-breadcrumbs__list-item{
+.sf-breadcrumbs__list-item {
   margin-top: 50px;
   margin-left: 10px;
 }

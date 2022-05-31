@@ -29,8 +29,8 @@
 </template>
 
 <script>
-import { SfMenuItem, SfModal } from '@storefront-ui/vue';
-import { useUiState } from '~/composables';
+import { SfMenuItem, SfModal } from '@storefront-ui/vue'
+import { useUiState } from '~/composables'
 
 export default {
   name: 'HeaderNavigation',
@@ -45,16 +45,16 @@ export default {
     }
   },
   setup() {
-    const { isMobileMenuOpen, toggleMobileMenu } = useUiState();
-    const categories = ['women', 'men'];
+    const { isMobileMenuOpen, toggleMobileMenu } = useUiState()
+    const categories = ['women', 'men']
 
     return {
       categories,
       isMobileMenuOpen,
       toggleMobileMenu
-    };
+    }
   }
-};
+}
 </script>
 
 <style lang="scss" scoped>

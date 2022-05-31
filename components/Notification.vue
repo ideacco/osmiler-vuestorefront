@@ -11,30 +11,30 @@
       visible
     >
       <template #icon v-if="notification.icon">
-        <SfIcon :icon="notification.icon" color="white"/>
+        <SfIcon :icon="notification.icon" color="white" />
       </template>
     </SfNotification>
   </transition-group>
 </template>
 
 <script>
-import { SfNotification, SfIcon } from '@storefront-ui/vue';
-import { useUiNotification } from '~/composables';
+import { SfNotification, SfIcon } from '@storefront-ui/vue'
+import { useUiNotification } from '~/composables'
 
 export default {
-  name: 'Notification',
+  name: 'NotifIcation',
   components: {
     SfNotification,
     SfIcon
   },
-  setup () {
-    const { notifications } = useUiNotification();
+  setup() {
+    const { notifications } = useUiNotification()
 
     return {
       notifications
-    };
+    }
   }
-};
+}
 </script>
 
 <style scoped lang="scss">

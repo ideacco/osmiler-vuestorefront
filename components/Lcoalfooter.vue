@@ -1,54 +1,30 @@
 <template>
-  <SfFooter
-    :column="4"
-    multiple
-    class="footer"
-  >
+  <SfFooter :column="4" multiple class="footer">
     <SfFooterColumn :title="$t('About us')">
       <SfList>
-        <SfListItem
-          v-for="item in aboutUs"
-          :key="item"
-        >
-          <SfMenuItem
-            :label="$t(item)"
-          />
+        <SfListItem v-for="item in aboutUs" :key="item">
+          <SfMenuItem :label="$t(item)" />
         </SfListItem>
       </SfList>
     </SfFooterColumn>
     <SfFooterColumn :title="$t('Departments')">
       <SfList>
-        <SfListItem
-          v-for="item in departments"
-          :key="item"
-        >
-          <SfMenuItem
-            :label="$t(item)"
-          />
+        <SfListItem v-for="item in departments" :key="item">
+          <SfMenuItem :label="$t(item)" />
         </SfListItem>
       </SfList>
     </SfFooterColumn>
     <SfFooterColumn :title="$t('Help')">
       <SfList>
-        <SfListItem
-          v-for="item in help"
-          :key="item"
-        >
-          <SfMenuItem
-            :label="$t(item)"
-          />
+        <SfListItem v-for="item in help" :key="item">
+          <SfMenuItem :label="$t(item)" />
         </SfListItem>
       </SfList>
     </SfFooterColumn>
     <SfFooterColumn :title="$t('Payment & Delivery')">
       <SfList>
-        <SfListItem
-          v-for="item in paymentsDelivery"
-          :key="item"
-        >
-          <SfMenuItem
-            :label="$t(item)"
-          />
+        <SfListItem v-for="item in paymentsDelivery" :key="item">
+          <SfMenuItem :label="$t(item)" />
         </SfListItem>
       </SfList>
     </SfFooterColumn>
@@ -58,7 +34,7 @@
           v-for="item in social"
           :key="item"
           class="footer__social-image"
-          :src="addBasePath('/icons/'+item+'.webp')"
+          :src="addBasePath('/icons/' + item + '.webp')"
           :alt="item"
           :width="32"
           :height="32"
@@ -69,21 +45,20 @@
 </template>
 
 <script>
-import {
-  SfFooter, SfList, SfImage, SfMenuItem,
-} from '@storefront-ui/vue';
-import { addBasePath } from '@vue-storefront/core';
+import { SfFooter, SfList, SfImage, SfMenuItem } from '@storefront-ui/vue'
+import { addBasePath } from '@vue-storefront/core'
 export default {
+  name: 'LcoalFooter',
   components: {
     SfFooter,
     SfList,
     SfImage,
-    SfMenuItem,
+    SfMenuItem
   },
   setup() {
     return {
-      addBasePath,
-    };
+      addBasePath
+    }
   },
   data() {
     return {
@@ -98,18 +73,14 @@ export default {
         this.$t('Kidswear'),
         this.$t('Home')
       ],
-      help: [
-        this.$t('Customer service'),
-        this.$t('Size guide'),
-        this.$t('Contact us')
-      ],
+      help: [this.$t('Customer service'), this.$t('Size guide'), this.$t('Contact us')],
       paymentsDelivery: [this.$t('Purchase terms'), this.$t('Guarantee')],
       social: ['facebook', 'pinterest', 'google', 'twitter', 'youtube'],
       isMobile: false,
       desktopMin: 1024
-    };
-  },
-};
+    }
+  }
+}
 </script>
 
 <style lang="scss">

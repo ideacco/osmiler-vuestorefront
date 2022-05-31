@@ -16,8 +16,7 @@
       <Notification />
     </LazyHydrate>
 
-    <Header
-    />
+    <AssHeader />
     <div id="layout">
       <nuxt :key="route.fullPath" />
     </div>
@@ -28,23 +27,17 @@
 </template>
 
 <script>
-
-import Header from '~/components/JHeader.vue';
-import LazyHydrate from 'vue-lazy-hydration';
-import {
-  useUser,
-  cartGetters,
-  useCart,
-  userGetters
-} from '@vue-storefront/shopify';
-import { computed, onBeforeMount, provide, useRoute, useContext } from '@nuxtjs/composition-api';
-import LoadWhenVisible from '~/components/utils/LoadWhenVisible';
+import AssHeader from '~/components/JHeader.vue'
+import LazyHydrate from 'vue-lazy-hydration'
+import { useUser, cartGetters, useCart, userGetters } from '@vue-storefront/shopify'
+import { computed, onBeforeMount, provide, useRoute, useContext } from '@nuxtjs/composition-api'
+import LoadWhenVisible from '~/components/utils/LoadWhenVisible'
 
 export default {
   name: 'DefaultLayout',
   components: {
     LazyHydrate,
-    Header,
+    AssHeader,
     BottomNavigation: () => import(/* webpackPrefetch: true */ '~/components/BottomNavigation.vue'),
     AppFooter: () => import(/* webpackPrefetch: true */ '~/components/AppFooter.vue'),
     CartSidebar: () => import(/* webpackPrefetch: true */ '~/components/CartSidebar.vue'),
@@ -54,29 +47,29 @@ export default {
     LoadWhenVisible
   },
   setup() {
-    const route = useRoute();
-    const context = useContext();
-    const { load: loadUser, user: userInfo } = useUser();
-    const { load: loadCart, cart } = useCart();
-    const getCartTotalItems = computed(() => cartGetters.getTotalItems(cart.value));
-    const isAuthenticated = computed(() => !!userGetters.getFirstName(userInfo.value));
-    provide('currentCart', cart);
+    const route = useRoute()
+    const context = useContext()
+    const { load: loadUser, user: userInfo } = useUser()
+    const { load: loadCart, cart } = useCart()
+    const getCartTotalItems = computed(() => cartGetters.getTotalItems(cart.value))
+    const isAuthenticated = computed(() => !!userGetters.getFirstName(userInfo.value))
+    provide('currentCart', cart)
     onBeforeMount(async () => {
-      await loadUser();
+      await loadUser()
       await loadCart().then(() => {
         if (cart && cart.value && cart.value.orderStatusUrl !== null) {
-          context.$cookies.remove(`${context.$config.appKey}_cart_id`);
+          context.$cookies.remove(`${context.$config.appKey}_cart_id`)
         }
-      });
-    });
+      })
+    })
 
     return {
       getCartTotalItems,
       isAuthenticated,
       route
-    };
-  },
-};
+    }
+  }
+}
 </script>
 
 <style lang="scss">
@@ -84,10 +77,9 @@ export default {
 
 #layout {
   box-sizing: border-box;
-    @include for-desktop {
+  @include for-desktop {
     margin: auto;
   }
-
 }
 
 .no-scroll {

@@ -1,8 +1,7 @@
 <template>
   <div>
-
-    <div id="layout" >
-      <Header />
+    <div id="layout">
+      <AssHeader />
       <nuxt />
       <BottomNavigation />
       <CartSidebar />
@@ -12,13 +11,13 @@
 </template>
 
 <script>
-import AppHeader from '~/components/AppHeader.vue';
-import Header from '~/components/JHeader.vue';
+import AppHeader from '~/components/AppHeader.vue'
+import AssHeader from '~/components/JHeader.vue'
 
-import BottomNavigation from '~/components/BottomNavigation.vue';
+import BottomNavigation from '~/components/BottomNavigation.vue'
 
-import CartSidebar from '~/components/CartSidebar.vue';
-import LoginModal from '~/components/LoginModal.vue';
+import CartSidebar from '~/components/CartSidebar.vue'
+import LoginModal from '~/components/LoginModal.vue'
 
 export default {
   name: 'AccountLayout',
@@ -28,13 +27,13 @@ export default {
     BottomNavigation,
     CartSidebar,
     LoginModal,
-    Header
+    AssHeader
   }
 }
 </script>
 
 <style lang="scss">
-@import "~@storefront-ui/vue/styles";
+@import '~@storefront-ui/vue/styles';
 
 body {
   padding: 0;

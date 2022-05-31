@@ -1,34 +1,34 @@
 <template>
   <div>
     <div id="layout">
-      <nuxt :key="route.fullPath"/>
+      <nuxt :key="route.fullPath" />
     </div>
   </div>
 </template>
 
 <script>
-import { useRoute } from '@nuxtjs/composition-api';
+import { useRoute } from '@nuxtjs/composition-api'
 
 export default {
   name: 'BlankLayout',
 
   setup() {
-    const route = useRoute();
+    const route = useRoute()
 
     return {
       route
-    };
+    }
   }
-};
+}
 </script>
 
 <style lang="scss">
-@import "~@storefront-ui/vue/styles";
+@import '~@storefront-ui/vue/styles';
 
 #layout {
   box-sizing: border-box;
   @include for-desktop {
-    max-width:100%;
+    max-width: 100%;
     margin: auto;
   }
 }

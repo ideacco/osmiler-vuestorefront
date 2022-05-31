@@ -4,11 +4,11 @@
       <el-col class="conatactbox-bigone">
         <el-col class="conatactbox-bigonetitle">标题</el-col>
         <el-col class="conatactbox-bigonetitleone"
-          >09/23/2021 | SLEEPON | News&Updates | 2 Comments</el-col
+        >09/23/2021 | SLEEPON | News&Updates | 2 Comments</el-col
         >
         <el-col class="conatactbox-bigonetitlebox"></el-col>
         <el-col class="conatactbox-bigonetitleboxfont-size"
-          >HRV Hi everyone, It is our pleasure
+        >HRV Hi everyone, It is our pleasure
         </el-col>
         <el-col class="boxbutton">
           <el-col class="boxbuttonone">
@@ -17,14 +17,14 @@
         </el-col>
       </el-col>
 
-         <el-col class="conatactbox-bigone"  style="margin-top:828px">
+      <el-col class="conatactbox-bigone" style="margin-top: 828px">
         <el-col class="conatactbox-bigonetitle">标题</el-col>
         <el-col class="conatactbox-bigonetitleone"
-          >09/23/2021 | SLEEPON | News&Updates | 2 Comments</el-col
+        >09/23/2021 | SLEEPON | News&Updates | 2 Comments</el-col
         >
         <el-col class="conatactbox-bigonetitlebox"></el-col>
         <el-col class="conatactbox-bigonetitleboxfont-size"
-          >HRV Hi everyone, It is our pleasure
+        >HRV Hi everyone, It is our pleasure
         </el-col>
         <el-col class="boxbutton">
           <el-col class="boxbuttonone">
@@ -32,11 +32,13 @@
           </el-col>
         </el-col>
       </el-col>
-
     </el-row>
   </div>
 </template>
 <script>
+export default {
+  name: 'NewS'
+}
 </script>
 <style lang="scss" scoped>
 .conatactbox {
@@ -59,7 +61,7 @@
       left: 41px;
       top: 47px;
       /* 中文-标准/四级标题/四级标题_Regular */
-      font-family: "Alibaba PuHuiTi";
+      font-family: 'Alibaba PuHuiTi';
       font-style: normal;
       font-weight: 400;
       font-size: 24px;
@@ -74,7 +76,7 @@
       left: 41px;
       top: 89px;
       /* 中文-标准/正文3-14pt/正文3_Regular */
-      font-family: "Alibaba PuHuiTi";
+      font-family: 'Alibaba PuHuiTi';
       font-style: normal;
       font-weight: 400;
       font-size: 14px;
@@ -98,7 +100,7 @@
       left: 41px;
       top: 533px;
       /* 中文-标准/正文3-14pt/正文3_Regular */
-      font-family: "Alibaba PuHuiTi";
+      font-family: 'Alibaba PuHuiTi';
       font-style: normal;
       font-weight: 400;
       font-size: 14px;
@@ -138,7 +140,7 @@
 
       /* 中文-标准/正文2-16pt/正文2_Mmedium */
 
-      font-family: "Alibaba PuHuiTi";
+      font-family: 'Alibaba PuHuiTi';
       font-style: normal;
       font-weight: 400;
       font-size: 16px;

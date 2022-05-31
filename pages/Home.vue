@@ -1,6 +1,9 @@
 <template>
-  <div class="uk-section-default uk-light" tm-header-transparent="light"
-            uk-scrollspy="target:[uk-scrollspy-class]; cls: uk-animation-slide-bottom-medium; delay: false;">
+  <div
+    class="uk-section-default uk-light"
+    tm-header-transparent="light"
+    uk-scrollspy="target:[uk-scrollspy-class]; cls: uk-animation-slide-bottom-medium; delay: false;"
+  >
     <el-row class="bannerbox">
       <el-col :xs="24" :sm="24" :md="24" :lg="24" :xl="24">
         <el-image src="/homepage/background1.jpg" style="height: 960px" />
@@ -8,19 +11,16 @@
           <div class="texttilte">
             <span class="texttitle1">What can Pro do for you</span>
             <span class="textcontext"
-              >Ant Design Landing platform has a variety of templates, download
-              template package, you can use it quickly, you can also use the
-              editor to quickly build a dedicated page for you.</span
+            >Ant Design Landing platform has a variety of templates, download template package,
+              you can use it quickly, you can also use the editor to quickly build a dedicated page
+              for you.</span
             >
           </div>
         </div>
       </el-col>
     </el-row>
     <!-- 页面标签排版 -->
-    <div
-      class="uk-child-width-1-2 uk-child-width-1-4@s uk-grid-match uk-box1"
-      uk-grid
-    >
+    <div class="uk-child-width-1-2 uk-child-width-1-4@s uk-grid-match uk-box1" uk-grid>
       <div class="uk-animation-toggle uk-box2">
         <div class="uk-card uk-card-default uk-card-body uk-texttile-box1">
           <el-image src="/homepage/homeicon.jpg" class="homeicontext1" />
@@ -29,10 +29,9 @@
           <div class="uk-text-center">
             <p class="uk-texttitle1">What can Pro do for you</p>
             <p class="uk-content">
-              Ant Design Landing platform has a variety of Ant Design Landing
-              platform has a variety of Ant Design Landing platform has a
-              variety of Ant Design Landing platform has a variety of Ant Design
-              Landing platform has a variety of Ant
+              Ant Design Landing platform has a variety of Ant Design Landing platform has a variety
+              of Ant Design Landing platform has a variety of Ant Design Landing platform has a
+              variety of Ant Design Landing platform has a variety of Ant
             </p>
           </div>
         </div>
@@ -45,10 +44,9 @@
           <div class="uk-text-center">
             <p class="uk-texttitle1">What can Pro do for you</p>
             <p class="uk-content">
-              Ant Design Landing platform has a variety of Ant Design Landing
-              platform has a variety of Ant Design Landing platform has a
-              variety of Ant Design Landing platform has a variety of Ant Design
-              Landing platform has a variety of Ant
+              Ant Design Landing platform has a variety of Ant Design Landing platform has a variety
+              of Ant Design Landing platform has a variety of Ant Design Landing platform has a
+              variety of Ant Design Landing platform has a variety of Ant
             </p>
           </div>
         </div>
@@ -61,10 +59,9 @@
           <div class="uk-text-center">
             <p class="uk-texttitle1">What can Pro do for you</p>
             <p class="uk-content">
-              Ant Design Landing platform has a variety of Ant Design Landing
-              platform has a variety of Ant Design Landing platform has a
-              variety of Ant Design Landing platform has a variety of Ant Design
-              Landing platform has a variety of Ant
+              Ant Design Landing platform has a variety of Ant Design Landing platform has a variety
+              of Ant Design Landing platform has a variety of Ant Design Landing platform has a
+              variety of Ant Design Landing platform has a variety of Ant
             </p>
           </div>
         </div>
@@ -77,10 +74,9 @@
           <div class="uk-text-center">
             <p class="uk-texttitle1">What can Pro do for you</p>
             <p class="uk-content">
-              Ant Design Landing platform has a variety of Ant Design Landing
-              platform has a variety of Ant Design Landing platform has a
-              variety of Ant Design Landing platform has a variety of Ant Design
-              Landing platform has a variety of Ant
+              Ant Design Landing platform has a variety of Ant Design Landing platform has a variety
+              of Ant Design Landing platform has a variety of Ant Design Landing platform has a
+              variety of Ant Design Landing platform has a variety of Ant
             </p>
           </div>
         </div>
@@ -94,9 +90,9 @@
           <div class="texttilte">
             <span class="texttitle1">What can Pro do for you</span>
             <span class="textcontext"
-              >Ant Design Landing platform has a variety of templates, download
-              template package, you can use it quickly, you can also use the
-              editor to quickly build a dedicated page for you.</span
+            >Ant Design Landing platform has a variety of templates, download template package,
+              you can use it quickly, you can also use the editor to quickly build a dedicated page
+              for you.</span
             >
           </div>
         </div>
@@ -110,12 +106,11 @@
           <div class="continerboxmiddletext">
             <h1 class="containertitle1">What can Pro do for you</h1>
             <p class="containercontent">
-              Ant Design Landing platform has a variety of templates, download
-              template package, you can use it quickly, you can also use the
-              editor to quickly build a dedicated page for you.Ant Design
-              Landing platform has a variety of templates, download template
-              package, you can use it quickly, you can also use the editor to
-              quickly build a dedicated page for you.
+              Ant Design Landing platform has a variety of templates, download template package, you
+              can use it quickly, you can also use the editor to quickly build a dedicated page for
+              you.Ant Design Landing platform has a variety of templates, download template package,
+              you can use it quickly, you can also use the editor to quickly build a dedicated page
+              for you.
             </p>
           </div>
           <!-- 右边产品图片 -->
@@ -137,12 +132,11 @@
           <div class="continerboxmiddletext1">
             <h1 class="containertitle1">What can Pro do for you</h1>
             <p class="containercontent">
-              Ant Design Landing platform has a variety of templates, download
-              template package, you can use it quickly, you can also use the
-              editor to quickly build a dedicated page for you.Ant Design
-              Landing platform has a variety of templates, download template
-              package, you can use it quickly, you can also use the editor to
-              quickly build a dedicated page for you.
+              Ant Design Landing platform has a variety of templates, download template package, you
+              can use it quickly, you can also use the editor to quickly build a dedicated page for
+              you.Ant Design Landing platform has a variety of templates, download template package,
+              you can use it quickly, you can also use the editor to quickly build a dedicated page
+              for you.
             </p>
           </div>
         </div>
@@ -156,12 +150,11 @@
           <div class="continerboxmiddletext">
             <h1 class="containertitle1">What can Pro do for you</h1>
             <p class="containercontent">
-              Ant Design Landing platform has a variety of templates, download
-              template package, you can use it quickly, you can also use the
-              editor to quickly build a dedicated page for you.Ant Design
-              Landing platform has a variety of templates, download template
-              package, you can use it quickly, you can also use the editor to
-              quickly build a dedicated page for you.
+              Ant Design Landing platform has a variety of templates, download template package, you
+              can use it quickly, you can also use the editor to quickly build a dedicated page for
+              you.Ant Design Landing platform has a variety of templates, download template package,
+              you can use it quickly, you can also use the editor to quickly build a dedicated page
+              for you.
             </p>
           </div>
           <!-- 右边产品图片 -->
@@ -183,12 +176,11 @@
           <div class="continerboxmiddletext1">
             <h1 class="containertitle1">What can Pro do for you</h1>
             <p class="containercontent">
-              Ant Design Landing platform has a variety of templates, download
-              template package, you can use it quickly, you can also use the
-              editor to quickly build a dedicated page for you.Ant Design
-              Landing platform has a variety of templates, download template
-              package, you can use it quickly, you can also use the editor to
-              quickly build a dedicated page for you.
+              Ant Design Landing platform has a variety of templates, download template package, you
+              can use it quickly, you can also use the editor to quickly build a dedicated page for
+              you.Ant Design Landing platform has a variety of templates, download template package,
+              you can use it quickly, you can also use the editor to quickly build a dedicated page
+              for you.
             </p>
           </div>
         </div>
@@ -202,12 +194,11 @@
           <div class="continerboxmiddletext">
             <h1 class="containertitle1">What can Pro do for you</h1>
             <p class="containercontent">
-              Ant Design Landing platform has a variety of templates, download
-              template package, you can use it quickly, you can also use the
-              editor to quickly build a dedicated page for you.Ant Design
-              Landing platform has a variety of templates, download template
-              package, you can use it quickly, you can also use the editor to
-              quickly build a dedicated page for you.
+              Ant Design Landing platform has a variety of templates, download template package, you
+              can use it quickly, you can also use the editor to quickly build a dedicated page for
+              you.Ant Design Landing platform has a variety of templates, download template package,
+              you can use it quickly, you can also use the editor to quickly build a dedicated page
+              for you.
             </p>
           </div>
           <!-- 右边产品图片 -->
@@ -230,13 +221,11 @@
             <!-- 文字小组合 -->
             <div class="continerboxmiddletext25">
               <div class="continerboxmiddletext888">
-                <h1 class="continerboxmiddletext888title">
-                  What can Pro do for you
-                </h1>
+                <h1 class="continerboxmiddletext888title">What can Pro do for you</h1>
                 <p class="continerboxmiddletext888content">
-                  Ant Design Landing platform has a variety of templates,
-                  download template package, you can use it quickly, you can
-                  also use the editor to quickly build a dedicated page for you.
+                  Ant Design Landing platform has a variety of templates, download template package,
+                  you can use it quickly, you can also use the editor to quickly build a dedicated
+                  page for you.
                 </p>
               </div>
             </div>
@@ -251,13 +240,9 @@
                   <!-- 文字 -->
                   <div class="smallcontinter1box1text">
                     <div class="smallcontinter1box1text21">
-                      <h1 class="h1title">
-                        30<span class="fontsizesmall">Hz</span>
-                      </h1>
+                      <h1 class="h1title">30<span class="fontsizesmall">Hz</span></h1>
                     </div>
-                    <div class="contentp">
-                      Vibration frequency of acoustic motor: 250 ~ 330hz
-                    </div>
+                    <div class="contentp">Vibration frequency of acoustic motor: 250 ~ 330hz</div>
                   </div>
                 </div>
                 <div class="smallcontinter1box1">
@@ -268,13 +253,9 @@
                   <!-- 文字 -->
                   <div class="smallcontinter1box1text">
                     <div class="smallcontinter1box1text21">
-                      <h1 class="h1title">
-                        30<span class="fontsizesmall">Hz</span>
-                      </h1>
+                      <h1 class="h1title">30<span class="fontsizesmall">Hz</span></h1>
                     </div>
-                    <div class="contentp">
-                      Vibration frequency of acoustic motor: 250 ~ 330hz
-                    </div>
+                    <div class="contentp">Vibration frequency of acoustic motor: 250 ~ 330hz</div>
                   </div>
                 </div>
                 <div class="smallcontinter1box1">
@@ -285,13 +266,9 @@
                   <!-- 文字 -->
                   <div class="smallcontinter1box1text">
                     <div class="smallcontinter1box1text21">
-                      <h1 class="h1title">
-                        30<span class="fontsizesmall">Hz</span>
-                      </h1>
+                      <h1 class="h1title">30<span class="fontsizesmall">Hz</span></h1>
                     </div>
-                    <div class="contentp">
-                      Vibration frequency of acoustic motor: 250 ~ 330hz
-                    </div>
+                    <div class="contentp">Vibration frequency of acoustic motor: 250 ~ 330hz</div>
                   </div>
                 </div>
               </div>
@@ -304,13 +281,9 @@
                   <!-- 文字 -->
                   <div class="smallcontinter1box1text">
                     <div class="smallcontinter1box1text21">
-                      <h1 class="h1title">
-                        30<span class="fontsizesmall">Hz</span>
-                      </h1>
+                      <h1 class="h1title">30<span class="fontsizesmall">Hz</span></h1>
                     </div>
-                    <div class="contentp">
-                      Vibration frequency of acoustic motor: 250 ~ 330hz
-                    </div>
+                    <div class="contentp">Vibration frequency of acoustic motor: 250 ~ 330hz</div>
                   </div>
                 </div>
                 <div class="smallcontinter1box1">
@@ -321,13 +294,9 @@
                   <!-- 文字 -->
                   <div class="smallcontinter1box1text">
                     <div class="smallcontinter1box1text21">
-                      <h1 class="h1title">
-                        30<span class="fontsizesmall">Hz</span>
-                      </h1>
+                      <h1 class="h1title">30<span class="fontsizesmall">Hz</span></h1>
                     </div>
-                    <div class="contentp">
-                      Vibration frequency of acoustic motor: 250 ~ 330hz
-                    </div>
+                    <div class="contentp">Vibration frequency of acoustic motor: 250 ~ 330hz</div>
                   </div>
                 </div>
                 <div class="smallcontinter1box1">
@@ -338,13 +307,9 @@
                   <!-- 文字 -->
                   <div class="smallcontinter1box1text">
                     <div class="smallcontinter1box1text21">
-                      <h1 class="h1title">
-                        30<span class="fontsizesmall">Hz</span>
-                      </h1>
+                      <h1 class="h1title">30<span class="fontsizesmall">Hz</span></h1>
                     </div>
-                    <div class="contentp">
-                      Vibration frequency of acoustic motor: 250 ~ 330hz
-                    </div>
+                    <div class="contentp">Vibration frequency of acoustic motor: 250 ~ 330hz</div>
                   </div>
                 </div>
               </div>
@@ -362,12 +327,11 @@
             <div class="continerbox234+">
               <h1 class="containertitle1">What can Pro do for you</h1>
               <p class="containercontent">
-                Ant Design Landing platform has a variety of templates, download
-                template package, you can use it quickly, you can also use the
-                editor to quickly build a dedicated page for you.Ant Design
-                Landing platform has a variety of templates, download template
-                package, you can use it quickly, you can also use the editor to
-                quickly build a dedicated page for you.
+                Ant Design Landing platform has a variety of templates, download template package,
+                you can use it quickly, you can also use the editor to quickly build a dedicated
+                page for you.Ant Design Landing platform has a variety of templates, download
+                template package, you can use it quickly, you can also use the editor to quickly
+                build a dedicated page for you.
               </p>
             </div>
             <!-- 排序 -->
@@ -435,9 +399,7 @@
             <!-- 规格 -->
             <div class="Specificationstext1">
               <div class="Specificationstextlist">
-                <div class="textfontsize1233">
-                  Package Size：10 x 10 x 10 CM
-                </div>
+                <div class="textfontsize1233">Package Size：10 x 10 x 10 CM</div>
                 <span class="textfontsize58788">Package Weight：00g</span>
               </div>
             </div>
@@ -461,9 +423,7 @@
           </div>
         </div>
         <div class="Rotationmapboxtitlebutton">
-          <el-button class="buttontext1223">
-            <div class="spantext12">按钮文字</div></el-button
-          >
+          <el-button class="buttontext1223"> <div class="spantext12">按钮文字</div></el-button>
         </div>
       </div>
       <!-- 轮播图特效 -->
@@ -480,161 +440,113 @@
             </div>
             <div class="Rotationmapbmiddle">
               <p class="Rotationmapbheadfontcontent">
-                I am very helped in making a website and business development
-                that makes the product that I have to have a quality for use by
-                the userI am very helped in making a website and business
-                development that makes the product that I have to have a quality
-                for use by the user
+                I am very helped in making a website and business development that makes the product
+                that I have to have a quality for use by the userI am very helped in making a
+                website and business development that makes the product that I have to have a
+                quality for use by the user
               </p>
             </div>
             <div class="Rotationmapbottom">
               <div class="Rotationmapbostart1">
                 <div class="Rotationmapbostart1-small">
-                  <el-image
-                    src="/homepage/Star5.png"
-                    class="Rotationmapbostart1-img"
-                  />
-                  <el-image
-                    src="/homepage/Star5.png"
-                    class="Rotationmapbostart1-img"
-                  />
-                  <el-image
-                    src="/homepage/Star5.png"
-                    class="Rotationmapbostart1-img"
-                  />
-                  <el-image
-                    src="/homepage/Star5.png"
-                    class="Rotationmapbostart1-img"
-                  />
-                  <el-image
-                    src="/homepage/Star5.png"
-                    class="Rotationmapbostart1-img"
-                  />
+                  <el-image src="/homepage/Star5.png" class="Rotationmapbostart1-img" />
+                  <el-image src="/homepage/Star5.png" class="Rotationmapbostart1-img" />
+                  <el-image src="/homepage/Star5.png" class="Rotationmapbostart1-img" />
+                  <el-image src="/homepage/Star5.png" class="Rotationmapbostart1-img" />
+                  <el-image src="/homepage/Star5.png" class="Rotationmapbostart1-img" />
                 </div>
               </div>
               <div class="Rotationmapbogroup5">
                 <div class="Rotationmapbogroupbox54">
                   <div class="people-photo-placeholder">
-                   <el-image src="/homepage/Free_Box_Mockup.png"  class="people-photo-placeholdericon"/>
+                    <el-image
+                      src="/homepage/Free_Box_Mockup.png"
+                      class="people-photo-placeholdericon"
+                    />
                   </div>
                   <div class="feame821">
                     <span class="spanhead">Mang Oleh</span>
                     <span class="spanmiddle">Product Designer </span>
-
                   </div>
-
                 </div>
-
               </div>
             </div>
           </div>
-        <!-- 第二个 -->
+          <!-- 第二个 -->
           <div class="Rotationmapboxtitletwo-content2box1">
             <div class="Rotationmapbhead">
               <h1 class="Rotationmapbheadh1">Great Design!</h1>
             </div>
             <div class="Rotationmapbmiddle">
               <p class="Rotationmapbheadfontcontent">
-                I am very helped in making a website and business development
-                that makes the product that I have to have a quality for use by
-                the userI am very helped in making a website and business
-                development that makes the product that I have to have a quality
-                for use by the user
+                I am very helped in making a website and business development that makes the product
+                that I have to have a quality for use by the userI am very helped in making a
+                website and business development that makes the product that I have to have a
+                quality for use by the user
               </p>
             </div>
             <div class="Rotationmapbottom">
               <div class="Rotationmapbostart1">
                 <div class="Rotationmapbostart1-small">
-                  <el-image
-                    src="/homepage/Star5.png"
-                    class="Rotationmapbostart1-img"
-                  />
-                  <el-image
-                    src="/homepage/Star5.png"
-                    class="Rotationmapbostart1-img"
-                  />
-                  <el-image
-                    src="/homepage/Star5.png"
-                    class="Rotationmapbostart1-img"
-                  />
-                  <el-image
-                    src="/homepage/Star5.png"
-                    class="Rotationmapbostart1-img"
-                  />
-                  <el-image
-                    src="/homepage/Star5.png"
-                    class="Rotationmapbostart1-img"
-                  />
+                  <el-image src="/homepage/Star5.png" class="Rotationmapbostart1-img" />
+                  <el-image src="/homepage/Star5.png" class="Rotationmapbostart1-img" />
+                  <el-image src="/homepage/Star5.png" class="Rotationmapbostart1-img" />
+                  <el-image src="/homepage/Star5.png" class="Rotationmapbostart1-img" />
+                  <el-image src="/homepage/Star5.png" class="Rotationmapbostart1-img" />
                 </div>
               </div>
               <div class="Rotationmapbogroup5">
                 <div class="Rotationmapbogroupbox54">
                   <div class="people-photo-placeholder">
-                   <el-image src="/homepage/Free_Box_Mockup.png"  class="people-photo-placeholdericon"/>
+                    <el-image
+                      src="/homepage/Free_Box_Mockup.png"
+                      class="people-photo-placeholdericon"
+                    />
                   </div>
                   <div class="feame821">
                     <span class="spanhead">Mang Oleh</span>
                     <span class="spanmiddle">Product Designer </span>
-
                   </div>
-
                 </div>
-
               </div>
             </div>
           </div>
           <!-- 第三个 -->
-            <div class="Rotationmapboxtitletwo-content2box1">
+          <div class="Rotationmapboxtitletwo-content2box1">
             <div class="Rotationmapbhead">
               <h1 class="Rotationmapbheadh1">Great Design!</h1>
             </div>
             <div class="Rotationmapbmiddle">
               <p class="Rotationmapbheadfontcontent">
-                I am very helped in making a website and business development
-                that makes the product that I have to have a quality for use by
-                the userI am very helped in making a website and business
-                development that makes the product that I have to have a quality
-                for use by the user
+                I am very helped in making a website and business development that makes the product
+                that I have to have a quality for use by the userI am very helped in making a
+                website and business development that makes the product that I have to have a
+                quality for use by the user
               </p>
             </div>
             <div class="Rotationmapbottom">
               <div class="Rotationmapbostart1">
                 <div class="Rotationmapbostart1-small">
-                  <el-image
-                    src="/homepage/Star5.png"
-                    class="Rotationmapbostart1-img"
-                  />
-                  <el-image
-                    src="/homepage/Star5.png"
-                    class="Rotationmapbostart1-img"
-                  />
-                  <el-image
-                    src="/homepage/Star5.png"
-                    class="Rotationmapbostart1-img"
-                  />
-                  <el-image
-                    src="/homepage/Star5.png"
-                    class="Rotationmapbostart1-img"
-                  />
-                  <el-image
-                    src="/homepage/Star5.png"
-                    class="Rotationmapbostart1-img"
-                  />
+                  <el-image src="/homepage/Star5.png" class="Rotationmapbostart1-img" />
+                  <el-image src="/homepage/Star5.png" class="Rotationmapbostart1-img" />
+                  <el-image src="/homepage/Star5.png" class="Rotationmapbostart1-img" />
+                  <el-image src="/homepage/Star5.png" class="Rotationmapbostart1-img" />
+                  <el-image src="/homepage/Star5.png" class="Rotationmapbostart1-img" />
                 </div>
               </div>
               <div class="Rotationmapbogroup5">
                 <div class="Rotationmapbogroupbox54">
                   <div class="people-photo-placeholder">
-                   <el-image src="/homepage/Free_Box_Mockup.png"  class="people-photo-placeholdericon"/>
+                    <el-image
+                      src="/homepage/Free_Box_Mockup.png"
+                      class="people-photo-placeholdericon"
+                    />
                   </div>
                   <div class="feame821">
                     <span class="spanhead">Mang Oleh</span>
                     <span class="spanmiddle">Product Designer </span>
-
                   </div>
-
                 </div>
-
               </div>
             </div>
           </div>
@@ -646,10 +558,7 @@
       </div>
     </div>
     <!-- 页面标签排版 -->
-    <div
-      class="uk-child-width-1-2 uk-child-width-1-4@s uk-grid-match "
-      uk-grid
-    >
+    <div class="uk-child-width-1-2 uk-child-width-1-4@s uk-grid-match" uk-grid>
       <div class="uk-animation-toggle uk-box3">
         <div class="uk-card uk-card-default uk-card-body uk-texttile-box1">
           <el-image src="/homepage/homeicon.jpg" class="homeicontext1" />
@@ -658,15 +567,14 @@
           <div class="uk-text-center">
             <p class="uk-texttitle1">What can Pro do for you</p>
             <p class="uk-content">
-              Ant Design Landing platform has a variety of Ant Design Landing
-              platform has a variety of Ant Design Landing platform has a
-              variety of Ant Design Landing platform has a variety of Ant Design
-              Landing platform has a variety of Ant
+              Ant Design Landing platform has a variety of Ant Design Landing platform has a variety
+              of Ant Design Landing platform has a variety of Ant Design Landing platform has a
+              variety of Ant Design Landing platform has a variety of Ant
             </p>
           </div>
         </div>
       </div>
-      <div class="uk-animation-toggle uk-box3" >
+      <div class="uk-animation-toggle uk-box3">
         <div class="uk-card uk-card-default uk-card-body uk-texttile-box1">
           <el-image src="/homepage/homeicon.jpg" class="homeicontext1" />
           <!-- <p class="uk-text-center">
@@ -674,10 +582,9 @@
           <div class="uk-text-center">
             <p class="uk-texttitle1">What can Pro do for you</p>
             <p class="uk-content">
-              Ant Design Landing platform has a variety of Ant Design Landing
-              platform has a variety of Ant Design Landing platform has a
-              variety of Ant Design Landing platform has a variety of Ant Design
-              Landing platform has a variety of Ant
+              Ant Design Landing platform has a variety of Ant Design Landing platform has a variety
+              of Ant Design Landing platform has a variety of Ant Design Landing platform has a
+              variety of Ant Design Landing platform has a variety of Ant
             </p>
           </div>
         </div>
@@ -690,10 +597,9 @@
           <div class="uk-text-center">
             <p class="uk-texttitle1">What can Pro do for you</p>
             <p class="uk-content">
-              Ant Design Landing platform has a variety of Ant Design Landing
-              platform has a variety of Ant Design Landing platform has a
-              variety of Ant Design Landing platform has a variety of Ant Design
-              Landing platform has a variety of Ant
+              Ant Design Landing platform has a variety of Ant Design Landing platform has a variety
+              of Ant Design Landing platform has a variety of Ant Design Landing platform has a
+              variety of Ant Design Landing platform has a variety of Ant
             </p>
           </div>
         </div>
@@ -706,28 +612,24 @@
           <div class="uk-text-center">
             <p class="uk-texttitle1">What can Pro do for you</p>
             <p class="uk-content">
-              Ant Design Landing platform has a variety of Ant Design Landing
-              platform has a variety of Ant Design Landing platform has a
-              variety of Ant Design Landing platform has a variety of Ant Design
-              Landing platform has a variety of Ant
+              Ant Design Landing platform has a variety of Ant Design Landing platform has a variety
+              of Ant Design Landing platform has a variety of Ant Design Landing platform has a
+              variety of Ant Design Landing platform has a variety of Ant
             </p>
           </div>
         </div>
       </div>
     </div>
   </div>
-
 </template>
 
 <script type="module">
-
 export default {
   name: 'DefaultLayout',
   components: {
-    Lcoalfooter: () => import(/* webpackPrefetch: true */ '~/components/Lcoalfooter.vue'),
-  },
-
-};
+    Lcoalfooter: () => import(/* webpackPrefetch: true */ '~/components/Lcoalfooter.vue')
+  }
+}
 </script>
 <style lang="css" scoped>
 .bg-purple-dark {
@@ -778,7 +680,7 @@ export default {
   width: 816px;
   height: 46px;
   /* 中文-标准/二级标题/二级标题_Medium */
-  font-family: "Overpass",Verdana, Arial, Helvetica, sans-serif;
+  font-family: 'Overpass', Verdana, Arial, Helvetica, sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 38px;
@@ -797,7 +699,7 @@ export default {
   width: 816px;
   height: 48px;
   /* 中文-标准/正文2-16pt/正文2_Regular */
-  font-family: "Overpass",Verdana, Arial, Helvetica, sans-serif;
+  font-family: 'Overpass', Verdana, Arial, Helvetica, sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 16px;
@@ -853,7 +755,7 @@ export default {
   width: 200px;
   height: 24px;
   /* 中文-标准/正文2-16pt/正文2_Mmedium */
-  font-family: "Overpass",Verdana, Arial, Helvetica, sans-serif;
+  font-family: 'Overpass', Verdana, Arial, Helvetica, sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 16px;
@@ -867,7 +769,7 @@ export default {
   width: 200px;
   height: 198px;
   /* 中文-标准/正文3-14pt/正文3_Regular */
-  font-family: "Overpass",Verdana, Arial, Helvetica, sans-serif;
+  font-family: 'Overpass', Verdana, Arial, Helvetica, sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 14px;
@@ -931,7 +833,7 @@ export default {
   width: 590px;
   height: 46px;
   /* 中文-标准/二级标题/二级标题_Medium */
-  font-family: "Overpass",Verdana, Arial, Helvetica, sans-serif;
+  font-family: 'Overpass', Verdana, Arial, Helvetica, sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 38px;
@@ -949,7 +851,7 @@ export default {
   width: 590px;
   height: 120px;
   /* 中文-标准/正文2-16pt/正文2_Regular */
-  font-family: "Overpass",Verdana, Arial, Helvetica, sans-serif;
+  font-family: 'Overpass', Verdana, Arial, Helvetica, sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 16px;
@@ -1040,7 +942,7 @@ export default {
   width: 590px;
   height: 46px;
   /* 中文-标准/二级标题/二级标题_Medium */
-  font-family: "Overpass",Verdana, Arial, Helvetica, sans-serif;
+  font-family: 'Overpass', Verdana, Arial, Helvetica, sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 38px;
@@ -1059,7 +961,7 @@ export default {
   width: 590px;
   height: 72px;
   /* 中文-标准/正文2-16pt/正文2_Regular */
-  font-family: "Overpass",Verdana, Arial, Helvetica, sans-serif;
+  font-family: 'Overpass', Verdana, Arial, Helvetica, sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 16px;
@@ -1147,7 +1049,7 @@ export default {
   width: 45px;
   height: 46px;
   /* 中文-标准/二级标题/二级标题_Medium */
-  font-family: "Overpass",Verdana, Arial, Helvetica, sans-serif;
+  font-family: 'Overpass', Verdana, Arial, Helvetica, sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 38px;
@@ -1165,7 +1067,7 @@ export default {
   width: 36px;
   height: 37px;
   /* 中文-标准/三级标题/三级标题_Medium */
-  font-family: "Overpass",Verdana, Arial, Helvetica, sans-serif;
+  font-family: 'Overpass', Verdana, Arial, Helvetica, sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 28px;
@@ -1215,7 +1117,7 @@ export default {
   width: 45px;
   height: 46px;
   /* 中文-标准/二级标题/二级标题_Medium */
-  font-family: "Overpass",Verdana, Arial, Helvetica, sans-serif;
+  font-family: 'Overpass', Verdana, Arial, Helvetica, sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 38px;
@@ -1233,7 +1135,7 @@ export default {
   width: 36px;
   height: 37px;
   /* 中文-标准/三级标题/三级标题_Medium */
-  font-family: "Overpass",Verdana, Arial, Helvetica, sans-serif;
+  font-family: 'Overpass', Verdana, Arial, Helvetica, sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 28px;
@@ -1250,7 +1152,7 @@ export default {
   width: 154px;
   height: 60px;
   /* 中文-标准/正文4-12pt/正文4_Regular */
-  font-family: "Overpass",Verdana, Arial, Helvetica, sans-serif;
+  font-family: 'Overpass', Verdana, Arial, Helvetica, sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 12px;
@@ -1297,7 +1199,7 @@ export default {
   width: 590px;
   height: 46px;
   /* 中文-标准/二级标题/二级标题_Medium */
-  font-family: "Overpass",Verdana, Arial, Helvetica, sans-serif;
+  font-family: 'Overpass', Verdana, Arial, Helvetica, sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 38px;
@@ -1310,7 +1212,7 @@ export default {
   width: 590px;
   height: 72px;
   /* 中文-标准/正文2-16pt/正文2_Regular */
-  font-family: "Overpass",Verdana, Arial, Helvetica, sans-serif;
+  font-family: 'Overpass', Verdana, Arial, Helvetica, sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 16px;
@@ -1341,7 +1243,7 @@ export default {
   width: 137px;
   height: 24px;
   /* 中文-标准/正文2-16pt/正文2_Mmedium */
-  font-family: "Overpass",Verdana, Arial, Helvetica, sans-serif;
+  font-family: 'Overpass', Verdana, Arial, Helvetica, sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 16px;
@@ -1406,7 +1308,7 @@ export default {
   width: 70px;
   height: 24px;
   /* 中文-标准/正文2-16pt/正文2_Regular */
-  font-family: "Overpass",Verdana, Arial, Helvetica, sans-serif;
+  font-family: 'Overpass', Verdana, Arial, Helvetica, sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 16px;
@@ -1423,7 +1325,7 @@ export default {
   width: 28px;
   height: 24px;
   /* 中文-标准/正文2-16pt/正文2_Regular */
-  font-family: "Overpass",Verdana, Arial, Helvetica, sans-serif;
+  font-family: 'Overpass', Verdana, Arial, Helvetica, sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 16px;
@@ -1467,7 +1369,7 @@ export default {
   width: 240px;
   height: 24px;
   /* 中文-标准/正文2-16pt/正文2_Regular */
-  font-family: "Overpass",Verdana, Arial, Helvetica, sans-serif;
+  font-family: 'Overpass', Verdana, Arial, Helvetica, sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 16px;
@@ -1483,7 +1385,7 @@ export default {
   width: 166px;
   height: 24px;
   /* 中文-标准/正文2-16pt/正文2_Regular */
-  font-family: "Overpass",Verdana, Arial, Helvetica, sans-serif;
+  font-family: 'Overpass', Verdana, Arial, Helvetica, sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 16px;
@@ -1565,7 +1467,7 @@ export default {
   width: 1049px;
   height: 92px;
   /* 中文-标准/二级标题/二级标题_Medium */
-  font-family: "Overpass",Verdana, Arial, Helvetica, sans-serif;
+  font-family: 'Overpass', Verdana, Arial, Helvetica, sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 38px;
@@ -1703,7 +1605,7 @@ export default {
 
   /* 中文-标准/四级标题/四级标题_Medium */
 
-  font-family: "Overpass",Verdana, Arial, Helvetica, sans-serif;
+  font-family: 'Overpass', Verdana, Arial, Helvetica, sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 24px;
@@ -1736,7 +1638,7 @@ export default {
 
   /* Paragraph Regular/16px */
 
-  font-family: "Overpass",Verdana, Arial, Helvetica, sans-serif;
+  font-family: 'Overpass', Verdana, Arial, Helvetica, sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 16px;
@@ -1793,121 +1695,112 @@ export default {
   order: 1;
   flex-grow: 0;
 }
-.Rotationmapbogroupbox54{
-display: flex;
-flex-direction: row;
-align-items: center;
-padding: 0px;
-gap: 16px;
-position: relative;
-width: 183.79px;
-height: 44px;
-left: 0px;
-top: 47.6px;
+.Rotationmapbogroupbox54 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0px;
+  gap: 16px;
+  position: relative;
+  width: 183.79px;
+  height: 44px;
+  left: 0px;
+  top: 47.6px;
 }
-.people-photo-placeholder{
+.people-photo-placeholder {
   position: absolute;
   width: 40.68px;
-height: 40px;
+  height: 40px;
 
+  /* Inside auto layout */
 
-/* Inside auto layout */
-
-flex: none;
-order: 0;
-flex-grow: 0;
+  flex: none;
+  order: 0;
+  flex-grow: 0;
 }
-.people-photo-placeholdericon{
-position: absolute;
-width: 40px;
-height: 40px;
-left: 0.53px;
-top: 2px;
+.people-photo-placeholdericon {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  left: 0.53px;
+  top: 2px;
 
-/* Background/Light Blue */
+  /* Background/Light Blue */
 
-background: #F4F0FF;
-border-radius: 60px;
+  background: #f4f0ff;
+  border-radius: 60px;
 }
-.feame821{
+.feame821 {
   margin-left: 50px;
   display: flex;
-flex-direction: column;
-align-items: flex-start;
-padding: 0px;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0px;
 
-width: 127.11px;
-height: 44px;
+  width: 127.11px;
+  height: 44px;
 
+  /* Inside auto layout */
 
-/* Inside auto layout */
-
-flex: none;
-order: 1;
-flex-grow: 0;
+  flex: none;
+  order: 1;
+  flex-grow: 0;
 }
-.spanhead{
-/* Mang Oleh */
+.spanhead {
+  /* Mang Oleh */
 
+  width: 74px;
+  height: 22px;
 
-width: 74px;
-height: 22px;
+  /* 中文-标准/正文3-14pt/正文3_Medium */
 
-/* 中文-标准/正文3-14pt/正文3_Medium */
+  font-family: 'Overpass', Verdana, Arial, Helvetica, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 22px;
+  /* identical to box height, or 157% */
 
-font-family: "Overpass",Verdana, Arial, Helvetica, sans-serif;
-font-style: normal;
-font-weight: 400;
-font-size: 14px;
-line-height: 22px;
-/* identical to box height, or 157% */
+  /* 浅色模式文本/Title Text */
 
+  color: #0c0b0e;
 
-/* 浅色模式文本/Title Text */
+  /* Inside auto layout */
 
-color: #0C0B0E;
-
-
-/* Inside auto layout */
-
-flex: none;
-order: 0;
-flex-grow: 0;
-
+  flex: none;
+  order: 0;
+  flex-grow: 0;
 }
-.spanmiddle{
+.spanmiddle {
+  width: 127.11px;
+  height: 22px;
 
-width: 127.11px;
-height: 22px;
+  /* 中文-标准/正文3-14pt/正文3_Regular */
 
-/* 中文-标准/正文3-14pt/正文3_Regular */
+  font-family: 'Overpass', Verdana, Arial, Helvetica, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 22px;
+  /* identical to box height, or 157% */
 
-font-family: "Overpass",Verdana, Arial, Helvetica, sans-serif;
-font-style: normal;
-font-weight: 400;
-font-size: 12px;
-line-height: 22px;
-/* identical to box height, or 157% */
+  /* 浅色模式文本/Body Text */
 
-
-/* 浅色模式文本/Body Text */
-
-color: #3A3543;
-/* Inside auto layout */
-flex: none;
-order: 1;
-flex-grow: 0;
+  color: #3a3543;
+  /* Inside auto layout */
+  flex: none;
+  order: 1;
+  flex-grow: 0;
 }
-.uk-box3{
+.uk-box3 {
   margin-top: 76px;
 }
-.uk-box4{
+.uk-box4 {
   margin-top: 76px;
   margin-bottom: 30px;
 }
-.uk-box5{
-   margin-top: 76px;
-    margin-bottom: 30px;
+.uk-box5 {
+  margin-top: 76px;
+  margin-bottom: 30px;
 }
-
 </style>
