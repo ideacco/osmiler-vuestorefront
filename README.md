@@ -6,7 +6,7 @@ OSMILER的前端商城框架使用 Vue Storefron 作为基础前端框架,使用
 ## 项目结构
 ```
 vuestorefront
-├── .nuxt                     // nuxt 服务端渲染缓存,会根据文档更改自动更新
+├── .nuxt                     // NUXT 服务端渲染缓存,会根据文档更改自动更新
 ├── api                       // 接口定义
 ├── components                // 组件库
 │   ├── Checkout
@@ -18,29 +18,29 @@ vuestorefront
 ├── helpers
 ├── integrations
 ├── lang                       // 多语言
-├── layouts
+├── layouts                    // 布局管理,用于管理布局
 ├── middleware                 // 中间件(shopify key配置在这里)
-├── modules
+├── modules                    // NUXT模块,是Nuxt的官方支持模块目录
 ├── pages                      // 页面
 │   ├── Checkout               // 结账页面
 │   ├── MyAccount              // 我的账户页面
 │   ├── Home.vue
 │   ├── ...
 ├── plugins                    // 第三方插件目录(第三方UI库的JS,工具JS)
-│   ├── UIkit.js
+│   ├── UIkit.js               // 第三方UIkit的js库
 │   ├── element-ui.js
 │   ├── ...
 ├── server-middleware          // 服务器中间件
-├── static                     // 静态目录
-├── store                      // 状态管理
+├── static                     // 静态目录,不经过NUXT预处理的静态文件
+├── store                      // 状态管理 VUEX的 NUXT封装
 ├── .env                       // 环境配置
 ├── .env.development
 ├── .env.example
 ├── .env.production
 ├── README.md
 ├── jest.config.js
-├── middleware.config.js       // nuxt中间件配置
-├── nuxt.config.js             // nuxt主要配置
+├── middleware.config.js       // NUXT中间件配置
+├── nuxt.config.js             // NUXT主要配置
 ├── package.json
 ├── tsconfig.json
 
@@ -142,6 +142,8 @@ server: {
 "editor.formatOnSave": false,
 
 只需要yarn lintfix 就可以修复代码格式统一格式化
+
+
 ## 项目启动使用：
 yarn install
 
