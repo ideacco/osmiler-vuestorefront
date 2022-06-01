@@ -76,7 +76,7 @@ const config = {
   },
   plugins: [
     '~/plugins/scrollToTop.client.js',
-    '@/plugins/index.js',
+    '@/plugins/element-ui',
     {
       src: '~/plugins/UIkit',
       ssr: false,

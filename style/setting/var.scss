@@ -23,29 +23,26 @@ $border-width-base: 1px !default;
 $border-style-base: solid !default;
 $border-base: $border-width-base $border-style-base $border-color-base !default;
 
-//
-// Global
-//
 
 $global-font-family: 'Overpass';
-$global-color: #3a3543;
-$global-emphasis-color: #4132c7;
-$global-link-color: #5d47ee;
-$global-muted-color: #b19eff;
-$global-link-hover-color: #8973fa;
-$global-background: #030303;
-$global-danger-background: #e75856;
-$global-muted-background: #fcfbfe;
-$global-primary-background: #5d47ee;
-$global-secondary-background: #4132c7;
-$global-success-background: #4bcba7;
-$global-warning-background: #ef8d23;
+$global-color: #3A3543;
+$global-emphasis-color: #4132C7;
+$global-link-color: #5D47EE;
+$global-muted-color: #B19EFF;
+$global-link-hover-color: #8973FA;
+$global-background: #FFFFFF;
+$global-danger-background: #E75856;
+$global-muted-background: #FCFBFE;
+$global-primary-background: #5D47EE;
+$global-secondary-background: #4132C7;
+$global-success-background: #4BCBA7;
+$global-warning-background: #EF8D23;
 
 //
 // Base
 //
 
-$base-selection-background: #f4f0ff;
+$base-selection-background: #F4F0FF;
 
 //
 // Button
@@ -57,29 +54,40 @@ $button-hover-background-position-x: 0;
 // Navbar
 //
 
-$navbar-background: #ffffff;
-$navbar-nav-item-color: #3a3543;
+@font-face {
+  font-family: 'osmiler-title';
+  src: url('/static/osmiler-regular-webfont.woff2') format('woff2'),
+       url('/static/osmiler-regular-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+
+}
+
+$navbar-background: #FFFFFF;
+$navbar-nav-item-color: #3A3543;
 $navbar-nav-item-line-background: rgba(0, 0, 0, 0);
 $navbar-nav-item-line-position-mode: bottom;
 $navbar-primary-nav-item-color: rgba(0, 0, 0, 0.23);
 $navbar-primary-nav-item-active-color: rgba(0, 0, 0, 0.99);
-$navbar-dropdown-background: #faf8fe;
-$navbar-dropdown-color: #3a3543;
-$navbar-dropdown-nav-item-color: #6f6b78;
-$navbar-dropdown-nav-item-hover-color: #8973fa;
-$navbar-dropdown-nav-item-active-color: #0c0b0e;
-$navbar-dropdown-nav-header-color: #3a3543;
-$navbar-dropdown-nav-sublist-item-color: #6f6b78;
-$navbar-dropdown-nav-sublist-item-hover-color: #8973fa;
-$navbar-dropdown-nav-sublist-item-active-color: #6f6b78;
-$navbar-dropbar-background: #fcfbfe;
+$navbar-dropdown-background: #FAF8FE;
+$navbar-dropdown-color: #3A3543;
+$navbar-dropdown-nav-item-color: #6F6B78;
+$navbar-dropdown-nav-item-hover-color: #8973FA;
+$navbar-dropdown-nav-item-active-color: #0C0B0E;
+$navbar-dropdown-nav-header-color: #3A3543;
+$navbar-dropdown-nav-sublist-item-color: #6F6B78;
+$navbar-dropdown-nav-sublist-item-hover-color: #8973FA;
+$navbar-dropdown-nav-sublist-item-active-color: #6F6B78;
+$navbar-dropbar-background: #FCFBFE;
 
 //
 // Text
 //
 
-$text-danger-color: #e75856;
-$text-muted-color: #6f6b78;
-$text-primary-color: #3a3543;
-$text-success-color: #4bcba7;
-$text-warning-color: #ef8d23;
+$text-danger-color: #E75856;
+$text-muted-color: #6F6B78;
+$text-primary-color: #3A3543;
+$text-success-color: #4BCBA7;
+$text-warning-color: #EF8D23;
+
+
