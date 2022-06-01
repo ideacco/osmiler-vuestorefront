@@ -177,6 +177,7 @@
                     <a
                       class="el-link uk-button uk-button-primary"
                       :href="item.music_url"
+                      download
                     >Download
                     </a>
                   </td>
