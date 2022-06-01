@@ -56,14 +56,11 @@ vuestorefront 底层基础使用 (nuxt)[https://www.nuxtjs.org/] 作为基础支
 
 # 接口的封装
   1. 通过package.json 切换环境部署
-  2. 通过api的直接调用接口
+  2. 通过api的封装接口
 
     ```js
-
-    export default({$axios},inject)=>{
-          inject('test',()=>$axios.$get('/test'))
-          inject('test2',()=>$axios.$get('/test'))
-      }
+    export function getBlog(id)
+    {data: params => get('/api/index', params)}
 
     ```
   3. 在页面中怎么调用接口
@@ -85,15 +82,10 @@ vuestorefront 底层基础使用 (nuxt)[https://www.nuxtjs.org/] 作为基础支
 
   ```
 
-  路由跳转放在appheader.vue文件中
+  路由跳转放在JHheader.vue文件中
 
   ```js
-    <el-menu-item index="/music" class="el-menu-demo">
-                    <span class="menusize">music</span></el-menu-item
-                  >
-                  <el-menu-item index="/Aboutus" class="el-menu-demo">
-                    <span class="menusize">关于我们</span></el-menu-item
-                  >
+          <a href="/Home"> Home</a>
   ```
 
   页面路由的路径只需要 /about
@@ -149,7 +141,7 @@ server: {
 4,解决方案:只用 ESLint fix 就可以保证代码风格了，那么关掉 vscode 保存时的自动格式化：
 "editor.formatOnSave": false,
 
-只需要yarn lint就可以修复代码格式统一格式化
+只需要yarn lintfix 就可以修复代码格式统一格式化
 ## 项目启动使用：
 yarn install
 

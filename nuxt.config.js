@@ -20,22 +20,35 @@ const config = {
   },
   serverMiddleware: [
     // { path: '/custom', handler: '~/server-middleware/custom-features.js' }, // 去掉了原版使用的express的中间件
-    { path: '/custom', handler: '~/server-middleware/custom-features-app.js' } // 将后端中间件改为使用koa
+    {
+      path: '/custom',
+      handler: '~/server-middleware/custom-features-app.js'
+    } // 将后端中间件改为使用koa
   ],
   head: {
     title: 'Osmiler',
-    meta: [
-      { charset: 'utf-8' },
-      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { name: 'theme-color', content: '#5ece7b' },
+    meta: [{
+        charset: 'utf-8'
+      },
+      {
+        name: 'viewport',
+        content: 'width=device-width, initial-scale=1'
+      },
+      {
+        name: 'theme-color',
+        content: '#5ece7b'
+      },
       {
         hid: 'description',
         name: 'description',
         content: process.env.npm_package_description || ''
       }
     ],
-    link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+    link: [{
+        rel: 'icon',
+        type: 'image/x-icon',
+        href: '/favicon.ico'
+      },
       {
         rel: 'preconnect',
         href: 'https://fonts.gstatic.com',
@@ -54,9 +67,14 @@ const config = {
       }
     ]
   },
-  loading: { color: '#fff' },
-  plugins: ['~/plugins/scrollToTop.client.js', '@/plugins/element-ui',
-    {src: '~/plugins/UIkit',ssr: false},
+  loading: {
+    color: '#fff'
+  },
+  plugins: ['~/plugins/scrollToTop.client.js', '@/plugins/index.js',
+    {
+      src: '~/plugins/UIkit',
+      ssr: false
+    },
     '~/plugins/interceptor',
     '~/api/test'
   ],
@@ -92,7 +110,10 @@ const config = {
     'element-ui/lib/theme-chalk/display.css',
     'uikit/dist/css/uikit.min.css',
     // 'normalize.css/normalize.css',
-    {src: '~style/index.scss',lang: 'scss'}
+    {
+      src: '~style/index.scss',
+      lang: 'scss'
+    }
   ],
   modules: [
     '@nuxtjs/i18n',
@@ -112,7 +133,9 @@ const config = {
     '/api': {
       target: process.env.VUE_APP_API_BASE_URL,
       changeOrigin: true,
-      pathRewrite: {'^/api': ''}
+      pathRewrite: {
+        '^/api': ''
+      }
     }
   },
   device: {
@@ -121,16 +144,25 @@ const config = {
   i18n: {
     currency: 'USD',
     country: 'US',
-    countries: [
-      { name: 'US', label: 'United States' },
-      { name: 'DE', label: 'Germany' }
-    ],
-    currencies: [
-      { name: 'EUR', label: 'Euro' },
-      { name: 'USD', label: 'Dollar' }
-    ],
-    locales: [
+    countries: [{
+        name: 'US',
+        label: 'United States'
+      },
       {
+        name: 'DE',
+        label: 'Germany'
+      }
+    ],
+    currencies: [{
+        name: 'EUR',
+        label: 'Euro'
+      },
+      {
+        name: 'USD',
+        label: 'Dollar'
+      }
+    ],
+    locales: [{
         code: 'en',
         alias: 'us',
         label: 'English',
@@ -232,8 +264,7 @@ const config = {
       backgroundColor: '#5ece7b',
       themeColor: '#5ece7b',
       description: 'This is the Shopify PWA app for VSF Next',
-      icons: [
-        {
+      icons: [{
           src: '/icons/android-icon-48x48.png',
           sizes: '48x48',
           type: 'image/png'
@@ -274,8 +305,7 @@ const config = {
       name: 'VSF Next: Shopify APP',
       author: 'Aureate labs',
       backgroundColor: '#5ece7b',
-      description:
-        'This is the Shopify PWA app for VSF Next - Developed by Aureate labs',
+      description: 'This is the Shopify PWA app for VSF Next - Developed by Aureate labs',
       themeColor: '#5ece7b',
       ogHost: 'shopify-pwa.aureatelabs.com'
     },
@@ -283,12 +313,11 @@ const config = {
       iconSrc: 'src/static/android-icon-512x512.png'
     },
     build: {
-      transpile: [/^@storefront-ui/,/^element-ui/,/^UIkit/]
+      transpile: [/^@storefront-ui/, /^element-ui/, /^UIkit/]
     },
     workbox: {
       offlineStrategy: 'StaleWhileRevalidate',
-      runtimeCaching: [
-        {
+      runtimeCaching: [{
           // Match any request that ends with .png, .jpg, .jpeg or .svg.
           urlPattern: /\.(?:png|jpg|jpeg|svg|woff|woff2)$/,
           // Apply a cache-first strategy.
