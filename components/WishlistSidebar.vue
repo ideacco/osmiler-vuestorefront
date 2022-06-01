@@ -170,8 +170,7 @@ export default {
   display: flex;
   flex-direction: column;
   &__total-items {
-    font: var(--font-weight--normal) var(--font-size--lg) / 1.6
-     Overpass;
+    font: var(--font-weight--normal) var(--font-size--lg) / 1.6 Overpass;
     color: var(--c-link);
     margin: 0;
   }
@@ -180,8 +179,7 @@ export default {
     --price-font-size: var(--font-size--xl);
     margin: 0 0 var(--spacer-xl) 0;
     &-label {
-      font: var(--font-weight--normal) var(--font-size--2xl) / 1.6
-       Overpass;
+      font: var(--font-weight--normal) var(--font-size--2xl) / 1.6 Overpass;
       color: var(--c-link);
     }
   }

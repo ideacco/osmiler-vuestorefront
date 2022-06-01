@@ -6,9 +6,7 @@
       uk-scrollspy="target: [uk-scrollspy-class]; cls: uk-animation-slide-bottom-medium; delay: false;"
     >
       <div
-        style="
-          background-image: url('/wp-content/themes/yootheme/cache/music-hero-4f873de3.jpeg');
-        "
+        style="background-image: url('/wp-content/themes/yootheme/cache/music-hero-4f873de3.jpeg');"
         class="uk-background-norepeat uk-background-cover uk-background-top-center uk-section uk-section-large"
       >
         <div class="uk-container uk-container-expand">

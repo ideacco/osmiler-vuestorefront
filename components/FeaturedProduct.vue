@@ -277,7 +277,7 @@ export default {
       var(--font-weight--normal),
       var(--font-size--sm),
       1.4,
-     Overpass
+      Overpass
     );
     color: var(--c-text);
     text-decoration: none;
@@ -304,7 +304,7 @@ export default {
       var(--font-weight--normal),
       var(--font-size--lg),
       1.6,
-     Overpass
+      Overpass
     );
     display: flex;
     align-items: center;

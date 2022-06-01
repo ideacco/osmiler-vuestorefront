@@ -432,8 +432,8 @@ export default {
 
 <style lang="scss" scoped>
 .modal {
-    --modal-index: 9999;
-    --overlay-z-index: 8888;
+  --modal-index: 9999;
+  --overlay-z-index: 8888;
 }
 .form {
   margin-top: var(--spacer-sm);
@@ -453,8 +453,7 @@ export default {
   align-items: center;
   justify-content: center;
   margin: var(--spacer-xl) 0 var(--spacer-xl) 0;
-  font: var(--font-weight--light) var(--font-size--base) / 1.6
-   Overpass;
+  font: var(--font-weight--light) var(--font-size--base) / 1.6 Overpass;
   & > * {
     margin: 0 0 0 var(--spacer-xs);
   }
@@ -473,7 +472,7 @@ export default {
   margin-bottom: var(--spacer-lg);
   font-size: var(--h3-font-size);
   font-weight: var(--font-weight--semibold);
-  font-family:Overpass;
+  font-family: Overpass;
   &__paragraph {
     color: var(--c-primary);
     margin: 0 0 var(--spacer-base) 0;

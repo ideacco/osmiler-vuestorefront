@@ -844,7 +844,7 @@ export default {
     }
   }
   &__label {
-    font-family:Overpass;
+    font-family: Overpass;
     font-weight: var(--font-weight--normal);
     color: var(--c-text-muted);
     @include for-desktop {
@@ -864,7 +864,7 @@ export default {
     margin: 0 auto 0 var(--spacer-2xl);
   }
   &__counter {
-    font-family:Overpass;
+    font-family: Overpass;
     margin: auto;
     @include for-desktop {
       margin: auto 0 auto auto;
@@ -901,8 +901,7 @@ export default {
     }
     &-label {
       margin: 0 var(--spacer-sm) 0 0;
-      font: var(--font-weight--normal) var(--font-size--base) / 1.6
-       Overpass;
+      font: var(--font-weight--normal) var(--font-size--base) / 1.6 Overpass;
       text-decoration: none;
       color: var(--c-link);
     }
@@ -1012,7 +1011,7 @@ export default {
     justify-content: flex-end;
     align-items: baseline;
     &__label {
-      font-family:Overpass;
+      font-family: Overpass;
       font-size: var(--font-size--sm);
     }
   }
@@ -1034,7 +1033,7 @@ export default {
   &__chosen {
     color: var(--c-text-muted);
     font-weight: var(--font-weight--normal);
-    font-family:Overpass;
+    font-family: Overpass;
     position: absolute;
     right: var(--spacer-xl);
   }

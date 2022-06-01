@@ -203,14 +203,14 @@
         </div>
       </div>
     </div>
-    <div class="tm-header uk-visible@m">
+    <div class="tm-header uk-visible@m ">
       <div
         uk-sticky
         media="@m"
         cls-active="uk-navbar-sticky"
         sel-target=".uk-navbar-container"
       >
-        <div class="uk-navbar-container">
+        <div class="uk-navbar-container " >
           <div class="uk-container uk-container-large">
             <nav class="uk-navbar">
               <div class="uk-navbar-left" id="top">
@@ -424,11 +424,13 @@ export default {
     }
   },
   mounted() {
-    window.addEventListener('scroll', this.handleScroll)
+    const name = localStorage.getItem('myCat')
+    this.tabIndex = Number(name)
   },
   methods: {
     tabggle(index) {
       this.tabIndex = index
+      localStorage.setItem('myCat', index)
     },
     handleClose() {
       this.visible = false
@@ -444,4 +446,7 @@ export default {
 @import '../static/wp-includes/css/dist/block-library/style.min.css';
 @import '../static/wp-content/themes/yootheme/css/theme.1.css';
 @import '../static/wp-content/themes/yootheme/vendor/yootheme/theme-highlight/assets/styles/monokai.css';
+.tm-headers2{
+  background: transparent !important;
+}
 </style>
