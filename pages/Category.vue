@@ -573,7 +573,7 @@ export default {
     }
   }
   &__label {
-    font-family: var(--font-family--secondary);
+    font-family:Overpass;
     font-weight: var(--font-weight--normal);
     color: var(--c-text-muted);
     @include for-desktop {
@@ -591,7 +591,7 @@ export default {
     --select-error-message-height: 0;
     ::v-deep .sf-select__dropdown {
       font-size: var(--font-size-sm);
-      font-family: var(--font-family--secondary);
+      font-family:Overpass;
       font-weight: var(--font-weight--light);
       margin: 0;
     }
@@ -605,7 +605,7 @@ export default {
     margin: 0 auto 0 var(--spacer-2xl);
   }
   &__counter {
-    font-family: var(--font-family--secondary);
+    font-family:Overpass;
     order: 1;
     @include for-desktop {
       margin: auto 0 auto auto;
@@ -630,7 +630,7 @@ export default {
     &-label {
       margin: 0 var(--spacer-sm) 0 0;
       font: var(--font-weight--normal) var(--font-size--base) / 1.6
-        var(--font-family--secondary);
+       Overpass;
       text-decoration: none;
       color: var(--c-link);
     }
@@ -730,7 +730,7 @@ export default {
     justify-content: flex-end;
     align-items: baseline;
     &__label {
-      font-family: var(--font-family--secondary);
+      font-family:Overpass;
       font-size: var(--font-size--sm);
     }
   }
@@ -761,7 +761,7 @@ export default {
   &__chosen {
     color: var(--c-text-muted);
     font-weight: var(--font-weight--normal);
-    font-family: var(--font-family--secondary);
+    font-family:Overpass;
     position: absolute;
     right: var(--spacer-xl);
   }

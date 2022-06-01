@@ -268,7 +268,7 @@ export default {
   setup() {
     const { isLoginModalOpen, toggleLoginModal } = useUiState()
     const form = ref({})
-    const isLogin = ref(false)
+    const isLogin = ref(true)
     const isForgotten = ref(false)
     const isThankYouAfterForgotten = ref(false)
     const userEmail = ref('')
@@ -420,9 +420,8 @@ export default {
     }
   },
   methods: {
-    init(data) {
+    init() {
       this.isLoginModalOpen = true
-      console.log(data)
     },
     handleClose() {
       this.$emit('closeDialog')
@@ -455,7 +454,7 @@ export default {
   justify-content: center;
   margin: var(--spacer-xl) 0 var(--spacer-xl) 0;
   font: var(--font-weight--light) var(--font-size--base) / 1.6
-    var(--font-family--secondary);
+   Overpass;
   & > * {
     margin: 0 0 0 var(--spacer-xs);
   }
@@ -474,7 +473,7 @@ export default {
   margin-bottom: var(--spacer-lg);
   font-size: var(--h3-font-size);
   font-weight: var(--font-weight--semibold);
-  font-family: var(--font-family--secondary);
+  font-family:Overpass;
   &__paragraph {
     color: var(--c-primary);
     margin: 0 0 var(--spacer-base) 0;

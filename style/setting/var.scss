@@ -1,3 +1,4 @@
+
 /* Color
 ----------------------- */
 $background-color-primary: #5d47ee;
@@ -53,13 +54,7 @@ $button-hover-background-position-x: 0;
 // Navbar
 //
 
-@font-face {
-  font-family: 'osmiler-title';
-  src: url('/static/osmiler-regular-webfont.woff2') format('woff2'),
-    url('/static/osmiler-regular-webfont.woff') format('woff');
-  font-weight: normal;
-  font-style: normal;
-}
+
 
 $navbar-background: #ffffff;
 $navbar-nav-item-color: #3a3543;

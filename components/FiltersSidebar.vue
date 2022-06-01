@@ -200,7 +200,7 @@ export default {
   &__chosen {
     color: var(--c-text-muted);
     font-weight: var(--font-weight--normal);
-    font-family: var(--font-family--secondary);
+    font-family:Overpass;
     position: absolute;
     right: var(--spacer-xl);
   }

@@ -277,7 +277,7 @@ export default {
       var(--font-weight--normal),
       var(--font-size--sm),
       1.4,
-      var(--font-family--secondary)
+     Overpass
     );
     color: var(--c-text);
     text-decoration: none;
@@ -289,7 +289,7 @@ export default {
       var(--font-weight--light),
       var(--font-size--base),
       1.6,
-      var(--font-family--primary)
+      Overpass
     );
   }
   &__select-size {
@@ -304,7 +304,7 @@ export default {
       var(--font-weight--normal),
       var(--font-size--lg),
       1.6,
-      var(--font-family--secondary)
+     Overpass
     );
     display: flex;
     align-items: center;
@@ -356,7 +356,7 @@ export default {
       var(--font-weight--light),
       var(--font-size--sm),
       1.6,
-      var(--font-family--primary)
+      Overpass
     );
     &__title {
       font-weight: var(--font-weight--normal);

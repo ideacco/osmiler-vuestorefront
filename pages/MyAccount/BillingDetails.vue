@@ -136,7 +136,7 @@ export default {
 
 <style lang="scss" scoped>
 .message {
-  font-family: var(--font-family--primary);
+  font-family: Overpass;
   line-height: 1.6;
   font-size: var(--font-size--base);
   margin: 0 0 var(--spacer-base);

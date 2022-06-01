@@ -79,7 +79,7 @@ export default {
   --heading-description-color: var(--c-text-muted);
   --heading-description-font-size: var(--font-size--base);
   --heading-description-margin: 0 var(--spacer-base);
-  --heading-description-font-family: var(--font-family--primary);
+  --heading-description-font-family: Overpass;
   @include for-desktop {
     --heading-description-margin: 0;
   }

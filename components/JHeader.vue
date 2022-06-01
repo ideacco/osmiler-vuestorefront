@@ -433,7 +433,7 @@ export default {
     handleClose() {
       this.visible = false
     },
-    toggleLoginModal(data) {
+    toggleLoginModal() {
       this.visible = true
     },
   },

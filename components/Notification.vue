@@ -64,7 +64,7 @@ export default {
     --notification-max-width: 100%;
     --notification-background: var(--c-link);
     --notification-font-size: var(--font-size--sm);
-    --notification-font-family: var(--font-family--primary);
+    --notification-font-family: Overpass;
     --notification-font-weight: var(--font-weight--normal);
     --notification-padding: var(--spacer-base) var(--spacer-lg);
   }

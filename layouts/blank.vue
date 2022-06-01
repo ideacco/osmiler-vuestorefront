@@ -49,7 +49,7 @@ body {
   overflow-x: hidden;
   color: var(--c-text);
   font-size: var(--font-size--base);
-  font-family: var(--font-family--primary);
+  font-family: Overpass;
   margin: 0;
   padding: 0;
 }
@@ -61,25 +61,25 @@ a {
   }
 }
 h1 {
-  font-family: var(--font-family--secondary);
+  font-family:Overpass;
   font-size: var(--h1-font-size);
   line-height: 1.6;
   margin: 0;
 }
 h2 {
-  font-family: var(--font-family--secondary);
+  font-family:Overpass;
   font-size: var(--h2-font-size);
   line-height: 1.6;
   margin: 0;
 }
 h3 {
-  font-family: var(--font-family--secondary);
+  font-family:Overpass;
   font-size: var(--h3-font-size);
   line-height: 1.6;
   margin: 0;
 }
 h4 {
-  font-family: var(--font-family--secondary);
+  font-family:Overpass;
   font-size: var(--h4-font-size);
   line-height: 1.6;
   margin: 0;
