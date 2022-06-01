@@ -56,14 +56,13 @@ vuestorefront 底层基础使用 (nuxt)[https://www.nuxtjs.org/] 作为基础支
 (vuestorefront CSS 文档地址)[https://docs.storefrontui.io/?path=/docs/utilities-transitions--slide-left]
 
 # 接口的封装
-## 使用NUXT官方的axios
+
+## 使用 NUXT 官方的 axios
+
 官方文档地址`https://axios.nuxtjs.org/usage`
 
+### 自定义 axios
 
-
-
-
-### 自定义axios
 1. 通过 package.json 切换环境部署
 2. 通过 api 的封装接口
 
