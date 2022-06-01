@@ -6,7 +6,12 @@
         :aria-label="$t('Filters')"
         @click="toggleFilterSidebar"
       >
-        <SfIcon size="24px" color="dark-secondary" icon="filter2" class="navbar__filters-icon" />
+        <SfIcon
+          size="24px"
+          color="dark-secondary"
+          icon="filter2"
+          class="navbar__filters-icon"
+        />
         {{ $t('Filters') }}
       </SfButton>
     </LazyHydrate>
@@ -33,7 +38,9 @@
     </div>
 
     <div class="navbar__counter">
-      <span class="navbar__label desktop-only">{{ $t('Products found') }}: </span>
+      <span class="navbar__label desktop-only"
+      >{{ $t('Products found') }}:
+      </span>
       <span class="desktop-only">{{ pagination.totalItems }}</span>
       <span class="navbar__label smartphone-only"
       >{{ pagination.totalItems }} {{ $t('Items') }}</span
@@ -104,7 +111,9 @@ export default {
     const { result } = useFacet()
 
     const sortBy = computed(() => facetGetters.getSortOptions(result.value))
-    const facets = computed(() => facetGetters.getGrouped(result.value, ['color', 'size']))
+    const facets = computed(() =>
+      facetGetters.getGrouped(result.value, ['color', 'size'])
+    )
 
     return {
       th,
@@ -229,7 +238,8 @@ export default {
     }
     &-label {
       margin: 0 var(--spacer-sm) 0 0;
-      font: var(--font-weight--normal) var(--font-size--base) / 1.6 var(--font-family--secondary);
+      font: var(--font-weight--normal) var(--font-size--base) / 1.6
+        var(--font-family--secondary);
       text-decoration: none;
       color: var(--c-link);
     }

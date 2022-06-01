@@ -15,7 +15,9 @@
         ></el-input>
         <el-col class="conatactbox5">
           <el-col class="conatactbox6">
-            <el-col class="conatactbox7"> <el-col class="conatactbox8">TRACK </el-col></el-col>
+            <el-col class="conatactbox7">
+              <el-col class="conatactbox8">TRACK </el-col></el-col
+            >
           </el-col>
         </el-col>
       </el-col>

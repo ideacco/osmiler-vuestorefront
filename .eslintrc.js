@@ -9,7 +9,6 @@ module.exports = {
   // https://github.com/standard/standard/blob/master/docs/RULES-en.md
   // 此项是用来配置标准的js风格，就是说写代码的时候要规范的写，如果你使用vs-code我觉得应该可以避免出错
   extends: [
-    'plugin:prettier/recommended',
     'plugin:vue/essential',
     'plugin:@typescript-eslint/recommended',
     'plugin:nuxt/recommended',
@@ -78,7 +77,7 @@ module.exports = {
     'vue/require-prop-types': 0,
     // 错误
     'no-tabs': 2,
-    'comma-dangle': [2, 'never'], // 对象字面量项尾不能有逗号
+    'comma-dangle': ['error', 'never'], // 对象字面量项尾不能有逗号
     'no-constant-condition': 2, // 禁止在条件中使用常量表达式 if(true) if(1)
     'no-dupe-args': 2, // 函数参数不能重复
     'no-dupe-keys': 2, // 在创建对象字面量时不允许键重复 {a:1,a:1}
@@ -172,7 +171,7 @@ module.exports = {
     'prefer-const': [
       2,
       {
-        'ignoreReadBeforeAssign': false
+        ignoreReadBeforeAssign: false
       }
     ],
     indent: [
@@ -181,8 +180,6 @@ module.exports = {
       {
         SwitchCase: 1 // （默认：0）指定 switch-case 语句的缩进级别
       }
-    ],
-
-    'prettier/prettier': 'off'
+    ]
   }
 }

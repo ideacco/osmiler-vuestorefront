@@ -11,18 +11,21 @@
       <el-col class="conatactbox-title4"
       ><p>Hi everyone,</p>
         <p>
-          It is our pleasure to announce that Sleepon’s HRV (beta) is now available on its app. You
-          will be able to see the HRV data in your report when you update the app.
+          It is our pleasure to announce that Sleepon’s HRV (beta) is now
+          available on its app. You will be able to see the HRV data in your
+          report when you update the app.
         </p>
 
         <p>
-          Feedback and suggestions are really appreciated so that we can improve the App and make
-          sure you have a better user experience.
+          Feedback and suggestions are really appreciated so that we can improve
+          the App and make sure you have a better user experience.
         </p>
         <p>Thank you.</p>
         <p>Sleepon Team</p></el-col
       >
-      <el-col class="conatactbox-title5"> APP, go2sleep, hrv, sleepon, updates </el-col>
+      <el-col class="conatactbox-title5">
+        APP, go2sleep, hrv, sleepon, updates
+      </el-col>
     </el-row>
   </div>
 </template>

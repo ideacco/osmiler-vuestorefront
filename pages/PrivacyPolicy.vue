@@ -5,27 +5,32 @@
       <el-col class="conatactbox2">OUR PLEDGE</el-col>
       <el-col class="conatactbox3"
       ><p>
-         We pledge to respect your privacy, to be transparent about our data practices, to keep
-         your data safe and to only collect data that helps us improve our products and services.
+         We pledge to respect your privacy, to be transparent about our data
+         practices, to keep your data safe and to only collect data that helps
+         us improve our products and services.
        </p>
         <p>
-          SLEEPON designs products and tools that track everyday sleep to empower and inspire users
-          to lead healthier and happier lives. This Privacy Policy applies to our personal fitness
-          and electronic body monitoring products (“Devices”), our websites located at
-          www.sleepon.us (individually a “Site” and collectively “Sites”), the SLEEPON Connect
-          software (“Software”) and SLEEPON mobile applications (the “Apps”). The Devices, Sites,
-          Software and Apps are collectively referred to in this Policy as the “SLEEPON Service,”
-          and by proceeding to use the SLEEPON Service you consent that we may process the data that
-          we collect from you in accordance with this Privacy Policy.
+          SLEEPON designs products and tools that track everyday sleep to
+          empower and inspire users to lead healthier and happier lives. This
+          Privacy Policy applies to our personal fitness and electronic body
+          monitoring products (“Devices”), our websites located at
+          www.sleepon.us (individually a “Site” and collectively “Sites”), the
+          SLEEPON Connect software (“Software”) and SLEEPON mobile applications
+          (the “Apps”). The Devices, Sites, Software and Apps are collectively
+          referred to in this Policy as the “SLEEPON Service,” and by proceeding
+          to use the SLEEPON Service you consent that we may process the data
+          that we collect from you in accordance with this Privacy Policy.
         </p>
         <p>
-          Because we’re always looking for new and innovative ways to help you achieve your sleep
-          goals, this policy may change over time, but any future changes will not affect data that
-          was collected under a previous version of this policy. If any modifications substantially
-          change your rights, we will send an email summarizing the changes to the address
-          associated with your SLEEPON account and provide notice on the Site. And remember, we’re
-          here to help. If something in this policy does not make sense or if you have any
-          questions,please contact us at service@sleepon.us.
+          Because we’re always looking for new and innovative ways to help you
+          achieve your sleep goals, this policy may change over time, but any
+          future changes will not affect data that was collected under a
+          previous version of this policy. If any modifications substantially
+          change your rights, we will send an email summarizing the changes to
+          the address associated with your SLEEPON account and provide notice on
+          the Site. And remember, we’re here to help. If something in this
+          policy does not make sense or if you have any questions,please contact
+          us at service@sleepon.us.
         </p></el-col
       >
     </el-row>

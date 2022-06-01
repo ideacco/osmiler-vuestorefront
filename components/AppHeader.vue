@@ -37,7 +37,10 @@
                 <el-menu-item index="/Newsarticles" class="el-menu-demo">
                   <span class="menusize">新闻文章</span></el-menu-item
                 >
-                <el-menu-item index="/ShippingReturnPolicy" class="el-menu-demo">
+                <el-menu-item
+                  index="/ShippingReturnPolicy"
+                  class="el-menu-demo"
+                >
                   <span class="menusize">条款和条件</span></el-menu-item
                 >
                 <el-menu-item index="/Toothbrushproducts" class="el-menu-demo">
@@ -51,7 +54,12 @@
         <el-col class="nav-sign" :xl="3" :lg="3" :xs="10" :sm="10" :md="8">
           <div class="buttonbox">
             <div class="buttonbox1">
-              <el-button type="text" class="button3" @click="toggleLoginModal()">sign in</el-button>
+              <el-button
+                type="text"
+                class="button3"
+                @click="toggleLoginModal()"
+              >sign in</el-button
+              >
             </div>
           </div>
           <div class="buttonbox33">
@@ -74,22 +82,27 @@
   border-top: 3px solid #345dc2;
   z-index: 1501;
 }
+
 .mxg-header-fixed {
   position: fixed;
 }
+
 .mxg-header .mxg-nav {
   position: relative;
   max-width: 1340.37px;
   margin: auto;
   padding: 0 50px 0 20px;
 }
+
 .el-menu .el-menu--horozontal {
-  border-bottom: 0px;
+  border-bottom: 0;
   margin-top: -10px;
 }
+
 .nav-right {
   text-align: center;
 }
+
 .nav-sign {
   position: absolute;
   top: 30%;
@@ -98,57 +111,61 @@
   flex-direction: row;
   justify-content: flex-end;
   align-items: center;
-  padding: 0px;
+  padding: 0;
   gap: 24px;
   width: 264px;
   height: 44px;
+
   /* Inside auto layout */
   flex: none;
   order: 1;
   flex-grow: 0;
 }
+
 .menunav {
   display: flex;
   flex-direction: row;
   align-items: center;
-  padding: 0px;
+  padding: 0;
   gap: 10px;
   width: 716.98px;
   height: 122px;
+
   /* Inside auto layout */
   flex: none;
   order: 0;
   flex-grow: 0;
 }
-.logo {
-  /* width: 137px;
-  height: 40px; */
-}
+
 .elmenubox {
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  padding: 0px;
+  padding: 0;
   width: 570px;
   height: 122px;
+
   /* Inside auto layout */
   flex: none;
   order: 1;
   flex-grow: 0;
 }
+
 .elmenulist {
   display: flex;
   flex-direction: row;
   align-items: flex-start;
-  padding: 0px;
+  padding: 0;
   width: 570px;
   height: 122px;
+
   /* Inside auto layout */
   flex: none;
   order: 0;
   flex-grow: 0;
 }
+
 .el-menu-demo {
   display: flex;
   flex-direction: column;
@@ -158,28 +175,35 @@
   gap: 10px;
   width: 110px;
   height: 122px;
+
   /* Inside auto layout */
   flex: none;
   order: 0;
   flex-grow: 0;
 }
+
 .menusize {
   /* Tab1 */
   height: 24px;
+
   /* 中文-标准/正文2-16pt/正文2_Regular */
-  font-family: 'Overpass', 'Alibaba PuHuiTi', sans-serif;
+  font-family: Overpass, 'Alibaba PuHuiTi', sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 16px;
   line-height: 24px;
+
   /* identical to box height, or 150% */
+
   /* 浅色模式文本/Title Text */
   color: #0c0b0e;
+
   /* Inside auto layout */
   flex: none;
   order: 0;
   flex-grow: 0;
 }
+
 .buttonbox {
   display: flex;
   flex-direction: row;
@@ -187,44 +211,52 @@
   align-items: center;
   width: 109px;
   height: 44px;
-  background: #ffffff;
+  background: #fff;
+
   /* Inside auto layout */
   flex: none;
   order: 0;
   flex-grow: 0;
 }
+
 .buttonbox1 {
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  padding: 0px;
+  padding: 0;
   gap: 8px;
   width: 53px;
   height: 24px;
+
   /* Inside auto layout */
   flex: none;
   order: 0;
   flex-grow: 0;
 }
+
 .button3 {
   /* 中文-标准/正文2-16pt/正文2_Mmedium */
-  font-family: 'Overpass', 'Alibaba PuHuiTi', sans-serif;
+  font-family: Overpass, 'Alibaba PuHuiTi', sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 16px;
   line-height: 24px;
+
   /* identical to box height, or 150% */
   display: flex;
   align-items: center;
   text-align: center;
+
   /* 功能色/品牌/Brand_light */
   color: #4132c7;
+
   /* Inside auto layout */
   flex: none;
   order: 0;
   flex-grow: 0;
 }
+
 .buttonbox33 {
   /* Auto layout */
   display: flex;
@@ -233,136 +265,161 @@
   align-items: center;
   width: 131px;
   height: 44px;
+
   /* 功能色/品牌/Brand_light */
   background: #4132c7;
   border-radius: 22px;
+
   /* Inside auto layout */
   flex: none;
   order: 1;
   flex-grow: 0;
 }
+
 .buttonbox44 {
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  padding: 0px;
+  padding: 0;
   gap: 8px;
   width: 75px;
   height: 24px;
+
   /* Inside auto layout */
   flex: none;
   order: 0;
   flex-grow: 0;
 }
+
 .buttonbox55 {
   /* Inside auto layout */
   flex: none;
   order: 0;
   flex-grow: 0;
 }
+
 .button66 {
   background: #4132c7;
   width: 43px;
   height: 24px;
   border: none;
+
   /* 中文-标准/正文2-16pt/正文2_Mmedium */
-  font-family: 'Overpass', 'Alibaba PuHuiTi', sans-serif;
+  font-family: Overpass, 'Alibaba PuHuiTi', sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 16px;
   line-height: 24px;
+
   /* identical to box height, or 150% */
   display: flex;
   align-items: center;
   text-align: center;
+
   /* 浅色模式文本/Anti */
-  color: #ffffff;
+  color: #fff;
   margin-left: -30px;
+
   /* Inside auto layout */
   flex: none;
   order: 1;
   flex-grow: 0;
 }
+
 .mxgmiddlebox2 {
   display: flex;
   flex-direction: row;
   align-items: flex-start;
-  padding: 0px;
+  padding: 0;
   gap: 60px;
   width: 389px;
   height: 162px;
+
   /* Inside auto layout */
   flex: none;
   order: 1;
   flex-grow: 0;
 }
+
 .mxgmiddlebox2-footer {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  padding: 0px;
+  padding: 0;
   gap: 12px;
   width: 61px;
   height: 110px;
+
   /* Inside auto layout */
   flex: none;
   order: 0;
   flex-grow: 0;
 }
+
 .mxgmiddlebox2-footer2 {
   /* Auto layout */
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  padding: 0px;
+  padding: 0;
   gap: 12px;
   width: 97px;
   height: 136px;
+
   /* Inside auto layout */
   flex: none;
   order: 1;
   flex-grow: 0;
 }
+
 .mxgmiddlebox2-footer3 {
   /* Auto layout */
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  padding: 0px;
+  padding: 0;
   gap: 12px;
   width: 111px;
   height: 162px;
+
   /* Inside auto layout */
   flex: none;
   order: 2;
   flex-grow: 0;
 }
+
 .titlegh1 {
   width: 32px;
   height: 24px;
+
   /* 中文-标准/正文2-16pt/正文2_Mmedium */
-  font-family: 'Overpass', 'Alibaba PuHuiTi', sans-serif;
+  font-family: Overpass, 'Alibaba PuHuiTi', sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 16px;
   line-height: 24px;
+
   /* identical to box height, or 150% */
+
   /* 浅色模式文本/Title Text */
   color: #0c0b0e;
+
   /* Inside auto layout */
   flex: none;
   order: 0;
   flex-grow: 0;
 }
+
 .framtitle74 {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  padding: 0px;
+  padding: 0;
   gap: 4px;
   width: 61px;
   height: 74px;
+
   /* Inside auto layout */
   flex: none;
   order: 1;

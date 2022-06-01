@@ -14,7 +14,7 @@ const reduceFilters = (query) => (prev, curr) => {
 
   return {
     ...prev,
-    [curr]: makeArray ? query[curr] : [query[curr]]
+    [curr]: makeArray ? query[curr] : [query[curr]],
   }
 }
 
@@ -22,7 +22,9 @@ const getFiltersDataFromUrl = (context, onlyFilters) => {
   const { query } = context.$router.history.current
 
   return Object.keys(query)
-    .filter(f => onlyFilters ? !nonFilters.includes(f) : nonFilters.includes(f))
+    .filter((f) =>
+      onlyFilters ? !nonFilters.includes(f) : nonFilters.includes(f)
+    )
     .reduce(reduceFilters(query), {})
 }
 
@@ -32,7 +34,10 @@ const useUiHelpers = () => {
 
   const getFacetsFromURL = () => {
     const { query, params } = context.$router.currentRoute
-    const categorySlug = Object.keys(params).reduce((prev, curr) => params[curr] || prev, params.slug_1)
+    const categorySlug = Object.keys(params).reduce(
+      (prev, curr) => params[curr] || prev,
+      params.slug_1
+    )
 
     return {
       rootCatSlug: params.slug_1,
@@ -41,7 +46,7 @@ const useUiHelpers = () => {
       sort: query.sort || 'latest',
       filters: getFiltersDataFromUrl(context, true),
       itemsPerPage: parseInt(query.itemsPerPage as string, 12) || 20,
-      term: query.term
+      term: query.term,
     }
   }
 
@@ -58,8 +63,8 @@ const useUiHelpers = () => {
     context.$router.push({
       query: {
         ...getFiltersDataFromUrl(context, false),
-        ...filters
-      }
+        ...filters,
+      },
     })
   }
 
@@ -67,8 +72,8 @@ const useUiHelpers = () => {
     context.$router.push({
       query: {
         ...getFiltersDataFromUrl(context, false),
-        itemsPerPage
-      }
+        itemsPerPage,
+      },
     })
   }
 
@@ -76,8 +81,8 @@ const useUiHelpers = () => {
     context.$router.push({
       query: {
         ...getFiltersDataFromUrl(context, false),
-        term: term || undefined
-      }
+        term: term || undefined,
+      },
     })
   }
 
@@ -86,9 +91,32 @@ const useUiHelpers = () => {
   const isFacetCheckbox = (): boolean => false
 
   const formatDate = (date: string) => {
-    const monthsArray = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
+    const monthsArray = [
+      'January',
+      'February',
+      'March',
+      'April',
+      'May',
+      'June',
+      'July',
+      'August',
+      'September',
+      'October',
+      'November',
+      'December',
+    ]
     const toFormatDate = new Date(date)
-    return monthsArray[toFormatDate.getMonth()] + ' ' + toFormatDate.getDate() + ', ' + toFormatDate.getFullYear() + ' at ' + toFormatDate.getHours() + ':' + toFormatDate.getMinutes()
+    return (
+      monthsArray[toFormatDate.getMonth()] +
+      ' ' +
+      toFormatDate.getDate() +
+      ', ' +
+      toFormatDate.getFullYear() +
+      ' at ' +
+      toFormatDate.getHours() +
+      ':' +
+      toFormatDate.getMinutes()
+    )
   }
 
   return {
@@ -100,7 +128,7 @@ const useUiHelpers = () => {
     changeSearchTerm,
     isFacetColor,
     isFacetCheckbox,
-    formatDate
+    formatDate,
   }
 }
 

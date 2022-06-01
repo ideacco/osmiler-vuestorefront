@@ -10,7 +10,7 @@
             <SfButton
               data-cy="order-history-btn_orders"
               class="sf-button--text all-orders"
-              @click="(currentOrder = null), scrollToTop()"
+              @click=";(currentOrder = null), scrollToTop()"
             >
               <SfIcon icon="arrow_left" /> </SfButton
             >Order #{{ orderGetters.getId(currentOrder) }}
@@ -21,12 +21,22 @@
         </div>
         <div class="order-date-wrap">
           <p>
-            Date &amp; Time:&nbsp;<strong>{{ orderGetters.getDate(currentOrder) }}</strong>
+            Date &amp; Time:&nbsp;<strong>{{
+              orderGetters.getDate(currentOrder)
+            }}</strong>
           </p>
           <p v-if="orderGetters.getStatus(currentOrder) === 'FULFILLED'">
-            Order Tracking:&nbsp;<strong>{{ orderGetters.getTracking(currentOrder) }}</strong>
-            <span v-if="orderGetters.getTracking(currentOrder) != ' - '" class="redirect-icon">
-              <SfLink target="_blank" :link="orderGetters.getTrackingUrl(currentOrder)">
+            Order Tracking:&nbsp;<strong>{{
+              orderGetters.getTracking(currentOrder)
+            }}</strong>
+            <span
+              v-if="orderGetters.getTracking(currentOrder) != ' - '"
+              class="redirect-icon"
+            >
+              <SfLink
+                target="_blank"
+                :link="orderGetters.getTrackingUrl(currentOrder)"
+              >
                 <svg
                   width="16"
                   height="16"
@@ -46,15 +56,25 @@
         <div class="table-responsive">
           <SfTable class="ordered-products-table">
             <SfTableHeading>
-              <SfTableHeader class="products__name text-left">{{ 'Product name' }}</SfTableHeader>
+              <SfTableHeader class="products__name text-left">{{
+                'Product name'
+              }}</SfTableHeader>
               <SfTableHeader class="products__name">{{ 'SKU' }}</SfTableHeader>
-              <SfTableHeader class="products__name">{{ 'Price' }}</SfTableHeader>
+              <SfTableHeader class="products__name">{{
+                'Price'
+              }}</SfTableHeader>
               <SfTableHeader>{{ 'Qty' }}</SfTableHeader>
               <SfTableHeader>{{ 'Subtotal' }}</SfTableHeader>
             </SfTableHeading>
-            <SfTableRow v-for="(item, i) in orderGetters.getItems(currentOrder)" :key="i">
+            <SfTableRow
+              v-for="(item, i) in orderGetters.getItems(currentOrder)"
+              :key="i"
+            >
               <SfTableData class="products__name">
-                <nuxt-link class="product-img" :to="'/products/' + orderGetters.getItemSlug(item)">
+                <nuxt-link
+                  class="product-img"
+                  :to="'/products/' + orderGetters.getItemSlug(item)"
+                >
                   <SfImage
                     :src="`${orderGetters.getItemImage(item)}?fm=webp`"
                     :height="100"
@@ -82,7 +102,9 @@
               </SfTableData>
               <SfTableData class="data-ordered-subtotal">
                 <strong class="mobile-lable">Subtotal:</strong>
-                {{ $n(orderGetters.getSubtotalPrice(currentOrder), 'currency') }}
+                {{
+                  $n(orderGetters.getSubtotalPrice(currentOrder), 'currency')
+                }}
               </SfTableData>
             </SfTableRow>
           </SfTable>
@@ -121,19 +143,23 @@
               <SfHeading title="Shipping Address" :level="5" />
               <template
                 v-if="
-                  orderGetters.getShippingAddress(currentOrder) != 'No shipping address available'
+                  orderGetters.getShippingAddress(currentOrder) !=
+                    'No shipping address available'
                 "
               >
                 <p>{{ orderGetters.getCustomerName(currentOrder) }}</p>
                 <div
-                  v-for="(addressLine, ai) in orderGetters.getShippingAddress(currentOrder)"
+                  v-for="(addressLine, ai) in orderGetters.getShippingAddress(
+                    currentOrder
+                  )"
                   :key="ai"
                 >
                   {{ addressLine.value }}
                 </div>
-                <strong v-if="orderGetters.getCustomerPhone(currentOrder) != ''">{{
-                  orderGetters.getCustomerPhone(currentOrder)
-                }}</strong>
+                <strong
+                  v-if="orderGetters.getCustomerPhone(currentOrder) != ''"
+                >{{ orderGetters.getCustomerPhone(currentOrder) }}</strong
+                >
               </template>
               <template v-else>
                 <p>No shipping information provided yet!</p>
@@ -147,19 +173,23 @@
               <SfHeading title="Billing Address" :level="5" />
               <template
                 v-if="
-                  orderGetters.getShippingAddress(currentOrder) != 'No shipping address available'
+                  orderGetters.getShippingAddress(currentOrder) !=
+                    'No shipping address available'
                 "
               >
                 <p>{{ orderGetters.getCustomerName(currentOrder) }}</p>
                 <div
-                  v-for="(addressLine, ai) in orderGetters.getShippingAddress(currentOrder)"
+                  v-for="(addressLine, ai) in orderGetters.getShippingAddress(
+                    currentOrder
+                  )"
                   :key="ai"
                 >
                   {{ addressLine.value }}
                 </div>
-                <strong v-if="orderGetters.getCustomerPhone(currentOrder) != ''">{{
-                  orderGetters.getCustomerPhone(currentOrder)
-                }}</strong>
+                <strong
+                  v-if="orderGetters.getCustomerPhone(currentOrder) != ''"
+                >{{ orderGetters.getCustomerPhone(currentOrder) }}</strong
+                >
               </template>
               <template v-else>
                 <p>No billing information provided yet!</p>
@@ -176,7 +206,12 @@
         <div class="my_accoutn_title_wrap">
           <SfHeading class="my_accoutn_title" :level="1" :title="title" />
         </div>
-        <SfLoader v-if="loading" class="order-loader" :class="{ loading }" :loading="loading">
+        <SfLoader
+          v-if="loading"
+          class="order-loader"
+          :class="{ loading }"
+          :loading="loading"
+        >
           <div />
         </SfLoader>
         <div
@@ -200,11 +235,16 @@
         <div v-else-if="!loading" class="table-responsive">
           <SfTable class="orders-list-table">
             <SfTableHeading>
-              <SfTableHeader v-for="tableHeader in tableHeaders" :key="tableHeader">{{
-                tableHeader
-              }}</SfTableHeader>
+              <SfTableHeader
+                v-for="tableHeader in tableHeaders"
+                :key="tableHeader"
+              >{{ tableHeader }}</SfTableHeader
+              >
             </SfTableHeading>
-            <SfTableRow v-for="order in orders.data" :key="orderGetters.getId(order)">
+            <SfTableRow
+              v-for="order in orders.data"
+              :key="orderGetters.getId(order)"
+            >
               <SfTableData class="data-order-no">
                 <strong class="mobile-lable">Order no</strong>
                 <SfButton
@@ -227,7 +267,10 @@
                 <span class="order-track-wrap">
                   {{ orderGetters.getTracking(order) }}
                   <span v-if="orderGetters.getTracking(order) != ' - '">
-                    <SfLink target="_blank" :link="orderGetters.getTrackingUrl(order)">
+                    <SfLink
+                      target="_blank"
+                      :link="orderGetters.getTrackingUrl(order)"
+                    >
                       <svg
                         width="16"
                         height="16"
@@ -275,7 +318,7 @@
                 <SfButton
                   data-cy="order-history-btn_view"
                   class="sf-button--text"
-                  @click="(currentOrder = order), scrollToTop()"
+                  @click=";(currentOrder = order), scrollToTop()"
                 >
                   <SfIcon>
                     <template v-bind="{ viewBox, iconPaths, icon }">

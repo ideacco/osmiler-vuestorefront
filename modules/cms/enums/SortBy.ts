@@ -1,4 +1,4 @@
 export enum SortBy {
   Latest = 'latest',
-  Oldest = 'oldest'
+  Oldest = 'oldest',
 }

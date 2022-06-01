@@ -6,7 +6,9 @@
         <h2>{{ article.title }}</h2>
         <p>
           {{ $t('Published by') }} {{ article.fullAuthorName }} {{ $t('on') }}
-          <time :datetime="article.publishedAt">{{ formatDate(article.publishedAt) }}</time>
+          <time :datetime="article.publishedAt">{{
+            formatDate(article.publishedAt)
+          }}</time>
         </p>
       </header>
 
@@ -27,7 +29,7 @@ import { getArticleImage } from '~/helpers/article'
 
 export default {
   components: {
-    SfLoader
+    SfLoader,
   },
   setup() {
     const { search, loading, content: article } = useContent('article')
@@ -37,7 +39,7 @@ export default {
     onSSR(async () => {
       await search({
         contentType: ContentType.Article,
-        id: route?.value?.query.id as string
+        id: route?.value?.query.id as string,
       })
     })
 
@@ -45,8 +47,8 @@ export default {
       getArticleImage,
       formatDate,
       article,
-      loading
+      loading,
     }
-  }
+  },
 }
 </script>

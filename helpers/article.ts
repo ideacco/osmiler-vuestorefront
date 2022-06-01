@@ -12,6 +12,6 @@ export const getArticleLink = (article) => {
   return {
     name: 'articles-handle',
     params: { handle: article.handle },
-    query: { id: article.id }
+    query: { id: article.id },
   }
 }

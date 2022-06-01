@@ -1,12 +1,21 @@
 <template>
   <transition name="fade">
-    <SfTabs v-if="edittingAddress" key="edit-address" :open-tab="1" class="tab-orphan">
+    <SfTabs
+      v-if="edittingAddress"
+      key="edit-address"
+      :open-tab="1"
+      class="tab-orphan"
+    >
       <SfTab :title="isNewAddress ? 'Add the address' : 'Update the address'">
         <p class="message">
           {{ $t('Contact details updated') }}
         </p>
 
-        <ShippingAddressForm :address="activeAddress" :isNew="isNewAddress" @submit="saveAddress" />
+        <ShippingAddressForm
+          :address="activeAddress"
+          :isNew="isNewAddress"
+          @submit="saveAddress"
+        />
       </SfTab>
     </SfTabs>
 
@@ -80,7 +89,9 @@ export default {
       deleteAddress,
       updateAddress
     } = useUserShipping()
-    const addresses = computed(() => userShippingGetters.getAddresses(shipping.value))
+    const addresses = computed(() =>
+      userShippingGetters.getAddresses(shipping.value)
+    )
     const edittingAddress = ref(false)
     const activeAddress = ref(undefined)
     const isNewAddress = computed(() => !activeAddress.value)

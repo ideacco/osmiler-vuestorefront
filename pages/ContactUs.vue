@@ -6,8 +6,8 @@
       </el-col>
       <el-col>
         <p class="conatactboxp">
-          If you have questions or concerns then please do not hesitate to get in contact with us.
-          We would love to hear from you, contact us on:
+          If you have questions or concerns then please do not hesitate to get
+          in contact with us. We would love to hear from you, contact us on:
         </p>
       </el-col>
       <el-row class="conatactbox-twobox">
@@ -40,9 +40,13 @@
             <el-col class="conatactbox-box4-fourfont">
               <el-col></el-col>
               <p class="conatactbox-fontsize">Osmail</p>
-              <p class="conatactbox-fontsize">Room 309,Building 5, QianHai E-Hub, ShenZhen,</p>
+              <p class="conatactbox-fontsize">
+                Room 309,Building 5, QianHai E-Hub, ShenZhen,
+              </p>
               <p class="conatactbox-fontsize">China +86</p>
-              <p class="conatactbox-fontsize">755-25827634 service@sleepon.cn</p>
+              <p class="conatactbox-fontsize">
+                755-25827634 service@sleepon.cn
+              </p>
             </el-col>
           </el-col>
         </el-col>

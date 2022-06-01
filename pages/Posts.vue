@@ -216,7 +216,7 @@
                 class="desktop-only"
                 name="Size"
                 value="XS"
-                style="margin: 0 0 1rem 0"
+                style="margin: 0 0 1rem"
               />
               <SfProperty class="desktop-only" name="Color" value="white" />
             </template>
@@ -245,7 +245,7 @@
           :visible="5"
           @click="
             (page) => {
-              currentPage = page;
+              currentPage = page
             }
           "
         />
@@ -755,7 +755,7 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
-@import "~@storefront-ui/vue/styles";
+@import '~@storefront-ui/vue/styles';
 #category {
   box-sizing: border-box;
   @include for-desktop {

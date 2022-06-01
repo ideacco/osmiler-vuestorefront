@@ -101,7 +101,9 @@
                         ? true
                         : false
                   "
-                  @click="(atttLbl = key), updateFilter({ [atttLbl]: attribs })"
+                  @click="
+                    ;(atttLbl = key), updateFilter({ [atttLbl]: attribs })
+                  "
                 />
               </div>
             </template>
@@ -144,7 +146,7 @@
                   })
                 "
               >
-                {{ $t("Add to Cart") }}
+                {{ $t('Add to Cart') }}
               </SfButton>
             </template>
           </SfAddToCart>
@@ -176,17 +178,17 @@
             >
               <div class="product__additional-info">
                 <p class="product__additional-info__title">
-                  {{ $t("Brand") }}
+                  {{ $t('Brand') }}
                 </p>
                 <p>{{ brand }}</p>
                 <p class="product__additional-info__title">
-                  {{ $t("Instruction1") }}
+                  {{ $t('Instruction1') }}
                 </p>
                 <p class="product__additional-info__paragraph">
-                  {{ $t("Instruction2") }}
+                  {{ $t('Instruction2') }}
                 </p>
                 <p class="product__additional-info__paragraph">
-                  {{ $t("Instruction3") }}
+                  {{ $t('Instruction3') }}
                 </p>
                 <p>{{ careInstructions }}</p>
               </div>
@@ -276,11 +278,7 @@ export default {
     const atttLbl = ''
     const qty = ref(1)
     const { slug } = route?.value?.params
-    const {
-      loading: productloading,
-      products,
-      search
-    } = useProduct('products')
+    const { loading: productloading, products, search } = useProduct('products')
     const { send: sendNotification } = useUiNotification()
     const {
       products: relatedProducts,
@@ -311,9 +309,7 @@ export default {
     const productDescriptionHtml = computed(() =>
       productGetters.getDescription(product.value, true)
     )
-    const options = computed(() =>
-      productGetters.getAttributes(products.value)
-    )
+    const options = computed(() => productGetters.getAttributes(products.value))
     const configuration = computed(() => {
       return productGetters.getSelectedVariant(route?.value?.query)
     })

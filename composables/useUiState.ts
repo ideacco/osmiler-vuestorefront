@@ -8,7 +8,7 @@ const state = reactive({
   isFilterSidebarOpen: false,
   isNavigationSidebarOpen: false,
   isMobileMenuOpen: false,
-  articlesPerPage: '5'
+  articlesPerPage: '5',
 })
 
 const useUiState = () => {
@@ -68,7 +68,7 @@ const useUiState = () => {
     toggleFilterSidebar,
     toggleNavigationSidebar,
     articlesPerPage,
-    setArticlesPerPage
+    setArticlesPerPage,
   }
 }
 

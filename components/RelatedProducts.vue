@@ -1,5 +1,8 @@
 <template>
-  <SfSection :title-heading="title" class="section pdc-sec-title pdp-upsell-section">
+  <SfSection
+    :title-heading="title"
+    class="section pdc-sec-title pdp-upsell-section"
+  >
     <SfLoader :class="{ loading }" :loading="loading">
       <SfCarousel
         ref="bscarousel"
@@ -7,7 +10,11 @@
         :settings="pdpUpsellSettings"
         class="carousel"
       >
-        <SfCarouselItem v-for="(product, i) in products" :key="i" class="carousel__item">
+        <SfCarouselItem
+          v-for="(product, i) in products"
+          :key="i"
+          class="carousel__item"
+        >
           <SfProductCard
             :title="productGetters.getName(product)"
             :image="productGetters.getPDPCoverImage(product)"
@@ -15,13 +22,19 @@
             :show-add-to-cart-button="true"
             :add-to-cart-disabled="!productGetters.getStockStatus(product)"
             :link="
-              localePath(`/p/${productGetters.getId(product)}/${productGetters.getSlug(product)}`)
+              localePath(
+                `/p/${productGetters.getId(product)}/${productGetters.getSlug(
+                  product
+                )}`
+              )
             "
             :wishlist-icon="false"
             :image-width="$device.isDesktopOrTablet ? 212 : 154"
             :image-height="$device.isDesktopOrTablet ? 320 : 232"
             class="pdp-product-card"
-            @click:add-to-cart="handleAddToCart({ product, quantity: 1, currentCart })"
+            @click:add-to-cart="
+              handleAddToCart({ product, quantity: 1, currentCart })
+            "
           >
             <template #image="imageSlotProps">
               <SfButton
@@ -58,7 +71,9 @@
                 class="sf-product-card__link"
                 :link="
                   localePath(
-                    `/p/${productGetters.getId(product)}/${productGetters.getSlug(product)}`
+                    `/p/${productGetters.getId(
+                      product
+                    )}/${productGetters.getSlug(product)}`
                   )
                 "
               >
@@ -69,13 +84,19 @@
             </template>
             <template #price>
               <SfPrice class="sf-product-card__price">
-                <template v-if="productGetters.getPrice(product).special" #special>
+                <template
+                  v-if="productGetters.getPrice(product).special"
+                  #special
+                >
                   <ins class="sf-price__special">{{
                     $n(productGetters.getPrice(product).special, 'currency')
                   }}</ins>
                 </template>
                 <template #old><span /></template>
-                <template v-if="productGetters.getPrice(product).regular > 0" #regular>
+                <template
+                  v-if="productGetters.getPrice(product).regular > 0"
+                  #regular
+                >
                   <del class="sf-price__old">{{
                     $n(productGetters.getPrice(product).regular, 'currency')
                   }}</del>

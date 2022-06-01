@@ -11,16 +11,19 @@
           <div class="texttilte">
             <span class="texttitle1">What can Pro do for you</span>
             <span class="textcontext"
-            >Ant Design Landing platform has a variety of templates, download template package,
-              you can use it quickly, you can also use the editor to quickly build a dedicated page
-              for you.</span
+            >Ant Design Landing platform has a variety of templates, download
+              template package, you can use it quickly, you can also use the
+              editor to quickly build a dedicated page for you.</span
             >
           </div>
         </div>
       </el-col>
     </el-row>
     <!-- 页面标签排版 -->
-    <div class="uk-child-width-1-2 uk-child-width-1-4@s uk-grid-match uk-box1" uk-grid>
+    <div
+      class="uk-child-width-1-2 uk-child-width-1-4@s uk-grid-match uk-box1"
+      uk-grid
+    >
       <div class="uk-animation-toggle uk-box2">
         <div class="uk-card uk-card-default uk-card-body uk-texttile-box1">
           <el-image src="/homepage/homeicon.jpg" class="homeicontext1" />
@@ -29,9 +32,10 @@
           <div class="uk-text-center">
             <p class="uk-texttitle1">What can Pro do for you</p>
             <p class="uk-content">
-              Ant Design Landing platform has a variety of Ant Design Landing platform has a variety
-              of Ant Design Landing platform has a variety of Ant Design Landing platform has a
-              variety of Ant Design Landing platform has a variety of Ant
+              Ant Design Landing platform has a variety of Ant Design Landing
+              platform has a variety of Ant Design Landing platform has a
+              variety of Ant Design Landing platform has a variety of Ant Design
+              Landing platform has a variety of Ant
             </p>
           </div>
         </div>
@@ -44,9 +48,10 @@
           <div class="uk-text-center">
             <p class="uk-texttitle1">What can Pro do for you</p>
             <p class="uk-content">
-              Ant Design Landing platform has a variety of Ant Design Landing platform has a variety
-              of Ant Design Landing platform has a variety of Ant Design Landing platform has a
-              variety of Ant Design Landing platform has a variety of Ant
+              Ant Design Landing platform has a variety of Ant Design Landing
+              platform has a variety of Ant Design Landing platform has a
+              variety of Ant Design Landing platform has a variety of Ant Design
+              Landing platform has a variety of Ant
             </p>
           </div>
         </div>
@@ -59,9 +64,10 @@
           <div class="uk-text-center">
             <p class="uk-texttitle1">What can Pro do for you</p>
             <p class="uk-content">
-              Ant Design Landing platform has a variety of Ant Design Landing platform has a variety
-              of Ant Design Landing platform has a variety of Ant Design Landing platform has a
-              variety of Ant Design Landing platform has a variety of Ant
+              Ant Design Landing platform has a variety of Ant Design Landing
+              platform has a variety of Ant Design Landing platform has a
+              variety of Ant Design Landing platform has a variety of Ant Design
+              Landing platform has a variety of Ant
             </p>
           </div>
         </div>
@@ -74,9 +80,10 @@
           <div class="uk-text-center">
             <p class="uk-texttitle1">What can Pro do for you</p>
             <p class="uk-content">
-              Ant Design Landing platform has a variety of Ant Design Landing platform has a variety
-              of Ant Design Landing platform has a variety of Ant Design Landing platform has a
-              variety of Ant Design Landing platform has a variety of Ant
+              Ant Design Landing platform has a variety of Ant Design Landing
+              platform has a variety of Ant Design Landing platform has a
+              variety of Ant Design Landing platform has a variety of Ant Design
+              Landing platform has a variety of Ant
             </p>
           </div>
         </div>
@@ -90,9 +97,9 @@
           <div class="texttilte">
             <span class="texttitle1">What can Pro do for you</span>
             <span class="textcontext"
-            >Ant Design Landing platform has a variety of templates, download template package,
-              you can use it quickly, you can also use the editor to quickly build a dedicated page
-              for you.</span
+            >Ant Design Landing platform has a variety of templates, download
+              template package, you can use it quickly, you can also use the
+              editor to quickly build a dedicated page for you.</span
             >
           </div>
         </div>
@@ -106,11 +113,12 @@
           <div class="continerboxmiddletext">
             <h1 class="containertitle1">What can Pro do for you</h1>
             <p class="containercontent">
-              Ant Design Landing platform has a variety of templates, download template package, you
-              can use it quickly, you can also use the editor to quickly build a dedicated page for
-              you.Ant Design Landing platform has a variety of templates, download template package,
-              you can use it quickly, you can also use the editor to quickly build a dedicated page
-              for you.
+              Ant Design Landing platform has a variety of templates, download
+              template package, you can use it quickly, you can also use the
+              editor to quickly build a dedicated page for you.Ant Design
+              Landing platform has a variety of templates, download template
+              package, you can use it quickly, you can also use the editor to
+              quickly build a dedicated page for you.
             </p>
           </div>
           <!-- 右边产品图片 -->
@@ -132,11 +140,12 @@
           <div class="continerboxmiddletext1">
             <h1 class="containertitle1">What can Pro do for you</h1>
             <p class="containercontent">
-              Ant Design Landing platform has a variety of templates, download template package, you
-              can use it quickly, you can also use the editor to quickly build a dedicated page for
-              you.Ant Design Landing platform has a variety of templates, download template package,
-              you can use it quickly, you can also use the editor to quickly build a dedicated page
-              for you.
+              Ant Design Landing platform has a variety of templates, download
+              template package, you can use it quickly, you can also use the
+              editor to quickly build a dedicated page for you.Ant Design
+              Landing platform has a variety of templates, download template
+              package, you can use it quickly, you can also use the editor to
+              quickly build a dedicated page for you.
             </p>
           </div>
         </div>
@@ -150,11 +159,12 @@
           <div class="continerboxmiddletext">
             <h1 class="containertitle1">What can Pro do for you</h1>
             <p class="containercontent">
-              Ant Design Landing platform has a variety of templates, download template package, you
-              can use it quickly, you can also use the editor to quickly build a dedicated page for
-              you.Ant Design Landing platform has a variety of templates, download template package,
-              you can use it quickly, you can also use the editor to quickly build a dedicated page
-              for you.
+              Ant Design Landing platform has a variety of templates, download
+              template package, you can use it quickly, you can also use the
+              editor to quickly build a dedicated page for you.Ant Design
+              Landing platform has a variety of templates, download template
+              package, you can use it quickly, you can also use the editor to
+              quickly build a dedicated page for you.
             </p>
           </div>
           <!-- 右边产品图片 -->
@@ -176,11 +186,12 @@
           <div class="continerboxmiddletext1">
             <h1 class="containertitle1">What can Pro do for you</h1>
             <p class="containercontent">
-              Ant Design Landing platform has a variety of templates, download template package, you
-              can use it quickly, you can also use the editor to quickly build a dedicated page for
-              you.Ant Design Landing platform has a variety of templates, download template package,
-              you can use it quickly, you can also use the editor to quickly build a dedicated page
-              for you.
+              Ant Design Landing platform has a variety of templates, download
+              template package, you can use it quickly, you can also use the
+              editor to quickly build a dedicated page for you.Ant Design
+              Landing platform has a variety of templates, download template
+              package, you can use it quickly, you can also use the editor to
+              quickly build a dedicated page for you.
             </p>
           </div>
         </div>
@@ -194,11 +205,12 @@
           <div class="continerboxmiddletext">
             <h1 class="containertitle1">What can Pro do for you</h1>
             <p class="containercontent">
-              Ant Design Landing platform has a variety of templates, download template package, you
-              can use it quickly, you can also use the editor to quickly build a dedicated page for
-              you.Ant Design Landing platform has a variety of templates, download template package,
-              you can use it quickly, you can also use the editor to quickly build a dedicated page
-              for you.
+              Ant Design Landing platform has a variety of templates, download
+              template package, you can use it quickly, you can also use the
+              editor to quickly build a dedicated page for you.Ant Design
+              Landing platform has a variety of templates, download template
+              package, you can use it quickly, you can also use the editor to
+              quickly build a dedicated page for you.
             </p>
           </div>
           <!-- 右边产品图片 -->
@@ -221,11 +233,13 @@
             <!-- 文字小组合 -->
             <div class="continerboxmiddletext25">
               <div class="continerboxmiddletext888">
-                <h1 class="continerboxmiddletext888title">What can Pro do for you</h1>
+                <h1 class="continerboxmiddletext888title">
+                  What can Pro do for you
+                </h1>
                 <p class="continerboxmiddletext888content">
-                  Ant Design Landing platform has a variety of templates, download template package,
-                  you can use it quickly, you can also use the editor to quickly build a dedicated
-                  page for you.
+                  Ant Design Landing platform has a variety of templates,
+                  download template package, you can use it quickly, you can
+                  also use the editor to quickly build a dedicated page for you.
                 </p>
               </div>
             </div>
@@ -240,9 +254,13 @@
                   <!-- 文字 -->
                   <div class="smallcontinter1box1text">
                     <div class="smallcontinter1box1text21">
-                      <h1 class="h1title">30<span class="fontsizesmall">Hz</span></h1>
+                      <h1 class="h1title">
+                        30<span class="fontsizesmall">Hz</span>
+                      </h1>
                     </div>
-                    <div class="contentp">Vibration frequency of acoustic motor: 250 ~ 330hz</div>
+                    <div class="contentp">
+                      Vibration frequency of acoustic motor: 250 ~ 330hz
+                    </div>
                   </div>
                 </div>
                 <div class="smallcontinter1box1">
@@ -253,9 +271,13 @@
                   <!-- 文字 -->
                   <div class="smallcontinter1box1text">
                     <div class="smallcontinter1box1text21">
-                      <h1 class="h1title">30<span class="fontsizesmall">Hz</span></h1>
+                      <h1 class="h1title">
+                        30<span class="fontsizesmall">Hz</span>
+                      </h1>
                     </div>
-                    <div class="contentp">Vibration frequency of acoustic motor: 250 ~ 330hz</div>
+                    <div class="contentp">
+                      Vibration frequency of acoustic motor: 250 ~ 330hz
+                    </div>
                   </div>
                 </div>
                 <div class="smallcontinter1box1">
@@ -266,9 +288,13 @@
                   <!-- 文字 -->
                   <div class="smallcontinter1box1text">
                     <div class="smallcontinter1box1text21">
-                      <h1 class="h1title">30<span class="fontsizesmall">Hz</span></h1>
+                      <h1 class="h1title">
+                        30<span class="fontsizesmall">Hz</span>
+                      </h1>
                     </div>
-                    <div class="contentp">Vibration frequency of acoustic motor: 250 ~ 330hz</div>
+                    <div class="contentp">
+                      Vibration frequency of acoustic motor: 250 ~ 330hz
+                    </div>
                   </div>
                 </div>
               </div>
@@ -281,9 +307,13 @@
                   <!-- 文字 -->
                   <div class="smallcontinter1box1text">
                     <div class="smallcontinter1box1text21">
-                      <h1 class="h1title">30<span class="fontsizesmall">Hz</span></h1>
+                      <h1 class="h1title">
+                        30<span class="fontsizesmall">Hz</span>
+                      </h1>
                     </div>
-                    <div class="contentp">Vibration frequency of acoustic motor: 250 ~ 330hz</div>
+                    <div class="contentp">
+                      Vibration frequency of acoustic motor: 250 ~ 330hz
+                    </div>
                   </div>
                 </div>
                 <div class="smallcontinter1box1">
@@ -294,9 +324,13 @@
                   <!-- 文字 -->
                   <div class="smallcontinter1box1text">
                     <div class="smallcontinter1box1text21">
-                      <h1 class="h1title">30<span class="fontsizesmall">Hz</span></h1>
+                      <h1 class="h1title">
+                        30<span class="fontsizesmall">Hz</span>
+                      </h1>
                     </div>
-                    <div class="contentp">Vibration frequency of acoustic motor: 250 ~ 330hz</div>
+                    <div class="contentp">
+                      Vibration frequency of acoustic motor: 250 ~ 330hz
+                    </div>
                   </div>
                 </div>
                 <div class="smallcontinter1box1">
@@ -307,9 +341,13 @@
                   <!-- 文字 -->
                   <div class="smallcontinter1box1text">
                     <div class="smallcontinter1box1text21">
-                      <h1 class="h1title">30<span class="fontsizesmall">Hz</span></h1>
+                      <h1 class="h1title">
+                        30<span class="fontsizesmall">Hz</span>
+                      </h1>
                     </div>
-                    <div class="contentp">Vibration frequency of acoustic motor: 250 ~ 330hz</div>
+                    <div class="contentp">
+                      Vibration frequency of acoustic motor: 250 ~ 330hz
+                    </div>
                   </div>
                 </div>
               </div>
@@ -327,11 +365,12 @@
             <div class="continerbox234+">
               <h1 class="containertitle1">What can Pro do for you</h1>
               <p class="containercontent">
-                Ant Design Landing platform has a variety of templates, download template package,
-                you can use it quickly, you can also use the editor to quickly build a dedicated
-                page for you.Ant Design Landing platform has a variety of templates, download
-                template package, you can use it quickly, you can also use the editor to quickly
-                build a dedicated page for you.
+                Ant Design Landing platform has a variety of templates, download
+                template package, you can use it quickly, you can also use the
+                editor to quickly build a dedicated page for you.Ant Design
+                Landing platform has a variety of templates, download template
+                package, you can use it quickly, you can also use the editor to
+                quickly build a dedicated page for you.
               </p>
             </div>
             <!-- 排序 -->
@@ -399,7 +438,9 @@
             <!-- 规格 -->
             <div class="Specificationstext1">
               <div class="Specificationstextlist">
-                <div class="textfontsize1233">Package Size：10 x 10 x 10 CM</div>
+                <div class="textfontsize1233">
+                  Package Size：10 x 10 x 10 CM
+                </div>
                 <span class="textfontsize58788">Package Weight：00g</span>
               </div>
             </div>
@@ -423,7 +464,9 @@
           </div>
         </div>
         <div class="Rotationmapboxtitlebutton">
-          <el-button class="buttontext1223"> <div class="spantext12">按钮文字</div></el-button>
+          <el-button class="buttontext1223">
+            <div class="spantext12">按钮文字</div></el-button
+          >
         </div>
       </div>
       <!-- 轮播图特效 -->
@@ -440,20 +483,36 @@
             </div>
             <div class="Rotationmapbmiddle">
               <p class="Rotationmapbheadfontcontent">
-                I am very helped in making a website and business development that makes the product
-                that I have to have a quality for use by the userI am very helped in making a
-                website and business development that makes the product that I have to have a
-                quality for use by the user
+                I am very helped in making a website and business development
+                that makes the product that I have to have a quality for use by
+                the userI am very helped in making a website and business
+                development that makes the product that I have to have a quality
+                for use by the user
               </p>
             </div>
             <div class="Rotationmapbottom">
               <div class="Rotationmapbostart1">
                 <div class="Rotationmapbostart1-small">
-                  <el-image src="/homepage/Star5.png" class="Rotationmapbostart1-img" />
-                  <el-image src="/homepage/Star5.png" class="Rotationmapbostart1-img" />
-                  <el-image src="/homepage/Star5.png" class="Rotationmapbostart1-img" />
-                  <el-image src="/homepage/Star5.png" class="Rotationmapbostart1-img" />
-                  <el-image src="/homepage/Star5.png" class="Rotationmapbostart1-img" />
+                  <el-image
+                    src="/homepage/Star5.png"
+                    class="Rotationmapbostart1-img"
+                  />
+                  <el-image
+                    src="/homepage/Star5.png"
+                    class="Rotationmapbostart1-img"
+                  />
+                  <el-image
+                    src="/homepage/Star5.png"
+                    class="Rotationmapbostart1-img"
+                  />
+                  <el-image
+                    src="/homepage/Star5.png"
+                    class="Rotationmapbostart1-img"
+                  />
+                  <el-image
+                    src="/homepage/Star5.png"
+                    class="Rotationmapbostart1-img"
+                  />
                 </div>
               </div>
               <div class="Rotationmapbogroup5">
@@ -479,20 +538,36 @@
             </div>
             <div class="Rotationmapbmiddle">
               <p class="Rotationmapbheadfontcontent">
-                I am very helped in making a website and business development that makes the product
-                that I have to have a quality for use by the userI am very helped in making a
-                website and business development that makes the product that I have to have a
-                quality for use by the user
+                I am very helped in making a website and business development
+                that makes the product that I have to have a quality for use by
+                the userI am very helped in making a website and business
+                development that makes the product that I have to have a quality
+                for use by the user
               </p>
             </div>
             <div class="Rotationmapbottom">
               <div class="Rotationmapbostart1">
                 <div class="Rotationmapbostart1-small">
-                  <el-image src="/homepage/Star5.png" class="Rotationmapbostart1-img" />
-                  <el-image src="/homepage/Star5.png" class="Rotationmapbostart1-img" />
-                  <el-image src="/homepage/Star5.png" class="Rotationmapbostart1-img" />
-                  <el-image src="/homepage/Star5.png" class="Rotationmapbostart1-img" />
-                  <el-image src="/homepage/Star5.png" class="Rotationmapbostart1-img" />
+                  <el-image
+                    src="/homepage/Star5.png"
+                    class="Rotationmapbostart1-img"
+                  />
+                  <el-image
+                    src="/homepage/Star5.png"
+                    class="Rotationmapbostart1-img"
+                  />
+                  <el-image
+                    src="/homepage/Star5.png"
+                    class="Rotationmapbostart1-img"
+                  />
+                  <el-image
+                    src="/homepage/Star5.png"
+                    class="Rotationmapbostart1-img"
+                  />
+                  <el-image
+                    src="/homepage/Star5.png"
+                    class="Rotationmapbostart1-img"
+                  />
                 </div>
               </div>
               <div class="Rotationmapbogroup5">
@@ -518,20 +593,36 @@
             </div>
             <div class="Rotationmapbmiddle">
               <p class="Rotationmapbheadfontcontent">
-                I am very helped in making a website and business development that makes the product
-                that I have to have a quality for use by the userI am very helped in making a
-                website and business development that makes the product that I have to have a
-                quality for use by the user
+                I am very helped in making a website and business development
+                that makes the product that I have to have a quality for use by
+                the userI am very helped in making a website and business
+                development that makes the product that I have to have a quality
+                for use by the user
               </p>
             </div>
             <div class="Rotationmapbottom">
               <div class="Rotationmapbostart1">
                 <div class="Rotationmapbostart1-small">
-                  <el-image src="/homepage/Star5.png" class="Rotationmapbostart1-img" />
-                  <el-image src="/homepage/Star5.png" class="Rotationmapbostart1-img" />
-                  <el-image src="/homepage/Star5.png" class="Rotationmapbostart1-img" />
-                  <el-image src="/homepage/Star5.png" class="Rotationmapbostart1-img" />
-                  <el-image src="/homepage/Star5.png" class="Rotationmapbostart1-img" />
+                  <el-image
+                    src="/homepage/Star5.png"
+                    class="Rotationmapbostart1-img"
+                  />
+                  <el-image
+                    src="/homepage/Star5.png"
+                    class="Rotationmapbostart1-img"
+                  />
+                  <el-image
+                    src="/homepage/Star5.png"
+                    class="Rotationmapbostart1-img"
+                  />
+                  <el-image
+                    src="/homepage/Star5.png"
+                    class="Rotationmapbostart1-img"
+                  />
+                  <el-image
+                    src="/homepage/Star5.png"
+                    class="Rotationmapbostart1-img"
+                  />
                 </div>
               </div>
               <div class="Rotationmapbogroup5">
@@ -567,9 +658,10 @@
           <div class="uk-text-center">
             <p class="uk-texttitle1">What can Pro do for you</p>
             <p class="uk-content">
-              Ant Design Landing platform has a variety of Ant Design Landing platform has a variety
-              of Ant Design Landing platform has a variety of Ant Design Landing platform has a
-              variety of Ant Design Landing platform has a variety of Ant
+              Ant Design Landing platform has a variety of Ant Design Landing
+              platform has a variety of Ant Design Landing platform has a
+              variety of Ant Design Landing platform has a variety of Ant Design
+              Landing platform has a variety of Ant
             </p>
           </div>
         </div>
@@ -582,9 +674,10 @@
           <div class="uk-text-center">
             <p class="uk-texttitle1">What can Pro do for you</p>
             <p class="uk-content">
-              Ant Design Landing platform has a variety of Ant Design Landing platform has a variety
-              of Ant Design Landing platform has a variety of Ant Design Landing platform has a
-              variety of Ant Design Landing platform has a variety of Ant
+              Ant Design Landing platform has a variety of Ant Design Landing
+              platform has a variety of Ant Design Landing platform has a
+              variety of Ant Design Landing platform has a variety of Ant Design
+              Landing platform has a variety of Ant
             </p>
           </div>
         </div>
@@ -597,9 +690,10 @@
           <div class="uk-text-center">
             <p class="uk-texttitle1">What can Pro do for you</p>
             <p class="uk-content">
-              Ant Design Landing platform has a variety of Ant Design Landing platform has a variety
-              of Ant Design Landing platform has a variety of Ant Design Landing platform has a
-              variety of Ant Design Landing platform has a variety of Ant
+              Ant Design Landing platform has a variety of Ant Design Landing
+              platform has a variety of Ant Design Landing platform has a
+              variety of Ant Design Landing platform has a variety of Ant Design
+              Landing platform has a variety of Ant
             </p>
           </div>
         </div>
@@ -612,9 +706,10 @@
           <div class="uk-text-center">
             <p class="uk-texttitle1">What can Pro do for you</p>
             <p class="uk-content">
-              Ant Design Landing platform has a variety of Ant Design Landing platform has a variety
-              of Ant Design Landing platform has a variety of Ant Design Landing platform has a
-              variety of Ant Design Landing platform has a variety of Ant
+              Ant Design Landing platform has a variety of Ant Design Landing
+              platform has a variety of Ant Design Landing platform has a
+              variety of Ant Design Landing platform has a variety of Ant Design
+              Landing platform has a variety of Ant
             </p>
           </div>
         </div>
@@ -627,7 +722,8 @@
 export default {
   name: 'DefaultLayout',
   components: {
-    Lcoalfooter: () => import(/* webpackPrefetch: true */ '~/components/Lcoalfooter.vue')
+    Lcoalfooter: () =>
+      import(/* webpackPrefetch: true */ '~/components/Lcoalfooter.vue')
   }
 }
 </script>
@@ -635,25 +731,30 @@ export default {
 .bg-purple-dark {
   background: #99a9bf;
 }
+
 .bg-purple {
   background: #d3dce6;
 }
+
 .bg-purple-light {
   background: #e5e9f2;
 }
+
 .grid-content {
   border-radius: 4px;
   min-height: 36px;
 }
+
 .bannerbox {
   position: relative;
 }
+
 .textbox {
   z-index: 99999;
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 0px;
+  padding: 0;
   gap: 50px;
   position: absolute;
   width: 816px;
@@ -661,78 +762,95 @@ export default {
   left: 312px;
   top: 563px;
 }
+
 .texttilte {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 0px;
+  padding: 0;
   gap: 20px;
   width: 816px;
   height: 114px;
+
   /* Inside auto layout */
   flex: none;
   order: 0;
   align-self: stretch;
   flex-grow: 0;
 }
+
 .texttitle1 {
   /* h1 */
   width: 816px;
   height: 46px;
+
   /* 中文-标准/二级标题/二级标题_Medium */
-  font-family: 'Overpass', Verdana, Arial, Helvetica, sans-serif;
+  font-family: Overpass, Verdana, Arial, Helvetica, sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 38px;
   line-height: 46px;
+
   /* identical to box height, or 121% */
   text-align: center;
+
   /* 浅色模式文本/Anti */
-  color: #ffffff;
+  color: #fff;
+
   /* Inside auto layout */
   flex: none;
   order: 0;
   align-self: stretch;
   flex-grow: 0;
 }
+
 .textcontext {
   width: 816px;
   height: 48px;
+
   /* 中文-标准/正文2-16pt/正文2_Regular */
-  font-family: 'Overpass', Verdana, Arial, Helvetica, sans-serif;
+  font-family: Overpass, Verdana, Arial, Helvetica, sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 16px;
   line-height: 24px;
+
   /* or 150% */
   text-align: center;
+
   /* 浅色模式文本/Anti */
-  color: #ffffff;
+  color: #fff;
+
   /* Inside auto layout */
   flex: none;
   order: 2;
   align-self: stretch;
   flex-grow: 0;
 }
+
 .uk-grid {
-  background-color: #ffffff;
+  background-color: #fff;
 }
+
 .uk-card-default {
   box-shadow: none;
 }
+
 .uk-texttile-box1 {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 0px;
+  padding: 0;
   gap: 24px;
   width: 200px;
   height: 374px;
+
   /* Inside auto layout */
   flex: none;
   order: 0;
   flex-grow: 0;
 }
+
 .homeicontext1 {
   display: flex;
   flex-direction: row;
@@ -740,695 +858,773 @@ export default {
   gap: 15px;
   width: 120px;
   height: 120px;
+
   /* Background/Light Blue */
   border-radius: 60px;
+
   /* Inside auto layout */
   flex: none;
   order: 0;
   flex-grow: 0;
 }
-.uk-box1 {
-  height: 526px;
-  /* Background/White */
-}
+
 .uk-texttitle1 {
   width: 200px;
   height: 24px;
+
   /* 中文-标准/正文2-16pt/正文2_Mmedium */
-  font-family: 'Overpass', Verdana, Arial, Helvetica, sans-serif;
+  font-family: Overpass, Verdana, Arial, Helvetica, sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 16px;
   line-height: 24px;
+
   /* identical to box height, or 150% */
   text-align: center;
+
   /* 浅色模式文本/Title Text */
   color: #0c0b0e;
 }
+
 .uk-content {
   width: 200px;
   height: 198px;
+
   /* 中文-标准/正文3-14pt/正文3_Regular */
-  font-family: 'Overpass', Verdana, Arial, Helvetica, sans-serif;
+  font-family: Overpass, Verdana, Arial, Helvetica, sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 14px;
   line-height: 22px;
+
   /* or 157% */
   text-align: center;
+
   /* 浅色模式文本/Title Text */
   color: #0c0b0e;
 }
+
 .uk-box1 {
   margin-left: 10px;
 }
+
 .containerbox {
   width: 1440px;
   height: 960px;
   position: relative;
+
   /* Background/White */
-  background: #ffffff;
+  background: #fff;
 }
+
 .continerbox1 {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
-  padding: 0px 0px 0px 60px;
+  padding: 0 0 0 60px;
   gap: 10px;
   position: absolute;
   width: 720px;
   height: 750px;
-  left: 0px;
-  top: 0px;
+  left: 0;
+  top: 0;
 }
+
 .continerboxmiddle {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  padding: 0px;
+  padding: 0;
   gap: 50px;
   width: 590px;
   height: 280px;
+
   /* Inside auto layout */
   flex: none;
   order: 0;
   flex-grow: 0;
 }
+
 .continerboxmiddletext {
   /* Auto layout */
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  padding: 0px;
+  padding: 0;
   gap: 50px;
   width: 590px;
   height: 138px;
+
   /* Inside auto layout */
   flex: none;
   order: 0;
   flex-grow: 0;
 }
+
 .containertitle1 {
   width: 590px;
   height: 46px;
+
   /* 中文-标准/二级标题/二级标题_Medium */
-  font-family: 'Overpass', Verdana, Arial, Helvetica, sans-serif;
+  font-family: Overpass, Verdana, Arial, Helvetica, sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 38px;
   line-height: 46px;
+
   /* identical to box height, or 121% */
+
   /* 浅色模式文本/Title Text */
   color: #0c0b0e;
+
   /* Inside auto layout */
   flex: none;
   order: 0;
   align-self: stretch;
   flex-grow: 0;
 }
+
 .containercontent {
   width: 590px;
   height: 120px;
+
   /* 中文-标准/正文2-16pt/正文2_Regular */
-  font-family: 'Overpass', Verdana, Arial, Helvetica, sans-serif;
+  font-family: Overpass, Verdana, Arial, Helvetica, sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 16px;
   line-height: 24px;
+
   /* or 150% */
+
   /* 浅色模式文本/Title Text */
   color: #0c0b0e;
+
   /* Inside auto layout */
   flex: none;
   order: 2;
   align-self: stretch;
   flex-grow: 0;
 }
+
 .productmiddle {
   position: absolute;
   width: 720px;
   height: 960px;
   left: 720px;
-  top: 0px;
+  top: 0;
+
   /* Background/Fill Blue */
   background: #5d47ee;
 }
+
 .productmiddleleft {
   position: absolute;
   width: 720px;
   height: 960px;
-  left: 0px;
-  right: 0px;
-  top: 0px;
-  bottom: 0px;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+
   /* 品牌色/color-5 */
   background: #5d47ee;
 }
+
 .continerboxmiddletext1 {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
-  padding: 0px 0px 0px 60px;
+  padding: 0 0 0 60px;
   gap: 10px;
   position: absolute;
   width: 720px;
   height: 750px;
   left: 720px;
-  top: 0px;
+  top: 0;
 }
+
 .continerboxmiddletext21 {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
-  padding: 0px 0px 0px 60px;
+  padding: 0 0 0 60px;
   gap: 40px;
   position: absolute;
   width: 720px;
   height: 750px;
   left: 720px;
-  top: 0px;
+  top: 0;
 }
+
 .continerboxmiddletext25 {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  padding: 0px;
+  padding: 0;
   gap: 50px;
   width: 590px;
   height: 138px;
+
   /* Inside auto layout */
   flex: none;
   order: 0;
   flex-grow: 0;
 }
+
 .continerboxmiddletext888 {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  padding: 0px;
+  padding: 0;
   gap: 20px;
   width: 590px;
   height: 138px;
+
   /* Inside auto layout */
   flex: none;
   order: 0;
   align-self: stretch;
   flex-grow: 0;
 }
+
 .continerboxmiddletext888title {
   width: 590px;
   height: 46px;
+
   /* 中文-标准/二级标题/二级标题_Medium */
-  font-family: 'Overpass', Verdana, Arial, Helvetica, sans-serif;
+  font-family: Overpass, Verdana, Arial, Helvetica, sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 38px;
   line-height: 46px;
+
   /* identical to box height, or 121% */
+
   /* 浅色模式文本/Title Text */
   color: #0c0b0e;
+
   /* Inside auto layout */
   flex: none;
   order: 0;
   align-self: stretch;
   flex-grow: 0;
 }
+
 .continerboxmiddletext888content {
   /* subtitle */
   width: 590px;
   height: 72px;
+
   /* 中文-标准/正文2-16pt/正文2_Regular */
-  font-family: 'Overpass', Verdana, Arial, Helvetica, sans-serif;
+  font-family: Overpass, Verdana, Arial, Helvetica, sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 16px;
   line-height: 24px;
+
   /* or 150% */
+
   /* 浅色模式文本/Title Text */
   color: #0c0b0e;
+
   /* Inside auto layout */
   flex: none;
   order: 2;
   align-self: stretch;
   flex-grow: 0;
 }
+
 .smallcontinter {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  padding: 0px;
+  padding: 0;
   gap: 20px;
   width: 550px;
   height: 360px;
+
   /* Inside auto layout */
   flex: none;
   order: 1;
   flex-grow: 0;
 }
+
 .smallcontinter1 {
   /* Auto layout */
   margin-top: 20px;
   display: flex;
   flex-direction: row;
   align-items: flex-start;
-  padding: 0px;
+  padding: 0;
   gap: 20px;
   width: 550px;
   height: 170px;
+
   /* Inside auto layout */
   flex: none;
   order: 0;
   flex-grow: 0;
 }
+
 .smallcontinter1box1 {
   /* Auto layout */
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 12px 0px 0px;
+  padding: 12px 0 0;
   width: 170px;
   height: 170px;
+
   /* 浅色模式文本/Disable */
   border: 1px solid #c1bbc9;
   border-radius: 20px;
+
   /* Inside auto layout */
   flex: none;
   order: 0;
   flex-grow: 0;
 }
+
 .procboxtext {
   /* Auto layout */
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 0px;
+  padding: 0;
   width: 154px;
   height: 106px;
+
   /* Inside auto layout */
   flex: none;
   order: 1;
   flex-grow: 0;
 }
+
 .procboxtexttitle {
   display: flex;
   flex-direction: row;
   align-items: flex-end;
-  padding: 0px;
+  padding: 0;
   gap: 2px;
   width: 83px;
   height: 46px;
+
   /* Inside auto layout */
   flex: none;
   order: 0;
   flex-grow: 0;
 }
-.h1title {
-  width: 45px;
-  height: 46px;
-  /* 中文-标准/二级标题/二级标题_Medium */
-  font-family: 'Overpass', Verdana, Arial, Helvetica, sans-serif;
-  font-style: normal;
-  font-weight: 400;
-  font-size: 38px;
-  line-height: 46px;
-  /* identical to box height, or 121% */
-  text-align: right;
-  /* 浅色模式文本/Body Text */
-  color: #3a3543;
-  /* Inside auto layout */
-  flex: none;
-  order: 0;
-  flex-grow: 0;
-}
+
 .h1content1 {
   width: 36px;
   height: 37px;
+
   /* 中文-标准/三级标题/三级标题_Medium */
-  font-family: 'Overpass', Verdana, Arial, Helvetica, sans-serif;
+  font-family: Overpass, Verdana, Arial, Helvetica, sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 28px;
   line-height: 36px;
+
   /* or 129% */
+
   /* 浅色模式文本/Body Text */
   color: #3a3543;
+
   /* Inside auto layout */
   flex: none;
   order: 1;
   flex-grow: 0;
 }
+
 .smallcontinter1box1icon {
   width: 42px;
   height: 42px;
+
   /* Inside auto layout */
   flex: none;
   order: 0;
   flex-grow: 0;
 }
+
 .smallcontinter1box1text {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 0px;
+  padding: 0;
   width: 154px;
   height: 106px;
+
   /* Inside auto layout */
   flex: none;
   order: 1;
   flex-grow: 0;
 }
+
 .smallcontinter1box1text21 {
   display: flex;
   flex-direction: row;
   align-items: flex-end;
-  padding: 0px;
+  padding: 0;
   gap: 2px;
   width: 83px;
   height: 46px;
+
   /* Inside auto layout */
   flex: none;
   order: 0;
   flex-grow: 0;
 }
+
 .h1title {
   width: 45px;
   height: 46px;
+
   /* 中文-标准/二级标题/二级标题_Medium */
-  font-family: 'Overpass', Verdana, Arial, Helvetica, sans-serif;
+  font-family: Overpass, Verdana, Arial, Helvetica, sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 38px;
   line-height: 46px;
+
   /* identical to box height, or 121% */
   text-align: right;
+
   /* 浅色模式文本/Body Text */
   color: #3a3543;
+
   /* Inside auto layout */
   flex: none;
   order: 0;
   flex-grow: 0;
 }
+
 .fontsizesmall {
   width: 36px;
   height: 37px;
+
   /* 中文-标准/三级标题/三级标题_Medium */
-  font-family: 'Overpass', Verdana, Arial, Helvetica, sans-serif;
+  font-family: Overpass, Verdana, Arial, Helvetica, sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 28px;
   line-height: 36px;
+
   /* or 129% */
+
   /* 浅色模式文本/Body Text */
   color: #3a3543;
+
   /* Inside auto layout */
   flex: none;
   order: 1;
   flex-grow: 0;
 }
+
 .contentp {
   width: 154px;
   height: 60px;
+
   /* 中文-标准/正文4-12pt/正文4_Regular */
-  font-family: 'Overpass', Verdana, Arial, Helvetica, sans-serif;
+  font-family: Overpass, Verdana, Arial, Helvetica, sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 12px;
   line-height: 20px;
+
   /* or 167% */
   text-align: center;
+
   /* 浅色模式文本/Default in Field */
   color: #6f6b78;
+
   /* Inside auto layout */
   flex: none;
   order: 1;
   flex-grow: 0;
 }
+
 .continerboxmiddletext21334 {
   position: absolute;
   top: 50px;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  padding: 0px;
+  padding: 0;
   gap: 50px;
   width: 590px;
   height: 138px;
+
   /* Inside auto layout */
   flex: none;
   order: 0;
   flex-grow: 0;
 }
+
 .continerbox234 {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  padding: 0px;
+  padding: 0;
   gap: 20px;
   width: 590px;
   height: 138px;
+
   /* Inside auto layout */
   flex: none;
   order: 0;
   align-self: stretch;
   flex-grow: 0;
 }
-.containertitle1 {
-  width: 590px;
-  height: 46px;
-  /* 中文-标准/二级标题/二级标题_Medium */
-  font-family: 'Overpass', Verdana, Arial, Helvetica, sans-serif;
-  font-style: normal;
-  font-weight: 400;
-  font-size: 38px;
-  line-height: 46px;
-  /* identical to box height, or 121% */
-  /* 浅色模式文本/Title Text */
-  color: #0c0b0e;
-}
-.containercontent {
-  width: 590px;
-  height: 72px;
-  /* 中文-标准/正文2-16pt/正文2_Regular */
-  font-family: 'Overpass', Verdana, Arial, Helvetica, sans-serif;
-  font-style: normal;
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 24px;
-  /* or 150% */
-  /* 浅色模式文本/Title Text */
-  color: #0c0b0e;
-  /* Inside auto layout */
-  flex: none;
-  order: 2;
-  align-self: stretch;
-  flex-grow: 0;
-}
+
 .canterboxsort {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  padding: 0px;
+  padding: 0;
   gap: 8px;
   width: 585px;
   height: 376px;
+
   /* Inside auto layout */
   flex: none;
   order: 1;
   flex-grow: 0;
 }
+
 .canterboxsorth1 {
   width: 137px;
   height: 24px;
+
   /* 中文-标准/正文2-16pt/正文2_Mmedium */
-  font-family: 'Overpass', Verdana, Arial, Helvetica, sans-serif;
+  font-family: Overpass, Verdana, Arial, Helvetica, sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 16px;
   line-height: 24px;
+
   /* identical to box height, or 150% */
+
   /* 浅色模式文本/Title Text */
   color: #0c0b0e;
 }
+
 .canterboxsortlist {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  padding: 0px;
+  padding: 0;
   gap: 8px;
   width: 585px;
   height: 344px;
+
   /* Inside auto layout */
   flex: none;
   order: 1;
   flex-grow: 0;
 }
+
 .canterboxsortlistone {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 0px;
+  padding: 0;
   gap: 4px;
   width: 585px;
   height: 36px;
+
   /* Inside auto layout */
   flex: none;
   order: 0;
   flex-grow: 0;
 }
+
 .canterboxsortlistonebox1 {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  padding: 0px 2px;
+  padding: 0 2px;
   gap: 480px;
   width: 585px;
   height: 24px;
+
   /* Inside auto layout */
   flex: none;
   order: 0;
   align-self: stretch;
   flex-grow: 0;
 }
+
 .line1 {
   width: 585px;
-  height: 0px;
+  height: 0;
+
   /* 辅助色/基础/Base_10 */
   border: 1px solid #ece9f1;
+
   /* Inside auto layout */
   flex: none;
   order: 1;
   flex-grow: 0;
 }
+
 .texttitle12 {
   width: 70px;
   height: 24px;
+
   /* 中文-标准/正文2-16pt/正文2_Regular */
-  font-family: 'Overpass', Verdana, Arial, Helvetica, sans-serif;
+  font-family: Overpass, Verdana, Arial, Helvetica, sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 16px;
   line-height: 24px;
+
   /* identical to box height, or 150% */
+
   /* 浅色模式文本/Body Text */
   color: #3a3543;
+
   /* Inside auto layout */
   flex: none;
   order: 0;
   flex-grow: 0;
 }
+
 .textcontent {
   width: 28px;
   height: 24px;
+
   /* 中文-标准/正文2-16pt/正文2_Regular */
-  font-family: 'Overpass', Verdana, Arial, Helvetica, sans-serif;
+  font-family: Overpass, Verdana, Arial, Helvetica, sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 16px;
   line-height: 24px;
+
   /* identical to box height, or 150% */
+
   /* 浅色模式文本/Default in Field */
   color: #6f6b78;
+
   /* Inside auto layout */
   flex: none;
   order: 1;
   flex-grow: 0;
 }
+
 .Specificationstext1 {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  padding: 0px;
+  padding: 0;
   gap: 8px;
   width: 585px;
   height: 152px;
+
   /* Inside auto layout */
   flex: none;
   order: 2;
   flex-grow: 0;
 }
+
 .Specificationstextlist {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  padding: 0px;
+  padding: 0;
   gap: 347px;
   width: 585px;
   height: 24px;
+
   /* Inside auto layout */
   flex: none;
   order: 0;
   flex-grow: 0;
 }
+
 .textfontsize1233 {
   width: 240px;
   height: 24px;
+
   /* 中文-标准/正文2-16pt/正文2_Regular */
-  font-family: 'Overpass', Verdana, Arial, Helvetica, sans-serif;
+  font-family: Overpass, Verdana, Arial, Helvetica, sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 16px;
   line-height: 24px;
+
   /* identical to box height, or 150% */
-  color: #000000;
+  color: #000;
+
   /* Inside auto layout */
   flex: none;
   order: 0;
   flex-grow: 0;
 }
+
 .textfontsize58788 {
   width: 166px;
   height: 24px;
+
   /* 中文-标准/正文2-16pt/正文2_Regular */
-  font-family: 'Overpass', Verdana, Arial, Helvetica, sans-serif;
+  font-family: Overpass, Verdana, Arial, Helvetica, sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 16px;
   line-height: 24px;
+
   /* identical to box height, or 150% */
   margin-left: -200px;
-  color: #000000;
+  color: #000;
+
   /* Inside auto layout */
   flex: none;
   order: 1;
   flex-grow: 0;
 }
+
 .continerbox12 {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
-  padding: 0px 0px 0px 60px;
+  padding: 0 0 0 60px;
   gap: 10px;
   position: absolute;
   width: 720px;
   height: 750px;
-  left: 0px;
-  top: 0px;
+  left: 0;
+  top: 0;
 }
+
 /* 轮播图样式 */
 .Rotationmapbox {
   position: relative;
   width: 1440px;
   height: 660px;
+
   /* Background/Default */
   background: #faf9fd;
+
   /* Inside auto layout */
   flex: none;
   order: 11;
   flex-grow: 0;
 }
+
 .Rotationmapboxtitle {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: flex-end;
-  padding: 0px;
+  padding: 0;
   gap: 120px;
   position: absolute;
   width: 1320px;
@@ -1436,65 +1632,77 @@ export default {
   left: 60px;
   top: 60px;
 }
+
 .Rotationmapboxtitle1 {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  padding: 0px;
+  padding: 0;
   gap: 50px;
   width: 1049px;
   height: 92px;
+
   /* Inside auto layout */
   flex: none;
   order: 0;
   flex-grow: 0;
 }
+
 .Rotationmapboxtitletext {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  padding: 0px;
+  padding: 0;
   gap: 20px;
   width: 1049px;
   height: 92px;
+
   /* Inside auto layout */
   flex: none;
   order: 0;
   align-self: stretch;
   flex-grow: 0;
 }
+
 .Rotationmapboxtitletexth1 {
   width: 1049px;
   height: 92px;
+
   /* 中文-标准/二级标题/二级标题_Medium */
-  font-family: 'Overpass', Verdana, Arial, Helvetica, sans-serif;
+  font-family: Overpass, Verdana, Arial, Helvetica, sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 38px;
   line-height: 46px;
+
   /* or 121% */
+
   /* 浅色模式文本/Title Text */
   color: #0c0b0e;
+
   /* Inside auto layout */
   flex: none;
   order: 0;
   align-self: stretch;
   flex-grow: 0;
 }
+
 .Rotationmapboxtitlebutton {
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  padding: 0px;
+  padding: 0;
   gap: 16px;
   width: 151px;
   height: 44px;
+
   /* Inside auto layout */
   flex: none;
   order: 1;
   flex-grow: 0;
 }
+
 .buttontext1223 {
   display: flex;
   flex-direction: row;
@@ -1503,32 +1711,38 @@ export default {
   padding: 10px 28px;
   width: 151px;
   height: 44px;
-  background: #ffffff;
+  background: #fff;
+
   /* 功能色/品牌/Brand_light */
   border: 1px solid #4132c7;
   border-radius: 22px;
+
   /* Inside auto layout */
   flex: none;
   order: 0;
   flex-grow: 0;
 }
+
 .spantextbox {
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  padding: 0px;
+  padding: 0;
   gap: 8px;
   width: 95px;
   height: 24px;
+
   /* Inside auto layout */
   flex: none;
   order: 0;
   flex-grow: 0;
 }
+
 .spantext12 {
   color: #4132c7;
 }
+
 .Rotationmapboxtitletwo {
   display: flex;
   flex-direction: row;
@@ -1539,9 +1753,10 @@ export default {
   position: absolute;
   width: 1440px;
   height: 383.6px;
-  left: 0px;
+  left: 0;
   top: 216px;
 }
+
 .Rotationmapboxtitletwo-image1 {
   width: 46px;
   height: 46px;
@@ -1552,13 +1767,13 @@ export default {
   order: 0;
   flex-grow: 0;
 }
+
 .Rotationmapboxtitletwo-content2 {
   display: flex;
   flex-direction: row;
   align-items: flex-start;
-  padding: 0px;
+  padding: 0;
   gap: 50px;
-
   width: 1240px;
   height: 383.6px;
 
@@ -1568,6 +1783,7 @@ export default {
   order: 1;
   flex-grow: 0;
 }
+
 .Rotationmapboxtitletwo-image3 {
   width: 46px;
   height: 46px;
@@ -1578,19 +1794,19 @@ export default {
   order: 2;
   flex-grow: 0;
 }
+
 .Rotationmapboxtitletwo-content2box1 {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: 24px;
-
   width: 380px;
   height: 383.6px;
 
   /* 浅色模式文本/Anti */
 
-  background: #ffffff;
+  background: #fff;
   border-radius: 16px;
 
   /* Inside auto layout */
@@ -1599,17 +1815,19 @@ export default {
   order: 0;
   flex-grow: 0;
 }
+
 .Rotationmapbheadh1 {
   width: 158px;
   height: 32px;
 
   /* 中文-标准/四级标题/四级标题_Medium */
 
-  font-family: 'Overpass', Verdana, Arial, Helvetica, sans-serif;
+  font-family: Overpass, Verdana, Arial, Helvetica, sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 24px;
   line-height: 32px;
+
   /* identical to box height, or 133% */
 
   text-align: center;
@@ -1624,25 +1842,28 @@ export default {
   order: 0;
   flex-grow: 0;
 }
+
 .Rotationmapbmiddle {
   position: relative;
   width: 320px;
   height: 140px;
 }
+
 .Rotationmapbheadfontcontent {
   position: absolute;
   height: 140px;
   left: 0%;
   right: 0%;
-  top: 0px;
+  top: 0;
 
   /* Paragraph Regular/16px */
 
-  font-family: 'Overpass', Verdana, Arial, Helvetica, sans-serif;
+  font-family: Overpass, Verdana, Arial, Helvetica, sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 16px;
   line-height: 150%;
+
   /* or 24px */
 
   text-align: center;
@@ -1651,13 +1872,13 @@ export default {
 
   color: #3a3543;
 }
+
 .Rotationmapbottom {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 0px;
+  padding: 0;
   gap: 24px;
-
   width: 183.79px;
   height: 91.6px;
 
@@ -1667,11 +1888,13 @@ export default {
   order: 2;
   flex-grow: 0;
 }
+
 .Rotationmapbostart1 {
   position: relative;
   width: 180px;
   height: 23.6px;
 }
+
 .Rotationmapbostart1-small {
   position: absolute;
   left: 1.03%;
@@ -1679,34 +1902,39 @@ export default {
   top: 0%;
   bottom: 74.23%;
 }
+
 .Rotationmapbostart1-img {
   margin-top: 24px;
   margin-right: 7px;
   width: 24px;
   height: 23.6px;
 }
+
 .Rotationmapbogroup5 {
   position: absolute;
   margin-top: 13px;
   width: 183.79px;
   height: 44px;
+
   /* Inside auto layout */
   flex: none;
   order: 1;
   flex-grow: 0;
 }
+
 .Rotationmapbogroupbox54 {
   display: flex;
   flex-direction: row;
   align-items: center;
-  padding: 0px;
+  padding: 0;
   gap: 16px;
   position: relative;
   width: 183.79px;
   height: 44px;
-  left: 0px;
+  left: 0;
   top: 47.6px;
 }
+
 .people-photo-placeholder {
   position: absolute;
   width: 40.68px;
@@ -1718,6 +1946,7 @@ export default {
   order: 0;
   flex-grow: 0;
 }
+
 .people-photo-placeholdericon {
   position: absolute;
   width: 40px;
@@ -1730,13 +1959,13 @@ export default {
   background: #f4f0ff;
   border-radius: 60px;
 }
+
 .feame821 {
   margin-left: 50px;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  padding: 0px;
-
+  padding: 0;
   width: 127.11px;
   height: 44px;
 
@@ -1746,6 +1975,7 @@ export default {
   order: 1;
   flex-grow: 0;
 }
+
 .spanhead {
   /* Mang Oleh */
 
@@ -1754,11 +1984,12 @@ export default {
 
   /* 中文-标准/正文3-14pt/正文3_Medium */
 
-  font-family: 'Overpass', Verdana, Arial, Helvetica, sans-serif;
+  font-family: Overpass, Verdana, Arial, Helvetica, sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 14px;
   line-height: 22px;
+
   /* identical to box height, or 157% */
 
   /* 浅色模式文本/Title Text */
@@ -1771,34 +2002,40 @@ export default {
   order: 0;
   flex-grow: 0;
 }
+
 .spanmiddle {
   width: 127.11px;
   height: 22px;
 
   /* 中文-标准/正文3-14pt/正文3_Regular */
 
-  font-family: 'Overpass', Verdana, Arial, Helvetica, sans-serif;
+  font-family: Overpass, Verdana, Arial, Helvetica, sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 12px;
   line-height: 22px;
+
   /* identical to box height, or 157% */
 
   /* 浅色模式文本/Body Text */
 
   color: #3a3543;
+
   /* Inside auto layout */
   flex: none;
   order: 1;
   flex-grow: 0;
 }
+
 .uk-box3 {
   margin-top: 76px;
 }
+
 .uk-box4 {
   margin-top: 76px;
   margin-bottom: 30px;
 }
+
 .uk-box5 {
   margin-top: 76px;
   margin-bottom: 30px;

@@ -39,9 +39,19 @@
 </template>
 
 <script type="module">
-import { SfButton, SfList, SfBottomModal, SfCharacteristic } from '@storefront-ui/vue'
+import {
+  SfButton,
+  SfList,
+  SfBottomModal,
+  SfCharacteristic
+} from '@storefront-ui/vue'
 import { useAvailableCountries } from '@vue-storefront/shopify'
-import { ref, computed, useRouter, onBeforeMount } from '@nuxtjs/composition-api'
+import {
+  ref,
+  computed,
+  useRouter,
+  onBeforeMount
+} from '@nuxtjs/composition-api'
 
 export default {
   components: {

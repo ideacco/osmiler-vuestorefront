@@ -31,7 +31,9 @@
                 :key="wishlistGetters.getItemSku(product)"
                 :image="addBasePath(wishlistGetters.getItemImage(product))"
                 :title="wishlistGetters.getItemName(product)"
-                :regular-price="$n(wishlistGetters.getItemPrice(product).regular, 'currency')"
+                :regular-price="
+                  $n(wishlistGetters.getItemPrice(product).regular, 'currency')
+                "
                 :special-price="
                   wishlistGetters.getItemPrice(product).special &&
                     $n(wishlistGetters.getItemPrice(product).special, 'currency')
@@ -45,7 +47,9 @@
                 <template #configuration>
                   <div class="collected-product__properties">
                     <SfProperty
-                      v-for="(attribute, key) in wishlistGetters.getItemAttributes(product, [
+                      v-for="(
+                        attribute, key
+                      ) in wishlistGetters.getItemAttributes(product, [
                         'color',
                         'size',
                       ])"
@@ -60,7 +64,9 @@
             </transition-group>
           </div>
           <div class="sidebar-bottom">
-            <SfProperty class="sf-property--full-width my-wishlist__total-price">
+            <SfProperty
+              class="sf-property--full-width my-wishlist__total-price"
+            >
               <template #name>
                 <span class="my-wishlist__total-price-label">Total price:</span>
               </template>
@@ -87,7 +93,10 @@
         </div>
       </transition>
       <template #content-bottom>
-        <SfButton @click="toggleWishlistSidebar" class="sf-button--full-width color-secondary">
+        <SfButton
+          @click="toggleWishlistSidebar"
+          class="sf-button--full-width color-secondary"
+        >
           {{ $t('Start shopping') }}
         </SfButton>
       </template>
@@ -128,7 +137,9 @@ export default {
     const { isAuthenticated } = useUser()
     const products = computed(() => wishlistGetters.getItems(wishlist.value))
     const totals = computed(() => wishlistGetters.getTotals(wishlist.value))
-    const totalItems = computed(() => wishlistGetters.getTotalItems(wishlist.value))
+    const totalItems = computed(() =>
+      wishlistGetters.getTotalItems(wishlist.value)
+    )
 
     return {
       addBasePath,
@@ -149,7 +160,8 @@ export default {
 .sidebar {
   --sidebar-z-index: 3;
   --overlay-z-index: 3;
-  --sidebar-top-padding: var(--spacer-lg) var(--spacer-base) 0 var(--spacer-base);
+  --sidebar-top-padding: var(--spacer-lg) var(--spacer-base) 0
+    var(--spacer-base);
   --sidebar-content-padding: var(--spacer-lg) var(--spacer-base);
 }
 
@@ -158,7 +170,8 @@ export default {
   display: flex;
   flex-direction: column;
   &__total-items {
-    font: var(--font-weight--normal) var(--font-size--lg) / 1.6 var(--font-family--secondary);
+    font: var(--font-weight--normal) var(--font-size--lg) / 1.6
+      var(--font-family--secondary);
     color: var(--c-link);
     margin: 0;
   }
@@ -167,7 +180,8 @@ export default {
     --price-font-size: var(--font-size--xl);
     margin: 0 0 var(--spacer-xl) 0;
     &-label {
-      font: var(--font-weight--normal) var(--font-size--2xl) / 1.6 var(--font-family--secondary);
+      font: var(--font-weight--normal) var(--font-size--2xl) / 1.6
+        var(--font-family--secondary);
       color: var(--c-link);
     }
   }

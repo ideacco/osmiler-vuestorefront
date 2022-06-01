@@ -1,6 +1,11 @@
 <template>
   <div>
-    <SfModal v-e2e="'login-modal'" :visible="isLoginModalOpen" class="modal" @close="handleClose">
+    <SfModal
+      v-e2e="'login-modal'"
+      :visible="isLoginModalOpen"
+      class="modal"
+      @close="handleClose"
+    >
       <template>
         <SfBar
           class="sf-modal__bar smartphone-only"
@@ -56,7 +61,10 @@
             </form>
           </ValidationObserver>
           <div class="action">
-            <SfButton class="sf-button--text" @click="setIsForgottenValue(true)">
+            <SfButton
+              class="sf-button--text"
+              @click="setIsForgottenValue(true)"
+            >
               Forgotten password
             </SfButton>
           </div>
@@ -97,14 +105,22 @@
           </ValidationObserver>
         </div>
         <div v-else-if="isThankYouAfterForgotten" class="thank-you">
-          <i18n tag="p" class="thank-you__paragraph" path="forgotPasswordConfirmation">
+          <i18n
+            tag="p"
+            class="thank-you__paragraph"
+            path="forgotPasswordConfirmation"
+          >
             <span class="thank-you__paragraph--bold">{{ userEmail }}</span>
           </i18n>
           <p class="thank-you__paragraph">Thank You Inbox</p>
         </div>
         <div v-else class="form">
           <ValidationObserver v-slot="{ handleSubmit }" key="sign-up">
-            <form class="form" autocomplete="off" @submit.prevent="handleSubmit(handleRegister)">
+            <form
+              class="form"
+              autocomplete="off"
+              @submit.prevent="handleSubmit(handleRegister)"
+            >
               <ValidationProvider v-slot="{ errors }" rules="required|email">
                 <SfInput
                   v-model="form.email"
@@ -150,7 +166,10 @@
                   class="form__element"
                 />
               </ValidationProvider>
-              <ValidationProvider v-slot="{ errors }" :rules="{ required: { allowFalse: false } }">
+              <ValidationProvider
+                v-slot="{ errors }"
+                :rules="{ required: { allowFalse: false } }"
+              >
                 <SfCheckbox
                   v-model="createAccount"
                   v-e2e="'login-modal-create-account'"
@@ -164,14 +183,20 @@
               <div v-if="error.register">
                 {{ error.register }}
               </div>
-              <SfButton type="submit" class="sf-button--full-width form__button">
+              <SfButton
+                type="submit"
+                class="sf-button--full-width form__button"
+              >
                 <div>Create an account</div>
               </SfButton>
             </form>
           </ValidationObserver>
           <div class="action">
             or
-            <SfButton class="sf-button--text back-to-login" @click="setIsLoginValue(true)">
+            <SfButton
+              class="sf-button--text back-to-login"
+              @click="setIsLoginValue(true)"
+            >
               login in to your account
             </SfButton>
           </div>
@@ -181,8 +206,22 @@
   </div>
 </template>
 <script>
-import { ref, watch, reactive, computed, useRouter, useContext } from '@nuxtjs/composition-api'
-import { SfModal, SfInput, SfButton, SfCheckbox, SfLoader, SfBar } from '@storefront-ui/vue'
+import {
+  ref,
+  watch,
+  reactive,
+  computed,
+  useRouter,
+  useContext
+} from '@nuxtjs/composition-api'
+import {
+  SfModal,
+  SfInput,
+  SfButton,
+  SfCheckbox,
+  SfLoader,
+  SfBar
+} from '@storefront-ui/vue'
 import { ValidationProvider, ValidationObserver, extend } from 'vee-validate'
 import { required, email } from 'vee-validate/dist/rules'
 import { useUser, useForgotPassword } from '@vue-storefront/shopify'
@@ -301,7 +340,9 @@ export default {
       } else if (user.value.token && user.value.token === 'forgotPassword') {
         sendNotification({
           key: 'link_sent',
-          message: 'Reset password link has been successfully sent to ' + form.value.username,
+          message:
+            'Reset password link has been successfully sent to ' +
+            form.value.username,
           type: 'success',
           icon: 'check',
           title: 'linkSent!'
@@ -413,7 +454,8 @@ export default {
   align-items: center;
   justify-content: center;
   margin: var(--spacer-xl) 0 var(--spacer-xl) 0;
-  font: var(--font-weight--light) var(--font-size--base) / 1.6 var(--font-family--secondary);
+  font: var(--font-weight--light) var(--font-size--base) / 1.6
+    var(--font-family--secondary);
   & > * {
     margin: 0 0 0 var(--spacer-xs);
   }

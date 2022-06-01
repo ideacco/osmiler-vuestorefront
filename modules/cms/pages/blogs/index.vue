@@ -2,7 +2,12 @@
   <div>...</div>
 </template>
 <script lang="ts">
-import { defineComponent, useRouter, onBeforeMount, useContext } from '@nuxtjs/composition-api'
+import {
+  defineComponent,
+  useRouter,
+  onBeforeMount,
+  useContext,
+} from '@nuxtjs/composition-api'
 import { useContent, ContentType } from '@vue-storefront/shopify'
 
 export default defineComponent({
@@ -19,11 +24,11 @@ export default defineComponent({
         router.push(
           context.app.localePath({
             name: 'blogs-handle',
-            params: { handle: content?.value?.[0]?.handle }
+            params: { handle: content?.value?.[0]?.handle },
           })
         )
       }
     })
-  }
+  },
 })
 </script>

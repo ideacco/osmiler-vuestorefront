@@ -29,8 +29,19 @@
 <script>
 import AssHeader from '~/components/JHeader.vue'
 import LazyHydrate from 'vue-lazy-hydration'
-import { useUser, cartGetters, useCart, userGetters } from '@vue-storefront/shopify'
-import { computed, onBeforeMount, provide, useRoute, useContext } from '@nuxtjs/composition-api'
+import {
+  useUser,
+  cartGetters,
+  useCart,
+  userGetters
+} from '@vue-storefront/shopify'
+import {
+  computed,
+  onBeforeMount,
+  provide,
+  useRoute,
+  useContext
+} from '@nuxtjs/composition-api'
 import LoadWhenVisible from '~/components/utils/LoadWhenVisible'
 
 export default {
@@ -38,12 +49,18 @@ export default {
   components: {
     LazyHydrate,
     AssHeader,
-    BottomNavigation: () => import(/* webpackPrefetch: true */ '~/components/BottomNavigation.vue'),
-    AppFooter: () => import(/* webpackPrefetch: true */ '~/components/AppFooter.vue'),
-    CartSidebar: () => import(/* webpackPrefetch: true */ '~/components/CartSidebar.vue'),
-    WishlistSidebar: () => import(/* webpackPrefetch: true */ '~/components/WishlistSidebar.vue'),
-    LoginModal: () => import(/* webpackPrefetch: true */ '~/components/LoginModal.vue'),
-    Notification: () => import(/* webpackPrefetch: true */ '~/components/Notification'),
+    BottomNavigation: () =>
+      import(/* webpackPrefetch: true */ '~/components/BottomNavigation.vue'),
+    AppFooter: () =>
+      import(/* webpackPrefetch: true */ '~/components/AppFooter.vue'),
+    CartSidebar: () =>
+      import(/* webpackPrefetch: true */ '~/components/CartSidebar.vue'),
+    WishlistSidebar: () =>
+      import(/* webpackPrefetch: true */ '~/components/WishlistSidebar.vue'),
+    LoginModal: () =>
+      import(/* webpackPrefetch: true */ '~/components/LoginModal.vue'),
+    Notification: () =>
+      import(/* webpackPrefetch: true */ '~/components/Notification'),
     LoadWhenVisible
   },
   setup() {
@@ -51,8 +68,12 @@ export default {
     const context = useContext()
     const { load: loadUser, user: userInfo } = useUser()
     const { load: loadCart, cart } = useCart()
-    const getCartTotalItems = computed(() => cartGetters.getTotalItems(cart.value))
-    const isAuthenticated = computed(() => !!userGetters.getFirstName(userInfo.value))
+    const getCartTotalItems = computed(() =>
+      cartGetters.getTotalItems(cart.value)
+    )
+    const isAuthenticated = computed(
+      () => !!userGetters.getFirstName(userInfo.value)
+    )
     provide('currentCart', cart)
     onBeforeMount(async () => {
       await loadUser()

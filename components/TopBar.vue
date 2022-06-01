@@ -5,7 +5,9 @@
     </template>
     <template #center>
       <p>{{ $t('Download') }}</p>
-      <SfButton class="topbar__button sf-button--text">{{ $t('Find out more') }}</SfButton>
+      <SfButton class="topbar__button sf-button--text">{{
+        $t('Find out more')
+      }}</SfButton>
     </template>
     <template #right>
       <LocaleSelector />

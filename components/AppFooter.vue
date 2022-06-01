@@ -15,7 +15,10 @@
             </div>
             <div class="uk-margin">let your smile light up the world</div>
             <div class="uk-visible@s uk-margin-remove-vertical">
-              <div class="uk-child-width-auto uk-grid-small uk-flex-inline" uk-grid>
+              <div
+                class="uk-child-width-auto uk-grid-small uk-flex-inline"
+                uk-grid
+              >
                 <div>
                   <a
                     class="el-link uk-icon-button"
@@ -56,22 +59,30 @@
             <ul class="uk-list uk-list-collapse uk-hidden@s">
               <li class="el-item">
                 <div class="el-content uk-panel">
-                  <a class="el-link uk-link-text uk-margin-remove-last-child">About Us</a>
+                  <a class="el-link uk-link-text uk-margin-remove-last-child"
+                  >About Us</a
+                  >
                 </div>
               </li>
               <li class="el-item">
                 <div class="el-content uk-panel">
-                  <a class="el-link uk-link-text uk-margin-remove-last-child">Contact</a>
+                  <a class="el-link uk-link-text uk-margin-remove-last-child"
+                  >Contact</a
+                  >
                 </div>
               </li>
               <li class="el-item">
                 <div class="el-content uk-panel">
-                  <a class="el-link uk-link-text uk-margin-remove-last-child">Imprint</a>
+                  <a class="el-link uk-link-text uk-margin-remove-last-child"
+                  >Imprint</a
+                  >
                 </div>
               </li>
               <li class="el-item">
                 <div class="el-content uk-panel">
-                  <a class="el-link uk-link-text uk-margin-remove-last-child">Privacy Policy</a>
+                  <a class="el-link uk-link-text uk-margin-remove-last-child"
+                  >Privacy Policy</a
+                  >
                 </div>
               </li>
             </ul>
@@ -81,12 +92,16 @@
             <ul class="uk-list uk-list-collapse">
               <li class="el-item">
                 <div class="el-content uk-panel">
-                  <a class="el-link uk-link-text uk-margin-remove-last-child">Services</a>
+                  <a class="el-link uk-link-text uk-margin-remove-last-child"
+                  >Services</a
+                  >
                 </div>
               </li>
               <li class="el-item">
                 <div class="el-content uk-panel">
-                  <a class="el-link uk-link-text uk-margin-remove-last-child">Doctors</a>
+                  <a class="el-link uk-link-text uk-margin-remove-last-child"
+                  >Doctors</a
+                  >
                 </div>
               </li>
             </ul>
@@ -96,12 +111,16 @@
             <ul class="uk-list uk-list-collapse uk-visible@s">
               <li class="el-item">
                 <div class="el-content uk-panel">
-                  <a class="el-link uk-link-text uk-margin-remove-last-child">About Us</a>
+                  <a class="el-link uk-link-text uk-margin-remove-last-child"
+                  >About Us</a
+                  >
                 </div>
               </li>
               <li class="el-item">
                 <div class="el-content uk-panel">
-                  <a class="el-link uk-link-text uk-margin-remove-last-child">Contact</a>
+                  <a class="el-link uk-link-text uk-margin-remove-last-child"
+                  >Contact</a
+                  >
                 </div>
               </li>
             </ul>
@@ -115,13 +134,21 @@
         </div>
       </div>
     </div>
-    <div class="uk-section-default uk-section uk-section-small uk-padding-remove-top">
+    <div
+      class="uk-section-default uk-section uk-section-small uk-padding-remove-top"
+    >
       <div class="uk-container uk-container-large">
         <div class="tm-grid-expand uk-grid-small uk-margin-small" uk-grid>
           <div class="uk-width-1-2@s uk-width-1-4@m">
-            <div class="uk-panel uk-margin-remove-vertical uk-text-left@s uk-text-center">
+            <div
+              class="uk-panel uk-margin-remove-vertical uk-text-left@s uk-text-center"
+            >
               <p class="uk-text-small">
-                <a href="#" class="uk-link-text uk-margin-small-right">Imprint</a>|<a
+                <a
+                  href="#"
+                  class="uk-link-text uk-margin-small-right"
+                >Imprint</a
+                >|<a
                   href="#"
                   class="uk-link-text uk-margin-small-left"
                 >Privacy Policy</a
@@ -142,7 +169,7 @@
                 year: 'numeric',
                 }).format() +
                 '<\/time>'
-                );
+                )
               </script>
               Union Dental. All rights reserved.<br class="uk-hidden@s" />
               Powered by <a href="https://yootheme.com/">YOOtheme</a>.
@@ -163,7 +190,7 @@
                 year: 'numeric',
                 }).format() +
                 '<\/time>'
-                );
+                )
               </script>
               OSMILER. All rights reserved.<br class="uk-hidden@s" />
             </div>
@@ -171,7 +198,10 @@
           <div class="uk-width-1-2@s uk-width-1-4@m"></div>
           <div class="uk-width-1-2@s uk-width-1-4@m">
             <div class="uk-margin">
-              <div class="uk-child-width-auto uk-grid-small uk-flex-inline" uk-grid>
+              <div
+                class="uk-child-width-auto uk-grid-small uk-flex-inline"
+                uk-grid
+              >
                 <div>
                   <a
                     class="el-link uk-icon-button"

@@ -82,7 +82,7 @@
                 class="desktop-only"
                 name="Size"
                 value="XS"
-                style="margin: 0 0 1rem 0"
+                style="margin: 0 0 1rem"
               />
               <SfProperty class="desktop-only" name="Color" value="white" />
             </template>
@@ -394,7 +394,7 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
-@import "~@storefront-ui/vue/styles";
+@import '~@storefront-ui/vue/styles';
 .footer {
 }
 #category {
@@ -413,7 +413,7 @@ export default {
   }
 }
 .breadcrumbs {
-  font-family: "Alibaba PuHuiTi";
+  font-family: 'Alibaba PuHuiTi';
   font-style: normal;
   font-weight: 400;
   font-size: 38px;
@@ -670,7 +670,7 @@ export default {
 }
 .sf-breadcrumbs__breadcrumb {
   top: 174px;
-  font-family: "Alibaba PuHuiTi";
+  font-family: 'Alibaba PuHuiTi';
   font-style: normal;
   font-weight: 400;
   font-size: 38px;

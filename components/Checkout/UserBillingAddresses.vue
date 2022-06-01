@@ -84,6 +84,7 @@ export default {
   grid-template-columns: 1fr 1fr;
   margin-bottom: var(--spacer-xl);
 }
+
 .billing-address-setAsDefault,
 .form__action-button--margin-bottom {
   margin-bottom: var(--spacer-xl);

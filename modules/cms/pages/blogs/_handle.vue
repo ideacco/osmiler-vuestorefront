@@ -19,7 +19,7 @@
               :key="option.value"
               :value="option.value"
               class="sort-by__option"
-            >{{ option.label }}</SfComponentSelectOption
+              >{{ option.label }}</SfComponentSelectOption
             >
           </SfComponentSelect>
         </div>
@@ -27,7 +27,7 @@
           <span class="navbar__label desktop-only">Showing: </span>
           <span class="desktop-only">{{ articles.length }}</span>
           <span class="navbar__label smartphone-only"
-          >{{ articles.length }} Items</span
+            >{{ articles.length }} Items</span
           >
         </div>
         <div class="navbar__view">
@@ -95,7 +95,7 @@
       <SfLoader :loading="isPageLoading" :class="{ loading: isPageLoading }">
         <div v-if="!isPageLoading" class="blogs">
           <div v-if="articles.length === 0">
-            {{ $t("No Article Available") }}
+            {{ $t('No Article Available') }}
           </div>
           <transition-group
             v-if="isGridView"
@@ -289,7 +289,7 @@ import {
   SfBreadcrumbs,
   SfProductCardHorizontal,
   SfSelect,
-  SfLoader
+  SfLoader,
 } from '@storefront-ui/vue'
 import { SortBy } from '~/modules/cms/enums/SortBy'
 import LazyHydrate from 'vue-lazy-hydration'
@@ -299,14 +299,14 @@ import {
   computed,
   ref,
   watchEffect,
-  useContext
+  useContext,
 } from '@nuxtjs/composition-api'
 import { onSSR } from '@vue-storefront/core'
 import { useContent, ContentType } from '@vue-storefront/shopify'
 import {
   getArticleImage,
   getArticleLink,
-  getArticlePublishedAt
+  getArticlePublishedAt,
 } from '~/helpers/article'
 
 export default {
@@ -325,7 +325,7 @@ export default {
     SfSelect,
     SfProductCardHorizontal,
     LazyHydrate,
-    SfLoader
+    SfLoader,
   },
   setup() {
     const route = useRoute()
@@ -334,13 +334,13 @@ export default {
     const {
       search: getBlogs,
       content: blogs,
-      loading: isBlogsLoading
+      loading: isBlogsLoading,
     } = useContent('blogs')
     const { search: getBlog } = useContent('blog')
     const {
       search: getArticles,
       content: articlesContent,
-      loading: isArticlesLoading
+      loading: isArticlesLoading,
     } = useContent('articles')
 
     const currentHandle = ref(route?.value?.params?.handle)
@@ -350,12 +350,12 @@ export default {
     const sortByOptions = [
       {
         value: 'latest',
-        label: 'Latest First'
+        label: 'Latest First',
       },
       {
         value: 'oldest',
-        label: 'Oldest First'
-      }
+        label: 'Oldest First',
+      },
     ]
     const selectedSortBy = ref(SortBy.Latest)
 
@@ -366,7 +366,7 @@ export default {
 
       getBlog({
         contentType: ContentType.Blog,
-        handle: currentHandle.value
+        handle: currentHandle.value,
       })
 
       await getArticles({
@@ -374,7 +374,7 @@ export default {
         query: `blog_title:${currentHandle.value}`,
         first: parseInt(articlesPerPage.value),
         reverse: true,
-        sortKey: 'PUBLISHED_AT'
+        sortKey: 'PUBLISHED_AT',
       })
     })
 
@@ -412,7 +412,7 @@ export default {
         contentType: ContentType.Article,
         query: `blog_title:${currentHandle.value}`,
         first: parseInt(articlesPerPage.value),
-        sortKey: 'PUBLISHED_AT'
+        sortKey: 'PUBLISHED_AT',
       }
 
       if (selectedSortBy.value === SortBy.Latest) {
@@ -453,23 +453,23 @@ export default {
       isPageLoading,
       sidebarAccordion: [
         {
-          header: 'Categories'
-        }
+          header: 'Categories',
+        },
       ],
       breadcrumbs: [
         {
           text: 'Home',
-          link: '/'
+          link: '/',
         },
         {
           text: 'Blogs',
           link: context.app.localePath({
-            name: 'blogs'
-          })
-        }
-      ]
+            name: 'blogs',
+          }),
+        },
+      ],
     }
-  }
+  },
 }
 </script>
 <style lang="scss" scoped>

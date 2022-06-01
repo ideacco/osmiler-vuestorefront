@@ -1,4 +1,23 @@
 /* https://fonts.googleapis.com/css?family=Inter:500,600|Open+Sans:400 generated on 2022-05-25T07:44:51+00:00 */
-@font-face {font-family: 'Inter'; font-style: normal; font-weight: 500; src: url(./font-2bc258d4.woff2) format('woff2'), url(./font-9975ca18.woff) format('woff'); }
-@font-face {font-family: 'Inter'; font-style: normal; font-weight: 600; src: url(./font-bb2dbba5.woff2) format('woff2'), url(./font-c98b2a17.woff) format('woff'); }
-@font-face {font-family: 'Open Sans'; font-style: normal; font-weight: 400; font-stretch: normal; src: url(./font-89480a84.woff2) format('woff2'), url(./font-7bce947b.woff) format('woff'); }
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  src: url(./font-2bc258d4.woff2) format('woff2'),
+    url(./font-9975ca18.woff) format('woff');
+}
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 600;
+  src: url(./font-bb2dbba5.woff2) format('woff2'),
+    url(./font-c98b2a17.woff) format('woff');
+}
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-stretch: normal;
+  src: url(./font-89480a84.woff2) format('woff2'),
+    url(./font-7bce947b.woff) format('woff');
+}
