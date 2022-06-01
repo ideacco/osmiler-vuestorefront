@@ -12,7 +12,9 @@
       <div class="right">
         <div class="words flex-between">
           <div class="name">{{ audioName == null ? '未知' : audioName }}</div>
-          <div class="time">{{ formatCurrentTime }} / {{ formatTotalTime }}</div>
+          <div class="time">
+            {{ formatCurrentTime }} / {{ formatTotalTime }}
+          </div>
         </div>
         <div class="duration">
           <input
@@ -111,7 +113,8 @@ export default {
       const range = this.$refs.range
       range.value = ((this.currentTime / this.totalTime) * 360).toFixed(1)
       // 进度条的值改变的时候，颜色也跟着变化
-      const persentage = ((this.currentTime / this.totalTime) * 100).toFixed(1) + '%'
+      const persentage =
+        ((this.currentTime / this.totalTime) * 100).toFixed(1) + '%'
       this.$refs.range.style.backgroundSize = `${persentage} 100%`
     },
 
@@ -143,6 +146,7 @@ export default {
   border-radius: 2px;
   display: flex;
 }
+
 .left {
   margin-right: 16px;
 }
@@ -153,53 +157,60 @@ export default {
   height: 28px;
   border: 2px solid #10a9ff;
   border-radius: 50%;
-
   text-align: center;
   font-size: 16px;
   line-height: 28px;
 }
+
 .icon:hover {
   cursor: pointer;
 }
+
 .play-icon {
   position: relative;
   left: 2px;
 }
+
 .flex-between {
   display: flex;
   justify-content: space-between;
   align-content: center;
 }
+
 .right {
   flex: 1;
 }
+
 .words {
   margin-bottom: -1px;
 }
+
 .name {
   font-size: 14px;
-  color: #333333;
+  color: #333;
   line-height: 14px;
 }
+
 .time {
   font-size: 14px;
-  color: #666666;
+  color: #666;
   line-height: 14px;
 }
 
 input[type='range'] {
   outline: none;
-  -webkit-appearance: none; /*清除系统默认样式*/
+  -webkit-appearance: none; /* 清除系统默认样式 */
   width: 100% !important;
-  background: -webkit-linear-gradient(#10a9ff, #10a9ff) no-repeat, #dddddd; /*背景颜色，俩个颜色分别对应上下*/
-  background-size: 0% 100%; /*设置左右宽度比例，这里可以设置为拖动条属性*/
-  height: 2px; /*横条的高度，细的真的比较好看嗯*/
+  background: -webkit-linear-gradient(#10a9ff, #10a9ff) no-repeat, #ddd; /* 背景颜色，俩个颜色分别对应上下 */
+  background-size: 0% 100%; /* 设置左右宽度比例，这里可以设置为拖动条属性 */
+  height: 2px; /* 横条的高度，细的真的比较好看嗯 */
 }
-/*拖动块的样式*/
+
+/* 拖动块的样式 */
 input[type='range']::-webkit-slider-thumb {
-  -webkit-appearance: none; /*清除系统默认样式*/
-  height: 10px; /*拖动块高度*/
-  width: 3px; /*拖动块宽度*/
-  background: #10a9ff; /*拖动块背景*/
+  -webkit-appearance: none; /* 清除系统默认样式 */
+  height: 10px; /* 拖动块高度 */
+  width: 3px; /* 拖动块宽度 */
+  background: #10a9ff; /* 拖动块背景 */
 }
 </style>

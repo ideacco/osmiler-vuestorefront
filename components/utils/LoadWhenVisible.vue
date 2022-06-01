@@ -4,7 +4,12 @@
   </div>
 </template>
 <script>
-import { defineComponent, onMounted, onUnmounted, ref } from '@nuxtjs/composition-api'
+import {
+  defineComponent,
+  onMounted,
+  onUnmounted,
+  ref
+} from '@nuxtjs/composition-api'
 
 export default defineComponent({
   name: 'LoadWhenVisible',

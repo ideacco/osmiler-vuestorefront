@@ -7,16 +7,33 @@
       <div class="form">
         <p class="form__title">{{ $t('Sections that interest you') }}</p>
         <div class="form__checkbox-group">
-          <SfCheckbox v-model="newsletter" label="Woman" value="woman" class="form__element" />
-          <SfCheckbox v-model="newsletter" label="Man" value="man" class="form__element" />
-          <SfCheckbox v-model="newsletter" label="Kids" value="kids" class="form__element" />
+          <SfCheckbox
+            v-model="newsletter"
+            label="Woman"
+            value="woman"
+            class="form__element"
+          />
+          <SfCheckbox
+            v-model="newsletter"
+            label="Man"
+            value="man"
+            class="form__element"
+          />
+          <SfCheckbox
+            v-model="newsletter"
+            label="Kids"
+            value="kids"
+            class="form__element"
+          />
         </div>
         <SfButton class="form__button">{{ $t('Save changes') }}</SfButton>
       </div>
       <p class="notice">
         {{ $t('Read and understand') }}
         <SfLink class="notice__link" href="#">{{ $t('Privacy') }}</SfLink> and
-        <SfLink class="notice__link" href="#">{{ $t('Cookies Policy') }}</SfLink>
+        <SfLink class="notice__link" href="#">{{
+          $t('Cookies Policy')
+        }}</SfLink>
         {{ $t('Commercial information') }}
       </p>
     </SfTab>

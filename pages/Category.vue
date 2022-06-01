@@ -1,6 +1,9 @@
 <template>
   <div id="category">
-    <SfBreadcrumbs class="breadcrumbs breadcrumbs-center" :breadcrumbs="breadcrumbs">
+    <SfBreadcrumbs
+      class="breadcrumbs breadcrumbs-center"
+      :breadcrumbs="breadcrumbs"
+    >
       <template #link="{ breadcrumb }">
         <nuxt-link
           :data-testid="breadcrumb.text"
@@ -33,9 +36,13 @@
           </SfSelect>
         </div>
         <div class="navbar__counter">
-          <span class="navbar__label desktop-only">{{ $t('Products found') }}: </span>
+          <span class="navbar__label desktop-only"
+          >{{ $t('Products found') }}:
+          </span>
           <span class="desktop-only">{{ pagination.totalItems }}</span>
-          <span class="navbar__label smartphone-only">{{ pagination.totalItems }} Items</span>
+          <span class="navbar__label smartphone-only"
+          >{{ pagination.totalItems }} Items</span
+          >
         </div>
         <div class="navbar__view">
           <span class="navbar__view-label desktop-only">{{ $t('View') }}</span>
@@ -84,7 +91,9 @@
               :image="productGetters.getCoverImage(product)"
               :image-width="$device.isDesktopOrTablet ? 212 : 154"
               :image-height="$device.isDesktopOrTablet ? 320 : 232"
-              :regular-price="$n(productGetters.getPrice(product).regular, 'currency')"
+              :regular-price="
+                $n(productGetters.getPrice(product).regular, 'currency')
+              "
               :special-price="
                 productGetters.getPrice(product).special &&
                   $n(productGetters.getPrice(product).special, 'currency')
@@ -96,11 +105,17 @@
               :is-added-to-cart="isInCart({ product, currentCart })"
               :add-to-cart-disabled="!productGetters.getStockStatus(product)"
               :link="
-                localePath(`/p/${productGetters.getId(product)}/${productGetters.getSlug(product)}`)
+                localePath(
+                  `/p/${productGetters.getId(product)}/${productGetters.getSlug(
+                    product
+                  )}`
+                )
               "
               :wishlist-icon="false"
               class="products__product-card"
-              @click:add-to-cart="handleAddToCart({ product, quantity: 1, currentCart })"
+              @click:add-to-cart="
+                handleAddToCart({ product, quantity: 1, currentCart })
+              "
             >
               <template #image="imageSlotProps">
                 <SfButton
@@ -133,7 +148,13 @@
               </template>
             </SfProductCard>
           </transition-group>
-          <transition-group v-else appear name="products__slide" tag="div" class="products__list">
+          <transition-group
+            v-else
+            appear
+            name="products__slide"
+            tag="div"
+            class="products__list"
+          >
             <SfProductCardHorizontal
               v-for="(product, i) in products"
               :key="productGetters.getId(product)"
@@ -144,7 +165,9 @@
               :image="productGetters.getCoverImage(product)"
               :image-width="$device.isDesktopOrTablet ? 85 : 140"
               :image-height="$device.isDesktopOrTablet ? 128 : 212"
-              :regular-price="$n(productGetters.getPrice(product).regular, 'currency')"
+              :regular-price="
+                $n(productGetters.getPrice(product).regular, 'currency')
+              "
               :special-price="
                 productGetters.getPrice(product).special &&
                   $n(productGetters.getPrice(product).special, 'currency')
@@ -155,9 +178,15 @@
               :is-on-wishlist="false"
               class="products__product-card-horizontal"
               :link="
-                localePath(`/p/${productGetters.getId(product)}/${productGetters.getSlug(product)}`)
+                localePath(
+                  `/p/${productGetters.getId(product)}/${productGetters.getSlug(
+                    product
+                  )}`
+                )
               "
-              @click:add-to-cart="handleAddToCart({ product, quantity: 1, currentCart })"
+              @click:add-to-cart="
+                handleAddToCart({ product, quantity: 1, currentCart })
+              "
             ><template #image="imageSlotProps">
                <SfLink
                  :link="imageSlotProps.link"
@@ -191,7 +220,7 @@
                   class="desktop-only"
                   name="Size"
                   value="XS"
-                  style="margin: 0 0 1rem 0"
+                  style="margin: 0 0 1rem"
                 />
                 <SfProperty class="desktop-only" name="Color" value="white" />
               </template>
@@ -203,7 +232,9 @@
                   @click="
                     addItemToCart({
                       product,
-                      quantity: Number(productsQuantity[productData.getId(product)] || 1),
+                      quantity: Number(
+                        productsQuantity[productData.getId(product)] || 1
+                      ),
                     })
                   "
                 />
@@ -219,7 +250,10 @@
             :total="pagination.totalPages"
             :visible="5"
           />
-          <div v-show="pagination.totalPages > 1" class="products__show-on-page">
+          <div
+            v-show="pagination.totalPages > 1"
+            class="products__show-on-page"
+          >
             <span class="products__show-on-page__label">Show on page:</span>
             <SfSelect
               :value="pagination.itemsPerPage.toString()"
@@ -253,7 +287,11 @@
             :title="facet.label"
             class="filters__title sf-heading--left"
           />
-          <div v-if="isFacetColor(facet)" :key="`${facet.id}-colors`" class="filters__colors">
+          <div
+            v-if="isFacetColor(facet)"
+            :key="`${facet.id}-colors`"
+            class="filters__colors"
+          >
             <SfColor
               v-for="option in facet.options"
               :key="`${facet.id}-${option.value}`"
@@ -297,7 +335,11 @@
       </SfAccordion>
       <template #content-bottom>
         <div class="filters__buttons">
-          <SfButton class="sf-button--full-width" @click="applyFilters">Done</SfButton>
+          <SfButton
+            class="sf-button--full-width"
+            @click="applyFilters"
+          >Done</SfButton
+          >
           <SfButton
             class="sf-button--full-width filters__button-clear"
             @click="clearFilters"
@@ -330,7 +372,12 @@ import {
   SfImage
 } from '@storefront-ui/vue'
 import { computed, onMounted, ref } from '@nuxtjs/composition-api'
-import { useCart, productGetters, useFacet, facetGetters } from '@vue-storefront/shopify'
+import {
+  useCart,
+  productGetters,
+  useFacet,
+  facetGetters
+} from '@vue-storefront/shopify'
 import { useUiHelpers, useUiState, useUiNotification } from '~/composables'
 import { onSSR } from '@vue-storefront/core'
 
@@ -364,7 +411,9 @@ export default {
     const { result, search, loading } = useFacet()
     const products = computed(() => facetGetters.getProducts(result.value))
     const sortBy = computed(() => facetGetters.getSortOptions(result.value))
-    const facets = computed(() => facetGetters.getGrouped(result.value, ['color', 'size']))
+    const facets = computed(() =>
+      facetGetters.getGrouped(result.value, ['color', 'size'])
+    )
     const pagination = computed(() => facetGetters.getPagination(result.value))
     onSSR(async () => {
       await search(th.getFacetsFromURL())
@@ -580,7 +629,8 @@ export default {
     }
     &-label {
       margin: 0 var(--spacer-sm) 0 0;
-      font: var(--font-weight--normal) var(--font-size--base) / 1.6 var(--font-family--secondary);
+      font: var(--font-weight--normal) var(--font-size--base) / 1.6
+        var(--font-family--secondary);
       text-decoration: none;
       color: var(--c-link);
     }

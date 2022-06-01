@@ -5,7 +5,11 @@
     </div>
     <div v-if="edittingAddress" class="tab-orphan">
       <div data-cy="billing-details-tab_change">
-        <BillingAddressForm :address="activeAddress" :is-new="isNewAddress" @submit="saveAddress" />
+        <BillingAddressForm
+          :address="activeAddress"
+          :is-new="isNewAddress"
+          @submit="saveAddress"
+        />
       </div>
     </div>
     <div v-else class="tab-orphan">
@@ -30,7 +34,12 @@
           </SfNotification>
         </div>
       </transition>
-      <SfLoader v-if="loading" class="address-loader" :class="{ loading }" :loading="loading">
+      <SfLoader
+        v-if="loading"
+        class="address-loader"
+        :class="{ loading }"
+        :loading="loading"
+      >
         <div />
       </SfLoader>
       <div v-if="!loading" data-cy="billing-details-tab_details">
@@ -66,7 +75,10 @@
           </div>
           <div class="billing add-address-btn">
             <div class="billing__wrap" @click="changeAddress(), scrollToTop()">
-              <SfButton data-cy="billing-details-btn_add" class="action-button sf-button--text">
+              <SfButton
+                data-cy="billing-details-btn_add"
+                class="action-button sf-button--text"
+              >
                 <SfIcon icon="plus" />
                 Add Address
               </SfButton>
@@ -78,7 +90,13 @@
   </div>
 </template>
 <script>
-import { SfButton, SfIcon, SfHeading, SfLoader, SfNotification } from '@storefront-ui/vue'
+import {
+  SfButton,
+  SfIcon,
+  SfHeading,
+  SfLoader,
+  SfNotification
+} from '@storefront-ui/vue'
 import BillingAddressForm from '~/components/MyAccount/BillingAddressForm'
 import UserBillingAddress from '~/components/UserBillingAddress'
 import { useUserBilling, userBillingGetters } from '@vue-storefront/shopify'
@@ -113,7 +131,9 @@ export default {
       updateAddress,
       loading
     } = useUserBilling()
-    const addresses = computed(() => userBillingGetters.getAddresses(billing.value))
+    const addresses = computed(() =>
+      userBillingGetters.getAddresses(billing.value)
+    )
     const edittingAddress = ref(false)
     const activeAddress = ref(undefined)
     const isNewAddress = computed(() => !activeAddress.value)

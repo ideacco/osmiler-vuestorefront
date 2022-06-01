@@ -84,7 +84,9 @@ export default {
     let userToken = ref('')
 
     userToken = computed(() => userGetters.getToken(userInfo.value))
-    const acceptsMarketing = computed(() => userGetters.AcceptsMarketingStatus(userInfo.value))
+    const acceptsMarketing = computed(() =>
+      userGetters.AcceptsMarketingStatus(userInfo.value)
+    )
     const email = computed(() => userGetters.getEmailAddress(userInfo.value))
     const id = computed(() => userGetters.getCleanID(userInfo.value))
 
@@ -95,7 +97,10 @@ export default {
     const activePage = computed(() => {
       const { pageName } = $route.params
       if (pageName) {
-        return (pageName.charAt(0).toUpperCase() + pageName.slice(1)).replace('-', ' ')
+        return (pageName.charAt(0).toUpperCase() + pageName.slice(1)).replace(
+          '-',
+          ' '
+        )
       }
       return 'my-profile'
     })
@@ -114,7 +119,9 @@ export default {
         return false
       }
 
-      $router.push(`/my-account/${(title || '').toLowerCase().replace(' ', '-')}`)
+      $router.push(
+        `/my-account/${(title || '').toLowerCase().replace(' ', '-')}`
+      )
     }
     onSSR(async () => {
       await loadUser()
@@ -186,9 +193,11 @@ export default {
 }
 .my-account {
   @include for-mobile {
-    --content-pages-sidebar-category-title-font-weight: var(--font-weight--normal);
-    --content-pages-sidebar-category-title-margin: var(--spacer-sm) var(--spacer-sm)
-      var(--spacer-sm) var(--spacer-base);
+    --content-pages-sidebar-category-title-font-weight: var(
+      --font-weight--normal
+    );
+    --content-pages-sidebar-category-title-margin: var(--spacer-sm)
+      var(--spacer-sm) var(--spacer-sm) var(--spacer-base);
   }
   @include for-desktop {
     --content-pages-sidebar-category-title-margin: var(--spacer-xl) 0 0 0;

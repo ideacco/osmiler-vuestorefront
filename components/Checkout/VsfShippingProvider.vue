@@ -2,8 +2,8 @@
   <div>
     <p>
       <b
-      >Please implement vendor-specific VsfShippingProvider component in the 'components/Checkout'
-        directory</b
+      >Please implement vendor-specific VsfShippingProvider component in the
+        'components/Checkout' directory</b
       >
     </p>
 

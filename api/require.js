@@ -1,9 +1,6 @@
 import axios from 'axios'
 import * as Cookies from 'js-cookie'
-import {
-  Message,
-  Loading
-} from 'element-ui'
+import { Message, Loading } from 'element-ui'
 let loadingInstance
 axios.create({
   withCredentials: false, // 跨域请求是否允许携带cookie资源凭证
@@ -40,9 +37,7 @@ axios.interceptors.response.use(
     setTimeout(() => {
       loadingInstance && loadingInstance.close()
     }, 300)
-    const {
-      response
-    } = error
+    const { response } = error
     if (response) {
       // 服务器有返回内容
       let errormsg = ''
@@ -100,7 +95,6 @@ axios.interceptors.response.use(
     // 服务器奔了
     Message('服务器奔了')
     return Promise.reject(error)
-
   }
 )
 

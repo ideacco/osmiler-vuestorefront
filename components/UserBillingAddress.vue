@@ -10,7 +10,8 @@
       <p v-if="address.zip">{{ address.zip }}</p>
       <p v-if="address.phone" class="billing-phone">
         <a :href="`tel:${address.phone}`"
-        ><SfIcon size="18px" viewBox="0 0 18 18" icon="phone" /> {{ address.phone }}</a
+        ><SfIcon size="18px" viewBox="0 0 18 18" icon="phone" />
+          {{ address.phone }}</a
         >
       </p>
     </section>

@@ -26,9 +26,19 @@
             {{ $t('I confirm subscription') }}
           </SfButton>
         </form>
-        <SfHeading :description="$t('You can unsubscribe at any time')" :level="3" />
-        <SfScrollable maxContentHeight="3.75rem" :class="{ 'is-open': !isHidden }">
-          <i18n tag="p" class="modal__content" path="subscribeToNewsletterModalContent">
+        <SfHeading
+          :description="$t('You can unsubscribe at any time')"
+          :level="3"
+        />
+        <SfScrollable
+          maxContentHeight="3.75rem"
+          :class="{ 'is-open': !isHidden }"
+        >
+          <i18n
+            tag="p"
+            class="modal__content"
+            path="subscribeToNewsletterModalContent"
+          >
             <SfLink link="https://www.vuestorefront.io/privacy-policy">{{
               $t('Privacy Policy')
             }}</SfLink>

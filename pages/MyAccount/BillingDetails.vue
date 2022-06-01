@@ -1,12 +1,21 @@
 <template>
   <transition name="fade">
-    <SfTabs v-if="edittingAddress" key="edit-address" :open-tab="1" class="tab-orphan">
+    <SfTabs
+      v-if="edittingAddress"
+      key="edit-address"
+      :open-tab="1"
+      class="tab-orphan"
+    >
       <SfTab :title="isNewAddress ? 'Add the address' : 'Update the address'">
         <p class="message">
           {{ $t('Contact details updated') }}
         </p>
 
-        <BillingAddressForm :address="activeAddress" :isNew="isNewAddress" @submit="saveAddress" />
+        <BillingAddressForm
+          :address="activeAddress"
+          :isNew="isNewAddress"
+          @submit="saveAddress"
+        />
       </SfTab>
     </SfTabs>
 
@@ -80,7 +89,9 @@ export default {
       deleteAddress,
       updateAddress
     } = useUserBilling()
-    const addresses = computed(() => userBillingGetters.getAddresses(billing.value))
+    const addresses = computed(() =>
+      userBillingGetters.getAddresses(billing.value)
+    )
     const edittingAddress = ref(false)
     const activeAddress = ref(undefined)
     const isNewAddress = computed(() => !activeAddress.value)

@@ -1,9 +1,18 @@
 <template>
   <div class="my_account_content container-small">
     <ValidationObserver v-slot="{ handleSubmit }">
-      <form id="billing-details-form" class="form" @submit.prevent="handleSubmit(submitForm)">
+      <form
+        id="billing-details-form"
+        class="form"
+        @submit.prevent="handleSubmit(submitForm)"
+      >
         <div class="row">
-          <ValidationProvider v-slot="{ errors }" rules="required|min:2" tag="div" class="col-6">
+          <ValidationProvider
+            v-slot="{ errors }"
+            rules="required|min:2"
+            tag="div"
+            class="col-6"
+          >
             <SfInput
               v-model="form.firstName"
               data-cy="billing-details-input_firstName"
@@ -14,7 +23,12 @@
               class="form__element"
             />
           </ValidationProvider>
-          <ValidationProvider v-slot="{ errors }" rules="required|min:2" tag="div" class="col-6">
+          <ValidationProvider
+            v-slot="{ errors }"
+            rules="required|min:2"
+            tag="div"
+            class="col-6"
+          >
             <SfInput
               v-model="form.lastName"
               data-cy="billing-details-input_lastName"
@@ -27,7 +41,12 @@
           </ValidationProvider>
         </div>
         <div class="row">
-          <ValidationProvider v-slot="{ errors }" rules="required|min:5" tag="div" class="col-6">
+          <ValidationProvider
+            v-slot="{ errors }"
+            rules="required|min:5"
+            tag="div"
+            class="col-6"
+          >
             <SfInput
               v-model="form.streetName"
               data-cy="billing-details-input_streetName"
@@ -38,7 +57,12 @@
               class="form__element"
             />
           </ValidationProvider>
-          <ValidationProvider v-slot="{ errors }" rules="required|min:1" tag="div" class="col-6">
+          <ValidationProvider
+            v-slot="{ errors }"
+            rules="required|min:1"
+            tag="div"
+            class="col-6"
+          >
             <SfInput
               v-model="form.apartment"
               data-cy="billing-details-input_apartment"
@@ -51,7 +75,12 @@
           </ValidationProvider>
         </div>
         <div class="row">
-          <ValidationProvider v-slot="{ errors }" rules="required|min:2" tag="div" class="col-6">
+          <ValidationProvider
+            v-slot="{ errors }"
+            rules="required|min:2"
+            tag="div"
+            class="col-6"
+          >
             <SfInput
               v-model="form.city"
               data-cy="billing-details-input_city"
@@ -64,7 +93,9 @@
           </ValidationProvider>
           <ValidationProvider
             v-slot="{ errors }"
-            :rules="`required|oneOf:${allContries.map((c) => c.name).join(',')}`"
+            :rules="`required|oneOf:${allContries
+              .map((c) => c.name)
+              .join(',')}`"
             class="col-6"
           >
             <SfSelect
@@ -77,12 +108,20 @@
               :error-message="errors[0]"
               @input="getStateFromCountry(form.country)"
             >
-              <SfSelectOption v-for="{ name, index } in allContries" :key="index" :value="name">
+              <SfSelectOption
+                v-for="{ name, index } in allContries"
+                :key="index"
+                :value="name"
+              >
                 {{ name }}
               </SfSelectOption>
             </SfSelect>
           </ValidationProvider>
-          <ValidationProvider v-if="states.length > 0" v-slot="{ errors }" class="col-12">
+          <ValidationProvider
+            v-if="states.length > 0"
+            v-slot="{ errors }"
+            class="col-12"
+          >
             <SfSelect
               v-model="form.state"
               data-cy="billing-details-input_state"
@@ -93,14 +132,23 @@
               :error-message="errors[0]"
               :selected="form.state"
             >
-              <SfSelectOption v-for="(name, index) in states" :key="index" :value="name">
+              <SfSelectOption
+                v-for="(name, index) in states"
+                :key="index"
+                :value="name"
+              >
                 {{ name }}
               </SfSelectOption>
             </SfSelect>
           </ValidationProvider>
         </div>
         <div class="row">
-          <ValidationProvider v-slot="{ errors }" rules="required|min:4" tag="div" class="col-6">
+          <ValidationProvider
+            v-slot="{ errors }"
+            rules="required|min:4"
+            tag="div"
+            class="col-6"
+          >
             <SfInput
               v-model="form.postalCode"
               data-cy="billing-details-input_zipCode"
@@ -162,7 +210,7 @@
             <SfButton
               data-cy="billing-details-btn_cancel"
               class="form__button"
-              @click="($parent.edittingAddress = false), scrollToTop()"
+              @click=";($parent.edittingAddress = false), scrollToTop()"
             >Cancel</SfButton
             >
           </div>
@@ -288,7 +336,9 @@ export default {
   },
   methods: {
     getStateFromCountry(country) {
-      const allStates = countryState.countries.find((item) => item.country === country)
+      const allStates = countryState.countries.find(
+        (item) => item.country === country
+      )
       this.states = allStates ? allStates.states : []
       this.form.state = this.states[0]
     }

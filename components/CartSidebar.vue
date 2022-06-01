@@ -25,7 +25,9 @@
                 v-e2e="'collected-product'"
                 :image="cartGetters.getItemImage(product)"
                 :title="cartGetters.getItemName(product)"
-                :regular-price="$n(cartGetters.getItemPrice(product).regular, 'currency')"
+                :regular-price="
+                  $n(cartGetters.getItemPrice(product).regular, 'currency')
+                "
                 :special-price="
                   cartGetters.getItemPrice(product).special &&
                     $n(cartGetters.getItemPrice(product).special, 'currency')
@@ -37,10 +39,10 @@
                 <template #configuration>
                   <div class="collected-product__properties">
                     <SfProperty
-                      v-for="(attribute, key) in cartGetters.getItemAttributes(product, [
-                        'color',
-                        'size',
-                      ])"
+                      v-for="(attribute, key) in cartGetters.getItemAttributes(
+                        product,
+                        ['color', 'size']
+                      )"
                       :key="key"
                       :name="key"
                       :value="attribute"
@@ -53,7 +55,9 @@
                       :disabled="loading"
                       :qty="cartGetters.getItemQty(product)"
                       class="sf-collected-product__quantity-selector"
-                      @input="updateQuantity({ product, quantity: Number($event) })"
+                      @input="
+                        updateQuantity({ product, quantity: Number($event) })
+                      "
                     />
                   </div>
                 </template>
@@ -174,9 +178,11 @@
             </SfLink>
           </div>
           <div v-else>
-            <SfButton class="sf-button--full-width color-primary" @click="toggleCartSidebar">{{
-              $t('Go back shopping')
-            }}</SfButton>
+            <SfButton
+              class="sf-button--full-width color-primary"
+              @click="toggleCartSidebar"
+            >{{ $t('Go back shopping') }}</SfButton
+            >
           </div>
         </transition>
       </template>
@@ -222,15 +228,26 @@ export default {
     const isValidCoupon = ref(true)
     const errorMsg = ref('Invalid coupon code')
     const { isCartSidebarOpen, toggleCartSidebar } = useUiState()
-    const { cart, removeItem, updateItemQty, loading, applyCoupon, removeCoupon } = useCart()
+    const {
+      cart,
+      removeItem,
+      updateItemQty,
+      loading,
+      applyCoupon,
+      removeCoupon
+    } = useCart()
     const { isAuthenticated } = useUser()
     const { send: sendNotification, notifications } = useUiNotification()
     const couponcode = ''
     const products = computed(() => cartGetters.getItems(cart.value))
     const totals = computed(() => cartGetters.getTotals(cart.value))
-    const lineItemsSubtotalPrice = computed(() => cartGetters.getSubTotal(cart.value))
+    const lineItemsSubtotalPrice = computed(() =>
+      cartGetters.getSubTotal(cart.value)
+    )
     const totalItems = computed(() => cartGetters.getTotalItems(cart.value))
-    const totalDiscount = computed(() => cartGetters.getTotalDiscount(cart.value))
+    const totalDiscount = computed(() =>
+      cartGetters.getTotalDiscount(cart.value)
+    )
     const totalSavings = computed(() => {
       let calculatedTotalSavings = 0
       products.value.forEach((item) => {
@@ -241,9 +258,14 @@ export default {
             item.quantity
         }
       })
-      if (totalDiscount.value > 0 || Object.keys(totalDiscount.value).length > 0) {
+      if (
+        totalDiscount.value > 0 ||
+        Object.keys(totalDiscount.value).length > 0
+      ) {
         calculatedTotalSavings += totalDiscount.value.percentage
-          ? (cart.value.lineItemsSubtotalPrice.amount * totalDiscount.value.percentage) / 100
+          ? (cart.value.lineItemsSubtotalPrice.amount *
+              totalDiscount.value.percentage) /
+            100
           : parseFloat(totalDiscount.value.amount)
       }
       return calculatedTotalSavings
@@ -254,7 +276,11 @@ export default {
       appliedCoupon.value
         ? `Discount [${appliedCoupon.value}${
           totalDiscount.value.percentage
-            ? ' | ' + route?.value?.$n(totalDiscount.value.percentage / 100, 'percent')
+            ? ' | ' +
+                route?.value?.$n(
+                  totalDiscount.value.percentage / 100,
+                  'percent'
+                )
             : ''
         }]`
         : 'Discount'

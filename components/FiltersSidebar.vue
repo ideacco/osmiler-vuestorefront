@@ -14,7 +14,11 @@
             class="filters__title sf-heading--left"
             :key="`filter-title-${facet.id}`"
           />
-          <div v-if="isFacetColor(facet)" class="filters__colors" :key="`${facet.id}-colors`">
+          <div
+            v-if="isFacetColor(facet)"
+            class="filters__colors"
+            :key="`${facet.id}-colors`"
+          >
             <SfColor
               v-for="option in facet.options"
               :key="`${facet.id}-${option.value}`"
@@ -59,7 +63,10 @@
           <SfButton class="sf-button--full-width" @click="applyFilters">
             {{ $t('Done') }}
           </SfButton>
-          <SfButton class="sf-button--full-width filters__button-clear" @click="clearFilters">
+          <SfButton
+            class="sf-button--full-width filters__button-clear"
+            @click="clearFilters"
+          >
             {{ $t('Clear all') }}
           </SfButton>
         </div>
@@ -69,7 +76,14 @@
 </template>
 
 <script>
-import { SfSidebar, SfButton, SfHeading, SfFilter, SfAccordion, SfColor } from '@storefront-ui/vue'
+import {
+  SfSidebar,
+  SfButton,
+  SfHeading,
+  SfFilter,
+  SfAccordion,
+  SfColor
+} from '@storefront-ui/vue'
 
 import { ref, computed, onMounted } from '@nuxtjs/composition-api'
 import { useFacet, facetGetters } from '@vue-storefront/shopify'
@@ -91,11 +105,14 @@ export default {
     const { toggleFilterSidebar, isFilterSidebarOpen } = useUiState()
     const { result } = useFacet()
 
-    const facets = computed(() => facetGetters.getGrouped(result.value, ['color', 'size']))
+    const facets = computed(() =>
+      facetGetters.getGrouped(result.value, ['color', 'size'])
+    )
     const selectedFilters = ref({})
 
     const setSelectedFilters = () => {
-      if (!facets.value.length || Object.keys(selectedFilters.value).length) return
+      if (!facets.value.length || Object.keys(selectedFilters.value).length)
+        return
       selectedFilters.value = facets.value.reduce(
         (prev, curr) => ({
           ...prev,
@@ -114,9 +131,9 @@ export default {
       }
 
       if (selectedFilters.value[facet.id].find((f) => f === option.id)) {
-        selectedFilters.value[facet.id] = selectedFilters.value[facet.id].filter(
-          (f) => f !== option.id
-        )
+        selectedFilters.value[facet.id] = selectedFilters.value[
+          facet.id
+        ].filter((f) => f !== option.id)
         return
       }
 

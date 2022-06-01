@@ -25,74 +25,40 @@
             <div>
               <div class="uk-panel">
                 <ul
-                  class="
-                    uk-nav
-                    uk-nav-default
-                    uk-nav-divider
-                    uk-nav-parent-icon
-                    uk-nav-accordion
-                  "
+                  class="uk-nav uk-nav-default uk-nav-divider uk-nav-parent-icon uk-nav-accordion"
                   uk-nav="targets: &gt; .js-accordion"
                 >
                   <li
-                    class="
-                      menu-item
-                      menu-item-type-post_type
-                      menu-item-object-page menu-item-home
-                    "
+                    class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home"
                   >
                     <a href="/Home"> Home</a>
                   </li>
                   <li
-                    class="
-                      menu-item
-                      menu-item-type-custom
-                      menu-item-object-custom
-                      menu-item-has-children
-                      js-accordion
-                      uk-parent
-                    "
+                    class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children js-accordion uk-parent"
                   >
                     <a> Services</a>
                     <ul class="uk-nav-sub">
                       <li
-                        class="
-                          menu-item
-                          menu-item-type-post_type
-                          menu-item-object-page
-                        "
+                        class="menu-item menu-item-type-post_type menu-item-object-page"
                       >
                         <a href="./../services/index.html"> All Services</a>
                       </li>
                       <li
-                        class="
-                          menu-item
-                          menu-item-type-post_type
-                          menu-item-object-page
-                        "
+                        class="menu-item menu-item-type-post_type menu-item-object-page"
                       >
                         <a href="./../general-dentistry/index.html">
                           General Dentistry</a
                         >
                       </li>
                       <li
-                        class="
-                          menu-item
-                          menu-item-type-post_type
-                          menu-item-object-page menu-item-has-children
-                          uk-parent
-                        "
+                        class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children uk-parent"
                       >
                         <a href="./../implant-dentistry/index.html">
                           Implant Dentistry</a
                         >
                         <ul>
                           <li
-                            class="
-                              menu-item
-                              menu-item-type-post_type
-                              menu-item-object-page
-                            "
+                            class="menu-item menu-item-type-post_type menu-item-object-page"
                           >
                             <a href="./../dental-implants/index.html">
                               Dental Implants</a
@@ -101,22 +67,14 @@
                         </ul>
                       </li>
                       <li
-                        class="
-                          menu-item
-                          menu-item-type-post_type
-                          menu-item-object-page
-                        "
+                        class="menu-item menu-item-type-post_type menu-item-object-page"
                       >
                         <a href="./../cosmetic-dentistry/index.html">
                           Cosmetic Dentistry</a
                         >
                       </li>
                       <li
-                        class="
-                          menu-item
-                          menu-item-type-post_type
-                          menu-item-object-page
-                        "
+                        class="menu-item menu-item-type-post_type menu-item-object-page"
                       >
                         <a href="./../product-page-a/index.html">
                           Product-page-A</a
@@ -125,32 +83,17 @@
                     </ul>
                   </li>
                   <li
-                    class="
-                      menu-item
-                      menu-item-type-custom
-                      menu-item-object-custom
-                      menu-item-has-children
-                      js-accordion
-                      uk-parent
-                    "
+                    class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children js-accordion uk-parent"
                   >
                     <a> Doctors</a>
                     <ul class="uk-nav-sub">
                       <li
-                        class="
-                          menu-item
-                          menu-item-type-post_type
-                          menu-item-object-page
-                        "
+                        class="menu-item menu-item-type-post_type menu-item-object-page"
                       >
                         <a href="./../doctors/index.html"> All Doctors</a>
                       </li>
                       <li
-                        class="
-                          menu-item
-                          menu-item-type-post_type
-                          menu-item-object-page
-                        "
+                        class="menu-item menu-item-type-post_type menu-item-object-page"
                       >
                         <a href="./../gina-lange-dmd/index.html">
                           Gina Lange DMD</a
@@ -159,29 +102,17 @@
                     </ul>
                   </li>
                   <li
-                    class="
-                      menu-item
-                      menu-item-type-post_type
-                      menu-item-object-page
-                    "
+                    class="menu-item menu-item-type-post_type menu-item-object-page"
                   >
                     <a href="./../about-us/index.html"> About Us</a>
                   </li>
                   <li
-                    class="
-                      menu-item
-                      menu-item-type-post_type
-                      menu-item-object-page
-                    "
+                    class="menu-item menu-item-type-post_type menu-item-object-page"
                   >
                     <a href="./../contact/index.html"> Contact</a>
                   </li>
                   <li
-                    class="
-                      menu-item
-                      menu-item-type-post_type
-                      menu-item-object-page
-                    "
+                    class="menu-item menu-item-type-post_type menu-item-object-page"
                   >
                     <a href="./../blog/index.html"> Blog</a>
                   </li>
@@ -227,12 +158,7 @@
                     >
                   </p>
                   <div
-                    class="
-                      uk-grid-small
-                      uk-child-width-auto
-                      uk-flex-middle
-                      uk-flex-center
-                    "
+                    class="uk-grid-small uk-child-width-auto uk-flex-middle uk-flex-center"
                     uk-grid
                   >
                     <div>
@@ -301,37 +227,21 @@
                   /></a>
                 <ul class="uk-navbar-nav">
                   <li
-                    class="
-                      menu-item
-                      menu-item-type-post_type
-                      menu-item-object-page menu-item-home
-                    "
+                    class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home"
                     :class="tabIndex === 0 ? 'uk-active' : ''"
                     @click="tabggle(0)"
                   >
                     <nuxt-link to="/Home"> Home</nuxt-link>
                   </li>
                   <li
-                    class="
-                      menu-item
-                      menu-item-type-post_type
-                      menu-item-object-page
-                      current-menu-item
-                      page_item page-item-1286
-                      current_page_item
-                    "
+                    class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-1286 current_page_item"
                     :class="tabIndex === 1 ? 'uk-active' : ''"
                     @click="tabggle(1)"
                   >
                     <nuxt-link to="/MuSic"> Music community</nuxt-link>
                   </li>
                   <li
-                    class="
-                      menu-item
-                      menu-item-type-post_type
-                      menu-item-object-page menu-item-has-children
-                      uk-parent
-                    "
+                    class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children uk-parent"
                     :class="tabIndex === 2 ? 'uk-active' : ''"
                     @click="tabggle(2)"
                   >
@@ -344,34 +254,21 @@
                         <div>
                           <ul class="uk-nav uk-navbar-dropdown-nav">
                             <li
-                              class="
-                                menu-item
-                                menu-item-type-post_type
-                                menu-item-object-page
-                              "
+                              class="menu-item menu-item-type-post_type menu-item-object-page"
                             >
                               <a href="./../general-dentistry/index.html">
                                 General Dentistry</a
                               >
                             </li>
                             <li
-                              class="
-                                menu-item
-                                menu-item-type-post_type
-                                menu-item-object-page menu-item-has-children
-                                uk-parent
-                              "
+                              class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children uk-parent"
                             >
                               <a href="./../implant-dentistry/index.html">
                                 Implant Dentistry</a
                               >
                               <ul class="uk-nav-sub">
                                 <li
-                                  class="
-                                    menu-item
-                                    menu-item-type-post_type
-                                    menu-item-object-page
-                                  "
+                                  class="menu-item menu-item-type-post_type menu-item-object-page"
                                 >
                                   <a href="./../dental-implants/index.html">
                                     Dental Implants</a
@@ -380,22 +277,14 @@
                               </ul>
                             </li>
                             <li
-                              class="
-                                menu-item
-                                menu-item-type-post_type
-                                menu-item-object-page
-                              "
+                              class="menu-item menu-item-type-post_type menu-item-object-page"
                             >
                               <a href="./../cosmetic-dentistry/index.html">
                                 Cosmetic Dentistry</a
                               >
                             </li>
                             <li
-                              class="
-                                menu-item
-                                menu-item-type-post_type
-                                menu-item-object-page
-                              "
+                              class="menu-item menu-item-type-post_type menu-item-object-page"
                             >
                               <a href="./../product-page-a/index.html">
                                 Product-page-A</a
@@ -407,12 +296,7 @@
                     </div>
                   </li>
                   <li
-                    class="
-                      menu-item
-                      menu-item-type-post_type
-                      menu-item-object-page menu-item-has-children
-                      uk-parent
-                    "
+                    class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children uk-parent"
                     :class="tabIndex === 3 ? 'uk-active' : ''"
                     @click="tabggle(3)"
                   >
@@ -425,11 +309,7 @@
                         <div>
                           <ul class="uk-nav uk-navbar-dropdown-nav">
                             <li
-                              class="
-                                menu-item
-                                menu-item-type-post_type
-                                menu-item-object-page
-                              "
+                              class="menu-item menu-item-type-post_type menu-item-object-page"
                               :class="tabIndex === 4 ? 'uk-active' : ''"
                               @click="tabggle(4)"
                             >
@@ -441,33 +321,21 @@
                     </div>
                   </li>
                   <li
-                    class="
-                      menu-item
-                      menu-item-type-post_type
-                      menu-item-object-page
-                    "
+                    class="menu-item menu-item-type-post_type menu-item-object-page"
                     :class="tabIndex === 5 ? 'uk-active' : ''"
                     @click="tabggle(5)"
                   >
                     <nuxt-link to="/"> About Us</nuxt-link>
                   </li>
                   <li
-                    class="
-                      menu-item
-                      menu-item-type-post_type
-                      menu-item-object-page
-                    "
+                    class="menu-item menu-item-type-post_type menu-item-object-page"
                     :class="tabIndex === 6 ? 'uk-active' : ''"
                     @click="tabggle(6)"
                   >
                     <nuxt-link to="/"> Contact</nuxt-link>
                   </li>
                   <li
-                    class="
-                      menu-item
-                      menu-item-type-post_type
-                      menu-item-object-page
-                    "
+                    class="menu-item menu-item-type-post_type menu-item-object-page"
                     :class="tabIndex === 7 ? 'uk-active' : ''"
                     @click="tabggle(7)"
                   >
@@ -485,9 +353,7 @@
                   ></a>
                   <div id="search-c3d5-modal" class="uk-modal-full" uk-modal>
                     <div
-                      class="
-                        uk-modal-dialog uk-flex uk-flex-center uk-flex-middle
-                      "
+                      class="uk-modal-dialog uk-flex uk-flex-center uk-flex-middle"
                       uk-height-viewport
                     >
                       <button
@@ -544,10 +410,10 @@
 </template>
 <script src="../static/homepage/audiojs/audio.js"></script>
 <script type="module">
-import LoginModal from "./LoginModal.vue";
+import LoginModal from './LoginModal.vue'
 
 export default {
-  name: "JHeader",
+  name: 'JHeader',
   components: {
     LoginModal,
   },
@@ -555,27 +421,27 @@ export default {
     return {
       tabIndex: 0,
       visible: false,
-    };
+    }
   },
   mounted() {
-    window.addEventListener("scroll", this.handleScroll);
+    window.addEventListener('scroll', this.handleScroll)
   },
   methods: {
     tabggle(index) {
-      this.tabIndex = index;
+      this.tabIndex = index
     },
     handleClose() {
-      this.visible = false;
+      this.visible = false
     },
     toggleLoginModal(data) {
-      this.visible = true;
+      this.visible = true
     },
   },
-};
+}
 </script>
 
 <style lang="scss" scoped>
-@import "../static/wp-includes/css/dist/block-library/style.min.css";
-@import "../static/wp-content/themes/yootheme/css/theme.1.css";
-@import "../static/wp-content/themes/yootheme/vendor/yootheme/theme-highlight/assets/styles/monokai.css";
+@import '../static/wp-includes/css/dist/block-library/style.min.css';
+@import '../static/wp-content/themes/yootheme/css/theme.1.css';
+@import '../static/wp-content/themes/yootheme/vendor/yootheme/theme-highlight/assets/styles/monokai.css';
 </style>

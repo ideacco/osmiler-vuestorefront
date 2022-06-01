@@ -1,6 +1,9 @@
 <template>
   <section>
-    <SfHeading title="Product Of The Day" class="sf-heading--no-underline sf-heading--center" />
+    <SfHeading
+      title="Product Of The Day"
+      class="sf-heading--no-underline sf-heading--center"
+    />
     <div id="product">
       <div class="product">
         <SfGallery
@@ -17,9 +20,15 @@
             />
             <SfBadge
               class="sf-badge--number"
-              :class="productGetters.getStatus(product) ? 'color-success' : 'color-danger'"
+              :class="
+                productGetters.getStatus(product)
+                  ? 'color-success'
+                  : 'color-danger'
+              "
             >
-              {{ productGetters.getStatus(product) ? 'In stock' : 'Out of Stock' }}
+              {{
+                productGetters.getStatus(product) ? 'In stock' : 'Out of Stock'
+              }}
             </SfBadge>
             <SfIcon
               icon="drag"
@@ -30,18 +39,31 @@
           </div>
           <div class="product__price-and-rating">
             <SfPrice
-              :regular="productGetters.getFormattedPrice(productGetters.getPrice(product).regular)"
-              :special="productGetters.getFormattedPrice(productGetters.getPrice(product).special)"
+              :regular="
+                productGetters.getFormattedPrice(
+                  productGetters.getPrice(product).regular
+                )
+              "
+              :special="
+                productGetters.getFormattedPrice(
+                  productGetters.getPrice(product).special
+                )
+              "
             />
             <div>
               <div class="product__rating">
                 <SfRating :score="averageRating" :max="5" />
-                <a v-if="!!totalReviews" href="#" class="product__count"> ({{ totalReviews }}) </a>
+                <a v-if="!!totalReviews" href="#" class="product__count">
+                  ({{ totalReviews }})
+                </a>
               </div>
             </div>
           </div>
           <div>
-            <p v-if="productDescription" class="product__description desktop-only">
+            <p
+              v-if="productDescription"
+              class="product__description desktop-only"
+            >
               {{ productDescription }}
             </p>
             <SfSelect
@@ -52,7 +74,11 @@
               class="sf-select--underlined product__select-size"
               :required="true"
             >
-              <SfSelectOption v-for="size in options.Size" :key="size.value" :value="size.value">
+              <SfSelectOption
+                v-for="size in options.Size"
+                :key="size.value"
+                :value="size.value"
+              >
                 {{ size.value }}
               </SfSelectOption>
             </SfSelect>
@@ -98,7 +124,12 @@ import {
 } from '@storefront-ui/vue'
 
 import { ref, computed, useRoute } from '@nuxtjs/composition-api'
-import { useCart, productGetters, useReview, reviewGetters } from '@vue-storefront/shopify'
+import {
+  useCart,
+  productGetters,
+  useReview,
+  reviewGetters
+} from '@vue-storefront/shopify'
 
 export default {
   name: 'FeaturedProduct',
@@ -133,7 +164,9 @@ export default {
           attributes: route?.value?.query
         })[0]
     )
-    const productDescription = computed(() => productGetters.getDescription(product.value))
+    const productDescription = computed(() =>
+      productGetters.getDescription(product.value)
+    )
     const productDescriptionHtml = computed(() =>
       productGetters.getDescription(product.value, true)
     )
@@ -165,8 +198,12 @@ export default {
       productDescriptionHtml,
       reviews,
       reviewGetters,
-      averageRating: computed(() => productGetters.getAverageRating(product.value)),
-      totalReviews: computed(() => productGetters.getTotalReviews(product.value)),
+      averageRating: computed(() =>
+        productGetters.getAverageRating(product.value)
+      ),
+      totalReviews: computed(() =>
+        productGetters.getTotalReviews(product.value)
+      ),
       options,
       breadcrumbs,
       qty,

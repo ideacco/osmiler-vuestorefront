@@ -1,6 +1,12 @@
 <template>
   <div id="error">
-    <SfImage class="image" src="/error/error.webp" alt="leaves" :width="300" :height="300" />
+    <SfImage
+      class="image"
+      src="/error/error.webp"
+      alt="leaves"
+      :width="300"
+      :height="300"
+    />
     <SfHeading
       :title="
         error.statusCode === 404
@@ -21,7 +27,9 @@
         }}
       </p>
       <div class="actions">
-        <SfButton link="/" class="sf-button--full-width actions__button"> Return home </SfButton>
+        <SfButton link="/" class="sf-button--full-width actions__button">
+          Return home
+        </SfButton>
         <SfButton
           class="sf-button--full-width sf-button--text actions__button"
           @click="$router.go(-1)"

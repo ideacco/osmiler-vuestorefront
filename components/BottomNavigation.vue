@@ -3,7 +3,9 @@
     <SfBottomNavigation class="navigation-bottom">
       <nuxt-link data-cy="bottom-navigation-url_home" to="/">
         <SfBottomNavigationItem
-          :class="$route.path == '/' ? 'sf-bottom-navigation__item--active' : ''"
+          :class="
+            $route.path == '/' ? 'sf-bottom-navigation__item--active' : ''
+          "
           icon="home"
           size="20px"
           label="Home"
@@ -62,8 +64,12 @@ export default {
   },
   setup() {
     const router = useRouter()
-    const { toggleCartSidebar, toggleWishlistSidebar, toggleLoginModal, toggleMobileMenu } =
-      useUiState()
+    const {
+      toggleCartSidebar,
+      toggleWishlistSidebar,
+      toggleLoginModal,
+      toggleMobileMenu
+    } = useUiState()
     const { isAuthenticated } = useUser()
 
     const handleAccountClick = () => {

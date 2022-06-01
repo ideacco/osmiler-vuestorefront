@@ -3,7 +3,9 @@
     <div class="my-profile__title">
       <SfHeading :level="1" :title="title" />
       <template v-if="!isEdited">
-        <SfButton class="edit_action" @click="isEdited = true"> Edit Your Profile </SfButton>
+        <SfButton class="edit_action" @click="isEdited = true">
+          Edit Your Profile
+        </SfButton>
       </template>
     </div>
     <div v-if="isEdited" class="my-profile__content container-small">
@@ -45,7 +47,11 @@
                   />
                 </ValidationProvider>
               </div>
-              <ValidationProvider v-slot="{ errors }" tag="div" rules="required|email">
+              <ValidationProvider
+                v-slot="{ errors }"
+                tag="div"
+                rules="required|email"
+              >
                 <SfInput
                   v-model="form.email"
                   data-cy="my-profile-input_email"
@@ -141,9 +147,24 @@
       </tabs>
     </div>
     <div v-else class="user_profile_detail my-profile__content">
-      <SfProperty v-if="displayName" class="my-profile-cname" name="Name" :value="displayName" />
-      <SfProperty v-if="email" class="my-profile-cemail" name="Email" :value="email" />
-      <SfProperty v-if="phone" class="my-profile-cmobile" name="Mobile" :value="phone" />
+      <SfProperty
+        v-if="displayName"
+        class="my-profile-cname"
+        name="Name"
+        :value="displayName"
+      />
+      <SfProperty
+        v-if="email"
+        class="my-profile-cemail"
+        name="Email"
+        :value="email"
+      />
+      <SfProperty
+        v-if="phone"
+        class="my-profile-cmobile"
+        name="Mobile"
+        :value="phone"
+      />
     </div>
   </div>
 </template>
@@ -178,7 +199,8 @@ extend('password', {
     String(value).length >= 8 &&
     String(value).match(/[A-Za-z]/gi) &&
     String(value).match(/[0-9]/gi),
-  message: 'Password must have at least 8 characters including one letter and a number'
+  message:
+    'Password must have at least 8 characters including one letter and a number'
 })
 
 extend('confirmed', {

@@ -73,7 +73,11 @@ export default {
         this.$t('Kidswear'),
         this.$t('Home')
       ],
-      help: [this.$t('Customer service'), this.$t('Size guide'), this.$t('Contact us')],
+      help: [
+        this.$t('Customer service'),
+        this.$t('Size guide'),
+        this.$t('Contact us')
+      ],
       paymentsDelivery: [this.$t('Purchase terms'), this.$t('Guarantee')],
       social: ['facebook', 'pinterest', 'google', 'twitter', 'youtube'],
       isMobile: false,
