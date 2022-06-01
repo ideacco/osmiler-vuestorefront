@@ -149,6 +149,7 @@ server: {
 4,解决方案:只用 ESLint fix 就可以保证代码风格了，那么关掉 vscode 保存时的自动格式化：
 "editor.formatOnSave": false,
 
+只需要yarn lint就可以修复代码格式统一格式化
 ## 项目启动使用：
 yarn install
 

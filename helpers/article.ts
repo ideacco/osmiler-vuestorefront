@@ -1,4 +1,4 @@
-import { formatDate } from "./utils"
+import { formatDate } from './utils'
 
 export const getArticleImage = (article) => {
   return article?.image?.url
@@ -13,5 +13,5 @@ export const getArticleLink = (article) => {
     name: 'articles-handle',
     params: { handle: article.handle },
     query: { id: article.id }
-  };
-};
+  }
+}

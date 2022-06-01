@@ -1,6 +1,9 @@
 <template>
   <div id="blogs">
-    <SfBreadcrumbs class="breadcrumbs desktop-only" :breadcrumbs="breadcrumbs" />
+    <SfBreadcrumbs
+      class="breadcrumbs desktop-only"
+      :breadcrumbs="breadcrumbs"
+    />
     <div class="navbar section">
       <div class="navbar__aside desktop-only">
         <SfHeading :level="1" title="Blogs" class="navbar__title" />
@@ -35,7 +38,9 @@
         <div class="navbar__counter">
           <span class="navbar__label desktop-only">Posts found: </span>
           <span class="desktop-only">{{ totalPosts }}</span>
-          <span class="navbar__label smartphone-only">{{ totalPosts }} Items</span>
+          <span class="navbar__label smartphone-only"
+          >{{ totalPosts }} Items</span
+          >
         </div>
         <div class="navbar__view">
           <span class="navbar__view-label desktop-only">View</span>
@@ -45,7 +50,12 @@
             :aria-pressed="isGridView"
             @click="isGridView = true"
           >
-            <SfIcon class="navbar__view-icon" :color="'#43464E'" icon="tiles" size="12px" />
+            <SfIcon
+              class="navbar__view-icon"
+              :color="'#43464E'"
+              icon="tiles"
+              size="12px"
+            />
           </SfButton>
           <SfButton
             class="sf-button--pure navbar__view-button"
@@ -53,7 +63,12 @@
             :aria-pressed="!isGridView"
             @click="isGridView = false"
           >
-            <SfIcon class="navbar__view-icon" :color="'#43464E'" icon="list" size="12px" />
+            <SfIcon
+              class="navbar__view-icon"
+              :color="'#43464E'"
+              icon="list"
+              size="12px"
+            />
           </SfButton>
         </div>
       </div>
@@ -64,7 +79,11 @@
           <SfAccordionItem header="Categories">
             <template #default>
               <SfList class="list">
-                <SfListItem v-for="(item, j) in blogs" :key="j" class="list__item">
+                <SfListItem
+                  v-for="(item, j) in blogs"
+                  :key="j"
+                  class="list__item"
+                >
                   <SfMenuItem :label="item.title" />
                 </SfListItem>
               </SfList>
@@ -133,7 +152,13 @@
             </template>
           </SfProductCard>
         </transition-group>
-        <transition-group v-else appear name="products__slide" tag="div" class="products__list">
+        <transition-group
+          v-else
+          appear
+          name="products__slide"
+          tag="div"
+          class="products__list"
+        >
           <SfProductCardHorizontal
             v-for="(product, i) in products"
             :key="product.id"
@@ -187,7 +212,12 @@
               </SfButton>
             </template>
             <template #configuration>
-              <SfProperty class="desktop-only" name="Size" value="XS" style="margin: 0 0 1rem 0" />
+              <SfProperty
+                class="desktop-only"
+                name="Size"
+                value="XS"
+                style="margin: 0 0 1rem 0"
+              />
               <SfProperty class="desktop-only" name="Color" value="white" />
             </template>
             <template #actions>
@@ -241,7 +271,11 @@
       @close="isFilterSidebarOpen = false"
     >
       <div class="filters desktop-only">
-        <SfHeading :level="4" title="Collection" class="filters__title sf-heading--left" />
+        <SfHeading
+          :level="4"
+          title="Collection"
+          class="filters__title sf-heading--left"
+        />
         <SfFilter
           v-for="filter in filters.collection"
           :key="filter.value"
@@ -251,7 +285,11 @@
           class="filters__item"
           @change="filter.selected = !filter.selected"
         />
-        <SfHeading :level="4" title="Color" class="filters__title sf-heading--left" />
+        <SfHeading
+          :level="4"
+          title="Color"
+          class="filters__title sf-heading--left"
+        />
         <div class="filters__colors">
           <SfColor
             v-for="filter in filters.color"
@@ -262,7 +300,11 @@
             @click="filter.selected = !filter.selected"
           />
         </div>
-        <SfHeading :level="4" title="Size" class="filters__title sf-heading--left" />
+        <SfHeading
+          :level="4"
+          title="Size"
+          class="filters__title sf-heading--left"
+        />
         <SfFilter
           v-for="filter in filters.size"
           :key="filter.value"
@@ -272,7 +314,11 @@
           class="filters__item"
           @change="filter.selected = !filter.selected"
         />
-        <SfHeading :level="4" title="Price" class="filters__title sf-heading--left" />
+        <SfHeading
+          :level="4"
+          title="Price"
+          class="filters__title sf-heading--left"
+        />
         <SfFilter
           v-for="filter in filters.price"
           :key="filter.value"
@@ -282,7 +328,11 @@
           class="filters__item"
           @change="filter.selected = !filter.selected"
         />
-        <SfHeading :level="4" title="Material" class="filters__title sf-heading--left" />
+        <SfHeading
+          :level="4"
+          title="Material"
+          class="filters__title sf-heading--left"
+        />
         <SfFilter
           v-for="filter in filters.material"
           :key="filter.value"
@@ -433,7 +483,7 @@ import {
 import { onSSR } from '@vue-storefront/core'
 import { useContent } from '@vue-storefront/shopify'
 export default {
-  name: 'CateGory',
+  name: 'PoSts',
   components: {
     SfHeading,
     SfButton,
@@ -705,7 +755,7 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
-@import '~@storefront-ui/vue/styles';
+@import "~@storefront-ui/vue/styles";
 #category {
   box-sizing: border-box;
   @include for-desktop {
@@ -722,7 +772,8 @@ export default {
   }
 }
 .breadcrumbs {
-  padding: var(--spacer-base) var(--spacer-base) var(--spacer-base) var(--spacer-sm);
+  padding: var(--spacer-base) var(--spacer-base) var(--spacer-base)
+    var(--spacer-sm);
 }
 .navbar {
   position: relative;
@@ -850,7 +901,8 @@ export default {
     }
     &-label {
       margin: 0 var(--spacer-sm) 0 0;
-      font: var(--font-weight--normal) var(--font-size--base) / 1.6 var(--font-family--secondary);
+      font: var(--font-weight--normal) var(--font-size--base) / 1.6
+        var(--font-family--secondary);
       text-decoration: none;
       color: var(--c-link);
     }

@@ -3,7 +3,11 @@
     <nav class="sf-breadcrumbs" aria-label="breadcrumbs">
       <ol class="sf-breadcrumbs__list">
         <li class="sf-breadcrumbs__list-item" :aria-current="false">
-          <vue-component-36-SfLink class="sf-breadcrumbs__breadcrumb" link="#" data-testid="Home">
+          <vue-component-36-SfLink
+            class="sf-breadcrumbs__breadcrumb"
+            link="#"
+            data-testid="Home"
+          >
             Product Collection
           </vue-component-36-SfLink>
         </li>
@@ -43,7 +47,13 @@
             @click:colors="handleSelectedColor($event, i)"
           />
         </transition-group>
-        <transition-group v-else appear name="products__slide" tag="div" class="products__list">
+        <transition-group
+          v-else
+          appear
+          name="products__slide"
+          tag="div"
+          class="products__list"
+        >
           <SfProductCardHorizontal
             v-for="(product, i) in products"
             :key="product.id"
@@ -68,7 +78,12 @@
             @click:wishlist="toggleWishlist(i)"
           >
             <template #configuration>
-              <SfProperty class="desktop-only" name="Size" value="XS" style="margin: 0 0 1rem 0" />
+              <SfProperty
+                class="desktop-only"
+                name="Size"
+                value="XS"
+                style="margin: 0 0 1rem 0"
+              />
               <SfProperty class="desktop-only" name="Color" value="white" />
             </template>
             <template #actions>
@@ -115,7 +130,7 @@ import {
   SfSelect
 } from '@storefront-ui/vue'
 export default {
-  name: 'CateGory',
+  name: 'ToothbruShproducts',
   components: {
     SfHeading,
     SfButton,
@@ -379,7 +394,7 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
-@import '~@storefront-ui/vue/styles';
+@import "~@storefront-ui/vue/styles";
 .footer {
 }
 #category {
@@ -398,7 +413,7 @@ export default {
   }
 }
 .breadcrumbs {
-  font-family: 'Alibaba PuHuiTi';
+  font-family: "Alibaba PuHuiTi";
   font-style: normal;
   font-weight: 400;
   font-size: 38px;
@@ -534,7 +549,8 @@ export default {
     }
     &-label {
       margin: 0 var(--spacer-sm) 0 0;
-      font: var(--font-weight--normal) var(--font-size--base) / 1.6 var(--font-family--secondary);
+      font: var(--font-weight--normal) var(--font-size--base) / 1.6
+        var(--font-family--secondary);
       text-decoration: none;
       color: var(--c-link);
     }
@@ -654,7 +670,7 @@ export default {
 }
 .sf-breadcrumbs__breadcrumb {
   top: 174px;
-  font-family: 'Alibaba PuHuiTi';
+  font-family: "Alibaba PuHuiTi";
   font-style: normal;
   font-weight: 400;
   font-size: 38px;

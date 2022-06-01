@@ -1,4 +1,4 @@
-import { reactive, computed } from '@nuxtjs/composition-api';
+import { reactive, computed } from '@nuxtjs/composition-api'
 
 const state = reactive({
   isCartSidebarOpen: false,
@@ -9,43 +9,43 @@ const state = reactive({
   isNavigationSidebarOpen: false,
   isMobileMenuOpen: false,
   articlesPerPage: '5'
-});
+})
 
 const useUiState = () => {
-  const isMobileMenuOpen = computed(() => state.isMobileMenuOpen);
+  const isMobileMenuOpen = computed(() => state.isMobileMenuOpen)
   const toggleMobileMenu = () => {
-    state.isMobileMenuOpen = !state.isMobileMenuOpen;
-  };
+    state.isMobileMenuOpen = !state.isMobileMenuOpen
+  }
 
-  const isCartSidebarOpen = computed(() => state.isCartSidebarOpen);
+  const isCartSidebarOpen = computed(() => state.isCartSidebarOpen)
   const toggleCartSidebar = () => {
-    state.isCartSidebarOpen = !state.isCartSidebarOpen;
-  };
+    state.isCartSidebarOpen = !state.isCartSidebarOpen
+  }
 
-  const isWishlistSidebarOpen = computed(() => state.isWishlistSidebarOpen);
+  const isWishlistSidebarOpen = computed(() => state.isWishlistSidebarOpen)
   const toggleWishlistSidebar = () => {
-    state.isWishlistSidebarOpen = !state.isWishlistSidebarOpen;
-  };
+    state.isWishlistSidebarOpen = !state.isWishlistSidebarOpen
+  }
 
-  const isNavigationSidebarOpen = computed(() => state.isNavigationSidebarOpen);
+  const isNavigationSidebarOpen = computed(() => state.isNavigationSidebarOpen)
   const toggleNavigationSidebar = () => {
-    state.isNavigationSidebarOpen = !state.isNavigationSidebarOpen;
-  };
+    state.isNavigationSidebarOpen = !state.isNavigationSidebarOpen
+  }
 
-  const isLoginModalOpen = computed(() => state.isLoginModalOpen);
+  const isLoginModalOpen = computed(() => state.isLoginModalOpen)
   const toggleLoginModal = () => {
-    state.isLoginModalOpen = !state.isLoginModalOpen;
-  };
+    state.isLoginModalOpen = !state.isLoginModalOpen
+  }
 
-  const isCategoryGridView = computed(() => state.isCategoryGridView);
+  const isCategoryGridView = computed(() => state.isCategoryGridView)
   const toggleCategoryGridView = () => {
-    state.isCategoryGridView = !state.isCategoryGridView;
-  };
+    state.isCategoryGridView = !state.isCategoryGridView
+  }
 
-  const isFilterSidebarOpen = computed(() => state.isFilterSidebarOpen);
+  const isFilterSidebarOpen = computed(() => state.isFilterSidebarOpen)
   const toggleFilterSidebar = () => {
-    state.isFilterSidebarOpen = !state.isFilterSidebarOpen;
-  };
+    state.isFilterSidebarOpen = !state.isFilterSidebarOpen
+  }
 
   const articlesPerPage = computed(() => state.articlesPerPage)
   const setArticlesPerPage = (perPage: string) => {
@@ -69,7 +69,7 @@ const useUiState = () => {
     toggleNavigationSidebar,
     articlesPerPage,
     setArticlesPerPage
-  };
-};
+  }
+}
 
-export default useUiState;
+export default useUiState

@@ -9,7 +9,7 @@
                 alt="OSMILER"
                 style="width: 80px"
                 src="/wp-content/uploads/2022/05/osmiler-logo-default.svg"
-            /></a>
+              /></a>
           </div>
           <div class="uk-navbar-right">
             <a class="uk-navbar-toggle" href="#tm-mobile" uk-toggle>
@@ -223,7 +223,7 @@
                 <div class="uk-panel textwidget">
                   <p>
                     <a class="uk-button uk-button-primary uk-width-1-1"
-                      >Book Appointment</a
+                    >Book Appointment</a
                     >
                   </p>
                   <div
@@ -236,8 +236,10 @@
                     uk-grid
                   >
                     <div>
-                      <a class="uk-text-emphasis" href="tel:5551234678"
-                        >+ 555 - 1234678</a
+                      <a
+                        class="uk-text-emphasis"
+                        href="tel:5551234678"
+                      >+ 555 - 1234678</a
                       >
                     </div>
                     <div>
@@ -262,8 +264,10 @@
                   </div>
                   <p class="uk-text-meta">
                     © Union Dental. All rights reserved. Powered by
-                    <a class="uk-link-muted" href="https://www.yootheme.com/"
-                      >YOOtheme</a
+                    <a
+                      class="uk-link-muted"
+                      href="https://www.yootheme.com/"
+                    >YOOtheme</a
                     >.
                   </p>
                 </div>
@@ -294,7 +298,7 @@
                     alt="OSMILER"
                     style="width: 90px"
                     src="/wp-content/uploads/2022/05/osmiler-logo-light.svg"
-                /></a>
+                  /></a>
                 <ul class="uk-navbar-nav">
                   <li
                     class="
@@ -520,7 +524,7 @@
                     <a
                       class="uk-button uk-button-primary"
                       @click="toggleLoginModal()"
-                      >Lognin</a
+                    >Lognin</a
                     >
                   </div>
                 </div>
