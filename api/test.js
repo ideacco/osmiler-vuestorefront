@@ -6,3 +6,8 @@
  data: params => get('/api/index', params)
 }
  */
+
+const a = 'aaaa'
+function bb() {
+  console.log('aaa')
+}

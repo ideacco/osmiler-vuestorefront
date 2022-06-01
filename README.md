@@ -143,12 +143,7 @@ server: {
 4,解决方案:只用 ESLint fix 就可以保证代码风格了，那么关掉 vscode 保存时的自动格式化：
 "editor.formatOnSave": false,
 
-<<<<<<< HEAD
-只需要yarn lintfix 就可以修复代码格式统一格式化
-
-=======
 只需要 yarn lintfix 就可以修复代码格式统一格式化
->>>>>>> 5eec37c4a5f2a61bf28e4ab54fe88c9003e33a82
 
 ## 项目启动使用：
 

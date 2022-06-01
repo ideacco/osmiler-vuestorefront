@@ -1,7 +1,7 @@
 <template>
   <b
   >Please implement vendor-specific CartPreview component in the
-    'components/Checkout' directory</b
+  'components/Checkout' directory</b
   >
 </template>
 
