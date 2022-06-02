@@ -4,7 +4,10 @@
       <div class="uk-navbar-container">
         <nav uk-navbar="container: .tm-header-mobile">
           <div class="uk-navbar-center">
-            <a href="./../index.html" class="uk-navbar-item uk-logo">
+            <a
+              href="./../index.html"
+              class="uk-navbar-item uk-logo"
+            >
               <img
                 alt="OSMILER"
                 style="width: 80px"
@@ -12,135 +15,99 @@
               /></a>
           </div>
           <div class="uk-navbar-right">
-            <a class="uk-navbar-toggle" href="#tm-mobile" uk-toggle>
+            <a
+              class="uk-navbar-toggle"
+              href="#tm-mobile"
+              uk-toggle
+            >
               <div uk-navbar-toggle-icon></div>
             </a>
           </div>
         </nav>
       </div>
-      <div id="tm-mobile" class="uk-modal-full" uk-modal>
+      <div
+        id="tm-mobile"
+        class="uk-modal-full"
+        uk-modal
+      >
         <div class="uk-modal-dialog uk-modal-body uk-height-viewport">
-          <button class="uk-modal-close-full" type="button" uk-close></button>
-          <div class="uk-child-width-1-1" uk-grid>
+          <button
+            class="uk-modal-close-full"
+            type="button"
+            uk-close
+          ></button>
+          <div
+            class="uk-child-width-1-1"
+            uk-grid
+          >
             <div>
               <div class="uk-panel">
                 <ul
                   class="uk-nav uk-nav-default uk-nav-divider uk-nav-parent-icon uk-nav-accordion"
                   uk-nav="targets: &gt; .js-accordion"
                 >
-                  <li
-                    class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home"
-                  >
+                  <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home">
                     <a href="/Home"> Home</a>
                   </li>
-                  <li
-                    class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children js-accordion uk-parent"
-                  >
+                  <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children js-accordion uk-parent">
                     <a> Services</a>
                     <ul class="uk-nav-sub">
-                      <li
-                        class="menu-item menu-item-type-post_type menu-item-object-page"
-                      >
+                      <li class="menu-item menu-item-type-post_type menu-item-object-page">
                         <a href="./../services/index.html"> All Services</a>
                       </li>
-                      <li
-                        class="menu-item menu-item-type-post_type menu-item-object-page"
-                      >
+                      <li class="menu-item menu-item-type-post_type menu-item-object-page">
                         <a href="./../general-dentistry/index.html">
-                          General Dentistry</a
-                        >
+                          General Dentistry</a>
                       </li>
-                      <li
-                        class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children uk-parent"
-                      >
+                      <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children uk-parent">
                         <a href="./../implant-dentistry/index.html">
-                          Implant Dentistry</a
-                        >
+                          Implant Dentistry</a>
                         <ul>
-                          <li
-                            class="menu-item menu-item-type-post_type menu-item-object-page"
-                          >
+                          <li class="menu-item menu-item-type-post_type menu-item-object-page">
                             <a href="./../dental-implants/index.html">
-                              Dental Implants</a
-                            >
+                              Dental Implants</a>
                           </li>
                         </ul>
                       </li>
-                      <li
-                        class="menu-item menu-item-type-post_type menu-item-object-page"
-                      >
+                      <li class="menu-item menu-item-type-post_type menu-item-object-page">
                         <a href="./../cosmetic-dentistry/index.html">
-                          Cosmetic Dentistry</a
-                        >
+                          Cosmetic Dentistry</a>
                       </li>
-                      <li
-                        class="menu-item menu-item-type-post_type menu-item-object-page"
-                      >
+                      <li class="menu-item menu-item-type-post_type menu-item-object-page">
                         <a href="./../product-page-a/index.html">
-                          Product-page-A</a
-                        >
+                          Product-page-A</a>
                       </li>
                     </ul>
                   </li>
-                  <li
-                    class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children js-accordion uk-parent"
-                  >
+                  <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children js-accordion uk-parent">
                     <a> Doctors</a>
                     <ul class="uk-nav-sub">
-                      <li
-                        class="menu-item menu-item-type-post_type menu-item-object-page"
-                      >
+                      <li class="menu-item menu-item-type-post_type menu-item-object-page">
                         <a href="./../doctors/index.html"> All Doctors</a>
                       </li>
-                      <li
-                        class="menu-item menu-item-type-post_type menu-item-object-page"
-                      >
+                      <li class="menu-item menu-item-type-post_type menu-item-object-page">
                         <a href="./../gina-lange-dmd/index.html">
-                          Gina Lange DMD</a
-                        >
+                          Gina Lange DMD</a>
                       </li>
                     </ul>
                   </li>
-                  <li
-                    class="menu-item menu-item-type-post_type menu-item-object-page"
-                  >
+                  <li class="menu-item menu-item-type-post_type menu-item-object-page">
                     <a href="./../about-us/index.html"> About Us</a>
                   </li>
-                  <li
-                    class="menu-item menu-item-type-post_type menu-item-object-page"
-                  >
+                  <li class="menu-item menu-item-type-post_type menu-item-object-page">
                     <a href="./../contact/index.html"> Contact</a>
-                  </li>
-                  <li
-                    class="menu-item menu-item-type-post_type menu-item-object-page"
-                  >
-                    <a href="./../blog/index.html"> Blog</a>
                   </li>
                 </ul>
               </div>
             </div>
             <div>
-              <div class="uk-panel widget widget_search" id="search-3">
-                <form
-                  id="search-84d9"
-                  action="."
-                  method="get"
-                  role="search"
-                  class="uk-search uk-search-default uk-width-1-1"
-                >
-                  <span uk-search-icon></span
-                  ><input
-                    name="s"
-                    placeholder="Search"
-                    required
-                    type="search"
-                    class="uk-search-input"
-                  />
-                </form>
-              </div>
+              
             </div>
             <div>
-              <div class="uk-panel widget widget_text" id="text-4">
+              <div
+                class="uk-panel widget widget_text"
+                id="text-4"
+              >
                 <div class="uk-panel textwidget">
                   <hr />
                 </div>
@@ -153,49 +120,9 @@
               >
                 <div class="uk-panel textwidget">
                   <p>
-                    <a class="uk-button uk-button-primary uk-width-1-1"
-                    >Book Appointment</a
-                    >
+                    <a class="uk-button uk-button-primary uk-width-1-1">Book Appointment</a>
                   </p>
-                  <div
-                    class="uk-grid-small uk-child-width-auto uk-flex-middle uk-flex-center"
-                    uk-grid
-                  >
-                    <div>
-                      <a
-                        class="uk-text-emphasis"
-                        href="tel:5551234678"
-                      >+ 555 - 1234678</a
-                      >
-                    </div>
-                    <div>
-                      <ul class="uk-iconnav">
-                        <li>
-                          <a
-                            href="https://facebook.com/yootheme"
-                            uk-icon="icon: facebook"
-                          ></a>
-                        </li>
-                        <li>
-                          <a
-                            href="https://instagram.com/"
-                            uk-icon="icon: instagram"
-                          ></a>
-                        </li>
-                        <li>
-                          <a href="https://yelp.com/" uk-icon="icon: yelp"></a>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                  <p class="uk-text-meta">
-                    © Union Dental. All rights reserved. Powered by
-                    <a
-                      class="uk-link-muted"
-                      href="https://www.yootheme.com/"
-                    >YOOtheme</a
-                    >.
-                  </p>
+
                 </div>
               </div>
             </div>
@@ -210,15 +137,22 @@
         cls-active="uk-navbar-sticky"
         sel-target=".uk-navbar-container"
       >
-        <div class="uk-navbar-container " >
+        <div class="uk-navbar-container ">
           <div class="uk-container uk-container-large">
             <nav class="uk-navbar">
-              <div class="uk-navbar-left" id="top">
-                <a href="/Home" class="uk-navbar-item uk-logo">
+              <div
+                class="uk-navbar-left"
+                id="top"
+              >
+                <a
+                  href="/Home"
+                  class="uk-navbar-item uk-logo"
+                >
                   <img
                     alt="OSMILER"
                     style="width: 90px"
-                    src="/wp-content/uploads/2022/05/osmiler-logo-default.svg" />
+                    src="/wp-content/uploads/2022/05/osmiler-logo-default.svg"
+                  />
                   <img
                     class="uk-logo-inverse"
                     alt="OSMILER"
@@ -253,42 +187,27 @@
                       >
                         <div>
                           <ul class="uk-nav uk-navbar-dropdown-nav">
-                            <li
-                              class="menu-item menu-item-type-post_type menu-item-object-page"
-                            >
+                            <li class="menu-item menu-item-type-post_type menu-item-object-page">
                               <a href="./../general-dentistry/index.html">
-                                General Dentistry</a
-                              >
+                                General Dentistry</a>
                             </li>
-                            <li
-                              class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children uk-parent"
-                            >
+                            <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children uk-parent">
                               <a href="./../implant-dentistry/index.html">
-                                Implant Dentistry</a
-                              >
+                                Implant Dentistry</a>
                               <ul class="uk-nav-sub">
-                                <li
-                                  class="menu-item menu-item-type-post_type menu-item-object-page"
-                                >
+                                <li class="menu-item menu-item-type-post_type menu-item-object-page">
                                   <a href="./../dental-implants/index.html">
-                                    Dental Implants</a
-                                  >
+                                    Dental Implants</a>
                                 </li>
                               </ul>
                             </li>
-                            <li
-                              class="menu-item menu-item-type-post_type menu-item-object-page"
-                            >
+                            <li class="menu-item menu-item-type-post_type menu-item-object-page">
                               <a href="./../cosmetic-dentistry/index.html">
-                                Cosmetic Dentistry</a
-                              >
+                                Cosmetic Dentistry</a>
                             </li>
-                            <li
-                              class="menu-item menu-item-type-post_type menu-item-object-page"
-                            >
+                            <li class="menu-item menu-item-type-post_type menu-item-object-page">
                               <a href="./../product-page-a/index.html">
-                                Product-page-A</a
-                              >
+                                Product-page-A</a>
                             </li>
                           </ul>
                         </div>
@@ -344,14 +263,21 @@
                 </ul>
               </div>
               <div class="uk-navbar-right">
-                <div class="widget widget_search" id="search-2">
+                <div
+                  class="widget widget_search"
+                  id="search-2"
+                >
                   <a
                     class="uk-navbar-toggle"
                     href="#search-c3d5-modal"
                     uk-search-icon
                     uk-toggle
                   ></a>
-                  <div id="search-c3d5-modal" class="uk-modal-full" uk-modal>
+                  <div
+                    id="search-c3d5-modal"
+                    class="uk-modal-full"
+                    uk-modal
+                  >
                     <div
                       class="uk-modal-dialog uk-flex uk-flex-center uk-flex-middle"
                       uk-height-viewport
@@ -390,8 +316,7 @@
                     <a
                       class="uk-button uk-button-primary"
                       @click="toggleLoginModal()"
-                    >Lognin</a
-                    >
+                    >Lognin</a>
                   </div>
                 </div>
               </div>
@@ -446,7 +371,7 @@ export default {
 @import '../static/wp-includes/css/dist/block-library/style.min.css';
 @import '../static/wp-content/themes/yootheme/css/theme.1.css';
 @import '../static/wp-content/themes/yootheme/vendor/yootheme/theme-highlight/assets/styles/monokai.css';
-.tm-headers2{
+.tm-headers2 {
   background: transparent !important;
 }
 </style>

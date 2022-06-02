@@ -70,7 +70,9 @@
           </div>
           <div class="bottom">
             <p class="bottom__paragraph">No account</p>
-            <SfButton class="sf-button--text" @click="setIsLoginValue(false)">
+            <SfButton 
+              class="color-light sf-button--full-width sf-button"
+              @click="setIsLoginValue(false)">
               Register today
             </SfButton>
           </div>
@@ -480,6 +482,9 @@ export default {
       margin: 0;
     }
   }
+}
+.sf-button {
+  --button-border-radius:30px;
 }
 .sf-button--text:hover {
   color: #5d47ee;
