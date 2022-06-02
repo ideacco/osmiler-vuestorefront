@@ -3,6 +3,7 @@ require('isomorphic-fetch')
 import webpack from 'webpack'
 const platformENV =
   process.env.VUE_APP_TITLE !== 'production' ? 'http' : 'https'
+
 const config = {
   env: {
     VUE_APP_TITLE: process.env.VUE_APP_TITLE,
@@ -244,6 +245,7 @@ const config = {
     ],
   },
   build: {
+
     transpile: ['vee-validate/dist/rules', 'storefront-ui'],
     plugins: [
       new webpack.DefinePlugin({
@@ -264,6 +266,7 @@ const config = {
       })
     },
     extractCSS: {
+      allChunks: true,
       ignoreOrder: true,
     },
   },

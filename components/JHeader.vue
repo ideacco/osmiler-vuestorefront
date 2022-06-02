@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div v-cloak>
     <div class="tm-header-mobile uk-hidden@m">
       <div class="uk-navbar-container">
         <nav uk-navbar="container: .tm-header-mobile">
@@ -507,5 +507,7 @@ color: #ffff !important ;
   right: 20px;
   background-color: #ffff !important;
 }
-
+  [v-cloak] {
+   display: none !important;
+  }
 </style>
