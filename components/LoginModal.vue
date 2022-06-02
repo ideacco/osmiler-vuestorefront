@@ -69,7 +69,6 @@
             </SfButton>
           </div>
           <div class="bottom">
-            <p class="bottom__paragraph">No account</p>
             <SfButton 
               class="color-light sf-button--full-width sf-button"
               @click="setIsLoginValue(false)">
@@ -434,8 +433,8 @@ export default {
 
 <style lang="scss" scoped>
 .modal {
-  --modal-index: 9999;
-  --overlay-z-index: 8888;
+  --modal-index: 1000;
+  --overlay-z-index: 999;
 }
 .form {
   margin-top: var(--spacer-sm);

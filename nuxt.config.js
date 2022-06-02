@@ -269,14 +269,14 @@ const config = {
   },
   pwa: {
     manifest: {
-      name: 'VSF Next: Shopify APP',
+      name: 'Osmiler',
       lang: 'en',
       shortName: 'SPVSF2',
       startUrl: '/',
       display: 'standalone',
-      backgroundColor: '#5ece7b',
-      themeColor: '#5ece7b',
-      description: 'This is the Shopify PWA app for VSF Next',
+      backgroundColor: '#5d47ee',
+      themeColor: '#5d47ee',
+      description: 'let your smile light up the world',
       icons: [
         {
           src: '/icons/android-icon-48x48.png',
@@ -316,12 +316,12 @@ const config = {
       ],
     },
     meta: {
-      name: 'VSF Next: Shopify APP',
-      author: 'Aureate labs',
-      backgroundColor: '#5ece7b',
+      name: 'Osmiler',
+      author: 'Osmiler Team',
+      backgroundColor: '#5d47ee',
       description:
-        'This is the Shopify PWA app for VSF Next - Developed by Aureate labs',
-      themeColor: '#5ece7b',
+        'let your smile light up the world',
+      themeColor: '#5d47ee',
       ogHost: 'shopify-pwa.aureatelabs.com',
     },
     icon: {
