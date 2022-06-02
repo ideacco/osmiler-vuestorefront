@@ -114,27 +114,6 @@
                 </ul>
               </div>
             </div>
-            <!-- search-3 -->
-            <div>
-              <div class="widget widget_search" id="search-3">
-                <form
-                  id="search-84d9"
-                  action="."
-                  method="get"
-                  role="search"
-                  class="uk-search uk-search-default uk-width-1-1"
-                >
-                  <span uk-search-icon></span
-                  ><input
-                    name="s"
-                    placeholder="Search"
-                    required
-                    type="search"
-                    class="uk-search-input"
-                  />
-                </form>
-              </div>
-            </div>
             <div>
               <div class="uk-panel widget widget_text" id="text-4">
                 <div class="uk-panel textwidget">
@@ -153,7 +132,6 @@
                     >Book Appointment</a
                     >
                   </p>
-                  
                 </div>
               </div>
             </div>
