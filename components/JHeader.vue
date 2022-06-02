@@ -441,7 +441,7 @@
 </template>
 <script src="../static/homepage/audiojs/audio.js"></script>
 <script type="module">
-import { path } from '~/server-middleware/custom-features'
+
 import LoginModal from './LoginModal.vue'
 
 export default {
