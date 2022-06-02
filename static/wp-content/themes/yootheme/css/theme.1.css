@@ -4380,7 +4380,7 @@ ul.uk-nav-sub {
 }
 
 .uk-nav-primary .uk-nav-sub li.uk-active > a {
-  color: #5d47ee;
+  color:#5d47ee;
 }
 
 .uk-nav-center {
@@ -4426,7 +4426,7 @@ ul.uk-nav-sub {
 }
 
 .uk-navbar-container:not(.uk-navbar-transparent) {
-  background: #fff;
+  /* background: #fff; */
   box-shadow: 0 5px 15px rgba(39, 44, 63, 0.06);
   position: relative;
   z-index: 990;

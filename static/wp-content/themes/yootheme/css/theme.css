@@ -3665,7 +3665,7 @@ ul.uk-nav-sub {
   margin-top: -1px;
 }
 .uk-navbar-container:not(.uk-navbar-transparent) {
-  background: #fff;
+  /* background: #fff; */
   box-shadow: 0 5px 15px rgba(39, 44, 63, 0.06);
   position: relative;
   z-index: 990;

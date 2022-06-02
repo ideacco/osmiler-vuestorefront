@@ -319,8 +319,7 @@ const config = {
       name: 'Osmiler',
       author: 'Osmiler Team',
       backgroundColor: '#5d47ee',
-      description:
-        'let your smile light up the world',
+      description: 'let your smile light up the world',
       themeColor: '#5d47ee',
       ogHost: 'shopify-pwa.aureatelabs.com',
     },
