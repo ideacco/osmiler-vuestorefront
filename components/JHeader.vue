@@ -152,41 +152,8 @@
                     <a class="uk-button uk-button-primary uk-width-1-1"
                     >Book Appointment</a
                     >
-                    <a class="uk-button uk-button-primary uk-width-1-1"
-                    >Book Appointment</a
-                    >
                   </p>
-                  <div
-                    class="uk-grid-small uk-child-width-auto uk-flex-middle uk-flex-center"
-                    uk-grid
-                  >
-                    <div>
-                      <a class="uk-text-emphasis" href="#">+ 555 - 1234678</a>
-                    </div>
-                    <div>
-                      <ul class="uk-iconnav">
-                        <li>
-                          <a
-                            href="https://facebook.com/yootheme"
-                            uk-icon="icon: facebook"
-                          ></a>
-                        </li>
-                        <li>
-                          <a
-                            href="https://instagram.com/"
-                            uk-icon="icon: instagram"
-                          ></a>
-                        </li>
-                        <li>
-                          <a href="https://yelp.com/" uk-icon="icon: yelp"></a>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                  <p class="uk-text-meta">
-                    © Union Dental. All rights reserved. Powered by
-                    <a class="uk-link-muted" href="#">YOOtheme</a>.
-                  </p>
+                  
                 </div>
               </div>
             </div>
