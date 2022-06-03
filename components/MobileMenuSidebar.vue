@@ -1,7 +1,7 @@
 <template>
   <SfSidebar
     :visible="isMobileMenuOpen"
-    :title="$t('Menu')"
+    :title="'Menu'"
     class="mobile-menu-sidebar sf-sidebar--left"
     @close="toggleMobileMenu"
   >

@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div style="height:100%">
     <client-only>
       <BottomNavigation />
     </client-only>
@@ -100,7 +100,8 @@ export default {
   box-sizing: border-box;
   @include for-desktop {
     margin: auto;
-  }
+  };
+  height: 100%;
 }
 
 .no-scroll {
@@ -114,6 +115,7 @@ html {
   @include for-mobile {
     overflow-x: hidden;
   }
+  height: 100%;
 }
 body {
   overflow-x: hidden;
@@ -122,6 +124,7 @@ body {
   font-family: Overpass;
   margin: 0;
   padding: 0;
+  height: 100%;
 }
 a {
   text-decoration: none;

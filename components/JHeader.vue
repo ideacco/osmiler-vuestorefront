@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div v-cloak>
     <div class="tm-header-mobile uk-hidden@m">
       <div class="uk-navbar-container">
         <nav uk-navbar="container: .tm-header-mobile">
@@ -184,11 +184,7 @@
                     >
                       <a
                         href="/music"
-                        :class="
-                          srcs === 0
-                            ? 'navheaders'
-                            : 'navheader'
-                        "
+                       :class="srcs === 0 ? 'navheaders' : 'navheader'"
                       >
                         Music community</a
                       >
@@ -199,7 +195,7 @@
                       @click="tabggle(2)"
                     >
                       <a
-                        href="/tabvue"
+                        href="/News"
                         :class="srcs === 0 ? 'navheaders' : 'navheader'"
                       >
                         Services</a
@@ -398,10 +394,10 @@ export default {
     return {
       tabIndex: 0,
       visible: false,
-      srcs: 0,
       navheader: {
         color: 'rgba(255,255,255,.6)',
       },
+      srcs:0,
       headStyle: {
         position: 'fixed',
         width: '100%',
@@ -412,21 +408,30 @@ export default {
   mounted() {
     const name = localStorage.getItem('myCat')
     this.tabIndex = Number(name)
+    if(this.$route.path!='/Home'||this.$route.path!='/music'){
+      this.srcs=1
+      this.headStyle.background='#fff'
+    }
+    if(this.$route.path==='/Home'||this.$route.path==='/music'){
+      this.srcs=0
+      this.headStyle.background='transparent'
+    }
     window.addEventListener('scroll', this.handleScroll)
+
   },
   methods: {
     handleScroll() {
-      let scrollTop = window.pageYOffset || document.documentElement.scrollTop
-      if (scrollTop != 0) {
-        this.headStyle.background = `rgba(248,248,255,${
+      let scrollTop =  window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop;
+
+      if (scrollTop  &&this.$route.path==='/Home'||this.$route.path==='/music') {
+        this.headStyle.background = `rgba(255,255,255,${
           scrollTop / (scrollTop + 100)
         })`
         this.srcs = 1
-      } else {
-        this.headStyle.background = `rgba(0,0,0,${
-          scrollTop / (scrollTop - 70)
-        })`
-        this.srcs = 0
+        if(scrollTop<50){
+            this.srcs = 0
+          this.headStyle.background = `transparent`
+        }
       }
     },
     tabggle(index) {
@@ -481,5 +486,7 @@ color: #ffff !important ;
   right: 20px;
   background-color: #ffff !important;
 }
-
+  [v-cloak] {
+   display: none !important;
+  }
 </style>
