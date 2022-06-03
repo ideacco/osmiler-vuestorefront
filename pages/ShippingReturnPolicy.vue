@@ -179,8 +179,4 @@
   </div>
 </template>
 <script></script>
-<style lang="scss" scoped>
-@import '../static/wp-includes/css/dist/block-library/style.min.css';
-@import '../static/wp-content/themes/yootheme/css/theme.1.css';
-@import '../static/wp-content/themes/yootheme/vendor/yootheme/theme-highlight/assets/styles/monokai.css';
-</style>
+<style lang="scss" scoped></style>

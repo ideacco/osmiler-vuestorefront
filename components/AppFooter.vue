@@ -158,20 +158,9 @@
             <div
               class="uk-panel uk-text-small uk-text-muted uk-hidden@m uk-margin-small uk-text-left@s uk-text-center"
             >
-              ©
-              <script>
-                document.currentScript.insertAdjacentHTML(
-                'afterend',
-                '<time datetime="' +
-                new Date().toJSON() +
-                '">' +
-                new Intl.DateTimeFormat(document.documentElement.lang, {
-                year: 'numeric',
-                }).format() +
-                '<\/time>'
-                )
-              </script>
-              Union Dental. All rights reserved.<br class="uk-hidden@s" />
+              © 2022 Union Dental. All rights reserved.<br
+                class="uk-hidden@s"
+              />
               Powered by <a href="https://yootheme.com/">YOOtheme</a>.
             </div>
           </div>
@@ -179,20 +168,7 @@
             <div
               class="uk-panel uk-text-small uk-text-muted uk-visible@m uk-text-center@s uk-text-center"
             >
-              ©
-              <script>
-                document.currentScript.insertAdjacentHTML(
-                'afterend',
-                '<time datetime="' +
-                new Date().toJSON() +
-                '">' +
-                new Intl.DateTimeFormat(document.documentElement.lang, {
-                year: 'numeric',
-                }).format() +
-                '<\/time>'
-                )
-              </script>
-              OSMILER. All rights reserved.<br class="uk-hidden@s" />
+              © 2022 OSMILER. All rights reserved.<br class="uk-hidden@s" />
             </div>
           </div>
           <div class="uk-width-1-2@s uk-width-1-4@m"></div>
@@ -243,9 +219,19 @@
   </div>
 </template>
 
-<script type="module"></script>
+<script type="module">
+// document.currentScript.insertAdjacentHTML(
+//                 'afterend',
+//                 '<time datetime="' +
+//                 new Date().toJSON() +
+//                 '">' +
+//                 new Intl.DateTimeFormat(document.documentElement.lang, {
+//                 year: 'numeric',
+//                 }).format() +
+//                 '<\/time>'
+//                 )
+</script>
 <style lang="scss" scoped>
-@import '../static/wp-includes/css/dist/block-library/style.min.css';
+// @import '../static/wp-includes/css/dist/block-library/style.min.css';
 @import '../static/wp-content/themes/yootheme/css/theme.1.css';
-@import '../static/wp-content/themes/yootheme/vendor/yootheme/theme-highlight/assets/styles/monokai.css';
 </style>

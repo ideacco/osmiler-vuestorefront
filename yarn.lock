@@ -10060,7 +10060,7 @@ number-is-nan@^1.0.0:
 
 nuxt-purgecss@^1.0.0:
   version "1.0.0"
-  resolved "https://registry.npmmirror.com/nuxt-purgecss/-/nuxt-purgecss-1.0.0.tgz"
+  resolved "https://registry.yarnpkg.com/nuxt-purgecss/-/nuxt-purgecss-1.0.0.tgz#7c275205f0b727a5822781908d684f2e094ff5e7"
   integrity sha512-gu6CUd+oA738Gqyl8P16HmnvreuslKVrn8tTJnjCut6OOC3pRrxqct6sAad0sxDk2fULVdeGb7V/mxo8qKisPQ==
   dependencies:
     "@fullhuman/postcss-purgecss" "^2.0.5"

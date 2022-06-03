@@ -1,5 +1,5 @@
 <template>
-  <div style="height:100%">
+  <div style="height: 100%">
     <client-only>
       <BottomNavigation />
     </client-only>
@@ -16,7 +16,12 @@
       <Notification />
     </LazyHydrate>
 
-    <AssHeader />
+    <!-- <AssHeader /> -->
+    <AppHeader
+      :cart-total-items="getCartTotalItems"
+      :is-user-authenticated="isAuthenticated"
+    />
+
     <div id="layout">
       <nuxt :key="route.fullPath" />
     </div>
@@ -27,7 +32,8 @@
 </template>
 
 <script>
-import AssHeader from '~/components/JHeader.vue'
+// import AssHeader from '~/components/JHeader.vue'
+import AppHeader from '~/components/AppHeader_new.vue'
 import LazyHydrate from 'vue-lazy-hydration'
 import {
   useUser,
@@ -48,11 +54,14 @@ export default {
   name: 'DefaultLayout',
   components: {
     LazyHydrate,
-    AssHeader,
+    // AssHeader,
+    AppHeader,
     BottomNavigation: () =>
       import(/* webpackPrefetch: true */ '~/components/BottomNavigation.vue'),
+    // AppFooter: () =>
+    //   import(/* webpackPrefetch: true */ '~/components/AppFooter.vue'),
     AppFooter: () =>
-      import(/* webpackPrefetch: true */ '~/components/AppFooter.vue'),
+      import(/* webpackPrefetch: true */ '~/components/AppFooter_new.vue'),
     CartSidebar: () =>
       import(/* webpackPrefetch: true */ '~/components/CartSidebar.vue'),
     WishlistSidebar: () =>
@@ -100,7 +109,7 @@ export default {
   box-sizing: border-box;
   @include for-desktop {
     margin: auto;
-  };
+  }
   height: 100%;
 }
 

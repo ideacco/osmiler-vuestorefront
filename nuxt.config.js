@@ -77,7 +77,7 @@ const config = {
   },
   plugins: [
     '~/plugins/scrollToTop.client.js',
-    '@/plugins/element-ui',
+    // '@/plugins/element-ui',
     {
       src: '~/plugins/UIkit',
       ssr: false,
@@ -104,6 +104,12 @@ const config = {
           dev: ['@vue-storefront/shopify', '@vue-storefront/core'],
           prod: ['@vue-storefront/shopify', '@vue-storefront/core'],
         },
+        performance: {
+          purgeCSS: {
+            enabled: false,
+            paths: ['**/*.vue'],
+          },
+        },
       },
     ],
     ['@vue-storefront/nuxt-theme'],
@@ -117,12 +123,11 @@ const config = {
     ],
   ],
   css: [
-    'element-ui/lib/theme-chalk/index.css',
-    'element-ui/lib/theme-chalk/display.css',
-    'uikit/dist/css/uikit.min.css',
+    // 'element-ui/lib/theme-chalk/index.css',
+    // 'element-ui/lib/theme-chalk/display.css',
     // 'normalize.css/normalize.css',
     {
-      src: '~style/index.scss',
+      src: '~/style/index.scss',
       lang: 'scss',
     },
   ],
@@ -241,11 +246,10 @@ const config = {
       require.resolve('@storefront-ui/shared/styles/_helpers.scss', {
         paths: [process.cwd()],
       }),
-      './style/index.scss',
+      // './style/index.scss',
     ],
   },
   build: {
-
     transpile: ['vee-validate/dist/rules', 'storefront-ui'],
     plugins: [
       new webpack.DefinePlugin({
@@ -265,10 +269,10 @@ const config = {
         type: 'javascript/auto',
       })
     },
-    extractCSS: {
-      allChunks: true,
-      ignoreOrder: true,
-    },
+    // extractCSS: {
+    //   allChunks: true,
+    //   ignoreOrder: true,
+    // },
   },
   pwa: {
     manifest: {

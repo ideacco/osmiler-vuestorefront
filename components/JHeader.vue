@@ -184,7 +184,7 @@
                     >
                       <a
                         href="/music"
-                       :class="srcs === 0 ? 'navheaders' : 'navheader'"
+                        :class="srcs === 0 ? 'navheaders' : 'navheader'"
                       >
                         Music community</a
                       >
@@ -308,7 +308,12 @@
                       :class="tabIndex === 7 ? 'uk-active' : ''"
                       @click="tabggle(7)"
                     >
-                      <a href="/" :class="srcs === 0 ? 'navheaders' : 'navheader'"> Blog</a>
+                      <a
+                        href="/"
+                        :class="srcs === 0 ? 'navheaders' : 'navheader'"
+                      >
+                        Blog</a
+                      >
                     </li>
                   </ul>
                 </div>
@@ -382,7 +387,6 @@
 </template>
 <script src="../static/homepage/audiojs/audio.js"></script>
 <script type="module">
-
 import LoginModal from './LoginModal.vue'
 
 export default {
@@ -397,7 +401,7 @@ export default {
       navheader: {
         color: 'rgba(255,255,255,.6)',
       },
-      srcs:0,
+      srcs: 0,
       headStyle: {
         position: 'fixed',
         width: '100%',
@@ -408,28 +412,33 @@ export default {
   mounted() {
     const name = localStorage.getItem('myCat')
     this.tabIndex = Number(name)
-    if(this.$route.path!='/Home'||this.$route.path!='/music'){
-      this.srcs=1
-      this.headStyle.background='#fff'
+    if (this.$route.path != '/Home' || this.$route.path != '/music') {
+      this.srcs = 1
+      this.headStyle.background = '#fff'
     }
-    if(this.$route.path==='/Home'||this.$route.path==='/music'){
-      this.srcs=0
-      this.headStyle.background='transparent'
+    if (this.$route.path === '/Home' || this.$route.path === '/music') {
+      this.srcs = 0
+      this.headStyle.background = 'transparent'
     }
     window.addEventListener('scroll', this.handleScroll)
-
   },
   methods: {
     handleScroll() {
-      let scrollTop =  window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop;
+      let scrollTop =
+        window.pageYOffset ||
+        document.documentElement.scrollTop ||
+        document.body.scrollTop
 
-      if (scrollTop  &&this.$route.path==='/Home'||this.$route.path==='/music') {
+      if (
+        (scrollTop && this.$route.path === '/Home') ||
+        this.$route.path === '/music'
+      ) {
         this.headStyle.background = `rgba(255,255,255,${
           scrollTop / (scrollTop + 100)
         })`
         this.srcs = 1
-        if(scrollTop<50){
-            this.srcs = 0
+        if (scrollTop < 50) {
+          this.srcs = 0
           this.headStyle.background = `transparent`
         }
       }
@@ -458,7 +467,7 @@ export default {
 .uk-navbar-toggles {
   color: #ffff;
 }
-.uk-light .uk-navbar-nav>li.uk-active>.navheaders:hover{
+.uk-light .uk-navbar-nav > li.uk-active > .navheaders:hover {
   color: #ffff;
 }
 
@@ -466,27 +475,27 @@ export default {
   color: #ffff !important;
 }
 
- .navheaders:active {
+.navheaders:active {
   color: #ffff !important ;
 }
-.uk-navbar-nav > li.uk-active > .navheaders::before{
-    left: 20px;
-    right: 20px;
-    background-color: #ffff;
+.uk-navbar-nav > li.uk-active > .navheaders::before {
+  left: 20px;
+  right: 20px;
+  background-color: #ffff;
 }
- .uk-navbar-nav>li> .navheaders{
-    color: rgba(255, 255, 255, 0.6) ;
+.uk-navbar-nav > li > .navheaders {
+  color: rgba(255, 255, 255, 0.6);
 }
-.uk-navbar-nav > li.uk-active > .navheaders{
-color: #ffff !important ;
+.uk-navbar-nav > li.uk-active > .navheaders {
+  color: #ffff !important ;
 }
-.uk-navbar-nav > li:hover >  .navheaders::before,
-.uk-navbar-nav > li >  .navheaders[aria-expanded='true']::before {
+.uk-navbar-nav > li:hover > .navheaders::before,
+.uk-navbar-nav > li > .navheaders[aria-expanded='true']::before {
   left: 20px;
   right: 20px;
   background-color: #ffff !important;
 }
-  [v-cloak] {
-   display: none !important;
-  }
+[v-cloak] {
+  display: none !important;
+}
 </style>

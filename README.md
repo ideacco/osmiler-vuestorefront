@@ -79,12 +79,12 @@ vuestorefront 底层基础使用 (nuxt)[https://www.nuxtjs.org/] 作为基础支
 
 async asyncdata({$axios,app}){
     const respone=await app.$test()
-  console.log('respopnse‘,respone)
+  console.log('respopnse',respone)
   return {
       data:respone.data
   }
 }
-async asyncdata({$axios]}){
+async asyncdata({$axios}){
     const response=await $axios.get()
     return(data:response。data)
 }
@@ -149,7 +149,7 @@ server: {
 4,解决方案:只用 ESLint fix 就可以保证代码风格了，那么关掉 vscode 保存时的自动格式化：
 "editor.formatOnSave": false,
 
-**只需要 `yarn lintfi`x 就可以修复代码格式统一格式化**
+**只需要 `yarn lintfix` 就可以修复代码格式统一格式化**
 
 ## 项目启动使用：
 
