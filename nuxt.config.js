@@ -78,10 +78,10 @@ const config = {
   plugins: [
     '~/plugins/scrollToTop.client.js',
     // '@/plugins/element-ui',
-    {
-      src: '~/plugins/UIkit',
-      ssr: false,
-    },
+    // {
+    //   src: '~/plugins/UIkit',
+    //   ssr: false,
+    // },
     '~/plugins/axios-interceptor',
     // '~/api/test',
   ],

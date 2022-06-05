@@ -324,42 +324,16 @@
 </template>
 
 <script>
-import { SfFooter, SfList, SfImage, SfMenuItem } from '@storefront-ui/vue'
-import { addBasePath } from '@vue-storefront/core'
 export default {
   components: {
-    SfFooter,
-    SfList,
-    SfImage,
-    SfMenuItem
   },
   setup() {
     return {
-      addBasePath
+      
     }
   },
   data() {
     return {
-      aboutUs: [
-        this.$t('Who we are'),
-        this.$t('Quality in the details'),
-        this.$t('Customer Reviews')
-      ],
-      departments: [
-        this.$t('Women fashion'),
-        this.$t('Men Fashion'),
-        this.$t('Kidswear'),
-        this.$t('Home')
-      ],
-      help: [
-        this.$t('Customer service'),
-        this.$t('Size guide'),
-        this.$t('Contact us')
-      ],
-      paymentsDelivery: [this.$t('Purchase terms'), this.$t('Guarantee')],
-      social: ['facebook', 'pinterest', 'google', 'twitter', 'youtube'],
-      isMobile: false,
-      desktopMin: 1024
     }
   }
 }

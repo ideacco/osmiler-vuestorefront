@@ -2,11 +2,9 @@
   <div>
     <SfHeader
       data-cy="app-header"
-      :search-value="term"
       :cart-items-qty="cartTotalItems"
       :account-icon="accountIcon"
       class="sf-header--has-mobile-search"
-      :class="{ 'header-on-top': isSearchOpen }"
       @click:cart="toggleCartSidebar"
       @click:wishlist="toggleWishlistSidebar"
       @click:account="
@@ -14,15 +12,13 @@
           ? $router.push(localePath({ name: 'my-account' }))
           : toggleLoginModal()
       "
-      @enter:search="changeSearchTerm"
-      @change:search="(p) => (term = p)"
-    >
+      >
       <!-- TODO: add mobile view buttons after SFUI team PR -->
       <template #logo>
         <nuxt-link :to="localePath('/')" class="sf-header__logo">
           <SfImage
-            src="/icons/logo.webp"
-            alt="Vue Storefront Next"
+            src="/icons/osmiler-logo-default.svg"
+            alt="osmiler"
             class="sf-header__logo-image"
             :width="34"
             :height="34"
@@ -77,7 +73,8 @@
       </template>
 
       <template #search>
-        <SfSearchBar
+        <div></div>
+        <!-- <SfSearchBar
           placeholder="Search for items"
           :value="term"
           :icon="{ size: '1.25rem', color: '#43464E' }"
@@ -86,15 +83,15 @@
           @keydown.tab="hideSearch"
           @input="handleSearch"
           @focus="isSearchOpen = true"
-        ></SfSearchBar>
+        ></SfSearchBar> -->
       </template>
     </SfHeader>
-    <SearchResults
+    <!-- <SearchResults
       v-if="isSearchOpen"
       :visible="isSearchOpen"
       :result="searchResults"
     />
-    <SfOverlay :visible="isSearchOpen" @click="isSearchOpen = false" />
+    <SfOverlay :visible="isSearchOpen" @click="isSearchOpen = false" /> -->
   </div>
 </template>
 
@@ -104,11 +101,9 @@ import {
   SfImage,
   SfButton,
   SfBadge,
-  SfSearchBar,
-  SfIcon,
-  SfOverlay
+  SfIcon
 } from '@storefront-ui/vue'
-import SearchResultsComp from './SearchResults.vue'
+// import SearchResultsComp from './SearchResults.vue'
 import debounce from 'lodash/debounce'
 import { onSSR } from '@vue-storefront/core'
 import {
@@ -122,23 +117,23 @@ import { useUiHelpers, useUiState } from '~/composables'
 import LocaleSelector from './LocaleSelector.vue'
 
 import {
-  searchGetters,
+  // searchGetters,
   useCategory,
-  useSearch,
+  // useSearch,
   useContent
 } from '@vue-storefront/shopify'
 
 export default {
   components: {
-    SearchResults: SearchResultsComp,
+    // SearchResults: SearchResultsComp,
     SfHeader,
     SfImage,
     SfIcon,
     LocaleSelector,
     SfButton,
-    SfOverlay,
-    SfBadge,
-    SfSearchBar
+    // SfOverlay,
+    SfBadge
+    // SfSearchBar
   },
   props: {
     cartTotalItems: {
@@ -153,10 +148,10 @@ export default {
     const { toggleCartSidebar, toggleWishlistSidebar, toggleLoginModal } =
       useUiState()
     const { changeSearchTerm, getFacetsFromURL } = useUiHelpers()
-    const { search: headerSearch, result } = useSearch('header-search')
+    // const { search: headerSearch, result } = useSearch('header-search')
     const { search, categories } = useCategory('menuCategories')
-    const { search: getArticles, content: articlesContent } =
-      useContent('articles')
+    // const { search: getArticles, content: articlesContent } =
+    //   useContent('articles')
 
     const curCatSlug = ref(getFacetsFromURL().categorySlug)
     const accountIcon = computed(() =>
@@ -164,54 +159,54 @@ export default {
     )
 
     // #region Search Section
-    const isSearchOpen = ref(false)
-    const term = ref(getFacetsFromURL().term)
-    const route = useRoute()
-    const handleSearch = debounce(async (searchTerm) => {
-      if (!searchTerm.target) {
-        term.value = searchTerm
-      } else {
-        term.value = searchTerm.target.value
-      }
+    // const isSearchOpen = ref(false)
+    // const term = ref(getFacetsFromURL().term)
+    // const route = useRoute()
+    // const handleSearch = debounce(async (searchTerm) => {
+    //   if (!searchTerm.target) {
+    //     term.value = searchTerm
+    //   } else {
+    //     term.value = searchTerm.target.value
+    //   }
 
-      await headerSearch({
-        term: term.value
-      })
-      await getArticles({
-        contentType: 'article',
-        query: term.value,
-        first: 5
-      })
-    }, 500)
+    //   await headerSearch({
+    //     term: term.value
+    //   })
+    //   await getArticles({
+    //     contentType: 'article',
+    //     query: term.value,
+    //     first: 5
+    //   })
+    // }, 500)
 
-    const hideSearch = () => {
-      if (isSearchOpen.value) {
-        isSearchOpen.value = false
-        if (document) {
-          document.body.classList.remove('no-scroll')
-        }
-      }
-    }
+    // const hideSearch = () => {
+    //   if (isSearchOpen.value) {
+    //     isSearchOpen.value = false
+    //     if (document) {
+    //       document.body.classList.remove('no-scroll')
+    //     }
+    //   }
+    // }
 
-    watch(route, () => {
-      hideSearch()
-      term.value = ''
-    })
+    // watch(route, () => {
+    //   hideSearch()
+    //   term.value = ''
+    // })
 
-    const closeSearch = () => {
-      if (!isSearchOpen.value) return
-      term.value = ''
-      isSearchOpen.value = false
-    }
+    // const closeSearch = () => {
+    //   if (!isSearchOpen.value) return
+    //   term.value = ''
+    //   isSearchOpen.value = false
+    // }
 
-    const searchResults = computed(() =>
-      !term.value
-        ? { products: [], articles: [] }
-        : {
-          products: searchGetters.getItems(result.value),
-          articles: articlesContent?.value?.data
-        }
-    )
+    // const searchResults = computed(() =>
+    //   !term.value
+    //     ? { products: [], articles: [] }
+    //     : {
+    //       products: searchGetters.getItems(result.value),
+    //       articles: articlesContent?.value?.data
+    //     }
+    // )
     // #endregion Search Section
 
     onSSR(async () => {
@@ -233,18 +228,18 @@ export default {
     return {
       getMenuPath,
       accountIcon,
-      hideSearch,
-      closeSearch,
+      // hideSearch,
+      // closeSearch,
       toggleLoginModal,
       toggleCartSidebar,
       toggleWishlistSidebar,
-      changeSearchTerm,
-      term,
-      handleSearch,
+      // changeSearchTerm,
+      // term,
+      // handleSearch,
       curCatSlug,
-      searchResults,
-      menus,
-      isSearchOpen
+      // searchResults,
+      menus
+      // isSearchOpen
     }
   }
 }
