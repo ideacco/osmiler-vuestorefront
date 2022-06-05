@@ -14,10 +14,7 @@
       :isSticky="false"
       :isNavVisible="false"
     >
-      <template
-        v-if="menus.length > 0"
-        #navigation
-      >
+      <template v-if="menus.length > 0" #navigation>
         <div class="navigation-wrapper">
           <SfHeaderNavigationItem
             v-for="menu in menus"
@@ -34,7 +31,6 @@
       </template>
     </SfHeader>
   </div>
-
 </template>
 
 <script>
@@ -42,14 +38,9 @@ import { onSSR } from '@vue-storefront/core'
 
 import { SfHeader } from '@storefront-ui/vue'
 
-import {
-  useCategory
-} from '@vue-storefront/shopify'
+import { useCategory } from '@vue-storefront/shopify'
 
-import {
-  computed,
-  useContext
-} from '@nuxtjs/composition-api'
+import { computed, useContext } from '@nuxtjs/composition-api'
 
 export default {
   props: {
@@ -60,7 +51,7 @@ export default {
     isUserAuthenticated: Boolean
   },
 
-  setup(props){
+  setup(props) {
     const context = useContext()
     const { search, categories } = useCategory('menuCategories')
     const menus = computed(() => [
@@ -70,14 +61,13 @@ export default {
     onSSR(async () => {
       await search({ slug: '' })
     })
-    
   },
 
   components: {
     SfHeader,
     useContext
   },
-  data () {
+  data() {
     return {
       menus: [
         {
@@ -108,7 +98,7 @@ export default {
     ]
   },
   methods: {
-    getMenuPath (menu){
+    getMenuPath(menu) {
       if (menu.id === 'blogs') {
         return { name: 'blogs' }
       }
@@ -119,7 +109,7 @@ export default {
 }
 </script>
 
-<style lang=scss scoped>
+<style lang="scss" scoped>
 .sf-header__search {
   display: none;
 }

@@ -39,7 +39,6 @@ export default defineComponent({
     if (process.browser && 'IntersectionObserver' in window) {
       // 初始化observer
       observer = new IntersectionObserver((entries) => {
-
         // 如果不在视口中,则返回
         if (entries[0].intersectionRatio <= 0) return
 
@@ -48,7 +47,7 @@ export default defineComponent({
         // 如果在视口中,则设置isVisible为true
         isVisible.value = true
 
-        console.log('in viewport',entries)
+        console.log('in viewport', entries)
 
         // entries.forEach(item => {
         //   // isIntersecting是一个Boolean值，判断目标元素当前是否可见
@@ -63,7 +62,6 @@ export default defineComponent({
       }, IntersectionObserverOptions)
 
       // console.log('初始化完成observer',observer)
-
     }
 
     // 生命周期钩子开始监听

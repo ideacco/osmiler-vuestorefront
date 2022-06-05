@@ -29,10 +29,7 @@
                     class="el-link uk-icon-button"
                     href="https://facebook.com/"
                     rel="noreferrer"
-                  ><span
-                    uk-icon="icon: facebook;"
-                    class="uk-icon"
-                  ></span
+                  ><span uk-icon="icon: facebook;" class="uk-icon"></span
                   ></a>
                 </div>
                 <div>
@@ -40,10 +37,7 @@
                     class="el-link uk-icon-button"
                     href="https://www.instagram.com/"
                     rel="noreferrer"
-                  ><span
-                    uk-icon="icon: instagram;"
-                    class="uk-icon"
-                  ></span
+                  ><span uk-icon="icon: instagram;" class="uk-icon"></span
                   ></a>
                 </div>
                 <div>
@@ -51,13 +45,9 @@
                     class="el-link uk-icon-button"
                     href="https://www.instagram.com/"
                     rel="noreferrer"
-                  ><span
-                    uk-icon="icon: instagram;"
-                    class="uk-icon"
-                  ></span
+                  ><span uk-icon="icon: instagram;" class="uk-icon"></span
                   ></a>
                 </div>
- 
               </div>
             </div>
           </div>
@@ -325,20 +315,14 @@
 
 <script>
 export default {
-  components: {
-  },
+  components: {},
   setup() {
-    return {
-      
-    }
+    return {}
   },
   data() {
-    return {
-    }
+    return {}
   }
 }
 </script>
 
-<style lang="scss">
-
-</style>
+<style lang="scss"></style>
