@@ -47,7 +47,7 @@ export default defineComponent({
         // 如果在视口中,则设置isVisible为true
         isVisible.value = true
 
-        console.log('in viewport', entries)
+        // console.log('in viewport', entries)
 
         // entries.forEach(item => {
         //   // isIntersecting是一个Boolean值，判断目标元素当前是否可见

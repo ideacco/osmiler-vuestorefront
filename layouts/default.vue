@@ -1,5 +1,5 @@
 <template>
-  <div style="height: 100%">
+  <div>
     <client-only>
       <BottomNavigation />
     </client-only>
@@ -111,7 +111,6 @@ export default {
   @include for-desktop {
     margin: auto;
   }
-  height: 100%;
 }
 
 .no-scroll {
