@@ -1,7 +1,7 @@
 <template>
   <div>
     <div id="layout">
-      <AssHeader />
+      <AppHeader />
       <nuxt />
       <BottomNavigation />
       <CartSidebar />
@@ -11,9 +11,7 @@
 </template>
 
 <script>
-import AppHeader from '~/components/AppHeader.vue'
-import AssHeader from '~/components/JHeader.vue'
-
+import AppHeader from '~/components/AppHeader_new.vue'
 import BottomNavigation from '~/components/BottomNavigation.vue'
 
 import CartSidebar from '~/components/CartSidebar.vue'
@@ -26,8 +24,7 @@ export default {
     AppHeader,
     BottomNavigation,
     CartSidebar,
-    LoginModal,
-    AssHeader
+    LoginModal
   }
 }
 </script>

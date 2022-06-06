@@ -138,7 +138,7 @@ export default {
 
   data() {
     return {
-      shopRootCategories: ['women', 'man', 'music', 'News'],
+      shopRootCategories: ['women', 'man', 'music', 'PrivacyPolicy'],
       isplay: 0
     }
   },
@@ -148,7 +148,7 @@ export default {
       ele.style.backgroundColor = 'transparent'
       this.isplay = 0
     }
-    console.log(this.$refs.div_1,4444)
+    console.log(this.$refs.div_1.$el.lastChild,4444)
     window.addEventListener('scroll', this.handleScroll)
   },
   methods: {
