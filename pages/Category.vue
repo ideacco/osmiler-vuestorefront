@@ -490,7 +490,7 @@ export default {
 #category {
   box-sizing: border-box;
   @include for-desktop {
-    max-width: 1440px;
+    max-width: 1240px;
     margin: 0 auto;
   }
 }
@@ -707,7 +707,7 @@ export default {
   }
   @include for-desktop {
     &__grid {
-      margin: var(--spacer-sm) 0 0 var(--spacer-sm);
+      margin: var(--spacer-sm) 0 0 0;
     }
     &__pagination {
       display: flex;

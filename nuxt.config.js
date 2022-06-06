@@ -334,7 +334,7 @@ const config = {
       iconSrc: 'src/static/android-icon-512x512.png',
     },
     build: {
-      transpile: [/^@storefront-ui/, /^element-ui/, /^UIkit/],
+      transpile: [/^@storefront-ui/, /^UIkit/],
     },
     workbox: {
       offlineStrategy: 'StaleWhileRevalidate',
