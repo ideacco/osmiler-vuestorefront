@@ -13,6 +13,7 @@
           : toggleLoginModal()
       "
       :isSticky="true"
+      ref="div_1"
     >
       <!-- TODO: add mobile view buttons after SFUI team PR -->
       <template #logo>
@@ -161,7 +162,43 @@ export default {
   },
   data() {
     return {
-      shopRootCategories: ['women', 'man', 'music','News']
+      shopRootCategories: ['women', 'man', 'music', 'PrivacyPolicy'],
+      isplay: 0
+    }
+  },
+  mounted() {
+    // if (this.$route.path === '/home' || this.$route.path === '/music') {
+    //   var ele = this.$refs.div_1.$el.lastChild
+    //   ele.style.backgroundColor = 'red'
+    //   this.isplay = 0
+    // }
+    // console.log(this.$refs.div_1.$el.lastChild,4444)
+    
+    setTimeout(()=>{
+      window.addEventListener('scroll', this.handleScroll)
+      console.log(this.$refs.div_1.$el.lastChild,4444)
+    },2000)
+  },
+  methods: {
+    handleScroll() {
+      const scrollTop =
+        window.pageYOffset ||
+        document.documentElement.scrollTop ||
+        document.body.scrollTop
+      if (
+        (scrollTop && this.$route.path === '/home') ||
+        this.$route.path === '/music'
+      ) {
+        this.isplay = 1
+        var ele = this.$refs.div_1.$el.lastChild
+        ele.style.backgroundColor = '#fff'
+
+        if (scrollTop < 50) {
+          this.isplay = 0
+          ele.style.backgroundColor = 'rgba(100,0,0,0)'
+        }
+        console.log(ele,2222)
+      }
     }
   }
 }
@@ -172,6 +209,7 @@ export default {
   --header-padding: var(--spacer-sm);
   @include for-desktop {
     --header-padding: 0;
+    --header-box-shadow:0 5px 15px rgb(39 44 63 / 6%);
   }
   &__logo-image {
     height: 100%;
