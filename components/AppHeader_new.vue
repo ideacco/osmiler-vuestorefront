@@ -12,7 +12,9 @@
           ? $router.push(localePath({ name: 'my-account' }))
           : toggleLoginModal()
       "
-      :isSticky="true"
+      ref="div_1"
+      id="SfHeaders"
+      :isSticky="isplay === 0 ? false : true"
     >
       <!-- TODO: add mobile view buttons after SFUI team PR -->
       <template #logo>
@@ -30,7 +32,6 @@
       <template v-if="shopRootCategories.length > 0" #navigation>
         <div class="navigation-wrapper">
           <SfHeaderNavigationItem
-
             v-for="(category, key) in shopRootCategories"
             :key="`sf-header-navigation-item-${key}`"
             :link="`/${category}`"
@@ -74,24 +75,8 @@
 
       <template #search>
         <div></div>
-        <!-- <SfSearchBar
-          placeholder="Search for items"
-          :value="term"
-          :icon="{ size: '1.25rem', color: '#43464E' }"
-          aria-label="Search"
-          @keydown.esc="closeSearch"
-          @keydown.tab="hideSearch"
-          @input="handleSearch"
-          @focus="isSearchOpen = true"
-        ></SfSearchBar> -->
       </template>
     </SfHeader>
-    <!-- <SearchResults
-      v-if="isSearchOpen"
-      :visible="isSearchOpen"
-      :result="searchResults"
-    />
-    <SfOverlay :visible="isSearchOpen" @click="isSearchOpen = false" /> -->
   </div>
 </template>
 
@@ -103,24 +88,15 @@ import {
   SfBadge,
   SfIcon
 } from '@storefront-ui/vue'
-// import SearchResultsComp from './SearchResults.vue'
 import { onSSR } from '@vue-storefront/core'
-import {
-  computed,
-  ref
-} from '@nuxtjs/composition-api'
+import { computed, ref } from '@nuxtjs/composition-api'
 import { useUiHelpers, useUiState } from '~/composables'
 import LocaleSelector from './LocaleSelector.vue'
 
-import {
-  // searchGetters,
-  useCategory
-  // useSearch,
-} from '@vue-storefront/shopify'
+import { useCategory } from '@vue-storefront/shopify'
 
 export default {
   components: {
-    // SearchResults: SearchResultsComp,
     SfHeader,
     SfImage,
     SfIcon,
@@ -159,9 +135,41 @@ export default {
       curCatSlug
     }
   },
+
   data() {
     return {
-      shopRootCategories: ['women', 'man', 'music','News']
+      shopRootCategories: ['women', 'man', 'music', 'News'],
+      isplay: 0
+    }
+  },
+  mounted() {
+    if (this.$route.path === '/' || this.$route.path === '/music') {
+      this.isplay = 0
+      var ele = this.$refs.div_1.$el.lastChild
+      ele.style.backgroundColor = 'red'
+    }
+    window.addEventListener('scroll', this.handleScroll)
+  },
+  methods: {
+    handleScroll() {
+      const scrollTop =
+        window.pageYOffset ||
+        document.documentElement.scrollTop ||
+        document.body.scrollTop
+      if (
+        (scrollTop && this.$route.path === '/') ||
+        this.$route.path === '/music'
+      ) {
+        this.isplay = 1
+        var ele = this.$refs.div_1.$el.lastChild
+        ele.style.backgroundColor = '#fff'
+        console.log(scrollTop, 4444)
+        if (scrollTop < 50) {
+          this.isplay = 0
+          ele.style.backgroundColor = 'red'
+          console.log(222, 4444)
+        }
+      }
     }
   }
 }
@@ -211,5 +219,4 @@ export default {
   bottom: 40%;
   left: 40%;
 }
-
 </style>
