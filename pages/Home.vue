@@ -22,7 +22,6 @@ export default {
 }
 </script>
 <style lang="css" scoped>
-
 .bg-purple-dark {
   background: #99a9bf;
 }

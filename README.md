@@ -91,10 +91,11 @@ async asyncdata({$axios}){
 
 ```
 
-路由跳转放在 JHheader.vue 文件中
+路由跳转放在 AppHeader_new.vue 文件中需要添加路由的话则需要
 
 ```js
-<a href="/Home"> Home</a>
+  data中的shopRootCategories: ['women', 'man', 'music']里添加page路由页面名即可实现路由跳转
+  例如News，则需要这里添加News字段完成之后则是shopRootCategories: ['women', 'man', 'music','News']
 ```
 
 页面路由的路径只需要 /about

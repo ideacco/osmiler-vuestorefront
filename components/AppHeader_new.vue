@@ -12,6 +12,7 @@
           ? $router.push(localePath({ name: 'my-account' }))
           : toggleLoginModal()
       "
+      :isSticky="true"
     >
       <!-- TODO: add mobile view buttons after SFUI team PR -->
       <template #logo>
@@ -26,15 +27,14 @@
         </nuxt-link>
       </template>
 
-      <template v-if="menus.length > 0" #navigation>
+      <template v-if="shopRootCategories.length > 0" #navigation>
         <div class="navigation-wrapper">
           <SfHeaderNavigationItem
-            v-for="menu in menus"
-            :key="menu.id"
-            class="nav-item"
-            :data-cy="'app-header-url_' + menu.handle"
-            :label="menu.title"
-            :link="localePath(getMenuPath(menu))"
+
+            v-for="(category, key) in shopRootCategories"
+            :key="`sf-header-navigation-item-${key}`"
+            :link="`/${category}`"
+            :label="category"
           />
         </div>
       </template>
@@ -104,23 +104,18 @@ import {
   SfIcon
 } from '@storefront-ui/vue'
 // import SearchResultsComp from './SearchResults.vue'
-import debounce from 'lodash/debounce'
 import { onSSR } from '@vue-storefront/core'
 import {
   computed,
-  ref,
-  watch,
-  useRoute,
-  useContext
+  ref
 } from '@nuxtjs/composition-api'
 import { useUiHelpers, useUiState } from '~/composables'
 import LocaleSelector from './LocaleSelector.vue'
 
 import {
   // searchGetters,
-  useCategory,
+  useCategory
   // useSearch,
-  useContent
 } from '@vue-storefront/shopify'
 
 export default {
@@ -144,102 +139,29 @@ export default {
   },
   // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
   setup(props) {
-    const context = useContext()
     const { toggleCartSidebar, toggleWishlistSidebar, toggleLoginModal } =
       useUiState()
-    const { changeSearchTerm, getFacetsFromURL } = useUiHelpers()
-    // const { search: headerSearch, result } = useSearch('header-search')
-    const { search, categories } = useCategory('menuCategories')
-    // const { search: getArticles, content: articlesContent } =
-    //   useContent('articles')
-
+    const { getFacetsFromURL } = useUiHelpers()
+    const { search } = useCategory('menuCategories')
     const curCatSlug = ref(getFacetsFromURL().categorySlug)
     const accountIcon = computed(() =>
       props.isUserAuthenticated ? 'profile_fill' : 'profile'
     )
-
-    // #region Search Section
-    // const isSearchOpen = ref(false)
-    // const term = ref(getFacetsFromURL().term)
-    // const route = useRoute()
-    // const handleSearch = debounce(async (searchTerm) => {
-    //   if (!searchTerm.target) {
-    //     term.value = searchTerm
-    //   } else {
-    //     term.value = searchTerm.target.value
-    //   }
-
-    //   await headerSearch({
-    //     term: term.value
-    //   })
-    //   await getArticles({
-    //     contentType: 'article',
-    //     query: term.value,
-    //     first: 5
-    //   })
-    // }, 500)
-
-    // const hideSearch = () => {
-    //   if (isSearchOpen.value) {
-    //     isSearchOpen.value = false
-    //     if (document) {
-    //       document.body.classList.remove('no-scroll')
-    //     }
-    //   }
-    // }
-
-    // watch(route, () => {
-    //   hideSearch()
-    //   term.value = ''
-    // })
-
-    // const closeSearch = () => {
-    //   if (!isSearchOpen.value) return
-    //   term.value = ''
-    //   isSearchOpen.value = false
-    // }
-
-    // const searchResults = computed(() =>
-    //   !term.value
-    //     ? { products: [], articles: [] }
-    //     : {
-    //       products: searchGetters.getItems(result.value),
-    //       articles: articlesContent?.value?.data
-    //     }
-    // )
-    // #endregion Search Section
-
     onSSR(async () => {
       await search({ slug: '' })
     })
-    const menus = computed(() => [
-      ...categories.value,
-      { id: 'blogs', title: 'Blogs', handle: context.$config.cms.blogs }
-    ])
-
-    const getMenuPath = (menu) => {
-      if (menu.id === 'blogs') {
-        return { name: 'blogs' }
-      }
-
-      return { name: 'category', params: { slug_1: menu.handle } }
-    }
 
     return {
-      getMenuPath,
       accountIcon,
-      // hideSearch,
-      // closeSearch,
       toggleLoginModal,
       toggleCartSidebar,
       toggleWishlistSidebar,
-      // changeSearchTerm,
-      // term,
-      // handleSearch,
-      curCatSlug,
-      // searchResults,
-      menus
-      // isSearchOpen
+      curCatSlug
+    }
+  },
+  data() {
+    return {
+      shopRootCategories: ['women', 'man', 'music','News']
     }
   }
 }
@@ -289,4 +211,5 @@ export default {
   bottom: 40%;
   left: 40%;
 }
+
 </style>

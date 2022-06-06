@@ -14,15 +14,13 @@
       :isSticky="false"
       :isNavVisible="false"
     >
-      <template v-if="menus.length > 0" #navigation>
+      <template v-if="shopRootCategories.length > 0" #navigation>
         <div class="navigation-wrapper">
           <SfHeaderNavigationItem
-            v-for="menu in menus"
-            :key="menu.id"
-            class="nav-item"
-            :data-cy="'app-header-url_' + menu.handle"
-            :label="menu.title"
-            :link="localePath(getMenuPath(menu))"
+            v-for="(category, key) in shopRootCategories"
+            :key="`sf-header-navigation-item-${key}`"
+            :link="`/${category}`"
+            :label="category"
           />
         </div>
       </template>
@@ -34,13 +32,7 @@
 </template>
 
 <script>
-import { onSSR } from '@vue-storefront/core'
-
 import { SfHeader } from '@storefront-ui/vue'
-
-import { useCategory } from '@vue-storefront/shopify'
-
-import { computed, useContext } from '@nuxtjs/composition-api'
 
 export default {
   props: {
@@ -50,45 +42,32 @@ export default {
     },
     isUserAuthenticated: Boolean
   },
-
-  setup(props) {
-    const context = useContext()
-    const { search, categories } = useCategory('menuCategories')
-    const menus = computed(() => [
-      ...categories.value,
-      { id: 'blogs', title: 'Blogs', handle: context.$config.cms.blogs }
-    ])
-    onSSR(async () => {
-      await search({ slug: '' })
-    })
-  },
-
   components: {
-    SfHeader,
-    useContext
+    SfHeader
   },
   data() {
     return {
-      menus: [
-        {
-          id: 1,
-          title: 'Home',
-          handle: 'home',
-          url: '/'
-        },
-        {
-          id: 2,
-          title: 'About',
-          handle: 'about',
-          url: '/about'
-        },
-        {
-          id: 3,
-          title: 'Contact',
-          handle: 'contact',
-          url: '/contact'
-        }
-      ]
+      // menus: [
+      //   {
+      //     id: 1,
+      //     title: 'Home',
+      //     handle: 'home',
+      //     url: '/home',
+      //   },
+      //   {
+      //     id: 2,
+      //     title: 'ContactUs',
+      //     handle: 'ContactUs',
+      //     url: '/ContactUs',
+      //   },
+      //   {
+      //     id: 3,
+      //     title: 'News',
+      //     handle: 'News',
+      //     url: '/News',
+      //   },
+      // ],
+      shopRootCategories: ['women', 'man', 'New']
     }
   },
   computed: {
