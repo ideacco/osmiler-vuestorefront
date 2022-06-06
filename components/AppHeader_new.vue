@@ -143,11 +143,12 @@ export default {
     }
   },
   mounted() {
-    if (this.$route.path === '/' || this.$route.path === '/music') {
-      this.isplay = 0
+    if (this.$route.path === '/home' || this.$route.path === '/music') {
       var ele = this.$refs.div_1.$el.lastChild
-      ele.style.backgroundColor = 'red'
+      ele.style.backgroundColor = 'transparent'
+      this.isplay = 0
     }
+    console.log(this.$refs.div_1,4444)
     window.addEventListener('scroll', this.handleScroll)
   },
   methods: {
@@ -157,17 +158,15 @@ export default {
         document.documentElement.scrollTop ||
         document.body.scrollTop
       if (
-        (scrollTop && this.$route.path === '/') ||
+        (scrollTop && this.$route.path === '/home') ||
         this.$route.path === '/music'
       ) {
         this.isplay = 1
         var ele = this.$refs.div_1.$el.lastChild
         ele.style.backgroundColor = '#fff'
-        console.log(scrollTop, 4444)
         if (scrollTop < 50) {
           this.isplay = 0
-          ele.style.backgroundColor = 'red'
-          console.log(222, 4444)
+          ele.style.backgroundColor = 'transparent'
         }
       }
     }
