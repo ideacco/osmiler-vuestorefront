@@ -59,6 +59,17 @@ const config = {
         href: 'https://fonts.gstatic.com',
         crossorigin: 'crossorigin',
       },
+      {
+        rel: 'Overpass',
+        href: 'https://fonts.googleapis.com/css2?family=Overpass:wght@200;300;400;500;600;700;800;900&display=swap',
+        as: 'style',
+      },
+      {
+        rel: 'stylesheet',
+        href: 'https://fonts.googleapis.com/css2?family=Overpass:wght@200;300;400;500;600;700;800;900&display=swap',
+        media: 'print',
+        onload: "this.media='all'",
+      },
       // {
       //   rel: 'preload',
       //   href: 'https://fonts.googleapis.com/css?family=Raleway:300,400,400i,500,600,700|Roboto:300,300i,400,400i,500,700&display=swap',

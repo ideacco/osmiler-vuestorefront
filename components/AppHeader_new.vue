@@ -149,11 +149,8 @@ export default {
     }
   },
   mounted() {
-    
-    setTimeout(()=>{
-      window.addEventListener('scroll', this.handleScroll)
-      console.log(this.$refs.SfHeader.$el.lastChild,4444)
-    },2000)
+    window.addEventListener('scroll', this.handleScroll)
+    // console.log(this.$refs.SfHeader.$el.lastChild,4444)
   },
   methods: {
     handleScroll() {
