@@ -182,17 +182,19 @@ export default {
         )
         ele.style.background = 'transparent'
         window.addEventListener('scroll', this.handleScroll)
+
       } else if (newvalue != '/home' || newvalue != '/music') {
+        window.removeEventListener('scroll', this.handleScroll)
         const ele = this.$el.querySelector(
           '.sf-header--has-mobile-search .sf-header__wrapper'
         )
         ele.style.background = '#fff'
         this.isplay = 0
         this.isicons = 0
+
       }
     }
   },
-
   methods: {
     handleScroll() {
       const scrollTop =
@@ -202,10 +204,6 @@ export default {
       const ele = this.$el.querySelector(
         '.sf-header--has-mobile-search .sf-header__wrapper'
       )
-      const elefont = this.$el.querySelector(
-        '.sf-header--has-mobile-search .sf-header__wrapper .sf-header-navigation-item .sf-header-navigation-item__item .sf-link '
-      )
-      console.log(elefont,4444)
       if(scrollTop){
         ele.style.background = `rgba(255,255,255,${
           scrollTop / (scrollTop + 100)
