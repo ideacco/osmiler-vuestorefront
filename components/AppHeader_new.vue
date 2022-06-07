@@ -182,6 +182,11 @@ export default {
         )
         ele.style.background = 'transparent'
         window.addEventListener('scroll', this.handleScroll)
+        const elefont = ele.querySelectorAll( '.sf-header-navigation-item .sf-header-navigation-item__item a')
+        elefont.forEach(element => {
+          // element.style.color = 'rgba(255,255,255,.6)'
+          element.style.color = '#ffff'
+        })
 
       } else if (newvalue != '/home' || newvalue != '/music') {
         window.removeEventListener('scroll', this.handleScroll)
@@ -204,16 +209,25 @@ export default {
       const ele = this.$el.querySelector(
         '.sf-header--has-mobile-search .sf-header__wrapper'
       )
+
+
       if(scrollTop){
         ele.style.background = `rgba(255,255,255,${
           scrollTop / (scrollTop + 100)
         })`
-
+        const elefont = ele.querySelectorAll( '.sf-header-navigation-item .sf-header-navigation-item__item a')
+        elefont.forEach(element => {
+          element.style.color = '#3a3543'
+        })
         this.isicons = 0
       }else{
         ele.style.background = `rgba(255,255,255,${
-          scrollTop / (scrollTop + 100)
+          scrollTop / (scrollTop - 100)
         })`
+        const elefont = ele.querySelectorAll( '.sf-header-navigation-item .sf-header-navigation-item__item a')
+        elefont.forEach(element => {
+          element.style.color = '#fff'
+        })
         this.isicons = 1
       }
 
