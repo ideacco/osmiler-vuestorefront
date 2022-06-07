@@ -5,7 +5,6 @@
       :cart-items-qty="cartTotalItems"
       :account-icon="accountIcon"
       class="sf-header--has-mobile-search"
-      :class="{ 'common-header-light': isTransparency }"
       @click:cart="toggleCartSidebar"
       @click:wishlist="toggleWishlistSidebar"
       @click:account="
@@ -13,18 +12,27 @@
           ? $router.push(localePath({ name: 'my-account' }))
           : toggleLoginModal()
       "
-      :isSticky="isUP"
-      ref="SfHeader"
+      :isSticky="isplay === 0 ? false : true"
+      ref="div_1"
     >
       <!-- TODO: add mobile view buttons after SFUI team PR -->
       <template #logo>
         <nuxt-link :to="localePath('/')" class="sf-header__logo">
           <SfImage
-            :src="isTransparency?require('../static/icons/osmiler-logo-light.svg'):require('../static/icons/osmiler-logo-default.svg')"
+            src="/icons/osmiler-logo-default.svg"
             alt="osmiler"
             class="sf-header__logo-image"
             :width="34"
             :height="34"
+            v-show="isicons===0"
+          />
+          <SfImage
+            src="/icons/osmiler-logo-light.svg"
+            alt="osmiler"
+            class="sf-header__logo-image"
+            :width="34"
+            :height="34"
+            v-show="isicons===1"
           />
         </nuxt-link>
       </template>
@@ -34,7 +42,7 @@
           <SfHeaderNavigationItem
             v-for="(category, key) in shopRootCategories"
             :key="`sf-header-navigation-item-${key}`"
-            :link="`/${category}`"
+            :link="localePath(`/${category}`)"
             :label="category"
           />
         </div>
@@ -49,21 +57,21 @@
             class="sf-button--pure sf-header__action"
             @click="$router.push(localePath({ name: 'my-account' }))"
           >
-            <SfIcon :icon="accountIcon" :class="{'common-header-icon-light': isTransparency }" size="1.25rem" />
+            <SfIcon :icon="accountIcon" size="1.25rem" />
           </SfButton>
           <SfButton
             v-else
             class="sf-button--pure sf-header__action"
             @click="toggleLoginModal()"
           >
-            <SfIcon :icon="accountIcon" :class="{'common-header-icon-light': isTransparency }" size="1.25rem" />
+            <SfIcon :icon="accountIcon" size="1.25rem" />
           </SfButton>
           <SfButton
             v-e2e="'app-header-cart'"
             class="sf-button--pure sf-header__action"
             @click="toggleCartSidebar"
           >
-            <SfIcon class="sf-header__icon" :class="{'common-header-icon-light': isTransparency }" icon="empty_cart" size="1.25rem" />
+            <SfIcon class="sf-header__icon" icon="empty_cart" size="1.25rem" />
             <SfBadge
               v-if="cartTotalItems"
               class="sf-badge--number cart-badge"
@@ -75,10 +83,24 @@
 
       <template #search>
         <div></div>
-        
+        <!-- <SfSearchBar
+          placeholder="Search for items"
+          :value="term"
+          :icon="{ size: '1.25rem', color: '#43464E' }"
+          aria-label="Search"
+          @keydown.esc="closeSearch"
+          @keydown.tab="hideSearch"
+          @input="handleSearch"
+          @focus="isSearchOpen = true"
+        ></SfSearchBar> -->
       </template>
     </SfHeader>
-    
+    <!-- <SearchResults
+      v-if="isSearchOpen"
+      :visible="isSearchOpen"
+      :result="searchResults"
+    />
+    <SfOverlay :visible="isSearchOpen" @click="isSearchOpen = false" /> -->
   </div>
 </template>
 
@@ -90,26 +112,29 @@ import {
   SfBadge,
   SfIcon
 } from '@storefront-ui/vue'
+// import SearchResultsComp from './SearchResults.vue'
 import { onSSR } from '@vue-storefront/core'
-import {
-  computed,
-  ref
-} from '@nuxtjs/composition-api'
+import { computed, ref } from '@nuxtjs/composition-api'
 import { useUiHelpers, useUiState } from '~/composables'
 import LocaleSelector from './LocaleSelector.vue'
 
 import {
+  // searchGetters,
   useCategory
+  // useSearch,
 } from '@vue-storefront/shopify'
 
 export default {
   components: {
+    // SearchResults: SearchResultsComp,
     SfHeader,
     SfImage,
     SfIcon,
     LocaleSelector,
     SfButton,
+    // SfOverlay,
     SfBadge
+    // SfSearchBar
   },
   props: {
     cartTotalItems: {
@@ -142,95 +167,74 @@ export default {
   },
   data() {
     return {
-      shopRootCategories: ['women', 'man', 'music', 'PrivacyPolicy'],
       isplay: 0,
-      isTransparency: false,
-      isUP: true
+      shopRootCategories: ['women', 'man', 'music', 'PrivacyPolicy'],
+      isicons: 0
     }
   },
-  mounted() {
-    
-    setTimeout(()=>{
-      window.addEventListener('scroll', this.handleScroll)
-      console.log(this.$refs.SfHeader.$el.lastChild,4444)
-    },2000)
+  watch: {
+    '$route.path': function (newvalue) {
+      if (newvalue === '/home' || newvalue === '/music') {
+        this.isplay = 1
+        this.isicons = 1
+        const ele = this.$el.querySelector(
+          '.sf-header--has-mobile-search .sf-header__wrapper'
+        )
+        ele.style.background = 'transparent'
+        window.addEventListener('scroll', this.handleScroll)
+      } else if (newvalue != '/home' || newvalue != '/music') {
+        const ele = this.$el.querySelector(
+          '.sf-header--has-mobile-search .sf-header__wrapper'
+        )
+        ele.style.background = '#fff'
+        this.isplay = 0
+        this.isicons = 0
+      }
+    }
   },
+
   methods: {
     handleScroll() {
       const scrollTop =
         window.pageYOffset ||
         document.documentElement.scrollTop ||
         document.body.scrollTop
-      if (
-        (scrollTop && this.$route.path === '/home') ||
-        this.$route.path === '/music'
-      ) {
-        this.isTransparency = false
-        var ele = this.$refs.SfHeader.$el.lastChild
-        ele.style.backgroundColor = '#fff'
+      const ele = this.$el.querySelector(
+        '.sf-header--has-mobile-search .sf-header__wrapper'
+      )
+      const elefont = this.$el.querySelector(
+        '.sf-header--has-mobile-search .sf-header__wrapper .sf-header-navigation-item .sf-header-navigation-item__item .sf-link '
+      )
+      console.log(elefont,4444)
+      if(scrollTop){
+        ele.style.background = `rgba(255,255,255,${
+          scrollTop / (scrollTop + 100)
+        })`
 
-        if (scrollTop < 50) {
-          this.isTransparency = true
-          ele.style.backgroundColor = 'rgba(100,0,0,0)'
-        }
-        // console.log(ele,2222)
+        this.isicons = 0
+      }else{
+        ele.style.background = `rgba(255,255,255,${
+          scrollTop / (scrollTop + 100)
+        })`
+        this.isicons = 1
       }
 
-      // 判断滑动方向,并根据方向设置是否显示导航栏
-      // const scroll = scrollTop - this.isplay
-      // this.isplay = scrollTop
-      // if (scroll < 0 ) {
-      //   console.log('up')
-      //   //添加你想要的事件
-      //   this.isUP = true
-      // } else {
-      //   //添加你想要的事件
-      //   console.log('down')
-      //   this.isUP = false
-      // }
     }
   }
 }
 </script>
 
 <style lang="scss" scoped>
-
-// 自定义页头CSS, 亮色背景
-.common-header-light {
-   @include for-desktop {
-    --header-navigation-item-color:#fff;
-    --icon-color: #fff;
-    --header-wrapper-transition: all 0.3s ease; // 过度动画
-  };
-}
-
-.common-header-light :focus {
-  --header-navigation-item-color: #fff;
-  --header-navigation-item-border-color: #fff;
-}
-
-.common-header-icon-light {
-  --icon-color: #fff;
-}
-// 自定义页头CSS, 滑动时隐藏
-.common-header-hide {
-  @include for-desktop {
-    --header-wrapper-transform: translate(0, 0);
-  };
-}
-
 .sf-header {
   --header-padding: var(--spacer-sm);
   @include for-desktop {
     --header-padding: 0;
-    --header-box-shadow:0 5px 15px rgb(39 44 63 / 6%);
-    --header-wrapper-transition: all 0.3s ease
+    // --header-box-shadow: 0 5px 15px rgb(39 44 63 / 6%);
   }
   &__logo-image {
     height: 100%;
   }
 }
-
 .header-on-top {
   z-index: 2;
 }
@@ -265,5 +269,4 @@ export default {
   bottom: 40%;
   left: 40%;
 }
-
 </style>
