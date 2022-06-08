@@ -304,7 +304,7 @@ export default {
   --header-padding: var(--spacer-sm);
   @include for-desktop {
     --header-padding: 0;
-    --header-box-shadow: 0 5px 15px rgb(39 44 63 / 6%);
+    // --header-box-shadow: 0 5px 15px rgb(39 44 63 / 6%);
     --header-wrapper-transition: all 0.3s ease;
   }
   &__logo-image {
