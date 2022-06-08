@@ -124,6 +124,7 @@ import {
   // useSearch,
 } from '@vue-storefront/shopify'
 
+
 export default {
   components: {
     // SearchResults: SearchResultsComp,
@@ -168,7 +169,7 @@ export default {
   data() {
     return {
       isplay: 0,
-      shopRootCategories: ['women', 'man', 'music', 'PrivacyPolicy'],
+      shopRootCategories: ['women', 'man', 'music', 'PrivacyPolicy','TermsAndConditions'],
       isicons: 0
     }
   },
@@ -181,18 +182,48 @@ export default {
           '.sf-header--has-mobile-search .sf-header__wrapper'
         )
         ele.style.background = 'transparent'
-        window.addEventListener('scroll', this.handleScroll)
+
         const elefont = ele.querySelectorAll( '.sf-header-navigation-item .sf-header-navigation-item__item a')
         elefont.forEach(element => {
-          // element.style.color = 'rgba(255,255,255,.6)'
-          element.style.color = '#ffff'
+          element.style.color = 'rgba(255,255,255,.6)'
+          element.click = function () {
+            element.style.color = '#fff'
+          }
+          element.onmousedown = function () {
+            element.style.color = '#fff'
+          }
+          element.onmouseup = function () {
+            element.style.color = '#fff'
+          }
+
         })
+        window.addEventListener('scroll', this.handleScroll)
 
       } else if (newvalue != '/home' || newvalue != '/music') {
         window.removeEventListener('scroll', this.handleScroll)
         const ele = this.$el.querySelector(
           '.sf-header--has-mobile-search .sf-header__wrapper'
         )
+        const elefont = ele.querySelectorAll( '.sf-header-navigation-item .sf-header-navigation-item__item a')
+        elefont.forEach(element => {
+          element.style.color = '#3a3543'
+          elefont.forEach(element=>{
+            element.click = function () {
+              element.style.color = '#5d47ee'
+            }
+            element.dblclick = function () {
+              element.style.color = '#5d47ee'
+            }
+            element.onmouseup = function () {
+              element.style.color = '#5d47ee'
+            }
+            element.onmousedown = function () {
+              element.style.color = '#5d47ee'
+            }
+
+          })
+        })
+
         ele.style.background = '#fff'
         this.isplay = 0
         this.isicons = 0
@@ -210,7 +241,6 @@ export default {
         '.sf-header--has-mobile-search .sf-header__wrapper'
       )
 
-
       if(scrollTop){
         ele.style.background = `rgba(255,255,255,${
           scrollTop / (scrollTop + 100)
@@ -218,6 +248,18 @@ export default {
         const elefont = ele.querySelectorAll( '.sf-header-navigation-item .sf-header-navigation-item__item a')
         elefont.forEach(element => {
           element.style.color = '#3a3543'
+          element.click = function () {
+            element.style.color = '#5d47ee'
+          }
+          element.dblclick = function () {
+            element.style.color = '#5d47ee'
+          }
+          element.onmouseup = function () {
+            element.style.color = '#5d47ee'
+          }
+          element.onmousedown = function () {
+            element.style.color = '#5d47ee'
+          }
         })
         this.isicons = 0
       }else{
@@ -226,7 +268,16 @@ export default {
         })`
         const elefont = ele.querySelectorAll( '.sf-header-navigation-item .sf-header-navigation-item__item a')
         elefont.forEach(element => {
-          element.style.color = '#fff'
+          element.style.color = 'rgba(255,255,255,.6)'
+          element.click = function () {
+            element.style.color = '#fff'
+          }
+          element.onmousedown = function () {
+            element.style.color = '#fff'
+          }
+          element.onmouseup = function () {
+            element.style.color = '#fff'
+          }
         })
         this.isicons = 1
       }
