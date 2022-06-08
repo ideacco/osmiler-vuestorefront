@@ -297,7 +297,9 @@ export default {
     --header-wrapper-transform: translate(0, 0);
   }
 }
-
+.sf-header-navigation-item{
+--font-family--secondary:var(--font-family--primary)
+}
 .sf-header {
   --header-padding: var(--spacer-sm);
   @include for-desktop {
