@@ -258,7 +258,7 @@ export default {
   setup() {
     const { isLoginModalOpen, toggleLoginModal } = useUiState()
     const form = ref({})
-    const isLogin = ref(false)
+    const isLogin = ref(true)
     const isForgotten = ref(false)
     const isThankYouAfterForgotten = ref(false)
     const userEmail = ref('')
@@ -291,7 +291,6 @@ export default {
         return 'Reset Password'
       }
       return 'Register'
-
     })
 
     watch(isLoginModalOpen, () => {
