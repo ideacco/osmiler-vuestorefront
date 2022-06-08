@@ -5,6 +5,7 @@
       :cart-items-qty="cartTotalItems"
       :account-icon="accountIcon"
       class="sf-header--has-mobile-search"
+      :class="{ 'common-header-light': isTransparency }"
       @click:cart="toggleCartSidebar"
       @click:wishlist="toggleWishlistSidebar"
       @click:account="
@@ -12,27 +13,12 @@
           ? $router.push(localePath({ name: 'my-account' }))
           : toggleLoginModal()
       "
-      :isSticky="isplay === 0 ? false : true"
+      :isSticky="isUP"
+      ref="SfHeader"
     >
       <!-- TODO: add mobile view buttons after SFUI team PR -->
       <template #logo>
         <nuxt-link :to="localePath('/')" class="sf-header__logo">
-          <!-- <SfImage
-            src="/icons/osmiler-logo-default.svg"
-            alt="osmiler"
-            class="sf-header__logo-image"
-            :width="34"
-            :height="34"
-            v-show="isicons === 0"
-          />
-          <SfImage
-            src="/icons/osmiler-logo-light.svg"
-            alt="osmiler"
-            class="sf-header__logo-image"
-            :width="34"
-            :height="34"
-            v-show="isicons === 1"
-          /> -->
           <SfImage
             :src="
               isTransparency
@@ -52,7 +38,7 @@
           <SfHeaderNavigationItem
             v-for="(category, key) in shopRootCategories"
             :key="`sf-header-navigation-item-${key}`"
-            :link="localePath(`/${category}`)"
+            :link="`/${category}`"
             :label="category"
           />
         </div>
@@ -106,24 +92,8 @@
 
       <template #search>
         <div></div>
-        <!-- <SfSearchBar
-          placeholder="Search for items"
-          :value="term"
-          :icon="{ size: '1.25rem', color: '#43464E' }"
-          aria-label="Search"
-          @keydown.esc="closeSearch"
-          @keydown.tab="hideSearch"
-          @input="handleSearch"
-          @focus="isSearchOpen = true"
-        ></SfSearchBar> -->
       </template>
     </SfHeader>
-    <!-- <SearchResults
-      v-if="isSearchOpen"
-      :visible="isSearchOpen"
-      :result="searchResults"
-    />
-    <SfOverlay :visible="isSearchOpen" @click="isSearchOpen = false" /> -->
   </div>
 </template>
 
@@ -135,29 +105,21 @@ import {
   SfBadge,
   SfIcon
 } from '@storefront-ui/vue'
-// import SearchResultsComp from './SearchResults.vue'
 import { onSSR } from '@vue-storefront/core'
 import { computed, ref } from '@nuxtjs/composition-api'
 import { useUiHelpers, useUiState } from '~/composables'
 import LocaleSelector from './LocaleSelector.vue'
 
-import {
-  // searchGetters,
-  useCategory
-  // useSearch,
-} from '@vue-storefront/shopify'
+import { useCategory } from '@vue-storefront/shopify'
 
 export default {
   components: {
-    // SearchResults: SearchResultsComp,
     SfHeader,
     SfImage,
     SfIcon,
     LocaleSelector,
     SfButton,
-    // SfOverlay,
     SfBadge
-    // SfSearchBar
   },
   props: {
     cartTotalItems: {
@@ -190,71 +152,29 @@ export default {
   },
   data() {
     return {
+      shopRootCategories: ['women', 'man', 'music', 'PrivacyPolicy'],
       isplay: 0,
-      shopRootCategories: [
-        'women',
-        'man',
-        'music',
-        'PrivacyPolicy',
-        'TermsAndConditions'
-      ],
-      isTransparency: false
+      isTransparency: false,
+      isUP: true
     }
   },
   watch: {
     '$route.path': function (newvalue) {
-      if (newvalue === '/home' || newvalue === '/music') {
-        this.isplay = 1
-        this.isTransparency = true
+      if (newvalue === '/' || newvalue === '/music') {
         const ele = this.$el.querySelector(
           '.sf-header--has-mobile-search .sf-header__wrapper'
         )
         ele.style.background = 'transparent'
-
-        // const elefont = ele.querySelectorAll(
-        //   '.sf-header-navigation-item .sf-header-navigation-item__item a'
-        // )
-        // elefont.forEach((element) => {
-        //   element.style.color = 'rgba(255,255,255,.6)'
-        //   element.click = function () {
-        //     element.style.color = '#fff'
-        //   }
-        //   element.onmousedown = function () {
-        //     element.style.color = '#fff'
-        //   }
-        //   element.onmouseup = function () {
-        //     element.style.color = '#fff'
-        //   }
-        // })
+        this.isUP = true
+        this.isTransparency = true
         window.addEventListener('scroll', this.handleScroll)
-      } else if (newvalue != '/home' || newvalue != '/music') {
-        window.removeEventListener('scroll', this.handleScroll)
+      } else if (newvalue != '/' || newvalue != '/music') {
         const ele = this.$el.querySelector(
           '.sf-header--has-mobile-search .sf-header__wrapper'
         )
-        // const elefont = ele.querySelectorAll(
-        //   '.sf-header-navigation-item .sf-header-navigation-item__item a'
-        // )
-        // elefont.forEach((element) => {
-        //   element.style.color = '#3a3543'
-        //   elefont.forEach((element) => {
-        //     element.click = function () {
-        //       element.style.color = '#5d47ee'
-        //     }
-        //     element.dblclick = function () {
-        //       element.style.color = '#5d47ee'
-        //     }
-        //     element.onmouseup = function () {
-        //       element.style.color = '#5d47ee'
-        //     }
-        //     element.onmousedown = function () {
-        //       element.style.color = '#5d47ee'
-        //     }
-        //   })
-        // })
-
-        ele.style.background = '#fff'
-        this.isplay = 0
+        window.removeEventListener('scroll', this.handleScroll)
+        ele.style.backgroundColor = '#fff'
+        this.isUP = false
         this.isTransparency = false
       }
     }
@@ -265,53 +185,23 @@ export default {
         window.pageYOffset ||
         document.documentElement.scrollTop ||
         document.body.scrollTop
-      const ele = this.$el.querySelector(
-        '.sf-header--has-mobile-search .sf-header__wrapper'
-      )
-
       if (scrollTop) {
+        const ele = this.$el.querySelector(
+          '.sf-header--has-mobile-search .sf-header__wrapper'
+        )
         ele.style.background = `rgba(255,255,255,${
           scrollTop / (scrollTop + 100)
         })`
-        // const elefont = ele.querySelectorAll(
-        //   '.sf-header-navigation-item .sf-header-navigation-item__item a'
-        // )
-        // elefont.forEach((element) => {
-        //   element.style.color = '#3a3543'
-        //   element.click = function () {
-        //     element.style.color = '#5d47ee'
-        //   }
-        //   element.dblclick = function () {
-        //     element.style.color = '#5d47ee'
-        //   }
-        //   element.onmouseup = function () {
-        //     element.style.color = '#5d47ee'
-        //   }
-        //   element.onmousedown = function () {
-        //     element.style.color = '#5d47ee'
-        //   }
-        // })
         this.isTransparency = false
-      } else {
-        ele.style.background = `rgba(255,255,255,${
-          scrollTop / (scrollTop - 100)
-        })`
-        // const elefont = ele.querySelectorAll(
-        //   '.sf-header-navigation-item .sf-header-navigation-item__item a'
-        // )
-        // elefont.forEach((element) => {
-        //   element.style.color = 'rgba(255,255,255,.6)'
-        //   element.click = function () {
-        //     element.style.color = '#fff'
-        //   }
-        //   element.onmousedown = function () {
-        //     element.style.color = '#fff'
-        //   }
-        //   element.onmouseup = function () {
-        //     element.style.color = '#fff'
-        //   }
-        // })
-        this.isTransparency = true
+        if (scrollTop < 50) {
+          // const ele = this.$el.querySelector(
+          //   '.sf-header--has-mobile-search .sf-header__wrapper'
+          // )
+          this.isTransparency = true
+          ele.style.background = `rgba(255,255,255,${
+            scrollTop / (scrollTop - 100)
+          })`
+        }
       }
     }
   }
@@ -321,11 +211,11 @@ export default {
 <style lang="scss" scoped>
 // 自定义页头CSS, 亮色背景
 .common-header-light {
-   @include for-desktop {
-    --header-navigation-item-color:#fff;
+  @include for-desktop {
+    --header-navigation-item-color: #fff;
     --icon-color: #fff;
     --header-wrapper-transition: all 0.3s ease; // 过度动画
-  };
+  }
 }
 
 .common-header-light :focus {
@@ -340,15 +230,15 @@ export default {
 .common-header-hide {
   @include for-desktop {
     --header-wrapper-transform: translate(0, 0);
-  };
+  }
 }
 
 .sf-header {
   --header-padding: var(--spacer-sm);
   @include for-desktop {
     --header-padding: 0;
-    --header-box-shadow:0 5px 15px rgb(39 44 63 / 6%);
-    --header-wrapper-transition: all 0.3s ease
+    --header-box-shadow: 0 5px 15px rgb(39 44 63 / 6%);
+    --header-wrapper-transition: all 0.3s ease;
   }
   &__logo-image {
     height: 100%;
@@ -389,5 +279,4 @@ export default {
   bottom: 40%;
   left: 40%;
 }
-
 </style>
