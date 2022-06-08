@@ -5,7 +5,6 @@
       :cart-items-qty="cartTotalItems"
       :account-icon="accountIcon"
       class="sf-header--has-mobile-search"
-      :class="{ 'common-header-light': isTransparency }"
       @click:cart="toggleCartSidebar"
       @click:wishlist="toggleWishlistSidebar"
       @click:account="
@@ -13,14 +12,33 @@
           ? $router.push(localePath({ name: 'my-account' }))
           : toggleLoginModal()
       "
-      :isSticky="isUP"
-      ref="SfHeader"
+      :isSticky="isplay === 0 ? false : true"
     >
       <!-- TODO: add mobile view buttons after SFUI team PR -->
       <template #logo>
         <nuxt-link :to="localePath('/')" class="sf-header__logo">
+          <!-- <SfImage
+            src="/icons/osmiler-logo-default.svg"
+            alt="osmiler"
+            class="sf-header__logo-image"
+            :width="34"
+            :height="34"
+            v-show="isicons === 0"
+          />
           <SfImage
-            :src="isTransparency?require('../static/icons/osmiler-logo-light.svg'):require('../static/icons/osmiler-logo-default.svg')"
+            src="/icons/osmiler-logo-light.svg"
+            alt="osmiler"
+            class="sf-header__logo-image"
+            :width="34"
+            :height="34"
+            v-show="isicons === 1"
+          /> -->
+          <SfImage
+            :src="
+              isTransparency
+                ? require('../static/icons/osmiler-logo-light.svg')
+                : require('../static/icons/osmiler-logo-default.svg')
+            "
             alt="osmiler"
             class="sf-header__logo-image"
             :width="34"
@@ -34,7 +52,7 @@
           <SfHeaderNavigationItem
             v-for="(category, key) in shopRootCategories"
             :key="`sf-header-navigation-item-${key}`"
-            :link="`/${category}`"
+            :link="localePath(`/${category}`)"
             :label="category"
           />
         </div>
@@ -49,21 +67,34 @@
             class="sf-button--pure sf-header__action"
             @click="$router.push(localePath({ name: 'my-account' }))"
           >
-            <SfIcon :icon="accountIcon" :class="{'common-header-icon-light': isTransparency }" size="1.25rem" />
+            <SfIcon
+              :icon="accountIcon"
+              :class="{ 'common-header-icon-light': isTransparency }"
+              size="1.25rem"
+            />
           </SfButton>
           <SfButton
             v-else
             class="sf-button--pure sf-header__action"
             @click="toggleLoginModal()"
           >
-            <SfIcon :icon="accountIcon" :class="{'common-header-icon-light': isTransparency }" size="1.25rem" />
+            <SfIcon
+              :icon="accountIcon"
+              :class="{ 'common-header-icon-light': isTransparency }"
+              size="1.25rem"
+            />
           </SfButton>
           <SfButton
             v-e2e="'app-header-cart'"
             class="sf-button--pure sf-header__action"
             @click="toggleCartSidebar"
           >
-            <SfIcon class="sf-header__icon" :class="{'common-header-icon-light': isTransparency }" icon="empty_cart" size="1.25rem" />
+            <SfIcon
+              class="sf-header__icon"
+              :class="{ 'common-header-icon-light': isTransparency }"
+              icon="empty_cart"
+              size="1.25rem"
+            />
             <SfBadge
               v-if="cartTotalItems"
               class="sf-badge--number cart-badge"
@@ -75,10 +106,24 @@
 
       <template #search>
         <div></div>
-        
+        <!-- <SfSearchBar
+          placeholder="Search for items"
+          :value="term"
+          :icon="{ size: '1.25rem', color: '#43464E' }"
+          aria-label="Search"
+          @keydown.esc="closeSearch"
+          @keydown.tab="hideSearch"
+          @input="handleSearch"
+          @focus="isSearchOpen = true"
+        ></SfSearchBar> -->
       </template>
     </SfHeader>
-    
+    <!-- <SearchResults
+      v-if="isSearchOpen"
+      :visible="isSearchOpen"
+      :result="searchResults"
+    />
+    <SfOverlay :visible="isSearchOpen" @click="isSearchOpen = false" /> -->
   </div>
 </template>
 
@@ -90,26 +135,29 @@ import {
   SfBadge,
   SfIcon
 } from '@storefront-ui/vue'
+// import SearchResultsComp from './SearchResults.vue'
 import { onSSR } from '@vue-storefront/core'
-import {
-  computed,
-  ref
-} from '@nuxtjs/composition-api'
+import { computed, ref } from '@nuxtjs/composition-api'
 import { useUiHelpers, useUiState } from '~/composables'
 import LocaleSelector from './LocaleSelector.vue'
 
 import {
+  // searchGetters,
   useCategory
+  // useSearch,
 } from '@vue-storefront/shopify'
 
 export default {
   components: {
+    // SearchResults: SearchResultsComp,
     SfHeader,
     SfImage,
     SfIcon,
     LocaleSelector,
     SfButton,
+    // SfOverlay,
     SfBadge
+    // SfSearchBar
   },
   props: {
     cartTotalItems: {
@@ -142,15 +190,74 @@ export default {
   },
   data() {
     return {
-      shopRootCategories: ['women', 'man', 'music', 'PrivacyPolicy'],
       isplay: 0,
-      isTransparency: false,
-      isUP: true
+      shopRootCategories: [
+        'women',
+        'man',
+        'music',
+        'PrivacyPolicy',
+        'TermsAndConditions'
+      ],
+      isTransparency: false
     }
   },
-  mounted() {
-    window.addEventListener('scroll', this.handleScroll)
-    // console.log(this.$refs.SfHeader.$el.lastChild,4444)
+  watch: {
+    '$route.path': function (newvalue) {
+      if (newvalue === '/home' || newvalue === '/music') {
+        this.isplay = 1
+        this.isTransparency = true
+        const ele = this.$el.querySelector(
+          '.sf-header--has-mobile-search .sf-header__wrapper'
+        )
+        ele.style.background = 'transparent'
+
+        // const elefont = ele.querySelectorAll(
+        //   '.sf-header-navigation-item .sf-header-navigation-item__item a'
+        // )
+        // elefont.forEach((element) => {
+        //   element.style.color = 'rgba(255,255,255,.6)'
+        //   element.click = function () {
+        //     element.style.color = '#fff'
+        //   }
+        //   element.onmousedown = function () {
+        //     element.style.color = '#fff'
+        //   }
+        //   element.onmouseup = function () {
+        //     element.style.color = '#fff'
+        //   }
+        // })
+        window.addEventListener('scroll', this.handleScroll)
+      } else if (newvalue != '/home' || newvalue != '/music') {
+        window.removeEventListener('scroll', this.handleScroll)
+        const ele = this.$el.querySelector(
+          '.sf-header--has-mobile-search .sf-header__wrapper'
+        )
+        // const elefont = ele.querySelectorAll(
+        //   '.sf-header-navigation-item .sf-header-navigation-item__item a'
+        // )
+        // elefont.forEach((element) => {
+        //   element.style.color = '#3a3543'
+        //   elefont.forEach((element) => {
+        //     element.click = function () {
+        //       element.style.color = '#5d47ee'
+        //     }
+        //     element.dblclick = function () {
+        //       element.style.color = '#5d47ee'
+        //     }
+        //     element.onmouseup = function () {
+        //       element.style.color = '#5d47ee'
+        //     }
+        //     element.onmousedown = function () {
+        //       element.style.color = '#5d47ee'
+        //     }
+        //   })
+        // })
+
+        ele.style.background = '#fff'
+        this.isplay = 0
+        this.isTransparency = false
+      }
+    }
   },
   methods: {
     handleScroll() {
@@ -158,40 +265,60 @@ export default {
         window.pageYOffset ||
         document.documentElement.scrollTop ||
         document.body.scrollTop
-      if (
-        (scrollTop && this.$route.path === '/home') ||
-        this.$route.path === '/music'
-      ) {
+      const ele = this.$el.querySelector(
+        '.sf-header--has-mobile-search .sf-header__wrapper'
+      )
+
+      if (scrollTop) {
+        ele.style.background = `rgba(255,255,255,${
+          scrollTop / (scrollTop + 100)
+        })`
+        // const elefont = ele.querySelectorAll(
+        //   '.sf-header-navigation-item .sf-header-navigation-item__item a'
+        // )
+        // elefont.forEach((element) => {
+        //   element.style.color = '#3a3543'
+        //   element.click = function () {
+        //     element.style.color = '#5d47ee'
+        //   }
+        //   element.dblclick = function () {
+        //     element.style.color = '#5d47ee'
+        //   }
+        //   element.onmouseup = function () {
+        //     element.style.color = '#5d47ee'
+        //   }
+        //   element.onmousedown = function () {
+        //     element.style.color = '#5d47ee'
+        //   }
+        // })
         this.isTransparency = false
-        var ele = this.$refs.SfHeader.$el.lastChild
-        ele.style.backgroundColor = '#fff'
-
-        if (scrollTop < 50) {
-          this.isTransparency = true
-          ele.style.backgroundColor = 'rgba(100,0,0,0)'
-        }
-        // console.log(ele,2222)
+      } else {
+        ele.style.background = `rgba(255,255,255,${
+          scrollTop / (scrollTop - 100)
+        })`
+        // const elefont = ele.querySelectorAll(
+        //   '.sf-header-navigation-item .sf-header-navigation-item__item a'
+        // )
+        // elefont.forEach((element) => {
+        //   element.style.color = 'rgba(255,255,255,.6)'
+        //   element.click = function () {
+        //     element.style.color = '#fff'
+        //   }
+        //   element.onmousedown = function () {
+        //     element.style.color = '#fff'
+        //   }
+        //   element.onmouseup = function () {
+        //     element.style.color = '#fff'
+        //   }
+        // })
+        this.isTransparency = true
       }
-
-      // 判断滑动方向,并根据方向设置是否显示导航栏
-      // const scroll = scrollTop - this.isplay
-      // this.isplay = scrollTop
-      // if (scroll < 0 ) {
-      //   console.log('up')
-      //   //添加你想要的事件
-      //   this.isUP = true
-      // } else {
-      //   //添加你想要的事件
-      //   console.log('down')
-      //   this.isUP = false
-      // }
     }
   }
 }
 </script>
 
 <style lang="scss" scoped>
-
 // 自定义页头CSS, 亮色背景
 .common-header-light {
    @include for-desktop {

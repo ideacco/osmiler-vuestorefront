@@ -42,3 +42,4 @@ tests/e2e/report
 docs/.vuepress/dist
 
 */middleware.config.js
+.eslintcache
