@@ -26,13 +26,11 @@
                 <div
                   class="uk-panel uk-text-lead uk-position-relative uk-margin uk-width-xlarge uk-text-left@s uk-text-center"
                   id="page#15-0-0-1"
-
                 >
                   Get in touch to make an appointment today.
                 </div>
                 <div
                   class="uk-position-relative uk-margin-medium uk-text-left@s uk-text-center"
-
                 >
                   <a
                     class="el-content uk-button uk-button-primary uk-button-large uk-flex-inline uk-flex-center uk-flex-middle"
