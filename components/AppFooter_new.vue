@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="uk-visible@m">
     <div class="uk-section-default uk-section">
       <div class="uk-container uk-container-large">
         <div class="tm-grid-expand uk-grid-margin uk-grid" uk-grid="">
@@ -314,15 +314,6 @@
 </template>
 
 <script>
-export default {
-  components: {},
-  setup() {
-    return {}
-  },
-  data() {
-    return {}
-  }
-}
 </script>
 
 <style lang="scss"></style>
