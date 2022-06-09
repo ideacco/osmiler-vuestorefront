@@ -29,7 +29,7 @@
             <div
               class="tm-grid-expand uk-grid-large"
               uk-grid            >
-              <div class="uk-grid-item-match uk-flex-middle uk-width-2-3@l uk-first-column">
+              <div class="uk-grid-item-match uk-flex-middle uk-width-2-3@l ">
                 <div class="uk-panel uk-width-1-1">
                   <div
                     class="uk-margin-large uk-text-left@m uk-text-center"
@@ -47,7 +47,7 @@
                   </div>
                 </div>
               </div>
-              <div class="uk-grid-item-match uk-flex-middle uk-width-1-3@l" style="float: left;">
+              <div class="uk-grid-item-match uk-flex-middle uk-width-1-3@l" >
                 <div class="uk-panel uk-width-1-1">
                   <h2 class="uk-h5 uk-text-primary" uk-scrollspy-class>
                     Tracklist
@@ -192,6 +192,8 @@
 </template>
 
 <script type="module">
+// import'/static/wp-content/themes/yootheme/vendor/assets/uikit/dist/js/uikit-icons-union-dental.min.js'
+// import'/static/wp-content/themes/yootheme/vendor/assets/uikit/dist/js/uikit.min.js'
 export default {
   name: 'MuSic',
   data() {
@@ -261,8 +263,8 @@ export default {
 }
 </script>
 <style scoped>
-@import '../static/wp-includes/css/dist/block-library/style.min.css';
-@import '../static/wp-content/themes/yootheme/css/theme.1.css';
+/* @import '../static/wp-includes/css/dist/block-library/style.min.css';
+@import '../static/wp-content/themes/yootheme/css/theme.1.css'; */
 
 img.wp-smiley,
 img.emoji {
