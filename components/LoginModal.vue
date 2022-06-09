@@ -76,12 +76,16 @@
         <div class="bottom">
           <!-- <p class="bottom__paragraph">{{ $t('No account') }}</p> -->
           <SfButton
-            class="color-secondary sf-button sf-button--full-width "
+            class="color-secondary sf-button sf-button--full-width"
             type="button"
             @click="setIsLoginValue(false)"
-            style="margin-top: 30px;box-sizing: border-box;border: 1px solid #fff;"
+            style="
+              margin-top: 30px;
+              box-sizing: border-box;
+              border: 1px solid #fff;
+            "
           >
-              <div>{{ $t('Register today') }}</div>
+            <div>{{ $t('Register today') }}</div>
           </SfButton>
         </div>
       </div>
@@ -209,14 +213,14 @@
             </SfButton>
           </form>
         </ValidationObserver>
-          <SfButton
-            class="color-secondary sf-button sf-button--full-width "
-            @click="setIsLoginValue(true)"
-            style="margin-top:20px"
-          >
-            {{ $t('login in to your account') }}
-          </SfButton>
-        </div>
+        <SfButton
+          class="color-secondary sf-button sf-button--full-width"
+          @click="setIsLoginValue(true)"
+          style="margin-top: 20px"
+        >
+          {{ $t('login in to your account') }}
+        </SfButton>
+      </div>
     </transition>
   </SfModal>
 </template>
@@ -453,15 +457,15 @@ export default {
   float: left;
   margin-bottom: 30px;
 }
- ::v-deep .sf-modal__container{
-   border-radius:5px ;
- }
- ::v-deep .form__element{
-   margin: 0 0 10px 0 ;
- }
- .sf-button{
-  --button-border-radius:5px;
- }
+::v-deep .sf-modal__container {
+  border-radius: 5px;
+}
+::v-deep .form__element {
+  margin: 0 0 10px 0;
+}
+.sf-button {
+  --button-border-radius: 5px;
+}
 .bottom {
   text-align: center;
   margin-bottom: var(--spacer-lg);

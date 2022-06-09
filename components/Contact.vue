@@ -18,7 +18,7 @@
                 <h2
                   class="uk-h1 uk-position-relative uk-text-left@s uk-text-center"
                   id="page#15-0-0-0"
-                  style="z-index: 1; font-family: osmiler-title"
+                  style="font-family: osmiler-title"
                 >
                   “The first dental office <br class="uk-visible@s" />I actually
                   like going to.”
@@ -26,13 +26,13 @@
                 <div
                   class="uk-panel uk-text-lead uk-position-relative uk-margin uk-width-xlarge uk-text-left@s uk-text-center"
                   id="page#15-0-0-1"
-                  style="z-index: 1"
+
                 >
                   Get in touch to make an appointment today.
                 </div>
                 <div
                   class="uk-position-relative uk-margin-medium uk-text-left@s uk-text-center"
-                  style="z-index: 1"
+
                 >
                   <a
                     class="el-content uk-button uk-button-primary uk-button-large uk-flex-inline uk-flex-center uk-flex-middle"

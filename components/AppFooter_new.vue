@@ -316,11 +316,15 @@
 <script>
 export default {
   components: {},
-  setup() {
-    return {}
-  },
   data() {
-    return {}
+    return {
+      isMoblie: false
+    }
+  },
+  created() {
+    if (process.browser) {
+      console.log(process.browser, 444)
+    }
   }
 }
 </script>

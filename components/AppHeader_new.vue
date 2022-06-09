@@ -259,7 +259,6 @@ export default {
             scrollTop / (scrollTop - 100)
           })`
           ele.style.boxShadow = 'none'
-          ele.style.zIndex = '9999'
         }
       }
     }
