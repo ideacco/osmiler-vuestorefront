@@ -426,6 +426,7 @@ export default {
 
 <style lang="scss" scoped>
 .modal {
+  --font-family--secondary: var(--font-family--primary);
   --modal-index: 99999;
   --overlay-z-index: 99999;
 }

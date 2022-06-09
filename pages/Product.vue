@@ -505,6 +505,7 @@ export default {
 
 <style lang="scss" scoped>
 .pdc-pdp-loader {
+  --font-family--secondary: var(--font-family--primary);
   min-height: 200px;
   padding: 100px 0;
 }

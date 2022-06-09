@@ -462,6 +462,7 @@ export default {
 
 <style lang="scss" scoped>
 .search {
+  --font-family--secondary: var(--font-family--primary);
   position: absolute;
   right: 0;
   left: 0;

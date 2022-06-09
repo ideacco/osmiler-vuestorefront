@@ -130,6 +130,7 @@ export default {
 
 <style lang="scss" scoped>
 .navbar {
+  --font-family--secondary: var(--font-family--primary);
   position: relative;
   display: flex;
   border: 1px solid var(--c-light);
@@ -245,6 +246,7 @@ export default {
   }
 }
 .sort-by {
+  --font-family--secondary: var(--font-family--primary);
   flex: unset;
   width: 11.875rem;
 }

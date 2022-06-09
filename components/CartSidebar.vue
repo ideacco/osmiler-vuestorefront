@@ -128,7 +128,7 @@
                   size="xxs"
                   color="green-primary"
                   @click="handleRemoveCoupon(couponcode)"
-                  ˝
+
                 /></span>
               </template>
               <template #value>
@@ -344,6 +344,7 @@ export default {
 
 <style lang="scss" scoped>
 #cart {
+  --font-family--secondary: var(--font-family--primary);
   --sidebar-z-index: 3;
   --overlay-z-index: 3;
   @include for-desktop {

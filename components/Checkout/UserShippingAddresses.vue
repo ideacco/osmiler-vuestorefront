@@ -81,6 +81,7 @@ export default {
 
 <style lang="scss">
 .shipping-addresses {
+  --font-family--secondary: var(--font-family--primary);
   @include for-desktop {
     display: grid;
     grid-template-columns: 1fr 1fr;

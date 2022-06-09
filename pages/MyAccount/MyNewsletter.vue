@@ -58,6 +58,7 @@ export default {
 
 <style lang="scss" scoped>
 .tab-orphan {
+  --font-family--secondary: var(--font-family--primary);
   @include for-mobile {
     --tabs-title-display: none;
     --tabs-content-padding: 0;

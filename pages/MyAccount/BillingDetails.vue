@@ -196,6 +196,7 @@ export default {
   }
 }
 .tab-orphan {
+  --font-family--secondary: var(--font-family--primary);
   @include for-mobile {
     ::v-deep .sf-tabs {
       &__title {

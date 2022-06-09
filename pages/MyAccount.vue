@@ -186,6 +186,7 @@ export default {
 <style lang="scss" scoped>
 #my-account {
   box-sizing: border-box;
+  --font-family--secondary: var(--font-family--primary);
   @include for-desktop {
     max-width: 1440px;
     margin: 0 auto;

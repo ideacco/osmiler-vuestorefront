@@ -223,6 +223,7 @@ export default {
 
 <style lang="scss" scoped>
 #product {
+  --font-family--secondary: var(--font-family--primary);
   box-sizing: border-box;
   @include for-desktop {
     max-width: 1272px;
