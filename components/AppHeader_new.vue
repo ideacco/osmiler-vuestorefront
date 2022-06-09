@@ -103,20 +103,11 @@ import {
   SfImage,
   SfButton,
   SfBadge,
-  SfSearchBar,
-  SfIcon,
-  SfOverlay
+  SfIcon
 } from '@storefront-ui/vue'
-import SearchResultsComp from './SearchResults.vue'
 import debounce from 'lodash/debounce'
 import { onSSR } from '@vue-storefront/core'
-import {
-  computed,
-  ref,
-  watch,
-  useRoute,
-  useContext
-} from '@nuxtjs/composition-api'
+import { computed, ref, watch, useRoute } from '@nuxtjs/composition-api'
 import { useUiHelpers, useUiState } from '~/composables'
 import LocaleSelector from './LocaleSelector.vue'
 
@@ -258,14 +249,18 @@ export default {
           scrollTop / (scrollTop + 100)
         })`
         this.isTransparency = false
-        if (scrollTop < 50) {
+        ele.style.boxShadow = '0 5px 15px rgb(39 44 63 / 6%)'
+        if (scrollTop < 100) {
           // const ele = this.$el.querySelector(
           //   '.sf-header--has-mobile-search .sf-header__wrapper'
           // )
+          console.log(scrollTop, 444)
           this.isTransparency = true
           ele.style.background = `rgba(255,255,255,${
             scrollTop / (scrollTop - 100)
           })`
+          ele.style.boxShadow = 'none'
+
         }
       }
     }
@@ -297,8 +292,8 @@ export default {
     --header-wrapper-transform: translate(0, 0);
   }
 }
-.sf-header-navigation-item{
---font-family--secondary:var(--font-family--primary)
+.sf-header-navigation-item {
+  --font-family--secondary: var(--font-family--primary);
 }
 .sf-header {
   --header-padding: var(--spacer-sm);
