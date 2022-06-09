@@ -250,17 +250,16 @@ export default {
         })`
         this.isTransparency = false
         ele.style.boxShadow = '0 5px 15px rgb(39 44 63 / 6%)'
-        if (scrollTop < 100) {
+        if (scrollTop < 50) {
           // const ele = this.$el.querySelector(
           //   '.sf-header--has-mobile-search .sf-header__wrapper'
           // )
-          console.log(scrollTop, 444)
           this.isTransparency = true
           ele.style.background = `rgba(255,255,255,${
             scrollTop / (scrollTop - 100)
           })`
           ele.style.boxShadow = 'none'
-
+          ele.style.zIndex = '9999'
         }
       }
     }
