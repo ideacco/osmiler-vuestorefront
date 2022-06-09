@@ -5,7 +5,7 @@
       src="/error/error.webp"
       alt="leaves"
       :width="300"
-      :height="300"
+      :height="340"
     />
     <SfHeading
       :title="
@@ -60,8 +60,9 @@ export default {
   align-items: center;
   width: 100%;
   padding: 0 var(--spacer-sm);
-  margin: var(--spacer-xl) 0;
+  // margin: var(--spacer-xl) 0;
   @include for-desktop {
+    margin: auto;
     max-width: 77.5rem;
   }
 }
@@ -79,7 +80,7 @@ export default {
   --heading-description-color: var(--c-text-muted);
   --heading-description-font-size: var(--font-size--base);
   --heading-description-margin: 0 var(--spacer-base);
-  --heading-description-font-family: Overpass;
+  --heading-description-font-family: var(--font-family--primary);
   @include for-desktop {
     --heading-description-margin: 0;
   }

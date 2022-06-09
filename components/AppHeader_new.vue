@@ -105,8 +105,9 @@ import {
   SfBadge,
   SfIcon
 } from '@storefront-ui/vue'
+import debounce from 'lodash/debounce'
 import { onSSR } from '@vue-storefront/core'
-import { computed, ref } from '@nuxtjs/composition-api'
+import { computed, ref, watch, useRoute } from '@nuxtjs/composition-api'
 import { useUiHelpers, useUiState } from '~/composables'
 import LocaleSelector from './LocaleSelector.vue'
 
@@ -173,12 +174,14 @@ export default {
         this.$route.path === '/music'
       ) {
         this.isTransparency = false
-        var ele = this.$refs.SfHeader.$el.lastChild
-        ele.style.backgroundColor = '#fff'
-
+        ele.style.boxShadow = '0 5px 15px rgb(39 44 63 / 6%)'
         if (scrollTop < 50) {
           this.isTransparency = true
-          ele.style.backgroundColor = 'rgba(100,0,0,0)'
+          ele.style.background = `rgba(255,255,255,${
+            scrollTop / (scrollTop - 100)
+          })`
+          ele.style.boxShadow = 'none'
+          ele.style.zIndex = '9999'
         }
         // console.log(ele,2222)
       }
@@ -224,12 +227,14 @@ export default {
     --header-wrapper-transform: translate(0, 0);
   }
 }
-
+.sf-header-navigation-item {
+  --font-family--secondary: var(--font-family--primary);
+}
 .sf-header {
   --header-padding: var(--spacer-sm);
   @include for-desktop {
     --header-padding: 0;
-    --header-box-shadow: 0 5px 15px rgb(39 44 63 / 6%);
+    // --header-box-shadow: 0 5px 15px rgb(39 44 63 / 6%);
     --header-wrapper-transition: all 0.3s ease;
   }
   &__logo-image {

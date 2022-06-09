@@ -1,5 +1,5 @@
 <template>
-  <div style="height: 1800px">
+  <div>
     <div
       class="uk-section-default uk-light"
       tm-header-transparent="light"
@@ -28,7 +28,11 @@
             </div>
           </div>
           <div class="uk-margin-large uk-container uk-container-large">
-            <div class="tm-grid-expand uk-grid-large" uk-grid>
+            <div
+              class="tm-grid-expand uk-grid-large"
+              uk-grid
+              style="display: flex"
+            >
               <div class="uk-grid-item-match uk-flex-middle uk-width-2-3@l">
                 <div class="uk-panel uk-width-1-1">
                   <div

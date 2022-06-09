@@ -25,7 +25,7 @@
                 :error-message="errors[0]"
                 name="email"
                 label="Your email"
-                class="form__element"
+                class="form__element for-email"
               />
             </ValidationProvider>
             <ValidationProvider v-slot="{ errors }" rules="required">
@@ -40,15 +40,25 @@
                 class="form__element"
               />
             </ValidationProvider>
-            <SfCheckbox
-              v-model="rememberMe"
-              v-e2e="'login-modal-remember-me'"
-              name="remember-me"
-              label="Remember me"
-              class="form__element checkbox"
-            />
-            <div v-if="error.login">
-              {{ error.login }}
+            <div>
+              <SfCheckbox
+                v-model="rememberMe"
+                v-e2e="'login-modal-remember-me'"
+                name="remember-me"
+                label="Remember me"
+                class="checkbox"
+              />
+              <div v-if="error.login">
+                {{ error.login }}
+              </div>
+              <div class="action" style="float: right">
+                <SfButton
+                  class="sf-button--text"
+                  @click="setIsForgottenValue(true)"
+                >
+                  {{ $t('Forgotten password?') }}
+                </SfButton>
+              </div>
             </div>
             <SfButton
               v-e2e="'login-modal-submit'"
@@ -62,15 +72,16 @@
             </SfButton>
           </form>
         </ValidationObserver>
-        <div class="action">
-          <SfButton class="sf-button--text" @click="setIsForgottenValue(true)">
-            {{ $t('Forgotten password?') }}
-          </SfButton>
-        </div>
+
         <div class="bottom">
-          <p class="bottom__paragraph">{{ $t('No account') }}</p>
-          <SfButton class="sf-button--text" @click="setIsLoginValue(false)">
-            {{ $t('Register today') }}
+          <!-- <p class="bottom__paragraph">{{ $t('No account') }}</p> -->
+          <SfButton
+            class="color-secondary sf-button sf-button--full-width "
+            type="button"
+            @click="setIsLoginValue(false)"
+            style="margin-top: 30px;box-sizing: border-box;border: 1px solid #fff;"
+          >
+              <div>{{ $t('Register today') }}</div>
           </SfButton>
         </div>
       </div>
@@ -133,7 +144,7 @@
                 :error-message="errors[0]"
                 name="email"
                 label="Your email"
-                class="form__element"
+                class="form__element for-email"
               />
             </ValidationProvider>
             <ValidationProvider v-slot="{ errors }" rules="required">
@@ -198,16 +209,14 @@
             </SfButton>
           </form>
         </ValidationObserver>
-        <div class="action">
-          {{ $t('or') }}
           <SfButton
-            class="sf-button--text back-to-login"
+            class="color-secondary sf-button sf-button--full-width "
             @click="setIsLoginValue(true)"
+            style="margin-top:20px"
           >
             {{ $t('login in to your account') }}
           </SfButton>
         </div>
-      </div>
     </transition>
   </SfModal>
 </template>
@@ -258,7 +267,7 @@ export default {
   setup() {
     const { isLoginModalOpen, toggleLoginModal } = useUiState()
     const form = ref({})
-    const isLogin = ref(false)
+    const isLogin = ref(true)
     const isForgotten = ref(false)
     const isThankYouAfterForgotten = ref(false)
     const userEmail = ref('')
@@ -413,8 +422,8 @@ export default {
 
 <style lang="scss" scoped>
 .modal {
-  --modal-index: 3;
-  --overlay-z-index: 3;
+  --modal-index: 99999;
+  --overlay-z-index: 99999;
 }
 .form {
   margin-top: var(--spacer-sm);
@@ -422,23 +431,37 @@ export default {
     margin: 0 0 var(--spacer-xl) 0;
   }
 }
+
 .action {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: var(--spacer-xl) 0 var(--spacer-xl) 0;
+  // display: flex;
+  // align-items: center;
+  // justify-content: center;
+  // margin: var(--spacer-xl) 0 var(--spacer-xl) 0;
   font: var(--font-weight--light) var(--font-size--base) / 1.6
     var(--font-family--secondary);
   & > * {
     margin: 0 0 0 var(--spacer-xs);
   }
 }
-.action {
-  margin: var(--spacer-xl) 0 var(--spacer-xl) 0;
-}
+// .action {
+//   margin: var(--spacer-xl) 0 var(--spacer-xl) 0;
+// }
+// .checkbox {
+//   margin-bottom: var(--spacer-2xl);
+// }
 .checkbox {
-  margin-bottom: var(--spacer-2xl);
+  float: left;
+  margin-bottom: 30px;
 }
+ ::v-deep .sf-modal__container{
+   border-radius:5px ;
+ }
+ ::v-deep .form__element{
+   margin: 0 0 10px 0 ;
+ }
+ .sf-button{
+  --button-border-radius:5px;
+ }
 .bottom {
   text-align: center;
   margin-bottom: var(--spacer-lg);

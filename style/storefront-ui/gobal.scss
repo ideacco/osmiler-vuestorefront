@@ -4,7 +4,8 @@
   @include assign-color-variants(--c-primary, --_c-blue-primary);
   @include assign-color-variants(--c-primary-varint, --_c-blue-secondary);
   @include assign-color-variants(--c-primary-varint, --_c-blue-secondary);
-  --font-family--primary: 'Overpass', serif;
+  font-family: 'Overpass', sans-serif;
+  --font-family--primary: 'Overpass', sans-serif;
   --font-family--secondary: 'Roboto', serif;
   --button-border-radius: 4px;
 }
