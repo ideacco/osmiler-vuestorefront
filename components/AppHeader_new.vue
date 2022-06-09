@@ -169,35 +169,27 @@ export default {
         window.pageYOffset ||
         document.documentElement.scrollTop ||
         document.body.scrollTop
-      if (
-        (scrollTop && this.$route.path === '/home') ||
-        this.$route.path === '/music'
-      ) {
+      if (scrollTop) {
+        const ele = this.$el.querySelector(
+          '.sf-header--has-mobile-search .sf-header__wrapper'
+        )
+        ele.style.background = `rgba(255,255,255,${
+          scrollTop / (scrollTop + 100)
+        })`
         this.isTransparency = false
         ele.style.boxShadow = '0 5px 15px rgb(39 44 63 / 6%)'
-        if (scrollTop < 50) {
+        if (scrollTop < 80) {
+          // const ele = this.$el.querySelector(
+          //   '.sf-header--has-mobile-search .sf-header__wrapper'
+          // )
           this.isTransparency = true
           ele.style.background = `rgba(255,255,255,${
             scrollTop / (scrollTop - 100)
           })`
           ele.style.boxShadow = 'none'
-          ele.style.zIndex = '9999'
+          // ele.style.zIndex = '9999'
         }
-        // console.log(ele,2222)
       }
-
-      // 判断滑动方向,并根据方向设置是否显示导航栏
-      // const scroll = scrollTop - this.isplay
-      // this.isplay = scrollTop
-      // if (scroll < 0 ) {
-      //   console.log('up')
-      //   //添加你想要的事件
-      //   this.isUP = true
-      // } else {
-      //   //添加你想要的事件
-      //   console.log('down')
-      //   this.isUP = false
-      // }
     }
   }
 }
