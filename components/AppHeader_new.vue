@@ -103,29 +103,14 @@ import {
   SfImage,
   SfButton,
   SfBadge,
-  SfSearchBar,
-  SfIcon,
-  SfOverlay
+  SfIcon
 } from '@storefront-ui/vue'
-import SearchResultsComp from './SearchResults.vue'
-import debounce from 'lodash/debounce'
 import { onSSR } from '@vue-storefront/core'
-import {
-  computed,
-  ref,
-  watch,
-  useRoute,
-  useContext
-} from '@nuxtjs/composition-api'
+import { computed, ref } from '@nuxtjs/composition-api'
 import { useUiHelpers, useUiState } from '~/composables'
 import LocaleSelector from './LocaleSelector.vue'
 
-import {
-  searchGetters,
-  useCategory,
-  useSearch,
-  useContent
-} from '@vue-storefront/shopify'
+import { useCategory } from '@vue-storefront/shopify'
 
 export default {
   components: {
@@ -147,55 +132,11 @@ export default {
   setup(props) {
     const { toggleCartSidebar, toggleWishlistSidebar, toggleLoginModal } =
       useUiState()
-    const { changeSearchTerm, getFacetsFromURL } = useUiHelpers()
-    const { search: headerSearch, result } = useSearch('header-search')
-    const { search, categories } = useCategory('menuCategories')
-    const { search: getArticles, content: articlesContent } =
-      useContent('articles')
-
+    const { getFacetsFromURL } = useUiHelpers()
+    const { search } = useCategory('menuCategories')
     const curCatSlug = ref(getFacetsFromURL().categorySlug)
     const accountIcon = computed(() =>
       props.isUserAuthenticated ? 'profile_fill' : 'profile'
-    )
-
-    // #region Search Section
-    const isSearchOpen = ref(false)
-    const term = ref(getFacetsFromURL().term)
-    const route = useRoute()
-    const handleSearch = debounce(async (searchTerm) => {
-      if (!searchTerm.target) {
-        term.value = searchTerm
-      } else {
-        term.value = searchTerm.target.value
-      }
-
-      await headerSearch({
-        term: term.value
-      })
-      await getArticles({
-        contentType: 'article',
-        query: term.value,
-        first: 5
-      })
-    }, 500)
-
-    watch(route, () => {
-      term.value = ''
-    })
-
-    const closeSearch = () => {
-      if (!isSearchOpen.value) return
-      term.value = ''
-      isSearchOpen.value = false
-    }
-
-    const searchResults = computed(() =>
-      !term.value
-        ? { products: [], articles: [] }
-        : {
-          products: searchGetters.getItems(result.value),
-          articles: articlesContent?.value?.data
-        }
     )
     onSSR(async () => {
       await search({ slug: '' })
@@ -203,16 +144,10 @@ export default {
 
     return {
       accountIcon,
-      closeSearch,
       toggleLoginModal,
       toggleCartSidebar,
       toggleWishlistSidebar,
-      changeSearchTerm,
-      term,
-      handleSearch,
-      curCatSlug,
-      searchResults,
-      isSearchOpen
+      curCatSlug
     }
   },
   data() {
@@ -223,26 +158,9 @@ export default {
       isUP: true
     }
   },
-  watch: {
-    '$route.path': function (newvalue) {
-      if (newvalue === '/' || newvalue === '/music') {
-        const ele = this.$el.querySelector(
-          '.sf-header--has-mobile-search .sf-header__wrapper'
-        )
-        ele.style.background = 'transparent'
-        this.isUP = true
-        this.isTransparency = true
-        window.addEventListener('scroll', this.handleScroll)
-      } else if (newvalue != '/' || newvalue != '/music') {
-        const ele = this.$el.querySelector(
-          '.sf-header--has-mobile-search .sf-header__wrapper'
-        )
-        window.removeEventListener('scroll', this.handleScroll)
-        ele.style.backgroundColor = '#fff'
-        this.isUP = false
-        this.isTransparency = false
-      }
-    }
+  mounted() {
+    window.addEventListener('scroll', this.handleScroll)
+    console.log(this.$refs.SfHeader.$el.lastChild, 4444)
   },
   methods: {
     handleScroll() {
@@ -250,24 +168,33 @@ export default {
         window.pageYOffset ||
         document.documentElement.scrollTop ||
         document.body.scrollTop
-      if (scrollTop) {
-        const ele = this.$el.querySelector(
-          '.sf-header--has-mobile-search .sf-header__wrapper'
-        )
-        ele.style.background = `rgba(255,255,255,${
-          scrollTop / (scrollTop + 100)
-        })`
+      if (
+        (scrollTop && this.$route.path === '/home') ||
+        this.$route.path === '/music'
+      ) {
         this.isTransparency = false
+        var ele = this.$refs.SfHeader.$el.lastChild
+        ele.style.backgroundColor = '#fff'
+
         if (scrollTop < 50) {
-          // const ele = this.$el.querySelector(
-          //   '.sf-header--has-mobile-search .sf-header__wrapper'
-          // )
           this.isTransparency = true
-          ele.style.background = `rgba(255,255,255,${
-            scrollTop / (scrollTop - 100)
-          })`
+          ele.style.backgroundColor = 'rgba(100,0,0,0)'
         }
+        // console.log(ele,2222)
       }
+
+      // 判断滑动方向,并根据方向设置是否显示导航栏
+      // const scroll = scrollTop - this.isplay
+      // this.isplay = scrollTop
+      // if (scroll < 0 ) {
+      //   console.log('up')
+      //   //添加你想要的事件
+      //   this.isUP = true
+      // } else {
+      //   //添加你想要的事件
+      //   console.log('down')
+      //   this.isUP = false
+      // }
     }
   }
 }

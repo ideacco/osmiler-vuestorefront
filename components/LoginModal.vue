@@ -291,7 +291,6 @@ export default {
         return 'Reset Password'
       }
       return 'Register'
-
     })
 
     watch(isLoginModalOpen, () => {
