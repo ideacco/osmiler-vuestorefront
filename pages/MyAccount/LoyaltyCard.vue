@@ -1,6 +1,6 @@
 <template>
   <div>
-    <SfTab title="Security">
+    <SfTab title="LoyaltyCard">
       This feature is not implemented yet! Please take a look at
       <a>https://github.com/DivanteLtd/vue-storefront/issues</a> for our
       Roadmap!
@@ -10,10 +10,7 @@
 <script>
 import { SfContentPages, SfTab } from '@storefront-ui/vue'
 export default {
-  data() {
-    return {}
-  },
-  props: [],
+  name: 'LoyaltyCard',
   components: { SfTab, SfContentPages }
 }
 </script>

@@ -103,16 +103,14 @@ export default {
 
     const removeAddress = (address) => deleteAddress({ address })
 
-    const saveAddress = async ({ form, onComplete, onError }) => {
+    const saveAddress = async ({ form, onComplete }) => {
       try {
         const actionMethod = isNewAddress.value ? addAddress : updateAddress
         const data = await actionMethod({ address: form })
         edittingAddress.value = false
         activeAddress.value = undefined
         await onComplete(data)
-      } catch (error) {
-        onError(error)
-      }
+      } catch (error) {}
     }
 
     onSSR(async () => {

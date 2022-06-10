@@ -2,12 +2,8 @@
   <div class="my-profile">
     <div class="my-profile__title">
       <SfHeading :level="1" :title="title" />
-      <template v-if="!isEdited">
-        <SfButton class="edit_action" @click="isEdited = true">
-          Edit Your Profile
-        </SfButton>
-      </template>
     </div>
+
     <div v-if="isEdited" class="my-profile__content container-small">
       <tabs>
         <tab title="Personal Data">
@@ -166,6 +162,11 @@
         :value="phone"
       />
     </div>
+     <template v-if="!isEdited">
+        <SfButton  @click="isEdited = true">
+          Edit Your Profile
+        </SfButton>
+      </template>
   </div>
 </template>
 <script type="module">
@@ -334,6 +335,10 @@ export default {
 }
 </script>
 <style lang="scss">
+.form__button_wrap {
+  float: left;
+  margin-right: 20px;
+}
 .my-profile {
   --font-family--secondary: var(--font-family--primary);
   .edit_action {

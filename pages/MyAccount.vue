@@ -18,6 +18,21 @@
       title="My Account"
       @click:change="currentPage = $event"
     >
+      <template #menu-item="{ page }">
+        <SfMenuItem
+          :class="{ 'is-active': page.title === activePage }"
+          :label="
+            page.title === 'Billing details'
+              ? 'Shipping address'
+              : page.title === 'Order history'
+                ? 'My Orders'
+                : page.title
+          "
+          class="sf-content-pages__menu"
+          icon=""
+          @click="changeActivePage(page.title)"
+        />
+      </template>
       <SfContentCategory title="Personal Details">
         <SfContentPage data-cy="Account-my-profile" title="My profile">
           <MyProfile />
@@ -28,19 +43,16 @@
         >
           <AdressBook />
         </SfContentPage>
-        <SfContentPage data-cy="Account-loyalty-card" title="Loyalty Card">
-          <LoyaltyCard />
-        </SfContentPage>
-        <SfContentPage data-cy="Account-news-letter" title="News letter">
+        <!-- <SfContentPage data-cy="Account-news-letter" title="News letter">
           <MyNewsletter />
-        </SfContentPage>
+        </SfContentPage> -->
       </SfContentCategory>
       <SfContentCategory title="Order Details">
         <SfContentPage data-cy="Account-my-orders" title="Order history">
           <OrderHistory />
         </SfContentPage>
 
-        <SfContentPage data-cy="account-page_log-out" title="Log out" />
+        <SfContentPage data-cy="account-page_log-out" title="Log out"  class="textone" style="text-decoration: underline;"/>
       </SfContentCategory>
     </SfContentPages>
   </div>
@@ -52,7 +64,6 @@ import { useUser, userGetters, useContent } from '@vue-storefront/shopify'
 
 import MyProfile from './MyAccount/MyProfile'
 import MyNewsletter from './MyAccount/MyNewsletter.vue'
-import LoyaltyCard from './MyAccount/LoyaltyCard.vue'
 import AdressBook from './MyAccount/AdressBook'
 import OrderHistory from './MyAccount/OrderHistory'
 import { onSSR } from '@vue-storefront/core'
@@ -65,7 +76,6 @@ export default {
     SfContentPages,
     SfMenuItem,
     MyNewsletter,
-    LoyaltyCard,
     MyProfile,
     AdressBook,
     OrderHistory
@@ -187,7 +197,7 @@ export default {
   box-sizing: border-box;
   --font-family--secondary: var(--font-family--primary);
   @include for-desktop {
-    max-width: 1440px;
+    max-width: 1240px;
     margin: 0 auto;
   }
 }

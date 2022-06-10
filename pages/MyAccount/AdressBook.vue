@@ -56,7 +56,8 @@
                 </div>
               </div>
               <div class="billing__actions">
-                <SfButton
+              <div class="billing__actions_font——size" >
+                  <SfButton
                   data-cy="billing-details-btn_change"
                   class="sf-button--text"
                   @click="changeAddress(address), scrollToTop()"
@@ -71,13 +72,15 @@
                   Delete
                 </SfButton>
               </div>
+              </div>
             </div>
           </div>
           <div class="billing add-address-btn">
-            <div class="billing__wrap" @click="changeAddress(), scrollToTop()">
+            <div  @click="changeAddress(), scrollToTop()">
               <SfButton
                 data-cy="billing-details-btn_add"
-                class="action-button sf-button--text"
+                class="buttonfrist"
+                style="border:3px solid"
               >
                 <SfIcon icon="plus" />
                 Add Address
@@ -118,7 +121,7 @@ export default {
   props: {
     title: {
       type: String,
-      default: 'Address Book'
+      default: 'Shipping address'
     }
   },
   // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
@@ -165,7 +168,7 @@ export default {
         }
       })
 
-    const saveAddress = async ({ form, onComplete, onError }) => {
+    const saveAddress = async ({ form, onComplete }) => {
       try {
         const actionMethod = isNewAddress.value ? addAddress : updateAddress
         let notificationMsg = 'Addressbook updated successfully'
@@ -194,9 +197,7 @@ export default {
         edittingAddress.value = false
         activeAddress.value = undefined
         await onComplete(data)
-      } catch (error) {
-        onError(error)
-      }
+      } catch (error) {}
     }
 
     onSSR(async () => {
@@ -244,11 +245,17 @@ export default {
 .my_account_content_wrap {
   --font-family--secondary: var(--font-family--primary);
 }
+::v-deep .billing__content{
+  float: left;
+}
+.billing__actions_font——size{
+  float:right;
+}
 .billing-list {
   display: flex;
   flex-wrap: wrap;
-  margin-left: -10px;
-  margin-right: -10px;
+  margin-top: 50px;
+  // margin-right: -10px;
   .billing {
     padding-left: 10px;
     padding-right: 10px;
@@ -260,7 +267,7 @@ export default {
       max-width: 100%;
     }
     &:nth-child(n + 3) {
-      margin-top: 20px;
+      // margin-top: 20px;
       @media (max-width: 767px) {
         margin-top: 0;
       }
@@ -273,15 +280,15 @@ export default {
     .billing__wrap {
       border: 1px solid var(--_c-gray-DDDDDD);
       border-radius: 6px;
-      padding: 20px 15px 15px 20px;
+      // padding: 20px 15px 15px 20px;
       height: 100%;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
+      // display: flex;
+      // flex-direction: column;
+      // justify-content: space-between;
     }
     &.add-address-btn {
       .billing__wrap {
-        padding: 20px;
+        // padding: 20px;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -321,9 +328,6 @@ export default {
   }
 }
 .billing__actions {
-  display: flex;
-  justify-content: flex-end;
-  margin-top: 28px;
   @include for-mobile {
     margin-top: 10px;
   }
@@ -341,7 +345,14 @@ export default {
     }
   }
 }
+.buttonfrist{
+  background: #fff;
+  // border: 3px solid #0000;
+}
 .address-loader {
   margin: 100px 0;
+}
+.textone{
+text-decoration: underline;
 }
 </style>

@@ -30,10 +30,8 @@
       </div>
       <p class="notice">
         {{ $t('Read and understand') }}
-        <SfLink class="notice__link" href="#">{{ $t('Privacy') }}</SfLink> and
-        <SfLink class="notice__link" href="#">{{
-          $t('Cookies Policy')
-        }}</SfLink>
+        <a class="notice__link" href="#">{{ $t('Privacy') }}</a> and
+        <a class="notice__link" href="#">{{ $t('Cookies Policy') }}</a>
         {{ $t('Commercial information') }}
       </p>
     </SfTab>
@@ -41,14 +39,13 @@
 </template>
 
 <script>
-import { SfTabs, SfCheckbox, SfButton, SfLink } from '@storefront-ui/vue'
+import { SfTabs, SfCheckbox, SfButton } from '@storefront-ui/vue'
 export default {
   name: 'MyNewsletter',
   components: {
     SfTabs,
     SfCheckbox,
-    SfButton,
-    SfLink
+    SfButton
   },
   data() {
     return { newsletter: [] }

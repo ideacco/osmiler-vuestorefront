@@ -93,7 +93,7 @@ const config = {
       src: '@/plugins/UIkit',
       ssr: false,
     },
-    '@/plugins/axios-interceptor',
+    // '@/plugins/axios-interceptor',
     // '~/api/test',
   ],
   buildModules: [

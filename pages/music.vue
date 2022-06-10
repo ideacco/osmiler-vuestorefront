@@ -1,5 +1,5 @@
 <template>
-  <div >
+  <div>
     <div
       class="uk-section-default uk-light"
       tm-header-transparent="light"
