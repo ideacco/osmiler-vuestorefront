@@ -4,6 +4,7 @@
   @include assign-color-variants(--c-primary, --_c-blue-primary);
   @include assign-color-variants(--c-primary-varint, --_c-blue-secondary);
   @include assign-color-variants(--c-primary-varint, --_c-blue-secondary);
+  --_c-green-secondary: #b19eff;
   font-family: 'Overpass', sans-serif;
   --font-family--primary: 'Overpass', sans-serif;
   --font-family--secondary: 'Roboto', serif;

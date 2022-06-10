@@ -82,15 +82,8 @@
                               @click.prevent="play(item.music_url, item.id)"
                             >
                               Audition
-                              <img
-                                v-if="item.id == playingId && isPlaying"
-                                src="../static/homepage/vieo.png"
-                                style="width: 20px"
-                              />
-                              <img
-                                v-else
-                                src="../static/homepage/play.png"
-                                style="width: 20px"
+                              <img class="uk-icon-image"
+                                :src="item.id == playingId && isPlaying ? require('../static/icons/vieo.png') : require('../static/icons/play.png')"
                               />
                             </a>
                           </td>
@@ -163,15 +156,8 @@
                       :class="{ 'uk-button-secondary': item.id == playingId }"
                       @click.prevent="play(item.music_url, item.id)"
                     >try
-                      <img
-                        v-if="item.id == playingId && isPlaying"
-                        src="../static/homepage/vieo.png"
-                        style="width: 20px"
-                      />
-                      <img
-                        v-else
-                        src="../static/homepage/play.png"
-                        style="width: 20px"
+                      <img class="uk-icon-image"
+                        :src="item.id == playingId && isPlaying ? require('../static/icons/vieo.png') : require('../static/icons/play.png')"
                       />
                     </a>
                     <a

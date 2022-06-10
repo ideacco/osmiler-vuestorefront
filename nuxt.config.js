@@ -123,7 +123,7 @@ const config = {
         },
       },
     ],
-    ['@vue-storefront/nuxt-theme'],
+    // ['@vue-storefront/nuxt-theme'],
     [
       '@vue-storefront/shopify/nuxt',
       {
@@ -261,7 +261,8 @@ const config = {
     ],
   },
   build: {
-    transpile: ['vee-validate/dist/rules', 'storefront-ui'],
+    // transpile: ['vee-validate/dist/rules', 'storefront-ui'],
+    transpile: ['vee-validate/dist/rules'],
     plugins: [
       new webpack.DefinePlugin({
         'process.VERSION': JSON.stringify({
