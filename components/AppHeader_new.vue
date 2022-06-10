@@ -208,7 +208,7 @@ export default {
   },
   data() {
     return {
-      shopRootCategories: ['women', 'man', 'music', 'PrivacyPolicy'],
+      shopRootCategories: ['women', 'man', 'MuSic', 'PrivacyPolicy'],
       isplay: 0,
       isTransparency: false,
       isUP: true
@@ -216,7 +216,7 @@ export default {
   },
   watch: {
     '$route.path': function (newvalue) {
-      if (newvalue === '/' || newvalue === '/music') {
+      if (newvalue === '/' || newvalue === '/MuSic') {
         const ele = this.$el.querySelector(
           '.sf-header--has-mobile-search .sf-header__wrapper'
         )
@@ -224,7 +224,7 @@ export default {
         this.isUP = true
         this.isTransparency = true
         window.addEventListener('scroll', this.handleScroll)
-      } else if (newvalue != '/' || newvalue != '/music') {
+      } else if (newvalue != '/' || newvalue != '/MuSic') {
         const ele = this.$el.querySelector(
           '.sf-header--has-mobile-search .sf-header__wrapper'
         )

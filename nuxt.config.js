@@ -87,13 +87,13 @@ const config = {
     color: '#fff',
   },
   plugins: [
-    '~/plugins/scrollToTop.client.js',
+    '@/plugins/scrollToTop.client.js',
     // '@/plugins/element-ui',
     {
-      src: '~/plugins/UIkit',
+      src: '@/plugins/UIkit',
       ssr: false,
     },
-    '~/plugins/axios-interceptor',
+    '@/plugins/axios-interceptor',
     // '~/api/test',
   ],
   buildModules: [
@@ -138,7 +138,7 @@ const config = {
     // 'element-ui/lib/theme-chalk/display.css',
     // 'normalize.css/normalize.css',
     {
-      src: '~/style/index.scss',
+      src: '@/style/index.scss',
       lang: 'scss',
     },
   ],

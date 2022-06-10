@@ -183,7 +183,7 @@
                       @click="tabggle(1)"
                     >
                       <a
-                        href="/music"
+                        href="/MuSic"
                         :class="srcs === 0 ? 'navheaders' : 'navheader'"
                       >
                         Music community</a
@@ -412,11 +412,11 @@ export default {
   mounted() {
     const name = localStorage.getItem('myCat')
     this.tabIndex = Number(name)
-    if (this.$route.path != '/Home' || this.$route.path != '/music') {
+    if (this.$route.path != '/Home' || this.$route.path != '/MuSic') {
       this.srcs = 1
       this.headStyle.background = '#fff'
     }
-    if (this.$route.path === '/Home' || this.$route.path === '/music') {
+    if (this.$route.path === '/Home' || this.$route.path === '/MuSic') {
       this.srcs = 0
       this.headStyle.background = 'transparent'
     }
@@ -431,7 +431,7 @@ export default {
 
       if (
         (scrollTop && this.$route.path === '/Home') ||
-        this.$route.path === '/music'
+        this.$route.path === '/MuSic'
       ) {
         this.headStyle.background = `rgba(255,255,255,${
           scrollTop / (scrollTop + 100)

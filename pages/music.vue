@@ -1,14 +1,12 @@
 <template>
-  <div>
+  <div >
     <div
       class="uk-section-default uk-light"
       tm-header-transparent="light"
       uk-scrollspy="target: [uk-scrollspy-class]; cls: uk-animation-slide-bottom-medium; delay: false;"
     >
       <div
-        style="
-          background-image: url('/wp-content/themes/yootheme/cache/music-hero-4f873de3.jpeg');
-        "
+        style="background-image: url('/wp-content/themes/yootheme/cache/music-hero-4f873de3.jpeg');"
         class="uk-background-norepeat uk-background-cover uk-background-top-center uk-section uk-section-large"
       >
         <div class="uk-container uk-container-expand">
@@ -192,8 +190,8 @@
 </template>
 
 <script type="module">
-import '/static/wp-content/themes/yootheme/vendor/assets/uikit/dist/js/uikit-icons-union-dental.min.js'
-import '/static/wp-content/themes/yootheme/vendor/assets/uikit/dist/js/uikit.min.js'
+// import '/static/wp-content/themes/yootheme/vendor/assets/uikit/dist/js/uikit-icons-union-dental.min.js'
+// // import '/static/wp-content/themes/yootheme/vendor/assets/uikit/dist/js/uikit.min.js'
 export default {
   name: 'MuSic',
   data() {
@@ -235,9 +233,13 @@ export default {
     }
   },
   mounted() {
+    this.update()
     this.audio = new Audio()
   },
   methods: {
+    update() {
+      this.$forceUpdate(this.$el)
+    },
     play(music_url, id) {
       // 播放中,且当前点击的音乐正在播放
       if (this.isPlaying && this.playingId === id) {
