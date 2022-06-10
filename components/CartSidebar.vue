@@ -128,7 +128,6 @@
                   size="xxs"
                   color="green-primary"
                   @click="handleRemoveCoupon(couponcode)"
-
                 /></span>
               </template>
               <template #value>

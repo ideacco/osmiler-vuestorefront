@@ -15,38 +15,33 @@
       data-cy="account_content-pages"
       :active="currentPage"
       class="my-account"
-      title="Menu"
+      title="My Account"
       @click:change="currentPage = $event"
     >
-      <template #menu-item="{ page }">
-        <SfMenuItem
-          :class="{ 'is-active': page.title === activePage }"
-          :label="
-            page.title === 'Billing details'
-              ? 'Address Book'
-              : page.title === 'Order history'
-                ? 'My Orders'
-                : page.title
-          "
-          class="sf-content-pages__menu"
-          icon=""
-          @click="changeActivePage(page.title)"
-        />
-      </template>
+      <SfContentCategory title="Personal Details">
+        <SfContentPage data-cy="Account-my-profile" title="My profile">
+          <MyProfile />
+        </SfContentPage>
+        <SfContentPage
+          data-cy="Account-shipping-payment-details"
+          title="Shipping&Payment Details"
+        >
+          <AdressBook />
+        </SfContentPage>
+        <SfContentPage data-cy="Account-loyalty-card" title="Loyalty Card">
+          <LoyaltyCard />
+        </SfContentPage>
+        <SfContentPage data-cy="Account-news-letter" title="News letter">
+          <MyNewsletter />
+        </SfContentPage>
+      </SfContentCategory>
+      <SfContentCategory title="Order Details">
+        <SfContentPage data-cy="Account-my-orders" title="Order history">
+          <OrderHistory />
+        </SfContentPage>
 
-      <SfContentPage data-cy="Account-my-profile" title="My profile">
-        <MyProfile />
-      </SfContentPage>
-
-      <SfContentPage data-cy="Account-address-book" title="Billing details">
-        <AdressBook />
-      </SfContentPage>
-
-      <SfContentPage data-cy="Account-my-orders" title="Order history">
-        <OrderHistory />
-      </SfContentPage>
-
-      <SfContentPage data-cy="account-page_log-out" title="Log out" />
+        <SfContentPage data-cy="account-page_log-out" title="Log out" />
+      </SfContentCategory>
     </SfContentPages>
   </div>
 </template>
@@ -56,6 +51,8 @@ import { ref, computed, onBeforeMount } from '@nuxtjs/composition-api'
 import { useUser, userGetters, useContent } from '@vue-storefront/shopify'
 
 import MyProfile from './MyAccount/MyProfile'
+import MyNewsletter from './MyAccount/MyNewsletter.vue'
+import LoyaltyCard from './MyAccount/LoyaltyCard.vue'
 import AdressBook from './MyAccount/AdressBook'
 import OrderHistory from './MyAccount/OrderHistory'
 import { onSSR } from '@vue-storefront/core'
@@ -67,6 +64,8 @@ export default {
     SfBreadcrumbs,
     SfContentPages,
     SfMenuItem,
+    MyNewsletter,
+    LoyaltyCard,
     MyProfile,
     AdressBook,
     OrderHistory
@@ -191,6 +190,12 @@ export default {
     max-width: 1440px;
     margin: 0 auto;
   }
+}
+::v-deep .sf-content-pages__category-title {
+  color: #3a3543;
+}
+::v-deep .sf-content-pages__title {
+  color: #3a3543;
 }
 .my-account {
   @include for-mobile {

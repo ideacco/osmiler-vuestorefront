@@ -453,7 +453,7 @@ export default {
 </script>
 
 <style lang="scss">
-.my_account_content_wra{
+.my_account_content_wra {
   --font-family--secondary: var(--font-family--primary);
 }
 .orders-list-table {

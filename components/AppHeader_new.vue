@@ -277,7 +277,6 @@ export default {
   }
 }
 
-
 .common-header-light :focus {
   --header-navigation-item-color: #fff;
   --header-navigation-item-border-color: #fff;

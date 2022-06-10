@@ -65,7 +65,7 @@ export default {
   }
 }
 .sf-modal {
---font-family--secondary: var(--font-family--primary);
+  --font-family--secondary: var(--font-family--primary);
   ::v-deep &__bar {
     display: none;
   }

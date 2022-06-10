@@ -241,7 +241,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.my_account_content_wrap{
+.my_account_content_wrap {
   --font-family--secondary: var(--font-family--primary);
 }
 .billing-list {

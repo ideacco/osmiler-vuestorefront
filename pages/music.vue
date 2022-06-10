@@ -6,7 +6,9 @@
       uk-scrollspy="target: [uk-scrollspy-class]; cls: uk-animation-slide-bottom-medium; delay: false;"
     >
       <div
-        style="background-image:url('/wp-content/themes/yootheme/cache/music-hero-4f873de3.jpeg');"
+        style="
+          background-image: url('/wp-content/themes/yootheme/cache/music-hero-4f873de3.jpeg');
+        "
         class="uk-background-norepeat uk-background-cover uk-background-top-center uk-section uk-section-large"
       >
         <div class="uk-container uk-container-expand">
@@ -26,10 +28,8 @@
             </div>
           </div>
           <div class="uk-margin-large uk-container uk-container-large">
-            <div
-              class="tm-grid-expand uk-grid-large"
-              uk-grid            >
-              <div class="uk-grid-item-match uk-flex-middle uk-width-2-3@l ">
+            <div class="tm-grid-expand uk-grid-large" uk-grid>
+              <div class="uk-grid-item-match uk-flex-middle uk-width-2-3@l">
                 <div class="uk-panel uk-width-1-1">
                   <div
                     class="uk-margin-large uk-text-left@m uk-text-center"
@@ -47,7 +47,7 @@
                   </div>
                 </div>
               </div>
-              <div class="uk-grid-item-match uk-flex-middle uk-width-1-3@l" >
+              <div class="uk-grid-item-match uk-flex-middle uk-width-1-3@l">
                 <div class="uk-panel uk-width-1-1">
                   <h2 class="uk-h5 uk-text-primary" uk-scrollspy-class>
                     Tracklist
@@ -192,8 +192,8 @@
 </template>
 
 <script type="module">
-// import'/static/wp-content/themes/yootheme/vendor/assets/uikit/dist/js/uikit-icons-union-dental.min.js'
-// import'/static/wp-content/themes/yootheme/vendor/assets/uikit/dist/js/uikit.min.js'
+import '/static/wp-content/themes/yootheme/vendor/assets/uikit/dist/js/uikit-icons-union-dental.min.js'
+import '/static/wp-content/themes/yootheme/vendor/assets/uikit/dist/js/uikit.min.js'
 export default {
   name: 'MuSic',
   data() {

@@ -108,7 +108,7 @@ export default {
 
 <style lang="scss" scoped>
 .container {
---font-family--secondary: var(--font-family--primary);
+  --font-family--secondary: var(--font-family--primary);
   margin: 0 -5px;
   display: flex;
   flex-wrap: nowrap;
