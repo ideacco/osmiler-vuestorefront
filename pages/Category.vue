@@ -490,6 +490,7 @@ export default {
 
 <style lang="scss" scoped>
 #category {
+  --font-family--secondary: var(--font-family--primary);
   box-sizing: border-box;
   @include for-desktop {
     max-width: 1240px;

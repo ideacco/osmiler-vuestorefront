@@ -65,6 +65,7 @@ export default defineComponent({
 </script>
 <style lang="scss" scoped>
 .mobile-menu-sidebar {
+  --font-family--secondary: var(--font-family--primary);
   --sidebar-z-index: 3;
   --overlay-z-index: 3;
   &__list {

@@ -172,6 +172,7 @@ export default {
 
 <style lang="scss" scoped>
 .sidebar-filters {
+  --font-family--secondary: var(--font-family--primary);
   --overlay-z-index: 3;
   --sidebar-title-display: none;
   --sidebar-top-padding: 0;

@@ -29,6 +29,7 @@ export default {
 </script>
 <style lang="scss" scoped>
 .topbar {
+  --font-family--secondary: var(--font-family--primary);
   position: relative;
   z-index: 2;
   &__button {

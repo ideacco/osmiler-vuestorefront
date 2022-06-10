@@ -395,9 +395,8 @@ export default {
 </script>
 <style lang="scss" scoped>
 @import '~@storefront-ui/vue/styles';
-.footer {
-}
 #category {
+  --font-family--secondary: var(--font-family--primary);
   box-sizing: border-box;
   @include for-desktop {
     max-width: 1140px;

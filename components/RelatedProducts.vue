@@ -207,6 +207,7 @@ export default {
 
 <style lang="scss">
 .pdp-upsell-section {
+  --font-family--secondary: var(--font-family--primary);
   margin: 0;
   padding-bottom: 164px;
   @include for-mobile {

@@ -112,6 +112,7 @@ export default {
 </script>
 <style lang="scss" scoped>
 .title {
+  --font-family--secondary: var(--font-family--primary);
   --heading-title-font-weight: var(--font-weight--semibold);
   --section-margin: var(--spacer-xl) 0;
   --section-content-margin: var(--spacer-xl) 0;

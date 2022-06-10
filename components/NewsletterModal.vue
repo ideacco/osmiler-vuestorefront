@@ -103,6 +103,7 @@ export default {
 
 <style lang="scss" scoped>
 .modal {
+  --font-family--secondary: var(--font-family--primary);
   display: flex;
   justify-content: center;
   --modal-index: 3;

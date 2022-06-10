@@ -39,6 +39,7 @@ export default {
 
 <style scoped lang="scss">
 .notifications {
+ --font-family--secondary: var(--font-family--primary);
   position: fixed;
   width: 100%;
   left: 0;

@@ -89,6 +89,7 @@ export default {
 
 <style lang="scss">
 .footer {
+  --font-family--secondary: var(--font-family--primary);
   margin-bottom: var(--spacer-xl);
   @include for-desktop {
     margin-bottom: 0;

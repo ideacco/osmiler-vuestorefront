@@ -35,6 +35,7 @@ export default {
 
 <style lang="scss" scoped>
 .billing-addr {
+  --font-family--secondary: var(--font-family--primary);
   color: var(--c-black);
   p {
     margin: 0;

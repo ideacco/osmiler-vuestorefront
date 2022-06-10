@@ -77,6 +77,7 @@ export default {
 
 <style lang="scss" scoped>
 .shipping {
+  --font-family--secondary: var(--font-family--primary);
   &__label {
     display: flex;
     justify-content: space-between;

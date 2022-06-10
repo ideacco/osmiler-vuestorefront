@@ -67,6 +67,7 @@ export default {
 
 <style lang="scss" scoped>
 #checkout {
+  --font-family--secondary: var(--font-family--primary);
   box-sizing: border-box;
   @include for-desktop {
     max-width: 1440px;

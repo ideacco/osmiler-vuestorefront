@@ -111,7 +111,12 @@ import { computed, ref, watch, useRoute } from '@nuxtjs/composition-api'
 import { useUiHelpers, useUiState } from '~/composables'
 import LocaleSelector from './LocaleSelector.vue'
 
-import { useCategory } from '@vue-storefront/shopify'
+import {
+  searchGetters,
+  useCategory,
+  useSearch,
+  useContent
+} from '@vue-storefront/shopify'
 
 export default {
   components: {
@@ -133,11 +138,55 @@ export default {
   setup(props) {
     const { toggleCartSidebar, toggleWishlistSidebar, toggleLoginModal } =
       useUiState()
-    const { getFacetsFromURL } = useUiHelpers()
-    const { search } = useCategory('menuCategories')
+    const { changeSearchTerm, getFacetsFromURL } = useUiHelpers()
+    const { search: headerSearch, result } = useSearch('header-search')
+    const { search, categories } = useCategory('menuCategories')
+    const { search: getArticles, content: articlesContent } =
+      useContent('articles')
+
     const curCatSlug = ref(getFacetsFromURL().categorySlug)
     const accountIcon = computed(() =>
       props.isUserAuthenticated ? 'profile_fill' : 'profile'
+    )
+
+    // #region Search Section
+    const isSearchOpen = ref(false)
+    const term = ref(getFacetsFromURL().term)
+    const route = useRoute()
+    const handleSearch = debounce(async (searchTerm) => {
+      if (!searchTerm.target) {
+        term.value = searchTerm
+      } else {
+        term.value = searchTerm.target.value
+      }
+
+      await headerSearch({
+        term: term.value
+      })
+      await getArticles({
+        contentType: 'article',
+        query: term.value,
+        first: 5
+      })
+    }, 500)
+
+    watch(route, () => {
+      term.value = ''
+    })
+
+    const closeSearch = () => {
+      if (!isSearchOpen.value) return
+      term.value = ''
+      isSearchOpen.value = false
+    }
+
+    const searchResults = computed(() =>
+      !term.value
+        ? { products: [], articles: [] }
+        : {
+          products: searchGetters.getItems(result.value),
+          articles: articlesContent?.value?.data
+        }
     )
     onSSR(async () => {
       await search({ slug: '' })
@@ -145,10 +194,16 @@ export default {
 
     return {
       accountIcon,
+      closeSearch,
       toggleLoginModal,
       toggleCartSidebar,
       toggleWishlistSidebar,
-      curCatSlug
+      changeSearchTerm,
+      term,
+      handleSearch,
+      curCatSlug,
+      searchResults,
+      isSearchOpen
     }
   },
   data() {
@@ -159,9 +214,26 @@ export default {
       isUP: true
     }
   },
-  mounted() {
-    window.addEventListener('scroll', this.handleScroll)
-    console.log(this.$refs.SfHeader.$el.lastChild, 4444)
+  watch: {
+    '$route.path': function (newvalue) {
+      if (newvalue === '/' || newvalue === '/music') {
+        const ele = this.$el.querySelector(
+          '.sf-header--has-mobile-search .sf-header__wrapper'
+        )
+        ele.style.background = 'transparent'
+        this.isUP = true
+        this.isTransparency = true
+        window.addEventListener('scroll', this.handleScroll)
+      } else if (newvalue != '/' || newvalue != '/music') {
+        const ele = this.$el.querySelector(
+          '.sf-header--has-mobile-search .sf-header__wrapper'
+        )
+        window.removeEventListener('scroll', this.handleScroll)
+        ele.style.backgroundColor = '#fff'
+        this.isUP = false
+        this.isTransparency = false
+      }
+    }
   },
   methods: {
     handleScroll() {
@@ -178,7 +250,7 @@ export default {
         })`
         this.isTransparency = false
         ele.style.boxShadow = '0 5px 15px rgb(39 44 63 / 6%)'
-        if (scrollTop < 80) {
+        if (scrollTop < 50) {
           // const ele = this.$el.querySelector(
           //   '.sf-header--has-mobile-search .sf-header__wrapper'
           // )
@@ -187,6 +259,7 @@ export default {
             scrollTop / (scrollTop - 100)
           })`
           ele.style.boxShadow = 'none'
+          ele.style.zIndex = '9999'
         }
       }
     }
@@ -203,6 +276,7 @@ export default {
     --header-wrapper-transition: all 0.3s ease; // 过度动画
   }
 }
+
 
 .common-header-light :focus {
   --header-navigation-item-color: #fff;

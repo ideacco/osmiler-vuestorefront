@@ -59,11 +59,13 @@ export default {
 
 <style lang="scss" scoped>
 .sf-header-navigation-item {
+  --font-family--secondary: var(--font-family--primary);
   ::v-deep &__item--mobile {
     display: block;
   }
 }
 .sf-modal {
+--font-family--secondary: var(--font-family--primary);
   ::v-deep &__bar {
     display: none;
   }

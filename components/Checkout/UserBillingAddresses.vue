@@ -78,8 +78,9 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss" scoped>
 .billing__addresses {
+  --font-family--secondary: var(--font-family--primary);
   display: grid;
   grid-template-columns: 1fr 1fr;
   margin-bottom: var(--spacer-xl);

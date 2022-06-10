@@ -91,6 +91,7 @@ export default {
 
 <style lang="scss" scoped>
 .navigation-bottom {
+    --font-family--secondary: var(--font-family--primary);
   &:first-child {
     padding-left: var(--spacer-sm);
   }

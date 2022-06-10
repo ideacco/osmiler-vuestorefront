@@ -335,6 +335,7 @@ export default {
 </script>
 <style lang="scss">
 .my-profile {
+  --font-family--secondary: var(--font-family--primary);
   .edit_action {
     margin-left: auto;
     font-size: 0.9rem;
