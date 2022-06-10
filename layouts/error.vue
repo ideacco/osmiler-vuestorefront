@@ -53,6 +53,7 @@ export default {
 <style lang="scss" scoped>
 @import '~@storefront-ui/vue/styles';
 #error {
+  --font-family--secondary: var(--font-family--primary);
   box-sizing: border-box;
   display: flex;
   flex-direction: column;

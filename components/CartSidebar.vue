@@ -76,7 +76,7 @@
             <SfImage
               alt="Empty bag"
               class="empty-cart__image"
-              src="/icons/empty-cart.webp"
+              src="/icons/empty-cart.jpg"
               :width="256"
               :height="173"
             />
