@@ -174,6 +174,13 @@
         </div>
       </div>
     </div>
+    <div id="sticky" class="uk-background-muted uk-height-large">
+    <div class="uk-card uk-card-default uk-card-body uk-text-center uk-position-z-index" uk-sticky="end: !.uk-height-large; offset: 200">
+      Stick 200px below the top
+      <button @click="uitest">测试按钮</button>
+      </div>
+    </div>
+    
   </div>
 </template>
 
@@ -218,12 +225,21 @@ export default {
       isPlaying: false,
       isActive: true,
       playingId: -1
+      // uikitdom: null
     }
   },
   mounted() {
     this.audio = new Audio()
+    // this.uikitdom = this.$uikit.sticky('#sticky')
+    this.$uikit.util.on('#sticky', 'active',() => {
+      // do something
+      console.log('active')
+    })
   },
   methods: {
+    uitest(){
+      console.log('uitest',this.$uikit.sticky('#sticky'))
+    },
     play(music_url, id) {
       // 播放中,且当前点击的音乐正在播放
       if (this.isPlaying && this.playingId === id) {

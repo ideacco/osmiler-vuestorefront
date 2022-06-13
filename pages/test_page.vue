@@ -1,86 +1,66 @@
 <template>
-  <div>
-    <h1>测试页面</h1>
-    <h1>测试页面</h1>
-    <h1>测试页面</h1>
-    <h1>测试页面</h1>
-    <h1>测试页面</h1>
-    <h1>测试页面</h1>
-    <h1>测试页面</h1>
-    <h1>测试页面</h1>
-    <h1>测试页面</h1>
-    <h1>测试页面</h1>
-    <h1>测试页面</h1>
-    <h1>测试页面</h1>
-    <h1>测试页面</h1>
-    <h1>测试页面</h1>
-    <h1>测试页面</h1>
-    <h1>测试页面</h1>
-    <h1>测试页面</h1>
-    <h1>测试页面</h1>
-    <h1>测试页面</h1>
-    <h1>测试页面</h1>
-    <h1>测试页面</h1>
-    <h1>测试页面</h1>
-    <h1>测试页面</h1>
-    <h1>测试页面</h1>
-    <h1>测试页面</h1>
-    <h1>测试页面</h1>
-    <h1>测试页面</h1>
-    <h1>测试页面</h1>
-    <h1>测试页面</h1>
-    <h1>测试页面</h1>
-    <h1>测试页面</h1>
-    <h1>测试页面</h1>
-    <h1>测试页面</h1>
-    <h1>测试页面</h1>
-    <h1>测试页面</h1>
-    <h1>测试页面</h1>
-    <h1>测试页面</h1>
-    <h1>测试页面</h1>
-    <h1>测试页面</h1>
-    <h1>测试页面</h1>
-    <h1>测试页面</h1>
-    <h1>测试页面</h1>
-    <h1>测试页面</h1>
-    <h1>测试页面</h1>
-    <h1>测试页面</h1>
-    <h1>测试页面</h1>
-    <div class="sf-rating">
-    <vue-component-30-SfIcon
-      class="sf-rating__icon"
-      icon="star"
-      :coverage="1"
-    />
-    <vue-component-30-SfIcon
-      class="sf-rating__icon"
-      icon="star"
-      :coverage="1"
-    />
-    <vue-component-30-SfIcon
-      class="sf-rating__icon"
-      icon="star"
-      :coverage="1"
-    />
-    <vue-component-30-SfIcon
-      class="sf-rating__icon sf-rating__icon--negative"
-      icon="star"
-    />
-    <vue-component-30-SfIcon
-      class="sf-rating__icon sf-rating__icon--negative"
-      icon="star"
-    />
-  </div>
+  <div
+        style="background-image:url('/wp-content/themes/yootheme/cache/music-hero-4f873de3.jpeg');"
+        ref="hero"
+      >
+    <h1>test1111</h1>
+    <h1>test1111</h1>
+    <h1>test1111</h1>
+
+    <button @click="test"> 切换测 </button>
+
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati placeat perspiciatis praesentium, accusantium illum nulla similique quas illo aspernatur earum vitae consectetur, ullam eius corrupti accusamus voluptate saepe dolores cupiditate.</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati placeat perspiciatis praesentium, accusantium illum nulla similique quas illo aspernatur earum vitae consectetur, ullam eius corrupti accusamus voluptate saepe dolores cupiditate.</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati placeat perspiciatis praesentium, accusantium illum nulla similique quas illo aspernatur earum vitae consectetur, ullam eius corrupti accusamus voluptate saepe dolores cupiditate.</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati placeat perspiciatis praesentium, accusantium illum nulla similique quas illo aspernatur earum vitae consectetur, ullam eius corrupti accusamus voluptate saepe dolores cupiditate.</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati placeat perspiciatis praesentium, accusantium illum nulla similique quas illo aspernatur earum vitae consectetur, ullam eius corrupti accusamus voluptate saepe dolores cupiditate.</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati placeat perspiciatis praesentium, accusantium illum nulla similique quas illo aspernatur earum vitae consectetur, ullam eius corrupti accusamus voluptate saepe dolores cupiditate.</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati placeat perspiciatis praesentium, accusantium illum nulla similique quas illo aspernatur earum vitae consectetur, ullam eius corrupti accusamus voluptate saepe dolores cupiditate.</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati placeat perspiciatis praesentium, accusantium illum nulla similique quas illo aspernatur earum vitae consectetur, ullam eius corrupti accusamus voluptate saepe dolores cupiditate.</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati placeat perspiciatis praesentium, accusantium illum nulla similique quas illo aspernatur earum vitae consectetur, ullam eius corrupti accusamus voluptate saepe dolores cupiditate.</p>
+
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati placeat perspiciatis praesentium, accusantium illum nulla similique quas illo aspernatur earum vitae consectetur, ullam eius corrupti accusamus voluptate saepe dolores cupiditate.</p>
   </div>
 </template>
 
 <script>
+import { ref, computed, onMounted, onUnmounted } from '@nuxtjs/composition-api'
+import { useUiState } from '~/composables'
+
 export default {
-  data() {
+  data() { 
     return {}
   },
+  setup(){
+    const { isNavbarTransparent, toggleNavbarTransparent, setNavbarTransparent } = useUiState()
+    onMounted(() => {
+      console.log('子页面初始化!,设置透明导航')
+      setNavbarTransparent(true)
+    })
 
-  methods: {}
+    const test = () => {
+      toggleNavbarTransparent()
+      console.log('子页面test,isNavbarTransparent',isNavbarTransparent)
+    }
+
+    onUnmounted(() => {
+      console.log('子页面卸载!,清除透明导航')
+      setNavbarTransparent(false)
+    })
+
+    return {
+      isNavbarTransparent,
+      toggleNavbarTransparent,
+      test
+    }
+  },
+
+  methods: {
+    // test() {
+    //   console.log('子页面test')
+    //   this.$emit('testPage', '这是子页面传参')
+    // }
+  }
 }
 </script>
 

@@ -112,9 +112,8 @@ import { useUiHelpers, useUiState } from '~/composables'
 import LocaleSelector from './LocaleSelector.vue'
 
 import {
-  searchGetters,
+  // searchGetters,
   useCategory,
-  useSearch,
   useContent
 } from '@vue-storefront/shopify'
 
@@ -138,11 +137,11 @@ export default {
   setup(props) {
     const { toggleCartSidebar, toggleWishlistSidebar, toggleLoginModal } =
       useUiState()
-    const { changeSearchTerm, getFacetsFromURL } = useUiHelpers()
-    const { search: headerSearch, result } = useSearch('header-search')
-    const { search, categories } = useCategory('menuCategories')
-    const { search: getArticles, content: articlesContent } =
-      useContent('articles')
+    const { getFacetsFromURL } = useUiHelpers()
+    // const { search: headerSearch, result } = useSearch('header-search')
+    // const { search, categories } = useCategory('menuCategories')
+    // const { search: getArticles, content: articlesContent } =
+    //   useContent('articles')
 
     const curCatSlug = ref(getFacetsFromURL().categorySlug)
     const accountIcon = computed(() =>
@@ -150,60 +149,60 @@ export default {
     )
 
     // #region Search Section
-    const isSearchOpen = ref(false)
+    // const isSearchOpen = ref(false)
     const term = ref(getFacetsFromURL().term)
     const route = useRoute()
-    const handleSearch = debounce(async (searchTerm) => {
-      if (!searchTerm.target) {
-        term.value = searchTerm
-      } else {
-        term.value = searchTerm.target.value
-      }
+    // const handleSearch = debounce(async (searchTerm) => {
+    //   if (!searchTerm.target) {
+    //     term.value = searchTerm
+    //   } else {
+    //     term.value = searchTerm.target.value
+    //   }
 
-      await headerSearch({
-        term: term.value
-      })
-      await getArticles({
-        contentType: 'article',
-        query: term.value,
-        first: 5
-      })
-    }, 500)
+    //   await headerSearch({
+    //     term: term.value
+    //   })
+    //   await getArticles({
+    //     contentType: 'article',
+    //     query: term.value,
+    //     first: 5
+    //   })
+    // }, 500)
 
     watch(route, () => {
       term.value = ''
     })
 
-    const closeSearch = () => {
-      if (!isSearchOpen.value) return
-      term.value = ''
-      isSearchOpen.value = false
-    }
+    // const closeSearch = () => {
+    //   if (!isSearchOpen.value) return
+    //   term.value = ''
+    //   isSearchOpen.value = false
+    // }
 
-    const searchResults = computed(() =>
-      !term.value
-        ? { products: [], articles: [] }
-        : {
-          products: searchGetters.getItems(result.value),
-          articles: articlesContent?.value?.data
-        }
-    )
+    // const searchResults = computed(() =>
+    //   !term.value
+    //     ? { products: [], articles: [] }
+    //     : {
+    //       products: searchGetters.getItems(result.value),
+    //       articles: articlesContent?.value?.data
+    //     }
+    // )
     onSSR(async () => {
-      await search({ slug: '' })
+      // await search({ slug: '' })
     })
 
     return {
       accountIcon,
-      closeSearch,
+      // closeSearch,
       toggleLoginModal,
       toggleCartSidebar,
       toggleWishlistSidebar,
-      changeSearchTerm,
+      // changeSearchTerm,
       term,
-      handleSearch,
-      curCatSlug,
-      searchResults,
-      isSearchOpen
+      // handleSearch,
+      curCatSlug
+      // searchResults,
+      // isSearchOpen
     }
   },
   data() {

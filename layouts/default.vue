@@ -23,7 +23,7 @@
     />
 
     <div id="layout">
-      <nuxt :key="route.fullPath" />
+      <nuxt @testPage="getData" :key="route.fullPath" />
     </div>
     <LoadWhenVisible>
       <AppFooter />
@@ -32,8 +32,9 @@
 </template>
 
 <script>
-// import AssHeader from '~/components/JHeader.vue'
-import AppHeader from '~/components/AppHeader_new.vue'
+// import AppHeader from '~/components/JHeader.vue'
+import AppHeader from '~/components/UikitHeader.vue'
+// import AppHeader from '~/components/AppHeader_new.vue'
 // import AppHeader from '~/components/head_test.vue'
 import LazyHydrate from 'vue-lazy-hydration'
 import {
@@ -85,6 +86,8 @@ export default {
       () => !!userGetters.getFirstName(userInfo.value)
     )
     provide('currentCart', cart)
+
+    // 加载用户信息和购物车信息
     onBeforeMount(async () => {
       await loadUser()
       await loadCart().then(() => {
@@ -98,6 +101,11 @@ export default {
       getCartTotalItems,
       isAuthenticated,
       route
+    }
+  },
+  methods: {
+    getData(msg) {
+      console.log('父页面信息', msg)
     }
   }
 }

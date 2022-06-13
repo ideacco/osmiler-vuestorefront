@@ -9,6 +9,7 @@ const state = reactive({
   isNavigationSidebarOpen: false,
   isMobileMenuOpen: false,
   articlesPerPage: '5',
+  isNavbarTransparent: false,
 })
 
 const useUiState = () => {
@@ -52,6 +53,16 @@ const useUiState = () => {
     state.articlesPerPage = perPage
   }
 
+  const isNavbarTransparent = computed(() => state.isNavbarTransparent)
+  const toggleNavbarTransparent = () => {
+    console.log('赋值?',!state.isNavbarTransparent)
+    state.isNavbarTransparent = !state.isNavbarTransparent
+  }
+  const setNavbarTransparent = (setPage: boolean) => {
+    console.log('赋值setPage?',setPage)
+    state.isNavbarTransparent = setPage
+  }
+
   return {
     isCartSidebarOpen,
     isWishlistSidebarOpen,
@@ -69,6 +80,9 @@ const useUiState = () => {
     toggleNavigationSidebar,
     articlesPerPage,
     setArticlesPerPage,
+    isNavbarTransparent,
+    toggleNavbarTransparent,
+    setNavbarTransparent
   }
 }
 
