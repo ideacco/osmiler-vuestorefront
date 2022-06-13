@@ -3,7 +3,7 @@
     <div
       id="subscribe"
       class="uk-section-muted uk-section uk-section-large uk-padding-remove-top"
-      style="background:#f4f0ff"
+      style="background: #f4f0ff"
     >
       <div
         class="uk-margin uk-container uk-container-large uk-container-expand-right"
@@ -31,7 +31,15 @@
               </div>
             </div>
             <div class="uk-text-center">
-              <form class="uk-form uk-panel js-form-newsletter">
+              <form
+                action="https://osmiler.us12.list-manage.com/subscribe/post?u=ed3feb32c599ccb1da24e80ba&amp;id=376a0b909b"
+                method="post"
+                id="mc-embedded-subscribe-form"
+                name="mc-embedded-subscribe-form"
+                target="_blank"
+                novalidate
+                class="uk-form uk-panel js-form-newsletter"
+              >
                 <div class="uk-child-width-expand@s" uk-grid>
                   <div>
                     <input
@@ -82,32 +90,48 @@
     </div>
   </div>
 </template>
+
+<script id="mcjs">
+/* eslint-disable */
+!(function (c, h, i, m, p) {
+  ;(m = c.createElement(h)),
+    (p = c.getElementsByTagName(h)[0]),
+    (m.async = 1),
+    (m.src = i),
+    p.parentNode.insertBefore(m, p)
+})(
+  document,
+  'script',
+  'https://chimpstatic.com/mcjs-connected/js/users/ed3feb32c599ccb1da24e80ba/e1df8289080f71ac00000f844.js'
+)
+/* eslint-enable */
+</script>
 <script>
 export default {
   name: 'SendEmali',
   data() {
     return {}
-  }
+  },
 }
 </script>
 <style lang="scss" scoped>
 .uk-text-primary {
-    color: #3a3543!important;
+  color: #3a3543 !important;
 }
-h2{
- color: #4132c7 !important;
+h2 {
+  color: #4132c7 !important;
 }
 #page\#21-0-0-1 .el-title {
-    font-family: "osmiler-title";
+  font-family: 'osmiler-title';
 }
-.el-content{
-   color: #3a3543!important;
+.el-content {
+  color: #3a3543 !important;
 }
-.uk-light .uk-input{
+.uk-light .uk-input {
   background: #fff !important;
 }
 .el-input {
- color: #4132c7!important ;
+  color: #4132c7 !important ;
 }
 input::-webkit-input-placeholder {
   color: #4132c7 !important;
@@ -118,7 +142,7 @@ input:-moz-placeholder {
 }
 /* Mozilla Firefox 19+ */
 input::-moz-placeholder {
-  color: #4132c7  !important;
+  color: #4132c7 !important;
 }
 /* Internet Explorer 10+ */
 input:-ms-input-placeholder {

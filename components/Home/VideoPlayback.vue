@@ -62,6 +62,7 @@
       class="uk-hidden@m uk-section-primary uk-section uk-section-small uk-padding-remove-top uk-flex uk-flex-middle"
       tm-header-transparent="light"
       uk-height-viewport="offset-top: true;"
+      style="background: #411e7b"
     >
       <div class="uk-width-1-1">
         <div class="tm-header-placeholder uk-margin-remove-adjacent"></div>

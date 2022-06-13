@@ -2,9 +2,7 @@
   <div>
     <div id="Community" class="uk-visible@m uk-section-default uk-light">
       <div
-        style="
-          background-image: url('/wp-content/themes/yootheme/cache/03BG-ya-1-1345d345.jpeg');
-        "
+        style="background-image: url('/wp-content/themes/yootheme/cache/03BG-ya-1-1345d345.jpeg');"
         class="uk-background-norepeat uk-background-cover uk-background-center-right uk-background-fixed uk-section uk-padding-remove-vertical uk-flex uk-flex-middle"
         uk-height-viewport="offset-top: true;"
       >
@@ -58,9 +56,7 @@
     </div>
     <div id="Community" class="uk-hidden@m uk-section-default">
       <div
-        style="
-          background-image: url('/wp-content/themes/yootheme/cache/Frame-1340-ya-4646dcaf.jpeg');
-        "
+        style="background-image: url('/wp-content/themes/yootheme/cache/Frame-1340-ya-4646dcaf.jpeg');"
         class="uk-background-norepeat uk-background-cover uk-background-center-center uk-section uk-padding-remove-vertical"
       >
         <div class="uk-container uk-container-large">

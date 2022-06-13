@@ -95,6 +95,7 @@
                 </h1>
                 <div
                   class="uk-panel uk-margin uk-width-xlarge uk-text-left@m uk-text-left"
+                  style="color: #3a3543"
                 >
                   <p>
                     <span
@@ -139,4 +140,12 @@ export default {
   }
 }
 </script>
-<style lang="scss"></style>
+<style lang="scss">
+#page\#10-0-0-0 {
+  font-family: 'osmiler-title';
+  color: #4132c7;
+}
+.uk-section-primary {
+  background: #475b99;
+}
+</style>
