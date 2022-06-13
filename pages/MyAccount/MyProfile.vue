@@ -162,11 +162,9 @@
         :value="phone"
       />
     </div>
-     <template v-if="!isEdited">
-        <SfButton  @click="isEdited = true">
-          Edit Your Profile
-        </SfButton>
-      </template>
+    <template v-if="!isEdited">
+      <SfButton @click="isEdited = true"> Edit Your Profile </SfButton>
+    </template>
   </div>
 </template>
 <script type="module">

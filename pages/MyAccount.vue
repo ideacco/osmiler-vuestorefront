@@ -52,7 +52,12 @@
           <OrderHistory />
         </SfContentPage>
 
-        <SfContentPage data-cy="account-page_log-out" title="Log out"  class="textone" style="text-decoration: underline;"/>
+        <SfContentPage
+          data-cy="account-page_log-out"
+          title="Log out"
+          class="textone"
+          style="text-decoration: underline"
+        />
       </SfContentCategory>
     </SfContentPages>
   </div>

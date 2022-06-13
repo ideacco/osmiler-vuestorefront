@@ -5,17 +5,56 @@
     tm-header-transparent="light"
     uk-scrollspy="target:[uk-scrollspy-class]; cls: uk-animation-slide-bottom-medium; delay: false;"
   >
+    <VideoPlayback />
+    <GridList />
+    <BannerGrids />
+    <Community />
+    <Mp3 />
+    <Automatic />
+    <AutoPage />
+    <AutoPages />
+    <Proudcut />
+    <Certificate />
+    <Autobox />
+    <HomeLogolist />
+    <SendEmali />
     <Contact />
   </div>
 </template>
 
 <script type="module">
-import Contact from '~/components/Contact'
+import Certificate from '~/components/Home/Certificate'
+import Contact from '~/components/Home/Contact'
+import GridList from '~/components/Home/GridList'
+import VideoPlayback from '~/components/Home/VideoPlayback'
+import BannerGrids from '~/components/Home/BannerGrids'
+import Community from '~/components/Home/Community'
+import Mp3 from '~/components/Home/Mp3'
+import Automatic from '~/components/Home/Automatic'
+import AutoPage from '~/components/Home/AutoPage'
+import AutoPages from '~/components/Home/AutoPages'
+import Proudcut from '~/components/Home/Proudcut'
+import Autobox from '~/components/Home/Autobox'
+import HomeLogolist from '~/components/Home/HomeLogolist'
+import SendEmali from '~/components/Home/SendEmali'
 
 export default {
   name: 'DefaultLayout',
   components: {
     Contact,
+    VideoPlayback,
+    GridList,
+    BannerGrids,
+    Community,
+    Mp3,
+    Proudcut,
+    Automatic,
+    AutoPage,
+    AutoPages,
+    Autobox,
+    Certificate,
+    HomeLogolist,
+    SendEmali,
     Lcoalfooter: () =>
       import(/* webpackPrefetch: true */ '~/components/Lcoalfooter.vue')
   }

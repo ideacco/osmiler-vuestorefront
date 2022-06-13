@@ -31,7 +31,7 @@
                   <li
                     class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home"
                   >
-                    <a href="/Home"> Home</a>
+                    <a href="/"> Home</a>
                   </li>
                   <li
                     class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children js-accordion uk-parent"
@@ -171,7 +171,7 @@
                       @click="tabggle(0)"
                     >
                       <a
-                        href="/Home"
+                        href="/"
                         :class="srcs === 0 ? 'navheaders' : 'navheader'"
                       >
                         Home</a

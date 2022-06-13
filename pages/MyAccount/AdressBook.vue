@@ -56,31 +56,31 @@
                 </div>
               </div>
               <div class="billing__actions">
-              <div class="billing__actions_font——size" >
+                <div class="billing__actions_font——size">
                   <SfButton
-                  data-cy="billing-details-btn_change"
-                  class="sf-button--text"
-                  @click="changeAddress(address), scrollToTop()"
-                >
-                  Edit
-                </SfButton>
-                <SfButton
-                  data-cy="billing-details-btn_delete"
-                  class="billing__button-delete sf-button--text"
-                  @click="ConfirmRemove(address)"
-                >
-                  Delete
-                </SfButton>
-              </div>
+                    data-cy="billing-details-btn_change"
+                    class="sf-button--text"
+                    @click="changeAddress(address), scrollToTop()"
+                  >
+                    Edit
+                  </SfButton>
+                  <SfButton
+                    data-cy="billing-details-btn_delete"
+                    class="billing__button-delete sf-button--text"
+                    @click="ConfirmRemove(address)"
+                  >
+                    Delete
+                  </SfButton>
+                </div>
               </div>
             </div>
           </div>
           <div class="billing add-address-btn">
-            <div  @click="changeAddress(), scrollToTop()">
+            <div @click="changeAddress(), scrollToTop()">
               <SfButton
                 data-cy="billing-details-btn_add"
                 class="buttonfrist"
-                style="border:3px solid"
+                style="border: 3px solid"
               >
                 <SfIcon icon="plus" />
                 Add Address
@@ -245,11 +245,11 @@ export default {
 .my_account_content_wrap {
   --font-family--secondary: var(--font-family--primary);
 }
-::v-deep .billing__content{
+::v-deep .billing__content {
   float: left;
 }
-.billing__actions_font——size{
-  float:right;
+.billing__actions_font——size {
+  float: right;
 }
 .billing-list {
   display: flex;
@@ -345,14 +345,14 @@ export default {
     }
   }
 }
-.buttonfrist{
+.buttonfrist {
   background: #fff;
   // border: 3px solid #0000;
 }
 .address-loader {
   margin: 100px 0;
 }
-.textone{
-text-decoration: underline;
+.textone {
+  text-decoration: underline;
 }
 </style>
