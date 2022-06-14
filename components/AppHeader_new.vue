@@ -208,7 +208,13 @@ export default {
   },
   data() {
     return {
-      shopRootCategories: ['women', 'man', 'MuSic', 'PrivacyPolicy'],
+      shopRootCategories: [
+        'MuSic',
+        'PrivacyPolicy',
+        'ElectricToothbrush',
+        'ContactUs',
+        'Aboutus'
+      ],
       isplay: 0,
       isTransparency: false,
       isUP: true

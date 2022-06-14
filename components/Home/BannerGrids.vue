@@ -2,7 +2,9 @@
   <div>
     <div id="Bone" class="uk-visible@m uk-section-secondary">
       <div
-        style="background-image: url('/wp-content/themes/yootheme/cache/pic_02-ya-7b39abde.jpeg');"
+        style="
+          background-image: url('/wp-content/themes/yootheme/cache/pic_02-ya-7b39abde.jpeg');
+        "
         class="uk-background-norepeat uk-background-cover uk-background-top-left uk-section uk-padding-remove-vertical uk-flex uk-flex-middle"
         uk-height-viewport="offset-top: true;"
       >
@@ -30,7 +32,9 @@
     </div>
     <div id="Bone" class="uk-hidden@m uk-section-secondary">
       <div
-        style="background-image: url('/wp-content/themes/yootheme/cache/02-afe67aa2.jpeg');"
+        style="
+          background-image: url('/wp-content/themes/yootheme/cache/02-afe67aa2.jpeg');
+        "
         class="uk-background-norepeat uk-background-cover uk-background-bottom-center uk-section uk-padding-remove-vertical"
         uk-height-viewport="offset-top: true;"
       >

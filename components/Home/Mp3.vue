@@ -2,7 +2,9 @@
   <div>
     <div id="Mp3" class="uk-visible@m uk-section-default uk-light">
       <div
-        style="background-image: url('/wp-content/themes/yootheme/cache/406-1eb1d7b6.jpeg');"
+        style="
+          background-image: url('/wp-content/themes/yootheme/cache/406-1eb1d7b6.jpeg');
+        "
         class="uk-background-norepeat uk-background-cover uk-background-top-center uk-section uk-padding-remove-vertical uk-flex uk-flex-middle"
         uk-height-viewport="offset-top: true;"
       >

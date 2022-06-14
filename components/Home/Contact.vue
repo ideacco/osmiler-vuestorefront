@@ -3,7 +3,9 @@
   <div>
     <div class="uk-section-default uk-dark">
       <div
-        style="background-image: url('/wp-content/themes/yootheme/cache/32301-2-ya-0c515866.jpeg');"
+        style="
+          background-image: url('/wp-content/themes/yootheme/cache/32301-2-ya-0c515866.jpeg');
+        "
         class="uk-background-norepeat uk-background-cover uk-background-center-center uk-section uk-section-large"
       >
         <div class="uk-container uk-container-expand">
@@ -16,7 +18,7 @@
                 <h2
                   class="uk-h1 uk-position-relative uk-text-left@s uk-text-center"
                   id="page#15-0-0-0"
-                  style="font-family: osmiler-title; color: #3a3543;"
+                  style="font-family: osmiler-title; color: #3a3543"
                 >
                   “The first dental office <br class="uk-visible@s" />I actually
                   like going to.”
@@ -24,7 +26,7 @@
                 <div
                   class="uk-panel uk-text-lead uk-position-relative uk-margin uk-width-xlarge uk-text-left@s uk-text-center"
                   id="page#15-0-0-1"
-                  style="color: #3a3543;"
+                  style="color: #3a3543"
                 >
                   Get in touch to make an appointment today.
                 </div>

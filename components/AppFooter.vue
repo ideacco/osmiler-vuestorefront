@@ -7,7 +7,7 @@
             <div class="uk-margin uk-text-left@s uk-text-center">
               <a class="el-link"
               ><img
-                src="../static/wp-content/uploads/2022/05/osmiler-logo-default.svg"
+                src="/wp-content/uploads/2022/05/osmiler-logo-default.svg"
                 style="width: 120px"
                 class="el-image"
                 alt="Osmiler"

@@ -2,7 +2,9 @@
   <div>
     <div id="page#11" class="uk-visible@m uk-section-default uk-light">
       <div
-        style="background-image: url('/wp-content/themes/yootheme/cache/Frame-1313-ya-4d92e6f0.jpeg');"
+        style="
+          background-image: url('/wp-content/themes/yootheme/cache/Frame-1313-ya-4d92e6f0.jpeg');
+        "
         class="uk-background-norepeat uk-background-cover uk-background-center-left uk-background-fixed uk-section uk-padding-remove-vertical uk-flex uk-flex-middle"
         uk-height-viewport="offset-top: true;"
       >
@@ -35,7 +37,9 @@
                     <div class="uk-margin">
                       <img
                         src="/wp-content/themes/yootheme/cache/Group-1317-54d89789.png"
-                        srcset="/wp-content/themes/yootheme/cache/Group-1317-54d89789.png 416w"
+                        srcset="
+                          /wp-content/themes/yootheme/cache/Group-1317-54d89789.png 416w
+                        "
                         sizes="(min-width: 416px) 416px"
                         data-width="416"
                         data-height="231"
