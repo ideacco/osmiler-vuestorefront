@@ -15,7 +15,7 @@ class SubscribeController {
     // 想列表中添加一个用户订阅
 
     const params = ctx.request.body
-    console.log('????params',params)
+    console.log('????params', params)
 
     if (!params.email_address) {
       ctx.body = {
@@ -235,32 +235,33 @@ class SubscribeController {
         return response.data
       })
       .catch((error) => {
-        console.log(error)
+        console.log('监听到返回错误', error)
         return error
       })
 
+
+    console.log('监听到返回错误', response)
+
     // 异常处理
     if (response.status !== 200) {
+      console.log('进入错误逻辑代码')
       ctx.body = {
         code: 0,
-        data: {
-          "status": response.status,
-          "detail": response.detail
-        },
+        data: response,
         mag: '数据错误,请查看细节'
       }
-    }
-
-    ctx.body = {
-      code: 1,
-      // data: {
-      //   "status": response.status,
-      //   "email_address": response.email_address
-      // }
-      data: response
+    } else {
+      ctx.body = {
+        code: 1,
+        // data: {
+        //   "status": response.status,
+        //   "email_address": response.email_address
+        // }
+        data: response
+      }
     }
   }
-
+  
 }
 
 module.exports = new SubscribeController()

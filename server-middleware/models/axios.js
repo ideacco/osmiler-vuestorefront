@@ -55,7 +55,7 @@ axios.interceptors.response.use(
         // 在登录成功后返回当前页面，这一步需要在登录页操作。
         case 400:
           console.log('返回状态码：400')
-          return Promise.reject(error.response)
+          return Promise.reject(error.response.data)
           // break
           // 403 token过期
           // 登录过期对用户进行提示
@@ -63,7 +63,7 @@ axios.interceptors.response.use(
           // 跳转登录页面
         case 401:
           console.log('登陆过期，需要重新登录')
-          return Promise.reject(error.response)
+          return Promise.reject(error.response.data)
           // break
           // 403 token过期
           // 登录过期对用户进行提示
@@ -71,19 +71,19 @@ axios.interceptors.response.use(
           // 跳转登录页面
         case 403:
           console.log('登陆过期，需要重新登录')
-          return Promise.reject(error.response)
+          return Promise.reject(error.response.data)
           // break
           // 404请求不存在
         case 404:
           console.log('接口返回404')
-          return Promise.reject(error.response)
+          return Promise.reject(error.response.data)
           // break
           // 其他错误，直接抛出错误提示
         default:
           console.log('接口返回未知错误')
           break
       }
-      return Promise.reject(error.response)
+      return Promise.reject(error.response.data)
     }
   }
 )
