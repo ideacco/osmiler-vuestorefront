@@ -15,7 +15,7 @@
       data-cy="account_content-pages"
       :active="currentPage"
       class="my-account"
-      title="Menu"
+      title="My Account"
       @click:change="currentPage = $event"
     >
       <template #menu-item="{ page }">
@@ -23,7 +23,7 @@
           :class="{ 'is-active': page.title === activePage }"
           :label="
             page.title === 'Billing details'
-              ? 'Address Book'
+              ? 'Shipping address'
               : page.title === 'Order history'
                 ? 'My Orders'
                 : page.title
@@ -33,20 +33,32 @@
           @click="changeActivePage(page.title)"
         />
       </template>
+      <SfContentCategory title="Personal Details">
+        <SfContentPage data-cy="Account-my-profile" title="My profile">
+          <MyProfile />
+        </SfContentPage>
+        <SfContentPage
+          data-cy="Account-shipping-payment-details"
+          title="Shipping&Payment Details"
+        >
+          <AdressBook />
+        </SfContentPage>
+        <!-- <SfContentPage data-cy="Account-news-letter" title="News letter">
+          <MyNewsletter />
+        </SfContentPage> -->
+      </SfContentCategory>
+      <SfContentCategory title="Order Details">
+        <SfContentPage data-cy="Account-my-orders" title="Order history">
+          <OrderHistory />
+        </SfContentPage>
 
-      <SfContentPage data-cy="Account-my-profile" title="My profile">
-        <MyProfile />
-      </SfContentPage>
-
-      <SfContentPage data-cy="Account-address-book" title="Billing details">
-        <AdressBook />
-      </SfContentPage>
-
-      <SfContentPage data-cy="Account-my-orders" title="Order history">
-        <OrderHistory />
-      </SfContentPage>
-
-      <SfContentPage data-cy="account-page_log-out" title="Log out" />
+        <SfContentPage
+          data-cy="account-page_log-out"
+          title="Log out"
+          class="textone"
+          style="text-decoration: underline"
+        />
+      </SfContentCategory>
     </SfContentPages>
   </div>
 </template>
@@ -56,6 +68,7 @@ import { ref, computed, onBeforeMount } from '@nuxtjs/composition-api'
 import { useUser, userGetters, useContent } from '@vue-storefront/shopify'
 
 import MyProfile from './MyAccount/MyProfile'
+import MyNewsletter from './MyAccount/MyNewsletter.vue'
 import AdressBook from './MyAccount/AdressBook'
 import OrderHistory from './MyAccount/OrderHistory'
 import { onSSR } from '@vue-storefront/core'
@@ -67,6 +80,7 @@ export default {
     SfBreadcrumbs,
     SfContentPages,
     SfMenuItem,
+    MyNewsletter,
     MyProfile,
     AdressBook,
     OrderHistory
@@ -188,9 +202,15 @@ export default {
   box-sizing: border-box;
   --font-family--secondary: var(--font-family--primary);
   @include for-desktop {
-    max-width: 1440px;
+    max-width: 1240px;
     margin: 0 auto;
   }
+}
+::v-deep .sf-content-pages__category-title {
+  color: #3a3543;
+}
+::v-deep .sf-content-pages__title {
+  color: #3a3543;
 }
 .my-account {
   @include for-mobile {

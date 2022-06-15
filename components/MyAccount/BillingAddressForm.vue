@@ -346,7 +346,7 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
-.form{
-    --font-family--secondary: var(--font-family--primary);
+.form {
+  --font-family--secondary: var(--font-family--primary);
 }
 </style>

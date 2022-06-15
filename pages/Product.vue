@@ -6,8 +6,8 @@
   >
     <div />
   </SfLoader>
-  <div v-else id="product">
-    <SfBreadcrumbs class="breadcrumbs" :breadcrumbs="breadcrumbs">
+  <div v-else id="product" style="margin-top: 30px;">
+    <!-- <SfBreadcrumbs class="breadcrumbs" :breadcrumbs="breadcrumbs">
       <template #link="{ breadcrumb }">
         <nuxt-link
           :data-testid="breadcrumb.text"
@@ -17,7 +17,7 @@
           {{ breadcrumb.text }}
         </nuxt-link>
       </template>
-    </SfBreadcrumbs>
+    </SfBreadcrumbs> -->
     <div class="product">
       <SfGallery
         :images="productGallery"
@@ -51,15 +51,16 @@
         </div>
         <div class="product__details">
           <div class="product__description">
-            {{ productDescription }}
+            {{ description }}
           </div>
+
 
           <div
             v-if="options && Object.keys(options).length > 0"
             class="product__variants"
           >
             <template v-for="(option, key) in options">
-              <SfSelect
+              <!-- <SfSelect
                 v-if="key.toLowerCase() !== 'color'"
                 :key="`attrib-${key}`"
                 :data-cy="`product-select_${key.toLowerCase()}`"
@@ -77,9 +78,9 @@
                 >
                   {{ attribs }}
                 </SfSelectOption>
-              </SfSelect>
+              </SfSelect> -->
               <div
-                v-else-if="key.toLowerCase() === 'color'"
+                v-if="true"
                 :key="`attrib-${key.toLowerCase()}`"
                 class="product__colors"
               >
@@ -98,12 +99,10 @@
                         ? true
                         : false
                       : a === 0
-                        ? true
-                        : false
+                      ? true
+                      : false
                   "
-                  @click="
-                    ;(atttLbl = key), updateFilter({ [atttLbl]: attribs })
-                  "
+                  @click="(atttLbl = key), updateFilter({ [atttLbl]: attribs })"
                 />
               </div>
             </template>
@@ -148,13 +147,20 @@
               >
                 {{ $t('Add to Cart') }}
               </SfButton>
+
             </template>
           </SfAddToCart>
+               <SfButton class="sf-button--text desktop-only product__save">
+                Save for later
+              </SfButton>
+              <SfButton class="sf-button--text desktop-only product__compare">
+                Add to compare
+              </SfButton>
         </div>
         <LazyHydrate when-idle>
           <SfTabs :open-tab="1" class="product__tabs">
             <SfTab data-cy="product-tab_description" title="Description">
-              <div v-if="productDescriptionHtml" class="product__description">
+              <!-- <div v-if="productDescriptionHtml" class="product__description">
                 <div v-html="productDescriptionHtml"></div>
               </div>
               <SfProperty
@@ -169,9 +175,9 @@
                     {{ property.value }}
                   </SfButton>
                 </template>
-              </SfProperty>
+              </SfProperty> -->
             </SfTab>
-            <SfTab
+            <!-- <SfTab
               :title="$t('Additional Information')"
               data-cy="product-tab_additional"
               class="product__additional-info"
@@ -192,24 +198,38 @@
                 </p>
                 <p>{{ careInstructions }}</p>
               </div>
-            </SfTab>
+            </SfTab> -->
           </SfTabs>
         </LazyHydrate>
       </div>
     </div>
-    <LazyHydrate when-visible>
+    <GridList />
+    <BannerGrids />
+    <Community />
+    <Mp3 />
+    <Automatic />
+    <AutoPage />
+    <AutoPages />
+    <Proudcut />
+    <Certificate />
+    <Autobox />
+    <HomeLogolist />
+    <SendEmali />
+    <Contact />
+    <!-- <LazyHydrate when-visible>
       <RelatedProducts
         :products="relatedProducts"
         :loading="relatedLoading"
         title="Match it with"
       />
-    </LazyHydrate>
-    <LazyHydrate when-visible>
+    </LazyHydrate> -->
+    <!-- <LazyHydrate when-visible>
       <InstagramFeed />
     </LazyHydrate>
     <LazyHydrate when-visible>
       <MobileStoreBanner />
-    </LazyHydrate>
+    </LazyHydrate> -->
+
   </div>
 </template>
 <script>
@@ -229,6 +249,19 @@ import {
   SfColor
 } from '@storefront-ui/vue'
 
+import Certificate from '~/components/Home/Certificate'
+import Contact from '~/components/Home/Contact'
+import GridList from '~/components/Home/GridList'
+import BannerGrids from '~/components/Home/BannerGrids'
+import Community from '~/components/Home/Community'
+import Mp3 from '~/components/Home/Mp3'
+import Automatic from '~/components/Home/Automatic'
+import AutoPage from '~/components/Home/AutoPage'
+import AutoPages from '~/components/Home/AutoPages'
+import Proudcut from '~/components/Home/Proudcut'
+import Autobox from '~/components/Home/Autobox'
+import HomeLogolist from '~/components/Home/HomeLogolist'
+import SendEmali from '~/components/Home/SendEmali'
 import InstagramFeed from '~/components/InstagramFeed.vue'
 import RelatedProducts from '~/components/RelatedProducts.vue'
 import {
@@ -263,6 +296,19 @@ export default {
     InstagramFeed,
     RelatedProducts,
     MobileStoreBanner,
+    Contact,
+    // GridList,
+    BannerGrids,
+    Community,
+    Mp3,
+    Proudcut,
+    Automatic,
+    AutoPage,
+    AutoPages,
+    Autobox,
+    Certificate,
+    HomeLogolist,
+    SendEmali,
     LazyHydrate
   },
   beforeRouteEnter(__, from, next) {
@@ -341,7 +387,7 @@ export default {
       { deep: true }
     )
     const productGallery = computed(() => {
-      if (product.value && product.value.images.length === 0) {
+      if (product.value && product.value.images.length < 4) {
         product.value.images.push({
           originalSrc:
             'https://cdn.shopify.com/s/files/1/0407/1902/4288/files/placeholder_600x600.jpg?v=1625742127'
@@ -371,7 +417,10 @@ export default {
           })
         }
       })
-      await searchRelatedProducts({ productId: id.value, related: true })
+      await searchRelatedProducts({
+        productId: id.value || null,
+        related: true
+      })
     })
     const updateFilter = (filter) => {
       if (options.value) {
@@ -470,7 +519,9 @@ export default {
   methods: {
     // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
     async addingToCart(Productdata) {
-      await this.addItem(Productdata).then(() => {
+      console.log(Productdata, this.addItem, 444)
+      await this.addItem(Productdata).then((res) => {
+        console.log(res, 5555)
         this.sendNotification({
           key: 'product_added',
           message: `${Productdata.product.name} has been successfully added to your cart.`,
@@ -505,20 +556,22 @@ export default {
 
 <style lang="scss" scoped>
 .pdc-pdp-loader {
-  --font-family--secondary: var(--font-family--primary);
   min-height: 200px;
   padding: 100px 0;
 }
 
 #product {
+
+  @include for-desktop {
+
+
+  }
+}
+.product {
   box-sizing: border-box;
   @include for-desktop {
     max-width: 1272px;
     margin: 0 auto;
-  }
-}
-.product {
-  @include for-desktop {
     display: flex;
   }
   &__info {
@@ -564,7 +617,7 @@ export default {
       var(--font-weight--normal),
       var(--font-size--sm),
       1.4,
-      Overpass
+      var(--font-family--secondary)
     );
     color: var(--c-text);
     text-decoration: none;
@@ -583,7 +636,7 @@ export default {
       var(--font-weight--light),
       var(--font-size--base),
       1.6,
-      Overpass
+      var(--font-family--primary)
     );
   }
   &__colors {
@@ -592,7 +645,7 @@ export default {
       var(--font-weight--normal),
       var(--font-size--xs),
       1.6,
-      Overpass
+      var(--font-family--secondary)
     );
     display: flex;
     flex-wrap: wrap;
@@ -643,7 +696,7 @@ export default {
       var(--font-weight--light),
       var(--font-size--sm),
       1.6,
-      Overpass
+      var(--font-family--primary)
     );
     &__title {
       font-weight: var(--font-weight--normal);
@@ -695,6 +748,9 @@ export default {
       margin: 0 0 0 calc(var(--spacer-xl) / 2);
     }
   }
+}
+::v-deep .product__color {
+  border: 1px solid;
 }
 @keyframes moveicon {
   0% {

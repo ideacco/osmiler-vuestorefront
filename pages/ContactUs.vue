@@ -1,201 +1,205 @@
 <template>
   <div>
-    <el-row class="conatactbox">
-      <el-col>
-        <h1 class="conatactboxh1">Contact US</h1>
-      </el-col>
-      <el-col>
-        <p class="conatactboxp">
-          If you have questions or concerns then please do not hesitate to get
-          in contact with us. We would love to hear from you, contact us on:
-        </p>
-      </el-col>
-      <el-row class="conatactbox-twobox">
-        <el-col class="conatactbox-twobox-one">
-          <el-image src="/homepage/Ellipse.jpg" alt="" class="elispse1" />
-          <el-col class="elcolelispse2"> Distribution </el-col>
-          <el-col class="elcolelispse325"> cooperation@osmile.com </el-col>
-        </el-col>
-        <el-col class="conatactbox-twobox-one">
-          <el-image src="/homepage/Ellipse.jpg" alt="" class="elispse1" />
-          <el-col class="elcolelispse2"> Distribution </el-col>
-          <el-col class="elcolelispse325"> cooperation@osmile.com </el-col>
-        </el-col>
-        <el-col class="conatactbox-twobox-one">
-          <el-image src="/homepage/Ellipse.jpg" alt="" class="elispse1" />
-          <el-col class="elcolelispse2"> Distribution </el-col>
-          <el-col class="elcolelispse325"> cooperation@osmile.com </el-col>
-        </el-col>
-      </el-row>
-      <!-- 背景图 -->
-      <el-row class="conatactbox-threebox">
-        <el-image
-          src="/homepage/ditu.png"
-          alt="conatactbox-threebox_img"
-          class="conatactbox-threebox_img"
-        />
-        <el-col class="conatactbox-box3-three">
-          <el-col class="conatactbox-box3-esling"> </el-col>
-          <el-col class="conatactbox-box4-four">
-            <el-col class="conatactbox-box4-fourfont">
-              <el-col></el-col>
-              <p class="conatactbox-fontsize">Osmail</p>
-              <p class="conatactbox-fontsize">
-                Room 309,Building 5, QianHai E-Hub, ShenZhen,
+    <div class="uk-section-default uk-section">
+      <div
+        class="uk-margin-large uk-margin-remove-top uk-container uk-container-large"
+      >
+        <div
+          class="uk-margin-remove-top tm-grid-expand uk-grid-collapse uk-child-width-1-1"
+          uk-grid
+        >
+          <div>
+            <div class="uk-h6 uk-text-primary uk-text-center">Get in Touch</div>
+            <h1 class="uk-margin-remove-vertical uk-text-center">Contact Us</h1>
+            <div class="uk-panel uk-text-large uk-margin uk-text-center">
+              <p>
+                For all product or technical support inquiries, please call us
+                and we will be glad to help resolve it for you.
               </p>
-              <p class="conatactbox-fontsize">China +86</p>
-              <p class="conatactbox-fontsize">
-                755-25827634 service@sleepon.cn
-              </p>
-            </el-col>
-          </el-col>
-        </el-col>
-      </el-row>
-    </el-row>
+            </div>
+            <div class="uk-margin-large uk-text-center@s uk-text-center">
+              <div
+                class="uk-child-width-1-2 uk-child-width-1-2@s uk-child-width-1-2@l uk-grid-match"
+                uk-grid
+              >
+                <div>
+                  <div
+                    class="el-item uk-panel uk-margin-remove-first-child"
+                    uk-scrollspy="target: [uk-scrollspy-class];"
+                  >
+                    <img
+                      src="/wp-content/themes/yootheme/cache/ic_location-1-f218cfc2.png"
+                      srcset="
+                        /wp-content/themes/yootheme/cache/ic_location-1-f218cfc2.png 40w,
+                        /wp-content/themes/yootheme/cache/ic_location-1-ec56c1bd.png 60w
+                      "
+                      sizes="(min-width: 40px) 40px"
+                      data-width="40"
+                      data-height="40"
+                      class="el-image"
+                      alt
+                    />
+                    <h2
+                      class="el-title uk-h3 uk-margin-top uk-margin-remove-bottom"
+                    >
+                      Location
+                    </h2>
+                    <div class="el-content uk-panel uk-margin-top">
+                      Room 309,Building 5<br />
+                      ShenZhen<br />
+                      China
+                    </div>
+                  </div>
+                </div>
+                <div>
+                  <div
+                    class="el-item uk-panel uk-margin-remove-first-child"
+                    uk-scrollspy="target: [uk-scrollspy-class];"
+                  >
+                    <img
+                      src="/wp-content/themes/yootheme/cache/ic_emile-1-88d48444.png"
+                      srcset="
+                        /wp-content/themes/yootheme/cache/ic_emile-1-88d48444.png 40w,
+                        /wp-content/themes/yootheme/cache/ic_emile-1-969a8a3b.png 60w
+                      "
+                      sizes="(min-width: 40px) 40px"
+                      data-width="40"
+                      data-height="40"
+                      class="el-image"
+                      alt
+                    />
+                    <h2
+                      class="el-title uk-h3 uk-margin-top uk-margin-remove-bottom"
+                    >
+                      Contact
+                    </h2>
+                    <div class="el-content uk-panel uk-margin-top">
+                      <a
+                        class="uk-link-text"
+                        href="tel:+860755-25827634"
+                      >+ 86 &#8211; 755 &#8211; 25827634</a
+                      ><br />
+                      <a href="/service@osmiler.com">service@osmiler.com</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="tm-grid-expand uk-child-width-1-1 uk-grid-margin" uk-grid>
+        <div>
+          <div class="uk-margin uk-text-center">
+            <img
+              src="/wp-content/themes/yootheme/cache/image-59-c5c1dcb5.png"
+              srcset="
+                /wp-content/themes/yootheme/cache/image-59-c5c1dcb5.png  768w,
+                /wp-content/themes/yootheme/cache/image-59-6bbfcf07.png 1024w,
+                /wp-content/themes/yootheme/cache/image-59-c5c1dcb5.png 1080w
+              "
+              sizes="(min-width: 1080px) 1080px"
+              data-width="1080"
+              data-height="560"
+              class="el-image"
+              alt
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="uk-section-default uk-dark">
+      <div
+        style="
+          background-image: url('/wp-content/themes/yootheme/cache/01-2-ya-0c515866.jpeg');
+        "
+        class="uk-background-norepeat uk-background-cover uk-background-center-center uk-section uk-section-large"
+      >
+        <div class="uk-container uk-container-expand">
+          <div
+            class="uk-visible@m tm-grid-expand uk-child-width-1-1 uk-grid-margin"
+            uk-grid
+          >
+            <div class="uk-grid-item-match uk-visible@m">
+              <div class="uk-panel uk-width-1-1">
+                <div
+                  id="page#1-0-0-0"
+                  class="uk-visible@m uk-position-absolute uk-width-1-1 uk-text-right"
+                  style="right: 120px; bottom: 40px"
+                >
+                  <img
+                    loading="lazy"
+                    src="/wp-content/uploads/yootheme/cta-shape-01.svg"
+                    width="170"
+                    height="170"
+                    class="el-image"
+                    alt
+                    target="!*"
+                  />
+                </div>
+                <div
+                  id="page#1-0-0-1"
+                  class="uk-visible@m uk-position-absolute uk-width-1-1 uk-text-right"
+                >
+                  <img
+                    loading="lazy"
+                    src="/wp-content/uploads/yootheme/cta-shape-02.svg"
+                    width="120"
+                    height="120"
+                    class="el-image"
+                    alt
+                    target="!*"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="uk-grid-margin uk-container uk-container-large">
+            <div class="tm-grid-expand uk-child-width-1-1" uk-grid>
+              <div>
+                <h2
+                  class="uk-h1 uk-position-relative uk-text-left@s uk-text-center"
+                  id="page#1-1-0-0"
+                  style="z-index: 1"
+                >
+                  “The first dental office <br class="uk-visible@s" />I actually
+                  like going to.”
+                </h2>
+                <div
+                  class="uk-panel uk-text-lead uk-position-relative uk-margin uk-width-xlarge uk-text-left@s uk-text-center"
+                  id="page#1-1-0-1"
+                  style="z-index: 1"
+                >
+                  Get in touch to make an appointment today.
+                </div>
+                <div
+                  class="uk-position-relative uk-margin-medium uk-text-left@s uk-text-center"
+                  style="z-index: 1"
+                >
+                  <a
+                    class="el-content uk-button uk-button-primary uk-button-large uk-flex-inline uk-flex-center uk-flex-middle"
+                    href="#"
+                    uk-scroll
+                  >
+                    Contact us
+                    <span class="uk-margin-small-left" uk-icon="mail"></span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 <script></script>
 <style lang="scss" scoped>
-.conatactbox {
-  position: relative;
-  width: 1440px;
-  height: 946px;
-  background: #efefef;
+#page\#1-1-0-0 {
+  font-family: 'osmiler-title';
+  color: #3a3543;
 }
-.conatactboxh1 {
-  position: absolute;
-  width: 204px;
-  height: 46px;
-  left: 619px;
-  top: 54px;
-  /* 中文-标准/二级标题/二级标题_Heavy */
-  font-family: 'Alibaba PuHuiTi';
-  font-style: normal;
-  font-weight: 400;
-  font-size: 38px;
-  line-height: 46px;
-  /* identical to box height, or 121% */
-  text-align: center;
-  /* 浅色模式文本/Title Text */
-  color: #0c0b0e;
-}
-.conatactboxp {
-  position: absolute;
-  width: 575px;
-  height: 44px;
-  left: 424px;
-  top: 124px;
-  /* 中文-标准/正文3-14pt/正文3_Regular */
-  font-family: 'Alibaba PuHuiTi';
-  font-style: normal;
-  font-weight: 400;
-  font-size: 14px;
-  line-height: 22px;
-  /* or 157% */
-  text-align: center;
-  /* 浅色模式文本/Default in Field */
-  color: #6f6b78;
-}
-.conatactbox-twobox {
-  margin-top: 59px;
-  margin-left: 125px;
-  margin-right: 99px;
-}
-.conatactbox-twobox-one {
-  margin-right: 29px;
-  margin-top: 170px;
-  width: 363px;
-  height: 118px;
-  margin-left: 10px;
-  background: #ffff;
-}
-
-.conatactbox-twobox-one {
-  position: relative;
-}
-.elispse1 {
-  position: absolute;
-  width: 66px;
-  height: 66px;
-  left: 46px;
-  top: 23px;
-  background: #a0a0a0;
-}
-.elcolelispse2 {
-  position: absolute;
-  width: 314px;
-  height: 22px;
-  left: 154px;
-  top: 34px;
-  width: 80px;
-  height: 22px;
-  font-family: 'Alibaba PuHuiTi';
-  font-style: normal;
-  font-weight: 700;
-  font-size: 14px;
-  line-height: 22px;
-  /* identical to box height, or 157% */
-  /* 浅色模式文本/Title Text */
-  color: #0c0b0e;
-}
-.elcolelispse325 {
-  position: absolute;
-  width: 169px;
-  height: 22px;
-  left: 154px;
-  top: 62px;
-  /* 中文-标准/正文3-14pt/正文3_Regular */
-  font-family: 'Alibaba PuHuiTi';
-  font-style: normal;
-  font-weight: 400;
-  font-size: 14px;
-  line-height: 22px;
-  /* identical to box height, or 157% */
-  /* 浅色模式文本/Default in Field */
-  color: #6f6b78;
-}
-.conatactbox-threebox {
-  position: absolute;
-  width: 1080px;
-  height: 560px;
-  .conatactbox-threebox_img {
-    left: 182px;
-    top: 24px;
-  }
-}
-
-.conatactbox-box3-three {
-  position: absolute;
-  top: 320px;
-  left: 994px;
-  width: 364px;
-  height: 218px;
-  .conatactbox-box3-esling {
-    width: 24px;
-    height: 24px;
-    background: #5d47ee;
-    border-radius: 24px;
-  }
-  .conatactbox-box4-four {
-    width: 364px;
-    height: 188px;
-    background: #ffffff;
-    border-radius: 20px;
-  }
-  .conatactbox-box4-fourfont {
-    width: 317px;
-    height: 156px;
-    .conatactbox-fontsize {
-      margin-top: 10px;
-      margin-left: 10px;
-      font-family: 'Alibaba PuHuiTi';
-      font-style: normal;
-      font-weight: 400;
-      font-size: 18px;
-      line-height: 26px;
-      /* or 144% */
-      color: #000000;
-    }
-  }
+#page\#1-1-0-1 {
+  color: #3a3543;
 }
 </style>

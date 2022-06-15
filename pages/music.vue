@@ -6,7 +6,9 @@
       uk-scrollspy="target: [uk-scrollspy-class]; cls: uk-animation-slide-bottom-medium; delay: false;"
     >
       <div
-        style="background-image:url('/wp-content/themes/yootheme/cache/music-hero-4f873de3.jpeg');"
+        style="
+          background-image: url('/wp-content/themes/yootheme/cache/music-hero-4f873de3.jpeg');
+        "
         class="uk-background-norepeat uk-background-cover uk-background-top-center uk-section uk-section-large"
       >
         <div class="uk-container uk-container-expand">
@@ -26,10 +28,8 @@
             </div>
           </div>
           <div class="uk-margin-large uk-container uk-container-large">
-            <div
-              class="tm-grid-expand uk-grid-large"
-              uk-grid            >
-              <div class="uk-grid-item-match uk-flex-middle uk-width-2-3@l ">
+            <div class="tm-grid-expand uk-grid-large" uk-grid>
+              <div class="uk-grid-item-match uk-flex-middle uk-width-2-3@l">
                 <div class="uk-panel uk-width-1-1">
                   <div
                     class="uk-margin-large uk-text-left@m uk-text-center"
@@ -47,7 +47,7 @@
                   </div>
                 </div>
               </div>
-              <div class="uk-grid-item-match uk-flex-middle uk-width-1-3@l" >
+              <div class="uk-grid-item-match uk-flex-middle uk-width-1-3@l">
                 <div class="uk-panel uk-width-1-1">
                   <h2 class="uk-h5 uk-text-primary" uk-scrollspy-class>
                     Tracklist
@@ -174,19 +174,12 @@
         </div>
       </div>
     </div>
-    <div id="sticky" class="uk-background-muted uk-height-large">
-    <div class="uk-card uk-card-default uk-card-body uk-text-center uk-position-z-index" uk-sticky="end: !.uk-height-large; offset: 200">
-      Stick 200px below the top
-      <button @click="uitest">测试按钮</button>
-      </div>
-    </div>
-    
   </div>
 </template>
 
 <script type="module">
-// import'/static/wp-content/themes/yootheme/vendor/assets/uikit/dist/js/uikit-icons-union-dental.min.js'
-// import'/static/wp-content/themes/yootheme/vendor/assets/uikit/dist/js/uikit.min.js'
+// import '/static/wp-content/themes/yootheme/vendor/assets/uikit/dist/js/uikit-icons-union-dental.min.js'
+// // import '/static/wp-content/themes/yootheme/vendor/assets/uikit/dist/js/uikit.min.js'
 export default {
   name: 'MuSic',
   data() {
@@ -229,6 +222,7 @@ export default {
     }
   },
   mounted() {
+    this.update()
     this.audio = new Audio()
     // this.uikitdom = this.$uikit.sticky('#sticky')
     this.$uikit.util.on('#sticky', 'active',() => {
@@ -237,9 +231,9 @@ export default {
     })
   },
   methods: {
-    uitest(){
-      console.log('uitest',this.$uikit.sticky('#sticky'))
-    },
+    // uitest(){
+    //   console.log('uitest',this.$uikit.sticky('#sticky'))
+    // },
     play(music_url, id) {
       // 播放中,且当前点击的音乐正在播放
       if (this.isPlaying && this.playingId === id) {

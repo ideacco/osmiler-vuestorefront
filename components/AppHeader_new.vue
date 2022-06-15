@@ -207,7 +207,14 @@ export default {
   },
   data() {
     return {
-      shopRootCategories: ['women', 'man', 'music', 'PrivacyPolicy'],
+      shopRootCategories: [
+        'MuSic',
+        'PrivacyPolicy',
+        'ElectricToothbrush',
+        'ContactUs',
+        'Aboutus',
+        'Product'
+      ],
       isplay: 0,
       isTransparency: false,
       isUP: true
@@ -215,7 +222,7 @@ export default {
   },
   watch: {
     '$route.path': function (newvalue) {
-      if (newvalue === '/' || newvalue === '/music') {
+      if (newvalue === '/' || newvalue === '/MuSic') {
         const ele = this.$el.querySelector(
           '.sf-header--has-mobile-search .sf-header__wrapper'
         )
@@ -223,7 +230,7 @@ export default {
         this.isUP = true
         this.isTransparency = true
         window.addEventListener('scroll', this.handleScroll)
-      } else if (newvalue != '/' || newvalue != '/music') {
+      } else if (newvalue != '/' || newvalue != '/MuSic') {
         const ele = this.$el.querySelector(
           '.sf-header--has-mobile-search .sf-header__wrapper'
         )
@@ -275,7 +282,6 @@ export default {
     --header-wrapper-transition: all 0.3s ease; // 过度动画
   }
 }
-
 
 .common-header-light :focus {
   --header-navigation-item-color: #fff;
