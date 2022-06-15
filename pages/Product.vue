@@ -6,8 +6,8 @@
   >
     <div />
   </SfLoader>
-  <div v-else id="product">
-    <SfBreadcrumbs class="breadcrumbs" :breadcrumbs="breadcrumbs">
+  <div v-else id="product" style="margin-top: 30px;">
+    <!-- <SfBreadcrumbs class="breadcrumbs" :breadcrumbs="breadcrumbs">
       <template #link="{ breadcrumb }">
         <nuxt-link
           :data-testid="breadcrumb.text"
@@ -17,7 +17,7 @@
           {{ breadcrumb.text }}
         </nuxt-link>
       </template>
-    </SfBreadcrumbs>
+    </SfBreadcrumbs> -->
     <div class="product">
       <SfGallery
         :images="productGallery"
@@ -51,15 +51,16 @@
         </div>
         <div class="product__details">
           <div class="product__description">
-            {{ productDescription }}
+            {{ description }}
           </div>
 
-          <!-- <div
+
+          <div
             v-if="options && Object.keys(options).length > 0"
             class="product__variants"
           >
             <template v-for="(option, key) in options">
-              <SfSelect
+              <!-- <SfSelect
                 v-if="key.toLowerCase() !== 'color'"
                 :key="`attrib-${key}`"
                 :data-cy="`product-select_${key.toLowerCase()}`"
@@ -77,9 +78,9 @@
                 >
                   {{ attribs }}
                 </SfSelectOption>
-              </SfSelect>
+              </SfSelect> -->
               <div
-                v-else-if="key.toLowerCase() === 'color'"
+                v-if="true"
                 :key="`attrib-${key.toLowerCase()}`"
                 class="product__colors"
               >
@@ -98,16 +99,14 @@
                         ? true
                         : false
                       : a === 0
-                        ? true
-                        : false
+                      ? true
+                      : false
                   "
-                  @click="
-                    ;(atttLbl = key), updateFilter({ [atttLbl]: attribs })
-                  "
+                  @click="(atttLbl = key), updateFilter({ [atttLbl]: attribs })"
                 />
               </div>
             </template>
-          </div> -->
+          </div>
 
           <SfAlert
             v-if="!productGetters.getStockStatus(product)"
@@ -148,13 +147,20 @@
               >
                 {{ $t('Add to Cart') }}
               </SfButton>
+
             </template>
           </SfAddToCart>
+               <SfButton class="sf-button--text desktop-only product__save">
+                Save for later
+              </SfButton>
+              <SfButton class="sf-button--text desktop-only product__compare">
+                Add to compare
+              </SfButton>
         </div>
         <LazyHydrate when-idle>
           <SfTabs :open-tab="1" class="product__tabs">
             <SfTab data-cy="product-tab_description" title="Description">
-              <div v-if="productDescriptionHtml" class="product__description">
+              <!-- <div v-if="productDescriptionHtml" class="product__description">
                 <div v-html="productDescriptionHtml"></div>
               </div>
               <SfProperty
@@ -169,9 +175,9 @@
                     {{ property.value }}
                   </SfButton>
                 </template>
-              </SfProperty>
+              </SfProperty> -->
             </SfTab>
-            <SfTab
+            <!-- <SfTab
               :title="$t('Additional Information')"
               data-cy="product-tab_additional"
               class="product__additional-info"
@@ -192,24 +198,38 @@
                 </p>
                 <p>{{ careInstructions }}</p>
               </div>
-            </SfTab>
+            </SfTab> -->
           </SfTabs>
         </LazyHydrate>
       </div>
     </div>
-    <LazyHydrate when-visible>
+    <GridList />
+    <BannerGrids />
+    <Community />
+    <Mp3 />
+    <Automatic />
+    <AutoPage />
+    <AutoPages />
+    <Proudcut />
+    <Certificate />
+    <Autobox />
+    <HomeLogolist />
+    <SendEmali />
+    <Contact />
+    <!-- <LazyHydrate when-visible>
       <RelatedProducts
         :products="relatedProducts"
         :loading="relatedLoading"
         title="Match it with"
       />
-    </LazyHydrate>
-    <LazyHydrate when-visible>
+    </LazyHydrate> -->
+    <!-- <LazyHydrate when-visible>
       <InstagramFeed />
     </LazyHydrate>
     <LazyHydrate when-visible>
       <MobileStoreBanner />
-    </LazyHydrate>
+    </LazyHydrate> -->
+
   </div>
 </template>
 <script>
@@ -226,9 +246,22 @@ import {
   SfBreadcrumbs,
   SfLoader,
   SfButton,
-  SfColor,
+  SfColor
 } from '@storefront-ui/vue'
 
+import Certificate from '~/components/Home/Certificate'
+import Contact from '~/components/Home/Contact'
+import GridList from '~/components/Home/GridList'
+import BannerGrids from '~/components/Home/BannerGrids'
+import Community from '~/components/Home/Community'
+import Mp3 from '~/components/Home/Mp3'
+import Automatic from '~/components/Home/Automatic'
+import AutoPage from '~/components/Home/AutoPage'
+import AutoPages from '~/components/Home/AutoPages'
+import Proudcut from '~/components/Home/Proudcut'
+import Autobox from '~/components/Home/Autobox'
+import HomeLogolist from '~/components/Home/HomeLogolist'
+import SendEmali from '~/components/Home/SendEmali'
 import InstagramFeed from '~/components/InstagramFeed.vue'
 import RelatedProducts from '~/components/RelatedProducts.vue'
 import {
@@ -236,7 +269,7 @@ import {
   computed,
   watch,
   useRoute,
-  useRouter,
+  useRouter
 } from '@nuxtjs/composition-api'
 import { useProduct, useCart, productGetters } from '@vue-storefront/shopify'
 import MobileStoreBanner from '~/components/MobileStoreBanner.vue'
@@ -263,7 +296,20 @@ export default {
     InstagramFeed,
     RelatedProducts,
     MobileStoreBanner,
-    LazyHydrate,
+    Contact,
+    // GridList,
+    BannerGrids,
+    Community,
+    Mp3,
+    Proudcut,
+    Automatic,
+    AutoPage,
+    AutoPages,
+    Autobox,
+    Certificate,
+    HomeLogolist,
+    SendEmali,
+    LazyHydrate
   },
   beforeRouteEnter(__, from, next) {
     next((vm) => {
@@ -283,7 +329,7 @@ export default {
     const {
       products: relatedProducts,
       search: searchRelatedProducts,
-      loading: relatedLoading,
+      loading: relatedLoading
     } = useProduct('relatedProducts')
     const { addItem, loading } = useCart()
 
@@ -291,7 +337,7 @@ export default {
       () =>
         productGetters.getFiltered(products.value, {
           master: true,
-          attributes: route?.value?.query,
+          attributes: route?.value?.query
         })[0]
     )
 
@@ -318,16 +364,16 @@ export default {
       breadcrumbs.value = [
         {
           text: 'Home',
-          link: '/',
+          link: '/'
         },
         {
           text: 'products',
-          link: '#',
+          link: '#'
         },
         {
           text: productTitle.value,
-          link: '#',
-        },
+          link: '#'
+        }
       ]
     }
 
@@ -341,17 +387,17 @@ export default {
       { deep: true }
     )
     const productGallery = computed(() => {
-      if (product.value && product.value.images.length === 0) {
+      if (product.value && product.value.images.length < 4) {
         product.value.images.push({
           originalSrc:
-            'https://cdn.shopify.com/s/files/1/0407/1902/4288/files/placeholder_600x600.jpg?v=1625742127',
+            'https://cdn.shopify.com/s/files/1/0407/1902/4288/files/placeholder_600x600.jpg?v=1625742127'
         })
       }
       return productGetters.getGallery(product.value).map((img) => ({
         mobile: { url: img.small },
         desktop: { url: img.normal },
         big: { url: img.big },
-        alt: product.value._name || product.value.name,
+        alt: product.value._name || product.value.name
       }))
     })
     const stock = computed(() => {
@@ -367,13 +413,13 @@ export default {
         if (!productTitle.value) {
           return route?.value?.error({
             statusCode: 404,
-            message: 'This product could not be found',
+            message: 'This product could not be found'
           })
         }
       })
       await searchRelatedProducts({
         productId: id.value || null,
-        related: true,
+        related: true
       })
     })
     const updateFilter = (filter) => {
@@ -392,8 +438,8 @@ export default {
         path: route?.value?.path,
         query: {
           ...configuration.value,
-          ...filter,
-        },
+          ...filter
+        }
       })
     }
 
@@ -422,7 +468,7 @@ export default {
       productGallery,
       productGetters,
       setBreadcrumb,
-      atttLbl,
+      atttLbl
     }
   },
   // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
@@ -431,27 +477,27 @@ export default {
       properties: [
         {
           name: 'Product Code',
-          value: '578902-00',
+          value: '578902-00'
         },
         {
           name: 'Category',
-          value: 'Pants',
+          value: 'Pants'
         },
         {
           name: 'Material',
-          value: 'Cotton',
+          value: 'Cotton'
         },
         {
           name: 'Country',
-          value: 'Germany',
-        },
+          value: 'Germany'
+        }
       ],
       description:
         'Find stunning women cocktail and party dresses. Stand out in lace and metallic cocktail dresses and party dresses from all your favorite brands.',
       detailsIsActive: false,
       brand:
         'Brand name is the perfect pairing of quality and design. This label creates major everyday vibes with its collection of modern brooches, silver and gold jewellery, or clips it back with hair accessories in geo styles.',
-      careInstructions: 'Do not wash!',
+      careInstructions: 'Do not wash!'
     }
   },
   // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
@@ -481,7 +527,7 @@ export default {
           message: `${Productdata.product.name} has been successfully added to your cart.`,
           type: 'success',
           title: 'Product added!',
-          icon: 'check',
+          icon: 'check'
         })
         this.qty = 1
       })
@@ -503,8 +549,8 @@ export default {
         galleryAllSlides.forEach((gallerySlide) => {
           gallerySlide.style.flexBasis = gallerySlide.style.width
         })
-    },
-  },
+    }
+  }
 }
 </script>
 
@@ -515,14 +561,17 @@ export default {
 }
 
 #product {
+
+  @include for-desktop {
+
+
+  }
+}
+.product {
   box-sizing: border-box;
   @include for-desktop {
     max-width: 1272px;
     margin: 0 auto;
-  }
-}
-.product {
-  @include for-desktop {
     display: flex;
   }
   &__info {
@@ -699,6 +748,9 @@ export default {
       margin: 0 0 0 calc(var(--spacer-xl) / 2);
     }
   }
+}
+::v-deep .product__color {
+  border: 1px solid;
 }
 @keyframes moveicon {
   0% {

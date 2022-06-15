@@ -7,3 +7,4 @@ nuxt.config.js
 stylelint.config.js
 server-middleware
 helpers
+.history
