@@ -26,7 +26,7 @@ const config = {
     {
       path: '/custom',
       handler: '~/server-middleware/custom-features-app.js',
-    }, // 将后端中间件改为使用koa
+    },
   ],
   head: {
     title: 'Osmiler',

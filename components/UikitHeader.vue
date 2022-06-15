@@ -115,12 +115,13 @@
         <nav
           class="uk-navbar-container"
           :class="classObject"
+          style="z-index: 2;"
         >
           <div class="uk-container uk-container-expand">
             <div uk-navbar>
               <div class="uk-navbar-left">
                 <nuxt-link
-                  to="/"
+                  :to="localePath('/')"
                   class="uk-navbar-item uk-logo"
                 >
                   <img
@@ -145,17 +146,20 @@
                 </ul>
               </div>
               <div class="uk-navbar-right">
-                <ul
-                  v-if="isUserAuthenticated"
-                  class="uk-navbar-nav"
-                >
+                <ul class="uk-navbar-nav" style="align-items: center;">
+                  <li v-if="!isUserAuthenticated">
+                    <button @click="toggleLoginModal()" class="uk-button uk-button-small uk-button-default">Login</button>
+                  </li>
+
+                  <li v-else>
+                    <a 
+                    @click="$router.push(localePath({ name: 'my-account' }))"
+                    class="uk-icon-link"
+                    uk-icon="user" />
+                  </li>
+
                   <li><a
-                      href="#"
-                      class="uk-icon-link"
-                      uk-icon="user"
-                    ></a></li>
-                  <li><a
-                      href="#"
+                      @click="toggleCartSidebar"
                       class="uk-icon-link"
                       uk-icon="cart"
                     >
@@ -168,12 +172,7 @@
                     </a>
                   </li>
                 </ul>
-                <div
-                  v-else
-                  class="uk-navbar-nav"
-                >
-                  <button class="uk-button uk-button-small uk-button-default">Login</button>
-                </div>
+                
               </div>
             </div>
           </div>
@@ -186,6 +185,11 @@
 <script>
 import { useUiState } from '~/composables'
 import { ref, reactive, computed, onMounted, getCurrentInstance} from '@nuxtjs/composition-api'
+import { onSSR } from '@vue-storefront/core'
+import {
+  useCategory,
+  useContent
+} from '@vue-storefront/shopify'
 export default {
   name: 'UikitHeader',
   props: {
@@ -200,15 +204,26 @@ export default {
     isUserAuthenticated: Boolean
   },
   setup() {
-    const { isNavbarTransparent, toggleNavbarTransparent } = useUiState()
+    const { categories, search, loading } = useCategory('menu-categories')
+    onSSR(async () => {
+      await search({})
+    })
+
+    const { 
+      isNavbarTransparent,
+      toggleNavbarTransparent,
+      toggleLoginModal,
+      toggleCartSidebar,
+      toggleWishlistSidebar
+    } = useUiState()
     const { proxy } = getCurrentInstance()
 
     const isActive = ref(false)
 
     onMounted(() => {
-      if (isNavbarTransparent) {
-        console.log('导航栏返回',isNavbarTransparent.value)
-      }
+      // if (isNavbarTransparent) {
+      //   console.log('导航栏返回',isNavbarTransparent.value)
+      // }
       // 使用Uikit的组件化开发模式设定导航栏的粘贴和滚动
       proxy.$UIkit.sticky('.uk-navbar-container', {
         start: 300,
@@ -261,6 +276,9 @@ export default {
     })
 
     return {
+      toggleCartSidebar,
+      toggleWishlistSidebar,
+      toggleLoginModal,
       isNavbarTransparent,
       toggleNavbarTransparent,
       classObject
@@ -301,11 +319,11 @@ export default {
   // },
 
   watch: {
-    isNavbarTransparent(Transparent) {
-      console.log('切换导航监听',Transparent)
-      this.$UIkit.update('.uk-navbar-container','update')
-      console.log('REFS2',this.$refs.header)
-    }
+    // isNavbarTransparent(Transparent) {
+    //   console.log('切换导航监听',Transparent)
+    //   this.$UIkit.update('.uk-navbar-container','update')
+    //   console.log('REFS2',this.$refs.header)
+    // }
   },
 
   methods: {

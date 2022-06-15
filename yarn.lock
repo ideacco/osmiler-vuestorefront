@@ -2180,6 +2180,13 @@
   resolved "https://registry.npmmirror.com/@tootallnate/once/-/once-1.1.2.tgz"
   integrity sha512-RbzJvlNzmRq5c3O09UipeuXno4tA1FE6ikOjxZK0tuxVv3412l64l5t1W5pj4+rJq9vpkm/kwiR07aZXnsKPxw==
 
+"@typeform/api-client@^1.7.0":
+  version "1.7.0"
+  resolved "https://registry.yarnpkg.com/@typeform/api-client/-/api-client-1.7.0.tgz#2d37e93ee90b3ae9a41f14a3b593d5caa3bb21ec"
+  integrity sha512-Q4+tw4w6bKQ3K8021HGd9X2Kpupyefuy7Cu620Ohymq+cYRY+ipOdQVOxLBNesi9rYS+S+R4raM71w85Hcqt7w==
+  dependencies:
+    axios "^0.21.1"
+
 "@types/anymatch@*":
   version "3.0.0"
   resolved "https://registry.npmmirror.com/@types/anymatch/-/anymatch-3.0.0.tgz"
@@ -8972,7 +8979,7 @@ known-css-properties@^0.25.0:
 
 koa-bodyparser@^4.3.0:
   version "4.3.0"
-  resolved "https://registry.npmjs.org/koa-bodyparser/-/koa-bodyparser-4.3.0.tgz"
+  resolved "https://registry.yarnpkg.com/koa-bodyparser/-/koa-bodyparser-4.3.0.tgz#274c778555ff48fa221ee7f36a9fbdbace22759a"
   integrity sha512-uyV8G29KAGwZc4q/0WUAjH+Tsmuv9ImfBUF2oZVyZtaeo0husInagyn/JH85xMSxM0hEk/mbCII5ubLDuqW/Rw==
   dependencies:
     co-body "^6.0.0"

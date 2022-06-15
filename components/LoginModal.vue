@@ -427,8 +427,8 @@ export default {
 <style lang="scss" scoped>
 .modal {
   --font-family--secondary: var(--font-family--primary);
-  --modal-index: 99999;
-  --overlay-z-index: 99999;
+  --modal-index: 999;
+  --overlay-z-index: 999;
 }
 .form {
   margin-top: var(--spacer-sm);

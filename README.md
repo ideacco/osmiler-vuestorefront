@@ -91,6 +91,27 @@ async asyncdata({$axios}){
 
 ```
 
+## 路由
+
+### 在页面中
+
+## 在html中使用路由
+
+可以使用 绑定 方式写:
+
+`$router.push(localePath({name:'my-account'}))``
+
+也可以使用 `nuxt-link` 特有语法写
+
+``` html
+<nuxt-link
+  :to="localePath('/')"
+  class="uk-navbar-item uk-logo"
+>
+回到首页
+</nuxt-link>
+```
+
 路由跳转放在 AppHeader_new.vue 文件中需要添加路由的话则需要
 
 ```js
