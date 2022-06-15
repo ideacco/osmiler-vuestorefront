@@ -1,8 +1,5 @@
 <template>
-  <div
-    id="page"
-    class="uk-section-default"
-  >
+  <div id="page" class="uk-section-default">
     <VideoPlayback />
     <GridList />
     <BannerGrids />
@@ -17,11 +14,21 @@
     <HomeLogolist />
     <SendEmali />
     <Contact />
-    <h1>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Minima adipisci qui ipsa tempore placeat, omnis ut blanditiis nihil numquam magnam vitae eum porro, voluptates non necessitatibus assumenda quia, velit sequi.</h1>
-    <h1>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Minima adipisci qui ipsa tempore placeat, omnis ut blanditiis nihil numquam magnam vitae eum porro, voluptates non necessitatibus assumenda quia, velit sequi.</h1>
-    <h1>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Minima adipisci qui ipsa tempore placeat, omnis ut blanditiis nihil numquam magnam vitae eum porro, voluptates non necessitatibus assumenda quia, velit sequi.</h1>
-
-  
+    <h1>
+      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Minima adipisci
+      qui ipsa tempore placeat, omnis ut blanditiis nihil numquam magnam vitae
+      eum porro, voluptates non necessitatibus assumenda quia, velit sequi.
+    </h1>
+    <h1>
+      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Minima adipisci
+      qui ipsa tempore placeat, omnis ut blanditiis nihil numquam magnam vitae
+      eum porro, voluptates non necessitatibus assumenda quia, velit sequi.
+    </h1>
+    <h1>
+      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Minima adipisci
+      qui ipsa tempore placeat, omnis ut blanditiis nihil numquam magnam vitae
+      eum porro, voluptates non necessitatibus assumenda quia, velit sequi.
+    </h1>
   </div>
 </template>
 

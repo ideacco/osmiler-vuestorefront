@@ -1,17 +1,16 @@
 // 用户订阅功能
-const { Axios, get, post } = require("../models/axios")
-const { Mailchimp_API_KEY } = require("../config.js")
+const { Axios, get, post } = require('../models/axios')
+const { Mailchimp_API_KEY } = require('../config.js')
 const { Md5 } = require('../utils')
 
 class SubscribeController {
-
   /**
    * 用户订阅到 Mailchimp 列表
-   * @param {*} ctx 
-   * @returns 
+   * @param {*} ctx
+   * @returns
    */
 
-  async subscribed (ctx) {
+  async subscribed(ctx) {
     // 想列表中添加一个用户订阅
 
     const params = ctx.request.body
@@ -20,30 +19,31 @@ class SubscribeController {
     if (!params.email_address) {
       ctx.body = {
         code: 0,
-        mag: '邮箱地址为必填项'
+        mag: '邮箱地址为必填项',
       }
       return
     }
 
     // 验证邮箱地址是否合法
     const email_address = params.email_address
-    const re = /^[a-zA-Z0-9_.-]+@[a-zA-Z0-9-]+(\.[a-zA-Z0-9-]+)*\.[a-zA-Z0-9]{2,6}$/
+    const re =
+      /^[a-zA-Z0-9_.-]+@[a-zA-Z0-9-]+(\.[a-zA-Z0-9-]+)*\.[a-zA-Z0-9]{2,6}$/
 
     if (!re.test(email_address)) {
       ctx.body = {
         code: 0,
-        mag: '邮箱地址不合法'
+        mag: '邮箱地址不合法',
       }
       return
     }
 
     const subscribingUser = {
-      "merge_fields": {
-        "FNAME": params.first_name ? ctx.query.first_name : '',
-        "LNAME": params.last_name ? ctx.query.last_name : '',
+      merge_fields: {
+        FNAME: params.first_name ? ctx.query.first_name : '',
+        LNAME: params.last_name ? ctx.query.last_name : '',
       },
       email_address: email_address,
-      status: "subscribed" // 状态必填
+      status: 'subscribed', // 状态必填
     }
 
     const reqUrl = `https://${Mailchimp_API_KEY.server}.api.mailchimp.com/3.0/lists/${Mailchimp_API_KEY.listId}/members/`
@@ -53,9 +53,11 @@ class SubscribeController {
       url: reqUrl,
       headers: {
         'Content-Type': 'application/json',
-        Authorization: `Basic ${Buffer.from(`apikey:${Mailchimp_API_KEY.apiKey}`).toString('base64')}`,
+        Authorization: `Basic ${Buffer.from(
+          `apikey:${Mailchimp_API_KEY.apiKey}`
+        ).toString('base64')}`,
       },
-      data: subscribingUser
+      data: subscribingUser,
     }
 
     const response = await Axios.request(options)
@@ -67,7 +69,6 @@ class SubscribeController {
         return error
       })
 
-
     if (response) {
       console.log('Successfully added a subscriber.', response)
     }
@@ -77,59 +78,60 @@ class SubscribeController {
       ctx.body = {
         code: 0,
         data: {
-          "status": response.status,
-          "email_address": response.email_address,
-          "detail": response.detail
+          status: response.status,
+          email_address: response.email_address,
+          detail: response.detail,
         },
-        mag: '数据错误,请查看细节'
+        mag: '数据错误,请查看细节',
       }
     }
 
     ctx.body = {
       code: 1,
       data: {
-        "status": response.status,
-        "email_address": response.email_address
-      }
+        status: response.status,
+        email_address: response.email_address,
+      },
     }
   }
 
   /**
    * 用户从 Mailchimp 列表退订
-   * @param {*} ctx 
-   * @returns 
+   * @param {*} ctx
+   * @returns
    */
 
-  async unSubscribed (ctx) {
+  async unSubscribed(ctx) {
     // 想列表中添加一个用户订阅
     const params = ctx.request.body
     if (!params.email_address) {
       ctx.body = {
         code: 0,
-        mag: '邮箱地址为必填项'
+        mag: '邮箱地址为必填项',
       }
       return
     }
 
     // 验证邮箱地址是否合法
     const email_address = params.email_address
-    const re = /^[a-zA-Z0-9_.-]+@[a-zA-Z0-9-]+(\.[a-zA-Z0-9-]+)*\.[a-zA-Z0-9]{2,6}$/
+    const re =
+      /^[a-zA-Z0-9_.-]+@[a-zA-Z0-9-]+(\.[a-zA-Z0-9-]+)*\.[a-zA-Z0-9]{2,6}$/
 
     if (!re.test(email_address)) {
       ctx.body = {
         code: 0,
-        mag: '邮箱地址不合法'
+        mag: '邮箱地址不合法',
       }
       return
     }
 
     const subscribingUser = {
-      "merge_fields": {
-        "FNAME": params.first_name ? params.first_name : '',
-        "LNAME": params.last_name ? params.last_name : '',
+      merge_fields: {
+        FNAME: params.first_name ? params.first_name : '',
+        LNAME: params.last_name ? params.last_name : '',
       },
       email_address: email_address,
-      status: "unsubscribed"
+      status: 'unsubscribed',
     }
 
     const reqUrl = `https://${Mailchimp_API_KEY.server}.api.mailchimp.com/3.0/lists/${Mailchimp_API_KEY.listId}/members/`
@@ -139,9 +141,11 @@ class SubscribeController {
       url: reqUrl,
       headers: {
         'Content-Type': 'application/json',
-        Authorization: `Basic ${Buffer.from(`apikey:${Mailchimp_API_KEY.apiKey}`).toString('base64')}`,
+        Authorization: `Basic ${Buffer.from(
+          `apikey:${Mailchimp_API_KEY.apiKey}`
+        ).toString('base64')}`,
       },
-      data: subscribingUser
+      data: subscribingUser,
     }
 
     const response = await Axios.request(options)
@@ -153,7 +157,6 @@ class SubscribeController {
         return error
       })
 
-
     if (response) {
       console.log('Successfully added a subscriber.', response)
     }
@@ -163,26 +166,25 @@ class SubscribeController {
       ctx.body = {
         code: 0,
         data: {
-          "status": response.status,
-          "email_address": response.email_address,
-          "detail": response.detail
+          status: response.status,
+          email_address: response.email_address,
+          detail: response.detail,
         },
-        mag: '数据错误,请查看细节'
+        mag: '数据错误,请查看细节',
       }
     }
 
     ctx.body = {
       code: 1,
       data: {
-        "status": response.status,
-        "email_address": response.email_address
-      }
+        status: response.status,
+        email_address: response.email_address,
+      },
       // data: response
     }
   }
 
-
-  async verifySubscribed (ctx) {
+  async verifySubscribed(ctx) {
     // 想列表中添加一个用户订阅
 
     const params = ctx.request.body
@@ -190,19 +192,20 @@ class SubscribeController {
     if (!params.email_address) {
       ctx.body = {
         code: 0,
-        mag: '邮箱地址为必填项'
+        mag: '邮箱地址为必填项',
       }
       return
     }
 
     // 验证邮箱地址是否合法
     const email_address = params.email_address
-    const re = /^[a-zA-Z0-9_.-]+@[a-zA-Z0-9-]+(\.[a-zA-Z0-9-]+)*\.[a-zA-Z0-9]{2,6}$/
+    const re =
+      /^[a-zA-Z0-9_.-]+@[a-zA-Z0-9-]+(\.[a-zA-Z0-9-]+)*\.[a-zA-Z0-9]{2,6}$/
 
     if (!re.test(email_address)) {
       ctx.body = {
         code: 0,
-        mag: '邮箱地址不合法'
+        mag: '邮箱地址不合法',
       }
       return
     }
@@ -225,7 +228,9 @@ class SubscribeController {
       url: reqUrl,
       headers: {
         'Content-Type': 'application/json',
-        Authorization: `Basic ${Buffer.from(`apikey:${Mailchimp_API_KEY.apiKey}`).toString('base64')}`,
+        Authorization: `Basic ${Buffer.from(
+          `apikey:${Mailchimp_API_KEY.apiKey}`
+        ).toString('base64')}`,
       },
       // data: subscribingUser
     }
@@ -239,7 +244,6 @@ class SubscribeController {
         return error
       })
 
-
     console.log('监听到返回错误', response)
 
     // 异常处理
@@ -248,7 +252,7 @@ class SubscribeController {
       ctx.body = {
         code: 0,
         data: response,
-        mag: '数据错误,请查看细节'
+        mag: '数据错误,请查看细节',
       }
     } else {
       ctx.body = {
@@ -257,11 +261,10 @@ class SubscribeController {
         //   "status": response.status,
         //   "email_address": response.email_address
         // }
-        data: response
+        data: response,
       }
     }
   }
-  
 }
 
 module.exports = new SubscribeController()

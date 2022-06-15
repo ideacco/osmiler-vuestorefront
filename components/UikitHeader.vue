@@ -3,63 +3,50 @@
     <div class="tm-header-mobile uk-hidden@m">
       <div class="uk-navbar-container uk-navbar-transparent">
         <nav uk-navbar="container: .tm-header-mobile">
-          <div
-            class="uk-navbar-center"
-            style="z-index: 2;"
-          >
-            <a
-              href="home"
-              class="uk-navbar-item uk-logo"
-            >
+          <div class="uk-navbar-center" style="z-index: 2">
+            <a href="home" class="uk-navbar-item uk-logo">
               <img
                 alt="OSMILER"
                 width="80"
                 src="../static/icons/osmiler-logo-default.svg"
-              ></a>
+              /></a>
           </div>
           <div class="uk-navbar-right">
-            <a
-              class="uk-navbar-toggle"
-              href="#tm-mobile"
-              uk-toggle
-            >
+            <a class="uk-navbar-toggle" href="#tm-mobile" uk-toggle>
               <div uk-navbar-toggle-icon></div>
             </a>
           </div>
         </nav>
       </div>
-      <div
-        id="tm-mobile"
-        class="uk-modal-full"
-        uk-modal
-      >
+      <div id="tm-mobile" class="uk-modal-full" uk-modal>
         <div class="uk-modal-dialog uk-modal-body uk-height-viewport">
-          <button
-            class="uk-modal-close-full"
-            type="button"
-            uk-close
-          ></button>
-          <div
-            class="uk-child-width-1-1"
-            uk-grid
-          >
+          <button class="uk-modal-close-full" type="button" uk-close></button>
+          <div class="uk-child-width-1-1" uk-grid>
             <div>
               <div class="uk-panel">
                 <ul class="uk-nav uk-nav-default uk-nav-divider">
-                  <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home current-menu-item page_item page-item-1 current_page_item uk-active"><a href="./index.html"> Home</a></li>
-                  <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="./about-us/index.html"> About Us</a></li>
-                  <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="./contact/index.html"> Contact</a></li>
+                  <li
+                    class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home current-menu-item page_item page-item-1 current_page_item uk-active"
+                  >
+                    <a href="./index.html"> Home</a>
+                  </li>
+                  <li
+                    class="menu-item menu-item-type-post_type menu-item-object-page"
+                  >
+                    <a href="./about-us/index.html"> About Us</a>
+                  </li>
+                  <li
+                    class="menu-item menu-item-type-post_type menu-item-object-page"
+                  >
+                    <a href="./contact/index.html"> Contact</a>
+                  </li>
                 </ul>
               </div>
             </div>
 
             <div>
-              <div
-                class="uk-panel widget widget_text"
-                id="text-4"
-              >
-                <div class="uk-panel textwidget">
-                </div>
+              <div class="uk-panel widget widget_text" id="text-4">
+                <div class="uk-panel textwidget"></div>
               </div>
             </div>
             <div>
@@ -72,7 +59,8 @@
                     <a
                       href="./index.php?page_id=8"
                       class="uk-button uk-button-primary uk-width-1-1"
-                    >Login</a>
+                    >Login</a
+                    >
                   </p>
                   <div
                     class="uk-grid-small uk-child-width-auto uk-flex-middle uk-flex-center"
@@ -80,22 +68,27 @@
                   >
                     <div>
                       <ul class="uk-iconnav">
-                        <li><a
+                        <li>
+                          <a
                             href="https://facebook.com/yootheme"
                             uk-icon="icon: facebook"
-                          ></a></li>
-                        <li><a
+                          ></a>
+                        </li>
+                        <li>
+                          <a
                             href="https://instagram.com/"
                             uk-icon="icon: instagram"
-                          ></a></li>
-                        <li><a
-                            href="https://yelp.com/"
-                            uk-icon="icon: yelp"
-                          ></a></li>
+                          ></a>
+                        </li>
+                        <li>
+                          <a href="https://yelp.com/" uk-icon="icon: yelp"></a>
+                        </li>
                       </ul>
                     </div>
                   </div>
-                  <p class="uk-text-meta">© 2022 Osmiler. All rights reserved.</p>
+                  <p class="uk-text-meta">
+                    © 2022 Osmiler. All rights reserved.
+                  </p>
                 </div>
               </div>
             </div>
@@ -106,7 +99,7 @@
 
     <div
       class="uk-visible@m"
-      :class="{'uk-position-top': isNavbarTransparent}"
+      :class="{ 'uk-position-top': isNavbarTransparent }"
       ref="header"
       id="pc-header"
       uk-header
@@ -115,50 +108,54 @@
         <nav
           class="uk-navbar-container"
           :class="classObject"
-          style="z-index: 2;"
+          style="z-index: 2"
         >
           <div class="uk-container uk-container-expand">
             <div uk-navbar>
               <div class="uk-navbar-left">
-                <nuxt-link
-                  :to="localePath('/')"
-                  class="uk-navbar-item uk-logo"
-                >
+                <nuxt-link :to="localePath('/')" class="uk-navbar-item uk-logo">
                   <img
                     alt="OSMILER"
                     width="90"
                     src="../static/icons/osmiler-logo-default.svg"
-                  ><img
+                  /><img
                     class="uk-logo-inverse"
                     alt="OSMILER"
                     width="90"
                     src="../static/icons/osmiler-logo-light.svg"
-                  >
+                  />
                 </nuxt-link>
                 <ul
                   class="uk-navbar-nav"
                   v-for="(category, key) in shopRootCategories"
                   :key="`${key}`"
                 >
-                  <li :class="{'uk-active': category.name === navActive}">
+                  <li :class="{ 'uk-active': category.name === navActive }">
                     <a @click="navJump(category)">{{ category.name }}</a>
                   </li>
                 </ul>
               </div>
               <div class="uk-navbar-right">
-                <ul class="uk-navbar-nav" style="align-items: center;">
+                <ul class="uk-navbar-nav" style="align-items: center">
                   <li v-if="!isUserAuthenticated">
-                    <button @click="toggleLoginModal()" class="uk-button uk-button-small uk-button-default">Login</button>
+                    <button
+                      @click="toggleLoginModal()"
+                      class="uk-button uk-button-small uk-button-default"
+                    >
+                      Login
+                    </button>
                   </li>
 
                   <li v-else>
-                    <a 
-                    @click="$router.push(localePath({ name: 'my-account' }))"
-                    class="uk-icon-link"
-                    uk-icon="user" />
+                    <a
+                      @click="$router.push(localePath({ name: 'my-account' }))"
+                      class="uk-icon-link"
+                      uk-icon="user"
+                    />
                   </li>
 
-                  <li><a
+                  <li>
+                    <a
                       @click="toggleCartSidebar"
                       class="uk-icon-link"
                       uk-icon="cart"
@@ -167,12 +164,11 @@
                         v-if="cartTotalPrice2 !== 0"
                         class="uk-position-center-right uk-badge"
                       >
-                        {{cartTotalPrice2}}
+                        {{ cartTotalPrice2 }}
                       </span>
                     </a>
                   </li>
                 </ul>
-                
               </div>
             </div>
           </div>
@@ -184,18 +180,21 @@
 
 <script>
 import { useUiState } from '~/composables'
-import { ref, reactive, computed, onMounted, getCurrentInstance} from '@nuxtjs/composition-api'
-import { onSSR } from '@vue-storefront/core'
 import {
-  useCategory,
-  useContent
-} from '@vue-storefront/shopify'
+  ref,
+  reactive,
+  computed,
+  onMounted,
+  getCurrentInstance
+} from '@nuxtjs/composition-api'
+import { onSSR } from '@vue-storefront/core'
+import { useCategory, useContent } from '@vue-storefront/shopify'
 export default {
   name: 'UikitHeader',
   props: {
     cartTotalItems: {
       type: Number,
-      default: 2
+      default: 0
     },
     cartTotalPrice2: {
       type: Number,
@@ -209,7 +208,7 @@ export default {
       await search({})
     })
 
-    const { 
+    const {
       isNavbarTransparent,
       toggleNavbarTransparent,
       toggleLoginModal,
@@ -231,12 +230,12 @@ export default {
         showOnUp: true
       })
 
-      proxy.$UIkit.util.on('.uk-navbar-container','active',() => {
+      proxy.$UIkit.util.on('.uk-navbar-container', 'active', () => {
         // console.log('导航栏活动状态')
         isActive.value = true
       })
 
-      proxy.$UIkit.util.on('.uk-navbar-container','inactive',() => {
+      proxy.$UIkit.util.on('.uk-navbar-container', 'inactive', () => {
         // console.log('导航栏活动状态')
         isActive.value = false
       })
@@ -253,13 +252,13 @@ export default {
     //   }
     //   isActive.value = await data().then()
     // }))
-    
+
     // 输出动态样式绑定
     const classObject = computed(() => {
-      console.log('计算属性',isNavbarTransparent.value)
+      console.log('计算属性', isNavbarTransparent.value)
 
       // 在导航栏处于活动状态时,动态绑定样式
-      if ( isActive.value ) {
+      if (isActive.value) {
         console.log('导航栏活动状态')
         return {
           'uk-background-default': true,
@@ -284,7 +283,7 @@ export default {
       classObject
     }
   },
-  data () {
+  data() {
     return {
       navActive: 'home',
       isActive: false, // 活动状态
@@ -303,13 +302,14 @@ export default {
           path: '/about'
         },
         {
-          name: 'Contact',
-          path: '/contact'
+          name: 'Product',
+          path: '/Product'
         },
         {
           name: 'test',
           path: '/test_page'
-        }]
+        }
+      ]
     }
   },
 
@@ -328,7 +328,7 @@ export default {
 
   methods: {
     navJump(category, key) {
-      console.log('navJump',category.name)
+      console.log('navJump', category.name)
       this.navActive = category.name
       this.$router.push({ path: category.path })
     }
@@ -336,6 +336,4 @@ export default {
 }
 </script>
 
-<style lang=
- scoped>
-</style>
+<style lang="scoped"></style>

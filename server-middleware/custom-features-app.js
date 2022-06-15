@@ -2,7 +2,7 @@ const Koa = require('koa')
 const Router = require('koa-router')
 // const bodyParser = require('koa-bodyparser'); // 解析post请求
 const axios = require('axios')
-const routing = require("./routes")
+const routing = require('./routes')
 // const subscribe = require("./routes/marketing")
 const bodyParser = require('koa-bodyparser')
 
