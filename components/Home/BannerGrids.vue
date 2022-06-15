@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div id="Bone" class="uk-visible@m uk-section-secondary">
+    <div id="Bone" class="uk-visible@m uk-section-default uk-light">
       <div
         style="
           background-image: url('/wp-content/themes/yootheme/cache/pic_02-ya-7b39abde.jpeg');
@@ -14,15 +14,28 @@
               <div class="uk-width-2-3@m"></div>
               <div class="uk-width-1-3@m">
                 <h1
-                  class="uk-position-relative uk-margin-remove-vertical uk-width-medium@m uk-text-left@m uk-text-center"
-                  id="page#3-0-1-1"
-                  style="z-index: 1"
+                  class="uk-margin-remove-vertical uk-text-left@m uk-text-center"
+                  id="page3-0-1-0"
                 >
-                  Enjoy music with brushing
+                  Your senses. Set free.
                 </h1>
                 <div class="uk-panel uk-margin uk-text-left@m uk-text-center">
-                  Sonic wave electric toothbrush use bone conduction to bring
-                  the music back when bruhing.
+                  Our sonic toothbrush incorporates the latest bone conduction
+                  technology to get rid of the tedious daily brushing time and
+                  allow your teeth and whole body to enjoy music.
+                </div>
+                <div class="uk-margin">
+                  <img
+                    src="/wp-content/themes/yootheme/cache/card-38c1e7bb.png"
+                    srcset="
+                      /wp-content/themes/yootheme/cache/card-38c1e7bb.png 353w
+                    "
+                    sizes="(min-width: 353px) 353px"
+                    data-width="353"
+                    data-height="234"
+                    class="el-image"
+                    alt
+                  />
                 </div>
               </div>
             </div>
@@ -45,12 +58,40 @@
                 class="uk-margin-remove-vertical uk-width-medium@m uk-text-left@m uk-text-left"
                 id="page#4-0-0-0"
               >
-                Enjoy music with brushing
+                Your senses. Set free.
               </h1>
               <div class="uk-panel uk-margin-small uk-text-left@m uk-text-left">
-                Sonic wave electric toothbrush use bone conduction to bring the
-                music back when bruhing.
+                <p>
+                  Our sonic toothbrush incorporates the latest bone conduction
+                  technology to get rid of the tedious daily brushing time and
+                  allow your teeth and whole body to enjoy music.
+                </p>
               </div>
+              <div id="page#4-0-0-2"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="uk-hidden@m uk-section-default uk-section uk-padding-remove-top uk-padding-remove-bottom"
+    >
+      <div class="uk-container uk-padding-remove-horizontal">
+        <div class="tm-grid-expand uk-child-width-1-1 uk-grid-margin" uk-grid>
+          <div>
+            <div class="uk-margin">
+              <img
+                src="/wp-content/themes/yootheme/cache/Frame-1344-721e9d0d.jpeg"
+                srcset="
+                  /wp-content/themes/yootheme/cache/Frame-1344-e9676e18.jpeg 768w,
+                  /wp-content/themes/yootheme/cache/Frame-1344-721e9d0d.jpeg 960w
+                "
+                sizes="(min-width: 960px) 960px"
+                data-width="960"
+                data-height="462"
+                class="el-image"
+                alt
+              />
             </div>
           </div>
         </div>
@@ -66,4 +107,14 @@ export default {
   }
 }
 </script>
-<style lang="scss"></style>
+<style lang="scss">
+#page\#4-0-0-0 {
+  font-family: 'osmiler-title';
+  padding-top: 32px;
+  font-size: 35px;
+}
+#page3-0-1-0{
+   font-family: 'osmiler-title';
+}
+
+</style>

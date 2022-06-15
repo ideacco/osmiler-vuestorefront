@@ -5,11 +5,11 @@
       class="container__lang container__lang--selected"
       @click="isLangModalOpen = !isLangModalOpen"
     >
-      <img
+      <!-- <img
         :src="`https://cdn.shopify.com/s/files/1/0407/1902/4288/files/${locale}_20x20.jpg`"
         width="20"
         height="20"
-      />
+      /> -->
     </SfButton>
     <SfBottomModal
       :is-open="isLangModalOpen"

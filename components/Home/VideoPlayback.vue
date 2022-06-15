@@ -1,4 +1,3 @@
-<!--  -->
 <template>
   <div>
     <div
@@ -30,13 +29,13 @@
                   id="page#0-0-0-0"
                   style="z-index: 1"
                 >
-                  Making Your Smile
+                  A musical revolution.
                 </h1>
                 <div
                   class="uk-text-primary uk-margin-medium uk-width-large uk-margin-auto-right@m uk-margin-remove-left@m uk-margin-auto uk-text-left@m uk-text-center"
                 >
-                  The world’s first bone conduction sonic wave electric
-                  toothbrush.Enjoy music while brushing your teeth.
+                  Beyond imagination, it&#8217;s the world&#8217;s first
+                  electric sonic toothbrush that can listen to music.
                 </div>
                 <div id="page#0-0-0-2">
                   <div></div>
@@ -44,7 +43,7 @@
                 <div class="uk-margin uk-text-left@m uk-text-center">
                   <a
                     class="el-content uk-button uk-button-default"
-                    href="#subscribe"
+                    @click="routepush()"
                     uk-scroll
                   >
                     Coming soon
@@ -93,19 +92,19 @@
                 id="page#1-1-0-0"
                 style="top: 8px; z-index: 1"
               >
-                Making Your Smile
+                A musical revolution.
               </h1>
               <div
                 class="uk-text-primary uk-margin-medium uk-margin-remove-top uk-width-medium uk-margin-auto-right@m uk-margin-remove-left@m uk-margin-auto uk-text-left@m uk-text-center"
               >
-                The world’s first bone conduction sonic wave electric
-                toothbrush.Enjoy music while brushing your teeth.
+                Beyond imagination, it&#8217;s the original electric sonic
+                toothbrush that can listen to music.
               </div>
               <div class="uk-margin uk-text-left@m uk-text-center">
                 <a
                   class="el-content uk-button uk-button-default"
-                  href="#subscribe"
                   uk-scroll
+                  @click="routepush()"
                 >
                   Coming soon
                 </a>
@@ -122,6 +121,11 @@ export default {
   name: 'VideoPlayback',
   data() {
     return {}
+  },
+  methods: {
+    routepush() {
+      this.$router.push('/Product')
+    }
   }
 }
 </script>

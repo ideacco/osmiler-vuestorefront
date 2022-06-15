@@ -6,7 +6,7 @@
   >
     <div />
   </SfLoader>
-  <div v-else id="product" style="margin-top: 30px;">
+  <div v-else id="product" style="margin-top: 30px">
     <!-- <SfBreadcrumbs class="breadcrumbs" :breadcrumbs="breadcrumbs">
       <template #link="{ breadcrumb }">
         <nuxt-link
@@ -54,7 +54,6 @@
             {{ description }}
           </div>
 
-
           <div
             v-if="options && Object.keys(options).length > 0"
             class="product__variants"
@@ -99,10 +98,12 @@
                         ? true
                         : false
                       : a === 0
-                      ? true
-                      : false
+                        ? true
+                        : false
                   "
-                  @click="(atttLbl = key), updateFilter({ [atttLbl]: attribs })"
+                  @click="
+                    ;(atttLbl = key), updateFilter({ [atttLbl]: attribs })
+                  "
                 />
               </div>
             </template>
@@ -147,15 +148,14 @@
               >
                 {{ $t('Add to Cart') }}
               </SfButton>
-
             </template>
           </SfAddToCart>
-               <SfButton class="sf-button--text desktop-only product__save">
-                Save for later
-              </SfButton>
-              <SfButton class="sf-button--text desktop-only product__compare">
-                Add to compare
-              </SfButton>
+          <SfButton class="sf-button--text desktop-only product__save">
+            Save for later
+          </SfButton>
+          <SfButton class="sf-button--text desktop-only product__compare">
+            Add to compare
+          </SfButton>
         </div>
         <LazyHydrate when-idle>
           <SfTabs :open-tab="1" class="product__tabs">
@@ -229,7 +229,6 @@
     <LazyHydrate when-visible>
       <MobileStoreBanner />
     </LazyHydrate> -->
-
   </div>
 </template>
 <script>
@@ -561,10 +560,7 @@ export default {
 }
 
 #product {
-
   @include for-desktop {
-
-
   }
 }
 .product {
