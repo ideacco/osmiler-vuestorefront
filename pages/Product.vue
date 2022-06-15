@@ -54,7 +54,7 @@
             {{ productDescription }}
           </div>
 
-          <div
+          <!-- <div
             v-if="options && Object.keys(options).length > 0"
             class="product__variants"
           >
@@ -107,7 +107,7 @@
                 />
               </div>
             </template>
-          </div>
+          </div> -->
 
           <SfAlert
             v-if="!productGetters.getStockStatus(product)"
@@ -226,7 +226,7 @@ import {
   SfBreadcrumbs,
   SfLoader,
   SfButton,
-  SfColor
+  SfColor,
 } from '@storefront-ui/vue'
 
 import InstagramFeed from '~/components/InstagramFeed.vue'
@@ -236,7 +236,7 @@ import {
   computed,
   watch,
   useRoute,
-  useRouter
+  useRouter,
 } from '@nuxtjs/composition-api'
 import { useProduct, useCart, productGetters } from '@vue-storefront/shopify'
 import MobileStoreBanner from '~/components/MobileStoreBanner.vue'
@@ -263,7 +263,7 @@ export default {
     InstagramFeed,
     RelatedProducts,
     MobileStoreBanner,
-    LazyHydrate
+    LazyHydrate,
   },
   beforeRouteEnter(__, from, next) {
     next((vm) => {
@@ -283,7 +283,7 @@ export default {
     const {
       products: relatedProducts,
       search: searchRelatedProducts,
-      loading: relatedLoading
+      loading: relatedLoading,
     } = useProduct('relatedProducts')
     const { addItem, loading } = useCart()
 
@@ -291,7 +291,7 @@ export default {
       () =>
         productGetters.getFiltered(products.value, {
           master: true,
-          attributes: route?.value?.query
+          attributes: route?.value?.query,
         })[0]
     )
 
@@ -318,16 +318,16 @@ export default {
       breadcrumbs.value = [
         {
           text: 'Home',
-          link: '/'
+          link: '/',
         },
         {
           text: 'products',
-          link: '#'
+          link: '#',
         },
         {
           text: productTitle.value,
-          link: '#'
-        }
+          link: '#',
+        },
       ]
     }
 
@@ -344,14 +344,14 @@ export default {
       if (product.value && product.value.images.length === 0) {
         product.value.images.push({
           originalSrc:
-            'https://cdn.shopify.com/s/files/1/0407/1902/4288/files/placeholder_600x600.jpg?v=1625742127'
+            'https://cdn.shopify.com/s/files/1/0407/1902/4288/files/placeholder_600x600.jpg?v=1625742127',
         })
       }
       return productGetters.getGallery(product.value).map((img) => ({
         mobile: { url: img.small },
         desktop: { url: img.normal },
         big: { url: img.big },
-        alt: product.value._name || product.value.name
+        alt: product.value._name || product.value.name,
       }))
     })
     const stock = computed(() => {
@@ -367,11 +367,14 @@ export default {
         if (!productTitle.value) {
           return route?.value?.error({
             statusCode: 404,
-            message: 'This product could not be found'
+            message: 'This product could not be found',
           })
         }
       })
-      await searchRelatedProducts({ productId: id.value, related: true })
+      await searchRelatedProducts({
+        productId: id.value || null,
+        related: true,
+      })
     })
     const updateFilter = (filter) => {
       if (options.value) {
@@ -389,8 +392,8 @@ export default {
         path: route?.value?.path,
         query: {
           ...configuration.value,
-          ...filter
-        }
+          ...filter,
+        },
       })
     }
 
@@ -419,7 +422,7 @@ export default {
       productGallery,
       productGetters,
       setBreadcrumb,
-      atttLbl
+      atttLbl,
     }
   },
   // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
@@ -428,27 +431,27 @@ export default {
       properties: [
         {
           name: 'Product Code',
-          value: '578902-00'
+          value: '578902-00',
         },
         {
           name: 'Category',
-          value: 'Pants'
+          value: 'Pants',
         },
         {
           name: 'Material',
-          value: 'Cotton'
+          value: 'Cotton',
         },
         {
           name: 'Country',
-          value: 'Germany'
-        }
+          value: 'Germany',
+        },
       ],
       description:
         'Find stunning women cocktail and party dresses. Stand out in lace and metallic cocktail dresses and party dresses from all your favorite brands.',
       detailsIsActive: false,
       brand:
         'Brand name is the perfect pairing of quality and design. This label creates major everyday vibes with its collection of modern brooches, silver and gold jewellery, or clips it back with hair accessories in geo styles.',
-      careInstructions: 'Do not wash!'
+      careInstructions: 'Do not wash!',
     }
   },
   // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
@@ -470,13 +473,15 @@ export default {
   methods: {
     // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
     async addingToCart(Productdata) {
-      await this.addItem(Productdata).then(() => {
+      console.log(Productdata, this.addItem, 444)
+      await this.addItem(Productdata).then((res) => {
+        console.log(res, 5555)
         this.sendNotification({
           key: 'product_added',
           message: `${Productdata.product.name} has been successfully added to your cart.`,
           type: 'success',
           title: 'Product added!',
-          icon: 'check'
+          icon: 'check',
         })
         this.qty = 1
       })
@@ -498,14 +503,13 @@ export default {
         galleryAllSlides.forEach((gallerySlide) => {
           gallerySlide.style.flexBasis = gallerySlide.style.width
         })
-    }
-  }
+    },
+  },
 }
 </script>
 
 <style lang="scss" scoped>
 .pdc-pdp-loader {
-  --font-family--secondary: var(--font-family--primary);
   min-height: 200px;
   padding: 100px 0;
 }
@@ -564,7 +568,7 @@ export default {
       var(--font-weight--normal),
       var(--font-size--sm),
       1.4,
-      Overpass
+      var(--font-family--secondary)
     );
     color: var(--c-text);
     text-decoration: none;
@@ -583,7 +587,7 @@ export default {
       var(--font-weight--light),
       var(--font-size--base),
       1.6,
-      Overpass
+      var(--font-family--primary)
     );
   }
   &__colors {
@@ -592,7 +596,7 @@ export default {
       var(--font-weight--normal),
       var(--font-size--xs),
       1.6,
-      Overpass
+      var(--font-family--secondary)
     );
     display: flex;
     flex-wrap: wrap;
@@ -643,7 +647,7 @@ export default {
       var(--font-weight--light),
       var(--font-size--sm),
       1.6,
-      Overpass
+      var(--font-family--primary)
     );
     &__title {
       font-weight: var(--font-weight--normal);

@@ -76,14 +76,12 @@
           <div class="uk-width-1-2@m">
             <div class="uk-panel uk-margin">
               <p>
-                <span
-                ></span
-                >It redefines the way of teeth cleaning with transforming the
-                traditional“Vibration” cleaning mode into the“Music bone
-                conduction vibration” mode.Not only do we know how
-                time-consuming it is to brush our teeth, but we also know how
-                boring and inefficient it can be! But let&#8217;s not forget the
-                substance and necessity of it for one&#8217;s oral hygiene
+                <span></span>It redefines the way of teeth cleaning with
+                transforming the traditional“Vibration” cleaning mode into
+                the“Music bone conduction vibration” mode.Not only do we know
+                how time-consuming it is to brush our teeth, but we also know
+                how boring and inefficient it can be! But let&#8217;s not forget
+                the substance and necessity of it for one&#8217;s oral hygiene
                 health. Osmiler is positioned to go far beyond those with a deep
                 understanding of“Oral hygiene, it is also suitable for anyone
                 who aspires to simple, comfortable, and innovative
@@ -110,7 +108,9 @@
     </div>
     <div class="uk-section-default uk-dark">
       <div
-        style="background-image: url('/wp-content/themes/yootheme/cache/01-2-ya-0c515866.jpeg');"
+        style="
+          background-image: url('/wp-content/themes/yootheme/cache/01-2-ya-0c515866.jpeg');
+        "
         class="uk-background-norepeat uk-background-cover uk-background-center-center uk-section uk-section-large"
       >
         <div class="uk-container uk-container-expand">
@@ -196,4 +196,3 @@ export default {
   name: 'AboutS'
 }
 </script>
-

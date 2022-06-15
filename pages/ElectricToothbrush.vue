@@ -101,9 +101,7 @@
                         data-page-id="doxcncXuTeRELNzXMJiZIyLM7wb"
                         data-docx-has-block-data="false"
                       >
-                        <div
-                          class="ace-line ace-line"
-                        >
+                        <div class="ace-line ace-line">
                           Connect the handle to the charging cable and plug in
                           the Type-c charger for charging. When charging, the
                           host machine cannot be started. If charging is in

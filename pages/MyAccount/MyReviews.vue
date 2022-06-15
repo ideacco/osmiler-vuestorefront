@@ -1,10 +1,10 @@
 <template>
   <div>
-    <SfTab title="My Reviews">
+    <!-- <SfTab title="My Reviews">
       This feature is not implemented yet! Please take a look at
       <a>https://github.com/DivanteLtd/vue-storefront/issues</a> for our
       Roadmap!
-    </SfTab>
+    </SfTab> -->
   </div>
 </template>
 <script>

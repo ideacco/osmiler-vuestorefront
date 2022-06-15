@@ -95,8 +95,8 @@
               src="/wp-content/themes/yootheme/cache/image-59-c5c1dcb5.png"
               srcset="
                 /wp-content/themes/yootheme/cache/image-59-c5c1dcb5.png  768w,
-                /wp-content/themes/yootheme/cache/image-59-6bbfcf07.png                                                                                                                                                                                           1024w,
-                /wp-content/themes/yootheme/cache/image-59-c5c1dcb5.png                                                                                                                                                                                           1080w
+                /wp-content/themes/yootheme/cache/image-59-6bbfcf07.png 1024w,
+                /wp-content/themes/yootheme/cache/image-59-c5c1dcb5.png 1080w
               "
               sizes="(min-width: 1080px) 1080px"
               data-width="1080"

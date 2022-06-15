@@ -213,7 +213,8 @@ export default {
         'PrivacyPolicy',
         'ElectricToothbrush',
         'ContactUs',
-        'Aboutus'
+        'Aboutus',
+        'Product'
       ],
       isplay: 0,
       isTransparency: false,
