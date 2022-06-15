@@ -21,32 +21,34 @@
                   <div class="uk-panel uk-width-1-1">
                     <h1
                       class="uk-margin-remove-vertical uk-text-left@m uk-text-center"
-                      id="page#5-0-0-0"
+                      id="page#6-0-0-0"
                     >
-                      toothbrush noise can be the music
+                      When noise turns to music.
                     </h1>
                     <div
                       class="uk-panel uk-margin uk-text-left@m uk-text-center"
                     >
-                      Have you ever tried to listen to music while brushing your
-                      teeth but couldn&#8217;t hear the music because of the
-                      noise your toothbrush made from vibrating?
+                      <p>
+                        Are you tired of the noise of an electric toothbrush?
+                        Our sonic electric toothbrush is both a stereo and a
+                        musical instrument, allowing wonderful melodies and
+                        dynamic rhythms to glide between your teeth, bringing
+                        excitement throughout the day.
+                      </p>
                     </div>
-                    <div id="page#5-0-0-2"></div>
-                    <div class="uk-margin uk-text-left@m uk-text-center">
+                    <div id="page#6-0-0-2"></div>
+                    <div
+                      id="page#6-0-0-3"
+                      class="uk-margin uk-text-left@m uk-text-center"
+                    >
                       <img
-                        src="/wp-content/themes/yootheme/cache/Group-1304-1-3e1fe71f.png"
-                        srcset="
-                          /wp-content/themes/yootheme/cache/Group-1304-1-3e1fe71f.png 268w
-                        "
-                        sizes="(min-width: 268px) 268px"
-                        data-width="268"
-                        data-height="84"
+                        src="/wp-content/uploads/2022/06/A24.gif"
                         class="el-image"
                         alt
+                        uk-gif
                       />
                     </div>
-                    <div id="page#5-0-0-4"></div>
+                    <div id="page#6-0-0-4"></div>
                   </div>
                 </div>
                 <div class="uk-width-1-2@m"></div>
@@ -75,31 +77,31 @@
                 <div class="uk-panel uk-width-1-1">
                   <h1
                     class="uk-margin-remove-vertical uk-text-left@m uk-text-left"
-                    id="page#6-0-0-0"
+                    id="page#7-0-0-0"
                   >
-                    Toothbrush noise can be the music
+                    When noise turns to music.
                   </h1>
                   <div class="uk-panel uk-margin uk-text-left@m uk-text-left">
-                    Have you ever tried to listen to music while brushing your
-                    teeth but couldn&#8217;t hear the music because of the noise
-                    your toothbrush made from vibrating?
+                    <p>
+                      Are you tired of the noise of an electric toothbrush? Our
+                      sonic electric toothbrush is both a stereo and a musical
+                      instrument, allowing wonderful melodies and dynamic
+                      rhythms to glide between your teeth, bringing excitement
+                      throughout the day.
+                    </p>
                   </div>
-                  <div id="page#6-0-0-2"></div>
-                  <div class="uk-margin-remove-vertical">
+                  <div
+                    id="page#7-0-0-2"
+                    class="uk-margin uk-text-left@m uk-text-center"
+                  >
                     <img
-                      src="/wp-content/themes/yootheme/cache/Frame-1325-32a96555.png"
-                      srcset="
-                        /wp-content/themes/yootheme/cache/Frame-1325-32a96555.png  60w,
-                        /wp-content/themes/yootheme/cache/Frame-1325-523041e4.png 120w
-                      "
-                      sizes="(min-width: 60px) 60px"
-                      data-width="60"
-                      data-height="300"
+                      src="/wp-content/uploads/2022/06/A24.gif"
                       class="el-image"
                       alt
+                      uk-gif
                     />
                   </div>
-                  <div id="page#6-0-0-5" class="uk-visible@m"></div>
+                  <div id="page#7-0-0-4"></div>
                 </div>
               </div>
             </div>

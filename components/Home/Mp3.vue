@@ -3,7 +3,7 @@
     <div id="Mp3" class="uk-visible@m uk-section-default uk-light">
       <div
         style="
-          background-image: url('/wp-content/themes/yootheme/cache/406-1eb1d7b6.jpeg');
+          background-image: url('/wp-content/themes/yootheme/cache/406-3-afe2690c.jpeg');
         "
         class="uk-background-norepeat uk-background-cover uk-background-top-center uk-section uk-padding-remove-vertical uk-flex uk-flex-middle"
         uk-height-viewport="offset-top: true;"
@@ -20,18 +20,31 @@
                 <div>
                   <h1
                     class="uk-position-relative uk-margin-remove-vertical uk-width-xlarge uk-margin-auto uk-text-center@m uk-text-center"
-                    id="page#7-0-0-0"
+                    id="page#8-0-0-0"
                     style="top: -100px"
                   >
-                    You can be the music creator!
+                    Be a music creator.
                   </h1>
                   <div
                     class="uk-panel uk-position-relative uk-margin uk-width-xlarge uk-margin-auto uk-text-center@m uk-text-center"
                     style="top: -100px"
                   >
-                    Do you want to share your own music? Create your own music
-                    and upload to the community. You can’t imagine how many
-                    people are using your music while brushing.
+                    <p>
+                      Upload music to toothbrush via Bluetooth or PC.Find your
+                      own music or share your favorite music with our community!
+                    </p>
+                  </div>
+                  <div
+                    class="uk-position-relative uk-margin uk-margin-remove-top uk-text-center"
+                    style="top: -100px"
+                  >
+                    <a
+                      class="el-content uk-button uk-button-default uk-flex-inline uk-flex-center uk-flex-middle"
+                      href="/music"
+                    >
+                      <span class="uk-margin-small-right" uk-icon="bolt"></span>
+                      GO
+                    </a>
                   </div>
                 </div>
               </div>
@@ -55,10 +68,17 @@
           <div>
             <h1
               class="uk-margin-xlarge uk-margin-remove-bottom uk-width-xlarge uk-text-left@m uk-text-left"
-              id="page#8-0-0-0"
+              id="page#9-0-0-0"
             >
-              You can be the music creator!
+              Be a music creator.
             </h1>
+            <div class="uk-panel uk-margin">
+              <p>Upload music to toothbrush via Bluetooth or PC.</p>
+              <p>
+                Find your own music or share your favorite music with our
+                community!
+              </p>
+            </div>
           </div>
         </div>
       </div>
@@ -66,10 +86,10 @@
         <div>
           <div class="uk-margin">
             <img
-              src="/wp-content/themes/yootheme/cache/405-1-2bfddab7.jpeg"
+              src="/wp-content/themes/yootheme/cache/405-2-13c651c4.jpeg"
               srcset="
-                /wp-content/themes/yootheme/cache/405-1-28e80f68.jpeg 768w,
-                /wp-content/themes/yootheme/cache/405-1-2bfddab7.jpeg 960w
+                /wp-content/themes/yootheme/cache/405-2-72a7fe03.jpeg 768w,
+                /wp-content/themes/yootheme/cache/405-2-13c651c4.jpeg 960w
               "
               sizes="(min-width: 960px) 960px"
               data-width="960"

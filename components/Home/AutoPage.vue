@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div id="page#11" class="uk-visible@m uk-section-default uk-light">
+    <div id="page#12" class="uk-visible@m uk-section-default uk-light">
       <div
         style="
           background-image: url('/wp-content/themes/yootheme/cache/Frame-1313-ya-4d92e6f0.jpeg');
@@ -20,29 +20,38 @@
                 <div class="uk-width-1-2@m"></div>
                 <div class="uk-grid-item-match uk-flex-middle uk-width-1-2@m">
                   <div class="uk-panel uk-width-1-1">
-                    <h1 class="uk-margin-remove-vertical" id="page#11-0-1-0">
-                      Premium Bristles to<br />Maximize Plaque Removal<br />American
-                      Dupont<sup>TM</sup> Tynex<sup>@</sup><br />Brilliance
-                      Bristles
+                    <h1 class="uk-margin-remove-vertical" id="page#12-0-1-0">
+                      Clean the outside<br />Care of the inside
                     </h1>
                     <div class="uk-panel uk-margin">
                       <p>
-                        <span></span><span></span
-                        ><span
-                        >Sonic wave electric toothbrush uses food-grade Dupont
-                          brush.<br />It’s soft and safe.</span
-                        >
+                        <span></span>Not only brings happiness,but also brings a
+                        more comfortable way of using experience.
+                      </p>
+                      <p>
+                        <strong>• The rounded top<br /></strong>Gently clean
+                        your teeth to reduce irritation to the gums
+                      </p>
+                      <p>
+                        <strong
+                        >• W-shaped three-dimensional cutting<br /></strong
+                        >The contact surface is more extensive, easy to deeply
+                        clean blind area.
+                      </p>
+                      <p>
+                        <strong>• Imported Dupont bristles<br /></strong>Safe
+                        and harmless, Strong Cleaning Effect
                       </p>
                     </div>
                     <div class="uk-margin">
                       <img
-                        src="/wp-content/themes/yootheme/cache/Group-1317-54d89789.png"
+                        src="/wp-content/themes/yootheme/cache/Group-1317-1-b9ac3f73.png"
                         srcset="
-                          /wp-content/themes/yootheme/cache/Group-1317-54d89789.png 416w
+                          /wp-content/themes/yootheme/cache/Group-1317-1-b9ac3f73.png 416w
                         "
                         sizes="(min-width: 416px) 416px"
                         data-width="416"
-                        data-height="231"
+                        data-height="204"
                         class="el-image"
                         alt
                       />
@@ -56,7 +65,7 @@
       </div>
     </div>
     <div
-      id="page#12"
+      id="page#13"
       class="uk-hidden@m uk-section-primary uk-section uk-padding-remove-vertical"
     >
       <div
@@ -67,10 +76,31 @@
           uk-grid
         >
           <div>
-            <h1 class="uk-margin-medium uk-width-large" id="page#12-0-0-0">
-              Premium Bristles to<br />Maximize Plaque Removal<br />American
-              Dupont<sup>TM</sup> Tynex<sup>@</sup><br />Brilliance Bristles
+            <h1
+              class="uk-margin-medium uk-margin-remove-bottom uk-width-large"
+              id="page#13-0-0-0"
+            >
+              Soft care designed brush head
             </h1>
+            <div class="uk-panel uk-margin">
+              <p>
+                <span></span>Not only brings happiness,but also brings a more
+                comfortable way of using experience.
+              </p>
+              <p>
+                <strong>• The rounded top<br /></strong>Gently clean your teeth
+                to reduce irritation to the gums
+              </p>
+              <p>
+                <strong>• W-shaped three-dimensional cutting<br /></strong>The
+                contact surface is more extensive, easy to deeply clean blind
+                area.
+              </p>
+              <p>
+                <strong>• Imported Dupont bristles<br /></strong>Safe and
+                harmless, Strong Cleaning Effect
+              </p>
+            </div>
           </div>
         </div>
       </div>
@@ -82,10 +112,10 @@
         <div>
           <div class="uk-margin">
             <img
-              src="/wp-content/themes/yootheme/cache/06-4895e253.jpeg"
+              src="/wp-content/themes/yootheme/cache/06-1-83e2cbb9.jpeg"
               srcset="
-                /wp-content/themes/yootheme/cache/06-abb0eb65.jpeg 768w,
-                /wp-content/themes/yootheme/cache/06-4895e253.jpeg 960w
+                /wp-content/themes/yootheme/cache/06-1-25ccc288.jpeg 768w,
+                /wp-content/themes/yootheme/cache/06-1-83e2cbb9.jpeg 960w
               "
               sizes="(min-width: 960px) 960px"
               data-width="960"

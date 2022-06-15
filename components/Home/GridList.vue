@@ -18,6 +18,7 @@
                     <div
                       class="el-item uk-margin-auto uk-width-xlarge uk-panel uk-tile-default uk-margin-remove-first-child"
                       uk-scrollspy-class
+                      @click="jump(1)"
                     >
                       <div>
                         <img
@@ -68,7 +69,7 @@
                         Music Community
                       </div>
                       <div class="el-content uk-panel uk-margin-small-top">
-                        Create and share your own music
+                        Find and share your own music
                       </div>
                     </div>
                   </div>
@@ -94,10 +95,10 @@
                       <div
                         class="el-title uk-card-title uk-margin-small-top uk-margin-remove-bottom"
                       >
-                        Mp3 format
+                        Customize Music
                       </div>
                       <div class="el-content uk-panel uk-margin-small-top">
-                        Upload Mp3 to the toothbrush
+                        Upload built-in music to the toothbrush
                       </div>
                     </div>
                   </div>
@@ -123,10 +124,10 @@
                       <div
                         class="el-title uk-card-title uk-margin-small-top uk-margin-remove-bottom"
                       >
-                        Automatic Amplitude
+                        Classic mode
                       </div>
                       <div class="el-content uk-panel uk-margin-small-top">
-                        Convert rhythm to amplitude automatically
+                        3 built-in classic vibrating modes
                       </div>
                     </div>
                   </div>
@@ -145,13 +146,20 @@ export default {
   data() {
     return {}
   },
-  methods: {}
+  methods: {
+    jump(index) {
+      console.log(this.$parent, 444)
+    }
+  }
 }
 </script>
 <style lang="scss" scoped>
 .uk-margin-remove-bottom,
 .uk-margin-small-top {
   color: #3a3543;
+}
+#page\#2-0-0-0 .el-title {
+  font-size: 20px;
 }
 .uk-section-muted {
   background: #fff;
