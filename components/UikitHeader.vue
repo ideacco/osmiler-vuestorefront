@@ -136,20 +136,9 @@
                 </ul>
               </div>
               <div class="uk-navbar-right">
-<<<<<<< HEAD
                 <ul class="uk-navbar-nav" style="align-items: center;">
                   <li v-if="!isLogin">
                     <button @click="toggleLoginModal()" class="uk-button uk-button-small uk-button-default">Login</button>
-=======
-                <ul class="uk-navbar-nav" style="align-items: center">
-                  <li v-if="!isUserAuthenticated">
-                    <button
-                      @click="toggleLoginModal()"
-                      class="uk-button uk-button-small uk-button-default"
-                    >
-                      Login
-                    </button>
->>>>>>> 14f544e22cf13043ceff7836026a3c05a7652d75
                   </li>
 
                   <li v-else>
@@ -170,11 +159,7 @@
                         v-if="cartTotalItems !== 0"
                         class="uk-position-center-right uk-badge"
                       >
-<<<<<<< HEAD
                         {{cartTotalItems}}
-=======
-                        {{ cartTotalPrice2 }}
->>>>>>> 14f544e22cf13043ceff7836026a3c05a7652d75
                       </span>
                     </a>
                   </li>
@@ -205,13 +190,6 @@ export default {
     cartTotalItems: {
       type: Number,
       default: 0
-<<<<<<< HEAD
-=======
-    },
-    cartTotalPrice2: {
-      type: Number,
-      default: 3
->>>>>>> 14f544e22cf13043ceff7836026a3c05a7652d75
     },
     isUserAuthenticated: Boolean
   },
@@ -266,7 +244,6 @@ export default {
     //   isActive.value = await data().then()
     // }))
 
-<<<<<<< HEAD
     const isLogin = computed(() => props.isUserAuthenticated ? true : false)
 
     // 输出动态样式绑定
@@ -274,15 +251,6 @@ export default {
 
       // 在导航栏处于活动状态时,动态绑定样式
       if ( isActive.value ) {
-=======
-    // 输出动态样式绑定
-    const classObject = computed(() => {
-      console.log('计算属性', isNavbarTransparent.value)
-
-      // 在导航栏处于活动状态时,动态绑定样式
-      if (isActive.value) {
-        console.log('导航栏活动状态')
->>>>>>> 14f544e22cf13043ceff7836026a3c05a7652d75
         return {
           'uk-background-default': true,
           'uk-animation-slide-top': true

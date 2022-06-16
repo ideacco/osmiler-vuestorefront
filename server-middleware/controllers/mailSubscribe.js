@@ -81,6 +81,7 @@ class SubscribeController {
         data: error,
         mag: '数据错误,请查看细节'
       }
+      return
     }
 
     ctx.body = {
@@ -163,6 +164,7 @@ class SubscribeController {
         data: error,
         mag: '数据错误,请查看细节'
       }
+      return
     }
 
     ctx.body = {
@@ -253,6 +255,7 @@ class SubscribeController {
         data: response,
         mag: '数据错误,请查看细节',
       }
+      return
     }
 
     ctx.body = {
