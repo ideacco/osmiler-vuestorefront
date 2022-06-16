@@ -4,6 +4,6 @@ export default function (context) {
   // context.userAgent = process.server
   //   ? context.req.headers['user-agent']
   //   : navigator.userAgent
-  console.log('user-agent1111', context.params)
-  console.log('user-agent2222', context.route)
+  console.log('路由监听:context.params', context.params)
+  console.log('路由监听:context.route', context.route)
 }
