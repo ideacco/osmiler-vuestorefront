@@ -111,7 +111,7 @@ export default {
     const product = computed(() => productGetters.getFiltered(products.value))
 
     onSSR(async () => {
-      await search({ slug })
+      await search({ slug: 'swing' })
     })
 
     const test = () => {
