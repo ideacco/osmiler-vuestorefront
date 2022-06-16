@@ -113,8 +113,7 @@ export default {
   padding-top: 32px;
   font-size: 35px;
 }
-#page3-0-1-0{
-   font-family: 'osmiler-title';
+#page3-0-1-0 {
+  font-family: 'osmiler-title';
 }
-
 </style>

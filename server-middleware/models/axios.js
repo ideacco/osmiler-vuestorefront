@@ -35,10 +35,9 @@ axios.defaults.timeout = 1000 * 20
 //     return Promise.error(error)
 //   })
 
-
 // 响应拦截器
 axios.interceptors.response.use(
-  response => {
+  (response) => {
     if (response.status === 200) {
       return Promise.resolve(response)
     } else {
@@ -46,7 +45,7 @@ axios.interceptors.response.use(
     }
   },
   // 服务器状态码不是200的情况
-  error => {
+  (error) => {
     console.log('返回状态码：', error.response.status)
     if (error.response.status) {
       switch (error.response.status) {
@@ -56,29 +55,29 @@ axios.interceptors.response.use(
         case 400:
           console.log('返回状态码：400')
           return Promise.reject(error.response.data)
-          // break
-          // 403 token过期
-          // 登录过期对用户进行提示
-          // 清除本地token和清空vuex中token对象
-          // 跳转登录页面
+        // break
+        // 403 token过期
+        // 登录过期对用户进行提示
+        // 清除本地token和清空vuex中token对象
+        // 跳转登录页面
         case 401:
           console.log('登陆过期，需要重新登录')
           return Promise.reject(error.response.data)
-          // break
-          // 403 token过期
-          // 登录过期对用户进行提示
-          // 清除本地token和清空vuex中token对象
-          // 跳转登录页面
+        // break
+        // 403 token过期
+        // 登录过期对用户进行提示
+        // 清除本地token和清空vuex中token对象
+        // 跳转登录页面
         case 403:
           console.log('登陆过期，需要重新登录')
           return Promise.reject(error.response.data)
-          // break
-          // 404请求不存在
+        // break
+        // 404请求不存在
         case 404:
           console.log('接口返回404')
           return Promise.reject(error.response.data)
-          // break
-          // 其他错误，直接抛出错误提示
+        // break
+        // 其他错误，直接抛出错误提示
         default:
           console.log('接口返回未知错误')
           break
@@ -96,13 +95,16 @@ axios.interceptors.response.use(
 
 exports.get = function (url, params) {
   return new Promise((resolve, reject) => {
-    axios.get(url, {
-      params: params
-    }).then(res => {
-      resolve(res.data)
-    }).catch(err => {
-      reject(err.data)
-    })
+    axios
+      .get(url, {
+        params: params,
+      })
+      .then((res) => {
+        resolve(res.data)
+      })
+      .catch((err) => {
+        reject(err.data)
+      })
   })
 }
 
@@ -116,11 +118,12 @@ exports.post = function (url, params) {
   console.log('post 传参：', url, params)
   return new Promise((resolve, reject) => {
     // axios.post(url, QS.stringify(params))
-    axios.post(url, params)
-      .then(res => {
+    axios
+      .post(url, params)
+      .then((res) => {
         resolve(res.data)
       })
-      .catch(err => {
+      .catch((err) => {
         console.log(err.data)
         reject(err.data)
       })

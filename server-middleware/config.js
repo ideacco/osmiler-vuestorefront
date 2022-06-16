@@ -9,10 +9,9 @@
 
 // osmiler 的配置信息
 const Mailchimp_API_KEY = {
-  apiKey: "5e312e8471d84484e93d4dc22b8f76ca-us12",
-  server: "us12",
-  listId: "376a0b909b"
+  apiKey: '5e312e8471d84484e93d4dc22b8f76ca-us12',
+  server: 'us12',
+  listId: '376a0b909b',
 }
-
 
 module.exports = { Mailchimp_API_KEY }

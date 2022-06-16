@@ -95,7 +95,7 @@ async asyncdata({$axios}){
 
 ### 在页面中
 
-## 在html中使用路由
+## 在 html 中使用路由
 
 可以使用 绑定 方式写:
 
@@ -103,12 +103,9 @@ async asyncdata({$axios}){
 
 也可以使用 `nuxt-link` 特有语法写
 
-``` html
-<nuxt-link
-  :to="localePath('/')"
-  class="uk-navbar-item uk-logo"
->
-回到首页
+```html
+<nuxt-link :to="localePath('/')" class="uk-navbar-item uk-logo">
+  回到首页
 </nuxt-link>
 ```
 
@@ -161,7 +158,6 @@ server: {
   host: 'localhost'
 }
 ```
-
 
 ## 关于代码格式化说明：
 

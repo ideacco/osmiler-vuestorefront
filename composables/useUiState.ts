@@ -55,11 +55,11 @@ const useUiState = () => {
 
   const isNavbarTransparent = computed(() => state.isNavbarTransparent)
   const toggleNavbarTransparent = () => {
-    console.log('赋值?',!state.isNavbarTransparent)
+    // console.log('赋值?',!state.isNavbarTransparent)
     state.isNavbarTransparent = !state.isNavbarTransparent
   }
   const setNavbarTransparent = (setPage: boolean) => {
-    console.log('赋值setPage?',setPage)
+    // console.log('赋值setPage?',setPage)
     state.isNavbarTransparent = setPage
   }
 
@@ -82,7 +82,7 @@ const useUiState = () => {
     setArticlesPerPage,
     isNavbarTransparent,
     toggleNavbarTransparent,
-    setNavbarTransparent
+    setNavbarTransparent,
   }
 }
 

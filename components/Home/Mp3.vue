@@ -29,7 +29,7 @@
                     class="uk-panel uk-position-relative uk-margin uk-width-xlarge uk-margin-auto uk-text-center@m uk-text-center"
                     style="top: -100px"
                   >
-                    <p>
+                    <p style="color: #3a3543">
                       Upload music to toothbrush via Bluetooth or PC.Find your
                       own music or share your favorite music with our community!
                     </p>
@@ -68,13 +68,15 @@
           <div>
             <h1
               class="uk-margin-xlarge uk-margin-remove-bottom uk-width-xlarge uk-text-left@m uk-text-left"
-              id="page#9-0-0-0"
+              id="page9-0-0-0"
             >
               Be a music creator.
             </h1>
             <div class="uk-panel uk-margin">
-              <p>Upload music to toothbrush via Bluetooth or PC.</p>
-              <p>
+              <p style="color: #3a3543">
+                Upload music to toothbrush via Bluetooth or PC.
+              </p>
+              <p style="color: #3a3543">
                 Find your own music or share your favorite music with our
                 community!
               </p>
@@ -112,4 +114,11 @@ export default {
   }
 }
 </script>
-<style lang="scss"></style>
+<style lang="scss">
+#page\#8-0-0-0 {
+  font-family: 'osmiler-title';
+}
+#page9-0-0-0 {
+  font-family: 'osmiler-title';
+}
+</style>

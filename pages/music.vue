@@ -82,8 +82,13 @@
                               @click.prevent="play(item.music_url, item.id)"
                             >
                               Audition
-                              <img class="uk-icon-image"
-                                :src="item.id == playingId && isPlaying ? require('../static/icons/vieo.png') : require('../static/icons/play.png')"
+                              <img
+                                class="uk-icon-image"
+                                :src="
+                                  item.id == playingId && isPlaying
+                                    ? require('../static/icons/vieo.png')
+                                    : require('../static/icons/play.png')
+                                "
                               />
                             </a>
                           </td>
@@ -156,8 +161,13 @@
                       :class="{ 'uk-button-secondary': item.id == playingId }"
                       @click.prevent="play(item.music_url, item.id)"
                     >try
-                      <img class="uk-icon-image"
-                        :src="item.id == playingId && isPlaying ? require('../static/icons/vieo.png') : require('../static/icons/play.png')"
+                      <img
+                        class="uk-icon-image"
+                        :src="
+                          item.id == playingId && isPlaying
+                            ? require('../static/icons/vieo.png')
+                            : require('../static/icons/play.png')
+                        "
                       />
                     </a>
                     <a
@@ -225,7 +235,7 @@ export default {
     this.update()
     this.audio = new Audio()
     // this.uikitdom = this.$uikit.sticky('#sticky')
-    this.$uikit.util.on('#sticky', 'active',() => {
+    this.$uikit.util.on('#sticky', 'active', () => {
       // do something
       console.log('active')
     })

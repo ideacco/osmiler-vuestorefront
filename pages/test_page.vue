@@ -1,25 +1,77 @@
 <template>
   <div
-        style="background-image:url('/wp-content/themes/yootheme/cache/music-hero-4f873de3.jpeg');"
-        ref="hero"
-      >
+    style="
+      background-image: url('/wp-content/themes/yootheme/cache/music-hero-4f873de3.jpeg');
+    "
+    ref="hero"
+  >
     <h1>test1111</h1>
     <h1>test1111</h1>
     <h1>test1111</h1>
 
-    <button @click="test"> 切换测 </button>
+    <button @click="test">切换测</button>
 
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati placeat perspiciatis praesentium, accusantium illum nulla similique quas illo aspernatur earum vitae consectetur, ullam eius corrupti accusamus voluptate saepe dolores cupiditate.</p>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati placeat perspiciatis praesentium, accusantium illum nulla similique quas illo aspernatur earum vitae consectetur, ullam eius corrupti accusamus voluptate saepe dolores cupiditate.</p>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati placeat perspiciatis praesentium, accusantium illum nulla similique quas illo aspernatur earum vitae consectetur, ullam eius corrupti accusamus voluptate saepe dolores cupiditate.</p>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati placeat perspiciatis praesentium, accusantium illum nulla similique quas illo aspernatur earum vitae consectetur, ullam eius corrupti accusamus voluptate saepe dolores cupiditate.</p>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati placeat perspiciatis praesentium, accusantium illum nulla similique quas illo aspernatur earum vitae consectetur, ullam eius corrupti accusamus voluptate saepe dolores cupiditate.</p>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati placeat perspiciatis praesentium, accusantium illum nulla similique quas illo aspernatur earum vitae consectetur, ullam eius corrupti accusamus voluptate saepe dolores cupiditate.</p>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati placeat perspiciatis praesentium, accusantium illum nulla similique quas illo aspernatur earum vitae consectetur, ullam eius corrupti accusamus voluptate saepe dolores cupiditate.</p>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati placeat perspiciatis praesentium, accusantium illum nulla similique quas illo aspernatur earum vitae consectetur, ullam eius corrupti accusamus voluptate saepe dolores cupiditate.</p>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati placeat perspiciatis praesentium, accusantium illum nulla similique quas illo aspernatur earum vitae consectetur, ullam eius corrupti accusamus voluptate saepe dolores cupiditate.</p>
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati placeat
+      perspiciatis praesentium, accusantium illum nulla similique quas illo
+      aspernatur earum vitae consectetur, ullam eius corrupti accusamus
+      voluptate saepe dolores cupiditate.
+    </p>
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati placeat
+      perspiciatis praesentium, accusantium illum nulla similique quas illo
+      aspernatur earum vitae consectetur, ullam eius corrupti accusamus
+      voluptate saepe dolores cupiditate.
+    </p>
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati placeat
+      perspiciatis praesentium, accusantium illum nulla similique quas illo
+      aspernatur earum vitae consectetur, ullam eius corrupti accusamus
+      voluptate saepe dolores cupiditate.
+    </p>
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati placeat
+      perspiciatis praesentium, accusantium illum nulla similique quas illo
+      aspernatur earum vitae consectetur, ullam eius corrupti accusamus
+      voluptate saepe dolores cupiditate.
+    </p>
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati placeat
+      perspiciatis praesentium, accusantium illum nulla similique quas illo
+      aspernatur earum vitae consectetur, ullam eius corrupti accusamus
+      voluptate saepe dolores cupiditate.
+    </p>
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati placeat
+      perspiciatis praesentium, accusantium illum nulla similique quas illo
+      aspernatur earum vitae consectetur, ullam eius corrupti accusamus
+      voluptate saepe dolores cupiditate.
+    </p>
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati placeat
+      perspiciatis praesentium, accusantium illum nulla similique quas illo
+      aspernatur earum vitae consectetur, ullam eius corrupti accusamus
+      voluptate saepe dolores cupiditate.
+    </p>
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati placeat
+      perspiciatis praesentium, accusantium illum nulla similique quas illo
+      aspernatur earum vitae consectetur, ullam eius corrupti accusamus
+      voluptate saepe dolores cupiditate.
+    </p>
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati placeat
+      perspiciatis praesentium, accusantium illum nulla similique quas illo
+      aspernatur earum vitae consectetur, ullam eius corrupti accusamus
+      voluptate saepe dolores cupiditate.
+    </p>
 
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati placeat perspiciatis praesentium, accusantium illum nulla similique quas illo aspernatur earum vitae consectetur, ullam eius corrupti accusamus voluptate saepe dolores cupiditate.</p>
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati placeat
+      perspiciatis praesentium, accusantium illum nulla similique quas illo
+      aspernatur earum vitae consectetur, ullam eius corrupti accusamus
+      voluptate saepe dolores cupiditate.
+    </p>
   </div>
 </template>
 
@@ -28,11 +80,15 @@ import { ref, computed, onMounted, onUnmounted } from '@nuxtjs/composition-api'
 import { useUiState } from '~/composables'
 
 export default {
-  data() { 
+  data() {
     return {}
   },
-  setup(){
-    const { isNavbarTransparent, toggleNavbarTransparent, setNavbarTransparent } = useUiState()
+  setup() {
+    const {
+      isNavbarTransparent,
+      toggleNavbarTransparent,
+      setNavbarTransparent
+    } = useUiState()
     onMounted(() => {
       console.log('子页面初始化!,设置透明导航')
       setNavbarTransparent(true)
@@ -40,7 +96,7 @@ export default {
 
     const test = () => {
       toggleNavbarTransparent()
-      console.log('子页面test,isNavbarTransparent',isNavbarTransparent)
+      console.log('子页面test,isNavbarTransparent', isNavbarTransparent)
     }
 
     onUnmounted(() => {

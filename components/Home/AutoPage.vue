@@ -25,8 +25,11 @@
                     </h1>
                     <div class="uk-panel uk-margin">
                       <p>
-                        <span></span>Not only brings happiness,but also brings a
-                        more comfortable way of using experience.
+                        <span
+                          data-metadata="&lt;!--(figmeta)eyJmaWxlS2V5IjoiZHJFUEpWMGxYdnBabkF1elpOcEpiayIsInBhc3RlSUQiOjE0MzI3NTc4MTQsImRhdGFUeXBlIjoic2NlbmUifQo=(/figmeta)--&gt;"
+                        ></span
+                        >Not only brings happiness,but also brings a more
+                        comfortable way of using experience.
                       </p>
                       <p>
                         <strong>• The rounded top<br /></strong>Gently clean
@@ -79,13 +82,17 @@
             <h1
               class="uk-margin-medium uk-margin-remove-bottom uk-width-large"
               id="page#13-0-0-0"
+              style="font-size: 32px"
             >
               Soft care designed brush head
             </h1>
             <div class="uk-panel uk-margin">
               <p>
-                <span></span>Not only brings happiness,but also brings a more
-                comfortable way of using experience.
+                <span
+                  data-metadata="&lt;!--(figmeta)eyJmaWxlS2V5IjoiZHJFUEpWMGxYdnBabkF1elpOcEpiayIsInBhc3RlSUQiOjE0MzI3NTc4MTQsImRhdGFUeXBlIjoic2NlbmUifQo=(/figmeta)--&gt;"
+                ></span
+                >Not only brings happiness,but also brings a more comfortable
+                way of using experience.
               </p>
               <p>
                 <strong>• The rounded top<br /></strong>Gently clean your teeth
