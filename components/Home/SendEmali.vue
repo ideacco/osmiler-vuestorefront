@@ -93,7 +93,7 @@ export default {
   },
   methods: {
     sub() {
-      UIkit.modal.confirm('UIkit confirm!')
+      this.$UIkit.modal.confirm('UIkit confirm!')
       this.$axios
         .$post('/v1/mailchimp/subscribed', {
           email_address: this.emailaddress
