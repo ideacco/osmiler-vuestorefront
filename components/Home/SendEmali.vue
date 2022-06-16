@@ -93,13 +93,26 @@ export default {
   },
   methods: {
     sub() {
-      this.$UIkit.modal.confirm('UIkit confirm!')
+      if (this.emailaddress === '') {
+        this.$UIkit.notification(
+          "<span uk-icon='icon: question'></span> <span class=“fontsize1”>输入账户为空,请重新输入</span>"
+        )
+        return
+      }
       this.$axios
         .$post('/v1/mailchimp/subscribed', {
           email_address: this.emailaddress
         })
         .then((res) => {
-          console.log(res, 4544)
+          if (res.code === 1) {
+            this.$UIkit.notification(
+              "<span uk-icon='icon: check'></span> <span class='uk-text-primary'>你已成功订阅</span>"
+            )
+          } else if (res.code === 0) {
+            this.$UIkit.notification(
+              "<span uk-icon='icon: close'></span> <span  class='uk-text-primary'>订阅失败</span>"
+            )
+          }
         })
     }
   }
@@ -108,6 +121,21 @@ export default {
 <style lang="scss" scoped>
 .uk-text-primary {
   color: #3a3543 !important;
+}
+.uk-notification-message-warning {
+  background-color: #fff !important;
+  color: #3a3543 !important;
+}
+::v-deep .fontsize1 {
+  color: red;
+}
+::v-deep .uk-notification-message-primary {
+  color: green !important;
+  background-color: #fff !important;
+}
+::v-deep .uk-notification-message-danger {
+  color: red !important;
+  background-color: #fff !important;
 }
 h2 {
   color: #4132c7 !important;

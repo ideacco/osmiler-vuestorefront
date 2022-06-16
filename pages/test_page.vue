@@ -81,7 +81,6 @@ import { ref, computed, onMounted, onUnmounted } from '@nuxtjs/composition-api'
 import { useUiState } from '~/composables'
 
 export default {
-
   setup() {
     const {
       isNavbarTransparent,
@@ -121,7 +120,7 @@ export default {
       const datas = {
         email_address: 'kensss@gmail.com'
       }
-      const res = await this.$axios.$post('/v1/mailchimp/subscribed',datas)
+      const res = await this.$axios.$post('/v1/mailchimp/subscribed', datas)
       this.email = res
       console.log('子页面fetchSomething,res', res)
     }
