@@ -106,10 +106,8 @@ export default {
     const product = computed(() => productGetters.getFiltered(products.value))
 
     onSSR(async () => {
-      await search({ slug: 'swing' })
+      await search({ slug })
     })
-
-    
 
     const test = () => {
       console.log('子页面初始化!,点击测试',route)
