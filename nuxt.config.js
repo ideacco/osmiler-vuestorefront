@@ -154,14 +154,14 @@ const config = {
   ],
   axios: {
     proxy: true,
-    prefix: '/api',
+    prefix: '/app',
   },
   proxy: {
-    '/api': {
+    '/app': {
       target: process.env.VUE_APP_API_BASE_URL,
       changeOrigin: true,
       pathRewrite: {
-        '^/api': '',
+        '^/app': '',
       },
     },
   },
