@@ -123,7 +123,7 @@
                     alt="OSMILER"
                     width="90"
                     src="../static/icons/osmiler-logo-light.svg"
-                    style="z-index:1"
+                    style="z-index: 1"
                   />
                 </nuxt-link>
                 <ul
@@ -137,9 +137,14 @@
                 </ul>
               </div>
               <div class="uk-navbar-right">
-                <ul class="uk-navbar-nav" style="align-items: center;">
+                <ul class="uk-navbar-nav" style="align-items: center">
                   <li v-if="!isLogin">
-                    <button @click="toggleLoginModal()" class="uk-button uk-button-small uk-button-default">Login</button>
+                    <button
+                      @click="toggleLoginModal()"
+                      class="uk-button uk-button-small uk-button-default"
+                    >
+                      Login
+                    </button>
                   </li>
 
                   <li v-else>
@@ -160,7 +165,7 @@
                         v-if="cartTotalItems !== 0"
                         class="uk-position-center-right uk-badge"
                       >
-                        {{cartTotalItems}}
+                        {{ cartTotalItems }}
                       </span>
                     </a>
                   </li>
@@ -245,13 +250,12 @@ export default {
     //   isActive.value = await data().then()
     // }))
 
-    const isLogin = computed(() => props.isUserAuthenticated ? true : false)
+    const isLogin = computed(() => (props.isUserAuthenticated ? true : false))
 
     // 输出动态样式绑定
     const classObject = computed(() => {
-
       // 在导航栏处于活动状态时,动态绑定样式
-      if ( isActive.value ) {
+      if (isActive.value) {
         return {
           'uk-background-default': true,
           'uk-animation-slide-top': true
@@ -312,7 +316,7 @@ export default {
 
   watch: {
     isUserAuthenticated(val) {
-      console.log('isUserAuthenticated',val)
+      console.log('isUserAuthenticated', val)
     }
     // isNavbarTransparent(Transparent) {
     //   console.log('切换导航监听',Transparent)
@@ -331,6 +335,4 @@ export default {
 }
 </script>
 
-<style lang="scoped">
-
-</style>
+<style lang="scoped"></style>

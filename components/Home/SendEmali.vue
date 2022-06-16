@@ -93,9 +93,14 @@ export default {
   },
   methods: {
     sub() {
-      this.$axios.$post('/v1/mailchimp/subscribed', {
-        email_address: this.emailaddress
-      })
+      UIkit.modal.confirm('UIkit confirm!')
+      this.$axios
+        .$post('/v1/mailchimp/subscribed', {
+          email_address: this.emailaddress
+        })
+        .then((res) => {
+          console.log(res, 4544)
+        })
     }
   }
 }

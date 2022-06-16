@@ -82,11 +82,13 @@ export default {
     const getCartTotalItems = computed(() =>
       cartGetters.getTotalItems(cart.value)
     )
-    const isAuthenticated = computed(()=>{
-      console.log('isAuthenticated0000',!!userGetters.getFirstName(userInfo.value))
+    const isAuthenticated = computed(() => {
+      console.log(
+        'isAuthenticated0000',
+        !!userGetters.getFirstName(userInfo.value)
+      )
       return !!userGetters.getFirstName(userInfo.value)
-    }
-    )
+    })
     provide('currentCart', cart)
 
     // 加载用户信息和购物车信息

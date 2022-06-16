@@ -10,8 +10,8 @@ class SubscribeController {
    * "email_address": "ken@bob.com",
    * "first_name":"",
    * "last_name":""
-   * } 
-   * @returns 
+   * }
+   * @returns
    */
 
   async subscribed(ctx) {
@@ -73,13 +73,12 @@ class SubscribeController {
         return error
       })
 
-
     // 异常处理
     if (response.error) {
       ctx.body = {
         code: 0,
         data: error,
-        mag: '数据错误,请查看细节'
+        mag: '数据错误,请查看细节',
       }
       return
     }
@@ -156,13 +155,12 @@ class SubscribeController {
         return error
       })
 
-
     // 异常处理
     if (response.error) {
       ctx.body = {
         code: 0,
         data: error,
-        mag: '数据错误,请查看细节'
+        mag: '数据错误,请查看细节',
       }
       return
     }
@@ -181,11 +179,11 @@ class SubscribeController {
    * 验证邮件是否已经注册
    * @param {
    * email_address: ''
-   * } ctx 
-   * @returns 
+   * } ctx
+   * @returns
    */
 
-  async verifySubscribed (ctx) {
+  async verifySubscribed(ctx) {
     // 想列表中添加一个用户订阅
 
     const params = ctx.request.body
@@ -246,7 +244,6 @@ class SubscribeController {
         return error
       })
 
-
     // 异常处理
     if (response.error) {
       console.log('进入错误逻辑代码')
@@ -261,9 +258,9 @@ class SubscribeController {
     ctx.body = {
       code: 1,
       data: {
-        "status": response.status,
-        "email_address": response.email_address
-      }
+        status: response.status,
+        email_address: response.email_address,
+      },
     }
   }
 }
