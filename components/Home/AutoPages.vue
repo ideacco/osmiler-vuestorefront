@@ -1,9 +1,9 @@
 <template>
   <div>
-    <div id="page#13" class="uk-visible@m uk-section-default uk-light">
+    <div id="page#18" class="uk-visible@m uk-section-default uk-light">
       <div
         style="
-          background-image: url('/wp-content/themes/yootheme/cache/407-1-2859e5c0.jpeg');
+          background-image: url('/wp-content/themes/yootheme/cache/07-2-92aa09fe.jpeg');
         "
         class="uk-background-norepeat uk-background-cover uk-background-top-center uk-section uk-section-large uk-padding-remove-bottom"
         uk-height-viewport="offset-top: true;"
@@ -13,12 +13,15 @@
             class="uk-margin-small uk-container uk-container-large uk-padding-remove-horizontal"
           >
             <div class="tm-grid-expand uk-grid-small" uk-grid>
-              <div class="uk-width-1-2@m">
-                <h1 class="uk-margin-remove-vertical" id="page#13-0-0-0">
-                  IPX7 Waterproof
+              <div class="uk-width-1-2@m uk-first-column">
+                <h1 class="uk-margin-remove-vertical" id="page#18-0-0-0">
+                  Class IP7 Water-repellent
                 </h1>
                 <div class="uk-panel uk-margin">
-                  <p>Resistant to washing and soaking in water</p>
+                  <p>
+                    The whole waterproof body is not afraid of taking a shower,
+                    which is uesd safely in the shower at eaze.
+                  </p>
                 </div>
               </div>
               <div class="uk-width-1-2@m"></div>
@@ -28,7 +31,7 @@
       </div>
     </div>
     <div
-      id="page#14"
+      id="page#19"
       class="uk-hidden@m uk-section-primary uk-section uk-padding-remove-vertical"
     >
       <div
@@ -39,7 +42,11 @@
           uk-grid
         >
           <div>
-            <h1 class="uk-margin uk-width-medium" id="page#14-0-0-0">
+            <h1
+              class="uk-margin uk-width-medium"
+              id="page#19-0-0-0"
+              style="font-size: 35.7px"
+            >
               IPX7 Waterproof
             </h1>
             <div

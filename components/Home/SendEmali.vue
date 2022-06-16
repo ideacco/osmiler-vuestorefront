@@ -3,42 +3,33 @@
     <div
       id="subscribe"
       class="uk-section-muted uk-section uk-section-large uk-padding-remove-top"
-      style="background: #f4f0ff"
     >
       <div
         class="uk-margin uk-container uk-container-large uk-container-expand-right"
       >
         <div class="tm-grid-expand" uk-grid>
           <div class="uk-width-1-2@m">
-            <div id="page#21-0-0-0"></div>
+            <div id="page#25-0-0-0"></div>
             <div
               class="uk-panel uk-margin-remove-first-child uk-position-relative uk-margin uk-text-left@m uk-text-center"
-              id="page#21-0-0-1"
+              id="page#25-0-0-1"
               style="z-index: 1"
             >
-              <div
-                class="el-meta uk-h6 uk-text-primary uk-margin-top uk-margin-remove-bottom"
-              >
-                Subscribe to Newsletters
-              </div>
               <h2 class="el-title uk-margin-top uk-margin-remove-bottom">
-                We Look Forward to Welcoming <br class="uk-visible@xl" />You in
-                Our Practice
+                Join the osmiler family
               </h2>
               <div class="el-content uk-panel uk-margin-top">
-                Subscribe to upcoming sales and events to receive gifts and
-                special offers!
+                <p>
+                  Join our family for more details about the latest sales,
+                  special products and community news
+                </p>
               </div>
             </div>
             <div class="uk-text-center">
               <form
-                action="https://osmiler.us12.list-manage.com/subscribe/post?u=ed3feb32c599ccb1da24e80ba&amp;id=376a0b909b"
-                method="post"
-                id="mc-embedded-subscribe-form"
-                name="mc-embedded-subscribe-form"
-                target="_blank"
-                novalidate
                 class="uk-form uk-panel js-form-newsletter"
+                method="post"
+                action="/wp-admin/admin-ajax.php?action=kernel&amp;p=theme%2Fnewsletter%2Fsubscribe"
               >
                 <div class="uk-child-width-expand@s" uk-grid>
                   <div>
@@ -59,7 +50,11 @@
                     </button>
                   </div>
                 </div>
-                <input type="hidden" name="settings" value="Email address" />
+                <input
+                  type="hidden"
+                  name="settings"
+                  value="Q3HruOz4qbJHeGn7N5e2bw==.a2RjT1lXcTdCMHd1NUVLY1RaNmJjaCtOWWNqWFROODdxQklsRmxQSXVLYjBQNVZ0MytjaVRjdTBKVkdKS2hPS2xsU0RNNjlYNVVIaXBhS2ErWURpczJBT2pDK2hCUGJ2aURUY0F5bU9NNTFmZG5BdW5PZFhOMmFlVUtRa2RNalNWMnNHYk9LOUJqc1lyR2xUTWtXa2lyMkRYS2RUUlV4Q3VrcS9NWG00OVRzUmVpYnBSQk0wclJESWRlMFBTc3NQTHgyN2VwWFNyeXR5ZU5zZE9RRXBUYkF2SGZRMUVmWVhQb0c5Qy9HOGxIazhaRWFNd0hxKzNVbHc0bU8yVWg1T3Qrekd4UkhuK1Rmb1RQZElDV1pGYW1IbmRyaWtuczUzUllHdjQ2NVladFU9.OGFlZDE3NmQyNDI1MWZjYzcyMzA5NjBkYzdmYjJiZjEwMTkyMWQ2ZjM2ZmY4MzgwMGFlNTMzMGExNDkzMDk1Yg=="
+                />
                 <div class="message uk-margin uk-hidden"></div>
               </form>
             </div>
@@ -67,8 +62,8 @@
           <div class="uk-grid-item-match uk-width-1-2@m uk-visible@m">
             <div class="uk-panel uk-width-1-1">
               <div
-                class="uk-visible@m uk-position-absolute uk-width-1-1"
-                style="left: 240px; bottom: -220px"
+                class="uk-visible@m uk-position-absolute uk-width-1-1 uk-text-right"
+                style="left: 150px; bottom: -240px"
               >
                 <img
                   src="/wp-content/themes/yootheme/cache/Frame-58-246b27e9.png"

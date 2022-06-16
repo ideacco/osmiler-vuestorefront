@@ -31,7 +31,18 @@
                         Fast shipping
                       </h3>
                       <div class="el-content uk-panel uk-margin-top">
-                        All orders ship within 2-3 business days
+                        <div class="uk-first-column">
+                          <div
+                            class="el-item uk-panel uk-margin-remove-first-child"
+                            uk-scrollspy="target: [uk-scrollspy-class];"
+                          >
+                            <div
+                              class="el-meta uk-h5 uk-text-muted uk-margin-top uk-margin-remove-bottom"
+                            >
+                              All orders ship within 2-3 business days
+                            </div>
+                          </div>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -51,10 +62,15 @@
                       <h3
                         class="el-title uk-margin-top uk-margin-remove-bottom"
                       >
-                        30-Day returns
+                        30-Day refund and return
                       </h3>
                       <div class="el-content uk-panel uk-margin-top">
-                        We accept returns and exchanges for up to 30 days
+                        <p>
+                          <span
+                          >We accept returns and exchanges for up to 30
+                            days</span
+                          >
+                        </p>
                       </div>
                     </div>
                   </div>
@@ -77,7 +93,12 @@
                         1-Year warranty
                       </h3>
                       <div class="el-content uk-panel uk-margin-top">
-                        The warranty period is 1 year from the date of purchase
+                        <p>
+                          <span
+                          >The warranty period is 1 year from the date of
+                            purchase</span
+                          >
+                        </p>
                       </div>
                     </div>
                   </div>
@@ -100,7 +121,7 @@
                         Secure payment
                       </h3>
                       <div class="el-content uk-panel uk-margin-top">
-                        We provide secure online payments
+                        <p>We provide secure online payments</p>
                       </div>
                     </div>
                   </div>
@@ -123,8 +144,9 @@ export default {
 </script>
 <style lang="scss" scoped>
 .el-title {
-  color: #3a3543 !important;
+  color: #4132c7 !important;
 }
+
 .el-content {
   color: #3a3543 !important;
 }

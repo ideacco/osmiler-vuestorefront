@@ -96,7 +96,7 @@
                 <li class="el-item">
                   <div class="el-content uk-panel">
                     <a
-                      href="/terms-and-conditions"
+                      href="/TermsAndConditions"
                       class="el-link uk-link-text uk-margin-remove-last-child"
                     >Terms and Conditions</a
                     >
@@ -106,7 +106,7 @@
                 <li class="el-item">
                   <div class="el-content uk-panel">
                     <a
-                      href="/shipping-return-policy"
+                      href="/ShippingReturnPolicy"
                       class="el-link uk-link-text uk-margin-remove-last-child"
                     >Shipping &amp; Return Policy</a
                     >

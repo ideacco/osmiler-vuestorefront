@@ -2,7 +2,9 @@
   <div>
     <div id="Community" class="uk-visible@m uk-section-default uk-light">
       <div
-        style="background-image: url('/wp-content/themes/yootheme/cache/03BG-ya-1-1345d345.jpeg');"
+        style="
+          background-image: url('/wp-content/themes/yootheme/cache/03BG-ya-1-1345d345.jpeg');
+        "
         class="uk-background-norepeat uk-background-cover uk-background-center-right uk-background-fixed uk-section uk-padding-remove-vertical uk-flex uk-flex-middle"
         uk-height-viewport="offset-top: true;"
       >
@@ -20,7 +22,7 @@
                     <h1
                       class="uk-margin-remove-vertical uk-text-left@m uk-text-center"
                       id="page#6-0-0-0"
-                      style="font-family: osmiler-title;"
+                      style="font-family: osmiler-title"
                     >
                       When noise turns to music.
                     </h1>
@@ -59,7 +61,10 @@
     </div>
     <div id="Community" class="uk-hidden@m uk-section-default">
       <div
-        style="background-image: url('/wp-content/themes/yootheme/cache/4646dcaf.jpeg');height: 100%;"
+        style="
+          background-image: url('/wp-content/themes/yootheme/cache/4646dcaf.jpeg');
+          height: 100%;
+        "
         class="uk-background-norepeat uk-background-cover uk-background-center-center uk-section uk-padding-remove-vertical"
       >
         <div class="uk-container uk-container-large">
@@ -75,7 +80,7 @@
                   <h1
                     class="uk-margin-remove-vertical uk-text-left@m uk-text-left"
                     id="page#7-0-0-0"
-                    style="font-family: osmiler-title;"
+                    style="font-family: osmiler-title"
                   >
                     When noise turns to music.
                   </h1>
@@ -118,14 +123,13 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
-#page\#6-0-0-0{
-    font-family: "osmiler-title";
+#page\#6-0-0-0 {
+  font-family: 'osmiler-title';
 }
 #page\#7-0-0-2 {
-    width: 60%;
+  width: 60%;
 }
-#page\#7-0-0-4{
+#page\#7-0-0-4 {
   height: 300px;
 }
-
 </style>

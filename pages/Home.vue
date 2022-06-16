@@ -7,33 +7,23 @@
     <Mp3 />
     <Automatic />
     <AutoPage />
-    <AutoPages />
     <Proudcut />
+    <Autouk />
+    <AutoPages />
+    <DetailedpParameters />
+
     <Certificate />
     <Autobox />
+    <Autotitle />
     <HomeLogolist />
     <SendEmali />
     <Contact />
-    <h1>
-      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Minima adipisci
-      qui ipsa tempore placeat, omnis ut blanditiis nihil numquam magnam vitae
-      eum porro, voluptates non necessitatibus assumenda quia, velit sequi.
-    </h1>
-    <h1>
-      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Minima adipisci
-      qui ipsa tempore placeat, omnis ut blanditiis nihil numquam magnam vitae
-      eum porro, voluptates non necessitatibus assumenda quia, velit sequi.
-    </h1>
-    <h1>
-      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Minima adipisci
-      qui ipsa tempore placeat, omnis ut blanditiis nihil numquam magnam vitae
-      eum porro, voluptates non necessitatibus assumenda quia, velit sequi.
-    </h1>
   </div>
 </template>
 
 <script type="module">
 import Certificate from '~/components/Home/Certificate'
+import Autouk from '~/components/Home/Autouk'
 import Contact from '~/components/Home/Contact'
 import GridList from '~/components/Home/GridList'
 import VideoPlayback from '~/components/Home/VideoPlayback'
@@ -47,6 +37,8 @@ import Proudcut from '~/components/Home/Proudcut'
 import Autobox from '~/components/Home/Autobox'
 import HomeLogolist from '~/components/Home/HomeLogolist'
 import SendEmali from '~/components/Home/SendEmali'
+import DetailedpParameters from '~/components/Home/Detailedparameters'
+import Autotitle from '~/components/Home/Autotitle'
 
 export default {
   name: 'DefaultLayout',
@@ -64,6 +56,9 @@ export default {
     Autobox,
     Certificate,
     HomeLogolist,
+    DetailedpParameters,
+    Autotitle,
+    Autouk,
     SendEmali,
     Lcoalfooter: () =>
       import(/* webpackPrefetch: true */ '~/components/Lcoalfooter.vue')

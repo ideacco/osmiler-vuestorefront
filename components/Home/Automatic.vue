@@ -22,7 +22,7 @@
                     3 Classic vibration modes
                   </h1>
                   <div class="uk-panel uk-margin uk-text-left@m uk-text-center">
-                    <p style="color: #3a3543">
+                    <p>
                       In addition to being driven by music, the sonic toothbrush
                       can also use classic vibrating effects. The electric
                       toothbrush has three built-in classic vibrating modes.
@@ -86,14 +86,14 @@
               <div class="uk-panel uk-width-1-1">
                 <h1
                   class="uk-margin-remove-vertical uk-width-xlarge uk-text-left@m uk-text-left"
-                  id="pageone"
+                  id="page#11-0-0-0"
                 >
                   3 Classic vibration modes
                 </h1>
                 <div
                   class="uk-panel uk-margin uk-width-xlarge uk-text-left@m uk-text-left"
                 >
-                  <p style="color: #3a3543">
+                  <p>
                     In addition to being driven by music, the sonic toothbrush
                     can also use classic vibrating effects. The electric
                     toothbrush has three built-in classic vibrating modes.
@@ -106,7 +106,7 @@
       </div>
       <div class="tm-grid-expand uk-child-width-1-1 uk-grid-margin" uk-grid>
         <div>
-          <div id="page11-1-0-0" class="uk-margin uk-text-right">
+          <div id="page#11-1-0-0" class="uk-margin uk-text-right">
             <img
               src="/wp-content/themes/yootheme/cache/Frame-1341-ya-2a53457d.jpeg"
               srcset="
@@ -146,5 +146,9 @@ export default {
 }
 .uk-section-primary {
   background: #475b99;
+}
+#page\#13-0-0-0 {
+  font-family: 'osmiler-title';
+  padding-top: 32px;
 }
 </style>
