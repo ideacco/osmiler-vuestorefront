@@ -57,7 +57,7 @@
                 <div class="uk-panel textwidget">
                   <p v-if="isUserAuthenticated">
                     <a
-                      href="./index.php?page_id=8"
+                      @click="$router.push(localePath({name:'my-account'}))"
                       class="uk-button uk-button-primary uk-width-1-1"
                     >Login</a
                     >
@@ -138,7 +138,7 @@
               </div>
               <div class="uk-navbar-right">
                 <ul class="uk-navbar-nav" style="align-items: center">
-                  <li v-if="!isLogin">
+                  <li v-if="!isUserAuthenticated">
                     <button
                       @click="toggleLoginModal()"
                       class="uk-button uk-button-small uk-button-default"

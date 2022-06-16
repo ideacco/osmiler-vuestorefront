@@ -86,6 +86,10 @@ const config = {
   loading: {
     color: '#fff',
   },
+  router: {
+    // 在每页渲染前运行 middleware/user-agent.js 中间件的逻辑
+    middleware: 'user-agent'
+  },
   plugins: [
     '@/plugins/scrollToTop.client.js',
     // '@/plugins/element-ui',
@@ -123,7 +127,7 @@ const config = {
         },
       },
     ],
-    // ['@vue-storefront/nuxt-theme'],
+    ['@vue-storefront/nuxt-theme'],
     [
       '@vue-storefront/shopify/nuxt',
       {
