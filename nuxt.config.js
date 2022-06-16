@@ -154,17 +154,17 @@ const config = {
   ],
   axios: {
     proxy: true,
-    prefix: '/api',
+    prefix: '/app',
   },
-  proxy: {
-    '/api': {
-      target: process.env.VUE_APP_API_BASE_URL,
-      changeOrigin: true,
-      pathRewrite: {
-        '^/api': '',
-      },
-    },
-  },
+  // proxy: {
+  //   '/app': {
+  //     target: process.env.VUE_APP_API_BASE_URL,
+  //     changeOrigin: true,
+  //     pathRewrite: {
+  //       '^/app': '',
+  //     },
+  //   },
+  // },
   device: {
     refreshOnResize: true,
   },

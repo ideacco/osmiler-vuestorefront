@@ -29,7 +29,7 @@
                     class="uk-panel uk-position-relative uk-margin uk-width-xlarge uk-margin-auto uk-text-center@m uk-text-center"
                     style="top: -100px"
                   >
-                    <p style="color: #3a3543">
+                    <p>
                       Upload music to toothbrush via Bluetooth or PC.Find your
                       own music or share your favorite music with our community!
                     </p>
