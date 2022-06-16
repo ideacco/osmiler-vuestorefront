@@ -7,7 +7,11 @@ class SubscribeController {
 
   /**
    * 用户订阅到 Mailchimp 列表
-   * @param {*} ctx 
+   * @param {
+   * "email_address": "ken@bob.com",
+   * "first_name":"",
+   * "last_name":""
+   * } 
    * @returns 
    */
 
@@ -15,7 +19,6 @@ class SubscribeController {
     // 想列表中添加一个用户订阅
 
     const params = ctx.request.body
-    console.log('????params', params)
 
     if (!params.email_address) {
       ctx.body = {
@@ -64,23 +67,16 @@ class SubscribeController {
       })
       .catch((error) => {
         console.log(error)
+        error.error = true
         return error
       })
 
 
-    if (response) {
-      console.log('Successfully added a subscriber.', response)
-    }
-
     // 异常处理
-    if (response.status !== 200) {
+    if (response.error) {
       ctx.body = {
         code: 0,
-        data: {
-          "status": response.status,
-          "email_address": response.email_address,
-          "detail": response.detail
-        },
+        data: error,
         mag: '数据错误,请查看细节'
       }
     }
@@ -150,23 +146,16 @@ class SubscribeController {
       })
       .catch((error) => {
         console.log(error)
+        error.error = true
         return error
       })
 
 
-    if (response) {
-      console.log('Successfully added a subscriber.', response)
-    }
-
     // 异常处理
-    if (response.status !== 200) {
+    if (response.error) {
       ctx.body = {
         code: 0,
-        data: {
-          "status": response.status,
-          "email_address": response.email_address,
-          "detail": response.detail
-        },
+        data: error,
         mag: '数据错误,请查看细节'
       }
     }
@@ -181,6 +170,13 @@ class SubscribeController {
     }
   }
 
+  /**
+   * 验证邮件是否已经注册
+   * @param {
+   * email_address: ''
+   * } ctx 
+   * @returns 
+   */
 
   async verifySubscribed (ctx) {
     // 想列表中添加一个用户订阅
@@ -236,32 +232,29 @@ class SubscribeController {
       })
       .catch((error) => {
         console.log('监听到返回错误', error)
+        error.error = true
         return error
       })
 
 
-    console.log('监听到返回错误', response)
-
     // 异常处理
-    if (response.status !== 200) {
+    if (response.error) {
       console.log('进入错误逻辑代码')
       ctx.body = {
         code: 0,
         data: response,
         mag: '数据错误,请查看细节'
       }
-    } else {
-      ctx.body = {
-        code: 1,
-        // data: {
-        //   "status": response.status,
-        //   "email_address": response.email_address
-        // }
-        data: response
+    }
+
+    ctx.body = {
+      code: 1,
+      data: {
+        "status": response.status,
+        "email_address": response.email_address
       }
     }
   }
-  
 }
 
 module.exports = new SubscribeController()
