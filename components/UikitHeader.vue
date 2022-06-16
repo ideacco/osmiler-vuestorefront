@@ -4,7 +4,7 @@
       <div class="uk-navbar-container uk-navbar-transparent">
         <nav uk-navbar="container: .tm-header-mobile">
           <div class="uk-navbar-center" style="z-index: 2">
-            <a href="home" class="uk-navbar-item uk-logo">
+            <a href="/home" class="uk-navbar-item uk-logo">
               <img
                 alt="OSMILER"
                 width="80"
@@ -28,7 +28,7 @@
                   <li
                     class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home current-menu-item page_item page-item-1 current_page_item uk-active"
                   >
-                    <a href="./index.html"> Home</a>
+                    <a href="/Home"> Home</a>
                   </li>
                   <li
                     class="menu-item menu-item-type-post_type menu-item-object-page"
@@ -123,6 +123,7 @@
                     alt="OSMILER"
                     width="90"
                     src="../static/icons/osmiler-logo-light.svg"
+                    style="z-index:1"
                   />
                 </nuxt-link>
                 <ul
@@ -330,4 +331,6 @@ export default {
 }
 </script>
 
-<style lang="scoped"></style>
+<style lang="scoped">
+
+</style>

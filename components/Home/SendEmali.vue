@@ -26,22 +26,19 @@
               </div>
             </div>
             <div class="uk-text-center">
-              <form
-                class="uk-form uk-panel js-form-newsletter"
-                method="post"
-                action="/wp-admin/admin-ajax.php?action=kernel&amp;p=theme%2Fnewsletter%2Fsubscribe"
-              >
+              <form class="uk-form uk-panel js-form-newsletter" method="post">
                 <div class="uk-child-width-expand@s" uk-grid>
                   <div>
                     <input
                       class="el-input uk-input"
                       type="email"
                       name="email"
+                      v-model="emailaddress"
                       placeholder="Email address"
                       required
                     />
                   </div>
-                  <div class="uk-width-auto@s">
+                  <div class="uk-width-auto@s" @click.prevent="sub()">
                     <button
                       class="el-button uk-button uk-button-primary"
                       type="submit"
@@ -86,27 +83,21 @@
   </div>
 </template>
 
-<script id="mcjs">
-/* eslint-disable */
-!(function (c, h, i, m, p) {
-  ;(m = c.createElement(h)),
-    (p = c.getElementsByTagName(h)[0]),
-    (m.async = 1),
-    (m.src = i),
-    p.parentNode.insertBefore(m, p)
-})(
-  document,
-  'script',
-  'https://chimpstatic.com/mcjs-connected/js/users/ed3feb32c599ccb1da24e80ba/e1df8289080f71ac00000f844.js'
-)
-/* eslint-enable */
-</script>
 <script>
 export default {
   name: 'SendEmali',
   data() {
-    return {}
+    return {
+      emailaddress: ''
+    }
   },
+  methods: {
+    sub() {
+      this.$axios.$post('/v1/mailchimp/subscribed', {
+        email_address: this.emailaddress
+      })
+    }
+  }
 }
 </script>
 <style lang="scss" scoped>

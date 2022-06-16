@@ -39,9 +39,11 @@ import HomeLogolist from '~/components/Home/HomeLogolist'
 import SendEmali from '~/components/Home/SendEmali'
 import DetailedpParameters from '~/components/Home/Detailedparameters'
 import Autotitle from '~/components/Home/Autotitle'
+import { ref, computed, onMounted, onUnmounted } from '@nuxtjs/composition-api'
+import { useUiState } from '~/composables'
 
 export default {
-  name: 'DefaultLayout',
+  name: 'HoMe',
   components: {
     Contact,
     VideoPlayback,
@@ -62,6 +64,33 @@ export default {
     SendEmali,
     Lcoalfooter: () =>
       import(/* webpackPrefetch: true */ '~/components/Lcoalfooter.vue')
+  },
+  setup() {
+    const {
+      isNavbarTransparent,
+      toggleNavbarTransparent,
+      setNavbarTransparent
+    } = useUiState()
+    onMounted(() => {
+      console.log('子页面初始化!,设置透明导航')
+      setNavbarTransparent(true)
+    })
+
+    const Home = () => {
+      toggleNavbarTransparent()
+      console.log('子页面test,isNavbarTransparent', isNavbarTransparent)
+    }
+    console.log(Home, 444)
+    onUnmounted(() => {
+      console.log('子页面卸载!,清除透明导航')
+      setNavbarTransparent(false)
+    })
+
+    return {
+      isNavbarTransparent,
+      toggleNavbarTransparent,
+      Home
+    }
   }
 }
 </script>
