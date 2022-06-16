@@ -10,6 +10,7 @@
     <h1>test1111</h1>
 
     <button @click="test">切换测</button>
+    <button @click="fetchSomething">测试请求</button>
 
     <p>
       Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati placeat
@@ -80,9 +81,7 @@ import { ref, computed, onMounted, onUnmounted } from '@nuxtjs/composition-api'
 import { useUiState } from '~/composables'
 
 export default {
-  data() {
-    return {}
-  },
+
   setup() {
     const {
       isNavbarTransparent,
@@ -111,11 +110,21 @@ export default {
     }
   },
 
+  data() {
+    return {
+      email: ''
+    }
+  },
+
   methods: {
-    // test() {
-    //   console.log('子页面test')
-    //   this.$emit('testPage', '这是子页面传参')
-    // }
+    async fetchSomething() {
+      const datas = {
+        email_address: 'kensss@gmail.com'
+      }
+      const res = await this.$axios.$post('/v1/mailchimp/subscribed',datas)
+      this.email = res
+      console.log('子页面fetchSomething,res', res)
+    }
   }
 }
 </script>

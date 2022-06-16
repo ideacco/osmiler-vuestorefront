@@ -159,8 +159,8 @@ class SubscribeController {
     if (response.error) {
       ctx.body = {
         code: 0,
-        data: error,
-        mag: '数据错误,请查看细节',
+        data: response,
+        mag: '数据错误,请查看细节'
       }
       return
     }

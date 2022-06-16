@@ -156,15 +156,15 @@ const config = {
     proxy: true,
     prefix: '/app',
   },
-  // proxy: {
-  //   '/app': {
-  //     target: process.env.VUE_APP_API_BASE_URL,
-  //     changeOrigin: true,
-  //     pathRewrite: {
-  //       '^/app': '',
-  //     },
-  //   },
-  // },
+  proxy: {
+    '/app': {
+      target: process.env.VUE_APP_API_BASE_URL,
+      changeOrigin: true,
+      pathRewrite: {
+        '^/app': '',
+      },
+    },
+  },
   device: {
     refreshOnResize: true,
   },
