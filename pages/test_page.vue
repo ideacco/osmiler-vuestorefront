@@ -12,9 +12,8 @@
     <button @click="test">切换测</button>
     <button @click="fetchSomething">测试请求</button>
     <div class="uk-light">
-      {{ product? product : 'no product' }}
+      {{ product ? product : 'no product' }}
     </div>
-    
 
     <p>
       Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati placeat
@@ -81,7 +80,13 @@
 </template>
 
 <script>
-import { ref, useRoute, computed, onMounted, onUnmounted } from '@nuxtjs/composition-api'
+import {
+  ref,
+  useRoute,
+  computed,
+  onMounted,
+  onUnmounted
+} from '@nuxtjs/composition-api'
 import { useUiState } from '~/composables'
 import { onSSR } from '@vue-storefront/core'
 import { useProduct, productGetters } from '@vue-storefront/shopify'
@@ -101,18 +106,16 @@ export default {
     const route = useRoute()
     const { products, search } = useProduct('products')
     const { slug } = route?.value?.params
-    
-    console.log('子页面初始化!,获取产品',slug)
+
+    console.log('子页面初始化!,获取产品', slug)
     const product = computed(() => productGetters.getFiltered(products.value))
 
     onSSR(async () => {
       await search({ slug })
     })
 
-    
-
     const test = () => {
-      console.log('子页面初始化!,点击测试',route)
+      console.log('子页面初始化!,点击测试', route)
       // toggleNavbarTransparent()
       // console.log('子页面test,isNavbarTransparent', isNavbarTransparent)
     }

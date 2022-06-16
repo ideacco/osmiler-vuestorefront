@@ -380,9 +380,7 @@ export default {
       { deep: true }
     )
     const productGallery = computed(() => {
-      console.log(product, 444)
-      if (product.value && product.value.images.length > 0) {
-        console.log(product.value, 6666)
+      if (product.value && product.value.images.length < 4) {
         product.value.images.push({
           originalSrc:
             'https://cdn.shopify.com/s/files/1/0407/1902/4288/files/placeholder_600x600.jpg?v=1625742127'
