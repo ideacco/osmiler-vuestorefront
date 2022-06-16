@@ -137,14 +137,9 @@
                 </ul>
               </div>
               <div class="uk-navbar-right">
-                <ul class="uk-navbar-nav" style="align-items: center">
-                  <li v-if="!isUserAuthenticated">
-                    <button
-                      @click="toggleLoginModal()"
-                      class="uk-button uk-button-small uk-button-default"
-                    >
-                      Login
-                    </button>
+                <ul class="uk-navbar-nav" style="align-items: center;">
+                  <li v-if="!isLogin">
+                    <button @click="toggleLoginModal()" class="uk-button uk-button-small uk-button-default">Login</button>
                   </li>
 
                   <li v-else>
@@ -162,10 +157,10 @@
                       uk-icon="cart"
                     >
                       <span
-                        v-if="cartTotalPrice2 !== 0"
+                        v-if="cartTotalItems !== 0"
                         class="uk-position-center-right uk-badge"
                       >
-                        {{ cartTotalPrice2 }}
+                        {{cartTotalItems}}
                       </span>
                     </a>
                   </li>
@@ -197,13 +192,9 @@ export default {
       type: Number,
       default: 0
     },
-    cartTotalPrice2: {
-      type: Number,
-      default: 3
-    },
     isUserAuthenticated: Boolean
   },
-  setup() {
+  setup(props) {
     const { categories, search, loading } = useCategory('menu-categories')
     onSSR(async () => {
       await search({})
@@ -254,19 +245,18 @@ export default {
     //   isActive.value = await data().then()
     // }))
 
+    const isLogin = computed(() => props.isUserAuthenticated ? true : false)
+
     // 输出动态样式绑定
     const classObject = computed(() => {
-      console.log('计算属性', isNavbarTransparent.value)
 
       // 在导航栏处于活动状态时,动态绑定样式
-      if (isActive.value) {
-        console.log('导航栏活动状态')
+      if ( isActive.value ) {
         return {
           'uk-background-default': true,
           'uk-animation-slide-top': true
         }
       }
-
       // 在非活动状态时,动态绑定样式
       return {
         'uk-background-default': !isNavbarTransparent.value, // 在非透明状态时，添加样式
@@ -281,7 +271,8 @@ export default {
       toggleLoginModal,
       isNavbarTransparent,
       toggleNavbarTransparent,
-      classObject
+      classObject,
+      isLogin
     }
   },
   data() {
@@ -320,6 +311,9 @@ export default {
   // },
 
   watch: {
+    isUserAuthenticated(val) {
+      console.log('isUserAuthenticated',val)
+    }
     // isNavbarTransparent(Transparent) {
     //   console.log('切换导航监听',Transparent)
     //   this.$UIkit.update('.uk-navbar-container','update')

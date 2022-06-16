@@ -80,7 +80,7 @@ axios.interceptors.response.use(
         // 其他错误，直接抛出错误提示
         default:
           console.log('接口返回未知错误')
-          break
+          return Promise.reject(error.response.data)
       }
       return Promise.reject(error.response.data)
     }
