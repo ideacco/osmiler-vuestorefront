@@ -232,13 +232,12 @@ export default {
     }
   },
   mounted() {
-    this.update()
     this.audio = new Audio()
     // this.uikitdom = this.$uikit.sticky('#sticky')
-    this.$uikit.util.on('#sticky', 'active', () => {
-      // do something
-      console.log('active')
-    })
+    // this.$uikit.util.on('#sticky', 'active', () => {
+    //   // do something
+    //   console.log('active')
+    // })
   },
   methods: {
     // uitest(){
