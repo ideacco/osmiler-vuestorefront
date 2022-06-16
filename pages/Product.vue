@@ -23,8 +23,8 @@
         :images="productGallery"
         :current="ActiveVariantImage + 1"
         class="product__gallery"
-        image-width="422"
-        image-height="664"
+        image-width="400"
+        image-height="500"
         thumb-width="160"
         thumb-height="160"
       />
@@ -51,7 +51,7 @@
         </div>
         <div class="product__details">
           <div class="product__description">
-            {{ description }}
+            {{ productDescription }}
           </div>
 
           <div
@@ -79,7 +79,7 @@
                 </SfSelectOption>
               </SfSelect> -->
               <div
-                v-if="true"
+                v-if="key.toLowerCase() === 'color'"
                 :key="`attrib-${key.toLowerCase()}`"
                 class="product__colors"
               >
@@ -150,17 +150,11 @@
               </SfButton>
             </template>
           </SfAddToCart>
-          <SfButton class="sf-button--text desktop-only product__save">
-            Save for later
-          </SfButton>
-          <SfButton class="sf-button--text desktop-only product__compare">
-            Add to compare
-          </SfButton>
         </div>
         <LazyHydrate when-idle>
           <SfTabs :open-tab="1" class="product__tabs">
             <SfTab data-cy="product-tab_description" title="Description">
-              <!-- <div v-if="productDescriptionHtml" class="product__description">
+              <div v-if="productDescriptionHtml" class="product__description">
                 <div v-html="productDescriptionHtml"></div>
               </div>
               <SfProperty
@@ -175,9 +169,9 @@
                     {{ property.value }}
                   </SfButton>
                 </template>
-              </SfProperty> -->
+              </SfProperty>
             </SfTab>
-            <!-- <SfTab
+            <SfTab
               :title="$t('Additional Information')"
               data-cy="product-tab_additional"
               class="product__additional-info"
@@ -198,12 +192,12 @@
                 </p>
                 <p>{{ careInstructions }}</p>
               </div>
-            </SfTab> -->
+            </SfTab>
           </SfTabs>
         </LazyHydrate>
       </div>
     </div>
-    <GridList />
+    <!-- <GridList /> -->
     <BannerGrids />
     <Community />
     <Mp3 />
@@ -250,7 +244,7 @@ import {
 
 import Certificate from '~/components/Home/Certificate'
 import Contact from '~/components/Home/Contact'
-import GridList from '~/components/Home/GridList'
+// import GridList from '~/components/Home/GridList'
 import BannerGrids from '~/components/Home/BannerGrids'
 import Community from '~/components/Home/Community'
 import Mp3 from '~/components/Home/Mp3'
@@ -386,7 +380,9 @@ export default {
       { deep: true }
     )
     const productGallery = computed(() => {
-      if (product.value && product.value.images.length < 4) {
+      console.log(product, 444)
+      if (product.value && product.value.images.length > 0) {
+        console.log(product.value, 6666)
         product.value.images.push({
           originalSrc:
             'https://cdn.shopify.com/s/files/1/0407/1902/4288/files/placeholder_600x600.jpg?v=1625742127'
@@ -518,7 +514,6 @@ export default {
   methods: {
     // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
     async addingToCart(Productdata) {
-      console.log(Productdata, this.addItem, 444)
       await this.addItem(Productdata).then((res) => {
         console.log(res, 5555)
         this.sendNotification({

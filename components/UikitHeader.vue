@@ -142,6 +142,7 @@
                     <button
                       @click="toggleLoginModal()"
                       class="uk-button uk-button-small uk-button-default"
+                      style="z-index: 999"
                     >
                       Login
                     </button>

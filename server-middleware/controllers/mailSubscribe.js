@@ -160,7 +160,7 @@ class SubscribeController {
       ctx.body = {
         code: 0,
         data: response,
-        mag: '数据错误,请查看细节'
+        mag: '数据错误,请查看细节',
       }
       return
     }

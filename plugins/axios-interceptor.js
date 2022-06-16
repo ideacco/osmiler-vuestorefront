@@ -2,7 +2,6 @@
 // https://axios.nuxtjs.org/usage
 
 export default ({ store, route, redirect, $axios, req }) => {
-
   // 设置前端请求的baseURL,这里使用的nuxt的代理模式,在nuxt.config.js中配置
   // if (process.client) {
   //   $axios.setBaseURL(process.env.VUE_APP_API_BASE_URL)
