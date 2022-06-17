@@ -88,7 +88,7 @@ const config = {
   },
   router: {
     // 在每页渲染前运行 middleware/user-agent.js 中间件的逻辑
-    middleware: 'user-agent'
+    middleware: 'user-agent',
   },
   plugins: [
     '@/plugins/scrollToTop.client.js',

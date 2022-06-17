@@ -57,7 +57,7 @@
                 <div class="uk-panel textwidget">
                   <p v-if="isUserAuthenticated">
                     <a
-                      @click="$router.push(localePath({name:'my-account'}))"
+                      @click="$router.push(localePath({ name: 'my-account' }))"
                       class="uk-button uk-button-primary uk-width-1-1"
                     >Login</a
                     >
@@ -300,7 +300,7 @@ export default {
         },
         {
           name: 'Product',
-          path: '/Product'
+          path: '/ProductList'
         },
         {
           name: 'test',
