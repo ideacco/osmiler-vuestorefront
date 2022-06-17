@@ -85,16 +85,14 @@
               >
                 <label class="product__color-label">{{ $t(key) }}</label>
                 <div class="product__flex-break"></div>
-                <SfColor
+                <SfButton
                   v-for="(attribs, a) in option"
                   :key="`item-${a}`"
                   label="Color"
                   data-cy="product-color_update"
-                  :color="attribs"
-                  :class="`product__color ${attribs}`"
                   :selected="
-                    configuration[key]
-                      ? configuration[key] === attribs
+                    configuration.value
+                      ? configuration.value === attribs
                         ? true
                         : false
                       : a === 0
@@ -104,7 +102,8 @@
                   @click="
                     ;(atttLbl = key), updateFilter({ [atttLbl]: attribs })
                   "
-                />
+                >{{ attribs }}</SfButton
+                >
               </div>
             </template>
           </div>
@@ -147,6 +146,13 @@
                 "
               >
                 {{ $t('Add to Cart') }}
+              </SfButton>
+              <SfButton
+                class="sf-button--full-width sf-proceed_to_checkout SfButtontwo"
+                @click="toggleCartSidebar"
+                style="margin-left:40px"
+              >
+                {{ $t('Buy it now') }}
               </SfButton>
             </template>
           </SfAddToCart>
@@ -262,13 +268,15 @@ import {
   computed,
   watch,
   useRoute,
-  useRouter
+  useRouter,
+  onMounted
 } from '@nuxtjs/composition-api'
 import { useProduct, useCart, productGetters } from '@vue-storefront/shopify'
 import MobileStoreBanner from '~/components/MobileStoreBanner.vue'
 import LazyHydrate from 'vue-lazy-hydration'
 import { onSSR } from '@vue-storefront/core'
 import useUiNotification from '~/composables/useUiNotification'
+import { useUiState } from '~/composables'
 
 export default {
   name: 'ProDuct',
@@ -311,6 +319,7 @@ export default {
   },
   transition: 'fade',
   setup() {
+    const { isCartSidebarOpen, toggleCartSidebar } = useUiState()
     const route = useRoute()
     const router = useRouter()
     const breadcrumbs = ref([])
@@ -349,6 +358,12 @@ export default {
       productGetters.getDescription(product.value, true)
     )
     const options = computed(() => productGetters.getAttributes(products.value))
+    onMounted(() => {
+      console.log(options.value, 555)
+      const isplay = Object.keys(options.value)
+      console.log(isplay, 666)
+    })
+
     const configuration = computed(() => {
       return productGetters.getSelectedVariant(route?.value?.query)
     })
@@ -416,6 +431,7 @@ export default {
       })
     })
     const updateFilter = (filter) => {
+      console.log(options.value, 55588)
       if (options.value) {
         Object.keys(options.value).forEach((attr) => {
           if (attr in filter) {
@@ -438,6 +454,8 @@ export default {
 
     return {
       updateFilter,
+      isCartSidebarOpen,
+      toggleCartSidebar,
       configuration,
       product,
       productDescription,
@@ -550,7 +568,7 @@ export default {
   min-height: 200px;
   padding: 100px 0;
 }
-.sf-price__old{
+.sf-price__old {
   font-size: 20px;
 }
 
@@ -720,11 +738,17 @@ export default {
   font-size: 48px;
   background: #fff;
 }
-.product__color-label{
+.product__color-label {
   font-size: 16px;
 }
-.product__variants{
+.product__variants {
   margin-top: 100px;
+  .sf-button {
+    margin-right: 30px;
+    border: 1px solid black;
+    background: #fff;
+    color: #3a3543;
+  }
 }
 .banner-app {
   --banner-container-width: 100%;
