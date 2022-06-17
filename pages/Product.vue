@@ -150,7 +150,7 @@
               <SfButton
                 class="sf-button--full-width sf-proceed_to_checkout SfButtontwo"
                 @click="toggleCartSidebar"
-                style="margin-left: 40px"
+                style="position: relative; top: 80px; left: -320px"
               >
                 {{ $t('Buy it now') }}
               </SfButton>
@@ -397,12 +397,15 @@ export default {
         })
       }
 
-      const img = productGetters.getGallery(product.value).map((img) => ({
-        mobile: { url: img.small },
-        desktop: { url: img.normal },
-        big: { url: img.big },
-        alt: product.value._name || product.value.name
-      })).slice(0,4)
+      const img = productGetters
+        .getGallery(product.value)
+        .map((img) => ({
+          mobile: { url: img.small },
+          desktop: { url: img.normal },
+          big: { url: img.big },
+          alt: product.value._name || product.value.name
+        }))
+        .slice(0, 4)
       return img
     })
     const stock = computed(() => {
@@ -429,12 +432,12 @@ export default {
     })
     const updateFilter = (filter) => {
       if (options.value) {
-        Object.values(options.value).map((attr) => {
+        Object.keys(options.value).forEach((attr) => {
           if (attr in filter) {
             return
           }
           filter[attr] =
-            Object.values(configuration.value).length > 0
+            Object.keys(configuration.value).length > 0
               ? configuration.value[attr]
               : options.value[attr][0]
         })
@@ -560,7 +563,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.product__description{
+.product__description {
   position: relative;
   top: 50px;
 }

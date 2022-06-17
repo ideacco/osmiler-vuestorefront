@@ -4,11 +4,10 @@
       id="subscribe"
       class="uk-section-muted uk-section uk-section-large uk-padding-remove-top"
     >
-      <div class="uk-margin uk-container uk-container-large uk-container-expand-right">
-        <div
-          class="tm-grid-expand"
-          uk-grid
-        >
+      <div
+        class="uk-margin uk-container uk-container-large uk-container-expand-right"
+      >
+        <div class="tm-grid-expand" uk-grid>
           <div class="uk-width-1-2@m">
             <div id="page#25-0-0-0"></div>
             <div
@@ -27,14 +26,8 @@
               </div>
             </div>
             <div class="uk-text-center">
-              <form
-                class="uk-form uk-panel js-form-newsletter"
-                method="post"
-              >
-                <div
-                  class="uk-child-width-expand@s"
-                  uk-grid
-                >
+              <form class="uk-form uk-panel js-form-newsletter" method="post">
+                <div class="uk-child-width-expand@s" uk-grid>
                   <div>
                     <input
                       class="el-input uk-input"
@@ -45,10 +38,7 @@
                       required
                     />
                   </div>
-                  <div
-                    class="uk-width-auto@s"
-                    @click.prevent="sub()"
-                  >
+                  <div class="uk-width-auto@s" @click.prevent="sub()">
                     <button
                       class="el-button uk-button uk-button-primary"
                       type="submit"
@@ -97,7 +87,7 @@
 import { useUiState, useUiNotification } from '~/composables'
 export default {
   name: 'SendEmali',
-  setup(){
+  setup() {
     const { send: sendNotification } = useUiNotification()
     return {
       sendNotification

@@ -81,7 +81,7 @@ const config = {
     {
       src: '@/plugins/UIkit',
       ssr: false,
-    }
+    },
   ],
   buildModules: [
     // https://go.nuxtjs.dev/eslint
