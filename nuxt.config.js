@@ -66,17 +66,6 @@ const config = {
         media: 'print',
         onload: "this.media='all'",
       },
-      // {
-      //   rel: 'preload',
-      //   href: 'https://fonts.googleapis.com/css?family=Raleway:300,400,400i,500,600,700|Roboto:300,300i,400,400i,500,700&display=swap',
-      //   as: 'style',
-      // },
-      // {
-      //   rel: 'stylesheet',
-      //   href: 'https://fonts.googleapis.com/css?family=Raleway:300,400,400i,500,600,700|Roboto:300,300i,400,400i,500,700&display=swap',
-      //   media: 'print',
-      //   onload: "this.media='all'",
-      // },
     ],
   },
   loading: {
@@ -92,9 +81,7 @@ const config = {
     {
       src: '@/plugins/UIkit',
       ssr: false,
-    },
-    // '@/plugins/axios-interceptor',
-    // '~/api/test',
+    }
   ],
   buildModules: [
     // https://go.nuxtjs.dev/eslint
@@ -134,9 +121,6 @@ const config = {
     ],
   ],
   css: [
-    // 'element-ui/lib/theme-chalk/index.css',
-    // 'element-ui/lib/theme-chalk/display.css',
-    // 'normalize.css/normalize.css',
     {
       src: '@/style/index.scss',
       lang: 'scss',
