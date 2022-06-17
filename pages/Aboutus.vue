@@ -106,93 +106,21 @@
         </div>
       </div>
     </div>
-    <div class="uk-section-default uk-dark">
-      <div
-        style="
-          background-image: url('/wp-content/themes/yootheme/cache/01-2-ya-0c515866.jpeg');
-        "
-        class="uk-background-norepeat uk-background-cover uk-background-center-center uk-section uk-section-large"
-      >
-        <div class="uk-container uk-container-expand">
-          <div
-            class="uk-visible@m tm-grid-expand uk-child-width-1-1 uk-grid-margin"
-            uk-grid
-          >
-            <div class="uk-grid-item-match uk-visible@m">
-              <div class="uk-panel uk-width-1-1">
-                <div
-                  id="page#2-0-0-0"
-                  class="uk-visible@m uk-position-absolute uk-width-1-1 uk-text-right"
-                  style="right: 120px; bottom: 40px"
-                >
-                  <img
-                    loading="lazy"
-                    src="/wp-content/uploads/yootheme/cta-shape-01.svg"
-                    width="170"
-                    height="170"
-                    class="el-image"
-                    alt
-                    target="!*"
-                  />
-                </div>
-                <div
-                  id="page#2-0-0-1"
-                  class="uk-visible@m uk-position-absolute uk-width-1-1 uk-text-right"
-                >
-                  <img
-                    loading="lazy"
-                    src="/wp-content/uploads/yootheme/cta-shape-02.svg"
-                    width="120"
-                    height="120"
-                    class="el-image"
-                    alt
-                    target="!*"
-                  />
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="uk-grid-margin uk-container uk-container-large">
-            <div class="tm-grid-expand uk-child-width-1-1" uk-grid>
-              <div>
-                <h2
-                  class="uk-h1 uk-position-relative uk-text-left@s uk-text-center"
-                  id="page#2-1-0-0"
-                  style="z-index: 1"
-                >
-                  “The first dental office <br class="uk-visible@s" />I actually
-                  like going to.”
-                </h2>
-                <div
-                  class="uk-panel uk-text-lead uk-position-relative uk-margin uk-width-xlarge uk-text-left@s uk-text-center"
-                  id="page#2-1-0-1"
-                  style="z-index: 1"
-                >
-                  Get in touch to make an appointment today.
-                </div>
-                <div
-                  class="uk-position-relative uk-margin-medium uk-text-left@s uk-text-center"
-                  style="z-index: 1"
-                >
-                  <a
-                    class="el-content uk-button uk-button-primary uk-button-large uk-flex-inline uk-flex-center uk-flex-middle"
-                    href="#"
-                    uk-scroll
-                  >
-                    Contact us
-                    <span class="uk-margin-small-left" uk-icon="mail"></span>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+    <Contact />
   </div>
 </template>
 <script type="module">
+import Contact from '~/components/Home/Contact'
 export default {
-  name: 'AboutS'
+  name: 'AboutS',
+  components: {
+    Contact
+  }
 }
 </script>
+<style lang="scss" scoped>
+#page2 {
+  font-family: 'osmiler-title';
+  color: #3a3543;
+}
+</style>

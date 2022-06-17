@@ -108,7 +108,7 @@
                 class="coupon-code-input"
               />
               <SfButton
-                class="sf-button--full-width color-secondary sf-apply-coupon"
+                class="sf-button--full-width color-secondary sf-apply-coupon sf-size-small"
                 @click="handleApplyCoupon(couponcode)"
               >
                 {{ $t('Apply') }}
@@ -169,7 +169,7 @@
               @click="handleCheckout(checkoutURL, parseFloat(totals.subtotal))"
             >
               <SfButton
-                class="sf-button--full-width color-secondary sf-proceed_to_checkout"
+                class="sf-button--full-width sf-proceed_to_checkout SfButtontwo"
                 @click="toggleCartSidebar"
               >
                 {{ $t('Go to checkout') }}
@@ -463,7 +463,33 @@ export default {
   flex: 0 0 60%;
   max-width: 60%;
 }
+.sf-collected-product__quantity-selector {
+  height: 30px;
+  background-color: rgba(244, 240, 255, 0.8);
+  border-radius: 10px;
+}
+.sf-collected-product__quantity-wrapper {
+  padding: 16px 16px 0 16px;
+}
+// .sf-button.color-secondary{
+//   background: #fff;
+//   border: 1px solid #00000;
+// }
+
 .sf-apply-coupon {
   flex-grow: 1;
+  background: #ffff;
+  border: 1px solid #3a3543;
+  color: #3a3543;
+}
+.SfButtontwo {
+  background: #5d47ee;
+}
+.sf-size-small {
+  --button-size: 30px;
+  margin-top: 16px;
+}
+.sf-link {
+  text-decoration: none;
 }
 </style>

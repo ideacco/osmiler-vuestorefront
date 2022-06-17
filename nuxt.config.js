@@ -49,11 +49,7 @@ const config = {
       },
     ],
     link: [
-      {
-        rel: 'icon',
-        type: 'image/x-icon',
-        href: '/favicon.ico',
-      },
+      { rel: 'icon', href: '/icon.png' },
       {
         rel: 'preconnect',
         href: 'https://fonts.gstatic.com',
@@ -347,7 +343,8 @@ const config = {
       ogHost: 'shopify-pwa.aureatelabs.com',
     },
     icon: {
-      iconSrc: 'src/static/android-icon-512x512.png',
+      source: '/icon.png',
+      fileName: 'icon.png',
     },
     build: {
       transpile: [/^@storefront-ui/, /^UIkit/],

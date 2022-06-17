@@ -95,7 +95,7 @@ export default {
     sub() {
       if (this.emailaddress === '') {
         this.$UIkit.notification(
-          "<span uk-icon='icon: question'></span> <span class=“fontsize1”>输入账户为空,请重新输入</span>"
+          "<span uk-icon='icon: question'></span> <span class=“fontsize1”>The input account is empty, please re-enter</span>"
         )
         return
       }
@@ -106,11 +106,11 @@ export default {
         .then((res) => {
           if (res.code === 1) {
             this.$UIkit.notification(
-              "<span uk-icon='icon: check'></span> <span class='uk-text-primary'>你已成功订阅</span>"
+              "<span uk-icon='icon: check'></span> <span class='uk-text-primary'>Your account has been successfully subscribed</span>"
             )
           } else if (res.code === 0) {
             this.$UIkit.notification(
-              "<span uk-icon='icon: close'></span> <span  class='uk-text-primary'>订阅失败</span>"
+              "<span uk-icon='icon: close'></span> <span  class='uk-text-primary'>Your account is already subscribed</span>"
             )
           }
         })

@@ -135,7 +135,7 @@ export default {
   }
 }
 </script>
-<style lang="scss">
+<style lang="scss" scoped>
 #page\#10-0-0-0 {
   font-family: 'osmiler-title';
   color: #4132c7;
