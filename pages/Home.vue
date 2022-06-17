@@ -80,7 +80,7 @@ export default {
       toggleNavbarTransparent()
       console.log('子页面test,isNavbarTransparent', isNavbarTransparent)
     }
-    console.log(Home, 444)
+    // console.log(Home, 444)
     onUnmounted(() => {
       console.log('子页面卸载!,清除透明导航')
       setNavbarTransparent(false)

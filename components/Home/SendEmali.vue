@@ -4,10 +4,11 @@
       id="subscribe"
       class="uk-section-muted uk-section uk-section-large uk-padding-remove-top"
     >
-      <div
-        class="uk-margin uk-container uk-container-large uk-container-expand-right"
-      >
-        <div class="tm-grid-expand" uk-grid>
+      <div class="uk-margin uk-container uk-container-large uk-container-expand-right">
+        <div
+          class="tm-grid-expand"
+          uk-grid
+        >
           <div class="uk-width-1-2@m">
             <div id="page#25-0-0-0"></div>
             <div
@@ -26,8 +27,14 @@
               </div>
             </div>
             <div class="uk-text-center">
-              <form class="uk-form uk-panel js-form-newsletter" method="post">
-                <div class="uk-child-width-expand@s" uk-grid>
+              <form
+                class="uk-form uk-panel js-form-newsletter"
+                method="post"
+              >
+                <div
+                  class="uk-child-width-expand@s"
+                  uk-grid
+                >
                   <div>
                     <input
                       class="el-input uk-input"
@@ -38,7 +45,10 @@
                       required
                     />
                   </div>
-                  <div class="uk-width-auto@s" @click.prevent="sub()">
+                  <div
+                    class="uk-width-auto@s"
+                    @click.prevent="sub()"
+                  >
                     <button
                       class="el-button uk-button uk-button-primary"
                       type="submit"
@@ -84,8 +94,15 @@
 </template>
 
 <script>
+import { useUiState, useUiNotification } from '~/composables'
 export default {
   name: 'SendEmali',
+  setup(){
+    const { send: sendNotification } = useUiNotification()
+    return {
+      sendNotification
+    }
+  },
   data() {
     return {
       emailaddress: ''
@@ -105,9 +122,16 @@ export default {
         })
         .then((res) => {
           if (res.code === 1) {
-            this.$UIkit.notification(
-              "<span uk-icon='icon: check'></span> <span class='uk-text-primary'>你已成功订阅</span>"
-            )
+            // this.$UIkit.notification(
+            //   "<span uk-icon='icon: check'></span> <span class='uk-text-primary'>你已成功订阅</span>"
+            // )
+            this.sendNotification({
+              key: 'login_success',
+              message: 'You have successfully subscribed',
+              type: 'success',
+              title: 'Success!',
+              icon: 'check'
+            })
           } else if (res.code === 0) {
             this.$UIkit.notification(
               "<span uk-icon='icon: close'></span> <span  class='uk-text-primary'>订阅失败</span>"

@@ -89,7 +89,11 @@ import {
 } from '@nuxtjs/composition-api'
 import { useUiState } from '~/composables'
 import { onSSR } from '@vue-storefront/core'
-import { useProduct, productGetters } from '@vue-storefront/shopify'
+import { 
+  useProduct, 
+  productGetters,
+  useCategory
+} from '@vue-storefront/shopify'
 
 export default {
   setup() {
@@ -98,20 +102,31 @@ export default {
       toggleNavbarTransparent,
       setNavbarTransparent
     } = useUiState()
+
+
+    const { categories } = useCategory('menuCategories')
+
+    const menus = computed(() => [
+      ...categories.value
+    ])
+
+
     onMounted(() => {
       console.log('子页面初始化!,设置透明导航')
       setNavbarTransparent(true)
+      console.log('获取系统的列表',menus)
     })
 
+    
     const route = useRoute()
     const { products, search } = useProduct('products')
     const { slug } = route?.value?.params
 
-    console.log('子页面初始化!,获取产品', slug)
+    // console.log('子页面初始化!,获取产品', slug)
     const product = computed(() => productGetters.getFiltered(products.value))
 
     onSSR(async () => {
-      await search({ slug })
+      await search({})
     })
 
     const test = () => {
@@ -123,6 +138,7 @@ export default {
     onUnmounted(() => {
       console.log('子页面卸载!,清除透明导航')
       setNavbarTransparent(false)
+      
     })
 
     return {

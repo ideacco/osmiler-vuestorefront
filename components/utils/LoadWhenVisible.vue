@@ -66,7 +66,7 @@ export default defineComponent({
 
     // 生命周期钩子开始监听
     onMounted(() => {
-      console.log(root.value)
+      // console.log(root.value)
       if (observer) {
         observer.observe(root.value)
       }
