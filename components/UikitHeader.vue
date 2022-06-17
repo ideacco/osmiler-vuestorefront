@@ -33,12 +33,12 @@
                   <li
                     class="menu-item menu-item-type-post_type menu-item-object-page"
                   >
-                    <a href="./about-us/index.html"> About Us</a>
+                    <a href="/Aboutus"> About Us</a>
                   </li>
                   <li
                     class="menu-item menu-item-type-post_type menu-item-object-page"
                   >
-                    <a href="./contact/index.html"> Contact</a>
+                    <a href="/ContactUs"> Contact</a>
                   </li>
                 </ul>
               </div>
@@ -191,6 +191,7 @@ import {
 } from '@nuxtjs/composition-api'
 import { onSSR } from '@vue-storefront/core'
 import { useCategory, useContent } from '@vue-storefront/shopify'
+
 export default {
   name: 'UikitHeader',
   props: {
@@ -288,24 +289,32 @@ export default {
       shopRootCategories: [
         {
           name: 'Home',
-          path: '/home'
+          path: '/Home'
         },
-        {
-          name: 'Music',
-          path: '/music'
-        },
-        {
-          name: 'About',
-          path: '/about'
-        },
+        // {
+        //   name: 'Music',
+        //   path: '/music'
+        // },
         {
           name: 'Product',
           path: '/ProductList'
         },
         {
-          name: 'test',
-          path: '/test_page'
+          name: 'Services',
+          path: '/ElectricToothbrush'
+        },
+        {
+          name: 'About Us',
+          path: '/Aboutus'
+        },
+        {
+          name: 'Contact Us',
+          path: '/ContactUs'
         }
+        // {
+        //   name: 'test',
+        //   path: '/test_page'
+        // }
       ]
     }
   },
