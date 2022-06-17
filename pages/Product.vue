@@ -150,7 +150,7 @@
               <SfButton
                 class="sf-button--full-width sf-proceed_to_checkout SfButtontwo"
                 @click="toggleCartSidebar"
-                style="margin-left:40px"
+                style="margin-left: 40px"
               >
                 {{ $t('Buy it now') }}
               </SfButton>
@@ -395,18 +395,20 @@ export default {
       { deep: true }
     )
     const productGallery = computed(() => {
-      if (product.value && product.value.images.length < 4) {
+      if (product.value && product.value.images.length > 4) {
         product.value.images.push({
           originalSrc:
             'https://cdn.shopify.com/s/files/1/0407/1902/4288/files/placeholder_600x600.jpg?v=1625742127'
         })
       }
-      return productGetters.getGallery(product.value).map((img) => ({
+
+      const img = productGetters.getGallery(product.value).map((img) => ({
         mobile: { url: img.small },
         desktop: { url: img.normal },
         big: { url: img.big },
         alt: product.value._name || product.value.name
-      }))
+      })).slice(0,4)
+      return img
     })
     const stock = computed(() => {
       return productGetters.getStock(product.value)

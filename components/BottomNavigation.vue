@@ -12,12 +12,12 @@
           style="width: 88px"
         />
       </nuxt-link>
-      <SfBottomNavigationItem
+      <!-- <SfBottomNavigationItem
         data-cy="bottom-navigation-url_menu"
         icon="menu"
         size="20px"
         label="Menu"
-      />
+      /> -->
       <SfBottomNavigationItem
         data-cy="bottom-navigation-url_account"
         icon="profile"

@@ -475,10 +475,10 @@ export default {
 //   background: #fff;
 //   border: 1px solid #00000;
 // }
-.sf-add-to-cart{
- .sf_button{
-     margin-top: 100px;
- }
+.sf-add-to-cart {
+  .sf_button {
+    margin-top: 100px;
+  }
 }
 .sf-apply-coupon {
   flex-grow: 1;
