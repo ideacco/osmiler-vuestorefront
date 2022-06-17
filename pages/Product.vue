@@ -85,25 +85,24 @@
               >
                 <label class="product__color-label">{{ $t(key) }}</label>
                 <div class="product__flex-break"></div>
-                <SfButton
+                <SfColor
                   v-for="(attribs, a) in option"
                   :key="`item-${a}`"
                   label="Color"
                   data-cy="product-color_update"
+                  :color="attribs"
+                  :class="`product__color ${attribs}`"
                   :selected="
-                    configuration.value
-                      ? configuration.value === attribs
+                    configuration[key]
+                      ? configuration[key] === attribs
                         ? true
                         : false
                       : a === 0
-                        ? true
-                        : false
+                      ? true
+                      : false
                   "
-                  @click="
-                    ;(atttLbl = key), updateFilter({ [atttLbl]: attribs })
-                  "
-                >{{ attribs }}</SfButton
-                >
+                  @click="(atttLbl = key), updateFilter({ [atttLbl]: attribs })"
+                />
               </div>
             </template>
           </div>
@@ -747,7 +746,6 @@ export default {
 .product__variants {
   margin-top: 100px;
   .sf-button {
-    margin-right: 30px;
     border: 1px solid black;
     background: #fff;
     color: #3a3543;
