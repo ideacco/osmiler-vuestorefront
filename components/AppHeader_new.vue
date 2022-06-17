@@ -105,17 +105,10 @@ import {
   SfBadge,
   SfIcon
 } from '@storefront-ui/vue'
-import debounce from 'lodash/debounce'
 import { onSSR } from '@vue-storefront/core'
 import { computed, ref, watch, useRoute } from '@nuxtjs/composition-api'
 import { useUiHelpers, useUiState } from '~/composables'
 import LocaleSelector from './LocaleSelector.vue'
-
-import {
-  // searchGetters,
-  useCategory,
-  useContent
-} from '@vue-storefront/shopify'
 
 export default {
   components: {

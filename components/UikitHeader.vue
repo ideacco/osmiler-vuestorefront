@@ -18,7 +18,12 @@
           </div>
         </nav>
       </div>
-      <div id="tm-mobile" class="uk-modal-full" uk-modal>
+      <div
+        id="tm-mobile"
+        class="uk-modal-full"
+        uk-modal
+        style="position: fixed"
+      >
         <div class="uk-modal-dialog uk-modal-body uk-height-viewport">
           <button class="uk-modal-close-full" type="button" uk-close></button>
           <div class="uk-child-width-1-1" uk-grid>
@@ -33,12 +38,22 @@
                   <li
                     class="menu-item menu-item-type-post_type menu-item-object-page"
                   >
+                    <a href="/Product"> Product</a>
+                  </li>
+                  <li
+                    class="menu-item menu-item-type-post_type menu-item-object-page"
+                  >
+                    <a href="/ElectricToothbrush"> Services</a>
+                  </li>
+                  <li
+                    class="menu-item menu-item-type-post_type menu-item-object-page"
+                  >
                     <a href="/Aboutus"> About Us</a>
                   </li>
                   <li
                     class="menu-item menu-item-type-post_type menu-item-object-page"
                   >
-                    <a href="/ContactUs"> Contact</a>
+                    <a href="/ContactUs"> Contact Us</a>
                   </li>
                 </ul>
               </div>
@@ -138,11 +153,10 @@
               </div>
               <div class="uk-navbar-right">
                 <ul class="uk-navbar-nav" style="align-items: center">
-                  <li v-if="!isUserAuthenticated">
+                  <li v-if="!isUserAuthenticated" style="z-index: 999">
                     <button
                       @click="toggleLoginModal()"
                       class="uk-button uk-button-small uk-button-default"
-                      style="z-index: 999"
                     >
                       Login
                     </button>

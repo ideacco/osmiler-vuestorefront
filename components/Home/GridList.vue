@@ -94,6 +94,7 @@
                       </div>
                       <div
                         class="el-title uk-card-title uk-margin-small-top uk-margin-remove-bottom"
+                        style="background: #fff"
                       >
                         Customize Music
                       </div>

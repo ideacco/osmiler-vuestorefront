@@ -4,6 +4,7 @@
       class="uk-visible@m uk-section-primary uk-cover-container uk-section uk-padding-remove-vertical uk-flex uk-flex-middle"
       tm-header-transparent="light"
       uk-height-viewport="offset-top: true;"
+      style="margin-top: -64px"
     >
       <video
         src="/homepage/Osmiler_video.mp4"
@@ -43,8 +44,8 @@
                 <div class="uk-margin uk-text-left@m uk-text-center">
                   <a
                     class="el-content uk-button uk-button-default"
-                    @click="routepush()"
                     uk-scroll
+                    @click="myfuction()"
                   >
                     Coming soon
                   </a>
@@ -104,7 +105,7 @@
                 <a
                   class="el-content uk-button uk-button-default"
                   uk-scroll
-                  @click="routepush()"
+                  @click="myfuction()"
                 >
                   Coming soon
                 </a>
@@ -123,10 +124,11 @@ export default {
     return {}
   },
   methods: {
-    routepush() {
-      this.$router.push('/Product')
+    myfuction() {
+      window.location.href =
+        'https://osmiler.myshopify.com/63788810498/checkouts/c57525528cffe22429aead6ffe61d813'
     }
   }
 }
 </script>
-<style lang="scss"></style>
+<style lang="scss" scoped></style>
