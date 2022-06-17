@@ -73,10 +73,8 @@
               Be a music creator.
             </h1>
             <div class="uk-panel uk-margin">
-              <p style="color: #3a3543">
-                Upload music to toothbrush via Bluetooth or PC.
-              </p>
-              <p style="color: #3a3543">
+              <p>Upload music to toothbrush via Bluetooth or PC.</p>
+              <p>
                 Find your own music or share your favorite music with our
                 community!
               </p>
@@ -117,6 +115,9 @@ export default {
 <style lang="scss">
 #page\#8-0-0-0 {
   font-family: 'osmiler-title';
+}
+p {
+  margin: 0 0 20px 0;
 }
 #page9-0-0-0 {
   font-family: 'osmiler-title';

@@ -513,7 +513,6 @@ export default {
     // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
     async addingToCart(Productdata) {
       await this.addItem(Productdata).then((res) => {
-        console.log(res, 5555)
         this.sendNotification({
           key: 'product_added',
           message: `${Productdata.product.name} has been successfully added to your cart.`,
@@ -551,12 +550,16 @@ export default {
   min-height: 200px;
   padding: 100px 0;
 }
+.sf-price__old{
+  font-size: 20px;
+}
 
 #product {
   @include for-desktop {
   }
 }
 .product {
+  --font-family--secondary: var(--font-family--primary);
   box-sizing: border-box;
   @include for-desktop {
     max-width: 1272px;
@@ -709,6 +712,19 @@ export default {
 }
 .breadcrumbs {
   margin: var(--spacer-base) auto var(--spacer-lg);
+}
+.sf-price__special {
+  position: relative;
+  top: 80px;
+  left: -70px;
+  font-size: 48px;
+  background: #fff;
+}
+.product__color-label{
+  font-size: 16px;
+}
+.product__variants{
+  margin-top: 100px;
 }
 .banner-app {
   --banner-container-width: 100%;

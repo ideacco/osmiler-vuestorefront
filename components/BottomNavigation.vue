@@ -9,6 +9,7 @@
           icon="home"
           size="20px"
           label="Home"
+          style="width: 88px"
         />
       </nuxt-link>
       <SfBottomNavigationItem
@@ -16,7 +17,6 @@
         icon="menu"
         size="20px"
         label="Menu"
-        @click="toggleMobileMenu"
       />
       <SfBottomNavigationItem
         data-cy="bottom-navigation-url_account"

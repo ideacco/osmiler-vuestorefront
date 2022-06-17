@@ -61,10 +61,9 @@
                 <li class="el-item">
                   <div class="el-content uk-panel">
                     <a
-                      href="#"
+                      href="/p/Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0Lzc3MTcwNDc5OTI1Nzg=/osmiler-swing-head-3pcs"
                       class="el-link uk-link-text uk-margin-remove-last-child"
-
-                    >Electric Toothbrush</a
+                    >Osmiler Swing</a
                     >
                   </div>
                 </li>
@@ -72,9 +71,20 @@
                 <li class="el-item">
                   <div class="el-content uk-panel">
                     <a
-                      href="#"
+                      href="/p/Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0Lzc3MTcwNDc5OTI1Nzg=/osmiler-swing-head-3pcs"
                       class="el-link uk-link-text uk-margin-remove-last-child"
-                    >Accessories
+                    >
+                      Osmiler Swing-Head 3Pcs
+                    </a>
+                  </div>
+                </li>
+                <li class="el-item">
+                  <div class="el-content uk-panel">
+                    <a
+                      href="/p/Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0Lzc3MTc0MDc1ODg2MTA=/osmiler-swing-head-5pcs"
+                      class="el-link uk-link-text uk-margin-remove-last-child"
+                    >
+                      Osmiler Swing-Head 5Pcs
                     </a>
                   </div>
                 </li>

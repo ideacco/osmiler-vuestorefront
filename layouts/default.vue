@@ -123,5 +123,4 @@ export default {
   overflow: hidden;
   height: 100vh;
 }
-
 </style>
