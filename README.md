@@ -55,6 +55,11 @@ vuestorefront 底层基础使用 (nuxt)[https://www.nuxtjs.org/] 作为基础支
 (vuestorefront 文档地址)[https://docs.vuestorefront.io/v2/]
 (vuestorefront CSS 文档地址)[https://docs.storefrontui.io/?path=/docs/utilities-transitions--slide-left]
 
+### api 接口文档
+(vuestorefront-shopify)[https://docs.vuestorefront.io/shopify/guide/use-product.html#examples]
+(shopify-node-api 参考文档)[https://github.com/Shopify/shopify-node-api/tree/main/docs#readme]
+(graphql-js-客户端)[https://github.com/Shopify/graphql-js-client]
+
 # 接口的封装
 
 ## 使用 NUXT 官方的 axios

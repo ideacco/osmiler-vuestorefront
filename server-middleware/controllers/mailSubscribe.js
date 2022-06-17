@@ -3,6 +3,8 @@ const { Axios, get, post } = require('../models/axios')
 const { Mailchimp_API_KEY } = require('../config.js')
 const { Md5 } = require('../utils')
 
+// api参考地址
+// https://medium.com/@dddotcom/intro-to-mailchimp-api-3-0-adding-members-to-a-mailing-list-and-testing-with-postman-f056d900e0d9
 class SubscribeController {
   /**
    * 用户订阅到 Mailchimp 列表
