@@ -358,11 +358,6 @@ export default {
       productGetters.getDescription(product.value, true)
     )
     const options = computed(() => productGetters.getAttributes(products.value))
-    onMounted(() => {
-      console.log(options.value, 555)
-      const isplay = Object.keys(options.value)
-      console.log(isplay, 666)
-    })
 
     const configuration = computed(() => {
       return productGetters.getSelectedVariant(route?.value?.query)
@@ -433,14 +428,13 @@ export default {
       })
     })
     const updateFilter = (filter) => {
-      console.log(options.value, 55588)
       if (options.value) {
-        Object.keys(options.value).forEach((attr) => {
+        Object.values(options.value).map((attr) => {
           if (attr in filter) {
             return
           }
           filter[attr] =
-            Object.keys(configuration.value).length > 0
+            Object.values(configuration.value).length > 0
               ? configuration.value[attr]
               : options.value[attr][0]
         })
@@ -566,6 +560,10 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.product__description{
+  position: relative;
+  top: 50px;
+}
 .pdc-pdp-loader {
   min-height: 200px;
   padding: 100px 0;
