@@ -85,24 +85,14 @@
               >
                 <label class="product__color-label">{{ $t(key) }}</label>
                 <div class="product__flex-break"></div>
-                <SfColor
+                <SfButton
                   v-for="(attribs, a) in option"
-                  :key="`item-${a}`"
-                  label="Color"
-                  data-cy="product-color_update"
-                  :color="attribs"
-                  :class="`product__color ${attribs}`"
-                  :selected="
-                    configuration[key]
-                      ? configuration[key] === attribs
-                        ? true
-                        : false
-                      : a === 0
-                      ? true
-                      : false
-                  "
-                  @click="(atttLbl = key), updateFilter({ [atttLbl]: attribs })"
-                />
+                  @click="onclick(a),(atttLbl = key), updateFilter({ [atttLbl]: attribs })"
+                  :class="{ active: name == a }"
+                  :key="a"
+                  style="margin-right:30px"
+                >{{ attribs }}</SfButton
+                >
               </div>
             </template>
           </div>
@@ -429,25 +419,26 @@ export default {
         related: true
       })
     })
-    const updateFilter = (filter) => {
-      if (options.value) {
-        Object.keys(options.value).forEach((attr) => {
-          if (attr in filter) {
-            return
-          }
-          filter[attr] =
-            Object.keys(configuration.value).length > 0
-              ? configuration.value[attr]
-              : options.value[attr][0]
-        })
-      }
-      router.push({
-        path: route?.value?.path,
-        query: {
-          ...configuration.value,
-          ...filter
-        }
-      })
+    const updateFilter = (index) => {
+      console.log(22, 88, index, configuration.value)
+      // if (options.value) {
+      //   Object.keys(options.value).forEach((attr) => {
+      //     if (attr in index) {
+      //       return
+      //     }
+      //     index[attr] =
+      //       Object.keys(configuration.value).length > 0
+      //         ? configuration.value[attr]
+      //         : options.value[attr][0]
+      //   })
+      // }
+      // router.push({
+      //   path: route?.value?.path,
+      //   query: {
+      //     ...configuration.value,
+      //     ...filter
+      //   }
+      // })
     }
 
     return {
@@ -483,6 +474,7 @@ export default {
   // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
   data() {
     return {
+      name: 0,
       properties: [
         {
           name: 'Product Code',
@@ -526,6 +518,10 @@ export default {
   },
   // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
   methods: {
+    onclick(a) {
+      this.name = a
+      console.log(a,555)
+    },
     // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
     async addingToCart(Productdata) {
       await this.addItem(Productdata).then((res) => {
@@ -566,10 +562,12 @@ export default {
   position: relative;
   top: 50px;
 }
+
 .pdc-pdp-loader {
   min-height: 200px;
   padding: 100px 0;
 }
+
 .sf-price__old {
   font-size: 20px;
 }
@@ -578,21 +576,36 @@ export default {
   @include for-desktop {
   }
 }
+
+.item:hover {
+  background: gray;
+}
+
+.item.click {
+  background: red;
+}
+
+
+
 .product {
   --font-family--secondary: var(--font-family--primary);
   box-sizing: border-box;
+
   @include for-desktop {
     max-width: 1272px;
     margin: 0 auto;
     display: flex;
   }
+
   &__info {
     margin: var(--spacer-sm) auto;
+
     @include for-desktop {
       max-width: 32.625rem;
       margin: 0 0 0 7.5rem;
     }
   }
+
   &__header {
     --heading-title-color: var(--c-link);
     --heading-title-font-weight: var(--font-weight--bold);
@@ -600,29 +613,35 @@ export default {
     margin: 0 var(--spacer-sm);
     display: flex;
     justify-content: space-between;
+
     @include for-desktop {
       --heading-title-font-weight: var(--font-weight--semibold);
       margin: 0 auto;
     }
   }
+
   &__drag-icon {
     animation: moveicon 1s ease-in-out infinite;
   }
+
   &__price-and-rating {
     margin: 0 var(--spacer-sm) var(--spacer-base);
     align-items: center;
+
     @include for-desktop {
       display: flex;
       justify-content: space-between;
       margin: var(--spacer-sm) 0 var(--spacer-lg) 0;
     }
   }
+
   &__rating {
     display: flex;
     align-items: center;
     justify-content: flex-end;
     margin: var(--spacer-xs) 0 var(--spacer-xs);
   }
+
   &__count {
     @include font(
       --count-font,
@@ -635,6 +654,7 @@ export default {
     text-decoration: none;
     margin: 0 0 0 var(--spacer-xs);
   }
+
   &__details {
     margin: 0 var(--spacer-sm) var(--spacer-base);
 
@@ -642,6 +662,7 @@ export default {
       margin: var(--spacer-lg) 0;
     }
   }
+
   &__description {
     @include font(
       --product-description-font,
@@ -651,6 +672,7 @@ export default {
       var(--font-family--primary)
     );
   }
+
   &__colors {
     @include font(
       --product-color-font,
@@ -662,45 +684,56 @@ export default {
     display: flex;
     flex-wrap: wrap;
   }
+
   &__color-label {
     margin: 0 var(--spacer-lg) var(--spacer-xs) 0;
     padding: 0 0 0 4px;
   }
+
   &__color {
     margin: 0 var(--spacer-2xs);
   }
+
   &__add-to-cart,
   &__stock-information {
     margin-top: var(--spacer-xl);
   }
+
   &__guide,
   &__compare,
   &__save {
     display: block;
     margin: var(--spacer-xl) 0 var(--spacer-base) auto;
   }
+
   &__compare {
     margin-top: 0;
   }
+
   &__tabs {
     margin: var(--spacer-lg) auto var(--spacer-2xl);
     --tabs-title-font-size: var(--font-size--lg);
     --tabs-title-z-index: 0;
+
     @include for-desktop {
       margin-top: var(--spacer-2xl);
     }
   }
+
   &__property {
     margin: var(--spacer-base) 0;
+
     &__button {
       --button-font-size: var(--font-size--base);
     }
   }
+
   &__review {
     padding-bottom: 24px;
     border-bottom: var(--c-light) solid 1px;
     margin-bottom: var(--spacer-base);
   }
+
   &__additional-info {
     color: var(--c-link);
     @include font(
@@ -710,29 +743,36 @@ export default {
       1.6,
       var(--font-family--primary)
     );
+
     &__title {
       font-weight: var(--font-weight--normal);
       font-size: var(--font-size--base);
       margin: 0 0 var(--spacer-sm);
+
       &:not(:first-child) {
         margin-top: 3.5rem;
       }
     }
+
     &__paragraph {
       margin: 0;
     }
   }
+
   &__gallery {
     flex: 1;
   }
+
   &__flex-break {
     flex-basis: 100%;
     height: 0;
   }
 }
+
 .breadcrumbs {
   margin: var(--spacer-base) auto var(--spacer-lg);
 }
+
 .sf-price__special {
   position: relative;
   top: 80px;
@@ -740,16 +780,23 @@ export default {
   font-size: 48px;
   background: #fff;
 }
+
 .product__color-label {
   font-size: 16px;
 }
+
 .product__variants {
   margin-top: 100px;
+
   .sf-button {
     border: 1px solid black;
     background: #fff;
     color: #3a3543;
   }
+}
+.active{
+  color:#fff !important ;
+  background-color:#3a3543 !important;
 }
 .banner-app {
   --banner-container-width: 100%;
@@ -766,29 +813,36 @@ export default {
   max-width: 65rem;
   margin: 0 auto;
   padding: 0 calc(25% + var(--spacer-2xl)) 0 var(--spacer-xl);
+
   &__call-to-action {
     --button-background: transparent;
     display: flex;
   }
+
   &__button {
     --image-width: 8.375rem;
     --image-height: 2.75rem;
     --button-padding: 0;
+
     & + & {
       margin: 0 0 0 calc(var(--spacer-xl) / 2);
     }
   }
 }
+
 ::v-deep .product__color {
   border: 1px solid;
 }
+
 @keyframes moveicon {
   0% {
     transform: translate3d(0, 0, 0);
   }
+
   50% {
     transform: translate3d(0, 30%, 0);
   }
+
   100% {
     transform: translate3d(0, 0, 0);
   }
