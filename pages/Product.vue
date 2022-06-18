@@ -87,7 +87,7 @@
                 <div class="product__flex-break"></div>
                 <SfButton
                   v-for="(attribs, a) in option"
-                  @click="onclick(a),(atttLbl = key), updateFilter({ [atttLbl]: attribs })"
+                  @click="onclick(a)"
                   :class="{ active: name == a }"
                   :key="a"
                   style="margin-right:30px"
@@ -419,26 +419,25 @@ export default {
         related: true
       })
     })
-    const updateFilter = (index) => {
-      console.log(22, 88, index, configuration.value)
-      // if (options.value) {
-      //   Object.keys(options.value).forEach((attr) => {
-      //     if (attr in index) {
-      //       return
-      //     }
-      //     index[attr] =
-      //       Object.keys(configuration.value).length > 0
-      //         ? configuration.value[attr]
-      //         : options.value[attr][0]
-      //   })
-      // }
-      // router.push({
-      //   path: route?.value?.path,
-      //   query: {
-      //     ...configuration.value,
-      //     ...filter
-      //   }
-      // })
+    const updateFilter = (filter) => {
+      if (options.value) {
+        Object.keys(options.value).forEach((attr) => {
+          if (attr in filter ) {
+            return
+          }
+          filter [attr] =
+            Object.keys(configuration.value).length > 0
+              ? configuration.value[attr]
+              : options.value[attr][0]
+        })
+      }
+      router.push({
+        path: route?.value?.path,
+        query: {
+          ...configuration.value,
+          ...filter
+        }
+      })
     }
 
     return {
@@ -474,7 +473,7 @@ export default {
   // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
   data() {
     return {
-      name: 0,
+      name: '',
       properties: [
         {
           name: 'Product Code',
