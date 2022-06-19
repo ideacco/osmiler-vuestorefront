@@ -1,16 +1,11 @@
 // eslint-disable-next-line nuxt/no-cjs-in-config
 require('isomorphic-fetch')
 import webpack from 'webpack'
-const platformENV =
-  process.env.VUE_APP_TITLE !== 'production' ? 'http' : 'https'
-
+const platformENV = process.env.NODE_ENV !== 'production' ? 'http' : 'https'
 const config = {
-  env: {
-    VUE_APP_TITLE: process.env.VUE_APP_TITLE,
-  },
   server: {
-    port: 8888,
-    host: '0.0.0.0',
+    port: process.env.APP_PORT || 8888,
+    host: '127.0.0.1'
   },
   publicRuntimeConfig: {
     appKey: 'vsf2spcon',
@@ -142,7 +137,7 @@ const config = {
   },
   proxy: {
     '/app': {
-      target: process.env.VUE_APP_API_BASE_URL,
+      target: `${platformENV}://${process.env.BASE_URL}`,
       changeOrigin: true,
       pathRewrite: {
         '^/app': '',
