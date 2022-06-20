@@ -1,7 +1,7 @@
 // eslint-disable-next-line nuxt/no-cjs-in-config
 require('isomorphic-fetch')
 import webpack from 'webpack'
-const platformENV = process.env.NODE_ENV !== 'production' ? 'http' : 'https'
+// const platformENV = process.env.NODE_ENV !== 'production' ? 'http' : 'https'
 const config = {
   server: {
     port: process.env.APP_PORT || 8888,
@@ -11,7 +11,8 @@ const config = {
   publicRuntimeConfig: {
     appKey: 'vsf2spcon',
     appVersion: Date.now(),
-    middlewareUrl: `${platformENV}://${process.env.BASE_URL}/api/`,
+    // middlewareUrl: `${platformENV}://${process.env.BASE_URL}/api/`,
+    middlewareUrl: `${process.env.BASE_URL}/api/`,
   },
   privateRuntimeConfig: {
     storeURL: process.env.SHOPIFY_DOMAIN,
@@ -138,7 +139,7 @@ const config = {
   },
   proxy: {
     '/app': {
-      target: `${platformENV}://${process.env.BASE_URL}`,
+      target: `${process.env.BASE_URL}`,
       changeOrigin: true,
       pathRewrite: {
         '^/app': '',
