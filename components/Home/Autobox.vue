@@ -98,7 +98,7 @@
                 >
                   <table class="uk-table uk-table-justify uk-table-small">
                     <tbody>
-                      <tr class="el-item">
+                      <!-- <tr class="el-item">
                         <td class="uk-width-small">
                           <div class="el-title" style="color: #3a3543">
                             Package Size
@@ -127,7 +127,7 @@
                             000 G
                           </div>
                         </td>
-                      </tr>
+                      </tr> -->
                     </tbody>
                   </table>
                 </div>
@@ -160,8 +160,7 @@
                       </li>
                       <li class="el-item">
                         <img
-                          src="/wp-content/themes/yootheme/cache/Frame-1319-e9f9c63c.jpeg"
-                          srcset="/wp-content/themes/yootheme/cache/Frame-1319-e9f9c63c.jpeg 721w"
+                          src="/wp-content/themes/yootheme/cache/Frame 1293.png"
                           sizes="(max-aspect-ratio: 721/840) 86vh"
                           data-width="721"
                           data-height="840"

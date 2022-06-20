@@ -19,7 +19,7 @@
                 <div class="uk-grid-item-match uk-flex-middle uk-width-1-2@m">
                   <div class="uk-panel uk-width-1-1">
                     <h1 class="uk-margin-remove-vertical" id="page#12-0-1-0">
-                      Clean the outside<br />Care of the inside
+                      Softcare Designed Brushhead
                     </h1>
                     <div class="uk-panel uk-margin">
                       <p>

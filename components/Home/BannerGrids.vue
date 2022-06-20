@@ -43,9 +43,7 @@
     </div>
     <div id="Bone" class="uk-hidden@m uk-section-secondary">
       <div
-        style="
-          background-image: url('/wp-content/themes/yootheme/cache/02-afe67aa2.jpeg');
-        "
+        style="background-image: url('/wp-content/themes/yootheme/cache/02-afe67aa2.jpeg');"
         class="uk-background-norepeat uk-background-cover uk-background-bottom-center uk-section uk-padding-remove-vertical"
         uk-height-viewport="offset-top: true;"
       >

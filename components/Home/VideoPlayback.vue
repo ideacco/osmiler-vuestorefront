@@ -14,7 +14,7 @@
         playsinline
         uk-cover
       ></video>
-      <div class="uk-width-1-1">
+      <div class="uk-width-1-1" >
         <div
           class="uk-container uk-container-large uk-container-expand-right uk-position-relative"
         >
@@ -64,18 +64,13 @@
       uk-height-viewport="offset-top: true;"
       style="background: #411e7b"
     >
-      <div class="uk-width-1-1">
+      <div class="uk-width-1-1" style="margin-top:-80px">
         <div class="tm-header-placeholder uk-margin-remove-adjacent"></div>
         <div class="tm-grid-expand uk-child-width-1-1 uk-grid-margin" uk-grid>
           <div>
             <div class="uk-margin">
               <img
-                src="/wp-content/themes/yootheme/cache/Hero-ya-62d5a047.jpeg"
-                srcset="
-                  /wp-content/themes/yootheme/cache/Hero-ya-0e4056a5.jpeg  768w,
-                  /wp-content/themes/yootheme/cache/Hero-ya-5bc11fd0.jpeg 1024w,
-                  /wp-content/themes/yootheme/cache/Hero-ya-62d5a047.jpeg 1125w
-                "
+                src="/wp-content/themes/yootheme/cache/Hero-ya.jpg"
                 sizes="(min-width: 1125px) 1125px"
                 data-width="1125"
                 data-height="1086"

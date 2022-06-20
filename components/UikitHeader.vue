@@ -81,7 +81,7 @@
                     class="uk-grid-small uk-child-width-auto uk-flex-middle uk-flex-center"
                     uk-grid
                   >
-                    <div>
+                    <!-- <div>
                       <ul class="uk-iconnav">
                         <li>
                           <a
@@ -99,7 +99,7 @@
                           <a href="https://yelp.com/" uk-icon="icon: yelp"></a>
                         </li>
                       </ul>
-                    </div>
+                    </div> -->
                   </div>
                   <p class="uk-text-meta">
                     © 2022 Osmiler. All rights reserved.

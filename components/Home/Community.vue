@@ -59,10 +59,7 @@
     </div>
     <div id="Community" class="uk-hidden@m uk-section-default">
       <div
-        style="
-          background-image: url('/wp-content/themes/yootheme/cache/4646dcaf.jpeg');
-          height: 100%;
-        "
+        style="background-image: url('/wp-content/themes/yootheme/cache/4646dcaf.jpeg');height: 100%;"
         class="uk-background-norepeat uk-background-cover uk-background-center-center uk-section uk-padding-remove-vertical"
       >
         <div class="uk-container uk-container-large">

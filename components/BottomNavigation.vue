@@ -9,15 +9,16 @@
           icon="home"
           size="20px"
           label="Home"
-          style="width: 88px"
+          style="width: 98px"
         />
       </nuxt-link>
-      <!-- <SfBottomNavigationItem
+      <SfBottomNavigationItem
         data-cy="bottom-navigation-url_menu"
         icon="menu"
         size="20px"
         label="Menu"
-      /> -->
+        uk-toggle="#tm-mobile"
+      />
       <SfBottomNavigationItem
         data-cy="bottom-navigation-url_account"
         icon="profile"
@@ -93,7 +94,7 @@ export default {
 .navigation-bottom {
   --font-family--secondary: var(--font-family--primary);
   &:first-child {
-    padding-left: var(--spacer-sm);
+    // padding-left: var(--spacer-sm);
   }
 }
 </style>

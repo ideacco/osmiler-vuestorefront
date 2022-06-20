@@ -87,10 +87,12 @@
                 <div class="product__flex-break"></div>
                 <SfButton
                   v-for="(attribs, a) in option"
-                  @click="onclick(a)"
+                  @click="
+                    ;onclick(a),(atttLbl = key),updateFilter({ [atttLbl]: attribs })
+                  "
                   :class="{ active: name == a }"
                   :key="a"
-                  style="margin-right:30px"
+                  style="margin-right: 30px"
                 >{{ attribs }}</SfButton
                 >
               </div>
@@ -122,7 +124,7 @@
           >
             <template #add-to-cart-btn>
               <SfButton
-                class="sf-add-to-cart__button"
+                class="sf-add-to-cart__button SfButtontwo"
                 :disabled="loading || !productGetters.getStockStatus(product)"
                 @click="
                   addingToCart({
@@ -136,13 +138,13 @@
               >
                 {{ $t('Add to Cart') }}
               </SfButton>
-              <SfButton
+        <SfButton
                 class="sf-button--full-width sf-proceed_to_checkout SfButtontwo"
                 @click="toggleCartSidebar"
-                style="position: relative; top: 80px; left: -320px"
               >
                 {{ $t('Buy it now') }}
               </SfButton>
+
             </template>
           </SfAddToCart>
         </div>
@@ -257,15 +259,15 @@ import {
   computed,
   watch,
   useRoute,
-  useRouter,
-  onMounted
+  useRouter
 } from '@nuxtjs/composition-api'
-import { useProduct, useCart, productGetters } from '@vue-storefront/shopify'
+import { useProduct, useCart, productGetters,cartGetters } from '@vue-storefront/shopify'
 import MobileStoreBanner from '~/components/MobileStoreBanner.vue'
 import LazyHydrate from 'vue-lazy-hydration'
 import { onSSR } from '@vue-storefront/core'
 import useUiNotification from '~/composables/useUiNotification'
 import { useUiState } from '~/composables'
+
 
 export default {
   name: 'ProDuct',
@@ -322,8 +324,7 @@ export default {
       search: searchRelatedProducts,
       loading: relatedLoading
     } = useProduct('relatedProducts')
-    const { addItem, loading } = useCart()
-
+    const { addItem, loading, cart} = useCart()
     const product = computed(
       () =>
         productGetters.getFiltered(products.value, {
@@ -331,7 +332,7 @@ export default {
           attributes: route?.value?.query
         })[0]
     )
-
+    const totals = computed(() => cartGetters.getTotals(cart.value))
     const id = computed(() => productGetters.getId(product.value))
     const originalId = computed(() =>
       productGetters.getProductOriginalId(product.value)
@@ -340,11 +341,19 @@ export default {
     const productCoverImage = computed(() =>
       productGetters.getPDPCoverImage(product.value)
     )
+    const checkoutURL = computed(() => cartGetters.getcheckoutURL(cart.value))
+    const handleCheckout = (checkoutUrl) => {
+      setTimeout(() => {
+        window.location.href = checkoutUrl
+      }, 300)
+    }
     const productDescription = computed(() =>
       productGetters.getDescription(product.value)
     )
     const productDescriptionHtml = computed(() =>
       productGetters.getDescription(product.value, true)
+    )
+    const totalItems = computed(() => cartGetters.getTotalItems(cart.value)
     )
     const options = computed(() => productGetters.getAttributes(products.value))
 
@@ -422,10 +431,10 @@ export default {
     const updateFilter = (filter) => {
       if (options.value) {
         Object.keys(options.value).forEach((attr) => {
-          if (attr in filter ) {
+          if (attr in filter) {
             return
           }
-          filter [attr] =
+          filter[attr] =
             Object.keys(configuration.value).length > 0
               ? configuration.value[attr]
               : options.value[attr][0]
@@ -460,13 +469,18 @@ export default {
       stock,
       productTitle,
       breadcrumbs,
+      totals,
       qty,
       addItem,
+      totalItems,
+      cartGetters,
       loading,
       productloading,
       productGallery,
       productGetters,
+      handleCheckout,
       setBreadcrumb,
+      checkoutURL,
       atttLbl
     }
   },
@@ -519,7 +533,6 @@ export default {
   methods: {
     onclick(a) {
       this.name = a
-      console.log(a,555)
     },
     // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
     async addingToCart(Productdata) {
@@ -559,12 +572,16 @@ export default {
 <style lang="scss" scoped>
 .product__description {
   position: relative;
-  top: 50px;
+  top: 30px;
 }
 
 .pdc-pdp-loader {
   min-height: 200px;
   padding: 100px 0;
+}
+.sf-add-to-cart{
+ display: flex;
+ flex-direction: column;
 }
 
 .sf-price__old {
@@ -575,16 +592,15 @@ export default {
   @include for-desktop {
   }
 }
-
-.item:hover {
-  background: gray;
+.SfButtontwo{
+  width: 300px;
+  margin-top: 10px;
 }
-
-.item.click {
-  background: red;
+.sf-add-to-cart__button{
+  background: #fff;
+  color: #3a3543;
+  border: 1px solid #3a3543;
 }
-
-
 
 .product {
   --font-family--secondary: var(--font-family--primary);
@@ -793,9 +809,9 @@ export default {
     color: #3a3543;
   }
 }
-.active{
-  color:#fff !important ;
-  background-color:#3a3543 !important;
+.active {
+  color: #fff !important ;
+  background-color: #3a3543 !important;
 }
 .banner-app {
   --banner-container-width: 100%;

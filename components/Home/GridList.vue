@@ -165,4 +165,7 @@ export default {
 .uk-section-muted {
   background: #fff;
 }
+.el-item{
+  background: #fff !important;
+}
 </style>
