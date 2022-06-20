@@ -5,7 +5,8 @@ const platformENV = process.env.NODE_ENV !== 'production' ? 'http' : 'https'
 const config = {
   server: {
     port: process.env.APP_PORT || 8888,
-    host: process.env.NODE_ENV !== 'production' ? '0.0.0.0' : '127.0.0.1'
+    // host: process.env.NODE_ENV !== 'production' ? '0.0.0.0' : '127.0.0.1'
+    host: '0.0.0.0'
   },
   publicRuntimeConfig: {
     appKey: 'vsf2spcon',
