@@ -88,9 +88,9 @@
                 <SfButton
                   v-for="(attribs, a) in option"
                   @click="
-                    ;onclick(a),(atttLbl = key),updateFilter({ [atttLbl]: attribs })
+                    onclick(a),(atttLbl = key),updateFilter(attribs,{ [atttLbl]: attribs })
                   "
-                  :class="{ active: name == a }"
+                  :class="{ active: attribs == isProductCartButtonColor}"
                   :key="a"
                   style="margin-right: 30px"
                 >{{ attribs }}</SfButton
@@ -276,7 +276,8 @@ import {
   computed,
   watch,
   useRoute,
-  useRouter
+  useRouter,
+  onMounted
 } from '@nuxtjs/composition-api'
 import { useProduct, useCart, productGetters,cartGetters } from '@vue-storefront/shopify'
 import MobileStoreBanner from '~/components/MobileStoreBanner.vue'
@@ -377,7 +378,12 @@ export default {
     const configuration = computed(() => {
       return productGetters.getSelectedVariant(route?.value?.query)
     })
+    const { isProductCartButtonColor,setisProductCartButtonColor} = useUiState()
+    onMounted(() => {
+      console.log(options.value.Color,888)
 
+      console.log(isProductCartButtonColor,222)
+    })
     const setBreadcrumb = () => {
       breadcrumbs.value = [
         {
@@ -445,7 +451,8 @@ export default {
         related: true
       })
     })
-    const updateFilter = (filter) => {
+    const updateFilter = (colorname,filter) => {
+      setisProductCartButtonColor(colorname)
       if (options.value) {
         Object.keys(options.value).forEach((attr) => {
           if (attr in filter) {
@@ -498,13 +505,13 @@ export default {
       handleCheckout,
       setBreadcrumb,
       checkoutURL,
-      atttLbl
+      atttLbl,
+      isProductCartButtonColor
     }
   },
   // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
   data() {
     return {
-      name: '',
       properties: [
         {
           name: 'Product Code',
@@ -536,6 +543,7 @@ export default {
   mounted() {
     window.addEventListener('load', () => {
       this.setGalleryWidth()
+
     })
     this.$nextTick(() => {
       this.setGalleryWidth()
@@ -547,10 +555,12 @@ export default {
   updated() {
     this.setGalleryWidth()
   },
+
   // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
   methods: {
     onclick(a) {
       this.name = a
+      console.log(a,8888)
     },
     // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
     async addingToCart(Productdata) {
