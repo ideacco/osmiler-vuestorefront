@@ -22,7 +22,7 @@
                 <div class="uk-margin-medium uk-text-left@l uk-text-left">
                   <a
                     class="el-content uk-button uk-button-primary uk-button-small uk-flex-inline uk-flex-center uk-flex-middle"
-                    href="mailto:servers@osmiler.com"
+                    href="mailto:servers@osmiler.com?subject=Hello Osmiler"
                   >
                     Contact us
                     <span class="uk-margin-small-left" uk-icon="mail"></span>

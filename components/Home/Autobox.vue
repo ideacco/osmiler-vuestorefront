@@ -149,7 +149,6 @@
                       <li class="el-item">
                         <img
                           src="/wp-content/themes/yootheme/cache/Frame-1293-9a337dee.jpeg"
-                          srcset="/wp-content/themes/yootheme/cache/Frame-1293-9a337dee.jpeg 721w"
                           sizes="(max-aspect-ratio: 721/840) 86vh"
                           data-width="721"
                           data-height="840"
@@ -160,7 +159,7 @@
                       </li>
                       <li class="el-item">
                         <img
-                          src="/wp-content/themes/yootheme/cache/Frame 1293.png"
+                          src="/wp-content/themes/yootheme/cache/Frame 1293.jpg"
                           sizes="(max-aspect-ratio: 721/840) 86vh"
                           data-width="721"
                           data-height="840"

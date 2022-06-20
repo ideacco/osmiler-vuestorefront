@@ -32,7 +32,7 @@
                 >
                   <a
                     class="el-content uk-button uk-button-primary uk-button-large uk-flex-inline uk-flex-center uk-flex-middle"
-                    href="mailto:servers@osmiler.com"
+                    href="mailto:servers@osmiler.com?subject=Hello Osmiler"
                   >
                     Contact us
                     <span

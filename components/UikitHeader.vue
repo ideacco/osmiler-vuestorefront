@@ -38,7 +38,7 @@
                   <li
                     class="menu-item menu-item-type-post_type menu-item-object-page"
                   >
-                    <a href="/Product"> Product</a>
+                    <a href="/ProductList"> Product</a>
                   </li>
                   <li
                     class="menu-item menu-item-type-post_type menu-item-object-page"
