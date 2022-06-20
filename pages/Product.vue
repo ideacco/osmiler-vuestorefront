@@ -138,11 +138,28 @@
               >
                 {{ $t('Add to Cart') }}
               </SfButton>
-        <SfButton
+             <SfButton
+              v-if="totalItems"
                 class="sf-button--full-width sf-proceed_to_checkout SfButtontwo"
                 @click="toggleCartSidebar"
               >
-                {{ $t('Buy it now') }}
+                {{ $t('Go to checkout') }}
+              </SfButton>
+              <SfButton
+              v-else
+                class="sf-button--full-width sf-proceed_to_checkout SfButtontwo"
+                :disabled="loading || !productGetters.getStockStatus(product)"
+                @click="
+                  addingToCart({
+                    product,
+                    quantity: parseInt(qty),
+                    customQuery: [
+                      { key: 'CustomAttrKey', value: 'CustomAttrValue' },
+                    ],
+                  })
+                "
+              >
+                {{ $t('Go to checkout') }}
               </SfButton>
 
             </template>
@@ -514,6 +531,7 @@ export default {
       careInstructions: 'Do not wash!'
     }
   },
+
   // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
   mounted() {
     window.addEventListener('load', () => {
@@ -787,7 +805,10 @@ export default {
 .breadcrumbs {
   margin: var(--spacer-base) auto var(--spacer-lg);
 }
-
+// ::v-deep img.sf-image.sf-image-loaded{
+// height: 500px;
+// width: 500px;
+// }
 .sf-price__special {
   position: relative;
   top: 80px;

@@ -118,12 +118,12 @@
       ref="header"
       id="pc-header"
       uk-header
+      style="z-index:22"
     >
       <div>
         <nav
           class="uk-navbar-container"
           :class="classObject"
-          style="z-index: 2"
         >
           <div class="uk-container uk-container-expand">
             <div uk-navbar>
