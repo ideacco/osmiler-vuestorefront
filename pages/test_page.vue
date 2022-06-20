@@ -117,8 +117,8 @@ export default {
     const { categories, loading } = useCategory('toothbrush-accessories')
 
     // 根据接口进行查询填充
-    const { slug } = route?.value?.params
-    // const slug = 'osmiler-swing'
+    // const { slug } = route?.value?.params
+    const slug = 'osmiler-swing'
 
     // 自定义查询id
     const id = 'Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0Lzc3MTcwNDc5OTI1Nzg='
@@ -127,8 +127,8 @@ export default {
     onSSR(async () => {
       console.log('后端执行的 ssr 查询')
       // 用来更新产品的钩子函数
-      // await search({slug})
-      await search({})
+      await search({slug})
+      // await search({})
     })
 
     // 自定义查询
