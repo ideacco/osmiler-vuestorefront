@@ -50,7 +50,7 @@
                 <input
                   type="hidden"
                   name="settings"
-                  value="Q3HruOz4qbJHeGn7N5e2bw==.a2RjT1lXcTdCMHd1NUVLY1RaNmJjaCtOWWNqWFROODdxQklsRmxQSXVLYjBQNVZ0MytjaVRjdTBKVkdKS2hPS2xsU0RNNjlYNVVIaXBhS2ErWURpczJBT2pDK2hCUGJ2aURUY0F5bU9NNTFmZG5BdW5PZFhOMmFlVUtRa2RNalNWMnNHYk9LOUJqc1lyR2xUTWtXa2lyMkRYS2RUUlV4Q3VrcS9NWG00OVRzUmVpYnBSQk0wclJESWRlMFBTc3NQTHgyN2VwWFNyeXR5ZU5zZE9RRXBUYkF2SGZRMUVmWVhQb0c5Qy9HOGxIazhaRWFNd0hxKzNVbHc0bU8yVWg1T3Qrekd4UkhuK1Rmb1RQZElDV1pGYW1IbmRyaWtuczUzUllHdjQ2NVladFU9.OGFlZDE3NmQyNDI1MWZjYzcyMzA5NjBkYzdmYjJiZjEwMTkyMWQ2ZjM2ZmY4MzgwMGFlNTMzMGExNDkzMDk1Yg=="
+                  value=""
                 />
                 <div class="message uk-margin uk-hidden"></div>
               </form>
