@@ -61,7 +61,7 @@
                 <li class="el-item">
                   <div class="el-content uk-panel">
                     <a
-                      href="/p/Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0Lzc3MTcwNDc5OTI1Nzg=/osmiler-swing-head-3pcs"
+                      href="/p/Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0Lzc3MTcwNTM0MzIwNjY=/osmiler-swing"
                       class="el-link uk-link-text uk-margin-remove-last-child"
                     >Osmiler Swing</a
                     >
