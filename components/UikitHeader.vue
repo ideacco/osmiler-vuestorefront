@@ -124,6 +124,7 @@
         <nav
           class="uk-navbar-container"
           :class="classObject"
+          id="pc-navbar"
         >
           <div class="uk-container uk-container-expand">
             <div uk-navbar>
@@ -237,7 +238,7 @@ export default {
       //   console.log('导航栏返回',isNavbarTransparent.value)
       // }
       // 使用Uikit的组件化开发模式设定导航栏的粘贴和滚动
-      proxy.$UIkit.sticky('.uk-navbar-container', {
+      proxy.$UIkit.sticky('#pc-navbar', {
         start: 300,
         animation: 'uk-animation-slide-top',
         showOnUp: true
