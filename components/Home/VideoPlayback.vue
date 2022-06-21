@@ -4,7 +4,8 @@
       class="uk-visible@m uk-section-primary uk-cover-container uk-section uk-padding-remove-vertical uk-flex uk-flex-middle"
       tm-header-transparent="light"
       uk-height-viewport="offset-top: true;"
-      style="margin-top: -80px;"
+      :style="{marginTop: innerWidth > 940 ?'-80px':'0px'}"
+      id="test"
     >
       <!-- <video
         src="/homepage/Osmiler_video.mp4"
@@ -22,12 +23,13 @@
         playsinline
         uk-cover
       ></video>
-      <div class="uk-width-1-1" >
-        <div
-          class="uk-container uk-container-large uk-container-expand-right uk-position-relative"
-        >
+      <div class="uk-width-1-1">
+        <div class="uk-container uk-container-large uk-container-expand-right uk-position-relative">
           <div class="tm-header-placeholder uk-margin-remove-adjacent"></div>
-          <div class="tm-grid-expand uk-grid-collapse" uk-grid>
+          <div
+            class="tm-grid-expand uk-grid-collapse"
+            uk-grid
+          >
             <div
               class="uk-grid-item-match uk-flex-middle uk-width-1-3@m"
               id="page#0-0-0"
@@ -40,9 +42,7 @@
                 >
                   A musical revolution.
                 </h1>
-                <div
-                  class="uk-text-primary uk-margin-medium uk-width-large uk-margin-auto-right@m uk-margin-remove-left@m uk-margin-auto uk-text-left@m uk-text-center"
-                >
+                <div class="uk-text-primary uk-margin-medium uk-width-large uk-margin-auto-right@m uk-margin-remove-left@m uk-margin-auto uk-text-left@m uk-text-center">
                   Beyond imagination, it&#8217;s the world&#8217;s first
                   electric sonic toothbrush that can listen to music.
                 </div>
@@ -67,14 +67,20 @@
     </div>
     <div
       id="page#1"
-      class="uk-hidden@m uk-section-primary uk-section uk-section-small uk-padding-remove-top uk-flex uk-flex-middle"
+      class="uk-hidden@m uk-section-primary uk-section uk-section-small uk-padding-remove-top uk-flex"
       tm-header-transparent="light"
       uk-height-viewport="offset-top: true;"
       style="background: #411e7b"
     >
-      <div class="uk-width-1-1" style="margin-top:-80px">
+      <div
+        class="uk-width-1-1"
+        :style="{marginTop: innerWidth > 940 ?'-80px':'0px'}"
+      >
         <div class="tm-header-placeholder uk-margin-remove-adjacent"></div>
-        <div class="tm-grid-expand uk-child-width-1-1 uk-grid-margin" uk-grid>
+        <div
+          class="tm-grid-expand uk-child-width-1-1 uk-grid-margin"
+          uk-grid
+        >
           <div>
             <div class="uk-margin">
               <img
@@ -88,8 +94,14 @@
             </div>
           </div>
         </div>
-        <div class="tm-grid-expand uk-grid-collapse uk-child-width-1-1" uk-grid>
-          <div class="uk-grid-item-match uk-flex-middle" id="page#1-1-0">
+        <div
+          class="tm-grid-expand uk-grid-collapse uk-child-width-1-1"
+          uk-grid
+        >
+          <div
+            class="uk-grid-item-match uk-flex-middle"
+            id="page#1-1-0"
+          >
             <div class="uk-panel uk-width-1-1">
               <h1
                 class="uk-heading-medium uk-position-relative uk-margin uk-text-center@m uk-text-center"
@@ -98,9 +110,7 @@
               >
                 A musical revolution.
               </h1>
-              <div
-                class="uk-text-primary uk-margin-medium uk-margin-remove-top uk-width-medium uk-margin-auto-right@m uk-margin-remove-left@m uk-margin-auto uk-text-left@m uk-text-center"
-              >
+              <div class="uk-text-primary uk-margin-medium uk-margin-remove-top uk-width-medium uk-margin-auto-right@m uk-margin-remove-left@m uk-margin-auto uk-text-left@m uk-text-center">
                 Beyond imagination, it&#8217;s the original electric sonic
                 toothbrush that can listen to music.
               </div>
@@ -121,8 +131,50 @@
   </div>
 </template>
 <script>
+import { ref, onMounted, onUnmounted } from '@nuxtjs/composition-api'
 export default {
   name: 'VideoPlayback',
+  setup(){
+    
+    // 节流函数
+    const debounce = (func, wait) => {
+      let timer
+      return function() {
+        !!timer && clearTimeout(timer)
+        timer = setTimeout(func, wait)
+      }
+    }
+
+    const innerWidth = ref()
+
+    // 在组合式API中应该先判断执行环境，然后再执行函数
+    if (process.client) {
+      innerWidth.value = window.innerWidth
+    }
+
+    onMounted(() => {
+      if (process.client) {
+        // 使用节流方法设置监听事件
+        window.onresize = debounce(() => {
+          innerWidth.value = window.innerWidth
+          // console.log('resize', innerWidth.value)
+        }, 300)
+      }
+    })
+
+    // 销毁时解绑事件
+    onUnmounted(() => {
+      console.log('unmount,销毁')
+      if (process.client) {
+        window.onresize = null
+      }
+    })
+
+    return {
+      isNavbarTransparent,
+      innerWidth
+    }
+  },
   data() {
     return {}
   },
