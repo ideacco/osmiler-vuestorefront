@@ -1,20 +1,23 @@
 // eslint-disable-next-line nuxt/no-cjs-in-config
 require('isomorphic-fetch')
 
-console.log('当前服务状态:',process.env.NODE_ENV)
+console.log('当前服务状态:', process.env.NODE_ENV)
 
 import webpack from 'webpack'
 // const platformENV = process.env.NODE_ENV !== 'production' ? 'http' : 'https'
 const config = {
   server: {
     port: process.env.APP_PORT || 8888,
-    host: '0.0.0.0'
+    host: '0.0.0.0',
   },
   publicRuntimeConfig: {
     appKey: 'vsf2spcon',
     appVersion: Date.now(),
     // middlewareUrl: `${platformENV}://${process.env.BASE_URL}/api/`,
-    middlewareUrl: process.env.NODE_ENV === 'production' ? `${process.env.BASE_URL}/api/` : `${process.env.DEV_URL}/api/`,
+    middlewareUrl:
+      process.env.NODE_ENV === 'production'
+        ? `${process.env.BASE_URL}/api/`
+        : `${process.env.DEV_URL}/api/`,
   },
   privateRuntimeConfig: {
     storeURL: process.env.SHOPIFY_DOMAIN,

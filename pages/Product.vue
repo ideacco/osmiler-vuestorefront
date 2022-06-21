@@ -7,7 +7,7 @@
     <div />
   </SfLoader>
   <div v-else id="product" style="margin-top: 30px">
-    <!-- <SfBreadcrumbs class="breadcrumbs" :breadcrumbs="breadcrumbs">
+   <!-- <SfBreadcrumbs class="breadcrumbs" :breadcrumbs="breadcrumbs">
       <template #link="{ breadcrumb }">
         <nuxt-link
           :data-testid="breadcrumb.text"

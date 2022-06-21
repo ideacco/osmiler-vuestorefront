@@ -40,7 +40,6 @@ export default {
       loading: productsLoading
     } = useProduct('relatedProducts')
     const { cart, addItem: addToCart, isInCart } = useCart()
-
     onSSR(async () => {
       await productsSearch({ limit: 8 })
     })

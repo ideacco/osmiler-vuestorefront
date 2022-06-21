@@ -129,14 +129,10 @@
       ref="header"
       id="pc-header"
       uk-header
-      style="z-index:22"
+      style="z-index: 22"
     >
       <div>
-        <nav
-          class="uk-navbar-container"
-          :class="classObject"
-          id="pc-navbar"
-        >
+        <nav class="uk-navbar-container" :class="classObject" id="pc-navbar">
           <div class="uk-container uk-container-expand">
             <div uk-navbar>
               <div class="uk-navbar-left">
@@ -323,7 +319,7 @@ export default {
         // },
         {
           name: 'Product',
-          path: '/ProductList'
+          path: '/c/all-products'
         },
         {
           name: 'Services',

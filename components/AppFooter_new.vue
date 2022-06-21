@@ -194,69 +194,68 @@
                   uk-grid=""
                 >
                   <div class="uk-first-column">
-                    <a
-                      class="el-link uk-icon"
-                      href="#"
-                      rel="noreferrer"
-                    >
-                    <img src="/homepage/logo_dinersclub.png" alt=""    class="uk-icon1"/>
-                    </a>
-                  </div>
-                    <div class="uk-first-column">
-                    <a
-                      class="el-link uk-icon"
-                      href="#"
-                      rel="noreferrer"
-                    >
-                    <img src="/homepage/logo_dinersclub-1.png" alt=""    class="uk-icon1"/>
+                    <a class="el-link uk-icon" href="#" rel="noreferrer">
+                      <img
+                        src="/homepage/logo_dinersclub.png"
+                        alt=""
+                        class="uk-icon1"
+                      />
                     </a>
                   </div>
                   <div class="uk-first-column">
-                    <a
-                      class="el-link uk-icon"
-                      href="#"
-                      rel="noreferrer"
-                    >
-                    <img src="/homepage/logo_discover.png" alt=""    class="uk-icon1"/>
+                    <a class="el-link uk-icon" href="#" rel="noreferrer">
+                      <img
+                        src="/homepage/logo_dinersclub-1.png"
+                        alt=""
+                        class="uk-icon1"
+                      />
                     </a>
                   </div>
-                    <div class="uk-first-column">
-                    <a
-                      class="el-link uk-icon"
-                      href="#"
-                      rel="noreferrer"
-                    >
-                    <img src="/homepage/logo_jcb.png" alt=""    class="uk-icon1"/>
+                  <div class="uk-first-column">
+                    <a class="el-link uk-icon" href="#" rel="noreferrer">
+                      <img
+                        src="/homepage/logo_discover.png"
+                        alt=""
+                        class="uk-icon1"
+                      />
                     </a>
                   </div>
-                        <div class="uk-first-column">
-                    <a
-                      class="el-link uk-icon"
-                      href="#"
-                      rel="noreferrer"
-                    >
-                    <img src="/homepage/logo_mastercard.png" alt=""    class="uk-icon1"/>
+                  <div class="uk-first-column">
+                    <a class="el-link uk-icon" href="#" rel="noreferrer">
+                      <img
+                        src="/homepage/logo_jcb.png"
+                        alt=""
+                        class="uk-icon1"
+                      />
                     </a>
                   </div>
-                         <div class="uk-first-column">
-                    <a
-                      class="el-link uk-icon"
-                      href="#"
-                      rel="noreferrer"
-                    >
-                    <img src="/homepage/logo_visa.png" alt=""    class="uk-icon1"/>
+                  <div class="uk-first-column">
+                    <a class="el-link uk-icon" href="#" rel="noreferrer">
+                      <img
+                        src="/homepage/logo_mastercard.png"
+                        alt=""
+                        class="uk-icon1"
+                      />
                     </a>
                   </div>
-                         <div class="uk-first-column">
-                    <a
-                      class="el-link uk-icon"
-                      href="#"
-                      rel="noreferrer"
-                    >
-                    <img src="/homepage/logo_palpay.png" alt=""    class="uk-icon1"/>
+                  <div class="uk-first-column">
+                    <a class="el-link uk-icon" href="#" rel="noreferrer">
+                      <img
+                        src="/homepage/logo_visa.png"
+                        alt=""
+                        class="uk-icon1"
+                      />
                     </a>
                   </div>
-
+                  <div class="uk-first-column">
+                    <a class="el-link uk-icon" href="#" rel="noreferrer">
+                      <img
+                        src="/homepage/logo_palpay.png"
+                        alt=""
+                        class="uk-icon1"
+                      />
+                    </a>
+                  </div>
                 </div>
               </div>
             </div>
@@ -270,12 +269,11 @@
 <script></script>
 
 <style lang="scss" scoped>
-.uk-icon1{
+.uk-icon1 {
   width: 48px;
   height: 32px;
 }
-.ukwidth888{
+.ukwidth888 {
   width: 500px;
 }
-
 </style>
