@@ -216,7 +216,12 @@
                </SfLink>
              </template>
               <template #configuration>
-                <SfProperty class="desktop-only" name="Color" value="white" style="margin: 0 0 1rem" />
+                <SfProperty
+                  class="desktop-only"
+                  name="Color"
+                  value="white"
+                  style="margin: 0 0 1rem"
+                />
               </template>
               <template #add-to-cart>
                 <SfAddToCart
@@ -491,7 +496,7 @@ export default {
 }
 .main {
   &.section {
-     --font-family--secondary: var(--font-family--primary);
+    --font-family--secondary: var(--font-family--primary);
     padding: var(--spacer-xs);
     @include for-desktop {
       padding: 0;
@@ -502,7 +507,7 @@ export default {
   --font-family--secondary: var(--font-family--primary);
   // margin: var(--spacer-base) auto var(--spacer-lg);
   margin: 30px 0 5px 10px;
-  }
+}
 .navbar {
   --font-family--secondary: var(--font-family--primary);
   position: relative;

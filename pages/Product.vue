@@ -7,7 +7,7 @@
     <div />
   </SfLoader>
   <div v-else id="product" style="margin-top: 30px">
-   <!-- <SfBreadcrumbs class="breadcrumbs" :breadcrumbs="breadcrumbs">
+    <!-- <SfBreadcrumbs class="breadcrumbs" :breadcrumbs="breadcrumbs">
       <template #link="{ breadcrumb }">
         <nuxt-link
           :data-testid="breadcrumb.text"
@@ -88,9 +88,10 @@
                 <SfButton
                   v-for="(attribs, a) in option"
                   @click="
-                    onclick(a),(atttLbl = key),updateFilter(attribs,{ [atttLbl]: attribs })
+                    ;(atttLbl = key),
+                      updateFilter(attribs, { [atttLbl]: attribs })
                   "
-                  :class="{ active: attribs == isProductCartButtonColor}"
+                  :class="{ active: attribs == isProductCartButtonColor }"
                   :key="a"
                   style="margin-right: 30px"
                 >{{ attribs }}</SfButton
@@ -138,15 +139,15 @@
               >
                 {{ $t('Add to Cart') }}
               </SfButton>
-             <SfButton
-              v-if="totalItems"
+              <SfButton
+                v-if="totalItems"
                 class="sf-button--full-width sf-proceed_to_checkout SfButtontwo"
                 @click="toggleCartSidebar"
               >
                 {{ $t('Go to checkout') }}
               </SfButton>
               <SfButton
-              v-else
+                v-else
                 class="sf-button--full-width sf-proceed_to_checkout SfButtontwo"
                 :disabled="loading || !productGetters.getStockStatus(product)"
                 @click="
@@ -161,7 +162,6 @@
               >
                 {{ $t('Go to checkout') }}
               </SfButton>
-
             </template>
           </SfAddToCart>
         </div>
@@ -212,18 +212,250 @@
       </div>
     </div>
     <!-- <GridList /> -->
-    <BannerGrids />
-    <Community />
-    <Mp3 />
-    <Automatic />
-    <AutoPage />
-    <AutoPages />
-    <Proudcut />
-    <Certificate />
-    <Autobox />
-    <HomeLogolist />
-    <SendEmali />
-    <Contact />
+    <div
+      v-show="
+        ispath ===
+          '/p/Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0Lzc3MTcwNTM0MzIwNjY=/osmiler-swing' ||
+          ispath ===
+          '/p/Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0Lzc3MTcwNTM0MzIwNjY=/osmiler-swing?Color=Silver' ||
+          ispath ===
+          '/p/Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0Lzc3MTcwNTM0MzIwNjY=/osmiler-swing?Color=Deep%20Blue'
+      "
+    >
+      <BannerGrids />
+    </div>
+    <div
+      v-show="
+        ispath ===
+          '/p/Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0Lzc3MTcwNTM0MzIwNjY=/osmiler-swing' ||
+          ispath ===
+          '/p/Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0Lzc3MTcwNTM0MzIwNjY=/osmiler-swing?Color=Silver' ||
+          ispath ===
+          '/p/Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0Lzc3MTcwNTM0MzIwNjY=/osmiler-swing?Color=Deep%20Blue'
+      "
+    >
+      <Community />
+    </div>
+    <div
+      v-show="
+        ispath ===
+          '/p/Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0Lzc3MTcwNTM0MzIwNjY=/osmiler-swing' ||
+          ispath ===
+          '/p/Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0Lzc3MTcwNTM0MzIwNjY=/osmiler-swing?Color=Silver' ||
+          ispath ===
+          '/p/Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0Lzc3MTcwNTM0MzIwNjY=/osmiler-swing?Color=Deep%20Blue'
+      "
+    >
+      <Mp3 />
+    </div>
+    <div
+      v-show="
+        ispath ===
+          '/p/Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0Lzc3MTcwNTM0MzIwNjY=/osmiler-swing' ||
+          ispath ===
+          '/p/Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0Lzc3MTcwNTM0MzIwNjY=/osmiler-swing?Color=Silver' ||
+          ispath ===
+          '/p/Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0Lzc3MTcwNTM0MzIwNjY=/osmiler-swing?Color=Deep%20Blue'
+      "
+    >
+      <Automatic />
+    </div>
+    <div
+      v-show="
+        ispath ===
+          '/p/Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0Lzc3MTcwNTM0MzIwNjY=/osmiler-swing' ||
+          ispath ===
+          '/p/Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0Lzc3MTcwNTM0MzIwNjY=/osmiler-swing?Color=Silver' ||
+          ispath ===
+          '/p/Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0Lzc3MTcwNTM0MzIwNjY=/osmiler-swing?Color=Deep%20Blue'
+      "
+    >
+      <AutoPage />
+    </div>
+    <div
+      v-show="
+        ispath ===
+          '/p/Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0Lzc3MTcwNTM0MzIwNjY=/osmiler-swing' ||
+          ispath ===
+          '/p/Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0Lzc3MTcwNTM0MzIwNjY=/osmiler-swing?Color=Silver' ||
+          ispath ===
+          '/p/Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0Lzc3MTcwNTM0MzIwNjY=/osmiler-swing?Color=Deep%20Blue'
+      "
+    >
+      <Proudcut />
+    </div>
+    <div
+      v-show="
+        ispath ===
+          '/p/Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0Lzc3MTcwNTM0MzIwNjY=/osmiler-swing' ||
+          ispath ===
+          '/p/Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0Lzc3MTcwNTM0MzIwNjY=/osmiler-swing?Color=Silver' ||
+          ispath ===
+          '/p/Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0Lzc3MTcwNTM0MzIwNjY=/osmiler-swing?Color=Deep%20Blue'
+      "
+    >
+      <AutoPages />
+    </div>
+    <div
+      v-show="
+        ispath ===
+          '/p/Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0Lzc3MTcwNTM0MzIwNjY=/osmiler-swing' ||
+          ispath ===
+          '/p/Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0Lzc3MTcwNTM0MzIwNjY=/osmiler-swing?Color=Silver' ||
+          ispath ===
+          '/p/Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0Lzc3MTcwNTM0MzIwNjY=/osmiler-swing?Color=Deep%20Blue'
+      "
+    >
+      <Toothbrushpople />
+    </div>
+    <div
+      v-show="
+        ispath ===
+          '/p/Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0Lzc3MTcwNTM0MzIwNjY=/osmiler-swing' ||
+          ispath ===
+          '/p/Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0Lzc3MTcwNTM0MzIwNjY=/osmiler-swing?Color=Silver' ||
+          ispath ===
+          '/p/Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0Lzc3MTcwNTM0MzIwNjY=/osmiler-swing?Color=Deep%20Blue'
+      "
+    >
+      <Certificate />
+    </div>
+    <div
+      v-show="
+        ispath ===
+          '/p/Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0Lzc3MTcwNTM0MzIwNjY=/osmiler-swing' ||
+          ispath ===
+          '/p/Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0Lzc3MTcwNTM0MzIwNjY=/osmiler-swing?Color=Silver' ||
+          ispath ===
+          '/p/Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0Lzc3MTcwNTM0MzIwNjY=/osmiler-swing?Color=Deep%20Blue'
+      "
+    >
+      <Autobox />
+    </div>
+    <div
+      v-show="
+        ispath ===
+          '/p/Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0Lzc3MTcwNTM0MzIwNjY=/osmiler-swing' ||
+          ispath ===
+          '/p/Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0Lzc3MTcwNTM0MzIwNjY=/osmiler-swing?Color=Silver' ||
+          ispath ===
+          '/p/Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0Lzc3MTcwNTM0MzIwNjY=/osmiler-swing?Color=Deep%20Blue'
+      "
+    >
+      <HomeLogolist />
+    </div>
+
+    <div
+      v-show="
+        ispath ===
+          '/p/Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0Lzc3MTcwNTM0MzIwNjY=/osmiler-swing' ||
+          ispath ===
+          '/p/Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0Lzc3MTcwNTM0MzIwNjY=/osmiler-swing?Color=Silver' ||
+          ispath ===
+          '/p/Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0Lzc3MTcwNTM0MzIwNjY=/osmiler-swing?Color=Deep%20Blue'
+      "
+    >
+      <SendEmali />
+    </div>
+    <div
+      v-show="
+        ispath ===
+          '/p/Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0Lzc3MTcwNTM0MzIwNjY=/osmiler-swing' ||
+          ispath ===
+          '/p/Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0Lzc3MTcwNTM0MzIwNjY=/osmiler-swing?Color=Silver' ||
+          ispath ===
+          '/p/Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0Lzc3MTcwNTM0MzIwNjY=/osmiler-swing?Color=Deep%20Blue'
+      "
+    >
+      <Contact />
+    </div>
+    <div
+      v-show="
+        ispath ===
+          '/p/Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0Lzc3MTcwNDc5OTI1Nzg=/osmiler-swing-head-3pcs' ||
+          ispath ===
+          '/p/Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0Lzc3MTcwNDc5OTI1Nzg=/osmiler-swing-head-3pcs?Color=White' ||
+          ispath ===
+          '/p/Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0Lzc3MTcwNDc5OTI1Nzg=/osmiler-swing-head-3pcs?Color=Deep%20Blue'
+      "
+    >
+      <AutoPage />
+    </div>
+
+    <div
+      v-show="
+        ispath ===
+          '/p/Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0Lzc3MTcwNDc5OTI1Nzg=/osmiler-swing-head-3pcs' ||
+          ispath ===
+          '/p/Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0Lzc3MTcwNDc5OTI1Nzg=/osmiler-swing-head-3pcs?Color=White' ||
+          ispath ===
+          '/p/Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0Lzc3MTcwNDc5OTI1Nzg=/osmiler-swing-head-3pcs?Color=Deep%20Blue'
+      "
+    >
+      <ToothBannerGrids />
+    </div>
+    <div
+      v-show="
+        ispath ===
+          '/p/Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0Lzc3MTcwNDc5OTI1Nzg=/osmiler-swing-head-3pcs' ||
+          ispath ===
+          '/p/Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0Lzc3MTcwNDc5OTI1Nzg=/osmiler-swing-head-3pcs?Color=White' ||
+          ispath ===
+          '/p/Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0Lzc3MTcwNDc5OTI1Nzg=/osmiler-swing-head-3pcs?Color=Deep%20Blue'
+      "
+    >
+      <TootBrushHead3 />
+    </div>
+    <div
+      v-show="
+        ispath ===
+          '/p/Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0Lzc3MTcwNDc5OTI1Nzg=/osmiler-swing-head-3pcs' ||
+          ispath ===
+          '/p/Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0Lzc3MTcwNDc5OTI1Nzg=/osmiler-swing-head-3pcs?Color=White' ||
+          ispath ===
+          '/p/Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0Lzc3MTcwNDc5OTI1Nzg=/osmiler-swing-head-3pcs?Color=Deep%20Blue'
+      "
+    >
+      <Toothbrushheadfooter />
+    </div>
+
+    <div
+      v-show="
+        ispath ===
+          '/p/Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0Lzc3MTc0MDc1ODg2MTA=/osmiler-swing-head-5pcs' ||
+          ispath ===
+          '/p/Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0Lzc3MTc0MDc1ODg2MTA=/osmiler-swing-head-5pcs?Color=White' ||
+          ispath ===
+          '/p/Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0Lzc3MTc0MDc1ODg2MTA=/osmiler-swing-head-5pcs?Color=Deep%20Blue'
+      "
+    >
+      <ToothBannerGrids />
+    </div>
+    <div
+        v-show="
+        ispath ===
+          '/p/Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0Lzc3MTc0MDc1ODg2MTA=/osmiler-swing-head-5pcs' ||
+          ispath ===
+          '/p/Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0Lzc3MTc0MDc1ODg2MTA=/osmiler-swing-head-5pcs?Color=White' ||
+          ispath ===
+          '/p/Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0Lzc3MTc0MDc1ODg2MTA=/osmiler-swing-head-5pcs?Color=Deep%20Blue'
+      "
+    >
+      <TootBrushHead5 />
+    </div>
+    <div
+         v-show="
+        ispath ===
+          '/p/Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0Lzc3MTc0MDc1ODg2MTA=/osmiler-swing-head-5pcs' ||
+          ispath ===
+          '/p/Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0Lzc3MTc0MDc1ODg2MTA=/osmiler-swing-head-5pcs?Color=White' ||
+          ispath ===
+          '/p/Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0Lzc3MTc0MDc1ODg2MTA=/osmiler-swing-head-5pcs?Color=Deep%20Blue'
+      "
+    >
+      <Toothbrushheadfooter />
+    </div>
+
     <!-- <LazyHydrate when-visible>
       <RelatedProducts
         :products="relatedProducts"
@@ -260,12 +492,17 @@ import Certificate from '~/components/Home/Certificate'
 import Contact from '~/components/Home/Contact'
 // import GridList from '~/components/Home/GridList'
 import BannerGrids from '~/components/Home/BannerGrids'
+import ToothBannerGrids from '~/components/Toothbrushhead/ToothBannerGrids'
+import TootBrushHead3 from '~/components/Toothbrushhead/TootBrushHead3'
+import TootBrushHead5 from '~/components/Toothbrushhead/TootBrushHead5'
+import Toothbrushheadfooter from '~/components/Toothbrushhead/Toothbrushheadfooter'
 import Community from '~/components/Home/Community'
 import Mp3 from '~/components/Home/Mp3'
 import Automatic from '~/components/Home/Automatic'
 import AutoPage from '~/components/Home/AutoPage'
 import AutoPages from '~/components/Home/AutoPages'
 import Proudcut from '~/components/Home/Proudcut'
+import Toothbrushpople from '~/components/Toothbrush/Toothbrushpople'
 import Autobox from '~/components/Home/Autobox'
 import HomeLogolist from '~/components/Home/HomeLogolist'
 import SendEmali from '~/components/Home/SendEmali'
@@ -279,13 +516,17 @@ import {
   useRouter,
   onMounted
 } from '@nuxtjs/composition-api'
-import { useProduct, useCart, productGetters,cartGetters } from '@vue-storefront/shopify'
+import {
+  useProduct,
+  useCart,
+  productGetters,
+  cartGetters
+} from '@vue-storefront/shopify'
 import MobileStoreBanner from '~/components/MobileStoreBanner.vue'
 import LazyHydrate from 'vue-lazy-hydration'
 import { onSSR } from '@vue-storefront/core'
 import useUiNotification from '~/composables/useUiNotification'
 import { useUiState } from '~/composables'
-
 
 export default {
   name: 'ProDuct',
@@ -319,7 +560,12 @@ export default {
     Certificate,
     HomeLogolist,
     SendEmali,
-    LazyHydrate
+    LazyHydrate,
+    Toothbrushpople,
+    ToothBannerGrids,
+    TootBrushHead3,
+    Toothbrushheadfooter,
+    TootBrushHead5
   },
   beforeRouteEnter(__, from, next) {
     next((vm) => {
@@ -342,7 +588,7 @@ export default {
       search: searchRelatedProducts,
       loading: relatedLoading
     } = useProduct('relatedProducts')
-    const { addItem, loading, cart} = useCart()
+    const { addItem, loading, cart } = useCart()
     const product = computed(
       () =>
         productGetters.getFiltered(products.value, {
@@ -365,25 +611,22 @@ export default {
         window.location.href = checkoutUrl
       }, 300)
     }
+
     const productDescription = computed(() =>
       productGetters.getDescription(product.value)
     )
     const productDescriptionHtml = computed(() =>
       productGetters.getDescription(product.value, true)
     )
-    const totalItems = computed(() => cartGetters.getTotalItems(cart.value)
-    )
+    const totalItems = computed(() => cartGetters.getTotalItems(cart.value))
     const options = computed(() => productGetters.getAttributes(products.value))
 
     const configuration = computed(() => {
       return productGetters.getSelectedVariant(route?.value?.query)
     })
-    const { isProductCartButtonColor,setisProductCartButtonColor} = useUiState()
-    onMounted(() => {
-      console.log(options.value.Color,888)
-
-      console.log(isProductCartButtonColor,222)
-    })
+    const { isProductCartButtonColor, setisProductCartButtonColor } =
+      useUiState()
+    const ispath = route.value.fullPath
     const setBreadcrumb = () => {
       breadcrumbs.value = [
         {
@@ -451,7 +694,7 @@ export default {
         related: true
       })
     })
-    const updateFilter = (colorname,filter) => {
+    const updateFilter = (colorname, filter) => {
       setisProductCartButtonColor(colorname)
       if (options.value) {
         Object.keys(options.value).forEach((attr) => {
@@ -477,6 +720,7 @@ export default {
       updateFilter,
       isCartSidebarOpen,
       toggleCartSidebar,
+      ispath,
       configuration,
       product,
       productDescription,
@@ -506,7 +750,8 @@ export default {
       setBreadcrumb,
       checkoutURL,
       atttLbl,
-      isProductCartButtonColor
+      isProductCartButtonColor,
+      ToothBannerGrids
     }
   },
   // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
@@ -543,7 +788,6 @@ export default {
   mounted() {
     window.addEventListener('load', () => {
       this.setGalleryWidth()
-
     })
     this.$nextTick(() => {
       this.setGalleryWidth()
@@ -558,10 +802,6 @@ export default {
 
   // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
   methods: {
-    onclick(a) {
-      this.name = a
-      console.log(a,8888)
-    },
     // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
     async addingToCart(Productdata) {
       await this.addItem(Productdata).then((res) => {
@@ -607,9 +847,9 @@ export default {
   min-height: 200px;
   padding: 100px 0;
 }
-.sf-add-to-cart{
- display: flex;
- flex-direction: column;
+.sf-add-to-cart {
+  display: flex;
+  flex-direction: column;
 }
 
 .sf-price__old {
@@ -620,11 +860,11 @@ export default {
   @include for-desktop {
   }
 }
-.SfButtontwo{
+.SfButtontwo {
   width: 300px;
   margin-top: 10px;
 }
-.sf-add-to-cart__button{
+.sf-add-to-cart__button {
   background: #fff;
   color: #3a3543;
   border: 1px solid #3a3543;

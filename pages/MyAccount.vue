@@ -17,7 +17,7 @@
       class="my-account"
       title="My Account"
       @click:change="currentPage = $event"
-      style="z-index:2"
+      style="z-index: 2"
     >
       <template #menu-item="{ page }">
         <SfMenuItem
