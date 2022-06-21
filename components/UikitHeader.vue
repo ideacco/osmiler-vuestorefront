@@ -1,11 +1,13 @@
 <template>
   <div>
-    <div class="tm-header-mobile uk-hidden@m" st>
-      <div class="uk-navbar-container uk-navbar-transparent">
-        <nav
+    <div class="tm-header-mobile uk-hidden@m">
+      <!-- <div class="uk-navbar-container uk-navbar-transparent"> -->
+      <div class="uk-navbar-container">
+        <!-- <nav
           uk-navbar="container: .tm-header-mobile"
-          :class="{ 'uk-light': isNavbarTransparent }"
-        >
+          :class="{'uk-light': isNavbarTransparent}"
+          > -->
+        <nav uk-navbar="container: .tm-header-mobile" style="background-color:#fff">
           <div class="uk-navbar-center" style="z-index: 2">
             <a href="/home" class="uk-navbar-item uk-logo">
               <img

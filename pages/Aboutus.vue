@@ -107,14 +107,17 @@
       </div>
     </div>
     <Contact />
+    <MainChack />
   </div>
 </template>
 <script type="module">
 import Contact from '~/components/Home/Contact'
+import MainChack from '~/components/MainChack'
 export default {
   name: 'AboutS',
   components: {
-    Contact
+    Contact,
+    MainChack
   }
 }
 </script>
