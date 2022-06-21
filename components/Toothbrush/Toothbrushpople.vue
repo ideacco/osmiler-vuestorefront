@@ -15,7 +15,7 @@
                 <h1
                   class="uk-margin-remove-vertical"
                   id="page#18-0-0-0"
-                  style="color: #5d47ee"
+                  style="color: #5a47ee"
                 >
                   Color options
                 </h1>
@@ -42,7 +42,7 @@
             <h1
               class="uk-margin uk-width-medium"
               id="page#19-0-0-0"
-              style="font-size: 32px; color: #5d47ee"
+              style="font-size: 32px; color: #5a47ee"
             >
               Color options
             </h1>

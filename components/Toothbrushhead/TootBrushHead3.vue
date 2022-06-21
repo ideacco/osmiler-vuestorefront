@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="uk-section-default uk-section" style="background:#5a47ee;">
+    <div class="uk-section-default uk-section" >
       <div class="uk-container">
         <div
           class="tm-grid-expand uk-child-width-1-1 uk-grid-margin uk-grid uk-grid-stack"
@@ -10,7 +10,7 @@
             <h1
               class="uk-margin-remove-vertical uk-text-center"
               id="page#5-0-0-0"
-              style="color: #0c0b0e; font-family: osmiler-title"
+              style="color: #5a47ee; font-family: osmiler-title"
             >
               Packing list
             </h1>
