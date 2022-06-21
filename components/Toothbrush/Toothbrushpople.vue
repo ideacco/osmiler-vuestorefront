@@ -42,7 +42,7 @@
             <h1
               class="uk-margin uk-width-medium"
               id="page#19-0-0-0"
-              style="font-size: 35.7px; color: #5d47ee"
+              style="font-size: 32px; color: #5d47ee"
             >
               Color options
             </h1>

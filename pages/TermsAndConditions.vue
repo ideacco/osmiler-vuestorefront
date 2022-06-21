@@ -332,7 +332,7 @@
               CONDITIONS, you are prohibited from using the site or its content:
               (a) for any unlawful purpose; (b) to solicit others to perform or
               participate in any unlawful acts; (c) to violate any international
-              or UK’s regulations, rules, laws, or local ordinances; (d) to
+              or France’s regulations, rules, laws, or local ordinances; (d) to
               infringe upon or violate our intellectual property rights or the
               intellectual property rights of others; (e) to harass, abuse,
               insult, harm, defame, slander, disparage, intimidate, or
@@ -501,7 +501,7 @@
             <p>
               These TERMS AND CONDITIONS and any separate agreements whereby we
               provide you Services shall be governed by and construed in
-              accordance with the laws of UK
+              accordance with the laws of France
             </p>
             <h3>
               <a
@@ -535,20 +535,6 @@
             <p>
               Questions about the Terms if Service should be sent to us at
               <a href="mailto:service@osmiler.com">service@osmiler.com</a>.
-            </p>
-            <h4>
-              <a
-                id="our-contact-information"
-                class="anchor"
-                aria-hidden="true"
-              ><span class="octicon octicon-link"></span></a
-              >Our contact information
-            </h4>
-            <p>
-              Address: Room 309 Building 5, Qianhai Youth Innovation and
-              entrepreneurs Hub, number 35,<br />
-              Qianwan 1st Road, Nanshan District, Shenzhen, Guangdong Province,
-              China, 518000( zip code)
             </p>
           </div>
         </div>

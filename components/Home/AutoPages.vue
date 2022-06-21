@@ -43,7 +43,7 @@
             <h1
               class="uk-margin uk-width-medium"
               id="page#19-0-0-0"
-              style="font-size: 35.7px"
+              style="font-size: 32px"
             >
               IPX7 Waterproof
             </h1>

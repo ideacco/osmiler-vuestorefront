@@ -42,12 +42,12 @@
                     <h2
                       class="el-title uk-h3 uk-margin-top uk-margin-remove-bottom"
                     >
-                      Location
+                      Address
                     </h2>
                     <div class="el-content uk-panel uk-margin-top">
-                      Room 309,Building 5<br />
-                      ShenZhen<br />
-                      China
+                      Company:Siki Eagle Sarl<br />
+                      Address:1,Esplanade Miriam Makeba<br />
+                      69100 Villeurbanne,France
                     </div>
                   </div>
                 </div>

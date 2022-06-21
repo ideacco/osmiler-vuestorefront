@@ -842,6 +842,10 @@ export default {
   position: relative;
   top: 30px;
 }
+.sf-price{
+  margin-top: -40px;
+}
+
 
 .pdc-pdp-loader {
   min-height: 200px;

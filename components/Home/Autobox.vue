@@ -9,7 +9,7 @@
           <div class="uk-grid-margin uk-container uk-container-large">
             <div class="tm-grid-expand" uk-grid>
               <div class="uk-width-1-2@m">
-                <h1 id="page#18-0-0-0" style="color: #4132c7">
+                <h1 id="page#18-0-0-0" style="color: #4132c7;font-size: 32px;">
                   What`s in the Box
                 </h1>
                 <h4 style="color: #4132c7">Package Contents</h4>

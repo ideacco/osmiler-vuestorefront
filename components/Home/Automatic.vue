@@ -85,6 +85,7 @@
                 <h1
                   class="uk-margin-remove-vertical uk-width-xlarge uk-text-left@m uk-text-left"
                   id="page#11-0-0-0"
+                  style="font-size:32px"
                 >
                   3 Classic vibration modes
                 </h1>

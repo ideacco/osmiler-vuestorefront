@@ -39,6 +39,7 @@
             <h1
               class="uk-margin-medium uk-margin-remove-bottom uk-width-large"
               id="page#15-0-0-0"
+              style="font-size:32px"
             >
               No afraid of power-off
             </h1>
