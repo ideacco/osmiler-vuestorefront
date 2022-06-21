@@ -345,30 +345,7 @@
       <HomeLogolist />
     </div>
 
-    <div
-      v-show="
-        ispath ===
-          '/p/Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0Lzc3MTcwNTM0MzIwNjY=/osmiler-swing' ||
-          ispath ===
-          '/p/Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0Lzc3MTcwNTM0MzIwNjY=/osmiler-swing?Color=Silver' ||
-          ispath ===
-          '/p/Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0Lzc3MTcwNTM0MzIwNjY=/osmiler-swing?Color=Deep%20Blue'
-      "
-    >
-      <SendEmali />
-    </div>
-    <div
-      v-show="
-        ispath ===
-          '/p/Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0Lzc3MTcwNTM0MzIwNjY=/osmiler-swing' ||
-          ispath ===
-          '/p/Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0Lzc3MTcwNTM0MzIwNjY=/osmiler-swing?Color=Silver' ||
-          ispath ===
-          '/p/Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0Lzc3MTcwNTM0MzIwNjY=/osmiler-swing?Color=Deep%20Blue'
-      "
-    >
-      <Contact />
-    </div>
+
     <div
       v-show="
         ispath ===
