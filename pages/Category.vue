@@ -17,7 +17,7 @@
     <!-- sorting features panel -->
     <div class="navbar section">
       <div class="navbar__main">
-        <div class="navbar__sort desktop-only">
+        <div class="navbar__sort desktop-only" style="margin-left:0">
           <span class="navbar__label">{{ $t('Sort by') }}:</span>
           <SfSelect
             :value="sortBy.selected"
