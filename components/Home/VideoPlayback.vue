@@ -6,8 +6,16 @@
       uk-height-viewport="offset-top: true;"
       style="margin-top: -80px;"
     >
-      <video
+      <!-- <video
         src="/homepage/Osmiler_video.mp4"
+        loop
+        autoplay
+        muted
+        playsinline
+        uk-cover
+      ></video> -->
+      <video
+        src="https://omiler-shop.s3.us-east-2.amazonaws.com/videos/Osmiler_video.mp4"
         loop
         autoplay
         muted
