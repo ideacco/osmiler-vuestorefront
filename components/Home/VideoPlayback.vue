@@ -135,7 +135,7 @@ import { ref, onMounted, onUnmounted } from '@nuxtjs/composition-api'
 export default {
   name: 'VideoPlayback',
   setup(){
-    
+
     // 节流函数
     const debounce = (func, wait) => {
       let timer
@@ -171,7 +171,6 @@ export default {
     })
 
     return {
-      isNavbarTransparent,
       innerWidth
     }
   },
