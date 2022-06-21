@@ -214,7 +214,7 @@
           </form>
         </ValidationObserver>
         <SfButton
-          class="color-secondary sf-button sf-button--full-width"
+          class="color-secondary sf-button sf-button--full-width back-to-login"
           @click="setIsLoginValue(true)"
           style="margin-top: 20px"
         >
