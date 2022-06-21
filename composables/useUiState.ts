@@ -10,7 +10,7 @@ const state = reactive({
   isMobileMenuOpen: false,
   articlesPerPage: '5',
   isNavbarTransparent: false,
-  isProductCartButtonColor:'Deep Blue',
+  isProductCartButtonColor: 'Deep Blue',
 })
 
 const useUiState = () => {
@@ -64,9 +64,11 @@ const useUiState = () => {
     state.isNavbarTransparent = setPage
   }
 
-  const isProductCartButtonColor = computed(() => state.isProductCartButtonColor)
+  const isProductCartButtonColor = computed(
+    () => state.isProductCartButtonColor
+  )
 
-  const setisProductCartButtonColor = (setPage:string) => {
+  const setisProductCartButtonColor = (setPage: string) => {
     // console.log('赋值setPage?',setPage)
     state.isProductCartButtonColor = setPage
   }
@@ -91,7 +93,7 @@ const useUiState = () => {
     toggleNavbarTransparent,
     setNavbarTransparent,
     isProductCartButtonColor,
-    setisProductCartButtonColor
+    setisProductCartButtonColor,
   }
 }
 

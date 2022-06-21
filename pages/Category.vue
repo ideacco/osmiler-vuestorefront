@@ -216,13 +216,7 @@
                </SfLink>
              </template>
               <template #configuration>
-                <SfProperty
-                  class="desktop-only"
-                  name="Size"
-                  value="XS"
-                  style="margin: 0 0 1rem"
-                />
-                <SfProperty class="desktop-only" name="Color" value="white" />
+                <SfProperty class="desktop-only" name="Color" value="white" style="margin: 0 0 1rem" />
               </template>
               <template #add-to-cart>
                 <SfAddToCart
@@ -448,8 +442,6 @@ export default {
   // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
   data() {
     return {
-      // eslint-disable-next-line vue/no-dupe-keys
-      products: null,
       breadcrumbs: [
         {
           text: 'Home',
@@ -490,15 +482,16 @@ export default {
 
 <style lang="scss" scoped>
 #category {
-  --font-family--secondary: var(--font-family--primary);
   box-sizing: border-box;
   @include for-desktop {
+    --font-family--secondary: var(--font-family--primary);
     max-width: 1240px;
     margin: 0 auto;
   }
 }
 .main {
   &.section {
+     --font-family--secondary: var(--font-family--primary);
     padding: var(--spacer-xs);
     @include for-desktop {
       padding: 0;
@@ -506,9 +499,12 @@ export default {
   }
 }
 .breadcrumbs {
-  margin: var(--spacer-base) auto var(--spacer-lg);
-}
+  --font-family--secondary: var(--font-family--primary);
+  // margin: var(--spacer-base) auto var(--spacer-lg);
+  margin: 30px 0 5px 10px;
+  }
 .navbar {
+  --font-family--secondary: var(--font-family--primary);
   position: relative;
   display: flex;
   border: 1px solid var(--c-light);
@@ -576,7 +572,7 @@ export default {
     }
   }
   &__label {
-    font-family: Overpass;
+    font-family: var(--font-family--secondary);
     font-weight: var(--font-weight--normal);
     color: var(--c-text-muted);
     @include for-desktop {
@@ -594,7 +590,7 @@ export default {
     --select-error-message-height: 0;
     ::v-deep .sf-select__dropdown {
       font-size: var(--font-size-sm);
-      font-family: Overpass;
+      font-family: var(--font-family--secondary);
       font-weight: var(--font-weight--light);
       margin: 0;
     }
@@ -608,7 +604,7 @@ export default {
     margin: 0 auto 0 var(--spacer-2xl);
   }
   &__counter {
-    font-family: Overpass;
+    font-family: var(--font-family--secondary);
     order: 1;
     @include for-desktop {
       margin: auto 0 auto auto;
@@ -632,7 +628,8 @@ export default {
     }
     &-label {
       margin: 0 var(--spacer-sm) 0 0;
-      font: var(--font-weight--normal) var(--font-size--base) / 1.6 Overpass;
+      font: var(--font-weight--normal) var(--font-size--base) / 1.6
+        var(--font-family--secondary);
       text-decoration: none;
       color: var(--c-link);
     }
@@ -710,7 +707,7 @@ export default {
   }
   @include for-desktop {
     &__grid {
-      margin: var(--spacer-sm) 0 0 0;
+      margin: var(--spacer-sm) 0 0 var(--spacer-sm);
     }
     &__pagination {
       display: flex;
@@ -732,7 +729,7 @@ export default {
     justify-content: flex-end;
     align-items: baseline;
     &__label {
-      font-family: Overpass;
+      font-family: var(--font-family--secondary);
       font-size: var(--font-size--sm);
     }
   }
@@ -763,7 +760,7 @@ export default {
   &__chosen {
     color: var(--c-text-muted);
     font-weight: var(--font-weight--normal);
-    font-family: Overpass;
+    font-family: var(--font-family--secondary);
     position: absolute;
     right: var(--spacer-xl);
   }

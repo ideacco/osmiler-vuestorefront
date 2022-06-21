@@ -1,6 +1,6 @@
 <template>
   <div class="smartphone-only">
-    <SfBottomNavigation class="navigation-bottom" style="z-index:2;">
+    <SfBottomNavigation class="navigation-bottom" style="z-index: 2">
       <nuxt-link data-cy="bottom-navigation-url_home" to="/">
         <SfBottomNavigationItem
           :class="
