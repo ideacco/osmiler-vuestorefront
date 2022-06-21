@@ -2,14 +2,25 @@
   <div>
     <div class="tm-header-mobile uk-hidden@m">
       <div class="uk-navbar-container uk-navbar-transparent">
-        <nav uk-navbar="container: .tm-header-mobile">
+        <nav
+          uk-navbar="container: .tm-header-mobile"
+          :class="{'uk-light': isNavbarTransparent}"
+          >
           <div class="uk-navbar-center" style="z-index: 2">
             <a href="/home" class="uk-navbar-item uk-logo">
               <img
                 alt="OSMILER"
                 width="80"
                 src="../static/icons/osmiler-logo-default.svg"
-              /></a>
+              />
+              <img
+                class="uk-logo-inverse"
+                alt="OSMILER"
+                width="90"
+                src="../static/icons/osmiler-logo-light.svg"
+                style="z-index: 1"
+              />
+              </a>
           </div>
           <div class="uk-navbar-right">
             <a class="uk-navbar-toggle" href="#tm-mobile" uk-toggle>
@@ -64,13 +75,13 @@
                 <div class="uk-panel textwidget"></div>
               </div>
             </div>
-            <div>
+            <div class="uk-position-bottom uk-margin-bottom">
               <div
                 class="uk-panel uk-text-center widget widget_text"
                 id="text-5"
               >
                 <div class="uk-panel textwidget">
-                  <p v-if="isUserAuthenticated">
+                  <!-- <p v-if="isUserAuthenticated">
                     <a
                       @click="$router.push(localePath({ name: 'my-account' }))"
                       class="uk-button uk-button-primary uk-width-1-1"
@@ -81,7 +92,7 @@
                     class="uk-grid-small uk-child-width-auto uk-flex-middle uk-flex-center"
                     uk-grid
                   >
-                    <!-- <div>
+                    <div>
                       <ul class="uk-iconnav">
                         <li>
                           <a
@@ -99,8 +110,8 @@
                           <a href="https://yelp.com/" uk-icon="icon: yelp"></a>
                         </li>
                       </ul>
-                    </div> -->
-                  </div>
+                    </div>
+                  </div> -->
                   <p class="uk-text-meta">
                     © 2022 Osmiler. All rights reserved.
                   </p>
@@ -199,7 +210,7 @@
 import { useUiState } from '~/composables'
 import {
   ref,
-  reactive,
+  // reactive,
   computed,
   onMounted,
   getCurrentInstance

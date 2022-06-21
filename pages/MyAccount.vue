@@ -1,6 +1,6 @@
 <template>
   <div id="my-account">
-    <SfBreadcrumbs class="breadcrumbs" :breadcrumbs="breadcrumbs">
+    <!-- <SfBreadcrumbs class="breadcrumbs" :breadcrumbs="breadcrumbs">
       <template #link="{ breadcrumb }">
         <nuxt-link
           :data-testid="breadcrumb.text"
@@ -10,13 +10,14 @@
           {{ breadcrumb.text }}
         </nuxt-link>
       </template>
-    </SfBreadcrumbs>
+    </SfBreadcrumbs> -->
     <SfContentPages
       data-cy="account_content-pages"
       :active="currentPage"
       class="my-account"
       title="My Account"
       @click:change="currentPage = $event"
+      style="z-index:2"
     >
       <template #menu-item="{ page }">
         <SfMenuItem
