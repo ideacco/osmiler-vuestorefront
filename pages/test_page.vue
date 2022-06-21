@@ -37,7 +37,7 @@
         产品的loading信息: {{ loading ? loading : 'no loading' }}
 
         <br>
-        产品的类别信息: {{ categories ? categories : 'no categories' }}
+        产品的类别信息: {{ productCategory ? productCategory : 'no productCategory' }}
 
       </div>
 
@@ -113,8 +113,9 @@ export default {
     const route = useRoute()
 
     // 功能组件
+
     const { products, search } = useProduct('products')
-    const { categories, loading } = useCategory('toothbrush-accessories')
+    const {search: inSearch, categories, loading } = useCategory('categories')
 
     // 根据接口进行查询填充
     // const { slug } = route?.value?.params
@@ -127,8 +128,9 @@ export default {
     onSSR(async () => {
       console.log('后端执行的 ssr 查询')
       // 用来更新产品的钩子函数
-      await search({slug})
+      // await search({slug})
       // await search({})
+      await inSearch({})
     })
 
     // 自定义查询
@@ -151,7 +153,7 @@ export default {
     )
 
     // 获取信息
-    const productImage = computed(() => productGetters.getCoverImage(product.value))
+    const productImage = computed(() => productGetters.getCoverImage(products.value))
     const productCategoryIds = computed(() => productGetters.getCategoryIds(product.value))
     const prdDescription = computed(() => productGetters.getDescription(product.value, true))
     const productId = computed(() => productGetters.getId(product.value))
@@ -166,7 +168,7 @@ export default {
       }))
     )
 
-    // const productCategory = computed(() => { categories })
+    const productCategory = computed(() => [...categories.value])
 
     // search 可以查询的单个选项
     const params = {
@@ -213,6 +215,7 @@ export default {
       productImage,
       prdDescription,
       productCategoryIds,
+      productCategory,
       categories,
       loading,
       productId,

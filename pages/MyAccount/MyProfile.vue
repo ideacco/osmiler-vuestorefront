@@ -142,7 +142,7 @@
         </tab>
       </tabs>
     </div>
-    <div v-else class="user_profile_detail my-profile__content">
+    <div v-else class="user_profile_detail my-profile__content costom-class">
       <SfProperty
         v-if="displayName"
         class="my-profile-cname"
@@ -163,7 +163,7 @@
       />
     </div>
     <template v-if="!isEdited">
-      <SfButton @click="isEdited = true"> Edit Your Profile </SfButton>
+      <SfButton class="costom-class" @click="isEdited = true"> Edit Your Profile </SfButton>
     </template>
   </div>
 </template>
@@ -333,6 +333,11 @@ export default {
 }
 </script>
 <style lang="scss">
+
+.costom-class {
+  margin-left:20px;
+}
+
 .form__button_wrap {
   float: left;
   margin-right: 20px;
