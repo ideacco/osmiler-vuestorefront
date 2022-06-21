@@ -15,7 +15,7 @@
         uk-cover
       ></video> -->
       <video
-        src="https://omiler-shop.s3.us-east-2.amazonaws.com/videos/Osmiler_video.mp4"
+        src="https://d3kyzzp5arlnnu.cloudfront.net/videos/Osmiler_video.mp4"
         loop
         autoplay
         muted
