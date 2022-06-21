@@ -6,7 +6,7 @@
   >
     <div />
   </SfLoader>
-  <div v-else id="product" style="margin-top: 30px">
+  <div v-else id="product" >
     <!-- <SfBreadcrumbs class="breadcrumbs" :breadcrumbs="breadcrumbs">
       <template #link="{ breadcrumb }">
         <nuxt-link
@@ -418,7 +418,18 @@
     >
       <Toothbrushheadfooter />
     </div>
-
+    <div
+     v-show="
+        ispath ===
+          '/p/Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0Lzc3MTc0MDc1ODg2MTA=/osmiler-swing-head-5pcs' ||
+          ispath ===
+          '/p/Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0Lzc3MTc0MDc1ODg2MTA=/osmiler-swing-head-5pcs?Color=White' ||
+          ispath ===
+          '/p/Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0Lzc3MTc0MDc1ODg2MTA=/osmiler-swing-head-5pcs?Color=Deep%20Blue'
+      "
+    >
+      <AutoPage />
+    </div>
     <div
       v-show="
         ispath ===
@@ -841,6 +852,9 @@ export default {
 .product__description {
   position: relative;
   top: 30px;
+}
+.product__details{
+  margin-top: 40px !important;
 }
 .sf-price{
   margin-top: -40px;
