@@ -2,7 +2,7 @@
   <div>
     <div id="page#18" class="uk-visible@m uk-section-default uk-light">
       <div
-        style="background-image: url('/wp-content/themes/yootheme/cache/07-2-92aa09fe.jpeg');"
+        style="background-image: url('/wp-content/themes/yootheme/cache/Frame1353.jpg');"
         class="uk-background-norepeat uk-background-cover uk-background-top-center uk-section uk-section-large uk-padding-remove-bottom"
         uk-height-viewport="offset-top: true;"
       >
@@ -12,15 +12,13 @@
           >
             <div class="tm-grid-expand uk-grid-small" uk-grid>
               <div class="uk-width-1-2@m uk-first-column">
-                <h1 class="uk-margin-remove-vertical" id="page#18-0-0-0">
-                  Class IP7 Water-repellent
+                <h1
+                  class="uk-margin-remove-vertical"
+                  id="page#18-0-0-0"
+                  style="color: #5d47ee"
+                >
+                  Color options
                 </h1>
-                <div class="uk-panel uk-margin">
-                  <p>
-                    The whole waterproof body is not afraid of taking a shower,
-                    which is uesd safely in the shower at eaze.
-                  </p>
-                </div>
               </div>
               <div class="uk-width-1-2@m"></div>
             </div>
@@ -31,6 +29,7 @@
     <div
       id="page#19"
       class="uk-hidden@m uk-section-primary uk-section uk-padding-remove-vertical"
+      style="background: #d4c7ff; border: none"
     >
       <div
         class="uk-grid-margin uk-margin-remove-top uk-container uk-container-large"
@@ -43,15 +42,10 @@
             <h1
               class="uk-margin uk-width-medium"
               id="page#19-0-0-0"
-              style="font-size: 35.7px"
+              style="font-size: 35.7px; color: #5d47ee"
             >
-              IPX7 Waterproof
+              Color options
             </h1>
-            <div
-              class="uk-panel uk-margin-remove-vertical uk-width-medium uk-text-left"
-            >
-              <p>Resistant to washing and soaking in water</p>
-            </div>
           </div>
         </div>
       </div>
@@ -59,12 +53,7 @@
         <div>
           <div class="uk-margin uk-margin-remove-top uk-text-center">
             <img
-              src="/wp-content/themes/yootheme/cache/07-d33c0b7c.jpeg"
-              srcset="
-                /wp-content/themes/yootheme/cache/07-da47cdb5.jpeg  768w,
-                /wp-content/themes/yootheme/cache/07-f0413a3d.jpeg 1024w,
-                /wp-content/themes/yootheme/cache/07-d33c0b7c.jpeg 1125w
-              "
+              src="/wp-content/themes/yootheme/cache/Frame1355.jpg"
               sizes="(min-width: 1125px) 1125px"
               data-width="1125"
               data-height="1152"

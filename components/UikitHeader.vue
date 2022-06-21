@@ -1,11 +1,11 @@
 <template>
   <div>
-    <div class="tm-header-mobile uk-hidden@m">
+    <div class="tm-header-mobile uk-hidden@m" st>
       <div class="uk-navbar-container uk-navbar-transparent">
         <nav
           uk-navbar="container: .tm-header-mobile"
-          :class="{'uk-light': isNavbarTransparent}"
-          >
+          :class="{ 'uk-light': isNavbarTransparent }"
+        >
           <div class="uk-navbar-center" style="z-index: 2">
             <a href="/home" class="uk-navbar-item uk-logo">
               <img
@@ -20,7 +20,7 @@
                 src="../static/icons/osmiler-logo-light.svg"
                 style="z-index: 1"
               />
-              </a>
+            </a>
           </div>
           <div class="uk-navbar-right">
             <a class="uk-navbar-toggle" href="#tm-mobile" uk-toggle>
@@ -29,13 +29,11 @@
           </div>
         </nav>
       </div>
-      <div
-        id="tm-mobile"
-        class="uk-modal-full"
-        uk-modal
-        style="position: fixed"
-      >
-        <div class="uk-modal-dialog uk-modal-body uk-height-viewport">
+      <div id="tm-mobile" class="uk-modal-full" uk-modal>
+        <div
+          class="uk-modal-dialog uk-modal-body uk-height-viewport"
+          style="position: fixed"
+        >
           <button class="uk-modal-close-full" type="button" uk-close></button>
           <div class="uk-child-width-1-1" uk-grid>
             <div>
@@ -49,7 +47,7 @@
                   <li
                     class="menu-item menu-item-type-post_type menu-item-object-page"
                   >
-                    <a href="/ProductList"> Product</a>
+                    <a href="/c/all-products"> Product</a>
                   </li>
                   <li
                     class="menu-item menu-item-type-post_type menu-item-object-page"
@@ -257,7 +255,7 @@ export default {
       })
 
       proxy.$UIkit.util.on('.uk-navbar-container', 'inactive', () => {
-        // console.log('导航栏活动状态')
+        console.log('导航栏活动状态', 88)
         isActive.value = false
       })
     })

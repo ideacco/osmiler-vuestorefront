@@ -32,9 +32,7 @@
                   <div class="uk-margin">
                     <img
                       src="/wp-content/themes/yootheme/cache/icon_grop-3-56768954.png"
-                      srcset="
-                        /wp-content/themes/yootheme/cache/icon_grop-3-56768954.png 268w
-                      "
+                      srcset="/wp-content/themes/yootheme/cache/icon_grop-3-56768954.png 268w"
                       sizes="(min-width: 268px) 268px"
                       data-width="268"
                       data-height="92"

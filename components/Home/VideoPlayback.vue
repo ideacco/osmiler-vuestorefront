@@ -4,7 +4,7 @@
       class="uk-visible@m uk-section-primary uk-cover-container uk-section uk-padding-remove-vertical uk-flex uk-flex-middle"
       tm-header-transparent="light"
       uk-height-viewport="offset-top: true;"
-      style="margin-top: -80px;"
+      style="margin-top: -80px"
     >
       <video
         src="/homepage/Osmiler_video.mp4"
@@ -14,7 +14,7 @@
         playsinline
         uk-cover
       ></video>
-      <div class="uk-width-1-1" >
+      <div class="uk-width-1-1">
         <div
           class="uk-container uk-container-large uk-container-expand-right uk-position-relative"
         >
@@ -64,7 +64,7 @@
       uk-height-viewport="offset-top: true;"
       style="background: #411e7b"
     >
-      <div class="uk-width-1-1" style="margin-top:-80px">
+      <div class="uk-width-1-1" style="margin-top: -80px">
         <div class="tm-header-placeholder uk-margin-remove-adjacent"></div>
         <div class="tm-grid-expand uk-child-width-1-1 uk-grid-margin" uk-grid>
           <div>

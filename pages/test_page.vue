@@ -1,6 +1,8 @@
 <template>
   <div
-    style="background-image: url('/wp-content/themes/yootheme/cache/music-hero-4f873de3.jpeg');"
+    style="
+      background-image: url('/wp-content/themes/yootheme/cache/music-hero-4f873de3.jpeg');
+    "
     ref="hero"
   >
     <div class="uk-padding-large">
@@ -10,75 +12,71 @@
       <button @click="fetchSomething">测试请求</button>
 
       <div class="uk-margin-large uk-light">
-        <h3> 获取的产品内容 </h3>
+        <h3>获取的产品内容</h3>
 
         产品Title:{{ productTitle ? productTitle : 'no Title' }}
-        <br>
+        <br />
         产品Id:{{ productId ? productId : 'no Id' }}
-        <br>
+        <br />
         产品图片:
-        <img 
-        v-if="productImage"
-        :src="productImage"
-        alt=""
-        >
-        <br>
+        <img v-if="productImage" :src="productImage" alt="" />
+        <br />
         图片URL:{{ productImage ? productImage : 'no imags' }}
 
-        <br>
+        <br />
 
         产品的图库信息: {{ productGallery ? productGallery : 'no gallery' }}
 
-        <br>
+        <br />
         产品的描述: {{ prdDescription ? prdDescription : 'no Description' }}
-        <br>
-        产品的类别Id: {{ productCategoryIds ? productCategoryIds : 'no productCategoryIds' }}
-        <br>
+        <br />
+        产品的类别Id:
+        {{ productCategoryIds ? productCategoryIds : 'no productCategoryIds' }}
+        <br />
         产品的loading信息: {{ loading ? loading : 'no loading' }}
 
-        <br>
-        产品的类别信息: {{ productCategory ? productCategory : 'no productCategory' }}
-
+        <br />
+        产品的类别信息:
+        {{ productCategory ? productCategory : 'no productCategory' }}
       </div>
 
       <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati placeat
-        perspiciatis praesentium, accusantium illum nulla similique quas illo
-        aspernatur earum vitae consectetur, ullam eius corrupti accusamus
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati
+        placeat perspiciatis praesentium, accusantium illum nulla similique quas
+        illo aspernatur earum vitae consectetur, ullam eius corrupti accusamus
         voluptate saepe dolores cupiditate.
       </p>
       <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati placeat
-        perspiciatis praesentium, accusantium illum nulla similique quas illo
-        aspernatur earum vitae consectetur, ullam eius corrupti accusamus
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati
+        placeat perspiciatis praesentium, accusantium illum nulla similique quas
+        illo aspernatur earum vitae consectetur, ullam eius corrupti accusamus
         voluptate saepe dolores cupiditate.
       </p>
       <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati placeat
-        perspiciatis praesentium, accusantium illum nulla similique quas illo
-        aspernatur earum vitae consectetur, ullam eius corrupti accusamus
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati
+        placeat perspiciatis praesentium, accusantium illum nulla similique quas
+        illo aspernatur earum vitae consectetur, ullam eius corrupti accusamus
         voluptate saepe dolores cupiditate.
       </p>
       <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati placeat
-        perspiciatis praesentium, accusantium illum nulla similique quas illo
-        aspernatur earum vitae consectetur, ullam eius corrupti accusamus
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati
+        placeat perspiciatis praesentium, accusantium illum nulla similique quas
+        illo aspernatur earum vitae consectetur, ullam eius corrupti accusamus
         voluptate saepe dolores cupiditate.
       </p>
       <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati placeat
-        perspiciatis praesentium, accusantium illum nulla similique quas illo
-        aspernatur earum vitae consectetur, ullam eius corrupti accusamus
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati
+        placeat perspiciatis praesentium, accusantium illum nulla similique quas
+        illo aspernatur earum vitae consectetur, ullam eius corrupti accusamus
         voluptate saepe dolores cupiditate.
       </p>
       <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati placeat
-        perspiciatis praesentium, accusantium illum nulla similique quas illo
-        aspernatur earum vitae consectetur, ullam eius corrupti accusamus
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati
+        placeat perspiciatis praesentium, accusantium illum nulla similique quas
+        illo aspernatur earum vitae consectetur, ullam eius corrupti accusamus
         voluptate saepe dolores cupiditate.
       </p>
     </div>
-
   </div>
 </template>
 
@@ -99,7 +97,7 @@ import {
 } from '@vue-storefront/shopify'
 
 export default {
-  name: 'test_page',
+  name: 'TestPage',
   setup() {
     const {
       isNavbarTransparent,
@@ -115,7 +113,7 @@ export default {
     // 功能组件
 
     const { products, search } = useProduct('products')
-    const {search: inSearch, categories, loading } = useCategory('categories')
+    const { search: inSearch, categories, loading } = useCategory('categories')
 
     // 根据接口进行查询填充
     // const { slug } = route?.value?.params
@@ -153,9 +151,15 @@ export default {
     )
 
     // 获取信息
-    const productImage = computed(() => productGetters.getCoverImage(products.value))
-    const productCategoryIds = computed(() => productGetters.getCategoryIds(product.value))
-    const prdDescription = computed(() => productGetters.getDescription(product.value, true))
+    const productImage = computed(() =>
+      productGetters.getCoverImage(products.value)
+    )
+    const productCategoryIds = computed(() =>
+      productGetters.getCategoryIds(product.value)
+    )
+    const prdDescription = computed(() =>
+      productGetters.getDescription(product.value, true)
+    )
     const productId = computed(() => productGetters.getId(product.value))
     const productTitle = computed(() => productGetters.getName(product.value))
     // const productGallery = computed(() => productGetters.getGallery(product.value))
@@ -188,11 +192,10 @@ export default {
     const testRouterParams = () => {
       // console.log('子页面初始化!,点击测试', route)
       // router.push({name: 'test_page', params: 'osmiler-swing'})
-      router.push({path: '/test_page', params: 'osmiler-swing'})
+      router.push({ path: '/test_page', params: 'osmiler-swing' })
       // toggleNavbarTransparent()
       // console.log('子页面test,isNavbarTransparent', isNavbarTransparent)
     }
-
 
     onMounted(() => {
       if (slug) {

@@ -163,7 +163,9 @@
       />
     </div>
     <template v-if="!isEdited">
-      <SfButton class="costom-class" @click="isEdited = true"> Edit Your Profile </SfButton>
+      <SfButton class="costom-class" @click="isEdited = true">
+        Edit Your Profile
+      </SfButton>
     </template>
   </div>
 </template>
@@ -333,9 +335,8 @@ export default {
 }
 </script>
 <style lang="scss">
-
 .costom-class {
-  margin-left:20px;
+  margin-left: 20px;
 }
 
 .form__button_wrap {

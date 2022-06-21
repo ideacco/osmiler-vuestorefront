@@ -47,9 +47,7 @@
                     <div class="uk-margin">
                       <img
                         src="/wp-content/themes/yootheme/cache/Group-1317-1-b9ac3f73.png"
-                        srcset="
-                          /wp-content/themes/yootheme/cache/Group-1317-1-b9ac3f73.png 416w
-                        "
+                        srcset="/wp-content/themes/yootheme/cache/Group-1317-1-b9ac3f73.png 416w"
                         sizes="(min-width: 416px) 416px"
                         data-width="416"
                         data-height="204"
