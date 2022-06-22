@@ -4,7 +4,7 @@
       id="page#4"
       class="uk-section-default uk-section uk-section-xsmall uk-padding-remove-bottom uk-flex uk-flex-bottom"
       uk-height-viewport="offset-top: true;"
-      style="min-height: calc(100vh)"
+      style="min-height: calc(100vh);background: #faf9fd"
     >
       <div class="uk-width-1-1">
         <div class="uk-container uk-container-xlarge">
@@ -15,7 +15,7 @@
               class="uk-margin-remove-top uk-margin-remove-bottom tm-grid-expand uk-grid-column-collapse uk-grid"
               uk-grid=""
               uk-height-match="target: .uk-card"
-              style="background: #faf9fd"
+
             >
               <div
                 class="uk-grid-item-match uk-flex-middle uk-width-1-2@m uk-first-column"

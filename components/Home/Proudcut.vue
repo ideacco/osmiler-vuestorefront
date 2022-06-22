@@ -1,7 +1,7 @@
 <!--  -->
 <template>
   <div>
-    <div class="uk-visible@m uk-section-primary">
+    <!-- <div class="uk-visible@m uk-section-primary">
       <div
         style="background-image: url('/wp-content/themes/yootheme/cache/14BG-ya-39ecc9e1.jpeg');background-position: 60% 30%;"
         class="uk-background-norepeat uk-background-cover uk-background-center-center uk-section uk-section-large"
@@ -23,7 +23,27 @@
           </div>
         </div>
       </div>
-    </div>
+    </div> -->
+            <div class="uk-visible@m uk-section-primary" data-v-69ab7cfe="">
+                <div uk-height-viewport="offset-top: true; offset-bottom: 20;"
+                  class="uk-background-norepeat uk-background-cover uk-background-center-center uk-section uk-section-large"
+                  style="background-image:url('/wp-content/themes/yootheme/cache/14BG-ya-39ecc9e1.jpeg'); min-height: calc(80vh);"
+                  data-v-69ab7cfe="">
+                  <div class="uk-container uk-container-large" data-v-69ab7cfe="">
+                    <div  class="tm-grid-expand uk-child-width-1-1 uk-grid-margin uk-grid uk-grid-stack"
+                      data-v-69ab7cfe="">
+                      <div data-v-69ab7cfe="" class="uk-first-column">
+                        <h1 id="page#14-0-0-0" class="uk-margin-medium uk-margin-remove-bottom uk-width-large">
+                          No afraid of power-off
+                        </h1>
+                        <div class="uk-panel uk-margin" data-v-69ab7cfe="">
+                          <p >The battery can last up to more than 90 days.</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
     <div
       id="page#15"
       class="uk-hidden@m uk-section-primary uk-section uk-padding-remove-vertical"
@@ -59,7 +79,7 @@
             <img
               src="/wp-content/themes/yootheme/cache/14BG-iphoen-ya-320c541d.jpeg"
               srcset="
-                /wp-content/themes/yootheme/cache/14BG-iphoen-ya-d15aa7c6.jpeg 768w,
+                /wp-content/themes/yootheme/cache/14BG-iphoen-ya-320c541d.jpeg 768w,
                 /wp-content/themes/yootheme/cache/14BG-iphoen-ya-320c541d.jpeg 960w
               "
               sizes="(min-width: 960px) 960px"

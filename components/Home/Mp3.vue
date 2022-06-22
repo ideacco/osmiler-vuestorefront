@@ -72,7 +72,7 @@
               Be a music creator.
             </h1>
             <div class="uk-panel uk-margin">
-              <p style="margin-top: 15px">
+              <p style="margin-top:-15px">
                 Upload music to toothbrush via Bluetooth or PC. Find your own
                 music or share your favorite music with our community!
               </p>

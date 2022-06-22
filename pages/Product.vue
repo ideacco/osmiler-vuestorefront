@@ -7,7 +7,7 @@
     <div />
   </SfLoader>
   <div v-else id="product">
-    <!-- <SfBreadcrumbs class="breadcrumbs" :breadcrumbs="breadcrumbs">
+    <SfBreadcrumbs class="breadcrumbs breadcrumbs-center"  :breadcrumbs="breadcrumbs">
       <template #link="{ breadcrumb }">
         <nuxt-link
           :data-testid="breadcrumb.text"
@@ -17,7 +17,7 @@
           {{ breadcrumb.text }}
         </nuxt-link>
       </template>
-    </SfBreadcrumbs> -->
+    </SfBreadcrumbs>
     <div class="product">
       <SfGallery
         :images="productGallery"
@@ -194,10 +194,10 @@
                 <p class="product__additional-info__title">
                   {{ $t('Brand') }}
                 </p>
-                <p>{{ brand }}</p>
+                <!-- <p>{{ brand }}</p>
                 <p class="product__additional-info__title">
                   {{ $t('Instruction1') }}
-                </p>
+                </p> -->
                 <p class="product__additional-info__paragraph">
                   {{ $t('Instruction2') }}
                 </p>
@@ -618,15 +618,15 @@ export default {
       breadcrumbs.value = [
         {
           text: 'Home',
-          link: '/'
+          link: '/Home'
         },
         {
-          text: 'products',
-          link: '#'
+          text: 'All products',
+          link: '/c/all-products'
         },
         {
           text: productTitle.value,
-          link: '#'
+          link: ''
         }
       ]
     }
@@ -851,6 +851,7 @@ export default {
 
 #product {
   @include for-desktop {
+
   }
 }
 .SfButtontwo {
@@ -1046,6 +1047,9 @@ export default {
 }
 
 .breadcrumbs {
+  max-width: 1240px;
+  margin: 0 auto;
+  --font-family--secondary: var(--font-family--primary);
   margin: var(--spacer-base) auto var(--spacer-lg);
 }
 // ::v-deep img.sf-image.sf-image-loaded{

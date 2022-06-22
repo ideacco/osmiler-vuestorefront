@@ -98,7 +98,7 @@
                 >
                   <table class="uk-table uk-table-justify uk-table-small">
                     <tbody>
-                      <!-- <tr class="el-item">
+                      <tr class="el-item">
                         <td class="uk-width-small">
                           <div class="el-title" style="color: #3a3543">
                             Package Size
@@ -127,7 +127,7 @@
                             000 G
                           </div>
                         </td>
-                      </tr> -->
+                      </tr>
                     </tbody>
                   </table>
                 </div>

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="uk-section-default uk-section">
+    <div class="uk-section-default uk-section" >
       <div class="uk-container">
         <div
           class="tm-grid-expand uk-child-width-1-1 uk-grid-margin uk-grid uk-grid-stack"
@@ -16,7 +16,7 @@
                 font-size: 42px;
               "
             >
-              Color option
+              Color options
             </h1>
             <div id="page#6-0-0-1"></div>
             <div class="uk-margin uk-text-center">

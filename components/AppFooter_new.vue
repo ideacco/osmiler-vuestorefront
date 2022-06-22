@@ -3,6 +3,9 @@
     <div class="uk-visible@m">
       <div class="uk-section-default uk-section">
         <div class="uk-container uk-container-large">
+               <div class="uk-first-column">
+              <hr class="uk-margin uk-margin-remove-top" />
+            </div>
           <div class="tm-grid-expand uk-grid-margin uk-grid" uk-grid="">
             <div class="uk-width-1-2@s uk-width-1-5@m uk-first-column">
               <div class="uk-margin uk-text-left@s uk-text-center">
@@ -270,6 +273,9 @@
   width: 48px;
   height: 32px;
   cursor: default;
+}
+.uk-section{
+  padding-top:0 ;
 }
 .ukwidth888 {
   width: 500px;
