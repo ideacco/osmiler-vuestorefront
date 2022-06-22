@@ -6,7 +6,7 @@
   >
     <div />
   </SfLoader>
-  <div v-else id="product" >
+  <div v-else id="product">
     <!-- <SfBreadcrumbs class="breadcrumbs" :breadcrumbs="breadcrumbs">
       <template #link="{ breadcrumb }">
         <nuxt-link
@@ -345,7 +345,6 @@
       <HomeLogolist />
     </div>
 
-
     <div
       v-show="
         ispath ===
@@ -396,7 +395,7 @@
       <Toothbrushheadfooter />
     </div>
     <div
-     v-show="
+      v-show="
         ispath ===
           '/p/Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0Lzc3MTc0MDc1ODg2MTA=/osmiler-swing-head-5pcs' ||
           ispath ===
@@ -420,7 +419,7 @@
       <ToothBannerGrids />
     </div>
     <div
-        v-show="
+      v-show="
         ispath ===
           '/p/Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0Lzc3MTc0MDc1ODg2MTA=/osmiler-swing-head-5pcs' ||
           ispath ===
@@ -432,7 +431,7 @@
       <TootBrushHead5 />
     </div>
     <div
-         v-show="
+      v-show="
         ispath ===
           '/p/Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0Lzc3MTc0MDc1ODg2MTA=/osmiler-swing-head-5pcs' ||
           ispath ===
@@ -830,13 +829,12 @@ export default {
   position: relative;
   top: 30px;
 }
-.product__details{
+.product__details {
   margin-top: 40px !important;
 }
-.sf-price{
+.sf-price {
   margin-top: -40px;
 }
-
 
 .pdc-pdp-loader {
   min-height: 200px;

@@ -10,7 +10,7 @@
             <h1
               class="uk-margin-remove-vertical uk-text-center"
               id="page#5-0-0-0"
-              style="color: #5a47ee; font-family: osmiler-title;"
+              style="color: #5a47ee; font-family: osmiler-title"
             >
               Packing list
             </h1>

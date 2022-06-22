@@ -75,7 +75,11 @@
                   <h1
                     class="uk-margin-remove-vertical uk-text-left@m uk-text-left"
                     id="page#7-0-0-0"
-                    style="font-family: osmiler-title;margin-top: 15px !important;font-size: 32px"
+                    style="
+                      font-family: osmiler-title;
+                      margin-top: 15px !important;
+                      font-size: 32px;
+                    "
                   >
                     When noise turns to music.
                   </h1>

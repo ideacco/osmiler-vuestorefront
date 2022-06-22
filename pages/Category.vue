@@ -423,6 +423,7 @@ export default {
     const { toggleCategoryGridView } = useUiState()
 
     onMounted(() => {
+      console.log(sortBy, 4544)
       context.root.$scrollTo(context.root.$el, 2000)
     })
 

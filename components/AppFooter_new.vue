@@ -28,26 +28,23 @@
                   <div class="uk-first-column">
                     <a
                       class="el-link uk-icon-button"
-                      href="https://facebook.com/"
+                      href="https://business.facebook.com/latest/home?nav_ref=bm_home_redirect&mio=0&asset_id=109389548256610"
                       rel="noreferrer"
-                    ><span uk-icon="icon: facebook;" class="uk-icon"></span
-                    ></a>
+                    ><img src="/homepage/ic_facebook.svg"  class="uk-icon"  /></a>
+                  </div>
+                  <div>
+                       <a
+                      class="el-link uk-icon-button"
+                      href="https://www.instagram.com/osmiler.health/"
+                      rel="noreferrer"
+                    ><img src="/homepage/ic_instagram.svg"  class="uk-icon"  /></a>
                   </div>
                   <div>
                     <a
                       class="el-link uk-icon-button"
-                      href="https://www.instagram.com/"
+                      href="https://www.youtube.com/channel/UCG8tuzvMGSQOlmw3q9E3g7Q/featured"
                       rel="noreferrer"
-                    ><span uk-icon="icon: instagram;" class="uk-icon"></span
-                    ></a>
-                  </div>
-                  <div>
-                    <a
-                      class="el-link uk-icon-button"
-                      href="https://www.instagram.com/"
-                      rel="noreferrer"
-                    ><span uk-icon="icon: instagram;" class="uk-icon"></span
-                    ></a>
+                    ><img src="/homepage/ic_youtube.svg"  class="uk-icon"  /></a>
                   </div>
                 </div>
               </div>
@@ -194,7 +191,7 @@
                   uk-grid=""
                 >
                   <div class="uk-first-column">
-                    <a class="el-link uk-icon" href="#" rel="noreferrer">
+                    <a class="el-link uk-icon" rel="noreferrer">
                       <img
                         src="/homepage/logo_dinersclub.png"
                         alt=""
@@ -203,7 +200,7 @@
                     </a>
                   </div>
                   <div class="uk-first-column">
-                    <a class="el-link uk-icon" href="#" rel="noreferrer">
+                    <a class="el-link uk-icon" rel="noreferrer">
                       <img
                         src="/homepage/logo_dinersclub-1.png"
                         alt=""
@@ -212,7 +209,7 @@
                     </a>
                   </div>
                   <div class="uk-first-column">
-                    <a class="el-link uk-icon" href="#" rel="noreferrer">
+                    <a class="el-link uk-icon" rel="noreferrer">
                       <img
                         src="/homepage/logo_discover.png"
                         alt=""
@@ -221,7 +218,7 @@
                     </a>
                   </div>
                   <div class="uk-first-column">
-                    <a class="el-link uk-icon" href="#" rel="noreferrer">
+                    <a class="el-link uk-icon" rel="noreferrer">
                       <img
                         src="/homepage/logo_jcb.png"
                         alt=""
@@ -230,7 +227,7 @@
                     </a>
                   </div>
                   <div class="uk-first-column">
-                    <a class="el-link uk-icon" href="#" rel="noreferrer">
+                    <a class="el-link uk-icon" rel="noreferrer">
                       <img
                         src="/homepage/logo_mastercard.png"
                         alt=""
@@ -239,7 +236,7 @@
                     </a>
                   </div>
                   <div class="uk-first-column">
-                    <a class="el-link uk-icon" href="#" rel="noreferrer">
+                    <a class="el-link uk-icon" rel="noreferrer">
                       <img
                         src="/homepage/logo_visa.png"
                         alt=""
@@ -248,7 +245,7 @@
                     </a>
                   </div>
                   <div class="uk-first-column">
-                    <a class="el-link uk-icon" href="#" rel="noreferrer">
+                    <a class="el-link uk-icon" rel="noreferrer">
                       <img
                         src="/homepage/logo_palpay.png"
                         alt=""
@@ -272,6 +269,7 @@
 .uk-icon1 {
   width: 48px;
   height: 32px;
+  cursor: default;
 }
 .ukwidth888 {
   width: 500px;

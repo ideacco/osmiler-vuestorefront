@@ -13,7 +13,10 @@
             uk-grid
           >
             <div class="uk-grid-item-match uk-width-1-2@m">
-              <div class="uk-tile-default uk-tile uk-flex uk-flex-middle">
+              <div
+                class="uk-tile-default uk-tile uk-flex uk-flex-middle"
+                style="background: #faf9fd"
+              >
                 <div class="uk-panel uk-width-1-1">
                   <h1
                     class="uk-margin-remove-vertical uk-text-left@m uk-text-center"
@@ -32,7 +35,9 @@
                   <div class="uk-margin">
                     <img
                       src="/wp-content/themes/yootheme/cache/icon_grop-3-56768954.png"
-                      srcset="/wp-content/themes/yootheme/cache/icon_grop-3-56768954.png 268w"
+                      srcset="
+                        /wp-content/themes/yootheme/cache/icon_grop-3-56768954.png 268w
+                      "
                       sizes="(min-width: 268px) 268px"
                       data-width="268"
                       data-height="92"
@@ -85,7 +90,7 @@
                 <h1
                   class="uk-margin-remove-vertical uk-width-xlarge uk-text-left@m uk-text-left"
                   id="page#11-0-0-0"
-                  style="font-size:32px"
+                  style="font-size: 32px"
                 >
                   3 Classic vibration modes
                 </h1>

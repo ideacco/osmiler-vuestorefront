@@ -6,7 +6,11 @@
         uk-grid
       >
         <div>
-          <h1 class="uk-text-center" id="page#17-0-0-0" style="color: #4132c7;font-size: 32px;">
+          <h1
+            class="uk-text-center"
+            id="page#17-0-0-0"
+            style="color: #4132c7; font-size: 32px"
+          >
             Certificate
           </h1>
           <div

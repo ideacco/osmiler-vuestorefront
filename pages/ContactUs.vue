@@ -22,7 +22,7 @@
                 class="uk-child-width-1-2 uk-child-width-1-2@s uk-child-width-1-2@l uk-grid-match"
                 uk-grid
               >
-                <div>
+                <!-- <div>
                   <div
                     class="el-item uk-panel uk-margin-remove-first-child"
                     uk-scrollspy="target: [uk-scrollspy-class];"
@@ -50,8 +50,8 @@
                       69100 Villeurbanne,France
                     </div>
                   </div>
-                </div>
-                <div>
+                </div> -->
+                <div style="margin: 0 auto">
                   <div
                     class="el-item uk-panel uk-margin-remove-first-child"
                     uk-scrollspy="target: [uk-scrollspy-class];"
@@ -74,11 +74,11 @@
                       Contact
                     </h2>
                     <div class="el-content uk-panel uk-margin-top">
-                      <a
+                      <!-- <a
                         class="uk-link-text"
                         href="tel:+860755-25827634"
                       >+ 86 &#8211; 755 &#8211; 25827634</a
-                      ><br />
+                      ><br /> -->
                       <a href="/service@osmiler.com">service@osmiler.com</a>
                     </div>
                   </div>
@@ -110,9 +110,7 @@
     </div>
     <div class="uk-section-default uk-dark">
       <div
-        style="
-          background-image: url('/wp-content/themes/yootheme/cache/01-2-ya-0c515866.jpeg');
-        "
+        style="background-image: url('/wp-content/themes/yootheme/cache/01-2-ya-0c515866.jpeg');"
         class="uk-background-norepeat uk-background-cover uk-background-center-center uk-section uk-section-large"
       >
         <div class="uk-container uk-container-expand">
@@ -191,9 +189,18 @@
         </div>
       </div>
     </div>
+    <MainChack />
   </div>
 </template>
-<script></script>
+<script>
+import MainChack from '~/components/MainChack'
+export default {
+  name: 'ContactUs',
+  components: {
+    MainChack
+  }
+}
+</script>
 <style lang="scss" scoped>
 #page\#1-1-0-0 {
   font-family: 'osmiler-title';

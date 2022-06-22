@@ -203,7 +203,7 @@ export default {
       shopRootCategories: [
         'MuSic',
         'PrivacyPolicy',
-        'ElectricToothbrush',
+        'Services',
         'ContactUs',
         'Aboutus',
         'Product'

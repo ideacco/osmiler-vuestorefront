@@ -7,7 +7,10 @@
           uk-navbar="container: .tm-header-mobile"
           :class="{'uk-light': isNavbarTransparent}"
           > -->
-        <nav uk-navbar="container: .tm-header-mobile" style="background-color:#fff">
+        <nav
+          uk-navbar="container: .tm-header-mobile"
+          style="background-color: #fff"
+        >
           <div class="uk-navbar-center" style="z-index: 2">
             <a href="/home" class="uk-navbar-item uk-logo">
               <img
@@ -54,7 +57,7 @@
                   <li
                     class="menu-item menu-item-type-post_type menu-item-object-page"
                   >
-                    <a href="/ElectricToothbrush"> Services</a>
+                    <a href="/Services"> Services</a>
                   </li>
                   <li
                     class="menu-item menu-item-type-post_type menu-item-object-page"
@@ -292,7 +295,7 @@ export default {
         },
         {
           name: 'Services',
-          path: '/ElectricToothbrush'
+          path: '/Services'
         },
         {
           name: 'About Us',
