@@ -54,9 +54,9 @@
                   <a
                     class="el-content uk-button uk-button-default"
                     uk-scroll
-                    @click="myfuction()"
+                    @click="buyNow()"
                   >
-                    Coming soon
+                    Buy now
                   </a>
                 </div>
               </div>
@@ -112,9 +112,9 @@
                 <a
                   class="el-content uk-button uk-button-default"
                   uk-scroll
-                  @click="myfuction()"
+                  @click="buyNow()"
                 >
-                  Coming soon
+                  Buy now
                 </a>
               </div>
             </div>
@@ -171,9 +171,8 @@ export default {
     return {}
   },
   methods: {
-    myfuction() {
-      window.location.href =
-        'https://osmiler.myshopify.com/63788810498/checkouts/c57525528cffe22429aead6ffe61d813'
+    buyNow() {
+      this.$router.push('/p/Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0Lzc3MTcwNTM0MzIwNjY=/osmiler-swing')
     }
   }
 }

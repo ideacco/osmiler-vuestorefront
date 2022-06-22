@@ -745,22 +745,22 @@ export default {
   data() {
     return {
       properties: [
-        {
-          name: 'Product Code',
-          value: '578902-00'
-        },
-        {
-          name: 'Category',
-          value: 'Pants'
-        },
-        {
-          name: 'Material',
-          value: 'Cotton'
-        },
-        {
-          name: 'Country',
-          value: 'Germany'
-        }
+        // {
+        //   name: 'Product Code',
+        //   value: '578902-00'
+        // },
+        // {
+        //   name: 'Category',
+        //   value: 'Pants'
+        // },
+        // {
+        //   name: 'Material',
+        //   value: 'Cotton'
+        // },
+        // {
+        //   name: 'Country',
+        //   value: 'Germany'
+        // }
       ],
       description:
         'Find stunning women cocktail and party dresses. Stand out in lace and metallic cocktail dresses and party dresses from all your favorite brands.',
