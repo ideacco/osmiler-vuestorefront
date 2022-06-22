@@ -4,7 +4,7 @@
       id="page#4"
       class="uk-section-default uk-section uk-section-xsmall uk-padding-remove-bottom uk-flex uk-flex-bottom"
       uk-height-viewport="offset-top: true;"
-      style="min-height: calc(100vh);background: #faf9fd"
+      style="min-height: calc(100vh);background:#faf9fd"
     >
       <div class="uk-width-1-1">
         <div class="uk-container uk-container-xlarge">
