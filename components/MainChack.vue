@@ -5,10 +5,14 @@
         <div
           class="tm-grid-expand uk-grid-margin uk-grid uk-grid-stack"
           uk-grid=""
-          style="align-items: center;"
+          style="align-items: center"
         >
           <div class="uk-width-1-3@m uk-first-column">
-            <div class="uk-panel uk-margin-remove-vertical uk-text-left@m uk-text-center"><h5>The main information：</h5></div>
+            <div
+              class="uk-panel uk-margin-remove-vertical uk-text-left@m uk-text-center"
+            >
+              <h5>The main information：</h5>
+            </div>
           </div>
           <div class="uk-width-2-3@m uk-grid-margin uk-first-column">
             <div class="uk-margin-remove-vertical uk-text-center">
@@ -19,7 +23,7 @@
                 data-height="45"
                 class="el-image"
                 alt=""
-              >
+              />
             </div>
           </div>
         </div>
@@ -32,15 +36,12 @@
 export default {
   name: 'MainChack',
 
-  data () {
-    return {
-    }
+  data() {
+    return {}
   },
 
   methods: {}
 }
 </script>
 
-<style lang=
- scoped>
-</style>
+<style lang="scoped"></style>

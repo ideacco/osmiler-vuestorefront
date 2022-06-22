@@ -10,7 +10,11 @@
             <h1
               class="uk-margin-remove-vertical uk-text-center"
               id="page#6-0-0-0"
-              style="color:#5a47ee; font-family: osmiler-title"
+              style="
+                color: #5a47ee;
+                font-family: osmiler-title;
+                font-size: 42px;
+              "
             >
               Color option
             </h1>

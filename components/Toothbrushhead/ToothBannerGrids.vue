@@ -15,6 +15,7 @@
               class="uk-margin-remove-top uk-margin-remove-bottom tm-grid-expand uk-grid-column-collapse uk-grid"
               uk-grid=""
               uk-height-match="target: .uk-card"
+              style="background: #faf9fd"
             >
               <div
                 class="uk-grid-item-match uk-flex-middle uk-width-1-2@m uk-first-column"

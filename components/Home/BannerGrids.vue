@@ -53,9 +53,9 @@
               <h1
                 class="uk-margin-remove-vertical uk-width-medium@m uk-text-left@m uk-text-left"
                 id="page#4-0-0-0"
-                style="font-size:32px !important"
+                style="font-size: 32px !important"
               >
-                Your senses. <br/>Set free.
+                Your senses. <br />Set free.
               </h1>
               <div class="uk-panel uk-margin-small uk-text-left@m uk-text-left">
                 <p>

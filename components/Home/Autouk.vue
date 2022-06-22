@@ -89,7 +89,7 @@
                   <h2
                     class="uk-margin-remove-vertical uk-text-left@m uk-text-left"
                     id="page#17-0-0-0"
-                    style="font-size:32px"
+                    style="font-size: 32px"
                   >
                     Constant high-frequency vibration
                   </h2>

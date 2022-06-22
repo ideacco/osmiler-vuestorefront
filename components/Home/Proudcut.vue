@@ -3,7 +3,7 @@
   <div>
     <div class="uk-visible@m uk-section-primary">
       <div
-        style="background-image: url('/wp-content/themes/yootheme/cache/14BG-ya-39ecc9e1.jpeg');"
+        style="background-image: url('/wp-content/themes/yootheme/cache/14BG-ya-39ecc9e1.jpeg');background-position: 60% 30%;"
         class="uk-background-norepeat uk-background-cover uk-background-center-center uk-section uk-section-large"
         uk-height-viewport="offset-top: true; offset-bottom: 20;"
       >
@@ -39,7 +39,7 @@
             <h1
               class="uk-margin-medium uk-margin-remove-bottom uk-width-large"
               id="page#15-0-0-0"
-              style="font-size:32px"
+              style="font-size: 32px"
             >
               No afraid of power-off
             </h1>

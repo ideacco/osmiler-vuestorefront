@@ -15,7 +15,7 @@
                 <h1
                   class="uk-margin-remove-vertical"
                   id="page#18-0-0-0"
-                  style="color: #5a47ee"
+                  style="color: #5a47ee; font-size: 42px"
                 >
                   Color options
                 </h1>
@@ -53,7 +53,7 @@
         <div>
           <div class="uk-margin uk-margin-remove-top uk-text-center">
             <img
-              src="/wp-content/themes/yootheme/cache/Frame1355.jpg"
+              src="/wp-content/themes/yootheme/cache/Framepeploe.jpg"
               sizes="(min-width: 1125px) 1125px"
               data-width="1125"
               data-height="1152"

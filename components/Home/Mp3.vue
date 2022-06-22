@@ -67,16 +67,15 @@
             <h1
               class="uk-margin-xlarge uk-margin-remove-bottom uk-width-xlarge uk-text-left@m uk-text-left"
               id="page9-0-0-0"
-              style="margin-top:15px;font-size: 32px;"
+              style="margin-top: 15px; font-size: 32px"
             >
               Be a music creator.
             </h1>
             <div class="uk-panel uk-margin">
-              <p  style="margin-top:15px">Upload music to toothbrush via Bluetooth or PC.
-                      Find your own music or share your favorite music with our
-                community!
+              <p style="margin-top: 15px">
+                Upload music to toothbrush via Bluetooth or PC. Find your own
+                music or share your favorite music with our community!
               </p>
-
             </div>
           </div>
         </div>
