@@ -81,37 +81,6 @@
                 id="text-5"
               >
                 <div class="uk-panel textwidget">
-                  <!-- <p v-if="isUserAuthenticated">
-                    <a
-                      @click="$router.push(localePath({ name: 'my-account' }))"
-                      class="uk-button uk-button-primary uk-width-1-1"
-                    >Login</a
-                    >
-                  </p>
-                  <div
-                    class="uk-grid-small uk-child-width-auto uk-flex-middle uk-flex-center"
-                    uk-grid
-                  >
-                    <div>
-                      <ul class="uk-iconnav">
-                        <li>
-                          <a
-                            href="https://facebook.com/yootheme"
-                            uk-icon="icon: facebook"
-                          ></a>
-                        </li>
-                        <li>
-                          <a
-                            href="https://instagram.com/"
-                            uk-icon="icon: instagram"
-                          ></a>
-                        </li>
-                        <li>
-                          <a href="https://yelp.com/" uk-icon="icon: yelp"></a>
-                        </li>
-                      </ul>
-                    </div>
-                  </div> -->
                   <p class="uk-text-meta">
                     © 2022 Osmiler. All rights reserved.
                   </p>
