@@ -1,8 +1,6 @@
 <template>
   <div
-    style="
-      background-image: url('/wp-content/themes/yootheme/cache/music-hero-4f873de3.jpeg');
-    "
+    style="background-image: url('/wp-content/themes/yootheme/cache/music-hero-4f873de3.jpeg');"
     ref="hero"
   >
     <div class="uk-padding-large">
