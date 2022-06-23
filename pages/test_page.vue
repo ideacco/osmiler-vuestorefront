@@ -9,6 +9,18 @@
       <button @click="testRouterParams">获取路由信息</button>
       <button @click="fetchSomething">测试请求</button>
 
+      <SfGallery
+        :images='productGallery'
+        :imageWidth="1000"
+        :imageHeight="1000"
+        :thumbWidth="160"
+        :thumbHeight="160"
+        :current="1"
+        :sliderOptions='{"type":"slider","autoplay":false,"rewind":false,"gap":0}'
+        :outsideZoom="false"
+        enableZoom
+      />
+
       <div class="uk-margin-large uk-light">
         <h3>获取的产品内容</h3>
 
@@ -17,7 +29,11 @@
         产品Id:{{ productId ? productId : 'no Id' }}
         <br />
         产品图片:
-        <img v-if="productImage" :src="productImage" alt="" />
+        <img
+          v-if="productImage"
+          :src="productImage"
+          alt=""
+        />
         <br />
         图片URL:{{ productImage ? productImage : 'no imags' }}
 
@@ -36,6 +52,14 @@
         <br />
         产品的类别信息:
         {{ productCategory ? productCategory : 'no productCategory' }}
+
+        <br />
+        产品的图:
+        {{ productGallery2 ? productGallery2 : 'no productGallery2' }}
+
+        <br />
+        产品的图333:
+        {{ productGallery3 ? productGallery3 : 'no productGallery3' }}
       </div>
 
       <p>
@@ -86,6 +110,7 @@ import {
   onMounted,
   onUnmounted
 } from '@nuxtjs/composition-api'
+
 import { useUiState } from '~/composables'
 import { onSSR } from '@vue-storefront/core'
 import {
@@ -94,7 +119,14 @@ import {
   useCategory
 } from '@vue-storefront/shopify'
 
+import {
+  SfGallery
+} from '@storefront-ui/vue'
+
 export default {
+  components: {
+    SfGallery
+  },
   name: 'TestPage',
   setup() {
     const {
@@ -124,9 +156,9 @@ export default {
     onSSR(async () => {
       console.log('后端执行的 ssr 查询')
       // 用来更新产品的钩子函数
-      // await search({slug})
+      await search({slug})
       // await search({})
-      await inSearch({})
+      // await inSearch({})
     })
 
     // 自定义查询
@@ -160,14 +192,45 @@ export default {
     )
     const productId = computed(() => productGetters.getId(product.value))
     const productTitle = computed(() => productGetters.getName(product.value))
-    // const productGallery = computed(() => productGetters.getGallery(product.value))
+    const productGallery2 = computed(() => productGetters.getGallery(product.value))
+
+    const getProductGallery = (product) => (product ? product.images : []).map((image) => {
+      const imgPath = image.originalSrc.substring(0, image.originalSrc.lastIndexOf('.'))
+      const imgext = image.originalSrc.split('.').pop()
+      const imgSmall = imgPath + '_160x160.' + imgext
+      const imgBig = imgPath + '_295x295.' + imgext
+      const imgNormal = imgPath + '_1500x1500.' + imgext
+      return ({
+        small: imgSmall,
+        big: imgBig,
+        normal: imgNormal
+      })
+    })
+
+    const productGallery3 = computed(() =>
+      getProductGallery(product.value).map((img) => {
+        // console.log('img?',img)
+        return ({
+          mobile: { url: img.small },
+          desktop: { url: img.normal },
+          big: { url: img.big }
+        })
+      })
+    )
+
+
+
     // 高级写法,将不同的尺寸图片分类使用
     const productGallery = computed(() =>
-      productGetters.getGallery(product.value).map((img) => ({
-        mobile: { url: img.small },
-        desktop: { url: img.normal },
-        big: { url: img.big }
-      }))
+      productGetters.getGallery(product.value).map((img) => {
+        // console.log('img?',img)
+        return ({
+          mobile: { url: img.small },
+          desktop: { url: img.normal },
+          big: { url: img.big }
+        })
+        
+      })
     )
 
     const productCategory = computed(() => [...categories.value])
@@ -201,6 +264,7 @@ export default {
       }
       console.log('子页面初始化!,路由信息', route)
       setNavbarTransparent(true)
+      console.log('product.value',product.value)
     })
 
     onUnmounted(() => {
@@ -221,7 +285,9 @@ export default {
       loading,
       productId,
       productTitle,
-      productGallery
+      productGallery,
+      productGallery2,
+      productGallery3
     }
   },
 
