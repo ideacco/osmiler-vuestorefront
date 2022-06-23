@@ -1,6 +1,13 @@
 <template>
-  <div id="product">
-    <SfBreadcrumbs class="breadcrumbs breadcrumbs-center"  :breadcrumbs="breadcrumbs">
+  <SfLoader
+    v-if="productloading"
+    class="pdc-pdp-loader"
+    :loading="productloading"
+  >
+    <div />
+  </SfLoader>
+  <div v-else id="product">
+    <SfBreadcrumbs class="breadcrumbs" :breadcrumbs="breadcrumbs">
       <template #link="{ breadcrumb }">
         <nuxt-link
           :data-testid="breadcrumb.text"
@@ -12,7 +19,7 @@
       </template>
     </SfBreadcrumbs>
     <div class="product">
-     <SfGallery
+   <SfGallery
         :images='productGallery3'
         :imageWidth="1000"
         :imageHeight="1000"
@@ -80,7 +87,7 @@
               >
                 <label class="product__color-label">{{ $t(key) }}</label>
                 <div class="product__flex-break"></div>
-                <SfButton
+              <SfButton
                   v-for="(attribs, a) in option"
                   @click="
                     ;(atttLbl = key),
@@ -206,7 +213,7 @@
         </LazyHydrate>
       </div>
     </div>
-    <!-- <GridList /> -->
+        <!-- <GridList /> -->
     <div
       v-show="
         ispath ===
@@ -438,19 +445,6 @@
       <Toothbrushheadfooter />
     </div>
 
-    <!-- <LazyHydrate when-visible>
-      <RelatedProducts
-        :products="relatedProducts"
-        :loading="relatedLoading"
-        title="Match it with"
-      />
-    </LazyHydrate> -->
-    <!-- <LazyHydrate when-visible>
-      <InstagramFeed />
-    </LazyHydrate>
-    <LazyHydrate when-visible>
-      <MobileStoreBanner />
-    </LazyHydrate> -->
   </div>
 </template>
 <script>
@@ -860,6 +854,9 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+  .sf-loader{
+
+}
 .product__description {
   position: relative;
   top: 30px;
@@ -872,6 +869,7 @@ export default {
 }
 
 .pdc-pdp-loader {
+  --loader-spinner-stroke: #fff !important;
   min-height: 200px;
   padding: 100px 0;
 }
@@ -1002,6 +1000,7 @@ export default {
     margin: 0 var(--spacer-lg) var(--spacer-xs) 0;
     padding: 0 0 0 4px;
   }
+
 
   &__color {
     margin: 0 var(--spacer-2xs);

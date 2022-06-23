@@ -17,7 +17,7 @@
     <!-- sorting features panel -->
     <div class="navbar section">
       <div class="navbar__main">
-        <div class="navbar__sort desktop-only" style="margin-left:0">
+        <div class="navbar__sort desktop-only">
           <span class="navbar__label">{{ $t('Sort by') }}:</span>
           <SfSelect
             :value="sortBy.selected"
@@ -31,17 +31,17 @@
               :key="option.id"
               :value="option.id"
               class="sort-by__option"
-            >{{ option.value }}</SfSelectOption
+              >{{ option.value }}</SfSelectOption
             >
           </SfSelect>
         </div>
         <div class="navbar__counter">
           <span class="navbar__label desktop-only"
-          >{{ $t('Products found') }}:
+            >{{ $t('Products found') }}:
           </span>
           <span class="desktop-only">{{ pagination.totalItems }}</span>
           <span class="navbar__label smartphone-only"
-          >{{ pagination.totalItems }} Items</span
+            >{{ pagination.totalItems }} Items</span
           >
         </div>
         <div class="navbar__view">
@@ -55,7 +55,7 @@
             role="button"
             aria-label="Change to grid view"
             :aria-pressed="isCategoryGridView"
-            v-on="isCategoryGridView ? {} : { click: toggleCategoryGridView }"
+            v-on="isCategoryGridView ? {}: {click: toggleCategoryGridView}"
           />
           <SfIcon
             data-cy="category-icon_list-view"
@@ -66,13 +66,15 @@
             role="button"
             aria-label="Change to list view"
             :aria-pressed="!isCategoryGridView"
-            v-on="!isCategoryGridView ? {} : { click: toggleCategoryGridView }"
+            v-on="!isCategoryGridView ? {}: {click: toggleCategoryGridView}"
           />
         </div>
       </div>
     </div>
     <div class="main section">
-           <div v-if="!loading" class="products">
+      <!-- Category sidebar here -->
+      <SfLoader :class="{ loading }" :loading="loading" >
+        <div v-if="!loading" class="products">
           <transition-group
             v-if="isCategoryGridView"
             appear
@@ -112,7 +114,7 @@
                 handleAddToCart({ product, quantity: 1, currentCart })
               "
             >
-              <template #image="imageSlotProps">
+            <template #image="imageSlotProps">
                 <SfButton
                   :link="imageSlotProps.link"
                   aria-label="Go To Product"
@@ -180,33 +182,36 @@
                 handleAddToCart({ product, quantity: 1, currentCart })
               "
             ><template #image="imageSlotProps">
-               <SfLink
-                 :link="imageSlotProps.link"
-                 class="sf-product-card-horizontal__link sf-product-card-horizontal__link--image"
-               >
-                 <template v-if="Array.isArray(imageSlotProps.image)">
-                   <SfImage
-                     v-for="(picture, key) in imageSlotProps.image.slice(0, 2)"
-                     :key="key"
-                     image-tag="nuxt-img"
-                     :src="picture"
-                     :alt="imageSlotProps.title"
-                     :width="imageSlotProps.imageWidth"
-                     :height="imageSlotProps.imageHeight"
-                     class="sf-product-card-horizontal__picture"
-                   />
-                 </template>
-                 <SfImage
-                   v-else
-                   image-tag="nuxt-img"
-                   :src="imageSlotProps.image"
-                   :alt="imageSlotProps.title"
-                   :width="imageSlotProps.imageWidth"
-                   :height="imageSlotProps.imageHeight"
-                   class="sf-product-card-horizontal__image"
-                 />
-               </SfLink>
-             </template>
+                  <SfLink
+                    :link="imageSlotProps.link"
+                    class="
+                    sf-product-card-horizontal__link
+                    sf-product-card-horizontal__link--image
+                  "
+                  >
+                    <template v-if="Array.isArray(imageSlotProps.image)">
+                      <SfImage
+                        v-for="(picture, key) in imageSlotProps.image.slice(0, 2)"
+                        :key="key"
+                        image-tag="nuxt-img"
+                        :src="picture"
+                        :alt="imageSlotProps.title"
+                        :width="imageSlotProps.imageWidth"
+                        :height="imageSlotProps.imageHeight"
+                        class="sf-product-card-horizontal__picture"
+                      />
+                    </template>
+                    <SfImage
+                      v-else
+                      image-tag="nuxt-img"
+                      :src="imageSlotProps.image"
+                      :alt="imageSlotProps.title"
+                      :width="imageSlotProps.imageWidth"
+                      :height="imageSlotProps.imageHeight"
+                      class="sf-product-card-horizontal__image"
+                    />
+                  </SfLink>
+                </template>
               <template #configuration>
                 <SfProperty
                   class="desktop-only"
@@ -225,7 +230,7 @@
                       product,
                       quantity: Number(
                         productsQuantity[productData.getId(product)] || 1
-                      ),
+                      )
                     })
                   "
                 />
@@ -262,7 +267,7 @@
             </SfSelect>
           </div>
         </div>
-      <!-- Category sidebar here -->
+      </SfLoader>
     </div>
     <SfSidebar
       :visible="isFilterSidebarOpen"
@@ -326,7 +331,7 @@
       </SfAccordion>
       <template #content-bottom>
         <div class="filters__buttons">
-          <SfButton
+         <SfButton
             class="sf-button--full-width"
             @click="applyFilters"
           >Done</SfButton
@@ -334,7 +339,7 @@
           <SfButton
             class="sf-button--full-width filters__button-clear"
             @click="clearFilters"
-          >Clear all</SfButton
+            >Clear all</SfButton
           >
         </div>
       </template>
@@ -415,7 +420,6 @@ export default {
     const { toggleCategoryGridView } = useUiState()
 
     onMounted(() => {
-      console.log(sortBy, 4544)
       context.root.$scrollTo(context.root.$el, 2000)
     })
 
@@ -440,7 +444,6 @@ export default {
   // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
   data() {
     return {
-
       breadcrumbs: [
         {
           text: 'Home',
@@ -480,9 +483,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
- :v-deep del.sf-price__old{
-  display: none !important;
-}
 #category {
   box-sizing: border-box;
   @include for-desktop {
@@ -490,6 +490,9 @@ export default {
     max-width: 1240px;
     margin: 0 auto;
   }
+}
+.sf-loader{
+  --loader-spinner-stroke: #fff !important;
 }
 .main {
   &.section {
@@ -501,12 +504,11 @@ export default {
   }
 }
 .breadcrumbs {
-  --font-family--secondary: var(--font-family--primary);
+ --font-family--secondary: var(--font-family--primary);
   // margin: var(--spacer-base) auto var(--spacer-lg);
   margin: 30px 0 5px 10px;
 }
 .navbar {
-  --font-family--secondary: var(--font-family--primary);
   position: relative;
   display: flex;
   border: 1px solid var(--c-light);
@@ -677,7 +679,7 @@ export default {
   &__grid {
     justify-content: space-between;
     @include for-desktop {
-      justify-content:space-between;
+     justify-content:space-between;
     }
   }
   &__grid,
