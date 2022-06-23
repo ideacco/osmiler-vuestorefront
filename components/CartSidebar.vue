@@ -28,10 +28,7 @@
                 :regular-price="
                   $n(cartGetters.getItemPrice(product).regular, 'currency')
                 "
-                :special-price="
-                  cartGetters.getItemPrice(product).special &&
-                    $n(cartGetters.getItemPrice(product).special, 'currency')
-                "
+                :special-price="null"
                 :stock="99999"
                 class="collected-product"
                 @click:remove="removeItem({ product })"

@@ -1,6 +1,6 @@
 <template>
-  <div id="product">
-    <SfBreadcrumbs class="breadcrumbs breadcrumbs-center"  :breadcrumbs="breadcrumbs">
+  <div  id="product">
+    <SfBreadcrumbs class="breadcrumbs" :breadcrumbs="breadcrumbs">
       <template #link="{ breadcrumb }">
         <nuxt-link
           :data-testid="breadcrumb.text"
@@ -702,8 +702,9 @@ export default {
               : options.value[attr][0]
         })
       }
-      router.push({
-        path: route?.value?.path,
+
+       $router.push({
+        path: $route?.value?.path,
         query: {
           ...configuration.value,
           ...filter
@@ -872,6 +873,7 @@ export default {
 
 .sf-price__old {
   font-size: 20px;
+  display: none;
 }
 
 #product {
@@ -1084,8 +1086,8 @@ export default {
 // }
 .sf-price__special {
   position: relative;
-  top: 80px;
-  left: -70px;
+  top: 50px;
+  left:0;
   font-size: 48px;
   background: #fff;
 }
