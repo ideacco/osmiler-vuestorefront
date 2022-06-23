@@ -9,7 +9,7 @@
       <button @click="testRouterParams">获取路由信息</button>
       <button @click="fetchSomething">测试请求</button>
 
-      <SfGallery
+      <!-- <SfGallery
         :images='productGallery'
         :imageWidth="1000"
         :imageHeight="1000"
@@ -19,7 +19,7 @@
         :sliderOptions='{"type":"slider","autoplay":false,"rewind":false,"gap":0}'
         :outsideZoom="false"
         enableZoom
-      />
+      /> -->
 
       <div class="uk-margin-large uk-light">
         <h3>获取的产品内容</h3>
