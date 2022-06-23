@@ -11,6 +11,7 @@
 
       <!-- <SfGallery
         :images='productGallery'
+        
         :imageWidth="1000"
         :imageHeight="1000"
         :thumbWidth="160"
