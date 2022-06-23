@@ -94,10 +94,7 @@
               :regular-price="
                 $n(productGetters.getPrice(product).regular, 'currency')
               "
-              :special-price="
-                productGetters.getPrice(product).special &&
-                  $n(productGetters.getPrice(product).special, 'currency')
-              "
+              :special-price="null"
               :max-rating="5"
               :score-rating="productGetters.getAverageRating(product)"
               :show-add-to-cart-button="true"
@@ -168,10 +165,7 @@
               :regular-price="
                 $n(productGetters.getPrice(product).regular, 'currency')
               "
-              :special-price="
-                productGetters.getPrice(product).special &&
-                  $n(productGetters.getPrice(product).special, 'currency')
-              "
+              :special-price="null"
               :add-to-cart-disabled="!productGetters.getStockStatus(product)"
               :max-rating="5"
               :score-rating="3"
@@ -488,6 +482,9 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+ :v-deep del.sf-price__old{
+  display: none !important;
+}
 #category {
   box-sizing: border-box;
   @include for-desktop {

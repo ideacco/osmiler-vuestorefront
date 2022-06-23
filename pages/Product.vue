@@ -847,6 +847,7 @@ export default {
 
 .sf-price__old {
   font-size: 20px;
+  display: none;
 }
 
 #product {
@@ -1058,8 +1059,8 @@ export default {
 // }
 .sf-price__special {
   position: relative;
-  top: 80px;
-  left: -70px;
+  top: 50px;
+  left:0;
   font-size: 48px;
   background: #fff;
 }
