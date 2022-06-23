@@ -94,7 +94,10 @@
               :regular-price="
                 $n(productGetters.getPrice(product).regular, 'currency')
               "
-              :special-price="null"
+              :special-price="
+                productGetters.getPrice(product).special &&
+                  $n(productGetters.getPrice(product).special, 'currency')
+              "
               :max-rating="5"
               :score-rating="productGetters.getAverageRating(product)"
               :show-add-to-cart-button="true"
@@ -165,7 +168,10 @@
               :regular-price="
                 $n(productGetters.getPrice(product).regular, 'currency')
               "
-              :special-price="null"
+              :special-price="
+                productGetters.getPrice(product).special &&
+                  $n(productGetters.getPrice(product).special, 'currency')
+              "
               :add-to-cart-disabled="!productGetters.getStockStatus(product)"
               :max-rating="5"
               :score-rating="3"
