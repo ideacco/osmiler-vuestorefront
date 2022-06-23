@@ -1,12 +1,5 @@
 <template>
-  <SfLoader
-    v-if="productloading"
-    class="pdc-pdp-loader"
-    :loading="productloading"
-  >
-    <div />
-  </SfLoader>
-  <div v-else id="product">
+  <div id="product">
     <SfBreadcrumbs class="breadcrumbs breadcrumbs-center"  :breadcrumbs="breadcrumbs">
       <template #link="{ breadcrumb }">
         <nuxt-link
@@ -19,14 +12,16 @@
       </template>
     </SfBreadcrumbs>
     <div class="product">
-      <SfGallery
-        :images="productGallery"
-        :current="ActiveVariantImage + 1"
-        class="product__gallery"
-        image-width="400"
-        image-height="500"
-        thumb-width="160"
-        thumb-height="160"
+     <SfGallery
+        :images='productGallery3'
+        :imageWidth="1000"
+        :imageHeight="1000"
+        :thumbWidth="160"
+        :thumbHeight="160"
+        :current="1"
+        :sliderOptions='{"type":"slider","autoplay":false,"rewind":false,"gap":0}'
+        :outsideZoom="false"
+        enableZoom
       />
       <div class="product__info">
         <div class="product__header">
@@ -126,7 +121,7 @@
             <template #add-to-cart-btn>
               <SfButton
                 class="sf-add-to-cart__button SfButtontwo"
-                :disabled="loading || !productGetters.getStockStatus(product)"
+                :disabled=" !productGetters.getStockStatus(product)"
                 @click="
                   addingToCart({
                     product,
@@ -149,7 +144,7 @@
               <SfButton
                 v-else
                 class="sf-button--full-width sf-proceed_to_checkout SfButtontwo"
-                :disabled="loading || !productGetters.getStockStatus(product)"
+                :disabled=" !productGetters.getStockStatus(product)"
                 @click="
                   addingToCarts({
                     product,
@@ -665,6 +660,32 @@ export default {
     const ActiveVariantImage = computed(() => {
       return productGetters.getVariantImage(product.value) || 0
     })
+    
+    const getProductGallery = (product) => (product ? product.images : []).map((image) => {
+      const imgPath = image.originalSrc.substring(0, image.originalSrc.lastIndexOf('.'))
+      const imgext = image.originalSrc.split('.').pop()
+      const imgSmall = imgPath + '_160x160.' + imgext
+      const imgBig = imgPath + '_295x295.' + imgext
+      const imgNormal = imgPath + '_1500x1500.' + imgext
+      return ({
+        small: imgSmall,
+        big: imgBig,
+        normal: imgNormal
+      })
+    })
+    const productGallery3 = computed(() =>{
+      const img=  getProductGallery(product.value).map((img) => {
+        // console.log('img?',img)
+        return ({
+          mobile: { url: img.small },
+          desktop: { url: img.normal },
+          big: { url: img.big },
+          alt: product.value._name || product.value.name
+        })
+      }).slice(0,4)
+      return img
+    }
+    )
 
     onSSR(async () => {
       await search({ slug, selectedOptions: configuration.value }).then(() => {
@@ -727,6 +748,7 @@ export default {
       totals,
       qty,
       addItem,
+      productGallery3,
       totalItems,
       cartGetters,
       loading,

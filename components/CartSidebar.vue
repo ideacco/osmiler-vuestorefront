@@ -350,6 +350,11 @@ export default {
     }
   }
 }
+.sf-collected-product {
+    @include for-desktop {
+    transform: scale(1.1);
+  }
+}
 .cart-summary {
   margin-top: var(--spacer-xl);
 }

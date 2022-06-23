@@ -33,21 +33,21 @@
                       class="el-link uk-icon-button"
                       href="https://business.facebook.com/latest/home?nav_ref=bm_home_redirect&mio=0&asset_id=109389548256610"
                       rel="noreferrer"
-                    ><img src="/homepage/ic_facebook.svg"  class="uk-icon"  /></a>
+                    ><img src="/homepage/ic_facebook.svg" style="width:24px;height:24px"  class="uk-icon"  /></a>
                   </div>
                   <div>
                        <a
                       class="el-link uk-icon-button"
                       href="https://www.instagram.com/osmiler.health/"
                       rel="noreferrer"
-                    ><img src="/homepage/ic_instagram.svg"  class="uk-icon"  /></a>
+                    ><img src="/homepage/ic_instagram.svg"  style="width:24px;height:24px"  class="uk-icon"  /></a>
                   </div>
                   <div>
                     <a
                       class="el-link uk-icon-button"
                       href="https://www.youtube.com/channel/UCG8tuzvMGSQOlmw3q9E3g7Q/featured"
                       rel="noreferrer"
-                    ><img src="/homepage/ic_youtube.svg"  class="uk-icon"  /></a>
+                    ><img src="/homepage/ic_youtube.svg"  style="width:24px;height:24px"  class="uk-icon"  /></a>
                   </div>
                 </div>
               </div>

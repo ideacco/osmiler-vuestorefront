@@ -72,9 +72,7 @@
       </div>
     </div>
     <div class="main section">
-      <!-- Category sidebar here -->
-      <SfLoader :class="{ loading }" :loading="loading">
-        <div v-if="!loading" class="products">
+           <div v-if="!loading" class="products">
           <transition-group
             v-if="isCategoryGridView"
             appear
@@ -89,8 +87,8 @@
               :style="{ '--index': i }"
               :title="productGetters.getName(product)"
               :image="productGetters.getCoverImage(product)"
-              :image-width="$device.isDesktopOrTablet ? 212 : 154"
-              :image-height="$device.isDesktopOrTablet ? 320 : 232"
+              :image-width="$device.isDesktopOrTablet ? 3000 : 3000"
+              :image-height="$device.isDesktopOrTablet ? 3000 : 3000"
               :regular-price="
                 $n(productGetters.getPrice(product).regular, 'currency')
               "
@@ -160,8 +158,8 @@
               :title="productGetters.getName(product)"
               :description="productGetters.getDescription(product)"
               :image="productGetters.getCoverImage(product)"
-              :image-width="$device.isDesktopOrTablet ? 85 : 140"
-              :image-height="$device.isDesktopOrTablet ? 128 : 212"
+              :image-width="$device.isDesktopOrTablet ? 3000 : 3000"
+              :image-height="$device.isDesktopOrTablet ? 3000 : 3000"
               :regular-price="
                 $n(productGetters.getPrice(product).regular, 'currency')
               "
@@ -264,7 +262,7 @@
             </SfSelect>
           </div>
         </div>
-      </SfLoader>
+      <!-- Category sidebar here -->
     </div>
     <SfSidebar
       :visible="isFilterSidebarOpen"
@@ -679,7 +677,7 @@ export default {
   &__grid {
     justify-content: space-between;
     @include for-desktop {
-      justify-content: flex-start;
+      justify-content:space-between;
     }
   }
   &__grid,
@@ -722,6 +720,8 @@ export default {
       margin: var(--spacer-lg) 0;
     }
     &__product-card {
+      margin:60px 0;
+      transform: scale(1.3);
       flex: 1 1 20%;
     }
     &__list {
