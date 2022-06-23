@@ -1,0 +1,8 @@
+@import '../setting/var.scss';
+@import '../object/font-size.scss';
+
+html {
+  background-color: $background-color-primary;
+  color: $color-text-primary;
+  font-family: 'osmiler-title';
+}

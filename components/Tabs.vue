@@ -1,11 +1,12 @@
 <template lang="html">
   <div class="tabs">
-    <ul class='tabs__header'>
+    <ul class="tabs__header">
       <li
-        v-for='(tab, index) in tabs'
-        :key='tab.title'
-        :class='{"tab__selected": (index == selectedIndex)}'
-        @click='selectTab(index)'>
+        v-for="(tab, index) in tabs"
+        :key="tab.title"
+        :class="{ tab__selected: index == selectedIndex }"
+        @click="selectTab(index)"
+      >
         {{ tab.title }}
       </li>
     </ul>
@@ -15,34 +16,35 @@
 
 <script>
 export default {
+  name: 'TaBs',
   props: {
     mode: {
       type: String,
-      default: 'light',
-    },
+      default: 'light'
+    }
   },
   data() {
     return {
       selectedIndex: 0,
-      tabs: [],
-    };
+      tabs: []
+    }
   },
   created() {
-    this.tabs = this.$children;
+    this.tabs = this.$children
   },
   mounted() {
-    this.selectTab(0);
+    this.selectTab(0)
   },
   methods: {
     selectTab(i) {
-      this.selectedIndex = i;
+      this.selectedIndex = i
       // loop over all the tabs
       this.tabs.forEach((tab, index) => {
-        tab.isActive = index === i;
-      });
-    },
-  },
-};
+        tab.isActive = index === i
+      })
+    }
+  }
+}
 </script>
 
 <style lang="scss">

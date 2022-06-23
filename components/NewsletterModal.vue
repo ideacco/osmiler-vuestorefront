@@ -1,9 +1,5 @@
 <template>
-  <SfModal
-    :visible="isNewsletterModalOpen"
-    class="modal"
-    @close="closeModal"
-  >
+  <SfModal :visible="isNewsletterModalOpen" class="modal" @close="closeModal">
     <template #modal-bar>
       <SfBar
         class="modal__title smartphone-only"
@@ -34,9 +30,18 @@
           :description="$t('You can unsubscribe at any time')"
           :level="3"
         />
-        <SfScrollable maxContentHeight="3.75rem" :class="{ 'is-open': !isHidden }">
-          <i18n tag="p" class="modal__content" path="subscribeToNewsletterModalContent">
-            <SfLink link="https://www.vuestorefront.io/privacy-policy">{{ $t('Privacy Policy') }}</SfLink>
+        <SfScrollable
+          maxContentHeight="3.75rem"
+          :class="{ 'is-open': !isHidden }"
+        >
+          <i18n
+            tag="p"
+            class="modal__content"
+            path="subscribeToNewsletterModalContent"
+          >
+            <SfLink link="https://www.vuestorefront.io/privacy-policy">{{
+              $t('Privacy Policy')
+            }}</SfLink>
           </i18n>
           <template #view-all>
             <SfButton
@@ -52,9 +57,17 @@
   </SfModal>
 </template>
 <script>
-import { SfModal, SfHeading, SfInput, SfButton, SfScrollable, SfBar, SfLink } from '@storefront-ui/vue';
-import { ref } from '@nuxtjs/composition-api';
-import { useUiState } from '~/composables';
+import {
+  SfModal,
+  SfHeading,
+  SfInput,
+  SfButton,
+  SfScrollable,
+  SfBar,
+  SfLink
+} from '@storefront-ui/vue'
+import { ref } from '@nuxtjs/composition-api'
+import { useUiState } from '~/composables'
 
 export default {
   name: 'NewsletterModal',
@@ -68,14 +81,14 @@ export default {
     SfLink
   },
   setup() {
-    const { isNewsletterModalOpen, toggleNewsletterModal } = useUiState();
+    const { isNewsletterModalOpen, toggleNewsletterModal } = useUiState()
 
-    const isHidden = ref(true);
-    const emailAddress = ref('');
+    const isHidden = ref(true)
+    const emailAddress = ref('')
 
     const closeModal = () => {
-      toggleNewsletterModal();
-    };
+      toggleNewsletterModal()
+    }
 
     return {
       isNewsletterModalOpen,
@@ -83,14 +96,14 @@ export default {
       isHidden,
       emailAddress,
       closeModal
-    };
+    }
   }
-};
+}
 </script>
 
 <style lang="scss" scoped>
-
 .modal {
+  --font-family--secondary: var(--font-family--primary);
   display: flex;
   justify-content: center;
   --modal-index: 3;
@@ -112,5 +125,4 @@ export default {
     font-weight: var(--font-weight--light);
   }
 }
-
 </style>

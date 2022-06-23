@@ -1,0 +1,10 @@
+/node_modules/*
+static
+store
+composables
+modules
+nuxt.config.js
+stylelint.config.js
+server-middleware
+helpers
+.history

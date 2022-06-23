@@ -15,13 +15,15 @@
     <LazyHydrate when-visible>
       <Notification />
     </LazyHydrate>
-    <TopBar class="desktop-only" />
+
+    <!-- <AssHeader /> -->
     <AppHeader
       :cart-total-items="getCartTotalItems"
       :is-user-authenticated="isAuthenticated"
     />
+
     <div id="layout">
-      <nuxt :key="route.fullPath" />
+      <nuxt @testPage="getData" :key="route.fullPath" />
     </div>
     <LoadWhenVisible>
       <AppFooter />
@@ -30,55 +32,81 @@
 </template>
 
 <script>
-import AppHeader from '~/components/AppHeader.vue';
-import TopBar from '~/components/TopBar.vue';
-import LazyHydrate from 'vue-lazy-hydration';
+import AppHeader from '~/components/UikitHeader.vue'
+// import AppHeader from '~/components/AppHeader_new.vue'
+import LazyHydrate from 'vue-lazy-hydration'
 import {
   useUser,
   cartGetters,
   useCart,
   userGetters
-} from '@vue-storefront/shopify';
-import { computed, onBeforeMount, provide, useRoute, useContext } from '@nuxtjs/composition-api';
-import LoadWhenVisible from '~/components/utils/LoadWhenVisible';
+} from '@vue-storefront/shopify'
+import {
+  computed,
+  onBeforeMount,
+  provide,
+  useRoute,
+  useContext
+} from '@nuxtjs/composition-api'
+import LoadWhenVisible from '~/components/utils/LoadWhenVisible'
+
 export default {
   name: 'DefaultLayout',
   components: {
     LazyHydrate,
-    TopBar,
+    // AssHeader,
     AppHeader,
-    BottomNavigation: () => import(/* webpackPrefetch: true */ '~/components/BottomNavigation.vue'),
-    AppFooter: () => import(/* webpackPrefetch: true */ '~/components/AppFooter.vue'),
-    CartSidebar: () => import(/* webpackPrefetch: true */ '~/components/CartSidebar.vue'),
-    WishlistSidebar: () => import(/* webpackPrefetch: true */ '~/components/WishlistSidebar.vue'),
-    LoginModal: () => import(/* webpackPrefetch: true */ '~/components/LoginModal.vue'),
-    Notification: () => import(/* webpackPrefetch: true */ '~/components/Notification'),
+    BottomNavigation: () =>
+      import(/* webpackPrefetch: true */ '~/components/BottomNavigation.vue'),
+    // AppFooter: () =>
+    //   import(/* webpackPrefetch: true */ '~/components/AppFooter.vue'),
+    AppFooter: () =>
+      import(/* webpackPrefetch: true */ '~/components/AppFooter_new.vue'),
+    CartSidebar: () =>
+      import(/* webpackPrefetch: true */ '~/components/CartSidebar.vue'),
+    WishlistSidebar: () =>
+      import(/* webpackPrefetch: true */ '~/components/WishlistSidebar.vue'),
+    LoginModal: () =>
+      import(/* webpackPrefetch: true */ '~/components/LoginModal.vue'),
+    Notification: () =>
+      import(/* webpackPrefetch: true */ '~/components/Notification'),
     LoadWhenVisible
   },
   setup() {
-    const route = useRoute();
-    const context = useContext();
-    const { load: loadUser, user: userInfo } = useUser();
-    const { load: loadCart, cart } = useCart();
-    const getCartTotalItems = computed(() => cartGetters.getTotalItems(cart.value));
-    const isAuthenticated = computed(() => !!userGetters.getFirstName(userInfo.value));
-    provide('currentCart', cart);
+    const route = useRoute()
+    const context = useContext()
+    const { load: loadUser, user: userInfo } = useUser()
+    const { load: loadCart, cart } = useCart()
+    const getCartTotalItems = computed(() =>
+      cartGetters.getTotalItems(cart.value)
+    )
+    const isAuthenticated = computed(() => {
+      return !!userGetters.getFirstName(userInfo.value)
+    })
+    provide('currentCart', cart)
+
+    // 加载用户信息和购物车信息
     onBeforeMount(async () => {
-      await loadUser();
+      await loadUser()
       await loadCart().then(() => {
         if (cart && cart.value && cart.value.orderStatusUrl !== null) {
-          context.$cookies.remove(`${context.$config.appKey}_cart_id`);
+          context.$cookies.remove(`${context.$config.appKey}_cart_id`)
         }
-      });
-    });
+      })
+    })
 
     return {
       getCartTotalItems,
       isAuthenticated,
       route
-    };
+    }
   },
-};
+  methods: {
+    getData(msg) {
+      console.log('父页面信息', msg)
+    }
+  }
+}
 </script>
 
 <style lang="scss">
@@ -86,62 +114,13 @@ export default {
 
 #layout {
   box-sizing: border-box;
-    @include for-desktop {
-    max-width: 1440px;
+  @include for-desktop {
     margin: auto;
   }
-
 }
 
 .no-scroll {
   overflow: hidden;
   height: 100vh;
-}
-
-// Reset CSS
-html {
-  width: auto;
-  @include for-mobile {
-    overflow-x: hidden;
-  }
-}
-body {
-  overflow-x: hidden;
-  color: var(--c-text);
-  font-size: var(--font-size--base);
-  font-family: var(--font-family--primary);
-  margin: 0;
-  padding: 0;
-}
-a {
-  text-decoration: none;
-  color: var(--c-link);
-  &:hover {
-    color: var(--c-link-hover);
-  }
-}
-h1 {
-  font-family: var(--font-family--secondary);
-  font-size: var(--h1-font-size);
-  line-height: 1.6;
-  margin: 0;
-}
-h2 {
-  font-family: var(--font-family--secondary);
-  font-size: var(--h2-font-size);
-  line-height: 1.6;
-  margin: 0;
-}
-h3 {
-  font-family: var(--font-family--secondary);
-  font-size: var(--h3-font-size);
-  line-height: 1.6;
-  margin: 0;
-}
-h4 {
-  font-family: var(--font-family--secondary);
-  font-size: var(--h4-font-size);
-  line-height: 1.6;
-  margin: 0;
 }
 </style>

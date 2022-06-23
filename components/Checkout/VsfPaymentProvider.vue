@@ -1,7 +1,10 @@
 <template>
   <div>
     <p>
-      <b>Please implement vendor-specific VsfPaymentProvider component in the 'components/Checkout' directory</b>
+      <b
+      >Please implement vendor-specific VsfPaymentProvider component in the
+        'components/Checkout' directory</b
+      >
     </p>
 
     <SfRadio
@@ -11,7 +14,7 @@
       :label="method.label"
       :value="method.value"
       :description="method.description"
-      :selected ="selectedMethod"
+      :selected="selectedMethod"
       name="shippingMethod"
       class="form__radio shipping"
       @change="selectMethod(method.value)"
@@ -24,8 +27,8 @@
 </template>
 
 <script>
-import { SfButton, SfRadio } from '@storefront-ui/vue';
-import { ref } from '@nuxtjs/composition-api';
+import { SfButton, SfRadio } from '@storefront-ui/vue'
+import { ref } from '@nuxtjs/composition-api'
 
 const SHIPPING_METHODS = [
   { label: 'Visa Debit', value: 'visa_debit' },
@@ -33,7 +36,7 @@ const SHIPPING_METHODS = [
   { label: 'VisaElectron', value: 'visa_electron' },
   { label: 'Cash on delivery', value: 'cash' },
   { label: 'Check', value: 'check' }
-];
+]
 
 export default {
   name: 'VsfPaymentProvider',
@@ -44,24 +47,25 @@ export default {
   },
 
   setup(props, { emit }) {
-    const selectedMethod = ref(null);
+    const selectedMethod = ref(null)
 
     const selectMethod = (method) => {
-      selectedMethod.value = method;
-      emit('status');
-    };
+      selectedMethod.value = method
+      emit('status')
+    }
 
     return {
       shippingMethods: SHIPPING_METHODS,
       selectedMethod,
       selectMethod
-    };
+    }
   }
-};
+}
 </script>
 
 <style lang="scss" scoped>
 .shipping {
+  --font-family--secondary: var(--font-family--primary);
   &__label {
     display: flex;
     justify-content: space-between;

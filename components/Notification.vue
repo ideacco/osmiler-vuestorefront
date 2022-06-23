@@ -11,40 +11,41 @@
       visible
     >
       <template #icon v-if="notification.icon">
-        <SfIcon :icon="notification.icon" color="white"/>
+        <SfIcon :icon="notification.icon" color="white" />
       </template>
     </SfNotification>
   </transition-group>
 </template>
 
 <script>
-import { SfNotification, SfIcon } from '@storefront-ui/vue';
-import { useUiNotification } from '~/composables';
+import { SfNotification, SfIcon } from '@storefront-ui/vue'
+import { useUiNotification } from '~/composables'
 
 export default {
-  name: 'Notification',
+  name: 'NotifIcation',
   components: {
     SfNotification,
     SfIcon
   },
-  setup () {
-    const { notifications } = useUiNotification();
+  setup() {
+    const { notifications } = useUiNotification()
 
     return {
       notifications
-    };
+    }
   }
-};
+}
 </script>
 
 <style scoped lang="scss">
 .notifications {
+  --font-family--secondary: var(--font-family--primary);
   position: fixed;
   width: 100%;
   left: 0;
   bottom: 0;
   right: 0;
-  z-index: 9;
+  z-index: 1000;
   @include for-desktop {
     top: 100px;
     left: auto;
@@ -64,7 +65,7 @@ export default {
     --notification-max-width: 100%;
     --notification-background: var(--c-link);
     --notification-font-size: var(--font-size--sm);
-    --notification-font-family: var(--font-family--primary);
+    --notification-font-family: Overpass;
     --notification-font-weight: var(--font-weight--normal);
     --notification-padding: var(--spacer-base) var(--spacer-lg);
   }

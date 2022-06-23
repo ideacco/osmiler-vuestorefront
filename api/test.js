@@ -1,5 +1,13 @@
+/**
+ * 获取详情
+ * 类似案例如此
+ * import { get, post, pacth} from './request'
+ * export function getBlog(id) {
+ data: params => get('/api/index', params)
+}
+ */
 
-export default({$axios},inject)=>{
-    inject('test',()=>$axios.$get('/test'))
-    inject('test2',()=>$axios.$get('/test'))
+const a = 'aaaa'
+function bb() {
+  console.log('aaa')
 }

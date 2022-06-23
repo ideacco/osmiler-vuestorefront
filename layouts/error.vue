@@ -5,39 +5,55 @@
       src="/error/error.webp"
       alt="leaves"
       :width="300"
-      :height="300"
+      :height="340"
     />
-     <SfHeading
-      :title="error.statusCode === 404 ? error.message ? error.message : 'Item not found' : 'An error occured'"
+    <SfHeading
+      :title="
+        error.statusCode === 404
+          ? error.message
+            ? error.message
+            : 'Item not found'
+          : 'An error occured'
+      "
       :level="1"
       class="sf-heading--no-underline sf-heading--center page-title"
     />
     <div class="small-container text-center">
-      <p>{{ error.statusCode === 404 ? 'We can\'t find the item you are looking for. Please try searching or viewing all of our items.' : 'Please go back or try again' }}</p>
-    <div class="actions">
-      <SfButton link="/" class="sf-button--full-width actions__button">
-        Return home
-      </SfButton>
-      <SfButton class="sf-button--full-width sf-button--text actions__button" @click="$router.go(-1)">
-        Back
-      </SfButton>
-    </div>
+      <p>
+        {{
+          error.statusCode === 404
+            ? "We can't find the item you are looking for. Please try searching or viewing all of our items."
+            : 'Please go back or try again'
+        }}
+      </p>
+      <div class="actions">
+        <SfButton link="/" class="sf-button--full-width actions__button">
+          Return home
+        </SfButton>
+        <SfButton
+          class="sf-button--full-width sf-button--text actions__button"
+          @click="$router.go(-1)"
+        >
+          Back
+        </SfButton>
+      </div>
     </div>
   </div>
 </template>
 <script>
-import { SfButton, SfImage, SfHeading } from '@storefront-ui/vue';
+import { SfButton, SfImage, SfHeading } from '@storefront-ui/vue'
 export default {
   name: 'ErrorLayout',
 
   components: { SfButton, SfImage, SfHeading },
 
   props: ['error']
-};
+}
 </script>
 <style lang="scss" scoped>
-@import "~@storefront-ui/vue/styles";
+@import '~@storefront-ui/vue/styles';
 #error {
+  --font-family--secondary: var(--font-family--primary);
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
@@ -45,8 +61,9 @@ export default {
   align-items: center;
   width: 100%;
   padding: 0 var(--spacer-sm);
-  margin: var(--spacer-xl) 0;
+  // margin: var(--spacer-xl) 0;
   @include for-desktop {
+    margin: auto;
     max-width: 77.5rem;
   }
 }

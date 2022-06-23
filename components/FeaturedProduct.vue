@@ -1,9 +1,9 @@
 <template>
   <section>
     <SfHeading
-        title="Product Of The Day"
-        class="sf-heading--no-underline sf-heading--center"
-      />
+      title="Product Of The Day"
+      class="sf-heading--no-underline sf-heading--center"
+    />
     <div id="product">
       <div class="product">
         <SfGallery
@@ -27,7 +27,7 @@
               "
             >
               {{
-                productGetters.getStatus(product) ? "In stock" : "Out of Stock"
+                productGetters.getStatus(product) ? 'In stock' : 'Out of Stock'
               }}
             </SfBadge>
             <SfIcon
@@ -86,7 +86,7 @@
               v-if="options.Color && options.Color.length > 1"
               class="product__colors desktop-only"
             >
-              <p class="product__color-label">{{ $t("Color") }}:</p>
+              <p class="product__color-label">{{ $t('Color') }}:</p>
               <SfColor
                 v-for="(color, i) in options.Color"
                 :key="i"
@@ -121,18 +121,18 @@ import {
   SfIcon,
   SfBadge,
   SfColor
-} from '@storefront-ui/vue';
+} from '@storefront-ui/vue'
 
-import { ref, computed, useRoute } from '@nuxtjs/composition-api';
+import { ref, computed, useRoute } from '@nuxtjs/composition-api'
 import {
   useCart,
   productGetters,
   useReview,
   reviewGetters
-} from '@vue-storefront/shopify';
+} from '@vue-storefront/shopify'
 
 export default {
-  name: 'Product',
+  name: 'FeaturedProduct',
   components: {
     SfColor,
     SfHeading,
@@ -151,48 +151,45 @@ export default {
       type: Array || Object
     }
   },
-  
+
   setup(props) {
-    const route = useRoute();
-    const qty = ref(1);
-    const { addItem, loading } = useCart();
-    const { reviews: productReviews } = useReview(
-      'productReviews'
-    );
+    const route = useRoute()
+    const qty = ref(1)
+    const { addItem, loading } = useCart()
+    const { reviews: productReviews } = useReview('productReviews')
     const product = computed(
       () =>
         productGetters.getFiltered(props.productModel, {
           master: true,
           attributes: route?.value?.query
         })[0]
-    );
+    )
     const productDescription = computed(() =>
       productGetters.getDescription(product.value)
-    );
+    )
     const productDescriptionHtml = computed(() =>
       productGetters.getDescription(product.value, true)
-    );
-    const options = computed(() => productGetters.getAttributes(product.value));
+    )
+    const options = computed(() => productGetters.getAttributes(product.value))
     const configuration = computed(() =>
       productGetters.getAttributes(product.value, ['color', 'size'])
-    );
-    const reviews = computed(() =>
-      reviewGetters.getItems(productReviews.value)
-    );
+    )
+    const reviews = computed(() => reviewGetters.getItems(productReviews.value))
 
+    // eslint-disable-next-line no-warning-comments
     // TODO: Breadcrumbs are temporary disabled because productGetters return undefined. We have a mocks in data
     const breadcrumbs = computed(() =>
       productGetters.getBreadcrumbs
         ? productGetters.getBreadcrumbs(product.value)
         : props.fallbackBreadcrumbs
-    );
+    )
     const productGallery = computed(() =>
       productGetters.getGallery(product.value).map((img) => ({
         mobile: { url: img.small },
         desktop: { url: img.normal },
         big: { url: img.big }
       }))
-    );
+    )
 
     return {
       configuration,
@@ -214,18 +211,19 @@ export default {
       loading,
       productGetters,
       productGallery
-    };
+    }
   },
   data() {
     return {
       stock: 5
-    };
+    }
   }
-};
+}
 </script>
 
 <style lang="scss" scoped>
 #product {
+  --font-family--secondary: var(--font-family--primary);
   box-sizing: border-box;
   @include for-desktop {
     max-width: 1272px;
@@ -280,7 +278,7 @@ export default {
       var(--font-weight--normal),
       var(--font-size--sm),
       1.4,
-      var(--font-family--secondary)
+      Overpass
     );
     color: var(--c-text);
     text-decoration: none;
@@ -292,7 +290,7 @@ export default {
       var(--font-weight--light),
       var(--font-size--base),
       1.6,
-      var(--font-family--primary)
+      Overpass
     );
   }
   &__select-size {
@@ -307,7 +305,7 @@ export default {
       var(--font-weight--normal),
       var(--font-size--lg),
       1.6,
-      var(--font-family--secondary)
+      Overpass
     );
     display: flex;
     align-items: center;
@@ -359,7 +357,7 @@ export default {
       var(--font-weight--light),
       var(--font-size--sm),
       1.6,
-      var(--font-family--primary)
+      Overpass
     );
     &__title {
       font-weight: var(--font-weight--normal);
@@ -376,7 +374,7 @@ export default {
   &__gallery {
     flex: 0 0 60%;
     max-width: 60%;
-    @media (max-width:767px) {
+    @media (max-width: 767px) {
       max-width: 100%;
     }
   }

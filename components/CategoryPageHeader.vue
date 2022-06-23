@@ -32,16 +32,19 @@
             class="sort-by__option"
           >
             {{ option.value }}
-          </SfSelectOption
-          >
+          </SfSelectOption>
         </SfSelect>
       </LazyHydrate>
     </div>
 
     <div class="navbar__counter">
-      <span class="navbar__label desktop-only">{{ $t('Products found') }}: </span>
+      <span class="navbar__label desktop-only"
+      >{{ $t('Products found') }}:
+      </span>
       <span class="desktop-only">{{ pagination.totalItems }}</span>
-      <span class="navbar__label smartphone-only">{{ pagination.totalItems }} {{ $t('Items') }}</span>
+      <span class="navbar__label smartphone-only"
+      >{{ pagination.totalItems }} {{ $t('Items') }}</span
+      >
     </div>
 
     <div class="navbar__view">
@@ -70,22 +73,18 @@
       />
     </div>
     <LazyHydrate when-idle>
-      <FiltersSidebar @close="toggleFilterSidebar"/>
+      <FiltersSidebar @close="toggleFilterSidebar" />
     </LazyHydrate>
   </div>
 </template>
 
 <script>
-import { computed } from '@nuxtjs/composition-api';
-import { useUiHelpers, useUiState } from '~/composables';
-import { useFacet, facetGetters } from '@vue-storefront/shopify';
-import FiltersSidebar from '~/components/FiltersSidebar';
-import {
-  SfButton,
-  SfIcon,
-  SfSelect
-} from '@storefront-ui/vue';
-import LazyHydrate from 'vue-lazy-hydration';
+import { computed } from '@nuxtjs/composition-api'
+import { useUiHelpers, useUiState } from '~/composables'
+import { useFacet, facetGetters } from '@vue-storefront/shopify'
+import FiltersSidebar from '~/components/FiltersSidebar'
+import { SfButton, SfIcon, SfSelect } from '@storefront-ui/vue'
+import LazyHydrate from 'vue-lazy-hydration'
 
 export default {
   name: 'CategoryPageHeader',
@@ -102,12 +101,19 @@ export default {
     }
   },
   setup() {
-    const th = useUiHelpers();
-    const { toggleFilterSidebar, isCategoryGridView, changeToCategoryGridView, changeToCategoryListView } = useUiState();
-    const { result } = useFacet();
+    const th = useUiHelpers()
+    const {
+      toggleFilterSidebar,
+      isCategoryGridView,
+      changeToCategoryGridView,
+      changeToCategoryListView
+    } = useUiState()
+    const { result } = useFacet()
 
-    const sortBy = computed(() => facetGetters.getSortOptions(result.value));
-    const facets = computed(() => facetGetters.getGrouped(result.value, ['color', 'size']));
+    const sortBy = computed(() => facetGetters.getSortOptions(result.value))
+    const facets = computed(() =>
+      facetGetters.getGrouped(result.value, ['color', 'size'])
+    )
 
     return {
       th,
@@ -117,13 +123,14 @@ export default {
       isCategoryGridView,
       changeToCategoryGridView,
       changeToCategoryListView
-    };
+    }
   }
-};
+}
 </script>
 
 <style lang="scss" scoped>
 .navbar {
+  --font-family--secondary: var(--font-family--primary);
   position: relative;
   display: flex;
   border: 1px solid var(--c-light);
@@ -177,7 +184,7 @@ export default {
     }
   }
   &__label {
-    font-family: var(--font-family--secondary);
+    font-family: Overpass;
     font-weight: var(--font-weight--normal);
     color: var(--c-text-muted);
     @include for-desktop {
@@ -195,7 +202,7 @@ export default {
     --select-error-message-height: 0;
     ::v-deep .sf-select__dropdown {
       font-size: var(--font-size-sm);
-      font-family: var(--font-family--secondary);
+      font-family: Overpass;
       font-weight: var(--font-weight--light);
       margin: 0;
     }
@@ -209,7 +216,7 @@ export default {
     margin: 0 auto 0 var(--spacer-2xl);
   }
   &__counter {
-    font-family: var(--font-family--secondary);
+    font-family: Overpass;
     order: 1;
     @include for-desktop {
       order: 0;
@@ -232,14 +239,14 @@ export default {
     }
     &-label {
       margin: 0 var(--spacer-sm) 0 0;
-      font: var(--font-weight--normal) var(--font-size--base) / 1.6
-      var(--font-family--secondary);
+      font: var(--font-weight--normal) var(--font-size--base) / 1.6 Overpass;
       text-decoration: none;
       color: var(--c-link);
     }
   }
 }
 .sort-by {
+  --font-family--secondary: var(--font-family--primary);
   flex: unset;
   width: 11.875rem;
 }

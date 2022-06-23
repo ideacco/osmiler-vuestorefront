@@ -1,7 +1,10 @@
 <template>
   <div>
     <p>
-      <b>Please implement vendor-specific VsfShippingProvider component in the 'components/Checkout' directory</b>
+      <b
+      >Please implement vendor-specific VsfShippingProvider component in the
+        'components/Checkout' directory</b
+      >
     </p>
 
     <SfRadio
@@ -11,7 +14,7 @@
       :label="method.label"
       :value="method.value"
       :description="method.description"
-      :selected ="selectedMethod"
+      :selected="selectedMethod"
       name="shippingMethod"
       class="form__radio shipping"
       @change="selectMethod(method.value)"
@@ -37,13 +40,17 @@
 </template>
 
 <script>
-import { SfButton, SfRadio } from '@storefront-ui/vue';
-import { ref } from '@nuxtjs/composition-api';
+import { SfButton, SfRadio } from '@storefront-ui/vue'
+import { ref } from '@nuxtjs/composition-api'
 
 const SHIPPING_METHODS = [
   { label: 'Express US', value: 'express', description: 'Same day delivery' },
-  { label: 'Standard US', value: 'standard', description: 'Delivery in 5-6 working days' }
-];
+  {
+    label: 'Standard US',
+    value: 'standard',
+    description: 'Delivery in 5-6 working days'
+  }
+]
 
 export default {
   name: 'VsfShippingProvider',
@@ -54,21 +61,23 @@ export default {
   },
 
   setup() {
-    const selectedMethod = ref(null);
+    const selectedMethod = ref(null)
 
-    const selectMethod = method => selectedMethod.value = method;
+    // eslint-disable-next-line no-return-assign
+    const selectMethod = (method) => (selectedMethod.value = method)
 
     return {
       shippingMethods: SHIPPING_METHODS,
       selectedMethod,
       selectMethod
-    };
+    }
   }
-};
+}
 </script>
 
 <style lang="scss" scoped>
 .shipping {
+  --font-family--secondary: var(--font-family--primary);
   &__label {
     display: flex;
     justify-content: space-between;

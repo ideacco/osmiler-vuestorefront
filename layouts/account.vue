@@ -1,7 +1,6 @@
 <template>
   <div>
-    <TopBar class="desktop-only" />
-    <div id="layout" >
+    <div id="layout">
       <AppHeader />
       <nuxt />
       <BottomNavigation />
@@ -12,17 +11,16 @@
 </template>
 
 <script>
-import AppHeader from '~/components/AppHeader.vue';
-import BottomNavigation from '~/components/BottomNavigation.vue';
-import TopBar from '~/components/TopBar.vue';
-import CartSidebar from '~/components/CartSidebar.vue';
-import LoginModal from '~/components/LoginModal.vue';
+import AppHeader from '~/components/AppHeader_new.vue'
+import BottomNavigation from '~/components/BottomNavigation.vue'
+
+import CartSidebar from '~/components/CartSidebar.vue'
+import LoginModal from '~/components/LoginModal.vue'
 
 export default {
   name: 'AccountLayout',
 
   components: {
-    TopBar,
     AppHeader,
     BottomNavigation,
     CartSidebar,
@@ -32,7 +30,7 @@ export default {
 </script>
 
 <style lang="scss">
-@import "~@storefront-ui/vue/styles";
+@import '~@storefront-ui/vue/styles';
 
 body {
   padding: 0;

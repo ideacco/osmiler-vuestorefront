@@ -1,64 +1,95 @@
-require('isomorphic-fetch');
-import webpack from 'webpack';
-const platformENV = process.env.VUE_APP_TITLE!== 'production' ? 'http' : 'https'
+// eslint-disable-next-line nuxt/no-cjs-in-config
+require('isomorphic-fetch')
+
+console.log('当前服务状态:', process.env.NODE_ENV)
+
+import webpack from 'webpack'
+// const platformENV = process.env.NODE_ENV !== 'production' ? 'http' : 'https'
 const config = {
-env:{
-VUE_APP_TITLE:process.env.VUE_APP_TITLE,
-},
-server: {
-  port:8888,
-  host: '0.0.0.0'
-},
+  server: {
+    port: process.env.APP_PORT || 8888,
+    host: '0.0.0.0',
+  },
   publicRuntimeConfig: {
     appKey: 'vsf2spcon',
     appVersion: Date.now(),
-    middlewareUrl:  `${platformENV}://${process.env.BASE_URL}/api/`
+    // middlewareUrl: `${platformENV}://${process.env.BASE_URL}/api/`,
+    middlewareUrl:
+      process.env.NODE_ENV === 'production'
+        ? `${process.env.BASE_URL}/api/`
+        : `${process.env.DEV_URL}/api/`,
   },
   privateRuntimeConfig: {
     storeURL: process.env.SHOPIFY_DOMAIN,
-    storeToken: process.env.SHOPIFY_STOREFRONT_TOKEN
+    storeToken: process.env.SHOPIFY_STOREFRONT_TOKEN,
   },
   serverMiddleware: [
-    { path: '/custom', handler: '~/server-middleware/custom-features.js' }
+    // { path: '/custom', handler: '~/server-middleware/custom-features.js' }, // 去掉了原版使用的express的中间件
+    {
+      path: '/custom',
+      handler: '~/server-middleware/custom-features-app.js',
+    },
   ],
   head: {
-    title: 'Shopify | Vue Storefront Next',
+    title: 'Osmiler',
     meta: [
-      { charset: 'utf-8' },
-      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { name: 'theme-color', content: '#5ece7b' },
+      {
+        charset: 'utf-8',
+      },
+      {
+        name: 'viewport',
+        content: 'width=device-width, initial-scale=1',
+      },
+      {
+        name: 'theme-color',
+        content: '#5ece7b',
+      },
       {
         hid: 'description',
         name: 'description',
-        content: process.env.npm_package_description || ''
-      }
+        content: process.env.npm_package_description || '',
+      },
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      { rel: 'icon', href: '/icon.png' },
       {
         rel: 'preconnect',
         href: 'https://fonts.gstatic.com',
-        crossorigin: 'crossorigin'
+        crossorigin: 'crossorigin',
       },
       {
-        rel: 'preload',
-        href: 'https://fonts.googleapis.com/css?family=Raleway:300,400,400i,500,600,700|Roboto:300,300i,400,400i,500,700&display=swap',
-        as: 'style'
+        rel: 'Overpass',
+        href: 'https://fonts.googleapis.com/css2?family=Overpass:wght@200;300;400;500;600;700;800;900&display=swap',
+        as: 'style',
       },
       {
         rel: 'stylesheet',
-        href: 'https://fonts.googleapis.com/css?family=Raleway:300,400,400i,500,600,700|Roboto:300,300i,400,400i,500,700&display=swap',
+        href: 'https://fonts.googleapis.com/css2?family=Overpass:wght@200;300;400;500;600;700;800;900&display=swap',
         media: 'print',
-        onload: "this.media='all'"
-      }
-    ]
+        onload: "this.media='all'",
+      },
+    ],
   },
-  loading: { color: '#fff' },
-  plugins: ["~/plugins/scrollToTop.client.js", '@/plugins/element-ui','@/plugins/UIkit',
-  '~/plugins/interceptor',
-  '~/api/test'
-],
+  loading: {
+    color: '#fff',
+  },
+  router: {
+    // 在每页渲染前运行 middleware/user-agent.js 中间件的逻辑
+    middleware: 'user-agent',
+  },
+  plugins: [
+    '@/plugins/scrollToTop.client.js',
+    // '@/plugins/element-ui',
+    {
+      src: '@/plugins/UIkit',
+      ssr: false,
+    },
+  ],
   buildModules: [
+    // https://go.nuxtjs.dev/eslint
+    '@nuxtjs/eslint-module',
+    // https://go.nuxtjs.dev/stylelint
+    '@nuxtjs/stylelint-module',
     // to core
     './modules/cms/build',
     '@nuxtjs/composition-api/module',
@@ -71,24 +102,31 @@ server: {
       {
         useRawSource: {
           dev: ['@vue-storefront/shopify', '@vue-storefront/core'],
-          prod: ['@vue-storefront/shopify', '@vue-storefront/core']
-        }
-      }
+          prod: ['@vue-storefront/shopify', '@vue-storefront/core'],
+        },
+        performance: {
+          purgeCSS: {
+            enabled: false,
+            paths: ['**/*.vue'],
+          },
+        },
+      },
     ],
     ['@vue-storefront/nuxt-theme'],
     [
       '@vue-storefront/shopify/nuxt',
       {
         i18n: {
-          useNuxtI18nConfig: true
-        }
-      }
-    ]
+          useNuxtI18nConfig: true,
+        },
+      },
+    ],
   ],
   css: [
-    'element-ui/lib/theme-chalk/index.css',
-    'element-ui/lib/theme-chalk/display.css',
-    'uikit/dist/css/uikit.min.css'
+    {
+      src: '@/style/index.scss',
+      lang: 'scss',
+    },
   ],
   modules: [
     '@nuxtjs/i18n',
@@ -98,32 +136,46 @@ server: {
     '@nuxtjs/sitemap',
     './modules/cms/runtime',
     '@nuxt/image',
-    '@nuxtjs/axios'
+    '@nuxtjs/axios',
   ],
-  axios:{
-    proxy:true,
-    prefix:'/api'
+  axios: {
+    proxy: true,
+    prefix: '/app',
   },
-  proxy:{
-    '/api':{
-      target:process.env.VUE_APP_API_BASE_URL,
+  proxy: {
+    '/app': {
+      target: `${process.env.BASE_URL}`,
       changeOrigin: true,
-      pathRewrite:{'^/api':''}
-    }
+      pathRewrite: {
+        '^/app': '',
+      },
+    },
   },
   device: {
-    refreshOnResize: true
+    refreshOnResize: true,
   },
   i18n: {
     currency: 'USD',
     country: 'US',
     countries: [
-      { name: 'US', label: 'United States' },
-      { name: 'DE', label: 'Germany' }
+      {
+        name: 'US',
+        label: 'United States',
+      },
+      {
+        name: 'DE',
+        label: 'Germany',
+      },
     ],
     currencies: [
-      { name: 'EUR', label: 'Euro' },
-      { name: 'USD', label: 'Dollar' }
+      {
+        name: 'EUR',
+        label: 'Euro',
+      },
+      {
+        name: 'USD',
+        label: 'Dollar',
+      },
     ],
     locales: [
       {
@@ -131,15 +183,15 @@ server: {
         alias: 'us',
         label: 'English',
         file: 'en.js',
-        iso: 'en'
+        iso: 'en',
       },
       {
         code: 'de',
         alias: 'de',
         label: 'German',
         file: 'de.js',
-        iso: 'de'
-      }
+        iso: 'de',
+      },
     ],
     defaultLocale: 'en',
     lazy: true,
@@ -152,133 +204,136 @@ server: {
           currency: {
             style: 'currency',
             currency: 'USD',
-            currencyDisplay: 'symbol'
+            currencyDisplay: 'symbol',
           },
           decimal: {
             style: 'decimal',
             minimumFractionDigits: 2,
-            maximumFractionDigits: 2
+            maximumFractionDigits: 2,
           },
           percent: {
             style: 'percent',
-            useGrouping: false
-          }
+            useGrouping: false,
+          },
         },
         de: {
           currency: {
             style: 'currency',
             currency: 'EUR',
-            currencyDisplay: 'symbol'
+            currencyDisplay: 'symbol',
           },
           decimal: {
             style: 'decimal',
             minimumFractionDigits: 2,
-            maximumFractionDigits: 2
+            maximumFractionDigits: 2,
           },
           percent: {
             style: 'percent',
-            useGrouping: false
-          }
-        }
-      }
+            useGrouping: false,
+          },
+        },
+      },
     },
     detectBrowserLanguage: {
-      cookieKey: 'vsf-locale'
-    }
+      cookieKey: 'vsf-locale',
+    },
   },
   styleResources: {
     scss: [
       require.resolve('@storefront-ui/shared/styles/_helpers.scss', {
-        paths: [process.cwd()]
-      })
-    ]
+        paths: [process.cwd()],
+      }),
+      // './style/index.scss',
+    ],
   },
   build: {
-    transpile: ['vee-validate/dist/rules', 'storefront-ui'],
+    // transpile: ['vee-validate/dist/rules', 'storefront-ui'],
+    transpile: ['vee-validate/dist/rules'],
     plugins: [
       new webpack.DefinePlugin({
         'process.VERSION': JSON.stringify({
           // eslint-disable-next-line global-require
           version: require('./package.json').version,
-          lastCommit: process.env.LAST_COMMIT || ''
-        })
-      })
+          lastCommit: process.env.LAST_COMMIT || '',
+        }),
+      }),
     ],
     extend(config) {
-      config.resolve.extensions.push('.mjs');
+      config.resolve.extensions.push('.mjs')
 
       config.module.rules.push({
         test: /\.mjs$/,
         include: /node_modules/,
-        type: 'javascript/auto'
-      });
+        type: 'javascript/auto',
+      })
     },
-    extractCSS: {
-      ignoreOrder: true
-    }
+    // extractCSS: {
+    //   allChunks: true,
+    //   ignoreOrder: true,
+    // },
   },
   pwa: {
     manifest: {
-      name: 'VSF Next: Shopify APP',
+      name: 'Osmiler',
       lang: 'en',
       shortName: 'SPVSF2',
       startUrl: '/',
       display: 'standalone',
-      backgroundColor: '#5ece7b',
-      themeColor: '#5ece7b',
-      description: 'This is the Shopify PWA app for VSF Next',
+      backgroundColor: '#5d47ee',
+      themeColor: '#5d47ee',
+      description: 'let your smile light up the world',
       icons: [
         {
           src: '/icons/android-icon-48x48.png',
           sizes: '48x48',
-          type: 'image/png'
+          type: 'image/png',
         },
         {
           src: '/icons/android-icon-72x72.png',
           sizes: '72x72',
-          type: 'image/png'
+          type: 'image/png',
         },
         {
           src: '/icons/android-icon-96x96.png',
           sizes: '96x96',
-          type: 'image/png'
+          type: 'image/png',
         },
         {
           src: '/icons/android-icon-144x144.png',
           sizes: '144x144',
-          type: 'image/png'
+          type: 'image/png',
         },
         {
           src: '/icons/android-icon-168x168.png',
           sizes: '168x168',
-          type: 'image/png'
+          type: 'image/png',
         },
         {
           src: '/icons/android-icon-192x192.png',
           sizes: '192x192',
-          type: 'image/png'
+          type: 'image/png',
         },
         {
           src: '/icons/android-icon-512x512.png',
           sizes: '512x512',
-          type: 'image/png'
-        }
-      ]
+          type: 'image/png',
+        },
+      ],
     },
     meta: {
-      name: 'VSF Next: Shopify APP',
-      author: 'Aureate labs',
-      backgroundColor: '#5ece7b',
-      description:
-        'This is the Shopify PWA app for VSF Next - Developed by Aureate labs',
-      themeColor: '#5ece7b',
-      ogHost: 'shopify-pwa.aureatelabs.com'
+      name: 'Osmiler',
+      author: 'Osmiler Team',
+      backgroundColor: '#5d47ee',
+      description: 'let your smile light up the world',
+      themeColor: '#5d47ee',
+      ogHost: 'shopify-pwa.aureatelabs.com',
     },
     icon: {
-      iconSrc: 'src/static/android-icon-512x512.png'
+      source: '/icon.png',
+      fileName: 'icon.png',
     },
-    build:{
-      transpile:[/^@storefront-ui/,/^element-ui/,/^UIkit/],
+    build: {
+      transpile: [/^@storefront-ui/, /^UIkit/],
     },
     workbox: {
       offlineStrategy: 'StaleWhileRevalidate',
@@ -294,9 +349,9 @@ server: {
 
             // Only cache 100 images.
             expiration: {
-              maxEntries: 100
-            }
-          }
+              maxEntries: 100,
+            },
+          },
         },
         {
           urlPattern: /^\/(?:(c)?(\/.*)?)$/,
@@ -305,13 +360,13 @@ server: {
             cacheName: 'SPVSF2cached',
             cacheExpiration: {
               maxEntries: 200,
-              maxAgeSeconds: 3600
-            }
-          }
-        }
-      ]
-    }
-  }
-};
+              maxAgeSeconds: 3600,
+            },
+          },
+        },
+      ],
+    },
+  },
+}
 
-export default config;
+export default config

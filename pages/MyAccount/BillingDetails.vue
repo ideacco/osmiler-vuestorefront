@@ -6,8 +6,7 @@
       :open-tab="1"
       class="tab-orphan"
     >
-      <SfTab
-        :title="isNewAddress ? 'Add the address' : 'Update the address'">
+      <SfTab :title="isNewAddress ? 'Add the address' : 'Update the address'">
         <p class="message">
           {{ $t('Contact details updated') }}
         </p>
@@ -15,15 +14,12 @@
         <BillingAddressForm
           :address="activeAddress"
           :isNew="isNewAddress"
-          @submit="saveAddress" />
+          @submit="saveAddress"
+        />
       </SfTab>
     </SfTabs>
 
-    <SfTabs
-      v-else
-      :open-tab="1"
-      key="address-list"
-      class="tab-orphan">
+    <SfTabs v-else :open-tab="1" key="address-list" class="tab-orphan">
       <SfTab title="Billing details">
         <p class="message">
           {{ $t('Manage billing addresses') }}
@@ -32,7 +28,8 @@
           <div
             v-for="address in addresses"
             :key="userBillingGetters.getId(address)"
-            class="billing">
+            class="billing"
+          >
             <div class="billing__content">
               <div class="billing__address">
                 <UserBillingAddress :address="address" />
@@ -47,22 +44,20 @@
                 class="smartphone-only"
                 @click="removeAddress(address)"
               />
-              <SfButton
-                @click="changeAddress(address)">
+              <SfButton @click="changeAddress(address)">
                 {{ $t('Change') }}
               </SfButton>
 
               <SfButton
                 class="color-light billing__button-delete desktop-only"
-                @click="removeAddress(address)">
+                @click="removeAddress(address)"
+              >
                 {{ $t('Delete') }}
               </SfButton>
             </div>
           </div>
         </transition-group>
-        <SfButton
-          class="action-button"
-          @click="changeAddress()">
+        <SfButton class="action-button" @click="changeAddress()">
           {{ $t('Add new address') }}
         </SfButton>
       </SfTab>
@@ -70,16 +65,12 @@
   </transition>
 </template>
 <script>
-import {
-  SfTabs,
-  SfButton,
-  SfIcon
-} from '@storefront-ui/vue';
-import UserBillingAddress from '~/components/UserBillingAddress';
-import BillingAddressForm from '~/components/MyAccount/BillingAddressForm';
-import { useUserBilling, userBillingGetters } from '@vue-storefront/shopify';
-import { ref, computed } from '@nuxtjs/composition-api';
-import { onSSR } from '@vue-storefront/core';
+import { SfTabs, SfButton, SfIcon } from '@storefront-ui/vue'
+import UserBillingAddress from '~/components/UserBillingAddress'
+import BillingAddressForm from '~/components/MyAccount/BillingAddressForm'
+import { useUserBilling, userBillingGetters } from '@vue-storefront/shopify'
+import { ref, computed } from '@nuxtjs/composition-api'
+import { onSSR } from '@vue-storefront/core'
 
 export default {
   name: 'BillingDetails',
@@ -91,34 +82,40 @@ export default {
     BillingAddressForm
   },
   setup() {
-    const { billing, load: loadUserBilling, addAddress, deleteAddress, updateAddress } = useUserBilling();
-    const addresses = computed(() => userBillingGetters.getAddresses(billing.value));
-    const edittingAddress = ref(false);
-    const activeAddress = ref(undefined);
-    const isNewAddress = computed(() => !activeAddress.value);
+    const {
+      billing,
+      load: loadUserBilling,
+      addAddress,
+      deleteAddress,
+      updateAddress
+    } = useUserBilling()
+    const addresses = computed(() =>
+      userBillingGetters.getAddresses(billing.value)
+    )
+    const edittingAddress = ref(false)
+    const activeAddress = ref(undefined)
+    const isNewAddress = computed(() => !activeAddress.value)
 
     const changeAddress = (address = undefined) => {
-      activeAddress.value = address;
-      edittingAddress.value = true;
-    };
+      activeAddress.value = address
+      edittingAddress.value = true
+    }
 
-    const removeAddress = address => deleteAddress({ address });
+    const removeAddress = (address) => deleteAddress({ address })
 
-    const saveAddress = async ({ form, onComplete, onError }) => {
+    const saveAddress = async ({ form, onComplete }) => {
       try {
-        const actionMethod = isNewAddress.value ? addAddress : updateAddress;
-        const data = await actionMethod({ address: form });
-        edittingAddress.value = false;
-        activeAddress.value = undefined;
-        await onComplete(data);
-      } catch (error) {
-        onError(error);
-      }
-    };
+        const actionMethod = isNewAddress.value ? addAddress : updateAddress
+        const data = await actionMethod({ address: form })
+        edittingAddress.value = false
+        activeAddress.value = undefined
+        await onComplete(data)
+      } catch (error) {}
+    }
 
     onSSR(async () => {
-      await loadUserBilling();
-    });
+      await loadUserBilling()
+    })
 
     return {
       changeAddress,
@@ -130,15 +127,14 @@ export default {
       edittingAddress,
       activeAddress,
       isNewAddress
-    };
+    }
   }
-};
+}
 </script>
 
-<style lang='scss' scoped>
-
+<style lang="scss" scoped>
 .message {
-  font-family: var(--font-family--primary);
+  font-family: Overpass;
   line-height: 1.6;
   font-size: var(--font-size--base);
   margin: 0 0 var(--spacer-base);
@@ -198,6 +194,7 @@ export default {
   }
 }
 .tab-orphan {
+  --font-family--secondary: var(--font-family--primary);
   @include for-mobile {
     ::v-deep .sf-tabs {
       &__title {

@@ -39,7 +39,7 @@
                   "
                   :special-price="
                     productGetters.getPrice(product).special &&
-                    $n(productGetters.getPrice(product).special, 'currency')
+                      $n(productGetters.getPrice(product).special, 'currency')
                   "
                   :score-rating="productGetters.getAverageRating(product)"
                   :image="productGetters.getCoverImage(product)"
@@ -64,7 +64,10 @@
                     >
                       <template v-if="Array.isArray(imageSlotProps.image)">
                         <nuxt-img
-                          v-for="(picture, key) in imageSlotProps.image.slice(0, 2)"
+                          v-for="(picture, key) in imageSlotProps.image.slice(
+                            0,
+                            2
+                          )"
                           :key="key"
                           :alt="imageSlotProps.title"
                           :height="imageSlotProps.imageHeight"
@@ -89,9 +92,9 @@
                       class="sf-button--pure sf-product-card__link"
                       data-testid="product-link"
                     >
-                      <h3
-                        class="sf-product-card__title"
-                      >{{productGetters.getName(product)}}</h3>
+                      <h3 class="sf-product-card__title">
+                        {{ productGetters.getName(product) }}
+                      </h3>
                     </SfButton>
                   </template>
                 </SfProductCard>
@@ -107,7 +110,7 @@
                 "
                 :special-price="
                   productGetters.getPrice(product).special &&
-                  $n(productGetters.getPrice(product).special, 'currency')
+                    $n(productGetters.getPrice(product).special, 'currency')
                 "
                 :score-rating="productGetters.getAverageRating(product)"
                 :image="productGetters.getCoverImage(product)"
@@ -132,7 +135,10 @@
                   >
                     <template v-if="Array.isArray(imageSlotProps.image)">
                       <nuxt-img
-                        v-for="(picture, key) in imageSlotProps.image.slice(0, 2)"
+                        v-for="(picture, key) in imageSlotProps.image.slice(
+                          0,
+                          2
+                        )"
                         :key="key"
                         :alt="imageSlotProps.title"
                         :height="imageSlotProps.imageHeight"
@@ -157,10 +163,8 @@
                     class="sf-button--pure sf-product-card__link"
                     data-testid="product-link"
                   >
-                    <h3
-                      class="sf-product-card__title"
-                    >
-                      {{productGetters.getName(product)}}
+                    <h3 class="sf-product-card__title">
+                      {{ productGetters.getName(product) }}
                     </h3>
                   </SfButton>
                 </template>
@@ -199,17 +203,23 @@
                   class="blogs__blog-card"
                   :link="localePath(getArticleLink(article))"
                 >
-                  <template v-if="getArticleImage(article)" #image="imageSlotProps">
-                <SfButton
-                  :link="imageSlotProps.link"
-                  aria-label="Go To Product"
-                  class="sf-button--pure sf-product-card__link"
-                  data-testid="product-link"
-                  v-on="$listeners"
-                >
-                  <template v-if="Array.isArray(imageSlotProps.image)">
+                  <template
+                    v-if="getArticleImage(article)"
+                    #image="imageSlotProps"
+                  >
+                    <SfButton
+                      :link="imageSlotProps.link"
+                      aria-label="Go To Product"
+                      class="sf-button--pure sf-product-card__link"
+                      data-testid="product-link"
+                      v-on="$listeners"
+                    >
+                      <template v-if="Array.isArray(imageSlotProps.image)">
                         <nuxt-img
-                          v-for="(picture, key) in imageSlotProps.image.slice(0, 2)"
+                          v-for="(picture, key) in imageSlotProps.image.slice(
+                            0,
+                            2
+                          )"
                           :key="key"
                           :alt="imageSlotProps.title"
                           :height="imageSlotProps.imageHeight"
@@ -261,7 +271,10 @@
                 <template #add-to-cart>
                   <div></div>
                 </template>
-                <template v-if="getArticleImage(article)" #image="imageSlotProps">
+                <template
+                  v-if="getArticleImage(article)"
+                  #image="imageSlotProps"
+                >
                   <SfButton
                     :link="imageSlotProps.link"
                     aria-label="Go To Product"
@@ -271,7 +284,10 @@
                   >
                     <template v-if="Array.isArray(imageSlotProps.image)">
                       <nuxt-img
-                        v-for="(picture, key) in imageSlotProps.image.slice(0, 2)"
+                        v-for="(picture, key) in imageSlotProps.image.slice(
+                          0,
+                          2
+                        )"
                         :key="key"
                         :alt="imageSlotProps.title"
                         :height="imageSlotProps.imageHeight"
@@ -306,7 +322,7 @@
             <SfButton
               class="action-buttons__button color-light"
               @click="$emit('close')"
-              >{{ $t('Cancel') }}</SfButton
+            >{{ $t('Cancel') }}</SfButton
             >
           </div>
         </div>
@@ -328,7 +344,7 @@
           <SfButton
             class="before-results__button color-secondary smartphone-only"
             @click="$emit('close')"
-            >{{ $t('Go back') }}</SfButton
+          >{{ $t('Go back') }}</SfButton
           >
         </div>
       </transition>
@@ -344,17 +360,17 @@ import {
   SfMenuItem,
   SfButton,
   SfImage
-} from '@storefront-ui/vue';
+} from '@storefront-ui/vue'
 
-import { ref, watch, computed } from '@nuxtjs/composition-api';
-import { productGetters, useCart } from '@vue-storefront/shopify';
-import { useUiNotification } from '~/composables';
-import useUiHelpers from '../composables/useUiHelpers';
+import { ref, watch, computed } from '@nuxtjs/composition-api'
+import { productGetters, useCart } from '@vue-storefront/shopify'
+import { useUiNotification } from '~/composables'
+import useUiHelpers from '../composables/useUiHelpers'
 import {
   getArticleImage,
   getArticleLink,
   getArticlePublishedAt
-} from '~/helpers/article';
+} from '~/helpers/article'
 export default {
   name: 'SearchResults',
   components: {
@@ -376,27 +392,27 @@ export default {
     }
   },
   setup(props, { emit }) {
-    const { getCatLink } = useUiHelpers();
-    const isSearchOpen = ref(props.visible);
-    const { addItem: addItemToCart, cart: currentCart } = useCart();
-    const { send: sendNotification } = useUiNotification();
-    const products = computed(() => props.result?.products);
-    const articles = computed(() => props.result?.articles);
-    const categories = computed(() => props.result?.categories);
-    const getStockCount = (product) => product?.totalInventory ?? 0;
+    const { getCatLink } = useUiHelpers()
+    const isSearchOpen = ref(props.visible)
+    const { addItem: addItemToCart, cart: currentCart } = useCart()
+    const { send: sendNotification } = useUiNotification()
+    const products = computed(() => props.result?.products)
+    const articles = computed(() => props.result?.articles)
+    const categories = computed(() => props.result?.categories)
+    const getStockCount = (product) => product?.totalInventory ?? 0
 
     watch(
       () => props.visible,
       (newVal) => {
-        isSearchOpen.value = newVal;
+        isSearchOpen.value = newVal
         if (isSearchOpen.value) {
-          document.body.classList.add('no-scroll');
+          document.body.classList.add('no-scroll')
         } else {
-          document.body.classList.remove('no-scroll');
-          emit('removeSearchResults');
+          document.body.classList.remove('no-scroll')
+          emit('removeSearchResults')
         }
       }
-    );
+    )
 
     const handleAddToCart = (productObj) => {
       addItemToCart(productObj).then(() => {
@@ -406,23 +422,23 @@ export default {
           type: 'success',
           title: 'Product added!',
           icon: 'check'
-        });
-      });
-    };
+        })
+      })
+    }
 
     const getProductLink = (product) => {
-      if (!product?.id || !product?._slug) return '';
+      if (!product?.id || !product?._slug) return ''
 
       return {
         name: 'product',
         params: { id: product.id, slug: product._slug }
-      };
-    };
+      }
+    }
 
     const isSearchResultAvailable = computed(
       () =>
         (products?.value?.length ?? 0) > 0 || (articles?.value?.length ?? 0) > 0
-    );
+    )
 
     return {
       isSearchResultAvailable,
@@ -439,13 +455,14 @@ export default {
       categories,
       currentCart,
       handleAddToCart
-    };
+    }
   }
-};
+}
 </script>
 
 <style lang="scss" scoped>
 .search {
+  --font-family--secondary: var(--font-family--primary);
   position: absolute;
   right: 0;
   left: 0;
@@ -499,10 +516,10 @@ export default {
       width: 100%;
       object-fit: cover;
     }
-     ::v-deep .sf-image--placeholder {
-       width: 100%;
-       object-fit: contain;
-     }
+    ::v-deep .sf-image--placeholder {
+      width: 100%;
+      object-fit: contain;
+    }
   }
 }
 .see-all {
@@ -544,7 +561,7 @@ export default {
     }
   }
   &__paragraph {
-    font-family: var(--font-family--primary);
+    font-family: Overpass;
     font-weight: var(--font-weight--normal);
     font-size: var(--font-size--base);
     color: var(--c-text-muted);

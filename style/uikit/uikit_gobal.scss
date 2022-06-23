@@ -1,0 +1,80 @@
+/* Color
+----------------------- */
+$background-color-primary: #5d47ee;
+
+$color-primary: #4132c7;
+$color-white: #ffffff;
+$color-black: #0c0b0e;
+
+$color-text-primary: #333333;
+$color-text-secondary: #666666;
+$color-text-tertiary: $color-white;
+$color-text-quaternary: $color-primary;
+
+$border-color-base: #e5e5e5;
+
+$background-color-primary: #f1f1f1;
+$background-color-secondary: $color-white;
+$background-color-tertiary: $color-primary;
+
+/* Border
+----------------------- */
+$border-width-base: 1px !default;
+$border-style-base: solid !default;
+$border-base: $border-width-base $border-style-base $border-color-base !default;
+
+$global-font-family: 'Overpass';
+$global-color: #3a3543;
+$global-emphasis-color: #4132c7;
+$global-link-color: #5d47ee;
+$global-muted-color: #b19eff;
+$global-link-hover-color: #8973fa;
+$global-background: #ffffff;
+$global-danger-background: #e75856;
+$global-muted-background: #fcfbfe;
+$global-primary-background: #5d47ee;
+$global-secondary-background: #4132c7;
+$global-success-background: #4bcba7;
+$global-warning-background: #ef8d23;
+
+//
+// Base
+//
+
+$base-selection-background: #f4f0ff;
+
+//
+// Button
+//
+$button-hover-background-position-x: 0;
+
+//
+// Navbar
+//
+
+$navbar-background: #ffffff;
+$navbar-nav-item-color: #3a3543;
+$navbar-nav-item-line-background: rgba(0, 0, 0, 0);
+$navbar-nav-item-line-position-mode: bottom;
+$navbar-primary-nav-item-color: rgba(0, 0, 0, 0.23);
+$navbar-primary-nav-item-active-color: rgba(0, 0, 0, 0.99);
+$navbar-dropdown-background: #faf8fe;
+$navbar-dropdown-color: #3a3543;
+$navbar-dropdown-nav-item-color: #6f6b78;
+$navbar-dropdown-nav-item-hover-color: #8973fa;
+$navbar-dropdown-nav-item-active-color: #0c0b0e;
+$navbar-dropdown-nav-header-color: #3a3543;
+$navbar-dropdown-nav-sublist-item-color: #6f6b78;
+$navbar-dropdown-nav-sublist-item-hover-color: #8973fa;
+$navbar-dropdown-nav-sublist-item-active-color: #6f6b78;
+$navbar-dropbar-background: #fcfbfe;
+
+//
+// Text
+//
+
+$text-danger-color: #e75856;
+$text-muted-color: #6f6b78;
+$text-primary-color: #3a3543;
+$text-success-color: #4bcba7;
+$text-warning-color: #ef8d23;

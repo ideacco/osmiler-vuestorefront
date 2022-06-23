@@ -6,13 +6,13 @@ node_modules
 tests
 .history
 package-json.lock
-sw.js
-
+sw.jsS
 # Logs
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 lerna-debug.log*
+.eslintcache
 
 # NPM config
 .npmrc
@@ -42,3 +42,4 @@ tests/e2e/report
 docs/.vuepress/dist
 
 */middleware.config.js
+.eslintcache

@@ -93,7 +93,9 @@
           </ValidationProvider>
           <ValidationProvider
             v-slot="{ errors }"
-            :rules="`required|oneOf:${allContries.map(c => c.name).join(',')}`"
+            :rules="`required|oneOf:${allContries
+              .map((c) => c.name)
+              .join(',')}`"
             class="col-6"
           >
             <SfSelect
@@ -157,11 +159,8 @@
               class="form__element"
             />
           </ValidationProvider>
-          <ValidationProvider
-            tag="div"
-            class="col-6"
-          >
-          <SfInput
+          <ValidationProvider tag="div" class="col-6">
+            <SfInput
               v-model="form.company"
               data-cy="billing-details-input_company"
               name="company"
@@ -198,12 +197,22 @@
         </div> -->
         <div class="my-account-bottom-action-wrap">
           <div class="form__button_wrap">
-            <SfButton data-cy="billing-details-btn_update" type="submit" class="form__button" @click.native="scrollToTop()">
-              {{ isNew ? "Add To My Address Book" : "Update My Address Book" }}
+            <SfButton
+              data-cy="billing-details-btn_update"
+              type="submit"
+              class="form__button"
+              @click.native="scrollToTop()"
+            >
+              {{ isNew ? 'Add To My Address Book' : 'Update My Address Book' }}
             </SfButton>
           </div>
           <div class="form__button_wrap">
-            <SfButton data-cy="billing-details-btn_cancel" class="form__button" @click="$parent.edittingAddress = false, scrollToTop()">Cancel</SfButton>
+            <SfButton
+              data-cy="billing-details-btn_cancel"
+              class="form__button"
+              @click=";($parent.edittingAddress = false), scrollToTop()"
+            >Cancel</SfButton
+            >
           </div>
         </div>
       </form>
@@ -212,41 +221,36 @@
 </template>
 
 <script type="module">
-import {
-  SfInput,
-  SfButton,
-  SfSelect,
-  SfCheckbox
-} from '@storefront-ui/vue';
-import { required, min, oneOf, regex, max } from 'vee-validate/dist/rules';
-import { ValidationProvider, ValidationObserver, extend } from 'vee-validate';
-import { ref } from '@nuxtjs/composition-api';
-import countryState from '~/static/country-state';
+import { SfInput, SfButton, SfSelect, SfCheckbox } from '@storefront-ui/vue'
+import { required, min, oneOf, regex, max } from 'vee-validate/dist/rules'
+import { ValidationProvider, ValidationObserver, extend } from 'vee-validate'
+import { ref } from '@nuxtjs/composition-api'
+import countryState from '~/static/country-state'
 
 extend('required', {
   ...required,
   message: 'This field is required'
-});
+})
 
 extend('min', {
   ...min,
   message: 'The field should have at least {length} characters'
-});
+})
 
 extend('max', {
   ...max,
   message: 'The field should have maximum {length} characters'
-});
+})
 
 extend('oneOf', {
   ...oneOf,
   message: 'Invalid country'
-});
+})
 
 extend('regex', {
   ...regex,
   message: 'Invalid phone number'
-});
+})
 
 export default {
   name: 'BillingAddressForm',
@@ -287,12 +291,12 @@ export default {
 
   // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
   setup(props, { emit }) {
-    const allContries = ref([]);
-    (countryState.countries).map(item => {
+    const allContries = ref([])
+    countryState.countries.map((item) => {
       allContries.value.push({
         name: item.country
-      });
-    });
+      })
+    })
 
     const form = ref({
       id: props.address.id,
@@ -307,37 +311,42 @@ export default {
       company: props.address.company,
       phone: props.address.phone,
       isDefault: props.address.isDefault
-    });
+    })
 
     const submitForm = () => {
       emit('submit', {
-        form,
-        onComplete: () => {},
-        onError: () => {}
-      });
-    };
+        form
+      })
+    }
 
     return {
       form,
       submitForm,
       allContries
-    };
+    }
   },
   data() {
     return {
       states: [],
       defaultCountry: 'United States'
-    };
+    }
   },
   mounted() {
-    this.getStateFromCountry(this.address.country);
+    this.getStateFromCountry(this.address.country)
   },
   methods: {
     getStateFromCountry(country) {
-      const allStates = (countryState.countries).find(item => item.country === country);
-      this.states = allStates ? allStates.states : [];
-      this.form.state = this.states[0];
+      const allStates = countryState.countries.find(
+        (item) => item.country === country
+      )
+      this.states = allStates ? allStates.states : []
+      this.form.state = this.states[0]
     }
   }
-};
+}
 </script>
+<style lang="scss" scoped>
+.form {
+  --font-family--secondary: var(--font-family--primary);
+}
+</style>

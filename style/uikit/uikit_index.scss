@@ -1,0 +1,17 @@
+// 1. Your custom variables and variable overwrites.
+// @import 'uikit_gobal.scss'; // 所有的自定义 全局变量在这里引入
+// // $global-link-color: #DA7D02;
+
+// // 2. Import default variables and available mixins.
+// @import '~uikit/src/scss/variables-theme.scss';
+// @import '~uikit/src/scss/mixins-theme.scss'; // 功能混入(不需要使用)
+
+// 3. Your custom mixin overwrites.
+// @mixin button() { border-radius: 500px;} // 自定义混入
+
+// 4. Import UIkit.
+// @import '~uikit/src/scss/uikit-theme.scss';
+
+// 5. Your custom theme.
+// @import '~/static/wp-includes/css/dist/block-library/style.min.css';
+@import '~/static/wp-content/themes/yootheme/css/theme.1.css';

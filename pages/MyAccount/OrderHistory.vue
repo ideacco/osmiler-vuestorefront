@@ -1,73 +1,115 @@
 <template>
   <div class="my_account_content_wrap">
-    <div data-cy="order-history-tab_my-orders no-title" :class="currentOrder == null ? '' : 'no-title'">
+    <div
+      data-cy="order-history-tab_my-orders no-title"
+      :class="currentOrder == null ? '' : 'no-title'"
+    >
       <div v-if="currentOrder">
-          <div class='order-head-wrapper'>
-            <div class="order-number">
-              <SfButton data-cy="order-history-btn_orders" class="sf-button--text all-orders" @click="currentOrder = null, scrollToTop()">
-                <SfIcon icon='arrow_left'/>
-              </SfButton>Order #{{orderGetters.getId(currentOrder)}}
-            </div>
-            <SfBadge class='current-order-status'>{{ orderGetters.getStatus(currentOrder).toLowerCase() }}</SfBadge>
+        <div class="order-head-wrapper">
+          <div class="order-number">
+            <SfButton
+              data-cy="order-history-btn_orders"
+              class="sf-button--text all-orders"
+              @click=";(currentOrder = null), scrollToTop()"
+            >
+              <SfIcon icon="arrow_left" /> </SfButton
+            >Order #{{ orderGetters.getId(currentOrder) }}
           </div>
-          <div class="order-date-wrap">
-            <p>Date &amp; Time:&nbsp;<strong>{{ orderGetters.getDate(currentOrder) }}</strong></p>
-            <p v-if="orderGetters.getStatus(currentOrder) === 'FULFILLED'">
-              Order Tracking:&nbsp;<strong>{{ orderGetters.getTracking(currentOrder) }}</strong>
-              <span v-if="orderGetters.getTracking(currentOrder) != ' - '" class="redirect-icon">
-                <SfLink target="_blank" :link="orderGetters.getTrackingUrl(currentOrder)">
-                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M13.8333 13.8333H2.16667V2.16667H8V0.5H2.16667C1.24167 0.5 0.5 1.25 0.5 2.16667V13.8333C0.5 14.75 1.24167 15.5 2.16667 15.5H13.8333C14.75 15.5 15.5 14.75 15.5 13.8333V8H13.8333V13.8333ZM9.66667 0.5V2.16667H12.6583L4.46667 10.3583L5.64167 11.5333L13.8333 3.34167V6.33333H15.5V0.5H9.66667Z" fill="#000000"/>
-                  </svg>
-                </SfLink>
-              </span>
-            </p>
-          </div>
-      <div class="table-responsive">
-        <SfTable class="ordered-products-table">
-          <SfTableHeading>
-            <SfTableHeader class="products__name text-left">{{ ('Product name') }}</SfTableHeader>
-            <SfTableHeader class="products__name">{{ ('SKU') }}</SfTableHeader>
-            <SfTableHeader class="products__name">{{ ('Price') }}</SfTableHeader>
-            <SfTableHeader>{{ ('Qty') }}</SfTableHeader>
-            <SfTableHeader>{{ ('Subtotal') }}</SfTableHeader>
-          </SfTableHeading>
-          <SfTableRow v-for="(item, i) in orderGetters.getItems(currentOrder)" :key="i">
-            <SfTableData class="products__name">
-              <nuxt-link class="product-img" :to="'/products/'+orderGetters.getItemSlug(item)">
-                <SfImage
-                :src="`${orderGetters.getItemImage(item)}?fm=webp`"
-                :height="100"
-                :width="100"
-                :lazy="false"
-                loading="lazy"
-                :alt="orderGetters.getItemName(item)"
-                />
-              </nuxt-link>
-              <nuxt-link :to="'/products/'+orderGetters.getItemSlug(item)">
-                {{orderGetters.getItemName(item)}}
-              </nuxt-link>
-            </SfTableData>
-            <SfTableData class="data-ordered-sku">
-              <strong class="mobile-lable">SKU:</strong>
-              {{orderGetters.getItemSku(item)}}
-            </SfTableData>
-            <SfTableData class="data-ordered-price">
-              <strong class="mobile-lable">Price:</strong>
-              {{$n(orderGetters.getItemPrice(item), 'currency')}}
-            </SfTableData>
-            <SfTableData class="data-ordered-quantity">
-              <strong class="mobile-lable">Qty:</strong>
-              {{orderGetters.getItemQty(item)}}
-            </SfTableData>
-            <SfTableData class="data-ordered-subtotal">
-              <strong class="mobile-lable">Subtotal:</strong>
-              {{$n(orderGetters.getSubtotalPrice(currentOrder), 'currency')}}
-            </SfTableData>
-          </SfTableRow>
-        </SfTable>
-      </div>
-      <div class="highlighted highlighted--total">
+          <SfBadge class="current-order-status">{{
+            orderGetters.getStatus(currentOrder).toLowerCase()
+          }}</SfBadge>
+        </div>
+        <div class="order-date-wrap">
+          <p>
+            Date &amp; Time:&nbsp;<strong>{{
+              orderGetters.getDate(currentOrder)
+            }}</strong>
+          </p>
+          <p v-if="orderGetters.getStatus(currentOrder) === 'FULFILLED'">
+            Order Tracking:&nbsp;<strong>{{
+              orderGetters.getTracking(currentOrder)
+            }}</strong>
+            <span
+              v-if="orderGetters.getTracking(currentOrder) != ' - '"
+              class="redirect-icon"
+            >
+              <SfLink
+                target="_blank"
+                :link="orderGetters.getTrackingUrl(currentOrder)"
+              >
+                <svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 16 16"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M13.8333 13.8333H2.16667V2.16667H8V0.5H2.16667C1.24167 0.5 0.5 1.25 0.5 2.16667V13.8333C0.5 14.75 1.24167 15.5 2.16667 15.5H13.8333C14.75 15.5 15.5 14.75 15.5 13.8333V8H13.8333V13.8333ZM9.66667 0.5V2.16667H12.6583L4.46667 10.3583L5.64167 11.5333L13.8333 3.34167V6.33333H15.5V0.5H9.66667Z"
+                    fill="#000000"
+                  />
+                </svg>
+              </SfLink>
+            </span>
+          </p>
+        </div>
+        <div class="table-responsive">
+          <SfTable class="ordered-products-table">
+            <SfTableHeading>
+              <SfTableHeader class="products__name text-left">{{
+                'Product name'
+              }}</SfTableHeader>
+              <SfTableHeader class="products__name">{{ 'SKU' }}</SfTableHeader>
+              <SfTableHeader class="products__name">{{
+                'Price'
+              }}</SfTableHeader>
+              <SfTableHeader>{{ 'Qty' }}</SfTableHeader>
+              <SfTableHeader>{{ 'Subtotal' }}</SfTableHeader>
+            </SfTableHeading>
+            <SfTableRow
+              v-for="(item, i) in orderGetters.getItems(currentOrder)"
+              :key="i"
+            >
+              <SfTableData class="products__name">
+                <nuxt-link
+                  class="product-img"
+                  :to="'/products/' + orderGetters.getItemSlug(item)"
+                >
+                  <SfImage
+                    :src="`${orderGetters.getItemImage(item)}?fm=webp`"
+                    :height="100"
+                    :width="100"
+                    :lazy="false"
+                    loading="lazy"
+                    :alt="orderGetters.getItemName(item)"
+                  />
+                </nuxt-link>
+                <nuxt-link :to="'/products/' + orderGetters.getItemSlug(item)">
+                  {{ orderGetters.getItemName(item) }}
+                </nuxt-link>
+              </SfTableData>
+              <SfTableData class="data-ordered-sku">
+                <strong class="mobile-lable">SKU:</strong>
+                {{ orderGetters.getItemSku(item) }}
+              </SfTableData>
+              <SfTableData class="data-ordered-price">
+                <strong class="mobile-lable">Price:</strong>
+                {{ $n(orderGetters.getItemPrice(item), 'currency') }}
+              </SfTableData>
+              <SfTableData class="data-ordered-quantity">
+                <strong class="mobile-lable">Qty:</strong>
+                {{ orderGetters.getItemQty(item) }}
+              </SfTableData>
+              <SfTableData class="data-ordered-subtotal">
+                <strong class="mobile-lable">Subtotal:</strong>
+                {{
+                  $n(orderGetters.getSubtotalPrice(currentOrder), 'currency')
+                }}
+              </SfTableData>
+            </SfTableRow>
+          </SfTable>
+        </div>
+        <div class="highlighted highlighted--total">
           <SfProperty
             name="Subtotal"
             :value="$n(orderGetters.getSubtotalPrice(currentOrder), 'currency')"
@@ -94,15 +136,30 @@
             class="sf-property--full-width property"
           />
         </div>
-        <div class='order-info-wrapper'>
-          <SfHeading title="Order Information" :level="4"/>
-          <div class='order-info-cols'>
-            <div class='order-info-col order-info-col-1'>
-              <SfHeading title="Shipping Address" :level="5"/>
-              <template v-if="orderGetters.getShippingAddress(currentOrder) != 'No shipping address available'">
+        <div class="order-info-wrapper">
+          <SfHeading title="Order Information" :level="4" />
+          <div class="order-info-cols">
+            <div class="order-info-col order-info-col-1">
+              <SfHeading title="Shipping Address" :level="5" />
+              <template
+                v-if="
+                  orderGetters.getShippingAddress(currentOrder) !=
+                    'No shipping address available'
+                "
+              >
                 <p>{{ orderGetters.getCustomerName(currentOrder) }}</p>
-                <div v-for='(addressLine, ai) in orderGetters.getShippingAddress(currentOrder)' :key="ai">{{ addressLine.value }}</div>
-                <strong v-if="orderGetters.getCustomerPhone(currentOrder) != ''">{{ orderGetters.getCustomerPhone(currentOrder) }}</strong>
+                <div
+                  v-for="(addressLine, ai) in orderGetters.getShippingAddress(
+                    currentOrder
+                  )"
+                  :key="ai"
+                >
+                  {{ addressLine.value }}
+                </div>
+                <strong
+                  v-if="orderGetters.getCustomerPhone(currentOrder) != ''"
+                >{{ orderGetters.getCustomerPhone(currentOrder) }}</strong
+                >
               </template>
               <template v-else>
                 <p>No shipping information provided yet!</p>
@@ -112,12 +169,27 @@
               <SfHeading title="Shipping Method" :level="5"/>
               <SfAlert message="Need to check from where to retrive info using storefront API" type="secondary"/>
             </div> -->
-            <div class='order-info-col order-info-col-3'>
-              <SfHeading title="Billing Address" :level="5"/>
-              <template v-if="orderGetters.getShippingAddress(currentOrder) != 'No shipping address available'">
+            <div class="order-info-col order-info-col-3">
+              <SfHeading title="Billing Address" :level="5" />
+              <template
+                v-if="
+                  orderGetters.getShippingAddress(currentOrder) !=
+                    'No shipping address available'
+                "
+              >
                 <p>{{ orderGetters.getCustomerName(currentOrder) }}</p>
-                <div v-for='(addressLine, ai) in orderGetters.getShippingAddress(currentOrder)' :key="ai">{{ addressLine.value }}</div>
-                <strong v-if="orderGetters.getCustomerPhone(currentOrder) != ''">{{ orderGetters.getCustomerPhone(currentOrder) }}</strong>
+                <div
+                  v-for="(addressLine, ai) in orderGetters.getShippingAddress(
+                    currentOrder
+                  )"
+                  :key="ai"
+                >
+                  {{ addressLine.value }}
+                </div>
+                <strong
+                  v-if="orderGetters.getCustomerPhone(currentOrder) != ''"
+                >{{ orderGetters.getCustomerPhone(currentOrder) }}</strong
+                >
               </template>
               <template v-else>
                 <p>No billing information provided yet!</p>
@@ -132,20 +204,31 @@
       </div>
       <div v-else>
         <div class="my_accoutn_title_wrap">
-          <SfHeading
-            class="my_accoutn_title"
-            :level="1"
-            :title="title"
-          />
+          <SfHeading class="my_accoutn_title" :level="1" :title="title" />
         </div>
-        <SfLoader v-if="loading" class="order-loader" :class="{ loading }" :loading="loading">
+        <SfLoader
+          v-if="loading"
+          class="order-loader"
+          :class="{ loading }"
+          :loading="loading"
+        >
           <div />
         </SfLoader>
-        <div v-if="!loading && orders && orders.data && orders.data.length === 0" class="no-orders my_account_content container-small">
-          <p class="no-orders__title">{{ ('Currently you don\'t have any orders.') }}</p>
+        <div
+          v-if="!loading && orders && orders.data && orders.data.length === 0"
+          class="no-orders my_account_content container-small"
+        >
+          <p class="no-orders__title">
+            {{ "Currently you don't have any orders." }}
+          </p>
           <div class="my-account-bottom-action-wrap">
             <div class="form__button_wrap">
-                <SfButton data-cy="order-history-btn_start" :link="localePath('/c/accessories')" class="no-orders__button form__button">Start shopping</SfButton>
+              <SfButton
+                data-cy="order-history-btn_start"
+                :link="localePath('/c/accessories')"
+                class="no-orders__button form__button"
+              >Start shopping</SfButton
+              >
             </div>
           </div>
         </div>
@@ -155,12 +238,20 @@
               <SfTableHeader
                 v-for="tableHeader in tableHeaders"
                 :key="tableHeader"
-                >{{ tableHeader }}</SfTableHeader>
+              >{{ tableHeader }}</SfTableHeader
+              >
             </SfTableHeading>
-            <SfTableRow v-for="order in orders.data" :key="orderGetters.getId(order)">
+            <SfTableRow
+              v-for="order in orders.data"
+              :key="orderGetters.getId(order)"
+            >
               <SfTableData class="data-order-no">
                 <strong class="mobile-lable">Order no</strong>
-                <SfButton data-cy="order-history-btn_view" class="sf-button--text" @click="currentOrder = order">
+                <SfButton
+                  data-cy="order-history-btn_view"
+                  class="sf-button--text"
+                  @click="currentOrder = order"
+                >
                   #{{ orderGetters.getId(order) }}
                 </SfButton>
               </SfTableData>
@@ -168,20 +259,39 @@
                 <strong class="mobile-lable">Date and Time</strong>
                 {{ orderGetters.getDate(order) }}
               </SfTableData>
-              <SfTableData v-if="orderGetters.getStatus(order) === 'FULFILLED'" class="data-order-tracking">
+              <SfTableData
+                v-if="orderGetters.getStatus(order) === 'FULFILLED'"
+                class="data-order-tracking"
+              >
                 <strong class="mobile-lable">Tracking Number</strong>
                 <span class="order-track-wrap">
                   {{ orderGetters.getTracking(order) }}
                   <span v-if="orderGetters.getTracking(order) != ' - '">
-                    <SfLink target="_blank" :link="orderGetters.getTrackingUrl(order)">
-                      <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M13.8333 13.8333H2.16667V2.16667H8V0.5H2.16667C1.24167 0.5 0.5 1.25 0.5 2.16667V13.8333C0.5 14.75 1.24167 15.5 2.16667 15.5H13.8333C14.75 15.5 15.5 14.75 15.5 13.8333V8H13.8333V13.8333ZM9.66667 0.5V2.16667H12.6583L4.46667 10.3583L5.64167 11.5333L13.8333 3.34167V6.33333H15.5V0.5H9.66667Z" fill="#666666"/>
+                    <SfLink
+                      target="_blank"
+                      :link="orderGetters.getTrackingUrl(order)"
+                    >
+                      <svg
+                        width="16"
+                        height="16"
+                        viewBox="0 0 16 16"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M13.8333 13.8333H2.16667V2.16667H8V0.5H2.16667C1.24167 0.5 0.5 1.25 0.5 2.16667V13.8333C0.5 14.75 1.24167 15.5 2.16667 15.5H13.8333C14.75 15.5 15.5 14.75 15.5 13.8333V8H13.8333V13.8333ZM9.66667 0.5V2.16667H12.6583L4.46667 10.3583L5.64167 11.5333L13.8333 3.34167V6.33333H15.5V0.5H9.66667Z"
+                          fill="#666666"
+                        />
                       </svg>
                     </SfLink>
                   </span>
                 </span>
               </SfTableData>
-              <SfTableData v-else class="data-order-tracking"><strong class="mobile-lable">Tracking Number</strong> - </SfTableData>
+              <SfTableData
+                v-else
+                class="data-order-tracking"
+              ><strong class="mobile-lable">Tracking Number</strong> -
+              </SfTableData>
               <SfTableData class="data-order-name">
                 <strong class="mobile-lable">Name</strong>
                 {{ orderGetters.getCustomerName(order) }}
@@ -192,7 +302,9 @@
               </SfTableData>
               <SfTableData class="data-order-status">
                 <strong class="mobile-lable">Status</strong>
-                <span :class="getStatusTextClass(order)">{{ orderGetters.getStatus(order).toLowerCase() }}</span>
+                <span :class="getStatusTextClass(order)">{{
+                  orderGetters.getStatus(order).toLowerCase()
+                }}</span>
               </SfTableData>
               <!-- <SfTableData>
                 <SfIcon
@@ -203,12 +315,24 @@
                 <!-- <SfButton data-cy="order-history-btn_download" class="sf-button--text smartphone-only" @click="downloadOrder(order)">
                   Download
                 </SfButton> -->
-                <SfButton data-cy="order-history-btn_view" class="sf-button--text" @click="currentOrder = order, scrollToTop()">
+                <SfButton
+                  data-cy="order-history-btn_view"
+                  class="sf-button--text"
+                  @click=";(currentOrder = order), scrollToTop()"
+                >
                   <SfIcon>
                     <template v-bind="{ viewBox, iconPaths, icon }">
-                      <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#666666">
-                        <path d="M0 0h24v24H0V0z" fill="none"/>
-                        <path d="M12 6c3.79 0 7.17 2.13 8.82 5.5C19.17 14.87 15.79 17 12 17s-7.17-2.13-8.82-5.5C4.83 8.13 8.21 6 12 6m0-2C7 4 2.73 7.11 1 11.5 2.73 15.89 7 19 12 19s9.27-3.11 11-7.5C21.27 7.11 17 4 12 4zm0 5c1.38 0 2.5 1.12 2.5 2.5S13.38 14 12 14s-2.5-1.12-2.5-2.5S10.62 9 12 9m0-2c-2.48 0-4.5 2.02-4.5 4.5S9.52 16 12 16s4.5-2.02 4.5-4.5S14.48 7 12 7z"/>
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        height="24px"
+                        viewBox="0 0 24 24"
+                        width="24px"
+                        fill="#666666"
+                      >
+                        <path d="M0 0h24v24H0V0z" fill="none" />
+                        <path
+                          d="M12 6c3.79 0 7.17 2.13 8.82 5.5C19.17 14.87 15.79 17 12 17s-7.17-2.13-8.82-5.5C4.83 8.13 8.21 6 12 6m0-2C7 4 2.73 7.11 1 11.5 2.73 15.89 7 19 12 19s9.27-3.11 11-7.5C21.27 7.11 17 4 12 4zm0 5c1.38 0 2.5 1.12 2.5 2.5S13.38 14 12 14s-2.5-1.12-2.5-2.5S10.62 9 12 9m0-2c-2.48 0-4.5 2.02-4.5 4.5S9.52 16 12 16s4.5-2.02 4.5-4.5S14.48 7 12 7z"
+                        />
                       </svg>
                     </template>
                   </SfIcon>
@@ -234,10 +358,10 @@ import {
   SfHeading,
   SfBadge,
   SfLoader
-} from '@storefront-ui/vue';
-import { computed, ref } from '@nuxtjs/composition-api';
-import { useUserOrders, orderGetters } from '@vue-storefront/shopify';
-import { AgnosticOrderStatus , onSSR } from '@vue-storefront/core';
+} from '@storefront-ui/vue'
+import { computed, ref } from '@nuxtjs/composition-api'
+import { useUserOrders, orderGetters } from '@vue-storefront/shopify'
+import { AgnosticOrderStatus, onSSR } from '@vue-storefront/core'
 
 export default {
   name: 'PersonalDetails',
@@ -260,11 +384,11 @@ export default {
   },
   // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
   setup() {
-    const { orders, search, loading } = useUserOrders();
-    const currentOrder = ref(null);
+    const { orders, search, loading } = useUserOrders()
+    const currentOrder = ref(null)
     onSSR(async () => {
-      await search();
-    });
+      await search()
+    })
 
     const tableHeaders = [
       'Order ID',
@@ -274,55 +398,64 @@ export default {
       'Price',
       'Status',
       ''
-    ];
+    ]
 
     const getStatusTextClass = (order) => {
-      const status = orderGetters.getStatus(order);
+      const status = orderGetters.getStatus(order)
       switch (status) {
         case AgnosticOrderStatus.Open:
-          return 'text-warning';
+          return 'text-warning'
         case AgnosticOrderStatus.Complete:
-          return 'text-success';
+          return 'text-success'
         default:
-          return '';
+          return ''
       }
-    };
+    }
 
     const downloadFile = (file, name) => {
-      const a = document.createElement('a');
-      document.body.appendChild(a);
-      a.style = 'display: none';
+      const a = document.createElement('a')
+      document.body.appendChild(a)
+      a.style = 'display: none'
 
-      const url = window.URL.createObjectURL(file);
-      a.href = url;
-      a.download = name;
-      a.click();
-      window.URL.revokeObjectURL(url);
-    };
+      const url = window.URL.createObjectURL(file)
+      a.href = url
+      a.download = name
+      a.click()
+      window.URL.revokeObjectURL(url)
+    }
 
     const downloadOrders = async () => {
-      await downloadFile(new Blob([JSON.stringify(orders.value)], {type: 'application/json'}), 'orders.json');
-    };
+      await downloadFile(
+        new Blob([JSON.stringify(orders.value)], { type: 'application/json' }),
+        'orders.json'
+      )
+    }
 
     const downloadOrder = async (order) => {
-      await downloadFile(new Blob([JSON.stringify(order)], {type: 'application/json'}), 'order ' + orderGetters.getId(order) + '.json');
-    };
+      await downloadFile(
+        new Blob([JSON.stringify(order)], { type: 'application/json' }),
+        'order ' + orderGetters.getId(order) + '.json'
+      )
+    }
 
     return {
       tableHeaders,
-      orders: computed(() => orders ? orders.value : []),
+      orders: computed(() => (orders ? orders.value : [])),
       getStatusTextClass,
       orderGetters,
       downloadOrder,
       downloadOrders,
       currentOrder,
       loading
-    };
+    }
   }
-};
+}
 </script>
 
-<style lang='scss'>
+<style lang="scss">
+.my_account_content_wra {
+  --font-family--secondary: var(--font-family--primary);
+}
 .orders-list-table {
   .mobile-lable {
     display: none;
@@ -392,7 +525,7 @@ export default {
           padding-top: 0;
         }
       }
-      &:nth-child(2n+1) {
+      &:nth-child(2n + 1) {
         .sf-table__data {
           background-color: transparent;
         }
@@ -405,12 +538,14 @@ export default {
     }
   }
 }
-.sf-table__heading, .sf-table__row {
+.sf-table__heading,
+.sf-table__row {
   display: table-row;
   padding: 0;
   border: 0 none;
 }
-.sf-table__data, .sf-table__header {
+.sf-table__data,
+.sf-table__header {
   text-align: center;
   font-size: 14px;
   line-height: 1.5;
@@ -448,7 +583,7 @@ export default {
   }
 }
 tbody {
-  &:nth-child(2n+1) {
+  &:nth-child(2n + 1) {
     .sf-table__data {
       background-color: var(--_c-gray-EEEEEE);
     }
@@ -642,7 +777,7 @@ tbody {
     background-color: transparent;
   }
   tbody {
-    &:nth-child(2n+1) {
+    &:nth-child(2n + 1) {
       .sf-table__data {
         background-color: transparent;
       }
@@ -659,7 +794,8 @@ tbody {
       }
     }
   }
-  .sf-table__data, .sf-table__header {
+  .sf-table__data,
+  .sf-table__header {
     padding: 20px 5px;
     @media (max-width: 767px) {
       padding: 5px 5px;
@@ -865,5 +1001,4 @@ tbody {
 .order-loader {
   margin: 100px 0;
 }
-
 </style>

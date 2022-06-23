@@ -1,7 +1,7 @@
 <template>
   <SfSidebar
     :visible="isMobileMenuOpen"
-    :title="$t('Menu')"
+    :title="'Menu'"
     class="mobile-menu-sidebar sf-sidebar--left"
     @close="toggleMobileMenu"
   >
@@ -19,11 +19,11 @@
   </SfSidebar>
 </template>
 <script lang="ts">
-import { SfSidebar, SfList, SfMenuItem } from '@storefront-ui/vue';
-import { defineComponent, computed, useContext } from '@nuxtjs/composition-api';
-import { onSSR } from '@vue-storefront/core';
-import { useCategory } from '@vue-storefront/shopify';
-import { useUiState } from '~/composables';
+import { SfSidebar, SfList, SfMenuItem } from '@storefront-ui/vue'
+import { defineComponent, computed, useContext } from '@nuxtjs/composition-api'
+import { onSSR } from '@vue-storefront/core'
+import { useCategory } from '@vue-storefront/shopify'
+import { useUiState } from '~/composables'
 
 export default defineComponent({
   name: 'MobileMenuSidebar',
@@ -34,37 +34,38 @@ export default defineComponent({
   },
   setup() {
     const context = useContext()
-    const { search, categories } = useCategory('menuCategories');
-    const { isMobileMenuOpen, toggleMobileMenu } = useUiState();
+    const { search, categories } = useCategory('menuCategories')
+    const { isMobileMenuOpen, toggleMobileMenu } = useUiState()
 
     onSSR(async () => {
-      await search({ slug: '' });
-    });
+      await search({ slug: '' })
+    })
 
-     const menus = computed(() => [
+    const menus = computed(() => [
       ...categories.value,
       { id: 'blogs', title: 'Blogs', handle: context.$config.cms.blogs }
-    ]);
+    ])
 
     const getMenuPath = (menu) => {
       if (menu.id === 'blogs') {
-        return { name: 'blogs' };
+        return { name: 'blogs' }
       }
-        
-      return { name: 'category', params: { slug_1: menu.handle } };
-    };
+
+      return { name: 'category', params: { slug_1: menu.handle } }
+    }
 
     return {
       menus,
       getMenuPath,
       isMobileMenuOpen,
       toggleMobileMenu
-    };
+    }
   }
-});
+})
 </script>
 <style lang="scss" scoped>
 .mobile-menu-sidebar {
+  --font-family--secondary: var(--font-family--primary);
   --sidebar-z-index: 3;
   --overlay-z-index: 3;
   &__list {

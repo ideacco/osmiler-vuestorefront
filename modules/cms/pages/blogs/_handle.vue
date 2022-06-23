@@ -53,7 +53,7 @@
           >
             <SfIcon
               class="navbar__view-icon"
-               :color="!isGridView ? 'var(--c-primary)' : 'black'"
+              :color="!isGridView ? 'var(--c-primary)' : 'black'"
               icon="list"
               size="12px"
             />
@@ -289,28 +289,28 @@ import {
   SfBreadcrumbs,
   SfProductCardHorizontal,
   SfSelect,
-  SfLoader
-} from '@storefront-ui/vue';
-import { SortBy } from '~/modules/cms/enums/SortBy';
-import LazyHydrate from 'vue-lazy-hydration';
-import { useUiState } from '~/composables';
+  SfLoader,
+} from '@storefront-ui/vue'
+import { SortBy } from '~/modules/cms/enums/SortBy'
+import LazyHydrate from 'vue-lazy-hydration'
+import { useUiState } from '~/composables'
 import {
   useRoute,
   computed,
   ref,
   watchEffect,
-  useContext
-} from '@nuxtjs/composition-api';
-import { onSSR } from '@vue-storefront/core';
-import { useContent, ContentType } from '@vue-storefront/shopify';
+  useContext,
+} from '@nuxtjs/composition-api'
+import { onSSR } from '@vue-storefront/core'
+import { useContent, ContentType } from '@vue-storefront/shopify'
 import {
   getArticleImage,
   getArticleLink,
-  getArticlePublishedAt
-} from '~/helpers/article';
+  getArticlePublishedAt,
+} from '~/helpers/article'
 
 export default {
-  name: 'Category',
+  name: 'HanDle',
   components: {
     SfHeading,
     SfButton,
@@ -325,106 +325,106 @@ export default {
     SfSelect,
     SfProductCardHorizontal,
     LazyHydrate,
-    SfLoader
+    SfLoader,
   },
   setup() {
-    const route = useRoute();
-    const context = useContext();
-    const { articlesPerPage, setArticlesPerPage } = useUiState();
+    const route = useRoute()
+    const context = useContext()
+    const { articlesPerPage, setArticlesPerPage } = useUiState()
     const {
       search: getBlogs,
       content: blogs,
-      loading: isBlogsLoading
-    } = useContent('blogs');
-    const { search: getBlog } = useContent('blog');
+      loading: isBlogsLoading,
+    } = useContent('blogs')
+    const { search: getBlog } = useContent('blog')
     const {
       search: getArticles,
       content: articlesContent,
-      loading: isArticlesLoading
-    } = useContent('articles');
+      loading: isArticlesLoading,
+    } = useContent('articles')
 
-    const currentHandle = ref(route?.value?.params?.handle);
-    const cursors = ref(['']);
+    const currentHandle = ref(route?.value?.params?.handle)
+    const cursors = ref([''])
 
-    const showOnPage = ['5', '10', '20', '40', '60'];
+    const showOnPage = ['5', '10', '20', '40', '60']
     const sortByOptions = [
       {
         value: 'latest',
-        label: 'Latest First'
+        label: 'Latest First',
       },
       {
         value: 'oldest',
-        label: 'Oldest First'
-      }
-    ];
-    const selectedSortBy = ref(SortBy.Latest);
+        label: 'Oldest First',
+      },
+    ]
+    const selectedSortBy = ref(SortBy.Latest)
 
     onSSR(async () => {
-      await getBlogs({ contentType: ContentType.Blog });
+      await getBlogs({ contentType: ContentType.Blog })
       currentHandle.value =
-        route?.value?.params?.handle ?? blogs?.value?.[0]?.handle;
+        route?.value?.params?.handle ?? blogs?.value?.[0]?.handle
 
       getBlog({
         contentType: ContentType.Blog,
-        handle: currentHandle.value
-      });
+        handle: currentHandle.value,
+      })
 
       await getArticles({
         contentType: ContentType.Article,
         query: `blog_title:${currentHandle.value}`,
         first: parseInt(articlesPerPage.value),
         reverse: true,
-        sortKey: 'PUBLISHED_AT'
-      });
-    });
+        sortKey: 'PUBLISHED_AT',
+      })
+    })
 
-    const articles = computed(() => articlesContent?.value?.data ?? []);
+    const articles = computed(() => articlesContent?.value?.data ?? [])
 
     const hasNextPage = computed(
       () => articlesContent.value.pageInfo?.hasNextPage
-    );
+    )
     const hasPrevPage = computed(
       () => articlesContent.value.pageInfo?.hasPreviousPage
-    );
+    )
 
     const goNextPage = () => {
-      const last = articles?.value?.slice(-1)[0];
+      const last = articles?.value?.slice(-1)[0]
 
-      if (!last.cursor) return;
+      if (!last.cursor) return
 
-      cursors.value.push(last.cursor);
-    };
+      cursors.value.push(last.cursor)
+    }
 
     const goPrevPage = () => {
-      cursors.value.pop();
-    };
+      cursors.value.pop()
+    }
 
     const isPageLoading = computed(
       () => isBlogsLoading.value || isArticlesLoading.value
-    );
+    )
 
     const selectShowOnPage = (perPage) => {
-      setArticlesPerPage(perPage);
-    };
+      setArticlesPerPage(perPage)
+    }
 
     watchEffect(() => {
       const options = {
         contentType: ContentType.Article,
         query: `blog_title:${currentHandle.value}`,
         first: parseInt(articlesPerPage.value),
-        sortKey: 'PUBLISHED_AT'
-      };
+        sortKey: 'PUBLISHED_AT',
+      }
 
       if (selectedSortBy.value === SortBy.Latest) {
-        options.reverse = true;
+        options.reverse = true
       }
 
       if (cursors.value.length > 1) {
-        options.after = [...cursors.value].splice(-1)[0];
+        options.after = [...cursors.value].splice(-1)[0]
       }
 
-      getArticles(options);
-    });
+      getArticles(options)
+    })
 
     return {
       selectShowOnPage,
@@ -453,24 +453,24 @@ export default {
       isPageLoading,
       sidebarAccordion: [
         {
-          header: 'Categories'
-        }
+          header: 'Categories',
+        },
       ],
       breadcrumbs: [
         {
           text: 'Home',
-          link: '/'
+          link: '/',
         },
         {
           text: 'Blogs',
           link: context.app.localePath({
-            name: 'blogs'
-          })
-        }
-      ]
-    };
-  }
-};
+            name: 'blogs',
+          }),
+        },
+      ],
+    }
+  },
+}
 </script>
 <style lang="scss" scoped>
 #category {
@@ -561,7 +561,7 @@ export default {
     }
   }
   &__label {
-    font-family: var(--font-family--secondary);
+    font-family: Overpass;
     font-weight: var(--font-weight--normal);
     color: var(--c-text-muted);
     @include for-desktop {
@@ -581,7 +581,7 @@ export default {
     margin: 0 auto 0 var(--spacer-2xl);
   }
   &__counter {
-    font-family: var(--font-family--secondary);
+    font-family: Overpass;
     margin: auto;
     @include for-desktop {
       margin: auto 0 auto auto;
@@ -618,8 +618,7 @@ export default {
     }
     &-label {
       margin: 0 var(--spacer-sm) 0 0;
-      font: var(--font-weight--normal) var(--font-size--base) / 1.6
-        var(--font-family--secondary);
+      font: var(--font-weight--normal) var(--font-size--base) / 1.6 Overpass;
       text-decoration: none;
       color: var(--c-link);
     }
@@ -729,7 +728,7 @@ export default {
     justify-content: flex-end;
     align-items: baseline;
     &__label {
-      font-family: var(--font-family--secondary);
+      font-family: Overpass;
       font-size: var(--font-size--sm);
     }
   }
@@ -751,7 +750,7 @@ export default {
   &__chosen {
     color: var(--c-text-muted);
     font-weight: var(--font-weight--normal);
-    font-family: var(--font-family--secondary);
+    font-family: Overpass;
     position: absolute;
     right: var(--spacer-xl);
   }

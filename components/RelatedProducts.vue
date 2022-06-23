@@ -1,5 +1,8 @@
 <template>
-  <SfSection :title-heading="title" class="section pdc-sec-title pdp-upsell-section">
+  <SfSection
+    :title-heading="title"
+    class="section pdc-sec-title pdp-upsell-section"
+  >
     <SfLoader :class="{ loading }" :loading="loading">
       <SfCarousel
         ref="bscarousel"
@@ -7,14 +10,24 @@
         :settings="pdpUpsellSettings"
         class="carousel"
       >
-        <SfCarouselItem v-for="(product, i) in products" :key="i" class="carousel__item">
+        <SfCarouselItem
+          v-for="(product, i) in products"
+          :key="i"
+          class="carousel__item"
+        >
           <SfProductCard
             :title="productGetters.getName(product)"
             :image="productGetters.getPDPCoverImage(product)"
             :is-added-to-cart="isInCart({ product, currentCart })"
             :show-add-to-cart-button="true"
             :add-to-cart-disabled="!productGetters.getStockStatus(product)"
-            :link="localePath(`/p/${productGetters.getId(product)}/${productGetters.getSlug(product)}`)"
+            :link="
+              localePath(
+                `/p/${productGetters.getId(product)}/${productGetters.getSlug(
+                  product
+                )}`
+              )
+            "
             :wishlist-icon="false"
             :image-width="$device.isDesktopOrTablet ? 212 : 154"
             :image-height="$device.isDesktopOrTablet ? 320 : 232"
@@ -22,7 +35,8 @@
             @click:add-to-cart="
               handleAddToCart({ product, quantity: 1, currentCart })
             "
-          > <template #image="imageSlotProps">
+          >
+            <template #image="imageSlotProps">
               <SfButton
                 :link="imageSlotProps.link"
                 aria-label="Go To Product"
@@ -55,7 +69,13 @@
               <!-- RYVIU APP :: COLLECTION-WIDGET-TOTAL -->
               <SfLink
                 class="sf-product-card__link"
-                :link="localePath(`/p/${productGetters.getId(product)}/${productGetters.getSlug(product)}`)"
+                :link="
+                  localePath(
+                    `/p/${productGetters.getId(
+                      product
+                    )}/${productGetters.getSlug(product)}`
+                  )
+                "
               >
                 <h3 class="sf-product-card__title">
                   {{ productGetters.getName(product) }}
@@ -63,15 +83,23 @@
               </SfLink>
             </template>
             <template #price>
-              <SfPrice
-                class="sf-product-card__price"
-              >
-                <template v-if="productGetters.getPrice(product).special" #special>
-                  <ins class="sf-price__special">{{ $n(productGetters.getPrice(product).special, 'currency') }}</ins>
+              <SfPrice class="sf-product-card__price">
+                <template
+                  v-if="productGetters.getPrice(product).special"
+                  #special
+                >
+                  <ins class="sf-price__special">{{
+                    $n(productGetters.getPrice(product).special, 'currency')
+                  }}</ins>
                 </template>
-                <template #old><span/></template>
-                <template v-if="productGetters.getPrice(product).regular > 0" #regular>
-                  <del class="sf-price__old">{{ $n(productGetters.getPrice(product).regular, 'currency') }}</del>
+                <template #old><span /></template>
+                <template
+                  v-if="productGetters.getPrice(product).regular > 0"
+                  #regular
+                >
+                  <del class="sf-price__old">{{
+                    $n(productGetters.getPrice(product).regular, 'currency')
+                  }}</del>
                 </template>
               </SfPrice>
             </template>
@@ -83,7 +111,6 @@
 </template>
 
 <script lang="ts">
-
 import {
   SfCarousel,
   SfProductCard,
@@ -92,9 +119,9 @@ import {
   SfLink,
   SfPrice,
   SfButton
-} from '@storefront-ui/vue';
-import useUiNotification from '../composables/useUiNotification';
-import { productGetters, useCart } from '@vue-storefront/shopify';
+} from '@storefront-ui/vue'
+import useUiNotification from '../composables/useUiNotification'
+import { productGetters, useCart } from '@vue-storefront/shopify'
 
 export default {
   name: 'RelatedProducts',
@@ -113,21 +140,21 @@ export default {
     loading: Boolean
   },
   setup() {
-    const { addItem: addItemToCart, isInCart, cart: currentCart } = useCart();
-    const { send: sendNotification } = useUiNotification();
+    const { addItem: addItemToCart, isInCart, cart: currentCart } = useCart()
+    const { send: sendNotification } = useUiNotification()
 
     const getStockCount = (product) => product?.totalInventory ?? 0
 
-    return { 
+    return {
       currentCart,
       productGetters,
       sendNotification,
       addItemToCart,
       isInCart,
       getStockCount
-    };
+    }
   },
-  data () {
+  data() {
     return {
       pdpUpsellSettings: {
         type: 'slider',
@@ -160,7 +187,7 @@ export default {
           }
         }
       }
-    };
+    }
   },
   methods: {
     handleAddToCart(productObj) {
@@ -171,15 +198,16 @@ export default {
           type: 'success',
           title: 'Product added!',
           icon: 'check'
-        });
-      });
-    },
+        })
+      })
+    }
   }
-};
+}
 </script>
 
 <style lang="scss">
 .pdp-upsell-section {
+  --font-family--secondary: var(--font-family--primary);
   margin: 0;
   padding-bottom: 164px;
   @include for-mobile {

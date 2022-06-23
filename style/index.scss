@@ -1,0 +1,10 @@
+// 所有的CSS配置文件都在这里引入
+
+// storefront 的UI库样式覆盖
+@import 'storefront-ui/gobal.scss';
+
+// UIkit 全局样式覆盖
+@import 'uikit/uikit_index.scss';
+
+// 自定义字体样式(已在UKit中引入)
+// @import 'object/font-family.scss';

@@ -5,7 +5,9 @@
     </template>
     <template #center>
       <p>{{ $t('Download') }}</p>
-      <SfButton class="topbar__button sf-button--text">{{ $t('Find out more') }}</SfButton>
+      <SfButton class="topbar__button sf-button--text">{{
+        $t('Find out more')
+      }}</SfButton>
     </template>
     <template #right>
       <LocaleSelector />
@@ -14,8 +16,8 @@
 </template>
 
 <script>
-import { SfButton, SfTopBar } from '@storefront-ui/vue';
-import LocaleSelector from './LocaleSelector';
+import { SfButton, SfTopBar } from '@storefront-ui/vue'
+import LocaleSelector from './LocaleSelector'
 
 export default {
   components: {
@@ -23,11 +25,11 @@ export default {
     SfButton,
     LocaleSelector
   }
-};
-
+}
 </script>
 <style lang="scss" scoped>
 .topbar {
+  --font-family--secondary: var(--font-family--primary);
   position: relative;
   z-index: 2;
   &__button {

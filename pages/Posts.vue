@@ -31,7 +31,7 @@
               :key="option.value"
               :value="option.value"
               class="sort-by__option"
-              >{{ option.label }}</SfComponentSelectOption
+            >{{ option.label }}</SfComponentSelectOption
             >
           </SfComponentSelect>
         </div>
@@ -39,7 +39,7 @@
           <span class="navbar__label desktop-only">Posts found: </span>
           <span class="desktop-only">{{ totalPosts }}</span>
           <span class="navbar__label smartphone-only"
-            >{{ totalPosts }} Items</span
+          >{{ totalPosts }} Items</span
           >
         </div>
         <div class="navbar__view">
@@ -116,7 +116,7 @@
             image-tag="nuxt-img"
             :nuxt-img-config="{
               format: 'webp',
-              fit: 'cover'
+              fit: 'cover',
             }"
             class="products__product-card"
             @click:wishlist="toggleWishlist(i)"
@@ -177,46 +177,46 @@
             image-tag="nuxt-img"
             :nuxt-img-config="{
               format: 'webp',
-              fit: 'cover'
+              fit: 'cover',
             }"
             class="products__product-card-horizontal"
             @click:wishlist="toggleWishlist(i)"
           >
             <template #image="imageSlotProps">
-                <SfButton
-                  :link="imageSlotProps.link"
-                  aria-label="Go To Product"
-                  class="sf-button--pure sf-product-card__link"
-                  data-testid="product-link"
-                  v-on="$listeners"
-                >
-                  <template v-if="Array.isArray(imageSlotProps.image)">
-                    <nuxt-img
-                      v-for="(picture, key) in imageSlotProps.image.slice(0, 2)"
-                      :key="key"
-                      :alt="imageSlotProps.title"
-                      :height="imageSlotProps.imageHeight"
-                      :src="picture"
-                      :width="imageSlotProps.imageWidth"
-                      class="sf-product-card__picture"
-                    />
-                  </template>
+              <SfButton
+                :link="imageSlotProps.link"
+                aria-label="Go To Product"
+                class="sf-button--pure sf-product-card__link"
+                data-testid="product-link"
+                v-on="$listeners"
+              >
+                <template v-if="Array.isArray(imageSlotProps.image)">
                   <nuxt-img
-                    v-else
+                    v-for="(picture, key) in imageSlotProps.image.slice(0, 2)"
+                    :key="key"
                     :alt="imageSlotProps.title"
                     :height="imageSlotProps.imageHeight"
-                    :src="imageSlotProps.image"
+                    :src="picture"
                     :width="imageSlotProps.imageWidth"
-                    class="sf-product-card__image lol"
+                    class="sf-product-card__picture"
                   />
-                </SfButton>
-              </template>
+                </template>
+                <nuxt-img
+                  v-else
+                  :alt="imageSlotProps.title"
+                  :height="imageSlotProps.imageHeight"
+                  :src="imageSlotProps.image"
+                  :width="imageSlotProps.imageWidth"
+                  class="sf-product-card__image lol"
+                />
+              </SfButton>
+            </template>
             <template #configuration>
               <SfProperty
                 class="desktop-only"
                 name="Size"
                 value="XS"
-                style="margin: 0 0 1rem 0"
+                style="margin: 0 0 1rem"
               />
               <SfProperty class="desktop-only" name="Color" value="white" />
             </template>
@@ -245,7 +245,7 @@
           :visible="5"
           @click="
             (page) => {
-              currentPage = page;
+              currentPage = page
             }
           "
         />
@@ -448,12 +448,12 @@
           <SfButton
             class="sf-button--full-width"
             @click="isFilterSidebarOpen = false"
-            >Done</SfButton
+          >Done</SfButton
           >
           <SfButton
             class="sf-button--full-width filters__button-clear"
             @click="clearAllFilters"
-            >Clear all</SfButton
+          >Clear all</SfButton
           >
         </div>
       </template>
@@ -479,11 +479,11 @@ import {
   SfProperty,
   SfRadio,
   SfSelect
-} from '@storefront-ui/vue';
-import { onSSR } from '@vue-storefront/core';
-import { useContent } from '@vue-storefront/shopify';
+} from '@storefront-ui/vue'
+import { onSSR } from '@vue-storefront/core'
+import { useContent } from '@vue-storefront/shopify'
 export default {
-  name: 'Category',
+  name: 'PoSts',
   components: {
     SfHeading,
     SfButton,
@@ -504,33 +504,33 @@ export default {
     SfSelect
   },
   setup() {
-    const { search: getBlogs, content: blogs, error } = useContent('blogs');
-    const { search: searchBlog, content: blog } = useContent('blog');
+    const { search: getBlogs, content: blogs } = useContent('blogs')
+    const { search: searchBlog } = useContent('blog')
 
     function clearAllFilters() {
-      const filters = Object.keys(this.filters);
+      const filters = Object.keys(this.filters)
       filters.forEach((name) => {
-        const prop = this.filters[name];
+        const prop = this.filters[name]
         prop.forEach((value) => {
-          value.selected = false;
-        });
-      });
+          value.selected = false
+        })
+      })
     }
 
     function toggleWishlist(index) {
-      this.products[index].isInWishlist = !this.products[index].isInWishlist;
+      this.products[index].isInWishlist = !this.products[index].isInWishlist
     }
 
     onSSR(async () => {
-      await getBlogs({ contentType: 'blog' });
+      await getBlogs({ contentType: 'blog' })
 
       if (blogs) {
         await searchBlog({
           contentType: 'blog',
           handle: blogs?.value?.[0]?.handle
-        });
+        })
       }
-    });
+    })
 
     return {
       // Methods
@@ -750,13 +750,14 @@ export default {
           link: '/blogs'
         }
       ]
-    };
+    }
   }
-};
+}
 </script>
 <style lang="scss" scoped>
 @import '~@storefront-ui/vue/styles';
 #category {
+  --font-family--secondary: var(--font-family--primary);
   box-sizing: border-box;
   @include for-desktop {
     max-width: 1440px;
@@ -844,7 +845,7 @@ export default {
     }
   }
   &__label {
-    font-family: var(--font-family--secondary);
+    font-family: Overpass;
     font-weight: var(--font-weight--normal);
     color: var(--c-text-muted);
     @include for-desktop {
@@ -864,7 +865,7 @@ export default {
     margin: 0 auto 0 var(--spacer-2xl);
   }
   &__counter {
-    font-family: var(--font-family--secondary);
+    font-family: Overpass;
     margin: auto;
     @include for-desktop {
       margin: auto 0 auto auto;
@@ -901,8 +902,7 @@ export default {
     }
     &-label {
       margin: 0 var(--spacer-sm) 0 0;
-      font: var(--font-weight--normal) var(--font-size--base) / 1.6
-        var(--font-family--secondary);
+      font: var(--font-weight--normal) var(--font-size--base) / 1.6 Overpass;
       text-decoration: none;
       color: var(--c-link);
     }
@@ -1012,7 +1012,7 @@ export default {
     justify-content: flex-end;
     align-items: baseline;
     &__label {
-      font-family: var(--font-family--secondary);
+      font-family: Overpass;
       font-size: var(--font-size--sm);
     }
   }
@@ -1034,7 +1034,7 @@ export default {
   &__chosen {
     color: var(--c-text-muted);
     font-weight: var(--font-weight--normal);
-    font-family: var(--font-family--secondary);
+    font-family: Overpass;
     position: absolute;
     right: var(--spacer-xl);
   }

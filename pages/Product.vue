@@ -7,7 +7,7 @@
     <div />
   </SfLoader>
   <div v-else id="product">
-    <SfBreadcrumbs class="breadcrumbs" :breadcrumbs="breadcrumbs">
+    <SfBreadcrumbs class="breadcrumbs breadcrumbs-center"  :breadcrumbs="breadcrumbs">
       <template #link="{ breadcrumb }">
         <nuxt-link
           :data-testid="breadcrumb.text"
@@ -23,8 +23,8 @@
         :images="productGallery"
         :current="ActiveVariantImage + 1"
         class="product__gallery"
-        image-width="422"
-        image-height="664"
+        image-width="400"
+        image-height="500"
         thumb-width="160"
         thumb-height="160"
       />
@@ -59,7 +59,7 @@
             class="product__variants"
           >
             <template v-for="(option, key) in options">
-              <SfSelect
+              <!-- <SfSelect
                 v-if="key.toLowerCase() !== 'color'"
                 :key="`attrib-${key}`"
                 :data-cy="`product-select_${key.toLowerCase()}`"
@@ -77,32 +77,25 @@
                 >
                   {{ attribs }}
                 </SfSelectOption>
-              </SfSelect>
+              </SfSelect> -->
               <div
-                v-else-if="key.toLowerCase() === 'color'"
+                v-if="key.toLowerCase() === 'color'"
                 :key="`attrib-${key.toLowerCase()}`"
                 class="product__colors"
               >
                 <label class="product__color-label">{{ $t(key) }}</label>
                 <div class="product__flex-break"></div>
-                <SfColor
+                <SfButton
                   v-for="(attribs, a) in option"
-                  :key="`item-${a}`"
-                  label="Color"
-                  data-cy="product-color_update"
-                  :color="attribs"
-                  :class="`product__color ${attribs}`"
-                  :selected="
-                    configuration[key]
-                      ? configuration[key] === attribs
-                        ? true
-                        : false
-                      : a === 0
-                      ? true
-                      : false
+                  @click="
+                    ;(atttLbl = key),
+                      updateFilter(attribs, { [atttLbl]: attribs })
                   "
-                  @click="(atttLbl = key), updateFilter({ [atttLbl]: attribs })"
-                />
+                  :class="{ active: attribs == isProductCartButtonColor }"
+                  :key="a"
+                  style="margin-right: 30px"
+                >{{ attribs }}</SfButton
+                >
               </div>
             </template>
           </div>
@@ -132,19 +125,42 @@
           >
             <template #add-to-cart-btn>
               <SfButton
-                class="sf-add-to-cart__button"
+                class="sf-add-to-cart__button SfButtontwo"
                 :disabled="loading || !productGetters.getStockStatus(product)"
                 @click="
                   addingToCart({
                     product,
                     quantity: parseInt(qty),
                     customQuery: [
-                      { key: 'CustomAttrKey', value: 'CustomAttrValue' }
-                    ]
+                      { key: 'CustomAttrKey', value: 'CustomAttrValue' },
+                    ],
                   })
                 "
               >
-                {{ $t( 'Add to Cart') }}
+                {{ $t('Add to Cart') }}
+              </SfButton>
+              <SfButton
+                v-if="totalItems"
+                class="sf-button--full-width sf-proceed_to_checkout SfButtontwo"
+                @click="toggleCartSidebar"
+              >
+                {{ $t('Go to checkout') }}
+              </SfButton>
+              <SfButton
+                v-else
+                class="sf-button--full-width sf-proceed_to_checkout SfButtontwo"
+                :disabled="loading || !productGetters.getStockStatus(product)"
+                @click="
+                  addingToCarts({
+                    product,
+                    quantity: parseInt(qty),
+                    customQuery: [
+                      { key: 'CustomAttrKey', value: 'CustomAttrValue' },
+                    ],
+                  })
+                "
+              >
+                {{ $t('Go to checkout') }}
               </SfButton>
             </template>
           </SfAddToCart>
@@ -178,10 +194,10 @@
                 <p class="product__additional-info__title">
                   {{ $t('Brand') }}
                 </p>
-                <p>{{ brand }}</p>
+                <!-- <p>{{ brand }}</p>
                 <p class="product__additional-info__title">
                   {{ $t('Instruction1') }}
-                </p>
+                </p> -->
                 <p class="product__additional-info__paragraph">
                   {{ $t('Instruction2') }}
                 </p>
@@ -195,19 +211,251 @@
         </LazyHydrate>
       </div>
     </div>
-    <LazyHydrate when-visible>
+    <!-- <GridList /> -->
+    <div
+      v-show="
+        ispath ===
+          '/p/Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0Lzc3MTcwNTM0MzIwNjY=/osmiler-swing' ||
+          ispath ===
+          '/p/Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0Lzc3MTcwNTM0MzIwNjY=/osmiler-swing?Color=Silver' ||
+          ispath ===
+          '/p/Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0Lzc3MTcwNTM0MzIwNjY=/osmiler-swing?Color=Deep%20Blue'
+      "
+    >
+      <BannerGrids />
+    </div>
+    <div
+      v-show="
+        ispath ===
+          '/p/Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0Lzc3MTcwNTM0MzIwNjY=/osmiler-swing' ||
+          ispath ===
+          '/p/Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0Lzc3MTcwNTM0MzIwNjY=/osmiler-swing?Color=Silver' ||
+          ispath ===
+          '/p/Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0Lzc3MTcwNTM0MzIwNjY=/osmiler-swing?Color=Deep%20Blue'
+      "
+    >
+      <Community />
+    </div>
+    <div
+      v-show="
+        ispath ===
+          '/p/Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0Lzc3MTcwNTM0MzIwNjY=/osmiler-swing' ||
+          ispath ===
+          '/p/Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0Lzc3MTcwNTM0MzIwNjY=/osmiler-swing?Color=Silver' ||
+          ispath ===
+          '/p/Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0Lzc3MTcwNTM0MzIwNjY=/osmiler-swing?Color=Deep%20Blue'
+      "
+    >
+      <Mp3 />
+    </div>
+    <div
+      v-show="
+        ispath ===
+          '/p/Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0Lzc3MTcwNTM0MzIwNjY=/osmiler-swing' ||
+          ispath ===
+          '/p/Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0Lzc3MTcwNTM0MzIwNjY=/osmiler-swing?Color=Silver' ||
+          ispath ===
+          '/p/Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0Lzc3MTcwNTM0MzIwNjY=/osmiler-swing?Color=Deep%20Blue'
+      "
+    >
+      <Automatic />
+    </div>
+    <div
+      v-show="
+        ispath ===
+          '/p/Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0Lzc3MTcwNTM0MzIwNjY=/osmiler-swing' ||
+          ispath ===
+          '/p/Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0Lzc3MTcwNTM0MzIwNjY=/osmiler-swing?Color=Silver' ||
+          ispath ===
+          '/p/Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0Lzc3MTcwNTM0MzIwNjY=/osmiler-swing?Color=Deep%20Blue'
+      "
+    >
+      <AutoPage />
+    </div>
+    <div
+      v-show="
+        ispath ===
+          '/p/Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0Lzc3MTcwNTM0MzIwNjY=/osmiler-swing' ||
+          ispath ===
+          '/p/Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0Lzc3MTcwNTM0MzIwNjY=/osmiler-swing?Color=Silver' ||
+          ispath ===
+          '/p/Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0Lzc3MTcwNTM0MzIwNjY=/osmiler-swing?Color=Deep%20Blue'
+      "
+    >
+      <Proudcut />
+    </div>
+    <div
+      v-show="
+        ispath ===
+          '/p/Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0Lzc3MTcwNTM0MzIwNjY=/osmiler-swing' ||
+          ispath ===
+          '/p/Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0Lzc3MTcwNTM0MzIwNjY=/osmiler-swing?Color=Silver' ||
+          ispath ===
+          '/p/Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0Lzc3MTcwNTM0MzIwNjY=/osmiler-swing?Color=Deep%20Blue'
+      "
+    >
+      <AutoPages />
+    </div>
+    <div
+      v-show="
+        ispath ===
+          '/p/Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0Lzc3MTcwNTM0MzIwNjY=/osmiler-swing' ||
+          ispath ===
+          '/p/Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0Lzc3MTcwNTM0MzIwNjY=/osmiler-swing?Color=Silver' ||
+          ispath ===
+          '/p/Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0Lzc3MTcwNTM0MzIwNjY=/osmiler-swing?Color=Deep%20Blue'
+      "
+    >
+      <Toothbrushpople />
+    </div>
+    <div
+      v-show="
+        ispath ===
+          '/p/Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0Lzc3MTcwNTM0MzIwNjY=/osmiler-swing' ||
+          ispath ===
+          '/p/Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0Lzc3MTcwNTM0MzIwNjY=/osmiler-swing?Color=Silver' ||
+          ispath ===
+          '/p/Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0Lzc3MTcwNTM0MzIwNjY=/osmiler-swing?Color=Deep%20Blue'
+      "
+    >
+      <Certificate />
+    </div>
+    <div
+      v-show="
+        ispath ===
+          '/p/Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0Lzc3MTcwNTM0MzIwNjY=/osmiler-swing' ||
+          ispath ===
+          '/p/Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0Lzc3MTcwNTM0MzIwNjY=/osmiler-swing?Color=Silver' ||
+          ispath ===
+          '/p/Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0Lzc3MTcwNTM0MzIwNjY=/osmiler-swing?Color=Deep%20Blue'
+      "
+    >
+      <Autobox />
+    </div>
+    <div
+      v-show="
+        ispath ===
+          '/p/Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0Lzc3MTcwNTM0MzIwNjY=/osmiler-swing' ||
+          ispath ===
+          '/p/Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0Lzc3MTcwNTM0MzIwNjY=/osmiler-swing?Color=Silver' ||
+          ispath ===
+          '/p/Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0Lzc3MTcwNTM0MzIwNjY=/osmiler-swing?Color=Deep%20Blue'
+      "
+    >
+      <HomeLogolist />
+    </div>
+
+    <div
+      v-show="
+        ispath ===
+          '/p/Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0Lzc3MTcwNDc5OTI1Nzg=/osmiler-swing-head-3pcs' ||
+          ispath ===
+          '/p/Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0Lzc3MTcwNDc5OTI1Nzg=/osmiler-swing-head-3pcs?Color=White' ||
+          ispath ===
+          '/p/Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0Lzc3MTcwNDc5OTI1Nzg=/osmiler-swing-head-3pcs?Color=Deep%20Blue'
+      "
+    >
+      <AutoPage />
+    </div>
+
+    <div
+      v-show="
+        ispath ===
+          '/p/Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0Lzc3MTcwNDc5OTI1Nzg=/osmiler-swing-head-3pcs' ||
+          ispath ===
+          '/p/Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0Lzc3MTcwNDc5OTI1Nzg=/osmiler-swing-head-3pcs?Color=White' ||
+          ispath ===
+          '/p/Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0Lzc3MTcwNDc5OTI1Nzg=/osmiler-swing-head-3pcs?Color=Deep%20Blue'
+      "
+    >
+      <ToothBannerGrids />
+    </div>
+    <div
+      v-show="
+        ispath ===
+          '/p/Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0Lzc3MTcwNDc5OTI1Nzg=/osmiler-swing-head-3pcs' ||
+          ispath ===
+          '/p/Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0Lzc3MTcwNDc5OTI1Nzg=/osmiler-swing-head-3pcs?Color=White' ||
+          ispath ===
+          '/p/Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0Lzc3MTcwNDc5OTI1Nzg=/osmiler-swing-head-3pcs?Color=Deep%20Blue'
+      "
+    >
+      <TootBrushHead3 />
+    </div>
+    <div
+      v-show="
+        ispath ===
+          '/p/Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0Lzc3MTcwNDc5OTI1Nzg=/osmiler-swing-head-3pcs' ||
+          ispath ===
+          '/p/Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0Lzc3MTcwNDc5OTI1Nzg=/osmiler-swing-head-3pcs?Color=White' ||
+          ispath ===
+          '/p/Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0Lzc3MTcwNDc5OTI1Nzg=/osmiler-swing-head-3pcs?Color=Deep%20Blue'
+      "
+    >
+      <Toothbrushheadfooter />
+    </div>
+    <div
+      v-show="
+        ispath ===
+          '/p/Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0Lzc3MTc0MDc1ODg2MTA=/osmiler-swing-head-5pcs' ||
+          ispath ===
+          '/p/Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0Lzc3MTc0MDc1ODg2MTA=/osmiler-swing-head-5pcs?Color=White' ||
+          ispath ===
+          '/p/Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0Lzc3MTc0MDc1ODg2MTA=/osmiler-swing-head-5pcs?Color=Deep%20Blue'
+      "
+    >
+      <AutoPage />
+    </div>
+    <div
+      v-show="
+        ispath ===
+          '/p/Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0Lzc3MTc0MDc1ODg2MTA=/osmiler-swing-head-5pcs' ||
+          ispath ===
+          '/p/Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0Lzc3MTc0MDc1ODg2MTA=/osmiler-swing-head-5pcs?Color=White' ||
+          ispath ===
+          '/p/Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0Lzc3MTc0MDc1ODg2MTA=/osmiler-swing-head-5pcs?Color=Deep%20Blue'
+      "
+    >
+      <ToothBannerGrids />
+    </div>
+    <div
+      v-show="
+        ispath ===
+          '/p/Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0Lzc3MTc0MDc1ODg2MTA=/osmiler-swing-head-5pcs' ||
+          ispath ===
+          '/p/Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0Lzc3MTc0MDc1ODg2MTA=/osmiler-swing-head-5pcs?Color=White' ||
+          ispath ===
+          '/p/Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0Lzc3MTc0MDc1ODg2MTA=/osmiler-swing-head-5pcs?Color=Deep%20Blue'
+      "
+    >
+      <TootBrushHead5 />
+    </div>
+    <div
+      v-show="
+        ispath ===
+          '/p/Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0Lzc3MTc0MDc1ODg2MTA=/osmiler-swing-head-5pcs' ||
+          ispath ===
+          '/p/Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0Lzc3MTc0MDc1ODg2MTA=/osmiler-swing-head-5pcs?Color=White' ||
+          ispath ===
+          '/p/Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0Lzc3MTc0MDc1ODg2MTA=/osmiler-swing-head-5pcs?Color=Deep%20Blue'
+      "
+    >
+      <Toothbrushheadfooter />
+    </div>
+
+    <!-- <LazyHydrate when-visible>
       <RelatedProducts
         :products="relatedProducts"
         :loading="relatedLoading"
         title="Match it with"
       />
-    </LazyHydrate>
-    <LazyHydrate when-visible>
+    </LazyHydrate> -->
+    <!-- <LazyHydrate when-visible>
       <InstagramFeed />
     </LazyHydrate>
     <LazyHydrate when-visible>
       <MobileStoreBanner />
-    </LazyHydrate>
+    </LazyHydrate> -->
   </div>
 </template>
 <script>
@@ -225,19 +473,50 @@ import {
   SfLoader,
   SfButton,
   SfColor
-} from '@storefront-ui/vue';
+} from '@storefront-ui/vue'
 
-import InstagramFeed from '~/components/InstagramFeed.vue';
-import RelatedProducts from '~/components/RelatedProducts.vue';
-import { ref, computed, watch, useRoute, useRouter } from '@nuxtjs/composition-api';
-import { useProduct, useCart, productGetters } from '@vue-storefront/shopify';
-import MobileStoreBanner from '~/components/MobileStoreBanner.vue';
-import LazyHydrate from 'vue-lazy-hydration';
-import { onSSR } from '@vue-storefront/core';
-import useUiNotification from '~/composables/useUiNotification';
+import Certificate from '~/components/Home/Certificate'
+import Contact from '~/components/Home/Contact'
+// import GridList from '~/components/Home/GridList'
+import BannerGrids from '~/components/Home/BannerGrids'
+import ToothBannerGrids from '~/components/Toothbrushhead/ToothBannerGrids'
+import TootBrushHead3 from '~/components/Toothbrushhead/TootBrushHead3'
+import TootBrushHead5 from '~/components/Toothbrushhead/TootBrushHead5'
+import Toothbrushheadfooter from '~/components/Toothbrushhead/Toothbrushheadfooter'
+import Community from '~/components/Home/Community'
+import Mp3 from '~/components/Home/Mp3'
+import Automatic from '~/components/Home/Automatic'
+import AutoPage from '~/components/Home/AutoPage'
+import AutoPages from '~/components/Home/AutoPages'
+import Proudcut from '~/components/Home/Proudcut'
+import Toothbrushpople from '~/components/Toothbrush/Toothbrushpople'
+import Autobox from '~/components/Home/Autobox'
+import HomeLogolist from '~/components/Home/HomeLogolist'
+import SendEmali from '~/components/Home/SendEmali'
+import InstagramFeed from '~/components/InstagramFeed.vue'
+import RelatedProducts from '~/components/RelatedProducts.vue'
+import {
+  ref,
+  computed,
+  watch,
+  useRoute,
+  useRouter,
+  onMounted
+} from '@nuxtjs/composition-api'
+import {
+  useProduct,
+  useCart,
+  productGetters,
+  cartGetters
+} from '@vue-storefront/shopify'
+import MobileStoreBanner from '~/components/MobileStoreBanner.vue'
+import LazyHydrate from 'vue-lazy-hydration'
+import { onSSR } from '@vue-storefront/core'
+import useUiNotification from '~/composables/useUiNotification'
+import { useUiState } from '~/composables'
 
 export default {
-  name: 'Product',
+  name: 'ProDuct',
   components: {
     SfAlert,
     SfColor,
@@ -255,109 +534,137 @@ export default {
     InstagramFeed,
     RelatedProducts,
     MobileStoreBanner,
-    LazyHydrate
+    Contact,
+    // GridList,
+    BannerGrids,
+    Community,
+    Mp3,
+    Proudcut,
+    Automatic,
+    AutoPage,
+    AutoPages,
+    Autobox,
+    Certificate,
+    HomeLogolist,
+    SendEmali,
+    LazyHydrate,
+    Toothbrushpople,
+    ToothBannerGrids,
+    TootBrushHead3,
+    Toothbrushheadfooter,
+    TootBrushHead5
   },
   beforeRouteEnter(__, from, next) {
     next((vm) => {
-      vm.prevRoute = from;
-    });
+      vm.prevRoute = from
+    })
   },
   transition: 'fade',
   setup() {
-    const route = useRoute();
-    const router = useRouter();
-    const breadcrumbs = ref([]);
-    const atttLbl = '';
-    const qty = ref(1);
-    const { slug } = route?.value?.params;
-    const {
-      loading: productloading,
-      products,
-      search
-    } = useProduct('products');
-    const { send: sendNotification } = useUiNotification();
+    const { isCartSidebarOpen, toggleCartSidebar } = useUiState()
+    const route = useRoute()
+    const router = useRouter()
+    const breadcrumbs = ref([])
+    const atttLbl = ''
+    const qty = ref(1)
+    const { slug } = route?.value?.params
+    const { loading: productloading, products, search } = useProduct('products')
+    const { send: sendNotification } = useUiNotification()
     const {
       products: relatedProducts,
       search: searchRelatedProducts,
       loading: relatedLoading
-    } = useProduct('relatedProducts');
-    const { addItem, loading } = useCart();
-
+    } = useProduct('relatedProducts')
+    const { addItem, loading, cart } = useCart()
     const product = computed(
       () =>
         productGetters.getFiltered(products.value, {
           master: true,
           attributes: route?.value?.query
         })[0]
-    );
-
-    const id = computed(() => productGetters.getId(product.value));
+    )
+    const totals = computed(() => cartGetters.getTotals(cart.value))
+    const id = computed(() => productGetters.getId(product.value))
     const originalId = computed(() =>
       productGetters.getProductOriginalId(product.value)
-    );
-    const productTitle = computed(() => productGetters.getName(product.value));
+    )
+    const productTitle = computed(() => productGetters.getName(product.value))
     const productCoverImage = computed(() =>
       productGetters.getPDPCoverImage(product.value)
-    );
+    )
+    const checkoutURL = computed(() => cartGetters.getcheckoutURL(cart.value))
+    const handleCheckout = (checkoutUrl) => {
+      setTimeout(() => {
+        window.location.href = checkoutUrl
+      }, 300)
+    }
+
     const productDescription = computed(() =>
       productGetters.getDescription(product.value)
-    );
+    )
     const productDescriptionHtml = computed(() =>
       productGetters.getDescription(product.value, true)
-    );
-    const options = computed(() =>
-      productGetters.getAttributes(products.value)
-    );
-    const configuration = computed(() => {
-      return productGetters.getSelectedVariant(route?.value?.query);
-    });
+    )
+    const totalItems = computed(() => cartGetters.getTotalItems(cart.value))
+    const options = computed(() => productGetters.getAttributes(products.value))
 
+    const configuration = computed(() => {
+      return productGetters.getSelectedVariant(route?.value?.query)
+    })
+    const { isProductCartButtonColor, setisProductCartButtonColor } =
+      useUiState()
+    const ispath = route.value.fullPath
     const setBreadcrumb = () => {
       breadcrumbs.value = [
         {
           text: 'Home',
-          link: '/'
+          link: '/Home'
         },
         {
-          text: 'products',
-          link: '#'
+          text: 'All products',
+          link: '/c/all-products'
         },
         {
           text: productTitle.value,
-          link: '#'
+          link: ''
         }
-      ];
-    };
+      ]
+    }
 
     watch(
       productTitle,
       (currproductTitle, prevproductTitle) => {
         if (currproductTitle !== prevproductTitle) {
-          setBreadcrumb();
+          setBreadcrumb()
         }
       },
       { deep: true }
-    );
+    )
     const productGallery = computed(() => {
-      if (product.value && product.value.images.length === 0) {
+      if (product.value && product.value.images.length > 4) {
         product.value.images.push({
           originalSrc:
             'https://cdn.shopify.com/s/files/1/0407/1902/4288/files/placeholder_600x600.jpg?v=1625742127'
-        });
+        })
       }
-      return productGetters.getGallery(product.value).map((img) => ({
-        mobile: { url: img.small },
-        desktop: { url: img.normal },
-        big: { url: img.big },
-        alt: product.value._name || product.value.name
-      }));
-    });
+
+      const img = productGetters
+        .getGallery(product.value)
+        .map((img) => ({
+          mobile: { url: img.small },
+          desktop: { url: img.normal },
+          big: { url: img.big },
+          alt: product.value._name || product.value.name
+        }))
+        .slice(0, 4)
+      return img
+    })
     const stock = computed(() => {
-      return productGetters.getStock(product.value);
-    });
+      return productGetters.getStock(product.value)
+    })
     const ActiveVariantImage = computed(() => {
-      return productGetters.getVariantImage(product.value) || 0;
-    });
+      return productGetters.getVariantImage(product.value) || 0
+    })
 
     onSSR(async () => {
       await search({ slug, selectedOptions: configuration.value }).then(() => {
@@ -366,22 +673,26 @@ export default {
           return route?.value?.error({
             statusCode: 404,
             message: 'This product could not be found'
-          });
+          })
         }
-      });
-      await searchRelatedProducts({ productId: id.value, related: true });
-    });
-    const updateFilter = (filter) => {
+      })
+      await searchRelatedProducts({
+        productId: id.value || null,
+        related: true
+      })
+    })
+    const updateFilter = (colorname, filter) => {
+      setisProductCartButtonColor(colorname)
       if (options.value) {
         Object.keys(options.value).forEach((attr) => {
           if (attr in filter) {
-            return;
+            return
           }
           filter[attr] =
             Object.keys(configuration.value).length > 0
               ? configuration.value[attr]
-              : options.value[attr][0];
-        });
+              : options.value[attr][0]
+        })
       }
       router.push({
         path: route?.value?.path,
@@ -389,11 +700,14 @@ export default {
           ...configuration.value,
           ...filter
         }
-      });
-    };
+      })
+    }
 
     return {
       updateFilter,
+      isCartSidebarOpen,
+      toggleCartSidebar,
+      ispath,
       configuration,
       product,
       productDescription,
@@ -410,36 +724,43 @@ export default {
       stock,
       productTitle,
       breadcrumbs,
+      totals,
       qty,
       addItem,
+      totalItems,
+      cartGetters,
       loading,
       productloading,
       productGallery,
       productGetters,
+      handleCheckout,
       setBreadcrumb,
-      atttLbl
-    };
+      checkoutURL,
+      atttLbl,
+      isProductCartButtonColor,
+      ToothBannerGrids
+    }
   },
   // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
   data() {
     return {
       properties: [
-        {
-          name: 'Product Code',
-          value: '578902-00'
-        },
-        {
-          name: 'Category',
-          value: 'Pants'
-        },
-        {
-          name: 'Material',
-          value: 'Cotton'
-        },
-        {
-          name: 'Country',
-          value: 'Germany'
-        }
+        // {
+        //   name: 'Product Code',
+        //   value: '578902-00'
+        // },
+        // {
+        //   name: 'Category',
+        //   value: 'Pants'
+        // },
+        // {
+        //   name: 'Material',
+        //   value: 'Cotton'
+        // },
+        // {
+        //   name: 'Country',
+        //   value: 'Germany'
+        // }
       ],
       description:
         'Find stunning women cocktail and party dresses. Stand out in lace and metallic cocktail dresses and party dresses from all your favorite brands.',
@@ -447,84 +768,134 @@ export default {
       brand:
         'Brand name is the perfect pairing of quality and design. This label creates major everyday vibes with its collection of modern brooches, silver and gold jewellery, or clips it back with hair accessories in geo styles.',
       careInstructions: 'Do not wash!'
-    };
+    }
   },
+
   // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
   mounted() {
     window.addEventListener('load', () => {
-      this.setGalleryWidth();
-    });
+      this.setGalleryWidth()
+    })
     this.$nextTick(() => {
-      this.setGalleryWidth();
-      this.setBreadcrumb();
-      window.addEventListener('resize', this.setGalleryWidth);
-    });
+      this.setGalleryWidth()
+      this.setBreadcrumb()
+      window.addEventListener('resize', this.setGalleryWidth)
+    })
   },
   // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
   updated() {
-    this.setGalleryWidth();
+    this.setGalleryWidth()
   },
+
   // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
   methods: {
     // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
     async addingToCart(Productdata) {
-      await this.addItem(Productdata).then(() => {
+      await this.addItem(Productdata).then((res) => {
         this.sendNotification({
           key: 'product_added',
           message: `${Productdata.product.name} has been successfully added to your cart.`,
           type: 'success',
           title: 'Product added!',
           icon: 'check'
-        });
-        this.qty = 1;
-      });
+        })
+        this.qty = 1
+      })
+    },
+    async addingToCarts (Productdata) {
+      await this.addItem(Productdata).then((res) => {
+        this.sendNotification({
+          key: 'product_added',
+          message: `${Productdata.product.name} has been successfully added to your cart.`,
+          type: 'success',
+          title: 'Product added!',
+          icon: 'check'
+        })
+        this.qty = 1
+      })
     },
     // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
     updatedQuantity(value) {
-      this.qty = value;
+      this.qty = value
     },
     // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
     setGalleryWidth() {
-      const gallary = document.getElementsByClassName('product__gallery');
+      const gallary = document.getElementsByClassName('product__gallery')
       const gallerySlider =
-        gallary.length > 0 && gallary[0].querySelectorAll('.glide__slides');
+        gallary.length > 0 && gallary[0].querySelectorAll('.glide__slides')
       const galleryAllSlides =
         gallerySlider.length > 0 &&
-        gallerySlider[0].querySelectorAll('.glide__slide');
+        gallerySlider[0].querySelectorAll('.glide__slide')
       typeof galleryAllSlides !== 'boolean' &&
         galleryAllSlides.length > 0 &&
         galleryAllSlides.forEach((gallerySlide) => {
-          gallerySlide.style.flexBasis = gallerySlide.style.width;
-        });
+          gallerySlide.style.flexBasis = gallerySlide.style.width
+        })
     }
   }
-};
+}
 </script>
 
 <style lang="scss" scoped>
+.product__description {
+  position: relative;
+  top: 30px;
+}
+.product__details {
+  margin-top: 40px !important;
+}
+.sf-price {
+  margin-top: -40px;
+}
+
 .pdc-pdp-loader {
   min-height: 200px;
   padding: 100px 0;
 }
+.sf-add-to-cart {
+  display: flex;
+  flex-direction: column;
+}
+
+.sf-price__old {
+  font-size: 20px;
+  display: none;
+}
 
 #product {
+  @include for-desktop {
+
+  }
+}
+.SfButtontwo {
+  width: 300px;
+  margin-top: 10px;
+}
+.sf-add-to-cart__button {
+  background: #fff;
+  color: #3a3543;
+  border: 1px solid #3a3543;
+}
+
+.product {
+  --font-family--secondary: var(--font-family--primary);
   box-sizing: border-box;
+
   @include for-desktop {
     max-width: 1272px;
     margin: 0 auto;
-  }
-}
-.product {
-  @include for-desktop {
     display: flex;
   }
+
   &__info {
     margin: var(--spacer-sm) auto;
+
     @include for-desktop {
       max-width: 32.625rem;
       margin: 0 0 0 7.5rem;
     }
   }
+
   &__header {
     --heading-title-color: var(--c-link);
     --heading-title-font-weight: var(--font-weight--bold);
@@ -532,29 +903,35 @@ export default {
     margin: 0 var(--spacer-sm);
     display: flex;
     justify-content: space-between;
+
     @include for-desktop {
       --heading-title-font-weight: var(--font-weight--semibold);
       margin: 0 auto;
     }
   }
+
   &__drag-icon {
     animation: moveicon 1s ease-in-out infinite;
   }
+
   &__price-and-rating {
     margin: 0 var(--spacer-sm) var(--spacer-base);
     align-items: center;
+
     @include for-desktop {
       display: flex;
       justify-content: space-between;
       margin: var(--spacer-sm) 0 var(--spacer-lg) 0;
     }
   }
+
   &__rating {
     display: flex;
     align-items: center;
     justify-content: flex-end;
     margin: var(--spacer-xs) 0 var(--spacer-xs);
   }
+
   &__count {
     @include font(
       --count-font,
@@ -567,6 +944,7 @@ export default {
     text-decoration: none;
     margin: 0 0 0 var(--spacer-xs);
   }
+
   &__details {
     margin: 0 var(--spacer-sm) var(--spacer-base);
 
@@ -574,6 +952,7 @@ export default {
       margin: var(--spacer-lg) 0;
     }
   }
+
   &__description {
     @include font(
       --product-description-font,
@@ -583,6 +962,7 @@ export default {
       var(--font-family--primary)
     );
   }
+
   &__colors {
     @include font(
       --product-color-font,
@@ -594,45 +974,56 @@ export default {
     display: flex;
     flex-wrap: wrap;
   }
+
   &__color-label {
     margin: 0 var(--spacer-lg) var(--spacer-xs) 0;
     padding: 0 0 0 4px;
   }
+
   &__color {
     margin: 0 var(--spacer-2xs);
   }
+
   &__add-to-cart,
   &__stock-information {
     margin-top: var(--spacer-xl);
   }
+
   &__guide,
   &__compare,
   &__save {
     display: block;
     margin: var(--spacer-xl) 0 var(--spacer-base) auto;
   }
+
   &__compare {
     margin-top: 0;
   }
+
   &__tabs {
     margin: var(--spacer-lg) auto var(--spacer-2xl);
     --tabs-title-font-size: var(--font-size--lg);
     --tabs-title-z-index: 0;
+
     @include for-desktop {
       margin-top: var(--spacer-2xl);
     }
   }
+
   &__property {
     margin: var(--spacer-base) 0;
+
     &__button {
       --button-font-size: var(--font-size--base);
     }
   }
+
   &__review {
     padding-bottom: 24px;
     border-bottom: var(--c-light) solid 1px;
     margin-bottom: var(--spacer-base);
   }
+
   &__additional-info {
     color: var(--c-link);
     @include font(
@@ -642,28 +1033,66 @@ export default {
       1.6,
       var(--font-family--primary)
     );
+
     &__title {
       font-weight: var(--font-weight--normal);
       font-size: var(--font-size--base);
       margin: 0 0 var(--spacer-sm);
+
       &:not(:first-child) {
         margin-top: 3.5rem;
       }
     }
+
     &__paragraph {
       margin: 0;
     }
   }
+
   &__gallery {
     flex: 1;
   }
+
   &__flex-break {
     flex-basis: 100%;
     height: 0;
   }
 }
+
 .breadcrumbs {
+  max-width: 1240px;
+  margin: 0 auto;
+  --font-family--secondary: var(--font-family--primary);
   margin: var(--spacer-base) auto var(--spacer-lg);
+}
+// ::v-deep img.sf-image.sf-image-loaded{
+// height: 500px;
+// width: 500px;
+// }
+.sf-price__special {
+  position: relative;
+  top: 50px;
+  left:0;
+  font-size: 48px;
+  background: #fff;
+}
+
+.product__color-label {
+  font-size: 16px;
+}
+
+.product__variants {
+  margin-top: 100px;
+
+  .sf-button {
+    border: 1px solid black;
+    background: #fff;
+    color: #3a3543;
+  }
+}
+.active {
+  color: #fff !important ;
+  background-color: #3a3543 !important;
 }
 .banner-app {
   --banner-container-width: 100%;
@@ -680,26 +1109,36 @@ export default {
   max-width: 65rem;
   margin: 0 auto;
   padding: 0 calc(25% + var(--spacer-2xl)) 0 var(--spacer-xl);
+
   &__call-to-action {
     --button-background: transparent;
     display: flex;
   }
+
   &__button {
     --image-width: 8.375rem;
     --image-height: 2.75rem;
     --button-padding: 0;
+
     & + & {
       margin: 0 0 0 calc(var(--spacer-xl) / 2);
     }
   }
 }
+
+::v-deep .product__color {
+  border: 1px solid;
+}
+
 @keyframes moveicon {
   0% {
     transform: translate3d(0, 0, 0);
   }
+
   50% {
     transform: translate3d(0, 30%, 0);
   }
+
   100% {
     transform: translate3d(0, 0, 0);
   }

@@ -60,20 +60,15 @@
       </SfAccordion>
       <template #content-bottom>
         <div class="filters__buttons">
-          <SfButton
-            class="sf-button--full-width"
-            @click="applyFilters"
-          >
+          <SfButton class="sf-button--full-width" @click="applyFilters">
             {{ $t('Done') }}
-          </SfButton
-          >
+          </SfButton>
           <SfButton
             class="sf-button--full-width filters__button-clear"
             @click="clearFilters"
           >
             {{ $t('Clear all') }}
-          </SfButton
-          >
+          </SfButton>
         </div>
       </template>
     </SfSidebar>
@@ -88,12 +83,12 @@ import {
   SfFilter,
   SfAccordion,
   SfColor
-} from '@storefront-ui/vue';
+} from '@storefront-ui/vue'
 
-import { ref, computed, onMounted } from '@nuxtjs/composition-api';
-import { useFacet, facetGetters } from '@vue-storefront/shopify';
-import { useUiHelpers, useUiState } from '~/composables';
-import Vue from 'vue';
+import { ref, computed, onMounted } from '@nuxtjs/composition-api'
+import { useFacet, facetGetters } from '@vue-storefront/shopify'
+import { useUiHelpers, useUiState } from '~/composables'
+import Vue from 'vue'
 
 export default {
   name: 'FiltersSidebar',
@@ -106,53 +101,60 @@ export default {
     SfHeading
   },
   setup(props, context) {
-    const { changeFilters, isFacetColor } = useUiHelpers();
-    const { toggleFilterSidebar, isFilterSidebarOpen } = useUiState();
-    const { result } = useFacet();
+    const { changeFilters, isFacetColor } = useUiHelpers()
+    const { toggleFilterSidebar, isFilterSidebarOpen } = useUiState()
+    const { result } = useFacet()
 
-    const facets = computed(() => facetGetters.getGrouped(result.value, ['color', 'size']));
-    const selectedFilters = ref({});
+    const facets = computed(() =>
+      facetGetters.getGrouped(result.value, ['color', 'size'])
+    )
+    const selectedFilters = ref({})
 
     const setSelectedFilters = () => {
-      if (!facets.value.length || Object.keys(selectedFilters.value).length) return;
-      selectedFilters.value = facets.value.reduce((prev, curr) => ({
-        ...prev,
-        [curr.id]: curr.options
-          .filter(o => o.selected)
-          .map(o => o.id)
-      }), {});
-    };
+      if (!facets.value.length || Object.keys(selectedFilters.value).length)
+        return
+      selectedFilters.value = facets.value.reduce(
+        (prev, curr) => ({
+          ...prev,
+          [curr.id]: curr.options.filter((o) => o.selected).map((o) => o.id)
+        }),
+        {}
+      )
+    }
 
-    const isFilterSelected = (facet, option) => (selectedFilters.value[facet.id] || []).includes(option.id);
+    const isFilterSelected = (facet, option) =>
+      (selectedFilters.value[facet.id] || []).includes(option.id)
 
     const selectFilter = (facet, option) => {
       if (!selectedFilters.value[facet.id]) {
-        Vue.set(selectedFilters.value, facet.id, []);
+        Vue.set(selectedFilters.value, facet.id, [])
       }
 
-      if (selectedFilters.value[facet.id].find(f => f === option.id)) {
-        selectedFilters.value[facet.id] = selectedFilters.value[facet.id].filter(f => f !== option.id);
-        return;
+      if (selectedFilters.value[facet.id].find((f) => f === option.id)) {
+        selectedFilters.value[facet.id] = selectedFilters.value[
+          facet.id
+        ].filter((f) => f !== option.id)
+        return
       }
 
-      selectedFilters.value[facet.id].push(option.id);
-    };
+      selectedFilters.value[facet.id].push(option.id)
+    }
 
     const clearFilters = () => {
-      toggleFilterSidebar();
-      selectedFilters.value = {};
-      changeFilters(selectedFilters.value);
-    };
+      toggleFilterSidebar()
+      selectedFilters.value = {}
+      changeFilters(selectedFilters.value)
+    }
 
     const applyFilters = () => {
-      toggleFilterSidebar();
-      changeFilters(selectedFilters.value);
-    };
+      toggleFilterSidebar()
+      changeFilters(selectedFilters.value)
+    }
 
     onMounted(() => {
-      context.root.$scrollTo(context.root.$el, 2000);
-      setSelectedFilters();
-    });
+      context.root.$scrollTo(context.root.$el, 2000)
+      setSelectedFilters()
+    })
 
     return {
       facets,
@@ -163,13 +165,14 @@ export default {
       toggleFilterSidebar,
       clearFilters,
       applyFilters
-    };
+    }
   }
-};
+}
 </script>
 
 <style lang="scss" scoped>
 .sidebar-filters {
+  --font-family--secondary: var(--font-family--primary);
   --overlay-z-index: 3;
   --sidebar-title-display: none;
   --sidebar-top-padding: 0;
@@ -198,7 +201,7 @@ export default {
   &__chosen {
     color: var(--c-text-muted);
     font-weight: var(--font-weight--normal);
-    font-family: var(--font-family--secondary);
+    font-family: Overpass;
     position: absolute;
     right: var(--spacer-xl);
   }

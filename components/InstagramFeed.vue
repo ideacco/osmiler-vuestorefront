@@ -1,39 +1,96 @@
 <template>
-  <SfSection title-heading="Share Your Look" subtitle-heading="#YOURLOOK" class="title">
+  <SfSection
+    title-heading="Share Your Look"
+    subtitle-heading="#YOURLOOK"
+    class="title"
+  >
     <div class="grid grid-images">
       <div class="grid__row">
         <div class="grid__col">
-          <SfImage v-if="isMobile" :src="addBasePath('/homepage/imageAm.webp')" alt="katherina_trn" :width="160" :height="160">katherina_trn</SfImage>
-          <SfImage v-else :src="addBasePath('/homepage/imageAd.webp')" alt="katherina_trn" :width="470" :height="470">katherina_trn</SfImage>
+          <SfImage
+            v-if="isMobile"
+            :src="addBasePath('/homepage/imageAm.webp')"
+            alt="katherina_trn"
+            :width="160"
+            :height="160"
+          >katherina_trn</SfImage
+          >
+          <SfImage
+            v-else
+            :src="addBasePath('/homepage/imageAd.webp')"
+            alt="katherina_trn"
+            :width="470"
+            :height="470"
+          >katherina_trn</SfImage
+          >
         </div>
         <div class="grid__col small">
-          <SfImage v-if="isMobile" :src="addBasePath('/homepage/imageBm.webp')" alt="katherina_trn" :width="160" :height="160">katherina_trn</SfImage>
-          <SfImage v-else :src="addBasePath('/homepage/imageCd.webp')" alt="katherina_trn" :width="470" :height="160">katherina_trn</SfImage>
+          <SfImage
+            v-if="isMobile"
+            :src="addBasePath('/homepage/imageBm.webp')"
+            alt="katherina_trn"
+            :width="160"
+            :height="160"
+          >katherina_trn</SfImage
+          >
+          <SfImage
+            v-else
+            :src="addBasePath('/homepage/imageCd.webp')"
+            alt="katherina_trn"
+            :width="470"
+            :height="160"
+          >katherina_trn</SfImage
+          >
         </div>
       </div>
       <div class="grid__row">
         <div class="grid__col small">
-          <SfImage v-if="isMobile" :src="addBasePath('/homepage/imageCm.webp')" alt="katherina_trn" :width="160" :height="160">katherina_trn</SfImage>
-           <SfImage v-else :src="addBasePath('/homepage/imageBd.webp')" alt="katherina_trn" :width="470" :height="160">katherina_trn</SfImage>
+          <SfImage
+            v-if="isMobile"
+            :src="addBasePath('/homepage/imageCm.webp')"
+            alt="katherina_trn"
+            :width="160"
+            :height="160"
+          >katherina_trn</SfImage
+          >
+          <SfImage
+            v-else
+            :src="addBasePath('/homepage/imageBd.webp')"
+            alt="katherina_trn"
+            :width="470"
+            :height="160"
+          >katherina_trn</SfImage
+          >
         </div>
         <div class="grid__col">
-          <SfImage v-if="isMobile" :src="addBasePath('/homepage/imageDm.webp')" alt="katherina_trn" :width="160" :height="160">katherina_trn</SfImage>
-          <SfImage v-else :src="addBasePath('/homepage/imageDd.webp')" alt="katherina_trn" :width="470" :height="470">katherina_trn</SfImage>
+          <SfImage
+            v-if="isMobile"
+            :src="addBasePath('/homepage/imageDm.webp')"
+            alt="katherina_trn"
+            :width="160"
+            :height="160"
+          >katherina_trn</SfImage
+          >
+          <SfImage
+            v-else
+            :src="addBasePath('/homepage/imageDd.webp')"
+            alt="katherina_trn"
+            :width="470"
+            :height="470"
+          >katherina_trn</SfImage
+          >
         </div>
       </div>
     </div>
   </SfSection>
 </template>
 <script>
-import { addBasePath } from '@vue-storefront/core';
-import {
-  SfSection,
-  SfImage
-} from '@storefront-ui/vue';
+import { addBasePath } from '@vue-storefront/core'
+import { SfSection, SfImage } from '@storefront-ui/vue'
 import {
   mapMobileObserver,
   unMapMobileObserver
-} from '@storefront-ui/vue/src/utilities/mobile-observer.js';
+} from '@storefront-ui/vue/src/utilities/mobile-observer.js'
 export default {
   name: 'InstagramFeed',
   components: {
@@ -43,18 +100,19 @@ export default {
   setup() {
     return {
       addBasePath
-    };
+    }
   },
   computed: {
     ...mapMobileObserver()
   },
   beforeDestroy() {
-    unMapMobileObserver();
+    unMapMobileObserver()
   }
-};
+}
 </script>
 <style lang="scss" scoped>
 .title {
+  --font-family--secondary: var(--font-family--primary);
   --heading-title-font-weight: var(--font-weight--semibold);
   --section-margin: var(--spacer-xl) 0;
   --section-content-margin: var(--spacer-xl) 0;
@@ -92,8 +150,8 @@ export default {
       &.small {
         height: 10rem;
       }
-     width: 29.375rem;
-     height: 29.375rem;
+      width: 29.375rem;
+      height: 29.375rem;
     }
     & + & {
       margin-top: var(--spacer-xs);
@@ -103,5 +161,4 @@ export default {
     }
   }
 }
-
 </style>

@@ -14,7 +14,7 @@ const locales = [
       label: 'Dollar'
     }
   }
-];
+]
 
 export default {
   locales,
@@ -28,4 +28,4 @@ export default {
     cookieKey: 'vsf-locale',
     alwaysRedirect: true
   }
-};
+}

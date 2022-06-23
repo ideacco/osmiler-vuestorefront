@@ -5,23 +5,16 @@
         <SfSteps
           v-if="!isThankYou"
           :active="currentStepIndex"
-          :class="{ 'checkout__steps': true }"
+          :class="{ checkout__steps: true }"
           @change="handleStepClick"
         >
-          <SfStep
-            v-for="(step, key) in STEPS"
-            :key="key"
-            :name="step"
-          >
+          <SfStep v-for="(step, key) in STEPS" :key="key" :name="step">
             <nuxt-child />
           </SfStep>
         </SfSteps>
         <nuxt-child v-else />
       </div>
-      <div
-        v-if="!isThankYou"
-        class="checkout__aside desktop-only"
-      >
+      <div v-if="!isThankYou" class="checkout__aside desktop-only">
         <transition name="fade">
           <CartPreview key="order-summary" />
         </transition>
@@ -30,35 +23,36 @@
   </div>
 </template>
 <script>
-
-import { SfSteps, SfButton } from '@storefront-ui/vue';
-import CartPreview from '~/components/Checkout/CartPreview';
-import { computed, useRoute, useRouter } from '@nuxtjs/composition-api';
+import { SfSteps, SfButton } from '@storefront-ui/vue'
+import CartPreview from '~/components/Checkout/CartPreview'
+import { computed, useRoute, useRouter } from '@nuxtjs/composition-api'
 
 const STEPS = {
   shipping: 'Shipping',
   billing: 'Billing',
   payment: 'Payment'
-};
+}
 
 export default {
-  name: 'Checkout',
+  name: 'CheckOut',
   components: {
     SfButton,
     SfSteps,
     CartPreview
   },
   setup() {
-    const route = useRoute();
-    const router = useRouter();
-    const currentStep = computed(() => route.value.path.split('/').pop());
-    const currentStepIndex = computed(() => Object.keys(STEPS).findIndex(s => s === currentStep.value));
-    const isThankYou = computed(() => currentStep.value === 'thank-you');
+    const route = useRoute()
+    const router = useRouter()
+    const currentStep = computed(() => route.value.path.split('/').pop())
+    const currentStepIndex = computed(() =>
+      Object.keys(STEPS).findIndex((s) => s === currentStep.value)
+    )
+    const isThankYou = computed(() => currentStep.value === 'thank-you')
 
     const handleStepClick = (stepIndex) => {
-      const key = Object.keys(STEPS)[stepIndex];
-      router.push(`/checkout/${key}`);
-    };
+      const key = Object.keys(STEPS)[stepIndex]
+      router.push(`/checkout/${key}`)
+    }
 
     return {
       handleStepClick,
@@ -66,13 +60,14 @@ export default {
       currentStepIndex,
       isThankYou,
       currentStep
-    };
+    }
   }
-};
+}
 </script>
 
 <style lang="scss" scoped>
 #checkout {
+  --font-family--secondary: var(--font-family--primary);
   box-sizing: border-box;
   @include for-desktop {
     max-width: 1440px;
@@ -106,5 +101,4 @@ export default {
     }
   }
 }
-
 </style>
