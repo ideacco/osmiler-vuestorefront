@@ -151,7 +151,7 @@
                 class="sf-button--full-width sf-proceed_to_checkout SfButtontwo"
                 :disabled="loading || !productGetters.getStockStatus(product)"
                 @click="
-                  addingToCart({
+                  addingToCarts({
                     product,
                     quantity: parseInt(qty),
                     customQuery: [
@@ -791,6 +791,18 @@ export default {
   methods: {
     // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
     async addingToCart(Productdata) {
+      await this.addItem(Productdata).then((res) => {
+        this.sendNotification({
+          key: 'product_added',
+          message: `${Productdata.product.name} has been successfully added to your cart.`,
+          type: 'success',
+          title: 'Product added!',
+          icon: 'check'
+        })
+        this.qty = 1
+      })
+    },
+    async addingToCarts (Productdata) {
       await this.addItem(Productdata).then((res) => {
         this.sendNotification({
           key: 'product_added',
