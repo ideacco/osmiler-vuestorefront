@@ -1,13 +1,6 @@
 <template>
-  <SfLoader
-    v-if="productloading"
-    class="pdc-pdp-loader"
-    :loading="productloading"
-  >
-    <div />
-  </SfLoader>
-  <div v-else id="product">
-    <SfBreadcrumbs class="breadcrumbs" :breadcrumbs="breadcrumbs">
+  <div id="product">
+    <SfBreadcrumbs class="breadcrumbs breadcrumbs-center"  :breadcrumbs="breadcrumbs">
       <template #link="{ breadcrumb }">
         <nuxt-link
           :data-testid="breadcrumb.text"
@@ -709,9 +702,8 @@ export default {
               : options.value[attr][0]
         })
       }
-
-       $router.push({
-        path: $route?.value?.path,
+      router.push({
+        path: route?.value?.path,
         query: {
           ...configuration.value,
           ...filter
