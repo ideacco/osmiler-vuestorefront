@@ -25,6 +25,7 @@
         :imageHeight="1000"
         :thumbWidth="160"
         :thumbHeight="160"
+        ref="SfGallery"
         :current="currentindex"
         :sliderOptions='{"type":"slider","autoplay":false,"rewind":false,"gap":0}'
         :outsideZoom="false"
@@ -626,7 +627,7 @@ export default {
     const configuration = computed(() => {
       return productGetters.getSelectedVariant(route?.value?.query)
     })
-    const { isProductCartButtonColor, setisProductCartButtonColor } =
+const { isProductCartButtonColor, setisProductCartButtonColor } =
       useUiState()
     const ispath = route.value.fullPath
     const setBreadcrumb = () => {
@@ -722,7 +723,9 @@ export default {
         related: true
       })
     })
-    const updateFilter = (colorname, filter,a) => {
+    
+    const updateFilter = (colorname, filter) => {
+
       setisProductCartButtonColor(colorname)
       if (options.value) {
         Object.keys(options.value).forEach((attr) => {
@@ -735,13 +738,15 @@ export default {
               : options.value[attr][0]
         })
       }
-      router.push({
-        path: route?.value?.path,
-        query: {
-          ...configuration.value,
-          ...filter
-        }
-      })
+      console.log(configuration.value,444,filter)
+      // $router.push({
+      //   path: $route?.value?.path,
+      //   query: {
+      //     ...configuration.value,
+      //     ...filter,
+      //     t: new Date().getTime()
+      //   }
+      // })
     }
 
     return {
@@ -833,14 +838,14 @@ export default {
   },
   // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
   methods: {
-    tocheckout(a){
+     // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
+    tocheckout(a,colorname){
     if(a === 0){
-      this.currentindex = 1
-      console.log(this.currentindex,888)
+      this.currentindex = 0
     }else if(a === 1){
-       this.currentindex = 3
-       console.log(this.currentindex,77)
+       this.currentindex = 2
     }
+    this.$refs.SfGallery.go(this.currentindex)
   },
     // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
     async addingToCart(Productdata) {
