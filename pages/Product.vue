@@ -25,7 +25,7 @@
         :imageHeight="1000"
         :thumbWidth="160"
         :thumbHeight="160"
-        :current="1"
+        :current="currentindex"
         :sliderOptions='{"type":"slider","autoplay":false,"rewind":false,"gap":0}'
         :outsideZoom="false"
         enableZoom
@@ -116,8 +116,8 @@
               <SfButton
                   v-for="(attribs, a) in option"
                   @click="
-                    ;(atttLbl = key),
-                      updateFilter(attribs, { [atttLbl]: attribs })
+                    ;(atttLbl = key),tocheckout(a),
+                      updateFilter(attribs, { [atttLbl]: attribs },)
                   "
                   :class="{ active: attribs == isProductCartButtonColor }"
                   :key="a"
@@ -722,7 +722,7 @@ export default {
         related: true
       })
     })
-    const updateFilter = (colorname, filter) => {
+    const updateFilter = (colorname, filter,a) => {
       setisProductCartButtonColor(colorname)
       if (options.value) {
         Object.keys(options.value).forEach((attr) => {
@@ -735,14 +735,6 @@ export default {
               : options.value[attr][0]
         })
       }
-
-       $router.push({
-        path: $route?.value?.path,
-        query: {
-          ...configuration.value,
-          ...filter
-        }
-      })
     }
 
     return {
@@ -807,6 +799,7 @@ export default {
         //   value: 'Germany'
         // }
       ],
+      currentindex: 1,
       description:
         'Find stunning women cocktail and party dresses. Stand out in lace and metallic cocktail dresses and party dresses from all your favorite brands.',
       detailsIsActive: false,
@@ -831,9 +824,17 @@ export default {
   updated() {
     this.setGalleryWidth()
   },
-
   // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
   methods: {
+    tocheckout(a){
+    if(a === 0){
+      this.currentindex = 1
+      console.log(this.currentindex,888)
+    }else if(a === 1){
+       this.currentindex = 3
+       console.log(this.currentindex,77)
+    }
+  },
     // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
     async addingToCart(Productdata) {
       await this.addItem(Productdata).then((res) => {
