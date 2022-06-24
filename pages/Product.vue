@@ -555,7 +555,7 @@ export default {
     })
   },
   transition: 'fade',
-  setup() {
+  setup(__, context) {
     const { isCartSidebarOpen, toggleCartSidebar } = useUiState()
     const route = useRoute()
     const router = useRouter()
@@ -593,7 +593,7 @@ export default {
         window.location.href = checkoutUrl
       }, 300)
     }
-
+    const { $router, $route } = context.root
     const productDescription = computed(() =>
       productGetters.getDescription(product.value)
     )
@@ -660,7 +660,7 @@ export default {
     const ActiveVariantImage = computed(() => {
       return productGetters.getVariantImage(product.value) || 0
     })
-    
+
     const getProductGallery = (product) => (product ? product.images : []).map((image) => {
       const imgPath = image.originalSrc.substring(0, image.originalSrc.lastIndexOf('.'))
       const imgext = image.originalSrc.split('.').pop()
@@ -674,7 +674,7 @@ export default {
       })
     })
     const productGallery3 = computed(() =>{
-      const img=  getProductGallery(product.value).map((img) => {
+      const img = getProductGallery(product.value).map((img) => {
         // console.log('img?',img)
         return ({
           mobile: { url: img.small },
@@ -715,8 +715,9 @@ export default {
               : options.value[attr][0]
         })
       }
-      router.push({
-        path: route?.value?.path,
+
+       $router.push({
+        path: $route?.value?.path,
         query: {
           ...configuration.value,
           ...filter
