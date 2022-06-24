@@ -735,6 +735,13 @@ export default {
               : options.value[attr][0]
         })
       }
+      router.push({
+        path: route?.value?.path,
+        query: {
+          ...configuration.value,
+          ...filter
+        }
+      })
     }
 
     return {
