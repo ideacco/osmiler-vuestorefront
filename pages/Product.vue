@@ -1,5 +1,12 @@
 <template>
-  <div  id="product">
+  <SfLoader
+    v-if="productloading"
+    class="pdc-pdp-loader"
+    :loading="productloading"
+  >
+    <div />
+  </SfLoader>
+  <div v-else id="product">
     <SfBreadcrumbs class="breadcrumbs" :breadcrumbs="breadcrumbs">
       <template #link="{ breadcrumb }">
         <nuxt-link
@@ -877,9 +884,7 @@ export default {
 }
 
 #product {
-  @include for-desktop {
-
-  }
+--loader-spinner-stroke: #fff !important;
 }
 .SfButtontwo {
   width: 300px;
@@ -892,6 +897,7 @@ export default {
 }
 
 .product {
+  --loader-spinner-stroke: #fff !important;
   --font-family--secondary: var(--font-family--primary);
   box-sizing: border-box;
 
