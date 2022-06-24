@@ -52,10 +52,36 @@
           <!-- Reviews Here -->
         </div>
         <div class="product__details">
-          <div class="product__description">
-            {{ productDescription }}
+          <div class="product__description"
+           v-show="
+           ispath ===
+          '/p/Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0Lzc3MTcwNTM0MzIwNjY=/osmiler-swing' ||
+          ispath ===
+          '/p/Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0Lzc3MTcwNTM0MzIwNjY=/osmiler-swing?Color=Silver' ||
+          ispath ===
+          '/p/Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0Lzc3MTcwNTM0MzIwNjY=/osmiler-swing?Color=Deep%20Blue'
+      "
+          >
+            {{ productdescription1 }}
           </div>
-
+          <div class="product__description"
+        v-show="
+        ispath ===
+          '/p/Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0Lzc3MTc0MDc1ODg2MTA=/osmiler-swing-head-5pcs' ||
+          ispath ===
+          '/p/Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0Lzc3MTc0MDc1ODg2MTA=/osmiler-swing-head-5pcs?Color=White' ||
+          ispath ===
+          '/p/Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0Lzc3MTc0MDc1ODg2MTA=/osmiler-swing-head-5pcs?Color=Deep%20Blue'||
+           ispath ===
+          '/p/Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0Lzc3MTcwNDc5OTI1Nzg=/osmiler-swing-head-3pcs' ||
+          ispath ===
+          '/p/Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0Lzc3MTcwNDc5OTI1Nzg=/osmiler-swing-head-3pcs?Color=White' ||
+          ispath ===
+          '/p/Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0Lzc3MTcwNDc5OTI1Nzg=/osmiler-swing-head-3pcs?Color=Deep%20Blue'
+      "
+          >
+             {{ productdescription2 }}
+          </div>
           <div
             v-if="options && Object.keys(options).length > 0"
             class="product__variants"
@@ -761,6 +787,8 @@ export default {
   // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
   data() {
     return {
+      productdescription1: '\r\n✔️\tEnjoy music while brushin\r\n✔️\tUpload music to toothbrush via Bluetooth or PC\r\n✔️\tConstant high-frequency vibration\r\n✔️\tW-shaped three-dimensional cutting toothhead\r\n✔️\tThree built-in classic vibrating modes',
+      productdescription2: '\r\n✔️\tFood-grade Dupont brush\r\n✔️\tW-shaped three-dimensional cutting\r\n✔️\tThe rounded top',
       properties: [
         // {
         //   name: 'Product Code',
@@ -854,11 +882,9 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-  .sf-loader{
-
-}
 .product__description {
   position: relative;
+  white-space: pre-wrap;
   top: 30px;
 }
 .product__details {
