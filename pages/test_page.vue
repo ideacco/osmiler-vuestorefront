@@ -112,7 +112,7 @@ import {
   onUnmounted
 } from '@nuxtjs/composition-api'
 
-import { useUiState } from '~/composables'
+import { useUiState, useCustom } from '~/composables'
 import { onSSR } from '@vue-storefront/core'
 import {
   useProduct,
@@ -146,6 +146,8 @@ export default {
     const { products, search } = useProduct('products')
     const { search: inSearch, categories, loading } = useCategory('categories')
 
+    const { search: isSearch, conster } = useCustom('custom')
+
     // 根据接口进行查询填充
     // const { slug } = route?.value?.params
     const slug = 'osmiler-swing'
@@ -157,10 +159,32 @@ export default {
     onSSR(async () => {
       console.log('后端执行的 ssr 查询')
       // 用来更新产品的钩子函数
-      await search({slug})
-      // await search({})
+      await search({
+        customQuery: {
+          products: 'myQsuery',
+          metadata: {}
+        }
+      })
+      // await search({slug})
       // await inSearch({})
     })
+
+    // isSearch ({
+    //     customQuery: {
+    //       products: 'my-products-query',
+    //       metadata: {}
+    //     }
+    //   }
+    // )
+
+    isSearch({
+      // customQuery: {
+      //   products: 'myQuery',
+      //   metadata: {}
+      // }
+      // shop:{}
+    })
+
 
     // 自定义查询
     const productsSearchParams = {
@@ -221,6 +245,7 @@ export default {
 
 
 
+
     // 高级写法,将不同的尺寸图片分类使用
     const productGallery = computed(() =>
       productGetters.getGallery(product.value).map((img) => {
@@ -263,9 +288,12 @@ export default {
       if (slug) {
         console.log('子页面初始化!,获取产品', slug)
       }
+      
       console.log('子页面初始化!,路由信息', route)
       setNavbarTransparent(true)
       console.log('product.value',product.value)
+      console.log('products.value',products.value)
+      console.log('conster!!!!',conster)
     })
 
     onUnmounted(() => {

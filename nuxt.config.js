@@ -326,7 +326,7 @@ const config = {
       backgroundColor: '#5d47ee',
       description: 'let your smile light up the world',
       themeColor: '#5d47ee',
-      ogHost: 'shopify-pwa.aureatelabs.com',
+      ogHost: 'www.osmiler.com',
     },
     icon: {
       source: '/icon.png',
