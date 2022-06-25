@@ -355,6 +355,9 @@ export default {
     transform: scale(1.1);
   }
 }
+::v-deep .sf-sidebar__aside {
+  --sidebar-z-index: 9999;
+}
 .cart-summary {
   margin-top: var(--spacer-xl);
 }

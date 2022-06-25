@@ -1,6 +1,13 @@
 <template>
-  <div id="product">
-    <SfBreadcrumbs class="breadcrumbs breadcrumbs-center"  :breadcrumbs="breadcrumbs">
+  <SfLoader
+    v-if="productloading"
+    class="pdc-pdp-loader"
+    :loading="productloading"
+  >
+    <div />
+  </SfLoader>
+  <div v-else id="product">
+    <SfBreadcrumbs class="breadcrumbs" :breadcrumbs="breadcrumbs">
       <template #link="{ breadcrumb }">
         <nuxt-link
           :data-testid="breadcrumb.text"
@@ -12,13 +19,14 @@
       </template>
     </SfBreadcrumbs>
     <div class="product">
-     <SfGallery
+   <SfGallery
         :images='productGallery3'
         :imageWidth="1000"
         :imageHeight="1000"
         :thumbWidth="160"
         :thumbHeight="160"
-        :current="1"
+        ref="SfGallery"
+        :current="currentindex"
         :sliderOptions='{"type":"slider","autoplay":false,"rewind":false,"gap":0}'
         :outsideZoom="false"
         enableZoom
@@ -45,10 +53,36 @@
           <!-- Reviews Here -->
         </div>
         <div class="product__details">
-          <div class="product__description">
-            {{ productDescription }}
+          <div class="product__description"
+           v-show="
+           ispath ===
+          '/p/Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0Lzc3MTcwNTM0MzIwNjY=/osmiler-swing' ||
+          ispath ===
+          '/p/Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0Lzc3MTcwNTM0MzIwNjY=/osmiler-swing?Color=Silver' ||
+          ispath ===
+          '/p/Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0Lzc3MTcwNTM0MzIwNjY=/osmiler-swing?Color=Deep%20Blue'
+      "
+          >
+            {{ productdescription1 }}
           </div>
-
+          <div class="product__description"
+        v-show="
+        ispath ===
+          '/p/Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0Lzc3MTc0MDc1ODg2MTA=/osmiler-swing-head-5pcs' ||
+          ispath ===
+          '/p/Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0Lzc3MTc0MDc1ODg2MTA=/osmiler-swing-head-5pcs?Color=White' ||
+          ispath ===
+          '/p/Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0Lzc3MTc0MDc1ODg2MTA=/osmiler-swing-head-5pcs?Color=Deep%20Blue'||
+           ispath ===
+          '/p/Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0Lzc3MTcwNDc5OTI1Nzg=/osmiler-swing-head-3pcs' ||
+          ispath ===
+          '/p/Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0Lzc3MTcwNDc5OTI1Nzg=/osmiler-swing-head-3pcs?Color=White' ||
+          ispath ===
+          '/p/Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0Lzc3MTcwNDc5OTI1Nzg=/osmiler-swing-head-3pcs?Color=Deep%20Blue'
+      "
+          >
+             {{ productdescription2 }}
+          </div>
           <div
             v-if="options && Object.keys(options).length > 0"
             class="product__variants"
@@ -80,11 +114,11 @@
               >
                 <label class="product__color-label">{{ $t(key) }}</label>
                 <div class="product__flex-break"></div>
-                <SfButton
+              <SfButton
                   v-for="(attribs, a) in option"
                   @click="
-                    ;(atttLbl = key),
-                      updateFilter(attribs, { [atttLbl]: attribs })
+                    ;(atttLbl = key),tocheckout(a),
+                      updateFilter(attribs, { [atttLbl]: attribs },)
                   "
                   :class="{ active: attribs == isProductCartButtonColor }"
                   :key="a"
@@ -206,7 +240,7 @@
         </LazyHydrate>
       </div>
     </div>
-    <!-- <GridList /> -->
+        <!-- <GridList /> -->
     <div
       v-show="
         ispath ===
@@ -438,19 +472,6 @@
       <Toothbrushheadfooter />
     </div>
 
-    <!-- <LazyHydrate when-visible>
-      <RelatedProducts
-        :products="relatedProducts"
-        :loading="relatedLoading"
-        title="Match it with"
-      />
-    </LazyHydrate> -->
-    <!-- <LazyHydrate when-visible>
-      <InstagramFeed />
-    </LazyHydrate>
-    <LazyHydrate when-visible>
-      <MobileStoreBanner />
-    </LazyHydrate> -->
   </div>
 </template>
 <script>
@@ -555,7 +576,7 @@ export default {
     })
   },
   transition: 'fade',
-  setup() {
+  setup(__, context) {
     const { isCartSidebarOpen, toggleCartSidebar } = useUiState()
     const route = useRoute()
     const router = useRouter()
@@ -593,7 +614,7 @@ export default {
         window.location.href = checkoutUrl
       }, 300)
     }
-
+    const { $router, $route } = context.root
     const productDescription = computed(() =>
       productGetters.getDescription(product.value)
     )
@@ -606,7 +627,7 @@ export default {
     const configuration = computed(() => {
       return productGetters.getSelectedVariant(route?.value?.query)
     })
-    const { isProductCartButtonColor, setisProductCartButtonColor } =
+const { isProductCartButtonColor, setisProductCartButtonColor } =
       useUiState()
     const ispath = route.value.fullPath
     const setBreadcrumb = () => {
@@ -660,7 +681,7 @@ export default {
     const ActiveVariantImage = computed(() => {
       return productGetters.getVariantImage(product.value) || 0
     })
-    
+
     const getProductGallery = (product) => (product ? product.images : []).map((image) => {
       const imgPath = image.originalSrc.substring(0, image.originalSrc.lastIndexOf('.'))
       const imgext = image.originalSrc.split('.').pop()
@@ -674,7 +695,7 @@ export default {
       })
     })
     const productGallery3 = computed(() =>{
-      const img=  getProductGallery(product.value).map((img) => {
+      const img = getProductGallery(product.value).map((img) => {
         // console.log('img?',img)
         return ({
           mobile: { url: img.small },
@@ -702,7 +723,9 @@ export default {
         related: true
       })
     })
+    
     const updateFilter = (colorname, filter) => {
+
       setisProductCartButtonColor(colorname)
       if (options.value) {
         Object.keys(options.value).forEach((attr) => {
@@ -715,13 +738,15 @@ export default {
               : options.value[attr][0]
         })
       }
-      router.push({
-        path: route?.value?.path,
-        query: {
-          ...configuration.value,
-          ...filter
-        }
-      })
+      console.log(configuration.value,444,filter)
+      // $router.push({
+      //   path: $route?.value?.path,
+      //   query: {
+      //     ...configuration.value,
+      //     ...filter,
+      //     t: new Date().getTime()
+      //   }
+      // })
     }
 
     return {
@@ -766,6 +791,8 @@ export default {
   // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
   data() {
     return {
+      productdescription1: '\r\n✔️\tEnjoy music while brushin\r\n✔️\tUpload music to toothbrush via Bluetooth or PC\r\n✔️\tConstant high-frequency vibration\r\n✔️\tW-shaped three-dimensional cutting toothhead\r\n✔️\tThree built-in classic vibrating modes',
+      productdescription2: '\r\n✔️\tFood-grade Dupont brush\r\n✔️\tW-shaped three-dimensional cutting\r\n✔️\tThe rounded top',
       properties: [
         // {
         //   name: 'Product Code',
@@ -784,6 +811,7 @@ export default {
         //   value: 'Germany'
         // }
       ],
+      currentindex: 1,
       description:
         'Find stunning women cocktail and party dresses. Stand out in lace and metallic cocktail dresses and party dresses from all your favorite brands.',
       detailsIsActive: false,
@@ -808,9 +836,17 @@ export default {
   updated() {
     this.setGalleryWidth()
   },
-
   // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
   methods: {
+     // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
+    tocheckout(a,colorname){
+    if(a === 0){
+      this.currentindex = 0
+    }else if(a === 1){
+       this.currentindex = 2
+    }
+    this.$refs.SfGallery.go(this.currentindex)
+  },
     // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
     async addingToCart(Productdata) {
       await this.addItem(Productdata).then((res) => {
@@ -861,6 +897,7 @@ export default {
 <style lang="scss" scoped>
 .product__description {
   position: relative;
+  white-space: pre-wrap;
   top: 30px;
 }
 .product__details {
@@ -871,6 +908,7 @@ export default {
 }
 
 .pdc-pdp-loader {
+  --loader-spinner-stroke: #fff !important;
   min-height: 200px;
   padding: 100px 0;
 }
@@ -885,9 +923,7 @@ export default {
 }
 
 #product {
-  @include for-desktop {
-
-  }
+--loader-spinner-stroke: #fff !important;
 }
 .SfButtontwo {
   width: 300px;
@@ -900,6 +936,7 @@ export default {
 }
 
 .product {
+  --loader-spinner-stroke: #fff !important;
   --font-family--secondary: var(--font-family--primary);
   box-sizing: border-box;
 
@@ -1001,6 +1038,7 @@ export default {
     margin: 0 var(--spacer-lg) var(--spacer-xs) 0;
     padding: 0 0 0 4px;
   }
+
 
   &__color {
     margin: 0 var(--spacer-2xs);
