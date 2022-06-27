@@ -414,7 +414,6 @@ export default {
     onSSR(async () => {
       await search(th.getFacetsFromURL())
     })
-    console.log(products,888)
     const productsQuantity = ref({})
 
     const { isFacetColor } = useUiHelpers()
