@@ -7,7 +7,7 @@
     <div />
   </SfLoader>
   <div v-else id="product">
-    <SfBreadcrumbs class="breadcrumbs" :breadcrumbs="breadcrumbs">
+    <SfBreadcrumbs class="breadcrumbs breadcrumbs-center"  :breadcrumbs="breadcrumbs">
       <template #link="{ breadcrumb }">
         <nuxt-link
           :data-testid="breadcrumb.text"
@@ -19,14 +19,13 @@
       </template>
     </SfBreadcrumbs>
     <div class="product">
-   <SfGallery
-        :images='productGallery3'
+    <SfGallery
+        :images='productGallery'
         :imageWidth="1000"
         :imageHeight="1000"
         :thumbWidth="160"
         :thumbHeight="160"
-        ref="SfGallery"
-        :current="currentindex"
+        :current="ActiveVariantImage + 1"
         :sliderOptions='{"type":"slider","autoplay":false,"rewind":false,"gap":0}'
         :outsideZoom="false"
         enableZoom
@@ -52,7 +51,7 @@
           />
           <!-- Reviews Here -->
         </div>
-        <div class="product__details">
+            <div class="product__details">
           <div class="product__description"
            v-show="
            ispath ===
@@ -117,7 +116,7 @@
               <SfButton
                   v-for="(attribs, a) in option"
                   @click="
-                    ;(atttLbl = key),tocheckout(a),
+                    ;(atttLbl = key),
                       updateFilter(attribs, { [atttLbl]: attribs },)
                   "
                   :class="{ active: attribs == isProductCartButtonColor }"
@@ -576,7 +575,7 @@ export default {
     })
   },
   transition: 'fade',
-  setup(__, context) {
+  setup() {
     const { isCartSidebarOpen, toggleCartSidebar } = useUiState()
     const route = useRoute()
     const router = useRouter()
@@ -614,7 +613,7 @@ export default {
         window.location.href = checkoutUrl
       }, 300)
     }
-    const { $router, $route } = context.root
+
     const productDescription = computed(() =>
       productGetters.getDescription(product.value)
     )
@@ -627,7 +626,7 @@ export default {
     const configuration = computed(() => {
       return productGetters.getSelectedVariant(route?.value?.query)
     })
-const { isProductCartButtonColor, setisProductCartButtonColor } =
+    const { isProductCartButtonColor, setisProductCartButtonColor } =
       useUiState()
     const ispath = route.value.fullPath
     const setBreadcrumb = () => {
@@ -681,8 +680,7 @@ const { isProductCartButtonColor, setisProductCartButtonColor } =
     const ActiveVariantImage = computed(() => {
       return productGetters.getVariantImage(product.value) || 0
     })
-
-    const getProductGallery = (product) => (product ? product.images : []).map((image) => {
+ const getProductGallery = (product) => (product ? product.images : []).map((image) => {
       const imgPath = image.originalSrc.substring(0, image.originalSrc.lastIndexOf('.'))
       const imgext = image.originalSrc.split('.').pop()
       const imgSmall = imgPath + '_160x160.' + imgext
@@ -707,7 +705,6 @@ const { isProductCartButtonColor, setisProductCartButtonColor } =
       return img
     }
     )
-
     onSSR(async () => {
       await search({ slug, selectedOptions: configuration.value }).then(() => {
         // "Product Title" serve as the flag if the product is existing or not
@@ -723,9 +720,7 @@ const { isProductCartButtonColor, setisProductCartButtonColor } =
         related: true
       })
     })
-    
     const updateFilter = (colorname, filter) => {
-
       setisProductCartButtonColor(colorname)
       if (options.value) {
         Object.keys(options.value).forEach((attr) => {
@@ -738,15 +733,13 @@ const { isProductCartButtonColor, setisProductCartButtonColor } =
               : options.value[attr][0]
         })
       }
-      console.log(configuration.value,444,filter)
-      // $router.push({
-      //   path: $route?.value?.path,
-      //   query: {
-      //     ...configuration.value,
-      //     ...filter,
-      //     t: new Date().getTime()
-      //   }
-      // })
+      router.push({
+        path: route?.value?.path,
+        query: {
+          ...configuration.value,
+          ...filter
+        }
+      })
     }
 
     return {
@@ -811,7 +804,6 @@ const { isProductCartButtonColor, setisProductCartButtonColor } =
         //   value: 'Germany'
         // }
       ],
-      currentindex: 1,
       description:
         'Find stunning women cocktail and party dresses. Stand out in lace and metallic cocktail dresses and party dresses from all your favorite brands.',
       detailsIsActive: false,
@@ -836,17 +828,9 @@ const { isProductCartButtonColor, setisProductCartButtonColor } =
   updated() {
     this.setGalleryWidth()
   },
+
   // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
   methods: {
-     // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
-    tocheckout(a,colorname){
-    if(a === 0){
-      this.currentindex = 0
-    }else if(a === 1){
-       this.currentindex = 2
-    }
-    this.$refs.SfGallery.go(this.currentindex)
-  },
     // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
     async addingToCart(Productdata) {
       await this.addItem(Productdata).then((res) => {
@@ -1038,7 +1022,6 @@ const { isProductCartButtonColor, setisProductCartButtonColor } =
     margin: 0 var(--spacer-lg) var(--spacer-xs) 0;
     padding: 0 0 0 4px;
   }
-
 
   &__color {
     margin: 0 var(--spacer-2xs);
