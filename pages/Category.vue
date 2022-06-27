@@ -722,9 +722,9 @@ export default {
       margin: var(--spacer-lg) 0;
     }
     &__product-card {
-      margin:60px 0;
-      transform: scale(1.3);
-      flex: 1 1 20%;
+      margin:80px 0 !important;
+      transform: scale(1.4) !important;
+      flex: 1 1 25%;
     }
     &__list {
       margin: 0 0 0 var(--spacer-sm);
