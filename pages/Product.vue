@@ -154,7 +154,7 @@
             </template>
           </SfAlert>
           <SfAddToCart
-            v-model="qty"
+            v-model.lazy="qty"
             :disabled="!productGetters.getStockStatus(product)"
             data-cy="product-cart_add"
             :stock="stock"

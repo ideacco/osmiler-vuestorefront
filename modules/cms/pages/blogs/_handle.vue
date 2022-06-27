@@ -13,7 +13,7 @@
       <div class="navbar__main">
         <div class="navbar__sort desktop-only">
           <span class="navbar__label">Sort by:</span>
-          <SfComponentSelect v-model="selectedSortBy" class="navbar__select">
+          <SfComponentSelect v-model.lazy="selectedSortBy" class="navbar__select">
             <SfComponentSelectOption
               v-for="option in sortByOptions"
               :key="option.value"

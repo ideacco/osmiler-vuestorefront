@@ -96,7 +96,7 @@
               />
             </div>
             <SfAddToCart
-              v-model="qty"
+              v-model.lazy="qty"
               data-cy="product-cart_add"
               :stock="stock"
               :disabled="loading"

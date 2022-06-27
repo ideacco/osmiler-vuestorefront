@@ -417,13 +417,11 @@ export default {
       await search(th.getFacetsFromURL())
     })
     const productsQuantity = ref({})
-
     const { isFacetColor } = useUiHelpers()
     const { toggleCategoryGridView } = useUiState()
-
     onMounted(() => {
       context.root.$scrollTo(context.root.$el, 2000)
-    })
+})
 
     return {
       ...uiState,

@@ -92,7 +92,7 @@
           <div v-if="totalItems">
             <div v-if="!appliedCoupon" class="coupon-form-wrapper">
               <SfInput
-                v-model="couponcode"
+                v-model.lazy="couponcode"
                 :value="couponcode"
                 label="Apply coupon"
                 type="text"

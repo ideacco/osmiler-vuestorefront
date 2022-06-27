@@ -14,7 +14,7 @@
             class="col-6"
           >
             <SfInput
-              v-model="form.firstName"
+              v-model.lazy="form.firstName"
               data-cy="billing-details-input_firstName"
               name="firstName"
               label="First Name"
@@ -30,7 +30,7 @@
             class="col-6"
           >
             <SfInput
-              v-model="form.lastName"
+              v-model.lazy="form.lastName"
               data-cy="billing-details-input_lastName"
               name="lastName"
               label="Last Name"
@@ -48,7 +48,7 @@
             class="col-6"
           >
             <SfInput
-              v-model="form.streetName"
+              v-model.lazy="form.streetName"
               data-cy="billing-details-input_streetName"
               name="streetName"
               label="Street Name"
@@ -64,7 +64,7 @@
             class="col-6"
           >
             <SfInput
-              v-model="form.apartment"
+              v-model.lazy="form.apartment"
               data-cy="billing-details-input_apartment"
               name="apartment"
               label="House/Apartment number"
@@ -82,7 +82,7 @@
             class="col-6"
           >
             <SfInput
-              v-model="form.city"
+              v-model.lazy="form.city"
               data-cy="billing-details-input_city"
               name="city"
               label="City"
@@ -99,7 +99,7 @@
             class="col-6"
           >
             <SfSelect
-              v-model="form.country"
+              v-model.lazy="form.country"
               data-cy="billing-details-country_state"
               class="form__select sf-select--underlined form__element"
               name="country"
@@ -123,7 +123,7 @@
             class="col-12"
           >
             <SfSelect
-              v-model="form.state"
+              v-model.lazy="form.state"
               data-cy="billing-details-input_state"
               class="form__select sf-select--underlined form__element"
               name="state"
@@ -150,7 +150,7 @@
             class="col-6"
           >
             <SfInput
-              v-model="form.postalCode"
+              v-model.lazy="form.postalCode"
               data-cy="billing-details-input_zipCode"
               name="zipCode"
               label="Zipcode"
@@ -161,7 +161,7 @@
           </ValidationProvider>
           <ValidationProvider tag="div" class="col-6">
             <SfInput
-              v-model="form.company"
+              v-model.lazy="form.company"
               data-cy="billing-details-input_company"
               name="company"
               label="Company"
@@ -176,7 +176,7 @@
             class="col-12"
           >
             <SfInput
-              v-model="form.phone"
+              v-model.lazy="form.phone"
               data-cy="billing-details-input_phoneNumber"
               name="phone"
               label="Phone number"
@@ -189,7 +189,7 @@
         <!-- <div class="action-wrap">
           <SfCheckbox
             data-cy="billing-details-checkbox_isDefault"
-            v-model="form.isDefault"
+            v-model.lazy="form.isDefault"
             name="isDefault"
             label="Set as default"
             class="form__checkbox-isDefault"

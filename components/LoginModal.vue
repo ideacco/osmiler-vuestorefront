@@ -19,7 +19,7 @@
           <form class="form" @submit.prevent="handleSubmit(handleLogin)">
             <ValidationProvider v-slot="{ errors }" rules="required|email">
               <SfInput
-                v-model="form.username"
+                v-model.lazy="form.username"
                 v-e2e="'login-modal-email'"
                 :valid="!errors[0]"
                 :error-message="errors[0]"
@@ -30,7 +30,7 @@
             </ValidationProvider>
             <ValidationProvider v-slot="{ errors }" rules="required">
               <SfInput
-                v-model="form.password"
+                v-model.lazy="form.password"
                 v-e2e="'login-modal-password'"
                 :valid="!errors[0]"
                 :error-message="errors[0]"
@@ -42,7 +42,7 @@
             </ValidationProvider>
             <div>
               <SfCheckbox
-                v-model="rememberMe"
+                v-model.lazy="rememberMe"
                 v-e2e="'login-modal-remember-me'"
                 name="remember-me"
                 label="Remember me"
@@ -95,7 +95,7 @@
           <form class="form" @submit.prevent="handleSubmit(handleForgotten)">
             <ValidationProvider v-slot="{ errors }" rules="required|email">
               <SfInput
-                v-model="form.username"
+                v-model.lazy="form.username"
                 v-e2e="'forgot-modal-email'"
                 :valid="!errors[0]"
                 :error-message="errors[0]"
@@ -142,7 +142,7 @@
           >
             <ValidationProvider v-slot="{ errors }" rules="required|email">
               <SfInput
-                v-model="form.email"
+                v-model.lazy="form.email"
                 v-e2e="'login-modal-email'"
                 :valid="!errors[0]"
                 :error-message="errors[0]"
@@ -153,7 +153,7 @@
             </ValidationProvider>
             <ValidationProvider v-slot="{ errors }" rules="required">
               <SfInput
-                v-model="form.firstName"
+                v-model.lazy="form.firstName"
                 v-e2e="'login-modal-firstName'"
                 :valid="!errors[0]"
                 :error-message="errors[0]"
@@ -164,7 +164,7 @@
             </ValidationProvider>
             <ValidationProvider v-slot="{ errors }" rules="required">
               <SfInput
-                v-model="form.lastName"
+                v-model.lazy="form.lastName"
                 v-e2e="'login-modal-lastName'"
                 :valid="!errors[0]"
                 :error-message="errors[0]"
@@ -175,7 +175,7 @@
             </ValidationProvider>
             <ValidationProvider v-slot="{ errors }" rules="required">
               <SfInput
-                v-model="form.password"
+                v-model.lazy="form.password"
                 v-e2e="'login-modal-password'"
                 :valid="!errors[0]"
                 :error-message="errors[0]"
@@ -190,7 +190,7 @@
               :rules="{ required: { allowFalse: false } }"
             >
               <SfCheckbox
-                v-model="createAccount"
+                v-model.lazy="createAccount"
                 v-e2e="'login-modal-create-account'"
                 :valid="!errors[0]"
                 :error-message="errors[0]"

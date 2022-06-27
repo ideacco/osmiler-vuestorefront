@@ -17,7 +17,7 @@
                   class="col-6"
                 >
                   <SfInput
-                    v-model="form.firstName"
+                    v-model.lazy="form.firstName"
                     data-cy="my-profile-input_firstName"
                     name="firstName"
                     label="First Name"
@@ -33,7 +33,7 @@
                   class="col-6"
                 >
                   <SfInput
-                    v-model="form.lastName"
+                    v-model.lazy="form.lastName"
                     data-cy="my-profile-input_lastName"
                     name="lastName"
                     label="Last Name"
@@ -49,7 +49,7 @@
                 rules="required|email"
               >
                 <SfInput
-                  v-model="form.email"
+                  v-model.lazy="form.email"
                   data-cy="my-profile-input_email"
                   type="email"
                   name="email"
@@ -92,7 +92,7 @@
                   vid="password"
                 >
                   <SfInput
-                    v-model="form.newPassword"
+                    v-model.lazy="form.newPassword"
                     data-cy="my-profile-input_newPassword"
                     type="password"
                     name="newPassword"
@@ -108,7 +108,7 @@
                   rules="required|confirmed:password"
                 >
                   <SfInput
-                    v-model="form.repeatPassword"
+                    v-model.lazy="form.repeatPassword"
                     data-cy="my-profile-input_repeatPassword"
                     type="password"
                     name="repeatPassword"

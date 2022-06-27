@@ -33,7 +33,7 @@
                       class="el-input uk-input"
                       type="email"
                       name="email"
-                      v-model="emailaddress"
+                      v-model.lazy="emailaddress"
                       placeholder="Email address"
                       required
                     />
