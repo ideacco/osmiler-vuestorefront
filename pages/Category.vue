@@ -89,7 +89,7 @@
               v-e2e="'category-product-card'"
               :style="{ '--index': i }"
               :title="productGetters.getName(product)"
-              :image="productGetters.getCoverImage(product)"
+              :image="getProductCoverImage(product)"
               :image-width="$device.isDesktopOrTablet ? 30000 : 30000"
               :image-height="$device.isDesktopOrTablet ? 30000 : 30000"
               :regular-price="
@@ -161,7 +161,7 @@
               :style="{ '--index': i }"
               :title="productGetters.getName(product)"
               :description="productGetters.getDescription(product)"
-              :image="productGetters.getCoverImage(product)"
+              :image="getCoverImage(product)"
               :image-width="$device.isDesktopOrTablet ? 3000 : 3000"
               :image-height="$device.isDesktopOrTablet ? 3000 : 3000"
               :regular-price="
@@ -413,6 +413,25 @@ export default {
       facetGetters.getGrouped(result.value, ['color', 'size'])
     )
     const pagination = computed(() => facetGetters.getPagination(result.value))
+    const getProductCoverImage = (product, size = 'normal') => {
+    let imgResolution = '1500x1500'
+    if (size === 'medium') {
+        imgResolution = '295x295'
+    }
+    else if (size === 'small') {
+        imgResolution = '80x80'
+    }
+    if (product && product._coverImage && product._coverImage.src) {
+        const imgPath = product._coverImage.src.substring(0, product._coverImage.src.lastIndexOf('.'))
+        const imgext = product._coverImage.src.split('.').pop()
+        const resizedImg = imgPath + '_' + imgResolution + '.' + imgext
+        return resizedImg
+    }
+    const image = 'https://cdn.shopify.com/s/files/1/0407/1902/4288/files/placeholder_' + imgResolution + '.jpg?v=1625742127'
+    // return 'https://cdn.shopify.com/s/files/1/0407/1902/4288/files/placeholder_' + imgResolution + '.jpg?v=1625742127'
+    return image
+
+}
     onSSR(async () => {
       await search(th.getFacetsFromURL())
     })
@@ -421,6 +440,7 @@ export default {
     const { toggleCategoryGridView } = useUiState()
     onMounted(() => {
       context.root.$scrollTo(context.root.$el, 2000)
+      console.log(2222,585)
 })
 
     return {
@@ -431,6 +451,7 @@ export default {
       loading,
       productGetters,
       pagination,
+      getProductCoverImage,
       sortBy,
       facets,
       currentCart,
