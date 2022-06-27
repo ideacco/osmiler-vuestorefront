@@ -7,7 +7,10 @@
     <div />
   </SfLoader>
   <div v-else id="product">
-    <SfBreadcrumbs class="breadcrumbs breadcrumbs-center" :breadcrumbs="breadcrumbs">
+    <SfBreadcrumbs
+      class="breadcrumbs breadcrumbs-center"
+      :breadcrumbs="breadcrumbs"
+    >
       <template #link="{ breadcrumb }">
         <nuxt-link
           :data-testid="breadcrumb.text"
@@ -19,15 +22,19 @@
       </template>
     </SfBreadcrumbs>
     <div class="product">
-   <SfGallery
-        :images='productGallery3'
+      <SfGallery
+        :images="productGallery3"
         :imageWidth="1000"
         :imageHeight="1000"
         :thumbWidth="160"
         :thumbHeight="160"
-        ref="SfGallery"
         :current="ActiveVariantImage + 1"
-        :sliderOptions='{"type":"slider","autoplay":false,"rewind":false,"gap":0}'
+        :sliderOptions="{
+          type: 'slider',
+          autoplay: false,
+          rewind: false,
+          gap: 0,
+        }"
         :outsideZoom="false"
         enableZoom
       />
@@ -53,35 +60,37 @@
           <!-- Reviews Here -->
         </div>
         <div class="product__details">
-          <div class="product__description"
-           v-show="
-           ispath ===
-          '/p/Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0Lzc3MTcwNTM0MzIwNjY=/osmiler-swing' ||
-          ispath ===
-          '/p/Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0Lzc3MTcwNTM0MzIwNjY=/osmiler-swing?Color=Silver' ||
-          ispath ===
-          '/p/Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0Lzc3MTcwNTM0MzIwNjY=/osmiler-swing?Color=Deep%20Blue'
-      "
+          <div
+            class="product__description"
+            v-show="
+              ispath ===
+                '/p/Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0Lzc3MTcwNTM0MzIwNjY=/osmiler-swing' ||
+                ispath ===
+                '/p/Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0Lzc3MTcwNTM0MzIwNjY=/osmiler-swing?Color=Silver' ||
+                ispath ===
+                '/p/Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0Lzc3MTcwNTM0MzIwNjY=/osmiler-swing?Color=Deep%20Blue'
+            "
           >
             {{ productdescription1 }}
           </div>
-          <div class="product__description"
-        v-show="
-        ispath ===
-          '/p/Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0Lzc3MTc0MDc1ODg2MTA=/osmiler-swing-head-5pcs' ||
-          ispath ===
-          '/p/Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0Lzc3MTc0MDc1ODg2MTA=/osmiler-swing-head-5pcs?Color=White' ||
-          ispath ===
-          '/p/Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0Lzc3MTc0MDc1ODg2MTA=/osmiler-swing-head-5pcs?Color=Deep%20Blue'||
-           ispath ===
-          '/p/Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0Lzc3MTcwNDc5OTI1Nzg=/osmiler-swing-head-3pcs' ||
-          ispath ===
-          '/p/Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0Lzc3MTcwNDc5OTI1Nzg=/osmiler-swing-head-3pcs?Color=White' ||
-          ispath ===
-          '/p/Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0Lzc3MTcwNDc5OTI1Nzg=/osmiler-swing-head-3pcs?Color=Deep%20Blue'
-      "
+          <div
+            class="product__description"
+            v-show="
+              ispath ===
+                '/p/Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0Lzc3MTc0MDc1ODg2MTA=/osmiler-swing-head-5pcs' ||
+                ispath ===
+                '/p/Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0Lzc3MTc0MDc1ODg2MTA=/osmiler-swing-head-5pcs?Color=White' ||
+                ispath ===
+                '/p/Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0Lzc3MTc0MDc1ODg2MTA=/osmiler-swing-head-5pcs?Color=Deep%20Blue' ||
+                ispath ===
+                '/p/Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0Lzc3MTcwNDc5OTI1Nzg=/osmiler-swing-head-3pcs' ||
+                ispath ===
+                '/p/Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0Lzc3MTcwNDc5OTI1Nzg=/osmiler-swing-head-3pcs?Color=White' ||
+                ispath ===
+                '/p/Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0Lzc3MTcwNDc5OTI1Nzg=/osmiler-swing-head-3pcs?Color=Deep%20Blue'
+            "
           >
-             {{ productdescription2 }}
+            {{ productdescription2 }}
           </div>
           <div
             v-if="options && Object.keys(options).length > 0"
@@ -114,11 +123,11 @@
               >
                 <label class="product__color-label">{{ $t(key) }}</label>
                 <div class="product__flex-break"></div>
-              <SfButton
+                <SfButton
                   v-for="(attribs, a) in option"
                   @click="
                     ;(atttLbl = key),
-                      updateFilter(attribs, { [atttLbl]: attribs },)
+                      updateFilter(attribs, { [atttLbl]: attribs })
                   "
                   :class="{ active: attribs == isProductCartButtonColor }"
                   :key="a"
@@ -155,7 +164,7 @@
             <template #add-to-cart-btn>
               <SfButton
                 class="sf-add-to-cart__button SfButtontwo"
-                :disabled=" !productGetters.getStockStatus(product)"
+                :disabled="!productGetters.getStockStatus(product)"
                 @click="
                   addingToCart({
                     product,
@@ -178,7 +187,7 @@
               <SfButton
                 v-else
                 class="sf-button--full-width sf-proceed_to_checkout SfButtontwo"
-                :disabled=" !productGetters.getStockStatus(product)"
+                :disabled="!productGetters.getStockStatus(product)"
                 @click="
                   addingToCarts({
                     product,
@@ -240,7 +249,7 @@
         </LazyHydrate>
       </div>
     </div>
-        <!-- <GridList /> -->
+    <!-- <GridList /> -->
     <div
       v-show="
         ispath ===
@@ -471,7 +480,6 @@
     >
       <Toothbrushheadfooter />
     </div>
-
   </div>
 </template>
 <script>
@@ -627,7 +635,7 @@ export default {
     const configuration = computed(() => {
       return productGetters.getSelectedVariant(route?.value?.query)
     })
-const { isProductCartButtonColor, setisProductCartButtonColor } =
+    const { isProductCartButtonColor, setisProductCartButtonColor } =
       useUiState()
     const ispath = route.value.fullPath
     const setBreadcrumb = () => {
@@ -682,31 +690,36 @@ const { isProductCartButtonColor, setisProductCartButtonColor } =
       return productGetters.getVariantImage(product.value) || 0
     })
 
-    const getProductGallery = (product) => (product ? product.images : []).map((image) => {
-      const imgPath = image.originalSrc.substring(0, image.originalSrc.lastIndexOf('.'))
-      const imgext = image.originalSrc.split('.').pop()
-      const imgSmall = imgPath + '_160x160.' + imgext
-      const imgBig = imgPath + '_295x295.' + imgext
-      const imgNormal = imgPath + '_1500x1500.' + imgext
-      return ({
-        small: imgSmall,
-        big: imgBig,
-        normal: imgNormal
+    const getProductGallery = (product) =>
+      (product ? product.images : []).map((image) => {
+        const imgPath = image.originalSrc.substring(
+          0,
+          image.originalSrc.lastIndexOf('.')
+        )
+        const imgext = image.originalSrc.split('.').pop()
+        const imgSmall = imgPath + '_160x160.' + imgext
+        const imgBig = imgPath + '_295x295.' + imgext
+        const imgNormal = imgPath + '_1500x1500.' + imgext
+        return {
+          small: imgSmall,
+          big: imgBig,
+          normal: imgNormal
+        }
       })
-    })
-    const productGallery3 = computed(() =>{
-      const img = getProductGallery(product.value).map((img) => {
-        // console.log('img?',img)
-        return ({
-          mobile: { url: img.small },
-          desktop: { url: img.normal },
-          big: { url: img.big },
-          alt: product.value._name || product.value.name
+    const productGallery3 = computed(() => {
+      const img = getProductGallery(product.value)
+        .map((img) => {
+          // console.log('img?',img)
+          return {
+            mobile: { url: img.small },
+            desktop: { url: img.normal },
+            big: { url: img.big },
+            alt: product.value._name || product.value.name
+          }
         })
-      }).slice(0,4)
+        .slice(0, 4)
       return img
-    }
-    )
+    })
 
     onSSR(async () => {
       await search({ slug, selectedOptions: configuration.value }).then(() => {
@@ -725,7 +738,6 @@ const { isProductCartButtonColor, setisProductCartButtonColor } =
     })
 
     const updateFilter = (colorname, filter) => {
-
       setisProductCartButtonColor(colorname)
       if (options.value) {
         Object.keys(options.value).forEach((attr) => {
@@ -738,15 +750,14 @@ const { isProductCartButtonColor, setisProductCartButtonColor } =
               : options.value[attr][0]
         })
       }
-      console.log(configuration.value,444,filter)
-      // $router.push({
-      //   path: $route?.value?.path,
-      //   query: {
-      //     ...configuration.value,
-      //     ...filter,
-      //     t: new Date().getTime()
-      //   }
-      // })
+      console.log(configuration.value, 444, filter)
+      $router.push({
+        path: $route?.value?.path,
+        query: {
+          ...configuration.value,
+          ...filter
+        }
+      })
     }
 
     return {
@@ -791,8 +802,10 @@ const { isProductCartButtonColor, setisProductCartButtonColor } =
   // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
   data() {
     return {
-      productdescription1: '\r\n✔️\tEnjoy music while brushin\r\n✔️\tUpload music to toothbrush via Bluetooth or PC\r\n✔️\tConstant high-frequency vibration\r\n✔️\tW-shaped three-dimensional cutting toothhead\r\n✔️\tThree built-in classic vibrating modes',
-      productdescription2: '\r\n✔️\tFood-grade Dupont brush\r\n✔️\tW-shaped three-dimensional cutting\r\n✔️\tThe rounded top',
+      productdescription1:
+        '\r\n✔️\tEnjoy music while brushin\r\n✔️\tUpload music to toothbrush via Bluetooth or PC\r\n✔️\tConstant high-frequency vibration\r\n✔️\tW-shaped three-dimensional cutting toothhead\r\n✔️\tThree built-in classic vibrating modes',
+      productdescription2:
+        '\r\n✔️\tFood-grade Dupont brush\r\n✔️\tW-shaped three-dimensional cutting\r\n✔️\tThe rounded top',
       properties: [
         // {
         //   name: 'Product Code',
@@ -838,7 +851,7 @@ const { isProductCartButtonColor, setisProductCartButtonColor } =
   },
   // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
   methods: {
-     // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
+    // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
     // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
     async addingToCart(Productdata) {
       await this.addItem(Productdata).then((res) => {
@@ -852,7 +865,7 @@ const { isProductCartButtonColor, setisProductCartButtonColor } =
         this.qty = 1
       })
     },
-    async addingToCarts (Productdata) {
+    async addingToCarts(Productdata) {
       await this.addItem(Productdata).then((res) => {
         this.sendNotification({
           key: 'product_added',
@@ -915,7 +928,7 @@ const { isProductCartButtonColor, setisProductCartButtonColor } =
 }
 
 #product {
---loader-spinner-stroke: #fff !important;
+  --loader-spinner-stroke: #fff !important;
 }
 .SfButtontwo {
   width: 300px;
@@ -1031,7 +1044,6 @@ const { isProductCartButtonColor, setisProductCartButtonColor } =
     padding: 0 0 0 4px;
   }
 
-
   &__color {
     margin: 0 var(--spacer-2xs);
   }
@@ -1124,7 +1136,7 @@ const { isProductCartButtonColor, setisProductCartButtonColor } =
 .sf-price__special {
   position: relative;
   top: 50px;
-  left:0;
+  left: 0;
   font-size: 48px;
   background: #fff;
 }
