@@ -23,6 +23,8 @@
     </SfBreadcrumbs>
     <div class="product">
       <SfGallery
+        id="SfGallery"
+        ref="SfGallery"
         :images="productGallery3"
         :imageWidth="1000"
         :imageHeight="1000"
@@ -490,7 +492,6 @@ import {
   SfSelect,
   SfAddToCart,
   SfTabs,
-  SfGallery,
   SfIcon,
   SfAlert,
   SfBreadcrumbs,
@@ -498,7 +499,7 @@ import {
   SfButton,
   SfColor
 } from '@storefront-ui/vue'
-
+import SfGallery from '~/components/Strontui/SfGallery'
 import Certificate from '~/components/Home/Certificate'
 import Contact from '~/components/Home/Contact'
 // import GridList from '~/components/Home/GridList'
@@ -836,6 +837,7 @@ export default {
 
   // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
   mounted() {
+    console.log(this.$refs, 5858588)
     window.addEventListener('load', () => {
       this.setGalleryWidth()
     })
@@ -1008,7 +1010,6 @@ export default {
     text-decoration: none;
     margin: 0 0 0 var(--spacer-xs);
   }
-
   &__details {
     margin: 0 var(--spacer-sm) var(--spacer-base);
 
@@ -1189,9 +1190,15 @@ export default {
     }
   }
 }
+::v-deep.sf-image--placeholder {
+  display: none;
+}
 
 ::v-deep .product__color {
   border: 1px solid;
+}
+::v-deep .display-none {
+  display: none !important;
 }
 
 @keyframes moveicon {
