@@ -83,14 +83,15 @@
             class="products__grid"
           >
             <SfProductCard
+              ref="SfProductCard"
               v-for="(product, i) in products"
               :key="productGetters.getId(product)"
               v-e2e="'category-product-card'"
               :style="{ '--index': i }"
               :title="productGetters.getName(product)"
               :image="productGetters.getCoverImage(product)"
-              :image-width="$device.isDesktopOrTablet ? 3000 : 3000"
-              :image-height="$device.isDesktopOrTablet ? 3000 : 3000"
+              :image-width="$device.isDesktopOrTablet ? 30000 : 30000"
+              :image-height="$device.isDesktopOrTablet ? 30000 : 30000"
               :regular-price="
                 $n(productGetters.getPrice(product).regular, 'currency')
               "
@@ -153,6 +154,7 @@
             class="products__list"
           >
             <SfProductCardHorizontal
+              ref="SfProductCardHorizontal"
               v-for="(product, i) in products"
               :key="productGetters.getId(product)"
               data-cy="category-product-cart_wishlist"
