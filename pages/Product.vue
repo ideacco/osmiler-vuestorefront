@@ -7,7 +7,7 @@
     <div />
   </SfLoader>
   <div v-else id="product">
-    <SfBreadcrumbs class="breadcrumbs breadcrumbs-center"  :breadcrumbs="breadcrumbs">
+    <SfBreadcrumbs class="breadcrumbs breadcrumbs-center" :breadcrumbs="breadcrumbs">
       <template #link="{ breadcrumb }">
         <nuxt-link
           :data-testid="breadcrumb.text"
@@ -19,12 +19,13 @@
       </template>
     </SfBreadcrumbs>
     <div class="product">
-    <SfGallery
-        :images='productGallery'
+   <SfGallery
+        :images='productGallery3'
         :imageWidth="1000"
         :imageHeight="1000"
         :thumbWidth="160"
         :thumbHeight="160"
+        ref="SfGallery"
         :current="ActiveVariantImage + 1"
         :sliderOptions='{"type":"slider","autoplay":false,"rewind":false,"gap":0}'
         :outsideZoom="false"
@@ -51,7 +52,7 @@
           />
           <!-- Reviews Here -->
         </div>
-            <div class="product__details">
+        <div class="product__details">
           <div class="product__description"
            v-show="
            ispath ===
@@ -575,7 +576,7 @@ export default {
     })
   },
   transition: 'fade',
-  setup() {
+  setup(__, context) {
     const { isCartSidebarOpen, toggleCartSidebar } = useUiState()
     const route = useRoute()
     const router = useRouter()
@@ -613,7 +614,7 @@ export default {
         window.location.href = checkoutUrl
       }, 300)
     }
-
+    const { $router, $route } = context.root
     const productDescription = computed(() =>
       productGetters.getDescription(product.value)
     )
@@ -626,7 +627,7 @@ export default {
     const configuration = computed(() => {
       return productGetters.getSelectedVariant(route?.value?.query)
     })
-    const { isProductCartButtonColor, setisProductCartButtonColor } =
+const { isProductCartButtonColor, setisProductCartButtonColor } =
       useUiState()
     const ispath = route.value.fullPath
     const setBreadcrumb = () => {
@@ -680,7 +681,8 @@ export default {
     const ActiveVariantImage = computed(() => {
       return productGetters.getVariantImage(product.value) || 0
     })
- const getProductGallery = (product) => (product ? product.images : []).map((image) => {
+
+    const getProductGallery = (product) => (product ? product.images : []).map((image) => {
       const imgPath = image.originalSrc.substring(0, image.originalSrc.lastIndexOf('.'))
       const imgext = image.originalSrc.split('.').pop()
       const imgSmall = imgPath + '_160x160.' + imgext
@@ -705,6 +707,7 @@ export default {
       return img
     }
     )
+
     onSSR(async () => {
       await search({ slug, selectedOptions: configuration.value }).then(() => {
         // "Product Title" serve as the flag if the product is existing or not
@@ -720,7 +723,9 @@ export default {
         related: true
       })
     })
+
     const updateFilter = (colorname, filter) => {
+
       setisProductCartButtonColor(colorname)
       if (options.value) {
         Object.keys(options.value).forEach((attr) => {
@@ -733,13 +738,15 @@ export default {
               : options.value[attr][0]
         })
       }
-      router.push({
-        path: route?.value?.path,
-        query: {
-          ...configuration.value,
-          ...filter
-        }
-      })
+      console.log(configuration.value,444,filter)
+      // $router.push({
+      //   path: $route?.value?.path,
+      //   query: {
+      //     ...configuration.value,
+      //     ...filter,
+      //     t: new Date().getTime()
+      //   }
+      // })
     }
 
     return {
@@ -804,6 +811,7 @@ export default {
         //   value: 'Germany'
         // }
       ],
+      currentindex: 1,
       description:
         'Find stunning women cocktail and party dresses. Stand out in lace and metallic cocktail dresses and party dresses from all your favorite brands.',
       detailsIsActive: false,
@@ -828,9 +836,9 @@ export default {
   updated() {
     this.setGalleryWidth()
   },
-
   // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
   methods: {
+     // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
     // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
     async addingToCart(Productdata) {
       await this.addItem(Productdata).then((res) => {
@@ -1022,6 +1030,7 @@ export default {
     margin: 0 var(--spacer-lg) var(--spacer-xs) 0;
     padding: 0 0 0 4px;
   }
+
 
   &__color {
     margin: 0 var(--spacer-2xs);
