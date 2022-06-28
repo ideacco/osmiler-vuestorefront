@@ -101,6 +101,16 @@ export default {
       route
     }
   },
+/* eslint-disable  */
+   mounted() {
+    //* eslint-disable  */
+    if (process.browser) {
+      this.$gtag('config', 'UA-XXXX-XXX', {
+        // page_title: this.$metaInfo.title,
+        page_path: this.$route.fullPath,
+      })
+    }
+  },
   methods: {
     getData(msg) {
       // console.log('父页面信息', msg)

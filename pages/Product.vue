@@ -837,7 +837,7 @@ export default {
 
   // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
   mounted() {
-    console.log(this.$refs, 5858588)
+    // console.log(this.$refs, 5858588)
     window.addEventListener('load', () => {
       this.setGalleryWidth()
     })
