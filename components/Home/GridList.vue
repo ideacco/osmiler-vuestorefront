@@ -149,7 +149,7 @@ export default {
   },
   methods: {
     jump(index) {
-      console.log(this.$parent, 444)
+      // console.log(this.$parent, 444)
     }
   }
 }

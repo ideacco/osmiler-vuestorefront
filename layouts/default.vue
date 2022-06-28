@@ -103,7 +103,7 @@ export default {
   },
   methods: {
     getData(msg) {
-      console.log('父页面信息', msg)
+      // console.log('父页面信息', msg)
     }
   }
 }

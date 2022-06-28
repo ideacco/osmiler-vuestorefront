@@ -229,7 +229,7 @@ export default {
       })
 
       proxy.$UIkit.util.on('.uk-navbar-container', 'inactive', () => {
-        console.log('导航栏活动状态', 88)
+        // console.log('导航栏活动状态', 88)
         isActive.value = false
       })
     })
@@ -320,7 +320,7 @@ export default {
 
   watch: {
     isUserAuthenticated(val) {
-      console.log('isUserAuthenticated', val)
+      // console.log('isUserAuthenticated', val)
     }
     // isNavbarTransparent(Transparent) {
     //   console.log('切换导航监听',Transparent)
@@ -331,7 +331,7 @@ export default {
 
   methods: {
     navJump(category, key) {
-      console.log('navJump', category.name)
+      // console.log('navJump', category.name)
       this.navActive = category.name
       this.$router.push({ path: category.path })
     }

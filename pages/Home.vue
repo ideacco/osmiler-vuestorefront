@@ -72,7 +72,7 @@ export default {
       setNavbarTransparent
     } = useUiState()
     onMounted(() => {
-      console.log('子页面初始化!,设置透明导航')
+      // console.log('子页面初始化!,设置透明导航')
       setNavbarTransparent(true)
     })
 
@@ -82,7 +82,7 @@ export default {
     }
     // console.log(Home, 444)
     onUnmounted(() => {
-      console.log('子页面卸载!,清除透明导航')
+      // console.log('子页面卸载!,清除透明导航')
       setNavbarTransparent(false)
     })
 

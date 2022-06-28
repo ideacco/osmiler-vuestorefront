@@ -1,7 +1,7 @@
 // eslint-disable-next-line nuxt/no-cjs-in-config
 require('isomorphic-fetch')
 
-console.log('当前服务状态:', process.env.NODE_ENV)
+// console.log('当前服务状态:', process.env.NODE_ENV)
 
 
 import webpack from 'webpack'
@@ -262,8 +262,6 @@ const config = {
     ],
     extend(config,ctx) {
       config.resolve.extensions.push('.mjs')
-      config.output.filename=`js/[name].${Timestamp}.js`
-      config.output.chunkFilename=`js/[name].${Timestamp}.js`
       config.module.rules.push({
         test: /\.mjs$/,
         include: /node_modules/,
@@ -287,37 +285,37 @@ const config = {
       description: 'let your smile light up the world',
       icons: [
         {
-          src: '/icons/android-icon-48x48.png',
+          src: '/icons/LOGO.png',
           sizes: '48x48',
           type: 'image/png',
         },
         {
-          src: '/icons/android-icon-72x72.png',
+          src: '/icons/LOGO-1.png',
           sizes: '72x72',
           type: 'image/png',
         },
         {
-          src: '/icons/android-icon-96x96.png',
+          src: '/icons/LOGO-2.png',
           sizes: '96x96',
           type: 'image/png',
         },
         {
-          src: '/icons/android-icon-144x144.png',
+          src: '/icons/LOGO-3.png',
           sizes: '144x144',
           type: 'image/png',
         },
         {
-          src: '/icons/android-icon-168x168.png',
+          src: '/icons/LOGO-4.png',
           sizes: '168x168',
           type: 'image/png',
         },
         {
-          src: '/icons/android-icon-192x192.png',
+          src: '/icons/LOGO-5.png',
           sizes: '192x192',
           type: 'image/png',
         },
         {
-          src: '/icons/android-icon-512x512.png',
+          src: '/icons/LOGO-6.png',
           sizes: '512x512',
           type: 'image/png',
         },

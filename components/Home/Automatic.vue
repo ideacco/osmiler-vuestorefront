@@ -56,7 +56,7 @@
                   srcset="
                     /wp-content/themes/yootheme/cache/bcb99328.jpeg      768w,
                     /wp-content/themes/yootheme/cache/41ca3e58.jpeg     1024w,
-                    /wp-content/themes/yootheme/cache/uk-width-1-1.jpeg 1366w,
+                    /wp-content/themes/yootheme/cache/4ea1db57.jpeg 1366w,
                     /wp-content/themes/yootheme/cache/4ea1db57.jpeg     1510w
                   "
                   sizes="(min-width: 1510px) 1510px"

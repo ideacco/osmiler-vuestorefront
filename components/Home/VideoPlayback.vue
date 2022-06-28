@@ -156,7 +156,7 @@ export default {
 
     // 销毁时解绑事件
     onUnmounted(() => {
-      console.log('unmount,销毁')
+      // console.log('unmount,销毁')
       if (process.client) {
         window.onresize = null
       }
