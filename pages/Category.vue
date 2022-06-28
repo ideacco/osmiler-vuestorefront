@@ -154,14 +154,13 @@
             class="products__list"
           >
             <SfProductCardHorizontal
-              ref="SfProductCardHorizontal"
               v-for="(product, i) in products"
               :key="productGetters.getId(product)"
               data-cy="category-product-cart_wishlist"
               :style="{ '--index': i }"
               :title="productGetters.getName(product)"
               :description="productGetters.getDescription(product)"
-              :image="getCoverImage(product)"
+              :image="getProductCoverImage(product)"
               :image-width="$device.isDesktopOrTablet ? 3000 : 3000"
               :image-height="$device.isDesktopOrTablet ? 3000 : 3000"
               :regular-price="
@@ -357,7 +356,6 @@ import {
   SfHeading,
   SfFilter,
   SfProductCard,
-  SfProductCardHorizontal,
   SfPagination,
   SfAccordion,
   SfSelect,
@@ -369,6 +367,7 @@ import {
   SfLink,
   SfImage
 } from '@storefront-ui/vue'
+import SfProductCardHorizontal from '~/components/Strontui/SfProductCardHorizontal'
 import { computed, onMounted, ref } from '@nuxtjs/composition-api'
 import {
   useCart,
@@ -430,7 +429,6 @@ export default {
     const image = 'https://cdn.shopify.com/s/files/1/0407/1902/4288/files/placeholder_' + imgResolution + '.jpg?v=1625742127'
     // return 'https://cdn.shopify.com/s/files/1/0407/1902/4288/files/placeholder_' + imgResolution + '.jpg?v=1625742127'
     return image
-
 }
     onSSR(async () => {
       await search(th.getFacetsFromURL())
@@ -740,11 +738,6 @@ export default {
     }
     &__product-card-horizontal {
       margin: var(--spacer-lg) 0;
-    }
-    &__product-card {
-      margin:80px 0 !important;
-      transform: scale(1.4) !important;
-      flex: 1 1 25%;
     }
     &__list {
       margin: 0 0 0 var(--spacer-sm);

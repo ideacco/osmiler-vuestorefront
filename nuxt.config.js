@@ -3,7 +3,6 @@ require('isomorphic-fetch')
 
 // console.log('当前服务状态:', process.env.NODE_ENV)
 
-
 import webpack from 'webpack'
 // const platformENV = process.env.NODE_ENV !== 'production' ? 'http' : 'https'
 const Timestamp = new Date().getTime()
@@ -130,8 +129,8 @@ const config = {
   },
   publicRuntimeConfig: {
     googleAnalytics: {
-      id: process.env.GOOGLE_ANALYTICS_ID
-    }
+      id: process.env.GOOGLE_ANALYTICS_ID,
+    },
   },
   css: [
     {
@@ -145,6 +144,7 @@ const config = {
     'cookie-universal-nuxt',
     'vue-scrollto/nuxt',
     '@vue-storefront/middleware/nuxt',
+
     '@nuxtjs/sitemap',
     './modules/cms/runtime',
     '@nuxt/image',
@@ -156,17 +156,19 @@ const config = {
       anonymize_ip: true, // anonymize IP
       send_page_view: false, // might be necessary to avoid duplicated page track on page reload
       linker: {
-        domains: ['domain.com','domain.org']
-      }
+        domains: ['domain.com', 'domain.org'],
+      },
     },
     debug: true, // enable to track in dev mode
     disableAutoPageTrack: false, // disable if you don't want to track each page route with router.afterEach(...).
-    additionalAccounts: [{
-      id: 'AW-XXXX-XX', // required if you are adding additional accounts
-      config: {
-        send_page_view: false // optional configurations
-      }
-    }]
+    additionalAccounts: [
+      {
+        id: 'AW-XXXX-XX', // required if you are adding additional accounts
+        config: {
+          send_page_view: false, // optional configurations
+        },
+      },
+    ],
   },
   axios: {
     proxy: true,
@@ -288,7 +290,7 @@ const config = {
         }),
       }),
     ],
-    extend(config,ctx) {
+    extend(config, ctx) {
       config.resolve.extensions.push('.mjs')
       config.module.rules.push({
         test: /\.mjs$/,
