@@ -3,8 +3,10 @@ require('isomorphic-fetch')
 
 console.log('当前服务状态:', process.env.NODE_ENV)
 
+
 import webpack from 'webpack'
 // const platformENV = process.env.NODE_ENV !== 'production' ? 'http' : 'https'
+const Timestamp = new Date().getTime()
 const config = {
   server: {
     port: process.env.APP_PORT || 8888,
@@ -258,9 +260,10 @@ const config = {
         }),
       }),
     ],
-    extend(config) {
+    extend(config,ctx) {
       config.resolve.extensions.push('.mjs')
-
+      config.output.filename=`js/[name].${Timestamp}.js`
+      config.output.chunkFilename=`js/[name].${Timestamp}.js`
       config.module.rules.push({
         test: /\.mjs$/,
         include: /node_modules/,

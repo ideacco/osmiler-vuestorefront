@@ -225,7 +225,7 @@
                 </template>
               </SfProperty>
             </SfTab>
-            <SfTab
+            <!-- <SfTab
               :title="$t('Additional Information')"
               data-cy="product-tab_additional"
               class="product__additional-info"
@@ -233,12 +233,12 @@
               <div class="product__additional-info">
                 <p class="product__additional-info__title">
                   {{ $t('Brand') }}
-                </p>
+                </p> -->
                 <!-- <p>{{ brand }}</p>
                 <p class="product__additional-info__title">
                   {{ $t('Instruction1') }}
                 </p> -->
-                <p class="product__additional-info__paragraph">
+                <!-- <p class="product__additional-info__paragraph">
                   {{ $t('Instruction2') }}
                 </p>
                 <p class="product__additional-info__paragraph">
@@ -246,7 +246,7 @@
                 </p>
                 <p>{{ careInstructions }}</p>
               </div>
-            </SfTab>
+            </SfTab> -->
           </SfTabs>
         </LazyHydrate>
       </div>
