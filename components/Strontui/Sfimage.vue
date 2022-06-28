@@ -49,7 +49,8 @@
   </span>
 </template>
 <script>
-import imagePlaceholder from '/static/homepage/WechatIMG50.jpeg'
+/* eslint-disable  */
+import imagePlaceholder from '/static/homepage/white.svg'
 
 export default {
   name: 'SfImage',
@@ -206,7 +207,9 @@ export default {
     formatResolution(resolution) {
       return ('' + resolution).endsWith('x') ? resolution : `${resolution}x`
     },
+    /* eslint-disable  */
     formatDimension(size) {
+      /* eslint-disable @typescript-eslint/explicit-module-boundary-types */
       if (typeof size === null) return
       if (
         ['%'].includes(`${size}`.slice(-1)) ||

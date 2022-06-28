@@ -207,7 +207,11 @@ export default {
     definedPicture() {
       const { zoom, big, desktop } = this.pictureSelected
       const definedPicture = zoom || big || desktop
+      /* eslint-disable @typescript-eslint/explicit-module-boundary-types */
+      /* eslint-disable  */
       definedPicture ? (definedPicture.alt = this.pictureSelected?.alt) : null
+      /* eslint-disable @typescript-eslint/explicit-module-boundary-types */
+      /* eslint-disable  */
       definedPicture
         ? (definedPicture.placeholder = this.pictureSelected?.placeholder)
         : null
