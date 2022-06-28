@@ -80,7 +80,7 @@
                     When noise turns to music.
                   </h1>
                   <div class="uk-panel uk-margin uk-text-left@m uk-text-left">
-                    <p style="margin-top: -15px !important">
+                    <p style="margin-top: -16px !important">
                       Are you tired of the noise of an electric toothbrush? Our
                       sonic electric toothbrush is both a stereo and a musical
                       instrument, allowing wonderful melodies and dynamic
