@@ -4,7 +4,7 @@
       class="uk-visible@m uk-section-primary uk-cover-container uk-section uk-padding-remove-vertical uk-flex uk-flex-middle"
       tm-header-transparent="light"
       uk-height-viewport="offset-top: true;"
-      :style="{ marginTop: innerWidth > 940 ? '-80px' : '0px' }"
+      :style="{ marginTop: innerWidth > 940 ? '-100px' : '0px' }"
     >
       <!-- <video
         src="/homepage/Osmiler_video.mp4"
