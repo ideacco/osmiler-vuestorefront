@@ -83,7 +83,6 @@
             class="products__grid"
           >
             <SfProductCard
-              ref="SfProductCard"
               v-for="(product, i) in products"
               :key="productGetters.getId(product)"
               v-e2e="'category-product-card'"
@@ -818,5 +817,10 @@ export default {
     --button-color: var(--c-dark-variant);
     margin: var(--spacer-xs) 0 0 0;
   }
+}
+::v-deep.products__product-card-horizontal{
+  @include for-desktop {
+    margin: 20px 0;
+    }
 }
 </style>

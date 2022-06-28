@@ -133,10 +133,10 @@ import {
   SfIcon,
   SfLink,
   SfRating,
-  SfImage,
   SfButton,
   SfAddToCart
 } from '@storefront-ui/vue'
+import SfImage from './Sfimage.vue'
 
 export default {
   name: 'SfProductCardHorizontal',
@@ -257,6 +257,169 @@ export default {
   }
 }
 </script>
-<style lang="scss">
-@import '~@storefront-ui/shared/styles/components/organisms/SfProductCardHorizontal.scss';
+<style lang="scss" scoped>
+@import '~@storefront-ui/shared/styles/helpers';
+.sf-product-card-horizontal {
+  display: flex;
+  box-sizing: border-box;
+  padding: var(--product-card-horizontal-padding, var(--spacer-xs));
+  background-color: var(--product-card-horizontal-background, var(--c-white));
+  --property-value-font-weight: var(--font-weight--normal);
+  @include for-desktop {
+   height: 220px;
+  }
+  &__link {
+    color: inherit;
+    text-decoration: inherit;
+    &--image {
+      display: block;
+      line-height: 0;
+    }
+  }
+  &__image-wrapper {
+    flex: 0 0 var(--product-card-horizontal-image-width, 5.3125rem);
+    position: relative;
+    &:hover {
+      --product-card-horizontal-image-opacity: 1;
+      --product-card-horizontal-image-even-opacity: 1;
+    }
+  }
+  &__image,
+  &__picture {
+    --image-width: var(--product-card-horizontal-image-width, 100%);
+    --image-height: var(--product-card-horizontal-image-height, auto);
+    transition: var(
+      --product-card-horizontal-image-transition,
+      opacity 150ms ease-in-out
+    );
+    opacity: var(--product-card-horizontal-image-opacity);
+    &:nth-child(even) {
+      position: absolute;
+      top: 0;
+      left: 0;
+      opacity: var(--product-card-horizontal-image-even-opacity, 0);
+    }
+  }
+  &__main {
+    position: relative;
+    display: flex;
+    flex: 1;
+    flex-direction: var(--product-card-horizontal-flex-direction, column);
+    padding: var(
+      --product-card-horizontal-main-padding,
+      0 0 0 var(--spacer-sm)
+    );
+  }
+  &__details,
+  &__actions-wrapper {
+    display: flex;
+    flex-direction: column;
+  }
+  &__actions-wrapper {
+    flex: 1;
+    align-items: var(--product-card-horizontal-actions-wrapper, flex-start);
+    margin: var(--product-card-horizontal-actions-wrapper-margin);
+  }
+  &__title {
+    margin: 0;
+    color: var(--c-link);
+    color: var(--product-card-horizontal-title-color, var(--c-link));
+    @include font(
+      --product-card-horizontal-title-font,
+      var(--font-weight--medium),
+      var(--font-size--base),
+      1.6,
+      var(--font-family--secondary)
+    );
+  }
+  &__description {
+    margin: var(
+      --product-card-horizontal-description-margin,
+      var(--spacer-sm) 0
+    );
+    color: var(--product-card-horizontal-description-color, var(--c-text-muted));
+    @include font(
+      --product-card-horizontal-description-font,
+      var(--font-weight--normal),
+      var(--font-size--base),
+      1.6,
+      var(--font-family--primary)
+    );
+  }
+  &__configuration {
+    margin: var(--product-card-horizontal-configuration-margin, 0);
+  }
+  &__reviews {
+    display: flex;
+    align-items: center;
+    margin: var(--product-card-horizontal-review-margin, auto 0 0 0);
+    @include font(
+      --product-card-horizontal-reviews-font,
+      var(--font-weight--light),
+      var(--font-size--sm),
+      1.4,
+      var(--font-family--secondary)
+    );
+    &-count {
+      --button-font-size: var(--font-size--sm);
+      --button-font-weight: var(--font-weight--light);
+      color: var(--c-text);
+      text-decoration: none;
+      margin: 0 0 0 var(--spacer-xs);
+    }
+  }
+  &__actions {
+    margin: var(--product-card-horizontal-actions-margin, 0);
+  }
+  &__add-to-cart {
+    margin: var(--product-card-horizontal-add-to-cart-margin, 0);
+  }
+  &__wishlist-icon {
+    --icon-color: var(--c-dark-variant);
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+  &:hover {
+    box-shadow: var(--product-card-horizontal-box-shadow, 0px 4px 11px rgba(29, 31, 34, 0.1));
+  }
+  @include for-desktop {
+    --product-card-horizontal-flex-direction: row;
+    --product-card-horizontal-image-width: 8.75rem;
+    --product-card-horizontal-padding: var(--spacer-xs) var(--spacer-sm) var(--spacer-xs) var(--spacer-xs);
+    --product-card-horizontal-actions-wrapper: flex-end;
+    --product-card-horizontal-review-margin: var(--spacer-xs) 0 0 0;
+    --product-card-horizontal-configuration-margin: auto 0 var(--spacer-xs) 0;
+    --product-card-horizontal-add-to-cart-margin: auto 0 0 0;
+    --product-card-horizontal-actions-margin: var(--spacer-base) 0 0 0;
+    --product-card-horizontal-actions-wrapper-margin: 0;
+    --product-card-horizontal-title-font-weight: var(--font-weight--normal);
+  }
+}
+::v-deep .sf-image-loaded{
+  @include for-desktop {
+   height: 200px;
+   width: 200px ;
+  }
+}
+::v-deep.sf-product-card-horizontal__details{
+   @include for-desktop {
+     margin-top:10px;
+  }
+}
+::v-deep.sf-product-card-horizontal__add-to-cart{
+    @include for-desktop {
+     margin-top:39px;
+  }
+}
+// ::v-deep.sf-product-card-horizontal__title{
+//   @include for-desktop {
+//     margin: ;
+//   }
+// }
+// ::v-deep.products__product-card-horizonta{
+//   @include for-desktop {
+//    margin: 22px 0 !important;
+//   }
+// }
 </style>
