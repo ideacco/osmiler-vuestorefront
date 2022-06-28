@@ -695,9 +695,6 @@ export default {
   margin: 0;
   &__grid {
     justify-content: space-between;
-    @include for-desktop {
-     justify-content:space-between;
-    }
   }
   &__grid,
   &__list {
@@ -821,6 +818,11 @@ export default {
 ::v-deep.products__product-card-horizontal{
   @include for-desktop {
     margin: 20px 0;
+    }
+}
+::v-deep.sf-product-card__link{
+  @include for-desktop {
+    width: 600px;
     }
 }
 </style>
