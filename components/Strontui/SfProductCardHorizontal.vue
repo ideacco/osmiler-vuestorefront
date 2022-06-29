@@ -397,6 +397,8 @@ export default {
   }
 }
 ::v-deep .sf-image-loaded{
+   height:85px;
+   width:85px ;
   @include for-desktop {
    height: 200px;
    width: 200px ;
@@ -417,9 +419,9 @@ export default {
 //     margin: ;
 //   }
 // }
-// ::v-deep.products__product-card-horizonta{
-//   @include for-desktop {
-//    margin: 22px 0 !important;
-//   }
-// }
+::v-deep.products__product-card-horizonta{
+  @include for-desktop {
+   margin: 22px 0 !important;
+  }
+}
 </style>

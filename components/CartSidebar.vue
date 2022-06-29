@@ -193,12 +193,12 @@ import {
   SfProperty,
   SfPrice,
   SfCollectedProduct,
-  SfImage,
   SfLink,
   SfInput,
   SfQuantitySelector,
   SfIcon
 } from '@storefront-ui/vue'
+import SfImage from './Strontui/Sfimage.vue'
 import { computed, ref, useRoute } from '@nuxtjs/composition-api'
 import { useCart, useUser, cartGetters } from '@vue-storefront/shopify'
 import { useUiState, useUiNotification } from '~/composables'
