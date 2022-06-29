@@ -80,6 +80,7 @@ const config = {
   },
   plugins: [
     '@/plugins/scrollToTop.client.js',
+    '~/plugins/gtm',
     // '@/plugins/element-ui',
     {
       src: '@/plugins/UIkit',
@@ -124,14 +125,14 @@ const config = {
       },
     ],
   ],
-  googleAnalytics: {
-    id: process.env.GOOGLE_ANALYTICS_ID, // Use as fallback if no runtime config is provided
-  },
-  publicRuntimeConfig: {
-    googleAnalytics: {
-      id: process.env.GOOGLE_ANALYTICS_ID,
-    },
-  },
+  // googleAnalytics: {
+  //   id: process.env.GOOGLE_ANALYTICS_ID, // Use as fallback if no runtime config is provided
+  // },
+  // publicRuntimeConfig: {
+  //   googleAnalytics: {
+  //     id: process.env.GOOGLE_ANALYTICS_ID,
+  //   },
+  // },
   css: [
     {
       src: '@/style/index.scss',
@@ -140,7 +141,8 @@ const config = {
   ],
   modules: [
     '@nuxtjs/i18n',
-    '@nuxtjs/google-gtag',
+    '@nuxtjs/gtm',
+    // '@nuxtjs/google-gtag',
     'cookie-universal-nuxt',
     'vue-scrollto/nuxt',
     '@vue-storefront/middleware/nuxt',
@@ -150,26 +152,34 @@ const config = {
     '@nuxt/image',
     '@nuxtjs/axios',
   ],
-  'google-gtag': {
-    id: 'UA-233114703-1',
-    config: {
-      anonymize_ip: true, // anonymize IP
-      send_page_view: false, // might be necessary to avoid duplicated page track on page reload
-      linker: {
-        domains: ['domain.com', 'domain.org'],
-      },
-    },
-    debug: true, // enable to track in dev mode
-    disableAutoPageTrack: false, // disable if you don't want to track each page route with router.afterEach(...).
-    additionalAccounts: [
-      {
-        id: 'GTM-KQN9FHK', // required if you are adding additional accounts
-        config: {
-          send_page_view: false, // optional configurations
-        },
-      },
-    ],
+  gtm: {
+    id: 'GTM-KQN9FHK', // Used as fallback if no runtime config is provided
   },
+  publicRuntimeConfig: {
+    gtm: {
+      id: process.env.GOOGLE_TAG_MANAGER_ID
+    }
+  },
+  // 'google-gtag': {
+  //   id: 'UA-233114703-1',
+  //   config: {
+  //     anonymize_ip: true, // anonymize IP
+  //     send_page_view: false, // might be necessary to avoid duplicated page track on page reload
+  //     linker: {
+  //       domains: ['domain.com', 'domain.org'],
+  //     },
+  //   },
+  //   debug: true, // enable to track in dev mode
+  //   disableAutoPageTrack: false, // disable if you don't want to track each page route with router.afterEach(...).
+  //   additionalAccounts: [
+  //     {
+  //       id: 'GTM-KQN9FHK', // required if you are adding additional accounts
+  //       config: {
+  //         send_page_view: false, // optional configurations
+  //       },
+  //     },
+  //   ],
+  // },
   axios: {
     proxy: true,
     prefix: '/app',
