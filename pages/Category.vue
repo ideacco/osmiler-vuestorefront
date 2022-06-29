@@ -412,7 +412,7 @@ export default {
     )
     const pagination = computed(() => facetGetters.getPagination(result.value))
     const getProductCoverImage = (product, size = 'normal') => {
-    let imgResolution = '1500x1500'
+    let imgResolution = '6000x6000'
     if (size === 'medium') {
         imgResolution = '295x295'
     }
@@ -822,25 +822,25 @@ export default {
 }
 ::v-deep.sf-product-card__link{
   @include for-desktop {
-    width: 300px;
-    height: 300px;
+    width: 360px;
+    height: 360px;
     }
 }
 ::v-deep.products__product-card{
     @include for-desktop {
-    width: 300px;
+    width: 360px;
     }
 }
 ::v-deep.sf-product-card__image{
     @include for-desktop {
-    --image-width: 300px;
-    --image-height: 300px;
+    --image-width: 360px;
+    --image-height: 360px;
     transition:none;
     }
 }
 ::v-deep .sf-product-card{
 @include for-desktop {
-   --product-card-max-width:332px;
+   --product-card-max-width:380px;
    margin: 20px 0;
     }
 }

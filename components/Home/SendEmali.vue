@@ -56,7 +56,6 @@
             <div class="uk-panel uk-width-1-1">
               <div
                 class="uk-visible@m uk-position-absolute uk-width-1-1 uk-text-right"
-                style="left: 150px; bottom: -240px"
               >
                 <img
                   src="/wp-content/themes/yootheme/cache/Frame-58-246b27e9.png"
@@ -169,5 +168,11 @@ input::-moz-placeholder {
 /* Internet Explorer 10+ */
 input:-ms-input-placeholder {
   color: #4132c7 !important;
+}
+.uk-text-right{
+ @include for-desktop {
+    left: 150px;
+    bottom: -240px;
+    }
 }
 </style>
