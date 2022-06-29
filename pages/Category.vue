@@ -844,6 +844,15 @@ export default {
    margin: 20px 0;
     }
 }
+::v-deep.navbar__counter{
+  position: absolute;
+  right: 10px;
+  @include for-desktop {
+  position: static;
+  right: 0;
+  }
+
+}
 // ::v-deep .sf-price__regular {
 //   display: block !important;
 // }
