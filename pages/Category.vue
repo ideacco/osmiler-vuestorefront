@@ -88,9 +88,9 @@
               v-e2e="'category-product-card'"
               :style="{ '--index': i }"
               :title="productGetters.getName(product)"
-              :image="productGetters.getCoverImage(product)"
-              :image-width="$device.isDesktopOrTablet ? 3000 : 3000"
-              :image-height="$device.isDesktopOrTablet ? 3000 : 3000"
+              :image="getProductCoverImage(product)"
+              :image-width="$device.isDesktopOrTablet ? 30000 : 30000"
+              :image-height="$device.isDesktopOrTablet ? 30000 : 30000"
               :regular-price="
                 $n(productGetters.getPrice(product).regular, 'currency')
               "
@@ -159,7 +159,7 @@
               :style="{ '--index': i }"
               :title="productGetters.getName(product)"
               :description="productGetters.getDescription(product)"
-              :image="productGetters.getCoverImage(product)"
+              :image="getProductCoverImage(product)"
               :image-width="$device.isDesktopOrTablet ? 3000 : 3000"
               :image-height="$device.isDesktopOrTablet ? 3000 : 3000"
               :regular-price="
@@ -355,7 +355,6 @@ import {
   SfHeading,
   SfFilter,
   SfProductCard,
-  SfProductCardHorizontal,
   SfPagination,
   SfAccordion,
   SfSelect,
@@ -367,6 +366,7 @@ import {
   SfLink,
   SfImage
 } from '@storefront-ui/vue'
+import SfProductCardHorizontal from '~/components/Strontui/SfProductCardHorizontal'
 import { computed, onMounted, ref } from '@nuxtjs/composition-api'
 import {
   useCart,
@@ -411,17 +411,33 @@ export default {
       facetGetters.getGrouped(result.value, ['color', 'size'])
     )
     const pagination = computed(() => facetGetters.getPagination(result.value))
+    const getProductCoverImage = (product, size = 'normal') => {
+    let imgResolution = '1500x1500'
+    if (size === 'medium') {
+        imgResolution = '295x295'
+    }
+    else if (size === 'small') {
+        imgResolution = '80x80'
+    }
+    if (product && product._coverImage && product._coverImage.src) {
+        const imgPath = product._coverImage.src.substring(0, product._coverImage.src.lastIndexOf('.'))
+        const imgext = product._coverImage.src.split('.').pop()
+        const resizedImg = imgPath + '_' + imgResolution + '.' + imgext
+        return resizedImg
+    }
+    const image = 'https://cdn.shopify.com/s/files/1/0407/1902/4288/files/placeholder_' + imgResolution + '.jpg?v=1625742127'
+    // return 'https://cdn.shopify.com/s/files/1/0407/1902/4288/files/placeholder_' + imgResolution + '.jpg?v=1625742127'
+    return image
+}
     onSSR(async () => {
       await search(th.getFacetsFromURL())
     })
     const productsQuantity = ref({})
-
     const { isFacetColor } = useUiHelpers()
     const { toggleCategoryGridView } = useUiState()
-
     onMounted(() => {
       context.root.$scrollTo(context.root.$el, 2000)
-    })
+})
 
     return {
       ...uiState,
@@ -431,6 +447,7 @@ export default {
       loading,
       productGetters,
       pagination,
+      getProductCoverImage,
       sortBy,
       facets,
       currentCart,
@@ -537,7 +554,7 @@ export default {
   &__main {
     flex: 1;
     padding: 0;
-    justify-content: space-between;
+    // justify-content: space-between;
     @include for-desktop {
       padding: var(--spacer-xs) var(--spacer-xl);
     }
@@ -678,9 +695,6 @@ export default {
   margin: 0;
   &__grid {
     justify-content: space-between;
-    @include for-desktop {
-     justify-content:space-between;
-    }
   }
   &__grid,
   &__list {
@@ -720,11 +734,6 @@ export default {
     }
     &__product-card-horizontal {
       margin: var(--spacer-lg) 0;
-    }
-    &__product-card {
-      margin:80px 0 !important;
-      transform: scale(1.4) !important;
-      flex: 1 1 25%;
     }
     &__list {
       margin: 0 0 0 var(--spacer-sm);
@@ -806,4 +815,26 @@ export default {
     margin: var(--spacer-xs) 0 0 0;
   }
 }
+::v-deep.products__product-card-horizontal{
+  @include for-desktop {
+    margin: 20px 0;
+    }
+}
+::v-deep.sf-product-card__link{
+  @include for-desktop {
+    width: 300px;
+    height: 300px;
+    }
+}
+::v-deep.products__product-card{
+    @include for-desktop {
+    width: 300px;
+    }
+}
+::v-deep .sf-product-card{
+@include for-desktop {
+   --product-card-max-width:332px;
+    }
+}
+
 </style>

@@ -379,6 +379,9 @@ export default {
 <style lang="scss" scoped>
 @import '~@storefront-ui/shared/styles/helpers';
 .sf-product-card {
+   @include for-desktop {
+    width: 300px;
+    }
   box-sizing: border-box;
   position: relative;
   z-index: var(--product-card-z-index);
@@ -559,5 +562,6 @@ export default {
     }
   }
 }
+
 
 </style>
