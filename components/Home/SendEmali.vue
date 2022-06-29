@@ -7,7 +7,7 @@
       <div
         class="uk-margin uk-container uk-container-large uk-container-expand-right"
       >
-        <div class="tm-grid-expand" uk-grid>
+        <div class="tm-grid-expand">
           <div class="uk-width-1-2@m">
             <div id="page#25-0-0-0"></div>
             <div
@@ -27,7 +27,7 @@
             </div>
             <div class="uk-text-center">
               <div class="uk-form uk-panel js-form-newsletter" >
-                <div class="uk-child-width-expand@s" uk-grid>
+                <div class="uk-child-width-expand@s uk-display">
                   <div>
                     <input
                       class="el-input uk-input"
@@ -168,6 +168,31 @@ input::-moz-placeholder {
 /* Internet Explorer 10+ */
 input:-ms-input-placeholder {
   color: #4132c7 !important;
+}
+.el-input{
+  margin-bottom: 20px;
+  @include for-desktop {
+  margin-bottom:0px;
+  }
+}
+.uk-display{
+@include for-desktop {
+ display: flex;
+  }
+}
+.el-button{
+  width: 100%;
+  @include for-desktop {
+   width: 138px;
+   margin-left: 30px;
+  }
+}
+.uk-position-absolute{
+  @include for-desktop {
+    position: absolute !important;
+    top: -80px;
+    right:-850px
+  }
 }
 
 </style>
