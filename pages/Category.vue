@@ -1,5 +1,5 @@
 <template>
-  <div id="category">
+  <div id="category" class="uk-section-default  uk-section">
     <SfBreadcrumbs
       class="breadcrumbs breadcrumbs-center"
       :breadcrumbs="breadcrumbs"
