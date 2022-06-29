@@ -831,10 +831,19 @@ export default {
     width: 300px;
     }
 }
+::v-deep.sf-product-card__image{
+    @include for-desktop {
+    --image-width: 300px;
+    --image-height: 300px;
+    transition:none;
+    }
+}
 ::v-deep .sf-product-card{
 @include for-desktop {
    --product-card-max-width:332px;
+   margin: 20px 0;
     }
 }
+
 
 </style>
