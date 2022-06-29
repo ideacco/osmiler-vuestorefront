@@ -26,7 +26,7 @@
               </div>
             </div>
             <div class="uk-text-center">
-              <form class="uk-form uk-panel js-form-newsletter" >
+              <div class="uk-form uk-panel js-form-newsletter" >
                 <div class="uk-child-width-expand@s" uk-grid>
                   <div>
                     <input
@@ -38,11 +38,10 @@
                       required
                     />
                   </div>
-                  <div class="uk-width-auto@s">
+                  <div class="uk-width-auto@s" @click.prevent="sub()">
                     <button
                       class="el-button uk-button uk-button-primary"
                       type="submit"
-                      @click.prevent="sub()"
                     >
                       Subscribe
                     </button>
@@ -50,7 +49,7 @@
                 </div>
                 <input type="hidden" name="settings" value="" />
                 <div class="message uk-margin uk-hidden"></div>
-              </form>
+              </div>
             </div>
           </div>
           <div class="uk-grid-item-match uk-width-1-2@m uk-visible@m">
