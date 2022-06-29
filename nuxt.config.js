@@ -151,7 +151,7 @@ const config = {
     '@nuxtjs/axios',
   ],
   'google-gtag': {
-    id: 'UA-XXXX-XX',
+    id: 'UA-233114703-1',
     config: {
       anonymize_ip: true, // anonymize IP
       send_page_view: false, // might be necessary to avoid duplicated page track on page reload
@@ -163,7 +163,7 @@ const config = {
     disableAutoPageTrack: false, // disable if you don't want to track each page route with router.afterEach(...).
     additionalAccounts: [
       {
-        id: 'AW-XXXX-XX', // required if you are adding additional accounts
+        id: 'GTM-KQN9FHK', // required if you are adding additional accounts
         config: {
           send_page_view: false, // optional configurations
         },

@@ -32,6 +32,20 @@
 </template>
 
 <script>
+ /* eslint-disable */
+(function(w,d,s,l,i){
+  w[l] = w[l] || [];
+  w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'})
+  var f = d.getElementsByTagName(s)[0],
+  j =d.createElement(s),
+  dl = l!= 'dataLayer'?'&l='+l:''
+  j.async = true
+  j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','');
+ /* eslint-disable */
+</script>
+<script>
+
 import AppHeader from '~/components/UikitHeader.vue'
 // import AppHeader from '~/components/AppHeader_new.vue'
 import LazyHydrate from 'vue-lazy-hydration'
@@ -105,7 +119,7 @@ export default {
    mounted() {
     //* eslint-disable  */
     if (process.browser) {
-      this.$gtag('config', 'UA-XXXX-XXX', {
+      this.$gtag('config', 'UA-233114703-1', {
         // page_title: this.$metaInfo.title,
         page_path: this.$route.fullPath,
       })
