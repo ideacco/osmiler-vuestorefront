@@ -56,8 +56,8 @@
         </div>
         <div class="product__price-and-rating">
           <SfPrice
-            :regular="$n(productGetters.getPrice(product).regular, 'currency')"
-            :special="$n(productGetters.getPrice(product).special, 'currency')"
+            :regular="$n(productGetters.getPrice(product).regular, 'currency')>$n(productGetters.getPrice(product).special, 'currency')?$n(productGetters.getPrice(product).regular, 'currency'):null"
+            :special="$n(productGetters.getPrice(product).regular, 'currency')<$n(productGetters.getPrice(product).special, 'currency')?null:$n(productGetters.getPrice(product).special, 'currency')"
           />
           <!-- Reviews Here -->
         </div>
@@ -905,13 +905,13 @@ export default {
 .product__description {
   position: relative;
   white-space: pre-wrap;
-  top: 30px;
+  top: 10px;
 }
 .product__details {
   margin-top: 40px !important;
 }
 .sf-price {
-  margin-top: -40px;
+  position: relative;
 }
 
 .pdc-pdp-loader {
@@ -926,7 +926,6 @@ export default {
 
 .sf-price__old {
   font-size: 20px;
-  display: none;
 }
 
 #product {
@@ -1135,11 +1134,11 @@ export default {
 // width: 500px;
 // }
 .sf-price__special {
-  position: relative;
-  top: 50px;
-  left: 0;
+  position: absolute;
+  top: 30px;
+  left:0;
   font-size: 48px;
-  background: #fff;
+  background: transparent !important;
 }
 
 .product__color-label {
@@ -1196,9 +1195,6 @@ export default {
 
 ::v-deep .product__color {
   border: 1px solid;
-}
-::v-deep .display-none {
-  display: none !important;
 }
 
 @keyframes moveicon {

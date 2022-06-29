@@ -91,10 +91,8 @@
               :image="getProductCoverImage(product)"
               :image-width="$device.isDesktopOrTablet ? 30000 : 30000"
               :image-height="$device.isDesktopOrTablet ? 30000 : 30000"
-              :regular-price="
-                $n(productGetters.getPrice(product).regular, 'currency')
-              "
-              :special-price="null"
+              :regular-price="$n(productGetters.getPrice(product).regular, 'currency')>$n(productGetters.getPrice(product).special, 'currency')?$n(productGetters.getPrice(product).regular, 'currency'):null"
+              :special-price="$n(productGetters.getPrice(product).regular, 'currency')<$n(productGetters.getPrice(product).special, 'currency')?null:$n(productGetters.getPrice(product).special, 'currency')"
               :max-rating="5"
               :score-rating="productGetters.getAverageRating(product)"
               :show-add-to-cart-button="true"
@@ -162,10 +160,8 @@
               :image="getProductCoverImage(product)"
               :image-width="$device.isDesktopOrTablet ? 3000 : 3000"
               :image-height="$device.isDesktopOrTablet ? 3000 : 3000"
-              :regular-price="
-                $n(productGetters.getPrice(product).regular, 'currency')
-              "
-              :special-price="null"
+              :regular-price="$n(productGetters.getPrice(product).regular, 'currency')>$n(productGetters.getPrice(product).special, 'currency')?$n(productGetters.getPrice(product).regular, 'currency'):null"
+              :special-price="$n(productGetters.getPrice(product).regular, 'currency')<$n(productGetters.getPrice(product).special, 'currency')?null:$n(productGetters.getPrice(product).special, 'currency')"
               :add-to-cart-disabled="!productGetters.getStockStatus(product)"
               :max-rating="5"
               :score-rating="3"
@@ -755,6 +751,9 @@ export default {
     margin-top: 6.25rem;
   }
 }
+::v-deep .sf-price{
+  display: block !important;
+}
 ::v-deep .sf-sidebar__aside {
   --sidebar-z-index: 3;
 }
@@ -838,12 +837,14 @@ export default {
     transition:none;
     }
 }
+
 ::v-deep .sf-product-card{
 @include for-desktop {
    --product-card-max-width:380px;
    margin: 20px 0;
     }
 }
-
-
+// ::v-deep .sf-price__regular {
+//   display: block !important;
+// }
 </style>

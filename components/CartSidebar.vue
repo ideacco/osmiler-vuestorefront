@@ -25,10 +25,8 @@
                 v-e2e="'collected-product'"
                 :image="cartGetters.getItemImage(product)"
                 :title="cartGetters.getItemName(product)"
-                :regular-price="
-                  $n(cartGetters.getItemPrice(product).regular, 'currency')
-                "
-                :special-price="null"
+                :regular-price="$n(cartGetters.getItemPrice(product).regular, 'currency')>$n(cartGetters.getItemPrice(product).special, 'currency')?$n(cartGetters.getItemPrice(product).regular, 'currency'):null"
+                :special-price="$n(cartGetters.getItemPrice(product).regular, 'currency')<$n(cartGetters.getItemPrice(product).special, 'currency')?null:$n(cartGetters.getItemPrice(product).special, 'currency')"
                 :stock="99999"
                 class="collected-product"
                 @click:remove="removeItem({ product })"
@@ -493,6 +491,9 @@ export default {
 }
 .SfButtontwo {
   background: #5d47ee;
+}
+::v-deep .sf-price{
+  display: block !important;
 }
 .sf-size-small {
   --button-size: 30px;
