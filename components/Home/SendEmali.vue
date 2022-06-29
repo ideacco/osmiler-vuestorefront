@@ -26,7 +26,7 @@
               </div>
             </div>
             <div class="uk-text-center">
-              <form class="uk-form uk-panel js-form-newsletter" method="post">
+              <form class="uk-form uk-panel js-form-newsletter" >
                 <div class="uk-child-width-expand@s" uk-grid>
                   <div>
                     <input
@@ -38,10 +38,11 @@
                       required
                     />
                   </div>
-                  <div class="uk-width-auto@s" @click.prevent="sub()">
+                  <div class="uk-width-auto@s">
                     <button
                       class="el-button uk-button uk-button-primary"
                       type="submit"
+                      @click.prevent="sub()"
                     >
                       Subscribe
                     </button>
@@ -169,10 +170,5 @@ input::-moz-placeholder {
 input:-ms-input-placeholder {
   color: #4132c7 !important;
 }
-.uk-text-right{
- @include for-desktop {
-    left: 150px;
-    bottom: -240px;
-    }
-}
+
 </style>
