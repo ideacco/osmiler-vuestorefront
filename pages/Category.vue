@@ -854,9 +854,15 @@ export default {
 
 }
 ::v-deep .sf-price__special{
-  margin-left: 5px;
+    display: flex;
+    justify-content:flex-start;
+    align-content: center;
+    background: #fff;
   @include for-desktop {
     margin-left: 0;
+    display: flex;
+    justify-content: flex-start;
+    align-content: center;
   }
 }
 // ::v-deep .sf-price__regular {
