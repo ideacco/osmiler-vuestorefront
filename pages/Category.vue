@@ -853,6 +853,12 @@ export default {
   }
 
 }
+::v-deep .sf-price__special{
+  margin-left: 5px;
+  @include for-desktop {
+    margin-left: 0;
+  }
+}
 // ::v-deep .sf-price__regular {
 //   display: block !important;
 // }
