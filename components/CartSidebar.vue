@@ -174,7 +174,7 @@
           <div v-else>
             <SfButton
               class="sf-button--full-width color-primary"
-              @click="toggleCartSidebar"
+              @click="toggleCartSidebar,goback()"
             >{{ $t('Go back shopping') }}</SfButton
             >
           </div>
@@ -331,6 +331,11 @@ export default {
       appliedCoupon,
       handleRemoveCoupon,
       displayDiscountStr
+    }
+  },
+  methods: {
+    goback(){
+      this.$router.push('/c/all-products')
     }
   }
 }
