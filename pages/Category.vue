@@ -855,7 +855,7 @@ export default {
 }
 ::v-deep .sf-price__special{
     // display: flex;
-    justify-content:flex-start;
+    justify-content:center;
     align-items: center;
     background: #fff;
   @include for-desktop {
