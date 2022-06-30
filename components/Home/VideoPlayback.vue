@@ -5,6 +5,7 @@
       tm-header-transparent="light"
       uk-height-viewport="offset-top: true;"
       :style="{ marginTop: innerWidth > 940 ? '-100px' : '0px' }"
+      style="height:960px"
     >
       <!-- <video
         src="/homepage/Osmiler_video.mp4"
