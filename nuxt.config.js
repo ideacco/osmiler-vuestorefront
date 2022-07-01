@@ -146,7 +146,6 @@ const config = {
     'cookie-universal-nuxt',
     'vue-scrollto/nuxt',
     '@vue-storefront/middleware/nuxt',
-
     '@nuxtjs/sitemap',
     './modules/cms/runtime',
     '@nuxt/image',
@@ -160,7 +159,7 @@ const config = {
       id: process.env.GOOGLE_TAG_MANAGER_ID
     }
   },
-  // 'google-gtag': {GTM-KQN9FHKGTM-KQN9FHK
+  // 'google-gtag': {GTM-KQN9FHK
   //   id: 'UA-233114703-1',
   //   config: {
   //     anonymize_ip: true, // anonymize IP

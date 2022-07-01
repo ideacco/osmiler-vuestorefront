@@ -298,6 +298,7 @@ export default {
       })
     }
     const handleCheckout = (checkoutUrl) => {
+      console.log(checkoutUrl,58888)
       setTimeout(() => {
         window.location.href = checkoutUrl
       }, 300)
