@@ -146,13 +146,14 @@ const config = {
     'cookie-universal-nuxt',
     'vue-scrollto/nuxt',
     '@vue-storefront/middleware/nuxt',
+
     '@nuxtjs/sitemap',
     './modules/cms/runtime',
     '@nuxt/image',
     '@nuxtjs/axios',
   ],
   gtm: {
-    id: 'GTM-PB39ZGK', // Used as fallback if no runtime config is provided
+    id: 'GTM-KQN9FHK', // Used as fallback if no runtime config is provided
   },
   publicRuntimeConfig: {
     gtm: {
@@ -172,7 +173,7 @@ const config = {
   //   disableAutoPageTrack: false, // disable if you don't want to track each page route with router.afterEach(...).
   //   additionalAccounts: [
   //     {
-  //       id: 'GTM-PB39ZGK', // required if you are adding additional accounts
+  //       id: 'GTM-KQN9FHK', // required if you are adding additional accounts
   //       config: {
   //         send_page_view: false, // optional configurations
   //       },
