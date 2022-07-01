@@ -2,7 +2,10 @@
   <div class="uk-section-default uk-section">
     <div class="uk-container">
       <div
-        class="tm-grid-expand uk-child-width-1-1 uk-grid-margin uk-grid uk-grid-stack"
+        class="
+          tm-grid-expand
+          uk-child-width-1-1 uk-grid-margin uk-grid uk-grid-stack
+        "
         uk-grid=""
       >
         <div class="uk-first-column">
@@ -11,6 +14,22 @@
           <div class="uk-panel uk-margin">
             <h3>PRIVACY STATEMENT</h3>
             <p>
+              Our checkout page uses SSL, which ensures that all of your
+              browsing and shopping data remains private. We will not sell user
+              contact information We will not use the user’s personal
+              information or pictures for advertising without the user’s consent
+              Our website will not collect users’ personal information as the
+              main purpose Personal information we collect When you visit the
+              Site, we automatically collect certain information about your
+              device, including information about your web browser, IP address,
+              time zone, and some of the cookies that are installed on your
+              device. Additionally, as you browse the Site, we collect
+              information about the individual web pages or products that you
+              view, what websites or search terms referred you to the Site, and
+              information about how you interact with the Site. We refer to this
+              automatically-collected information as “Device Information”.
+            </p>
+              <p>
               We take your privacy seriously and this privacy statement explains
               how osmiler.com (collectively, “we,” “us,” or “our”) collect, use,
               share and process your information.
@@ -123,12 +142,7 @@
               refer to all of these technologies as "cookies."
             </p>
             <h3>
-              <a
-                id="use-of-cookies"
-                class="anchor"
-                aria-hidden="true"
-              ><span class="octicon octicon-link"></span></a
-              >USE OF COOKIES
+              <a id="use-of-cookies" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>USE OF COOKIES
             </h3>
             <p>
               We use cookies to provide, protect, and improve our products and
@@ -225,7 +239,7 @@
                 id="data-security-integrity-and-retention"
                 class="anchor"
                 aria-hidden="true"
-              ><span class="octicon octicon-link"></span></a
+                ><span class="octicon octicon-link"></span></a
               >DATA SECURITY, INTEGRITY, AND RETENTION
             </h3>
             <p>
@@ -241,7 +255,7 @@
                 id="changes-to-this-privacy-statement"
                 class="anchor"
                 aria-hidden="true"
-              ><span class="octicon octicon-link"></span></a
+                ><span class="octicon octicon-link"></span></a
               >CHANGES TO THIS PRIVACY STATEMENT
             </h3>
             <p>

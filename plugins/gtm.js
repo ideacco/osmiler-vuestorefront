@@ -1,3 +1,3 @@
 export default function({ $gtm, route }) {
-    $gtm.init('GTM-KQN9FHK')
+    $gtm.init('GTM-PB39ZGK')
   }
