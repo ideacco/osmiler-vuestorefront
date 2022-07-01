@@ -13,7 +13,7 @@
                   class="el-link"
                   href="/"
                 ><img
-                  src="../static/icons/osmiler-logo-default.png"
+                  src="../static/icons/osmiler-logo-default.svg"
                   width="100"
                   class="el-image"
                   alt="Osmiler"
