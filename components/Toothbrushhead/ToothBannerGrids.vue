@@ -3,7 +3,8 @@
     <div
       id="page#4"
       class="uk-section-default uk-section uk-section-xsmall uk-padding-remove-bottom uk-flex uk-flex-bottom"
-      style="height:840px;background:#faf9fd"
+      uk-height-viewport="offset-top: true;"
+      style="min-height: calc(100vh);background:#faf9fd"
     >
       <div class="uk-width-1-1">
         <div class="uk-container uk-container-xlarge">

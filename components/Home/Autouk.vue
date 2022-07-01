@@ -2,7 +2,7 @@
   <div>
     <div class="uk-visible@m uk-section-primary">
       <div
-        style="background-image: url('/wp-content/themes/yootheme/cache/408-1-951e4350.jpeg');height:837px;"
+        style="background-image: url('/wp-content/themes/yootheme/cache/408-1-951e4350.jpeg');"
         class="uk-background-norepeat uk-background-cover uk-background-bottom-center uk-section uk-padding-remove-top"
         uk-height-viewport="offset-top: true;"
       >

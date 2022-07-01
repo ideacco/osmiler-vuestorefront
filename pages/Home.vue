@@ -1,6 +1,5 @@
 <template>
-<div>
-    <div id="page" class="uk-section-default">
+  <div id="page" class="uk-section-default">
     <VideoPlayback />
     <GridList />
     <BannerGrids />
@@ -20,7 +19,6 @@
     <SendEmali />
     <Contact />
   </div>
-</div>
 </template>
 
 <script type="module">
@@ -96,20 +94,13 @@ export default {
   }
 }
 </script>
-<style lang="scss" scoped>
+<style lang="css" scoped>
 .bg-purple-dark {
   background: #99a9bf;
 }
 
 .bg-purple {
   background: #d3dce6;
-}
-#page {
-  box-sizing: border-box;
-  @include for-desktop {
-    --font-family--secondary: var(--font-family--primary);
-    margin: 0 auto;
-  }
 }
 
 .bg-purple-light {

@@ -2,7 +2,7 @@
   <div>
     <div id="page#18" class="uk-visible@m uk-section-default uk-light">
       <div
-        style=" background-image: url('/wp-content/themes/yootheme/cache/07.jpg');height:840px;"
+        style=" background-image: url('/wp-content/themes/yootheme/cache/07.jpg');"
         class="uk-background-norepeat uk-background-cover uk-background-top-center uk-section uk-section-large uk-padding-remove-bottom"
         uk-height-viewport="offset-top: true;"
       >
@@ -13,7 +13,7 @@
             <div class="tm-grid-expand uk-grid-small" uk-grid>
               <div class="uk-width-1-2@m uk-first-column">
                 <h1 class="uk-margin-remove-vertical" id="page#18-0-0-0">
-                  Class IPX7 Water-repellent
+                  Class IP7 Water-repellent
                 </h1>
                 <div class="uk-panel uk-margin">
                   <p>

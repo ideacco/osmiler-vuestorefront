@@ -853,18 +853,6 @@ export default {
   }
 
 }
-::v-deep .sf-price__special{
-    // display: flex;
-    justify-content:center;
-    align-items: center;
-    background: #fff;
-  @include for-desktop {
-    margin-left: 0;
-    // display: flex;
-    justify-content: flex-start;
-    align-items: center;
-  }
-}
 // ::v-deep .sf-price__regular {
 //   display: block !important;
 // }

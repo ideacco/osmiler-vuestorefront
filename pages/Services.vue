@@ -12,7 +12,7 @@
               <div class="uk-h6 uk-text-primary uk-text-left">
                 Implant Dentistry
               </div>
-              <h1 class="uk-margin-remove-vertical uk-text-left" style="font-family:osmiler-title">
+              <h1 class="uk-margin-remove-vertical uk-text-left">
                 Osmiler manual
               </h1>
               <div
