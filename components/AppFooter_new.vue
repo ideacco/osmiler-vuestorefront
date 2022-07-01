@@ -195,7 +195,7 @@
                   <div class="uk-first-column">
                     <a class="el-link uk-icon" rel="noreferrer">
                       <img
-                        src="/homepage/logo_dinersclub.png"
+                        src="/homepage/logo_dinersclub.svg"
                         alt=""
                         class="uk-icon1"
                       />
@@ -204,7 +204,7 @@
                   <div class="uk-first-column">
                     <a class="el-link uk-icon" rel="noreferrer">
                       <img
-                        src="/homepage/logo_dinersclub-1.png"
+                        src="/homepage/logo_dinersclub-1.svg"
                         alt=""
                         class="uk-icon1"
                       />
@@ -213,7 +213,7 @@
                   <div class="uk-first-column">
                     <a class="el-link uk-icon" rel="noreferrer">
                       <img
-                        src="/homepage/logo_discover.png"
+                        src="/homepage/logo_discover.svg"
                         alt=""
                         class="uk-icon1"
                       />
@@ -222,7 +222,7 @@
                   <div class="uk-first-column">
                     <a class="el-link uk-icon" rel="noreferrer">
                       <img
-                        src="/homepage/logo_jcb.png"
+                        src="/homepage/logo_jcb.svg"
                         alt=""
                         class="uk-icon1"
                       />
@@ -231,7 +231,7 @@
                   <div class="uk-first-column">
                     <a class="el-link uk-icon" rel="noreferrer">
                       <img
-                        src="/homepage/logo_mastercard.png"
+                        src="/homepage/logo_mastercard.svg"
                         alt=""
                         class="uk-icon1"
                       />
@@ -240,7 +240,7 @@
                   <div class="uk-first-column">
                     <a class="el-link uk-icon" rel="noreferrer">
                       <img
-                        src="/homepage/logo_visa.png"
+                        src="/homepage/logo_visa.svg"
                         alt=""
                         class="uk-icon1"
                       />
@@ -249,7 +249,7 @@
                   <div class="uk-first-column">
                     <a class="el-link uk-icon" rel="noreferrer">
                       <img
-                        src="/homepage/logo_palpay.png"
+                        src="/homepage/logo_palpay.svg"
                         alt=""
                         class="uk-icon1"
                       />
@@ -270,7 +270,6 @@
 <style lang="scss" scoped>
 .uk-icon1 {
   width: 48px;
-  height: 32px;
   cursor: default;
 }
 .uk-section{
