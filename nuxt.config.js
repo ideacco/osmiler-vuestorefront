@@ -146,7 +146,6 @@ const config = {
     'cookie-universal-nuxt',
     'vue-scrollto/nuxt',
     '@vue-storefront/middleware/nuxt',
-
     '@nuxtjs/sitemap',
     './modules/cms/runtime',
     '@nuxt/image',
