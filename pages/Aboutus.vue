@@ -18,6 +18,7 @@
                   </div>
                   <h1
                     class="uk-margin-remove-vertical uk-width-large@m uk-text-left@m uk-text-center"
+                    style="font-family:osmiler-title"
                   >
                     <span></span>
                     We are committed to creating more possibilities for enjoying
@@ -71,7 +72,7 @@
       <div class="uk-container">
         <div class="tm-grid-expand uk-grid-margin" uk-grid>
           <div class="uk-width-1-2@m">
-            <h1>Osmiler is concerned about your oral health.</h1>
+            <h1 style="font-family:osmiler-title">Osmiler is concerned about your oral health.</h1>
           </div>
           <div class="uk-width-1-2@m">
             <div class="uk-panel uk-margin">
