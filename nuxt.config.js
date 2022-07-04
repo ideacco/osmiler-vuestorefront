@@ -154,10 +154,13 @@ const config = {
   ],
   gtm: {
     id: 'GTM-PB39ZGK', // Used as fallback if no runtime config is provided
+    enabled: true,
+    scriptDefer: true,
+    pageTracking: true,
   },
   publicRuntimeConfig: {
     gtm: {
-      id: process.env.GOOGLE_TAG_MANAGER_ID
+      id:'GTM-PB39ZGK'
     }
   },
   // 'google-gtag': {
