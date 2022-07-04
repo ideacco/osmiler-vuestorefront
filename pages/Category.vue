@@ -224,9 +224,7 @@
                   @click="
                     addItemToCart({
                       product,
-                      quantity: Number(
-                        productsQuantity[productData.getId(product)] || 1
-                      )
+                      quantity:1
                     })
                   "
                 />
