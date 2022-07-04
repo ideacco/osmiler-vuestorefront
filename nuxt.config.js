@@ -115,6 +115,7 @@ const config = {
         },
       },
     ],
+
     ['@vue-storefront/nuxt-theme'],
     [
       '@vue-storefront/shopify/nuxt',
@@ -125,16 +126,27 @@ const config = {
       },
     ],
   ],
-  'google-gtag': {
-    id: 'UA-233114703-1',
-    config: {
-      anonymize_ip: true, // anonymize IP
-      send_page_view: false, // might be necessary to avoid duplicated page track on page reload
-    },
-    debug: false, // enable to track in dev mode
-    disableAutoPageTrack: false, // disable if you don't want to track each page route with router.afterEach(...)
-  }
+  googleAnalytics: {
+    id: 'UA-233114703-1'
   },
+  debug: {
+    enabled: false,
+    sendHitTask: false
+  },
+  publicRuntimeConfig: {
+    googleAnalytics: {
+      id: 'UA-233114703-1'
+    }
+  },
+  // 'google-gtag': {
+  //   id: 'UA-233114703-1',
+  //   config: {
+  //     anonymize_ip: true, // anonymize IP
+  //     send_page_view: false, // might be necessary to avoid duplicated page track on page reload
+  //   },
+  //   debug: false, // enable to track in dev mode
+  //   disableAutoPageTrack: false, // disable if you don't want to track each page route with router.afterEach(...).
+  // },
   // googleAnalytics: {
   //   id: process.env.GOOGLE_ANALYTICS_ID, // Use as fallback if no runtime config is provided
   // },

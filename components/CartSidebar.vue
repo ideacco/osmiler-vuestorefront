@@ -297,9 +297,6 @@ export default {
         errorMsg.value = 'Coupon removed'
       })
     }
-    onMounted(()=>{
-      console.log()
-    })
     const handleCheckout = (checkoutUrl) => {
       setTimeout(() => {
         window.location.href = checkoutUrl
