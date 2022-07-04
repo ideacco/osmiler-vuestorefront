@@ -176,7 +176,7 @@ const config = {
   ],
   gtm: {
     id: 'GTM-PB39ZGK', // Used as fallback if no runtime config is provided
-    enabled: false,
+    enabled: true,
     scriptDefer: true,
     pageTracking: true,
   },
