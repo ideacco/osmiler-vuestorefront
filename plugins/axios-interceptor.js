@@ -9,7 +9,7 @@ export default ({ store, route, redirect, $axios, req }) => {
 
   $axios.onRequest((config) => {
     // console.log("请求拦截器")
-    // 有需要的话可以在请求头中添加token
+    // 有需要的话可以在请求头中添加token111
     const accessToken = store.state.accessToken
     if (accessToken) {
       // Authorization: Bearer token
