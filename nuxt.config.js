@@ -125,6 +125,16 @@ const config = {
       },
     ],
   ],
+  'google-gtag': {
+    id: 'UA-233114703-1',
+    config: {
+      anonymize_ip: true, // anonymize IP
+      send_page_view: false, // might be necessary to avoid duplicated page track on page reload
+    },
+    debug: false, // enable to track in dev mode
+    disableAutoPageTrack: false, // disable if you don't want to track each page route with router.afterEach(...)
+  }
+  },
   // googleAnalytics: {
   //   id: process.env.GOOGLE_ANALYTICS_ID, // Use as fallback if no runtime config is provided
   // },
@@ -142,7 +152,7 @@ const config = {
   modules: [
     '@nuxtjs/i18n',
     '@nuxtjs/gtm',
-    // '@nuxtjs/google-gtag',
+    '@nuxtjs/google-gtag',
     'cookie-universal-nuxt',
     'vue-scrollto/nuxt',
     '@vue-storefront/middleware/nuxt',
