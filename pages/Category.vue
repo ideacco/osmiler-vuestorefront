@@ -504,6 +504,12 @@ export default {
     margin: 0 auto;
   }
 }
+.uk-section{
+  @include for-desktop{
+    padding-top: 0px;
+  }
+
+}
 .sf-loader{
   --loader-spinner-stroke: #fff !important;
 }
