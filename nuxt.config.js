@@ -126,18 +126,18 @@ const config = {
       },
     ],
   ],
-  googleAnalytics: {
-    id: 'UA-233114703-1'
-  },
-  debug: {
-    enabled: false,
-    sendHitTask: false
-  },
-  publicRuntimeConfig: {
-    googleAnalytics: {
-      id: 'UA-233114703-1'
-    }
-  },
+  // googleAnalytics: {
+  //   id: 'UA-233114703-1'
+  // },
+  // debug: {
+  //   enabled: false,
+  //   sendHitTask: false
+  // },
+  // publicRuntimeConfig: {
+  //   googleAnalytics: {
+  //     id: 'UA-233114703-1'
+  //   }
+  // },
   // 'google-gtag': {
   //   id: 'UA-233114703-1',
   //   config: {
@@ -164,7 +164,7 @@ const config = {
   modules: [
     '@nuxtjs/i18n',
     '@nuxtjs/gtm',
-    '@nuxtjs/google-gtag',
+    // '@nuxtjs/google-gtag',
     'cookie-universal-nuxt',
     'vue-scrollto/nuxt',
     '@vue-storefront/middleware/nuxt',
