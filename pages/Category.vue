@@ -863,7 +863,6 @@ export default {
     align-items: center;
     background: #fff;
   @include for-desktop {
-    margin-left: 0;
     // display: flex;
     justify-content: flex-start;
     align-items: center;
