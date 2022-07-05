@@ -757,6 +757,10 @@ export default {
 }
 ::v-deep .sf-price{
   display: block !important;
+  text-align: left;
+  @include for-desktop{
+     text-align: left;
+  }
 }
 ::v-deep .sf-sidebar__aside {
   --sidebar-z-index: 3;
