@@ -192,7 +192,25 @@
                   class="uk-child-width-auto uk-grid-small uk-flex-inline uk-grid"
                   uk-grid=""
                 >
-                  <div class="uk-first-column">
+                 <div class="uk-first-column">
+                    <a class="el-link uk-icon" rel="noreferrer">
+                      <img
+                        src="/homepage/logo_visa.svg"
+                        alt=""
+                        class="uk-icon1"
+                      />
+                    </a>
+                  </div>
+                   <div class="uk-first-column">
+                    <a class="el-link uk-icon" rel="noreferrer">
+                      <img
+                        src="/homepage/logo_mastercard.svg"
+                        alt=""
+                        class="uk-icon1"
+                      />
+                    </a>
+                  </div>
+                     <div class="uk-first-column">
                     <a class="el-link uk-icon" rel="noreferrer">
                       <img
                         src="/homepage/logo_dinersclub.png"
@@ -204,57 +222,43 @@
                   <div class="uk-first-column">
                     <a class="el-link uk-icon" rel="noreferrer">
                       <img
-                        src="/homepage/logo_dinersclub-1.png"
+                        src="/homepage/logo_jcb.svg"
                         alt=""
                         class="uk-icon1"
                       />
                     </a>
                   </div>
+
+                  <!-- <div class="uk-first-column">
+                    <a class="el-link uk-icon" rel="noreferrer">
+                      <img
+                        src="/homepage/logo_dinersclub.svg"
+                        alt=""
+                        class="uk-icon1"
+                      />
+                    </a>
+                  </div> -->
+
+                  <!-- <div class="uk-first-column">
+                    <a class="el-link uk-icon" rel="noreferrer">
+                      <img
+                        src="/homepage/logo_discover.svg"
+                        alt=""
+                        class="uk-icon1"
+                      />
+                    </a>
+                  </div>
+
+
                   <div class="uk-first-column">
                     <a class="el-link uk-icon" rel="noreferrer">
                       <img
-                        src="/homepage/logo_discover.png"
+                        src="/homepage/logo_palpay.svg"
                         alt=""
                         class="uk-icon1"
                       />
                     </a>
-                  </div>
-                  <div class="uk-first-column">
-                    <a class="el-link uk-icon" rel="noreferrer">
-                      <img
-                        src="/homepage/logo_jcb.png"
-                        alt=""
-                        class="uk-icon1"
-                      />
-                    </a>
-                  </div>
-                  <div class="uk-first-column">
-                    <a class="el-link uk-icon" rel="noreferrer">
-                      <img
-                        src="/homepage/logo_mastercard.png"
-                        alt=""
-                        class="uk-icon1"
-                      />
-                    </a>
-                  </div>
-                  <div class="uk-first-column">
-                    <a class="el-link uk-icon" rel="noreferrer">
-                      <img
-                        src="/homepage/logo_visa.png"
-                        alt=""
-                        class="uk-icon1"
-                      />
-                    </a>
-                  </div>
-                  <div class="uk-first-column">
-                    <a class="el-link uk-icon" rel="noreferrer">
-                      <img
-                        src="/homepage/logo_palpay.png"
-                        alt=""
-                        class="uk-icon1"
-                      />
-                    </a>
-                  </div>
+                  </div> -->
                 </div>
               </div>
             </div>

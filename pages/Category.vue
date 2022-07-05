@@ -866,10 +866,12 @@ export default {
     justify-content:center;
     align-items: center;
     background: #fff;
+    margin-left: 10px;
   @include for-desktop {
     // display: flex;
     justify-content: flex-start;
     align-items: center;
+    margin-left: 10px;
   }
 }
 // ::v-deep .sf-price__regular {
