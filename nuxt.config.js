@@ -127,6 +127,9 @@ const config = {
       },
     ],
   ],
+  script:[
+   {src:'~/plugins/pixel.js',type: 'text/javascript'}
+  ],
   // googleAnalytics: {
   //   id: 'UA-233114703-1'
   // },

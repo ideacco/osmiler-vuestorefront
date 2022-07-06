@@ -6,10 +6,10 @@
         uk-grid=""
       >
         <div class="uk-first-column">
-          <h1 class="uk-text-center">Shipping &amp; Return Policy</h1>
+          <h1 class="uk-text-center"> Return Policy</h1>
           <hr />
           <div class="uk-panel uk-margin">
-            <h3><strong>SHIPPING POLICY</strong></h3>
+            <!-- <h3><strong>SHIPPING POLICY</strong></h3>
             <h3>Import Duties &amp; Taxes</h3>
             <p>
               Any import duties, taxes or brokerage fees due at the time of
@@ -23,7 +23,7 @@
               holidays. All shipping dates are pending payment verification.
               Please allow 2-3 business days for your order to process before it
               is shipped.
-            </p>
+            </p> -->
             <h3><strong>RETURN POLICY</strong></h3>
             <p>
               You will have 30 calendar days from the date of purchase. All

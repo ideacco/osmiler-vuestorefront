@@ -13,7 +13,7 @@
                   class="el-link"
                   href="/"
                 ><img
-                  src="../static/icons/osmiler-logo-default.svg"
+                  src="../static/icons/osmiler-logo-default2.svg"
                   width="100"
                   class="el-image"
                   alt="Osmiler"
@@ -118,7 +118,16 @@
                     <a
                       href="/ShippingReturnPolicy"
                       class="el-link uk-link-text uk-margin-remove-last-child"
-                    >Shipping &amp; Return Policy</a
+                    >Return Policy</a
+                    >
+                  </div>
+                </li>
+                    <li class="el-item">
+                  <div class="el-content uk-panel">
+                    <a
+                      href="/ShippingPolicy"
+                      class="el-link uk-link-text uk-margin-remove-last-child"
+                    >Shipping Policy </a
                     >
                   </div>
                 </li>
@@ -182,7 +191,7 @@
               <div
                 class="uk-panel uk-text-small uk-text-muted uk-visible@m uk-text-left@s uk-text-center"
               >
-                © 2022 OSMILER. All rights reserved.<br class="uk-hidden@s" />
+                © 2022 OSMILER™️. All rights reserved.<br class="uk-hidden@s" />
               </div>
             </div>
 
