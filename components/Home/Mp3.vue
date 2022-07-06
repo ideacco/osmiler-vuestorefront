@@ -37,7 +37,6 @@
                   >
                     <a
                       class="el-content uk-button uk-button-default uk-flex-inline uk-flex-center uk-flex-middle"
-                      href="/music"
                     >
                       <span class="uk-margin-small-right" uk-icon="bolt"></span>
                       GO
