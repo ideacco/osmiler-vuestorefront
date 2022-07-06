@@ -1,314 +1,578 @@
 <template>
-  <div
-    style="background-image: url('/wp-content/themes/yootheme/cache/music-hero-4f873de3.jpeg');"
-    ref="hero"
-  >
-    <div class="uk-padding-large">
-      <h1>产品接口测试</h1>
-
-      <button @click="testRouterParams">获取路由信息</button>
-      <button @click="fetchSomething">测试请求</button>
-
-      <!-- <SfGallery
-        :images='productGallery'
-
-        :imageWidth="1000"
-        :imageHeight="1000"
-        :thumbWidth="160"
-        :thumbHeight="160"
-        :current="1"
-        :sliderOptions='{"type":"slider","autoplay":false,"rewind":false,"gap":0}'
-        :outsideZoom="false"
-        enableZoom
-      /> -->
-
-      <div class="uk-margin-large uk-light">
-        <h3>获取的产品内容</h3>
-
-        产品Title:{{ productTitle ? productTitle : 'no Title' }}
-        <br />
-        产品Id:{{ productId ? productId : 'no Id' }}
-        <br />
-        产品图片:
-        <img
-          v-if="productImage"
-          :src="productImage"
-          alt=""
-        />
-        <br />
-        图片URL:{{ productImage ? productImage : 'no imags' }}
-
-        <br />
-
-        产品的图库信息: {{ productGallery ? productGallery : 'no gallery' }}
-
-        <br />
-        产品的描述: {{ prdDescription ? prdDescription : 'no Description' }}
-        <br />
-        产品的类别Id:
-        {{ productCategoryIds ? productCategoryIds : 'no productCategoryIds' }}
-        <br />
-        产品的loading信息: {{ loading ? loading : 'no loading' }}
-
-        <br />
-        产品的类别信息:
-        {{ productCategory ? productCategory : 'no productCategory' }}
-
-        <br />
-        产品的图:
-        {{ productGallery2 ? productGallery2 : 'no productGallery2' }}
-
-        <br />
-        产品的图333:
-        {{ productGallery3 ? productGallery3 : 'no productGallery3' }}
+  <div>
+    <div class="uk-section-primary uk-preserve-color uk-light">
+      <div
+        style="background-image: url('/wp-content/themes/yootheme/cache/03BG-ya-1-1345d345.jpeg');"
+        class="
+          uk-background-norepeat
+          uk-background-cover
+          uk-background-center-center
+          uk-section
+          uk-padding-remove-vertical
+          uk-flex
+          uk-flex-middle
+        "
+        uk-height-viewport="offset-top: true; offset-bottom: 20;"
+      >
+        <div class="uk-width-1-1">
+          <div class="uk-container">
+            <div class="tm-grid-expand uk-grid-margin" uk-grid>
+              <div class="uk-width-1-2@m">
+                <h1>About Osmiler</h1>
+                <div class="uk-panel uk-margin">
+                  <p>Osmiler is concerned about your oral health.</p>
+                  <p>
+                    It redefines the way of teeth cleaning with transforming the
+                    traditional“Vibration” cleaning mode into the“Music bone
+                    conduction vibration” mode.Not only do we know how
+                    time-consuming it is to brush our teeth.
+                  </p>
+                  <p>From now on, revolutionize your brushing experience.</p>
+                </div>
+              </div>
+              <div class="uk-width-1-2@m"></div>
+            </div>
+          </div>
+        </div>
       </div>
-
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati
-        placeat perspiciatis praesentium, accusantium illum nulla similique quas
-        illo aspernatur earum vitae consectetur, ullam eius corrupti accusamus
-        voluptate saepe dolores cupiditate.
-      </p>
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati
-        placeat perspiciatis praesentium, accusantium illum nulla similique quas
-        illo aspernatur earum vitae consectetur, ullam eius corrupti accusamus
-        voluptate saepe dolores cupiditate.
-      </p>
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati
-        placeat perspiciatis praesentium, accusantium illum nulla similique quas
-        illo aspernatur earum vitae consectetur, ullam eius corrupti accusamus
-        voluptate saepe dolores cupiditate.
-      </p>
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati
-        placeat perspiciatis praesentium, accusantium illum nulla similique quas
-        illo aspernatur earum vitae consectetur, ullam eius corrupti accusamus
-        voluptate saepe dolores cupiditate.
-      </p>
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati
-        placeat perspiciatis praesentium, accusantium illum nulla similique quas
-        illo aspernatur earum vitae consectetur, ullam eius corrupti accusamus
-        voluptate saepe dolores cupiditate.
-      </p>
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati
-        placeat perspiciatis praesentium, accusantium illum nulla similique quas
-        illo aspernatur earum vitae consectetur, ullam eius corrupti accusamus
-        voluptate saepe dolores cupiditate.
-      </p>
     </div>
+    <div id="page#1" class="uk-section-default uk-section" style="background:#faf9fd;">
+      <div class="uk-container">
+        <div class="uk-grid-margin uk-container uk-container-xsmall">
+          <div
+            class="tm-grid-expand uk-grid-column-small uk-child-width-1-1"
+            uk-grid
+          >
+            <div>
+              <div class="uk-position-relative uk-margin uk-text-left">
+                <div class="uk-child-width-expand" uk-grid>
+                  <div class="uk-width-auto@m">
+                    <ul
+                      class="el-nav uk-tab-left"
+                      uk-tab="connect: #js-1fba; itemNav: #js-1fc3; animation: uk-animation-slide-top-small; media: @m  ;"
+                    >
+                      <li>
+                        <a href="#">01 Vision</a>
+                      </li>
+                      <li>
+                        <a href="#">02 Mission</a>
+                      </li>
+                      <li>
+                        <a href="#">03 Value</a>
+                      </li>
+                    </ul>
+                  </div>
+                  <div>
+                    <ul
+                      id="js-1fba"
+                      class="uk-switcher"
+                      uk-height-match="row: false"
+                    >
+                      <li class="el-item uk-margin-remove-first-child">
+                        <h3
+                          class="
+                            el-title
+                            uk-h3
+                            uk-font-primary
+                            uk-margin-top
+                            uk-margin-remove-bottom
+                          "
+                        >
+                          01 Vision
+                        </h3>
+                        <div class="el-content uk-panel uk-margin-top">
+                          Better Health, Brighten Smile
+                        </div>
+                        <img
+                          src="/wp-content/themes/yootheme/cache/pic_vision-04579ea3.jpeg"
+                          sizes="(min-width: 300px) 300px"
+                          data-width="300"
+                          data-height="300"
+                          class="el-image uk-margin-top"
+                          alt
+                        />
+                      </li>
+                      <li class="el-item uk-margin-remove-first-child">
+                        <h3
+                          class="
+                            el-title
+                            uk-h3
+                            uk-font-primary
+                            uk-margin-top
+                            uk-margin-remove-bottom
+                          "
+                        >
+                          02 Mission
+                        </h3>
+                        <div class="el-content uk-panel uk-margin-top">
+                          Healthier Oral Condition For All
+                        </div>
+                        <img
+                          src="/wp-content/themes/yootheme/cache/pic_Mission-1-a08bea96.jpeg"
+                          sizes="(min-width: 300px) 300px"
+                          data-width="300"
+                          data-height="300"
+                          class="el-image uk-margin-top"
+                          alt
+                        />
+                      </li>
+                      <li class="el-item uk-margin-remove-first-child">
+                        <h3
+                          class="
+                            el-title
+                            uk-h3
+                            uk-font-primary
+                            uk-margin-top
+                            uk-margin-remove-bottom
+                          "
+                        >
+                          03 Value
+                        </h3>
+                        <div class="el-content uk-panel uk-margin-top">
+                          Oral care routine isn&#8217;t complete, until Osmile
+                        </div>
+                        <img
+                          src="/wp-content/themes/yootheme/cache/pic_value-a2b5e9c8.jpeg"
+                          sizes="(min-width: 300px) 300px"
+                          data-width="300"
+                          data-height="300"
+                          class="el-image uk-margin-top"
+                          alt
+                        />
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="uk-section-default uk-section">
+      <div class="uk-container">
+        <div class="tm-grid-expand uk-child-width-1-1 uk-grid-margin" uk-grid>
+          <div>
+            <h1 class="uk-text-center" id="page#2-0-0-0">Why Osmiler</h1>
+          </div>
+        </div>
+        <div
+          class="tm-grid-expand uk-grid-collapse uk-margin-remove-vertical"
+          uk-grid
+          uk-height-match="target: .uk-card"
+        >
+          <div class="uk-grid-item-match uk-width-1-2@m" id="page#2-1-0">
+            <div class="uk-tile-muted uk-tile uk-tile-large">
+              <div class="uk-panel uk-text-large uk-margin">
+                <p><strong>Excellence</strong></p>
+              </div>
+              <div class="uk-panel uk-margin">
+                <p>Strive for Excellence,</p>
+                <p>Detail and Perfection</p>
+              </div>
+            </div>
+          </div>
+          <div class="uk-grid-item-match uk-width-1-2@m">
+            <div class="uk-tile-muted uk-flex">
+              <div
+                class="
+                  uk-tile
+                  uk-width-1-1
+                  uk-background-norepeat
+                  uk-background-contain
+                  uk-background-top-center
+                "
+                style="background-image: url('/wp-content/themes/yootheme/cache/03_Excellence-ffc013d9.jpeg');"
+              ></div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="
+            uk-margin-remove-top uk-margin-remove-bottom
+            tm-grid-expand
+            uk-grid-collapse uk-margin-remove-top uk-margin-remove-bottom
+          "
+          uk-grid
+          uk-height-match="target: .uk-card"
+        >
+          <div class="uk-grid-item-match uk-width-1-2@m" id="page#2-2-0">
+            <div class="uk-tile-muted uk-flex">
+              <div
+                class="
+                  uk-tile
+                  uk-width-1-1
+                  uk-tile-large
+                  uk-background-norepeat
+                  uk-background-contain
+                  uk-background-top-center
+                "
+                style="background-image: url('/wp-content/themes/yootheme/cache/pic_Pioneer-746ad31c.jpeg');"
+              ></div>
+            </div>
+          </div>
+          <div class="uk-grid-item-match uk-width-1-2@m">
+            <div class="uk-tile-muted uk-tile">
+              <div class="uk-panel uk-text-large uk-margin">
+                <p><strong>Innovation</strong></p>
+              </div>
+              <div class="uk-panel uk-margin">
+                <p>Strive for Excellence,</p>
+                <p>Detail and Perfection</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="uk-section-default uk-section uk-padding-remove-vertical">
+      <!-- <div
+        class="
+          uk-margin-remove-top uk-margin-remove-bottom
+          tm-grid-expand
+          uk-child-width-1-1
+          uk-grid-margin
+          uk-margin-remove-top
+          uk-margin-remove-bottom
+        "
+        uk-grid
+      >
+        <div>
+          <div uk-slideshow="minHeight: 300;" class="uk-margin">
+            <div class="uk-position-relative">
+              <ul class="uk-slideshow-items">
+                <li class="el-item">
+                  <img
+                    src="/wp-content/themes/yootheme/cache/04_01-1-998c8592.jpeg"
+                    sizes="(max-aspect-ratio: 1440/543) 265vh"
+                    data-width="1440"
+                    data-height="543"
+                    class="el-image"
+                    alt
+                    uk-cover
+                  />
+                  <div
+                    class="
+                      uk-position-cover
+                      uk-flex
+                      uk-flex-left
+                      uk-flex-middle
+                      uk-container
+                      uk-section
+                    "
+                  >
+                    <div
+                      class="
+                        el-overlay
+                        uk-panel uk-light uk-margin-remove-first-child
+                      "
+                    >
+                      <h3
+                        class="el-title uk-margin-top uk-margin-remove-bottom"
+                      >
+                        Be a music creator
+                      </h3>
+                      <div class="el-content uk-panel uk-margin-top">
+                        <p style="text-align: left">
+                          Electric toothbrush with musical bone conduction
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+                <li class="el-item">
+                  <img
+                    src="/wp-content/themes/yootheme/cache/Frame-1371-3b59225f.jpeg"
+                    sizes="(max-aspect-ratio: 1440/543) 265vh"
+                    data-width="1440"
+                    data-height="543"
+                    class="el-image"
+                    alt
+                    uk-cover
+                  />
+                  <div
+                    class="
+                      uk-position-cover
+                      uk-flex
+                      uk-flex-left
+                      uk-flex-middle
+                      uk-container
+                      uk-section
+                    "
+                  >
+                    <div
+                      class="
+                        el-overlay
+                        uk-panel uk-light uk-margin-remove-first-child
+                      "
+                    >
+                      <h3
+                        class="el-title uk-margin-top uk-margin-remove-bottom"
+                      >
+                        Bone conduction sonic
+                      </h3>
+                      <div class="el-content uk-panel uk-margin-top">
+                        <p>
+                          Sonic Electric Toothbrush with Maglev Brushless Motor
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+                <li class="el-item">
+                  <img
+                    src="/wp-content/themes/yootheme/cache/04_01-2-a1b70ee1.jpeg"
+                    sizes="(max-aspect-ratio: 1440/543) 265vh"
+                    data-width="1440"
+                    data-height="543"
+                    class="el-image"
+                    alt
+                    uk-cover
+                  />
+                  <div
+                    class="
+                      uk-position-cover
+                      uk-flex
+                      uk-flex-left
+                      uk-flex-middle
+                      uk-container
+                      uk-section
+                    "
+                  >
+                    <div
+                      class="
+                        el-overlay
+                        uk-panel uk-light uk-margin-remove-first-child
+                      "
+                    >
+                      <h3
+                        class="el-title uk-margin-top uk-margin-remove-bottom"
+                      >
+                        No afraid of power-off
+                      </h3>
+                      <div class="el-content uk-panel uk-margin-top">
+                        <p>The battery can last up to more than 90 days.</p>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+              <div
+                class="
+                  uk-position-bottom-center uk-position-medium uk-visible@s
+                "
+              >
+                <ul class="el-nav uk-dotnav uk-flex-center" uk-margin>
+                  <li uk-slideshow-item="0">
+                    <a href="#">Be a music creator</a>
+                  </li>
+                  <li uk-slideshow-item="1">
+                    <a href="#">Bone conduction sonic</a>
+                  </li>
+                  <li uk-slideshow-item="2">
+                    <a href="#">No afraid of power-off</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div> -->
+      <div
+        class="
+          uk-margin-remove-top uk-margin-remove-bottom
+          tm-grid-expand
+          uk-child-width-1-1
+          uk-grid-margin
+          uk-margin-remove-top
+          uk-margin-remove-bottom
+        "
+        uk-grid
+      >
+        <div>
+          <div uk-slideshow="minHeight: 300;" class="uk-margin">
+            <div class="uk-position-relative">
+              <ul class="uk-slideshow-items">
+                <li class="el-item">
+                  <img
+                    src="/wp-content/themes/yootheme/cache/tighting-test-78302c89.jpeg"
+                    sizes="(max-aspect-ratio: 1440/543) 265vh"
+                    data-width="1440"
+                    data-height="543"
+                    class="el-image"
+                    alt
+                    uk-cover
+                  />
+                  <div
+                    class="
+                      uk-position-cover
+                      uk-flex
+                      uk-flex-left
+                      uk-flex-middle
+                      uk-container
+                      uk-section
+                    "
+                  >
+                    <div
+                      class="
+                        el-overlay
+                        uk-panel uk-light uk-margin-remove-first-child
+                      "
+                    >
+                      <h3
+                        class="el-title uk-margin-top uk-margin-remove-bottom"
+                      >
+                        Tightness test
+                      </h3>
+                    </div>
+                  </div>
+                </li>
+                <li class="el-item">
+                  <img
+                    src="/wp-content/themes/yootheme/cache/button-test-194dc626.jpeg"
+                    sizes="(max-aspect-ratio: 1440/543) 265vh"
+                    data-width="1440"
+                    data-height="543"
+                    class="el-image"
+                    alt
+                    uk-cover
+                  />
+                  <div
+                    class="
+                      uk-position-cover
+                      uk-flex
+                      uk-flex-left
+                      uk-flex-middle
+                      uk-container
+                      uk-section
+                    "
+                  >
+                    <div
+                      class="
+                        el-overlay
+                        uk-panel uk-light uk-margin-remove-first-child
+                      "
+                    >
+                      <h3
+                        class="el-title uk-margin-top uk-margin-remove-bottom"
+                      >
+                        Button test
+                      </h3>
+                    </div>
+                  </div>
+                </li>
+                <li class="el-item">
+                  <img
+                    src="/wp-content/themes/yootheme/cache/drawing-test-96102591.jpeg"
+                    sizes="(max-aspect-ratio: 1440/543) 265vh"
+                    data-width="1440"
+                    data-height="543"
+                    class="el-image"
+                    alt
+                    uk-cover
+                  />
+                  <div
+                    class="
+                      uk-position-cover
+                      uk-flex
+                      uk-flex-left
+                      uk-flex-middle
+                      uk-container
+                      uk-section
+                    "
+                  >
+                    <div
+                      class="
+                        el-overlay
+                        uk-panel uk-light uk-margin-remove-first-child
+                      "
+                    >
+                      <h3
+                        class="el-title uk-margin-top uk-margin-remove-bottom"
+                      >
+                        Drawing test
+                      </h3>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+              <div
+                class="
+                  uk-position-bottom-center uk-position-medium uk-visible@s
+                "
+              >
+                <ul
+                  class="el-nav uk-thumbnav uk-flex-nowrap uk-flex-center"
+                  uk-margin
+                >
+                  <li uk-slideshow-item="0">
+                    <a href="#"
+                      ><img
+                        src="/wp-content/themes/yootheme/cache/tighting-test-de0f184c.jpeg"
+                        sizes="(min-width: 100px) 100px"
+                        data-width="100"
+                        data-height="75"
+                        alt
+                    /></a>
+                  </li>
+                  <li uk-slideshow-item="1">
+                    <a href="#"
+                      ><img
+                        src="/wp-content/themes/yootheme/cache/button-test-63fd70ae.jpeg"
+                        sizes="(min-width: 100px) 100px"
+                        data-width="100"
+                        data-height="75"
+                        alt
+                    /></a>
+                  </li>
+                  <li uk-slideshow-item="2">
+                    <a href="#"
+                      ><img
+                        src="/wp-content/themes/yootheme/cache/drawing-test-3eaca46e.jpeg"
+                        sizes="(min-width: 100px) 100px"
+                        data-width="100"
+                        data-height="75"
+                        alt
+                    /></a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- <div class="uk-section-default uk-section">
+      <div class="uk-container">
+        <div class="tm-grid-expand uk-child-width-1-1 uk-grid-margin" uk-grid>
+          <div></div>
+        </div>
+      </div>
+    </div> -->
+    <Contact />
+    <!-- <MainChack /> -->
   </div>
 </template>
-
-<script>
-import {
-  useRoute,
-  useRouter,
-  computed,
-  onMounted,
-  onUnmounted
-} from '@nuxtjs/composition-api'
-
-import { useUiState } from '~/composables'
-import { onSSR } from '@vue-storefront/core'
-import {
-  useProduct,
-  productGetters,
-  useCategory
-} from '@vue-storefront/shopify'
-
-import {
-  SfGallery
-} from '@storefront-ui/vue'
-
+<script type="module">
+import Contact from '~/components/Home/Contact'
+import MainChack from '~/components/MainChack'
 export default {
+  name: 'AboutS',
   components: {
-    SfGallery
-  },
-  name: 'TestPage',
-  setup() {
-    const {
-      isNavbarTransparent,
-      toggleNavbarTransparent,
-      setNavbarTransparent
-    } = useUiState()
-
-    // 程序化路由方法
-    const router = useRouter()
-    // 实例化路由信息
-    const route = useRoute()
-
-    // 功能组件
-
-    const { products, search } = useProduct('products')
-    const { search: inSearch, categories, loading } = useCategory('categories')
-
-    // 根据接口进行查询填充
-    // const { slug } = route?.value?.params
-    const slug = 'osmiler-swing'
-
-    // 自定义查询id
-    const id = 'Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0Lzc3MTcwNDc5OTI1Nzg='
-
-    // 初始化(ssr)钩子
-    onSSR(async () => {
-      console.log('后端执行的 ssr 查询')
-      // 用来更新产品的钩子函数
-      await search({slug})
-      // await search({})
-      // await inSearch({})
-    })
-
-    // 自定义查询
-    const productsSearchParams = {
-      customQuery: {
-        first: 1,
-        sortKey: 'bestSelling',
-        reverse: false
-      }
-    }
-
-    // 产品根元素
-    // const product = computed(() => productGetters.getFiltered(products.value))
-    const product = computed(
-      () =>
-        productGetters.getFiltered(products.value, {
-          master: true,
-          attributes: route?.value?.query
-        })[0]
-    )
-
-    // 获取信息
-    const productImage = computed(() =>
-      productGetters.getCoverImage(products.value)
-    )
-    const productCategoryIds = computed(() =>
-      productGetters.getCategoryIds(product.value)
-    )
-    const prdDescription = computed(() =>
-      productGetters.getDescription(product.value, true)
-    )
-    const productId = computed(() => productGetters.getId(product.value))
-    const productTitle = computed(() => productGetters.getName(product.value))
-    const productGallery2 = computed(() => productGetters.getGallery(product.value))
-
-    const getProductGallery = (product) => (product ? product.images : []).map((image) => {
-      const imgPath = image.originalSrc.substring(0, image.originalSrc.lastIndexOf('.'))
-      const imgext = image.originalSrc.split('.').pop()
-      const imgSmall = imgPath + '_160x160.' + imgext
-      const imgBig = imgPath + '_295x295.' + imgext
-      const imgNormal = imgPath + '_1500x1500.' + imgext
-      return ({
-        small: imgSmall,
-        big: imgBig,
-        normal: imgNormal
-      })
-    })
-
-    const productGallery3 = computed(() =>
-      getProductGallery(product.value).map((img) => {
-        // console.log('img?',img)
-        return ({
-          mobile: { url: img.small },
-          desktop: { url: img.normal },
-          big: { url: img.big }
-        })
-      })
-    )
-
-
-
-    // 高级写法,将不同的尺寸图片分类使用
-    const productGallery = computed(() =>
-      productGetters.getGallery(product.value).map((img) => {
-        // console.log('img?',img)
-        return ({
-          mobile: { url: img.small },
-          desktop: { url: img.normal },
-          big: { url: img.big }
-        })
-
-      })
-    )
-
-    const productCategory = computed(() => [...categories.value])
-
-    // search 可以查询的单个选项
-    const params = {
-      id: '',
-      ids: [],
-      slug: slug,
-      customQuery: {
-        // first: 1,
-        // sortKey: 'bestSelling',
-        // reverse: false,
-        query: {
-          images: []
-        }
-      }
-    }
-
-    const testRouterParams = () => {
-      // console.log('子页面初始化!,点击测试', route)
-      // router.push({name: 'test_page', params: 'osmiler-swing'})
-      router.push({ path: '/test_page', params: 'osmiler-swing' })
-      // toggleNavbarTransparent()
-      // console.log('子页面test,isNavbarTransparent', isNavbarTransparent)
-    }
-
-    onMounted(() => {
-      if (slug) {
-        // console.log('子页面初始化!,获取产品', slug)
-      }
-      // console.log('子页面初始化!,路由信息', route)
-      setNavbarTransparent(true)
-      // console.log('product.value',product.value)
-    })
-
-    onUnmounted(() => {
-      // console.log('子页面卸载!,清除透明导航')
-      setNavbarTransparent(false)
-    })
-
-    return {
-      isNavbarTransparent,
-      toggleNavbarTransparent,
-      testRouterParams,
-      product,
-      productImage,
-      prdDescription,
-      productCategoryIds,
-      productCategory,
-      categories,
-      loading,
-      productId,
-      productTitle,
-      productGallery,
-      productGallery2,
-      productGallery3
-    }
-  },
-
-  data() {
-    return {
-      email: ''
-    }
-  },
-
-  methods: {
-    async fetchSomething() {
-      const datas = {
-        email_address: 'kensss@gmail.com'
-      }
-      const res = await this.$axios.$post('/v1/mailchimp/subscribed', datas)
-      this.email = res
-      // console.log('子页面fetchSomething,res', res)
-    }
+    Contact,
+    MainChack
   }
 }
 </script>
-
-<style lang="scoped"></style>
+<style lang="scss" scoped>
+#page2 {
+  font-family: 'osmiler-title';
+  color: #3a3543;
+}
+.uk-slideshow-items{
+  margin-top:-30px;
+  @include for-desktop{
+    margin-top:-110px;
+  }
+}
+</style>
