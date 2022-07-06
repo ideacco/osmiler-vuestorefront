@@ -95,6 +95,7 @@ const config = {
     '@nuxtjs/google-analytics',
     // to core
     './modules/cms/build',
+    'nuxt-facebook-pixel-module',
     '@nuxtjs/composition-api/module',
     '@nuxtjs/pwa',
     '@nuxtjs/device',
@@ -163,6 +164,7 @@ const config = {
   ],
   modules: [
     '@nuxtjs/i18n',
+    'nuxt-facebook-pixel-module',
     '@nuxtjs/gtm',
     // '@nuxtjs/google-gtag',
     'cookie-universal-nuxt',
@@ -179,6 +181,14 @@ const config = {
     enabled: true,
     scriptDefer: true,
     pageTracking: true,
+  },
+  facebook: {
+    /* module options */
+    track: 'PageView',
+    pixelId: '769420814057414',
+    autoPageView: true,
+    disabled: false,
+    manualModef:false
   },
   publicRuntimeConfig: {
     gtm: {

@@ -103,7 +103,7 @@ export default {
   },
 /* eslint-disable  */
    mounted() {
-     console.log(this.$gtm)
+    //  console.log(this.$fb,888)
     // //* eslint-disable  */
     // if (process.browser) {
     //   this.$gtag('config', 'UA-233114703-1', {
