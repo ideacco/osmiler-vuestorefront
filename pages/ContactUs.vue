@@ -45,9 +45,12 @@
                       Address
                     </h2>
                     <div class="el-content uk-panel uk-margin-top">
-                      Room 309,Building 5<br />
-                      ShenZhen<br />
-                      China
+                    Room 1607E<br/>
+                    Education Techonology Building<br/>
+                    No. 26 Zizhu Seven Road<br/>
+                    Xiangmihu Street<br/>
+                    Futian District<br/>
+                    Shenzhen
                     </div>
                   </div>
                 </div>
