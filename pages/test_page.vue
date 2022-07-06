@@ -2,7 +2,7 @@
   <div>
     <div class="uk-section-primary uk-preserve-color uk-light">
       <div
-        style="background-image: url('/wp-content/themes/yootheme/cache/03BG-ya-1-1345d345.jpeg');"
+        style="background-image: url('/wp-content/themes/yootheme/cache/compay.jpg');height: 860px;"
         class="
           uk-background-norepeat
           uk-background-cover
@@ -12,22 +12,25 @@
           uk-flex
           uk-flex-middle
         "
-        uk-height-viewport="offset-top: true; offset-bottom: 20;"
       >
-        <div class="uk-width-1-1">
-          <div class="uk-container">
+        <div class="uk-width-1-1  uk-width-1-2">
+          <div class="uk-container uk-textfont">
             <div class="tm-grid-expand uk-grid-margin" uk-grid>
-              <div class="uk-width-1-2@m">
-                <h1>About Osmiler</h1>
+              <div>
+                <h1 style="color: #4132c7">About Osmiler</h1>
                 <div class="uk-panel uk-margin">
-                  <p>Osmiler is concerned about your oral health.</p>
-                  <p>
+                  <p style="color: #4132c7">
+                    Osmiler is concerned about your oral health.
+                  </p>
+                  <p style="color: #4132c7">
                     It redefines the way of teeth cleaning with transforming the
-                    traditional“Vibration” cleaning mode into the“Music bone
-                    conduction vibration” mode.Not only do we know how
+                    traditional“Vibration” cleaning mode into the“<br />Music
+                    bone conduction vibration” mode.Not only do we know how
                     time-consuming it is to brush our teeth.
                   </p>
-                  <p>From now on, revolutionize your brushing experience.</p>
+                  <p style="color: #4132c7">
+                    From now on, revolutionize your brushing experience.
+                  </p>
                 </div>
               </div>
               <div class="uk-width-1-2@m"></div>
@@ -36,112 +39,81 @@
         </div>
       </div>
     </div>
-    <div id="page#1" class="uk-section-default uk-section" style="background:#faf9fd;">
-      <div class="uk-container">
-        <div class="uk-grid-margin uk-container uk-container-xsmall">
-          <div
-            class="tm-grid-expand uk-grid-column-small uk-child-width-1-1"
-            uk-grid
-          >
-            <div>
-              <div class="uk-position-relative uk-margin uk-text-left">
-                <div class="uk-child-width-expand" uk-grid>
-                  <div class="uk-width-auto@m">
-                    <ul
-                      class="el-nav uk-tab-left"
-                      uk-tab="connect: #js-1fba; itemNav: #js-1fc3; animation: uk-animation-slide-top-small; media: @m  ;"
-                    >
-                      <li>
-                        <a href="#">01 Vision</a>
-                      </li>
-                      <li>
-                        <a href="#">02 Mission</a>
-                      </li>
-                      <li>
-                        <a href="#">03 Value</a>
-                      </li>
-                    </ul>
+    <div
+      class="
+        uk-section-default uk-section uk-section-large uk-padding-remove-top
+      "
+    >
+      <div class="uk-container uk-container-expand">
+        <div class="uk-container uk-container-large uk-container-expand-right">
+          <div class="tm-grid-expand uk-grid-collapse" uk-grid>
+            <div class="uk-grid-item-match uk-width-1-3@m" id="page#0-0-0">
+              <div
+                class="
+                  uk-tile-default uk-tile uk-tile-small uk-flex uk-flex-middle
+                "
+              >
+                <div class="uk-panel uk-width-1-1">
+                  <div
+                    class="uk-h6 uk-text-primary uk-text-left@m uk-text-center"
+                  >
+                    About Us
                   </div>
-                  <div>
-                    <ul
-                      id="js-1fba"
-                      class="uk-switcher"
-                      uk-height-match="row: false"
-                    >
-                      <li class="el-item uk-margin-remove-first-child">
-                        <h3
-                          class="
-                            el-title
-                            uk-h3
-                            uk-font-primary
-                            uk-margin-top
-                            uk-margin-remove-bottom
-                          "
-                        >
-                          01 Vision
-                        </h3>
-                        <div class="el-content uk-panel uk-margin-top">
-                          Better Health, Brighten Smile
-                        </div>
-                        <img
-                          src="/wp-content/themes/yootheme/cache/pic_vision-04579ea3.jpeg"
-                          sizes="(min-width: 300px) 300px"
-                          data-width="300"
-                          data-height="300"
-                          class="el-image uk-margin-top"
-                          alt
-                        />
-                      </li>
-                      <li class="el-item uk-margin-remove-first-child">
-                        <h3
-                          class="
-                            el-title
-                            uk-h3
-                            uk-font-primary
-                            uk-margin-top
-                            uk-margin-remove-bottom
-                          "
-                        >
-                          02 Mission
-                        </h3>
-                        <div class="el-content uk-panel uk-margin-top">
-                          Healthier Oral Condition For All
-                        </div>
-                        <img
-                          src="/wp-content/themes/yootheme/cache/pic_Mission-1-a08bea96.jpeg"
-                          sizes="(min-width: 300px) 300px"
-                          data-width="300"
-                          data-height="300"
-                          class="el-image uk-margin-top"
-                          alt
-                        />
-                      </li>
-                      <li class="el-item uk-margin-remove-first-child">
-                        <h3
-                          class="
-                            el-title
-                            uk-h3
-                            uk-font-primary
-                            uk-margin-top
-                            uk-margin-remove-bottom
-                          "
-                        >
-                          03 Value
-                        </h3>
-                        <div class="el-content uk-panel uk-margin-top">
-                          Oral care routine isn&#8217;t complete, until Osmile
-                        </div>
-                        <img
-                          src="/wp-content/themes/yootheme/cache/pic_value-a2b5e9c8.jpeg"
-                          sizes="(min-width: 300px) 300px"
-                          data-width="300"
-                          data-height="300"
-                          class="el-image uk-margin-top"
-                          alt
-                        />
-                      </li>
-                    </ul>
-                  </div>
+                  <h1
+                    class="
+                      uk-margin-remove-vertical
+                      uk-width-large@m
+                      uk-text-left@m
+                      uk-text-center
+                    "
+                  >
+                    <span></span>
+                    We are committed to creating more possibilities for enjoying
+                    life.
+                  </h1>
+                </div>
+              </div>
+            </div>
+            <div class="uk-grid-item-match uk-width-2-3@m">
+              <div class="uk-panel uk-width-1-1">
+                <div
+                  class="uk-visible@l uk-position-absolute uk-width-1-1"
+                  style="left: -170px"
+                >
+                  <img
+                    loading="lazy"
+                    src="/wp-content/uploads/yootheme/about-us-shape-01.svg"
+                    width="170"
+                    height="170"
+                    class="el-image"
+                    alt
+                    target="!*"
+                  />
+                </div>
+                <div
+                  id="page#0-0-1-1"
+                  class="
+                    uk-position-relative
+                    uk-margin
+                    uk-margin-remove-top
+                    uk-text-right
+                    uk-container-item-padding-remove-right
+                  "
+                >
+                  <img
+                    src="/wp-content/themes/yootheme/cache/Frame-1315-ya-56886d56.jpeg"
+                    srcset="
+                      /wp-content/themes/yootheme/cache/Frame-1315-ya-56886d56.jpeg  768w,
+                      /wp-content/themes/yootheme/cache/Frame-1315-ya-d28e9925.jpeg 1024w,
+                      /wp-content/themes/yootheme/cache/Frame-1315-ya-47dd6acd.jpeg 1299w,
+                      /wp-content/themes/yootheme/cache/Frame-1315-ya-56886d56.jpeg 1300w
+                    "
+                    sizes="(min-width: 1300px) 1300px"
+                    data-width="1300"
+                    data-height="977"
+                    class="el-image"
+                    alt
+                  />
                 </div>
               </div>
             </div>
@@ -151,75 +123,38 @@
     </div>
     <div class="uk-section-default uk-section">
       <div class="uk-container">
-        <div class="tm-grid-expand uk-child-width-1-1 uk-grid-margin" uk-grid>
-          <div>
-            <h1 class="uk-text-center" id="page#2-0-0-0">Why Osmiler</h1>
+        <div class="tm-grid-expand uk-grid-margin" uk-grid>
+          <div class="uk-width-1-2@m">
+            <h1 style="font-family:osmiler-title">Osmiler is concerned about your oral health.</h1>
           </div>
-        </div>
-        <div
-          class="tm-grid-expand uk-grid-collapse uk-margin-remove-vertical"
-          uk-grid
-          uk-height-match="target: .uk-card"
-        >
-          <div class="uk-grid-item-match uk-width-1-2@m" id="page#2-1-0">
-            <div class="uk-tile-muted uk-tile uk-tile-large">
-              <div class="uk-panel uk-text-large uk-margin">
-                <p><strong>Excellence</strong></p>
-              </div>
-              <div class="uk-panel uk-margin">
-                <p>Strive for Excellence,</p>
-                <p>Detail and Perfection</p>
-              </div>
+          <div class="uk-width-1-2@m">
+            <div class="uk-panel uk-margin">
+              <p>
+                <span></span>It redefines the way of teeth cleaning with
+                transforming the traditional“Vibration” cleaning mode into
+                the“Music bone conduction vibration” mode.Not only do we know
+                how time-consuming it is to brush our teeth, but we also know
+                how boring and inefficient it can be! But let&#8217;s not forget
+                the substance and necessity of it for one&#8217;s oral hygiene
+                health. Osmiler is positioned to go far beyond those with a deep
+                understanding of“Oral hygiene, it is also suitable for anyone
+                who aspires to simple, comfortable, and innovative
+                experiences.As a company that puts our community first, every
+                product has been thoroughly tested to ensure safe and consistent
+                use.<br />From now on, revolutionize your brushing experience.
+              </p>
             </div>
-          </div>
-          <div class="uk-grid-item-match uk-width-1-2@m">
-            <div class="uk-tile-muted uk-flex">
-              <div
-                class="
-                  uk-tile
-                  uk-width-1-1
-                  uk-background-norepeat
-                  uk-background-contain
-                  uk-background-top-center
-                "
-                style="background-image: url('/wp-content/themes/yootheme/cache/03_Excellence-ffc013d9.jpeg');"
-              ></div>
+            <div class="uk-panel uk-margin">
+              <p><strong>Mission</strong></p>
+              <p>Let everyone have a confident smile</p>
             </div>
-          </div>
-        </div>
-        <div
-          class="
-            uk-margin-remove-top uk-margin-remove-bottom
-            tm-grid-expand
-            uk-grid-collapse uk-margin-remove-top uk-margin-remove-bottom
-          "
-          uk-grid
-          uk-height-match="target: .uk-card"
-        >
-          <div class="uk-grid-item-match uk-width-1-2@m" id="page#2-2-0">
-            <div class="uk-tile-muted uk-flex">
-              <div
-                class="
-                  uk-tile
-                  uk-width-1-1
-                  uk-tile-large
-                  uk-background-norepeat
-                  uk-background-contain
-                  uk-background-top-center
-                "
-                style="background-image: url('/wp-content/themes/yootheme/cache/pic_Pioneer-746ad31c.jpeg');"
-              ></div>
+            <div class="uk-panel uk-margin">
+              <p><strong>Vision</strong></p>
+              <p>Build consumers&#8217; favorite oral health brand</p>
             </div>
-          </div>
-          <div class="uk-grid-item-match uk-width-1-2@m">
-            <div class="uk-tile-muted uk-tile">
-              <div class="uk-panel uk-text-large uk-margin">
-                <p><strong>Innovation</strong></p>
-              </div>
-              <div class="uk-panel uk-margin">
-                <p>Strive for Excellence,</p>
-                <p>Detail and Perfection</p>
-              </div>
+            <div class="uk-panel uk-margin">
+              <p><strong>Value</strong></p>
+              <p>Humanized service, innovative technology and unique design</p>
             </div>
           </div>
         </div>
@@ -380,162 +315,209 @@
       </div> -->
       <div
         class="
-          uk-margin-remove-top uk-margin-remove-bottom
-          tm-grid-expand
-          uk-child-width-1-1
-          uk-grid-margin
-          uk-margin-remove-top
-          uk-margin-remove-bottom
+          uk-section-default
+          uk-section
+          uk-padding-remove-vertical
+          uk-flex
+          uk-flex-middle
         "
-        uk-grid
+        uk-height-viewport="offset-top: true; offset-bottom: 20;"
       >
-        <div>
-          <div uk-slideshow="minHeight: 300;" class="uk-margin">
-            <div class="uk-position-relative">
-              <ul class="uk-slideshow-items">
-                <li class="el-item">
-                  <img
-                    src="/wp-content/themes/yootheme/cache/tighting-test-78302c89.jpeg"
-                    sizes="(max-aspect-ratio: 1440/543) 265vh"
-                    data-width="1440"
-                    data-height="543"
-                    class="el-image"
-                    alt
-                    uk-cover
-                  />
+        <div class="uk-width-1-1">
+          <div
+            class="
+              uk-margin-remove-top uk-margin-remove-bottom
+              tm-grid-expand
+              uk-child-width-1-1
+              uk-grid-margin
+              uk-margin-remove-top
+              uk-margin-remove-bottom
+            "
+            uk-grid
+          >
+            <div>
+              <div uk-slideshow="ratio: false;" class="uk-margin">
+                <div class="uk-position-relative">
+                  <ul
+                    class="uk-slideshow-items"
+                    uk-height-viewport="offset-top: true; minHeight: 300; offset-bottom: 20;"
+                  >
+                    <li class="el-item">
+                      <img
+                        src="/wp-content/themes/yootheme/cache/DSD2860-3-63181d3d.jpeg"
+                        sizes="(max-aspect-ratio: 1920/1282) 150vh"
+                        data-width="1920"
+                        data-height="1282"
+                        class="el-image"
+                        alt
+                        uk-cover
+                      />
+                      <div
+                        class="
+                          uk-position-cover
+                          uk-flex
+                          uk-flex-left
+                          uk-flex-middle
+                          uk-container
+                          uk-section
+                        "
+                      >
+                        <div
+                          class="
+                            el-overlay
+                            uk-panel uk-margin-remove-first-child
+                          "
+                        >
+                          <h3
+                            class="
+                              el-title
+                              uk-heading-small
+                              uk-margin-top
+                              uk-margin-remove-bottom
+                            "
+                          >
+                            original design
+                          </h3>
+                          <div class="el-meta uk-text-lead uk-margin-top">
+                            osmiler believes that only original products can
+                            bring a better experience, so we start with sketches
+                            and every detail is carefully designed
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                    <li class="el-item">
+                      <img
+                        src="/wp-content/themes/yootheme/cache/_DSD2600.jpg"
+                        sizes="(max-aspect-ratio: 1440/543) 265vh"
+                        data-width="1440"
+                        data-height="543"
+                        class="el-image"
+                        alt
+                        uk-cover
+                      />
+                      <div
+                        class="
+                          uk-position-cover
+                          uk-flex
+                          uk-flex-left
+                          uk-flex-middle
+                          uk-container
+                          uk-section
+                        "
+                      >
+                        <div
+                          class="
+                            el-overlay
+                            uk-panel uk-light uk-margin-remove-first-child
+                          "
+                        >
+                          <h3
+                            class="
+                              el-title
+                              uk-heading-small
+                              uk-margin-top
+                              uk-margin-remove-bottom
+                            "
+                          >
+                            Full test
+                          </h3>
+                          <div class="el-meta uk-text-lead uk-margin-top">
+                            We hope that OSMILER&#8217;s products can accompany
+                            you for a long time, so a complete reliability test
+                            is essential, from keys to waterproofing, we
+                            continue to improve product quality
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                    <li class="el-item">
+                      <img
+                        src="/wp-content/themes/yootheme/cache/button-test-194dc626.jpeg"
+                        sizes="(max-aspect-ratio: 1440/543) 265vh"
+                        data-width="1440"
+                        data-height="543"
+                        class="el-image"
+                        alt
+                        uk-cover
+                      />
+                      <div
+                        class="
+                          uk-position-cover
+                          uk-flex
+                          uk-flex-left
+                          uk-flex-middle
+                          uk-container
+                          uk-section
+                        "
+                      >
+                        <div
+                          class="
+                            el-overlay
+                            uk-panel uk-light uk-margin-remove-first-child
+                          "
+                        >
+                          <h3
+                            class="
+                              el-title
+                              uk-heading-small
+                              uk-margin-top
+                              uk-margin-remove-bottom
+                            "
+                          >
+                            Full test
+                          </h3>
+                          <div class="el-meta uk-text-lead uk-margin-top">
+                            We hope that osmiler&#8217;s products can accompany
+                            you for a long time, so complete reliability testing
+                            is essential, from keys to waterproofing, we
+                            continue to improve product quality
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                  </ul>
                   <div
                     class="
-                      uk-position-cover
-                      uk-flex
-                      uk-flex-left
-                      uk-flex-middle
-                      uk-container
-                      uk-section
+                      uk-position-bottom-center uk-position-medium uk-visible@s
                     "
                   >
-                    <div
-                      class="
-                        el-overlay
-                        uk-panel uk-light uk-margin-remove-first-child
-                      "
+                    <ul
+                      class="el-nav uk-thumbnav uk-flex-nowrap uk-flex-center"
+                      uk-margin
                     >
-                      <h3
-                        class="el-title uk-margin-top uk-margin-remove-bottom"
-                      >
-                        Tightness test
-                      </h3>
-                    </div>
+                      <li uk-slideshow-item="0">
+                        <a href="#"
+                          ><img
+                            src="/wp-content/themes/yootheme/cache/DSD2860-3-cf8a50a8.jpeg"
+                            sizes="(min-width: 100px) 100px"
+                            data-width="100"
+                            data-height="75"
+                            alt
+                        /></a>
+                      </li>
+                      <li uk-slideshow-item="1">
+                        <a href="#"
+                          ><img
+                            src="/wp-content/themes/yootheme/cache/_DSD25991.jpg"
+                            data-width="100"
+                            data-height="75"
+                            alt
+                        /></a>
+                      </li>
+                      <li uk-slideshow-item="2">
+                        <a href="#"
+                          ><img
+                            src="/wp-content/themes/yootheme/cache/button-test-63fd70ae.jpeg"
+                            sizes="(min-width: 100px) 100px"
+                            data-width="100"
+                            data-height="75"
+                            alt
+                        /></a>
+                      </li>
+                    </ul>
                   </div>
-                </li>
-                <li class="el-item">
-                  <img
-                    src="/wp-content/themes/yootheme/cache/button-test-194dc626.jpeg"
-                    sizes="(max-aspect-ratio: 1440/543) 265vh"
-                    data-width="1440"
-                    data-height="543"
-                    class="el-image"
-                    alt
-                    uk-cover
-                  />
-                  <div
-                    class="
-                      uk-position-cover
-                      uk-flex
-                      uk-flex-left
-                      uk-flex-middle
-                      uk-container
-                      uk-section
-                    "
-                  >
-                    <div
-                      class="
-                        el-overlay
-                        uk-panel uk-light uk-margin-remove-first-child
-                      "
-                    >
-                      <h3
-                        class="el-title uk-margin-top uk-margin-remove-bottom"
-                      >
-                        Button test
-                      </h3>
-                    </div>
-                  </div>
-                </li>
-                <li class="el-item">
-                  <img
-                    src="/wp-content/themes/yootheme/cache/drawing-test-96102591.jpeg"
-                    sizes="(max-aspect-ratio: 1440/543) 265vh"
-                    data-width="1440"
-                    data-height="543"
-                    class="el-image"
-                    alt
-                    uk-cover
-                  />
-                  <div
-                    class="
-                      uk-position-cover
-                      uk-flex
-                      uk-flex-left
-                      uk-flex-middle
-                      uk-container
-                      uk-section
-                    "
-                  >
-                    <div
-                      class="
-                        el-overlay
-                        uk-panel uk-light uk-margin-remove-first-child
-                      "
-                    >
-                      <h3
-                        class="el-title uk-margin-top uk-margin-remove-bottom"
-                      >
-                        Drawing test
-                      </h3>
-                    </div>
-                  </div>
-                </li>
-              </ul>
-              <div
-                class="
-                  uk-position-bottom-center uk-position-medium uk-visible@s
-                "
-              >
-                <ul
-                  class="el-nav uk-thumbnav uk-flex-nowrap uk-flex-center"
-                  uk-margin
-                >
-                  <li uk-slideshow-item="0">
-                    <a href="#"
-                      ><img
-                        src="/wp-content/themes/yootheme/cache/tighting-test-de0f184c.jpeg"
-                        sizes="(min-width: 100px) 100px"
-                        data-width="100"
-                        data-height="75"
-                        alt
-                    /></a>
-                  </li>
-                  <li uk-slideshow-item="1">
-                    <a href="#"
-                      ><img
-                        src="/wp-content/themes/yootheme/cache/button-test-63fd70ae.jpeg"
-                        sizes="(min-width: 100px) 100px"
-                        data-width="100"
-                        data-height="75"
-                        alt
-                    /></a>
-                  </li>
-                  <li uk-slideshow-item="2">
-                    <a href="#"
-                      ><img
-                        src="/wp-content/themes/yootheme/cache/drawing-test-3eaca46e.jpeg"
-                        sizes="(min-width: 100px) 100px"
-                        data-width="100"
-                        data-height="75"
-                        alt
-                    /></a>
-                  </li>
-                </ul>
+                </div>
               </div>
             </div>
           </div>
@@ -550,29 +532,42 @@
       </div>
     </div> -->
     <Contact />
-    <!-- <MainChack /> -->
   </div>
 </template>
 <script type="module">
 import Contact from '~/components/Home/Contact'
-import MainChack from '~/components/MainChack'
 export default {
   name: 'AboutS',
   components: {
-    Contact,
-    MainChack
+    Contact
   }
 }
 </script>
 <style lang="scss" scoped>
-#page2 {
-  font-family: 'osmiler-title';
-  color: #3a3543;
+.uk-section-large {
+  padding-bottom: 0px;
 }
-.uk-slideshow-items{
-  margin-top:-30px;
-  @include for-desktop{
-    margin-top:-110px;
+.uk-container {
+  padding-left: 0;
+  padding-right: 0;
+}
+.uk-width-1-2 {
+  width: 1200px;
+  text-align: center;
+  @include for-desktop {
+    margin: auto;
   }
+}
+.uk-first-column {
+  padding-left: 0;
+}
+.uk-grid {
+  margin-left: 0px;
+}
+// .uk-container{
+//   margin: 0  auto;
+// }
+.uk-textfont {
+  margin-top: -280px;
 }
 </style>

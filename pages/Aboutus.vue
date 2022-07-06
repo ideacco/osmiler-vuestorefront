@@ -17,7 +17,7 @@
           <div class="uk-container uk-textfont">
             <div class="tm-grid-expand uk-grid-margin" uk-grid>
               <div>
-                <h1 style="color: #4132c7">About Osmiler</h1>
+                <h1 style="color: #4132c7;font-family: osmiler-title;">About Osmiler</h1>
                 <div class="uk-panel uk-margin">
                   <p style="color: #4132c7">
                     Osmiler is concerned about your oral health.
@@ -116,6 +116,29 @@
                   />
                 </div>
               </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="uk-section-default uk-section uk-margin-medium-top uk-margin-medium-bottom" >
+      <div class="uk-container">
+        <div class="tm-grid-expand uk-grid-margin" uk-grid>
+          <div class="uk-width-1-2@m">
+            <h1 style="font-family:osmiler-title">Osmiler is concerned about your oral health.</h1>
+          </div>
+          <div class="uk-width-1-2@m">
+            <div class="uk-panel uk-margin">
+              <p><strong>Mission</strong></p>
+              <p>Let everyone have a confident smile</p>
+            </div>
+            <div class="uk-panel uk-margin">
+              <p><strong>Vision</strong></p>
+              <p>Build consumers&#8217; favorite oral health brand</p>
+            </div>
+            <div class="uk-panel uk-margin">
+              <p><strong>Value</strong></p>
+              <p>Humanized service, innovative technology and unique design</p>
             </div>
           </div>
         </div>
@@ -349,7 +372,7 @@
                     </li>
                     <li class="el-item">
                       <img
-                        src="/wp-content/themes/yootheme/cache/tighting-test-78302c89.jpeg"
+                        src="/wp-content/themes/yootheme/cache/_DSD2600.jpg"
                         sizes="(max-aspect-ratio: 1440/543) 265vh"
                         data-width="1440"
                         data-height="543"
@@ -460,8 +483,7 @@
                       <li uk-slideshow-item="1">
                         <a href="#"
                           ><img
-                            src="/wp-content/themes/yootheme/cache/tighting-test-de0f184c.jpeg"
-                            sizes="(min-width: 100px) 100px"
+                            src="/wp-content/themes/yootheme/cache/_DSD25991.jpg"
                             data-width="100"
                             data-height="75"
                             alt
