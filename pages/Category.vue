@@ -868,6 +868,9 @@ export default {
     align-items: center;
       }
 }
+::v-deep .sf-product-card__title{
+  justify-content: flex-start !important;
+}
 // ::v-deep .sf-price__regular {
 //   display: block !important;
 // }
