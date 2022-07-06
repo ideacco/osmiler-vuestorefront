@@ -757,10 +757,6 @@ export default {
 }
 ::v-deep .sf-price{
   display: block !important;
-  text-align: left;
-  @include for-desktop{
-     text-align: left;
-  }
 }
 ::v-deep .sf-sidebar__aside {
   --sidebar-z-index: 3;
@@ -862,17 +858,15 @@ export default {
 
 }
 ::v-deep .sf-price__special{
-    // display: flex;
+    display: flex;
     justify-content:center;
     align-items: center;
     background: #fff;
-    margin-left: 10px;
   @include for-desktop {
-    // display: flex;
+    display: flex;
     justify-content: flex-start;
     align-items: center;
-    margin-left: 10px;
-  }
+      }
 }
 // ::v-deep .sf-price__regular {
 //   display: block !important;
