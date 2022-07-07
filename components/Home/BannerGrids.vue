@@ -25,9 +25,6 @@
                 <div class="uk-margin">
                   <img
                     src="/wp-content/themes/yootheme/cache/card-38c1e7bb.png"
-                    srcset="
-                      /wp-content/themes/yootheme/cache/card-38c1e7bb.png 353w
-                    "
                     sizes="(min-width: 353px) 353px"
                     data-width="353"
                     data-height="234"
@@ -79,10 +76,6 @@
             <div class="uk-margin">
               <img
                 src="/wp-content/themes/yootheme/cache/Frame-1344-721e9d0d.jpeg"
-                srcset="
-                  /wp-content/themes/yootheme/cache/Frame-1344-e9676e18.jpeg 768w,
-                  /wp-content/themes/yootheme/cache/Frame-1344-721e9d0d.jpeg 960w
-                "
                 sizes="(min-width: 960px) 960px"
                 data-width="960"
                 data-height="462"

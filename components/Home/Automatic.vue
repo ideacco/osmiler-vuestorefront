@@ -35,9 +35,6 @@
                   <div class="uk-margin">
                     <img
                       src="/wp-content/themes/yootheme/cache/icon_grop-3-56768954.png"
-                      srcset="
-                        /wp-content/themes/yootheme/cache/icon_grop-3-56768954.png 268w
-                      "
                       sizes="(min-width: 268px) 268px"
                       data-width="268"
                       data-height="92"
@@ -53,12 +50,6 @@
               <div id="page#10-0-1-0" class="uk-margin uk-text-right">
                 <img
                   src="/wp-content/themes/yootheme/cache/4ea1db57.jpeg"
-                  srcset="
-                    /wp-content/themes/yootheme/cache/bcb99328.jpeg      768w,
-                    /wp-content/themes/yootheme/cache/41ca3e58.jpeg     1024w,
-                    /wp-content/themes/yootheme/cache/4ea1db57.jpeg 1366w,
-                    /wp-content/themes/yootheme/cache/4ea1db57.jpeg     1510w
-                  "
                   sizes="(min-width: 1510px) 1510px"
                   data-width="1510"
                   data-height="1759"
@@ -113,12 +104,6 @@
           <div id="page#11-1-0-0" class="uk-margin uk-text-right">
             <img
               src="/wp-content/themes/yootheme/cache/Frame-1341-ya-2a53457d.jpeg"
-              srcset="
-                /wp-content/themes/yootheme/cache/Frame-1341-ya-7865a05e.jpeg  768w,
-                /wp-content/themes/yootheme/cache/Frame-1341-ya-2c576485.jpeg 1024w,
-                /wp-content/themes/yootheme/cache/Frame-1341-ya-b3899edf.jpeg 1366w,
-                /wp-content/themes/yootheme/cache/Frame-1341-ya-2a53457d.jpeg 1510w
-              "
               sizes="(min-width: 1510px) 1510px"
               data-width="1510"
               data-height="2142"

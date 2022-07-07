@@ -47,9 +47,6 @@
                     <div class="uk-margin">
                       <img
                         src="/wp-content/themes/yootheme/cache/Group-1317-1-b9ac3f73.png"
-                        srcset="
-                          /wp-content/themes/yootheme/cache/Group-1317-1-b9ac3f73.png 416w
-                        "
                         sizes="(min-width: 416px) 416px"
                         data-width="416"
                         data-height="204"
@@ -118,10 +115,6 @@
           <div class="uk-margin">
             <img
               src="/wp-content/themes/yootheme/cache/06-1-83e2cbb9.jpeg"
-              srcset="
-                /wp-content/themes/yootheme/cache/06-1-25ccc288.jpeg 768w,
-                /wp-content/themes/yootheme/cache/06-1-83e2cbb9.jpeg 960w
-              "
               sizes="(min-width: 960px) 960px"
               data-width="960"
               data-height="1290"

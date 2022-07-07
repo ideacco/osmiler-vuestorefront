@@ -377,6 +377,8 @@ const config = {
       }),
     ],
     extend(config, ctx) {
+      config.output.filename = `js/[name].${Timestamp}.js` // 每次构建打包时给文件名加上时间戳，保证版本更新时与上版本文件名不一样
+      config.output.chunkFilename = `js/[name].${Timestamp}.js`
       config.resolve.extensions.push('.mjs')
       config.module.rules.push({
         test: /\.mjs$/,

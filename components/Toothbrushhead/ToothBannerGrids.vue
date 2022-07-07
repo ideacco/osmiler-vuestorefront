@@ -40,9 +40,6 @@
                   >
                     <img
                       src="/wp-content/themes/yootheme/cache/Frame-1356-4f78375e.jpeg"
-                      srcset="
-                        /wp-content/themes/yootheme/cache/Frame-1356-4f78375e.jpeg 696w
-                      "
                       sizes="(min-width: 696px) 696px"
                       data-width="696"
                       data-height="903"

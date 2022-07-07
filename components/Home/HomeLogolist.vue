@@ -16,9 +16,6 @@
                     <div class="el-item uk-panel uk-margin-remove-first-child">
                       <img
                         src="/wp-content/themes/yootheme/cache/01-1-0b8447a5.png"
-                        srcset="
-                          /wp-content/themes/yootheme/cache/01-1-0b8447a5.png 60w
-                        "
                         sizes="(min-width: 60px) 60px"
                         data-width="60"
                         data-height="60"
@@ -78,9 +75,6 @@
                     <div class="el-item uk-panel uk-margin-remove-first-child">
                       <img
                         src="/wp-content/themes/yootheme/cache/03-1-cbe4ba20.png"
-                        srcset="
-                          /wp-content/themes/yootheme/cache/03-1-cbe4ba20.png 60w
-                        "
                         sizes="(min-width: 60px) 60px"
                         data-width="60"
                         data-height="60"
@@ -106,9 +100,6 @@
                     <div class="el-item uk-panel uk-margin-remove-first-child">
                       <img
                         src="/wp-content/themes/yootheme/cache/04-1-ddbc470c.png"
-                        srcset="
-                          /wp-content/themes/yootheme/cache/04-1-ddbc470c.png 60w
-                        "
                         sizes="(min-width: 60px) 60px"
                         data-width="60"
                         data-height="60"

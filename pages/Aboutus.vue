@@ -102,12 +102,6 @@
                 >
                   <img
                     src="/wp-content/themes/yootheme/cache/Frame-1315-ya-56886d56.jpeg"
-                    srcset="
-                      /wp-content/themes/yootheme/cache/Frame-1315-ya-56886d56.jpeg  768w,
-                      /wp-content/themes/yootheme/cache/Frame-1315-ya-d28e9925.jpeg 1024w,
-                      /wp-content/themes/yootheme/cache/Frame-1315-ya-47dd6acd.jpeg 1299w,
-                      /wp-content/themes/yootheme/cache/Frame-1315-ya-56886d56.jpeg 1300w
-                    "
                     sizes="(min-width: 1300px) 1300px"
                     data-width="1300"
                     data-height="977"

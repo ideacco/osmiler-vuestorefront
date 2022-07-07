@@ -83,10 +83,6 @@
           <div class="uk-margin">
             <img
               src="/wp-content/themes/yootheme/cache/405-2-13c651c4.jpeg"
-              srcset="
-                /wp-content/themes/yootheme/cache/405-2-72a7fe03.jpeg 768w,
-                /wp-content/themes/yootheme/cache/405-2-13c651c4.jpeg 960w
-              "
               sizes="(min-width: 960px) 960px"
               data-width="960"
               data-height="1249"
