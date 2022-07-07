@@ -122,23 +122,23 @@
       </div>
     </div>
     <div class="uk-section-default uk-section uk-margin-medium-top uk-margin-medium-bottom" >
-      <div class="uk-container">
+      <div class="uk-container uk-containerfontsize">
         <div class="tm-grid-expand uk-grid-margin" uk-grid>
           <div class="uk-width-1-2@m">
-            <h1 style="font-family:osmiler-title">Osmiler is concerned about your oral health.</h1>
+            <h1 style="font-family:osmiler-title;margin-left: 16px;">Osmiler is concerned about your oral health.</h1>
           </div>
           <div class="uk-width-1-2@m">
             <div class="uk-panel uk-margin">
-              <p><strong>Mission</strong></p>
-              <p>Let everyone have a confident smile</p>
+              <p style="margin-left:16px"><strong>Mission</strong></p>
+              <p style="margin-left:16px">Let everyone have a confident smile</p>
             </div>
             <div class="uk-panel uk-margin">
-              <p><strong>Vision</strong></p>
-              <p>Build consumers&#8217; favorite oral health brand</p>
+              <p style="margin-left:16px"><strong>Vision</strong></p>
+              <p style="margin-left:16px">Build consumers&#8217; favorite oral health brand</p>
             </div>
             <div class="uk-panel uk-margin">
-              <p><strong>Value</strong></p>
-              <p>Humanized service, innovative technology and unique design</p>
+              <p style="margin-left:16px"><strong>Value</strong></p>
+              <p style="margin-left:16px">Humanized service, innovative technology and unique design</p>
             </div>
           </div>
         </div>
@@ -554,4 +554,20 @@ export default {
 .uk-textfont {
   margin-top: -280px;
 }
+// .uk-containerfontsize{
+//   margin-left: 16px;
+// }
+.el-title{
+  margin-left: 16px;
+  @include for-desktop{
+    margin-left: 0;
+  }
+}
+.el-meta{
+  margin-left: 16px;
+  @include for-desktop{
+    margin-left: 0;
+  }
+}
+
 </style>
