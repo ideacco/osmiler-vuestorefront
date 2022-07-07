@@ -2216,11 +2216,6 @@
   resolved "https://registry.npmmirror.com/@tootallnate/once/-/once-1.1.2.tgz"
   integrity sha512-RbzJvlNzmRq5c3O09UipeuXno4tA1FE6ikOjxZK0tuxVv3412l64l5t1W5pj4+rJq9vpkm/kwiR07aZXnsKPxw==
 
-"@trysound/sax@0.2.0":
-  version "0.2.0"
-  resolved "https://registry.npmmirror.com/@trysound/sax/-/sax-0.2.0.tgz#cccaab758af56761eb7bf37af6f03f326dd798ad"
-  integrity sha512-L7z9BgrNEcYyUYtF+HaEfiS5ebkh9jXqbszz7pC0hRBPaatV0XjSD3+eHrpqFemQfgwiFF0QPIarnIihIDn7OA==
-
 "@typeform/api-client@^1.7.0":
   version "1.7.0"
   resolved "https://registry.yarnpkg.com/@typeform/api-client/-/api-client-1.7.0.tgz#2d37e93ee90b3ae9a41f14a3b593d5caa3bb21ec"
@@ -5248,7 +5243,7 @@ css-tree@1.0.0-alpha.37:
     mdn-data "2.0.4"
     source-map "^0.6.1"
 
-css-tree@^1.1.2, css-tree@^1.1.3:
+css-tree@^1.1.2:
   version "1.1.3"
   resolved "https://registry.npmmirror.com/css-tree/-/css-tree-1.1.3.tgz"
   integrity sha512-tRpdppF7TRazZrjJ6v3stzv93qxRcSsFmW6cX0Zm2NVKpxE1WV1HblnghVv9TreireHkqI/VDEsfolRF1p6y7Q==
@@ -5364,7 +5359,7 @@ cssnano@^4.1.10, cssnano@^4.1.11:
     is-resolvable "^1.0.0"
     postcss "^7.0.0"
 
-csso@^4.0.2, csso@^4.2.0:
+csso@^4.0.2:
   version "4.2.0"
   resolved "https://registry.npmmirror.com/csso/-/csso-4.2.0.tgz"
   integrity sha512-wvlcdIbf6pwKEk7vHj8/Bkc0B4ylXZruLvOgs9doS5eOsOpuodOV2zJChSpkp+pRpYQLQMeF04nr3Z68Sta9jA==
@@ -6615,21 +6610,6 @@ execa@^1.0.0:
     signal-exit "^3.0.0"
     strip-eof "^1.0.0"
 
-execa@^6.0.0:
-  version "6.1.0"
-  resolved "https://registry.npmmirror.com/execa/-/execa-6.1.0.tgz#cea16dee211ff011246556388effa0818394fb20"
-  integrity sha512-QVWlX2e50heYJcCPG0iWtf8r0xjEYfz/OYLGDYH+IyjWezzPNxz63qNFOu0l4YftGWuizFVZHHs8PrLU5p2IDA==
-  dependencies:
-    cross-spawn "^7.0.3"
-    get-stream "^6.0.1"
-    human-signals "^3.0.1"
-    is-stream "^3.0.0"
-    merge-stream "^2.0.0"
-    npm-run-path "^5.1.0"
-    onetime "^6.0.0"
-    signal-exit "^3.0.7"
-    strip-final-newline "^3.0.0"
-
 execall@^2.0.0:
   version "2.0.0"
   resolved "https://registry.npmmirror.com/execall/-/execall-2.0.0.tgz#16a06b5fe5099df7d00be5d9c06eecded1663b45"
@@ -6830,13 +6810,6 @@ fast-levenshtein@^2.0.6, fast-levenshtein@~2.0.6:
   version "2.0.6"
   resolved "https://registry.npmmirror.com/fast-levenshtein/-/fast-levenshtein-2.0.6.tgz"
   integrity sha512-DCXu6Ifhqcks7TZKY3Hxp3y6qphY5SJZmrWMDrKcERSOXWQdMhU9Ig/PYrzyw/ul9jOIyh0N4M0tbC5hodg8dw==
-
-fast-xml-parser@^3.19.0:
-  version "3.21.1"
-  resolved "https://registry.npmmirror.com/fast-xml-parser/-/fast-xml-parser-3.21.1.tgz#152a1d51d445380f7046b304672dd55d15c9e736"
-  integrity sha512-FTFVjYoBOZTJekiUsawGsSYV9QL0A+zDYCRj7y34IO6Jg+2IMYEtQa+bbictpdpV8dHxXywqU7C0gRDEOFtBFg==
-  dependencies:
-    strnum "^1.0.4"
 
 fastest-levenshtein@^1.0.12:
   version "1.0.12"
@@ -7395,7 +7368,7 @@ get-stream@^5.0.0, get-stream@^5.1.0:
   dependencies:
     pump "^3.0.0"
 
-get-stream@^6.0.0, get-stream@^6.0.1:
+get-stream@^6.0.0:
   version "6.0.1"
   resolved "https://registry.npmmirror.com/get-stream/-/get-stream-6.0.1.tgz"
   integrity sha512-ts6Wi+2j3jQjqi70w5AlN8DFnkSwC+MqmxEzdEALB2qXZYV3X/b1CTfgPLGJNMeAWxdPfU8FO1ms3NUfaHCPYg==
@@ -8048,11 +8021,6 @@ human-signals@^2.1.0:
   resolved "https://registry.npmmirror.com/human-signals/-/human-signals-2.1.0.tgz"
   integrity sha512-B4FFZ6q/T2jhhksgkbEW3HBvWIfDW85snkQgawt07S7J5QXTk6BkNV+0yAeZrM5QpMAdYlocGoljn0sJ/WQkFw==
 
-human-signals@^3.0.1:
-  version "3.0.1"
-  resolved "https://registry.npmmirror.com/human-signals/-/human-signals-3.0.1.tgz#c740920859dafa50e5a3222da9d3bf4bb0e5eef5"
-  integrity sha512-rQLskxnM/5OCldHo+wNXbpVgDn5A17CUoKX+7Sokwaknlq7CdSnphy0W39GU8dw59XiCXmFXDg4fRuckQRKewQ==
-
 iconv-lite@0.4.24, iconv-lite@^0.4.24:
   version "0.4.24"
   resolved "https://registry.npmmirror.com/iconv-lite/-/iconv-lite-0.4.24.tgz"
@@ -8108,15 +8076,6 @@ imagemin-gifsicle@^7.0.0:
     gifsicle "^5.0.0"
     is-gif "^3.0.0"
 
-imagemin-mozjpeg@^10.0.0:
-  version "10.0.0"
-  resolved "https://registry.npmmirror.com/imagemin-mozjpeg/-/imagemin-mozjpeg-10.0.0.tgz#d6771d1ce05ee15e2f6f34a9878c7266abccd9ee"
-  integrity sha512-DK85QNOjS3/GzWYfNB3CACMZD10sIQgFDv1+WTOnZljgltQTEyATjdyUVyjKu5q4sCESQdwvwq7WEZzJ5fFjlg==
-  dependencies:
-    execa "^6.0.0"
-    is-jpg "^3.0.0"
-    mozjpeg "^8.0.0"
-
 imagemin-optipng@^8.0.0:
   version "8.0.0"
   resolved "https://registry.npmmirror.com/imagemin-optipng/-/imagemin-optipng-8.0.0.tgz#b88e5cf6da25cc8479e07cdf38c3ae0479df7ef2"
@@ -8136,14 +8095,6 @@ imagemin-pngquant@^9.0.2:
     is-stream "^2.0.0"
     ow "^0.17.0"
     pngquant-bin "^6.0.0"
-
-imagemin-svgo@^10.0.1:
-  version "10.0.1"
-  resolved "https://registry.npmmirror.com/imagemin-svgo/-/imagemin-svgo-10.0.1.tgz#bc592950831c13998a40cb248f6e82e0b0b5c3dd"
-  integrity sha512-v27/UTGkb3vrm5jvjsMGQ2oxaDfSOTBfJOgmFO2fYepx05bY1IqWCK13aDytVR+l9w9eOlq0NMCLbxJlghYb2g==
-  dependencies:
-    is-svg "^4.3.1"
-    svgo "^2.5.0"
 
 imagemin-webp@5.1.0:
   version "5.1.0"
@@ -8661,11 +8612,6 @@ is-invalid-path@^0.1.0:
   dependencies:
     is-glob "^2.0.0"
 
-is-jpg@^3.0.0:
-  version "3.0.0"
-  resolved "https://registry.npmmirror.com/is-jpg/-/is-jpg-3.0.0.tgz#f97b4ab6de92401650cb4f54ec0a6ad79c51367f"
-  integrity sha512-Vcd67KWHZblEKEBrtP25qLZ8wN9ICoAhl1pKUqD7SM7hf2qtuRl7loDgP5Zigh2oN/+7uj+KVyC0eRJvgOEFeQ==
-
 is-natural-number@^4.0.1:
   version "4.0.1"
   resolved "https://registry.npmmirror.com/is-natural-number/-/is-natural-number-4.0.1.tgz#ab9d76e1db4ced51e35de0c72ebecf09f734cde8"
@@ -8804,24 +8750,12 @@ is-stream@^2.0.0:
   resolved "https://registry.npmmirror.com/is-stream/-/is-stream-2.0.1.tgz"
   integrity sha512-hFoiJiTl63nn+kstHGBtewWSKnQLpyb155KHheA1l39uvtO9nWIop1p3udqPcUd/xbF1VLMO4n7OI6p7RbngDg==
 
-is-stream@^3.0.0:
-  version "3.0.0"
-  resolved "https://registry.npmmirror.com/is-stream/-/is-stream-3.0.0.tgz#e6bfd7aa6bef69f4f472ce9bb681e3e57b4319ac"
-  integrity sha512-LnQR4bZ9IADDRSkvpqMGvt/tEJWclzklNgSw48V5EAaAeDd6qGvN8ei6k5p0tvxSR171VmGyHuTiAOfxAbr8kA==
-
 is-string@^1.0.5, is-string@^1.0.7:
   version "1.0.7"
   resolved "https://registry.npmmirror.com/is-string/-/is-string-1.0.7.tgz"
   integrity sha512-tE2UXzivje6ofPW7l23cjDOMa09gb7xlAqG6jG5ej6uPV32TlWP3NKPigtaGeHNu9fohccRYvIiZMfOOnOYUtg==
   dependencies:
     has-tostringtag "^1.0.0"
-
-is-svg@^4.3.1:
-  version "4.3.2"
-  resolved "https://registry.npmmirror.com/is-svg/-/is-svg-4.3.2.tgz#a119e9932e1af53f6be1969d1790d6cc5fd947d3"
-  integrity sha512-mM90duy00JGMyjqIVHu9gNTjywdZV+8qNasX8cm/EEYZ53PHDgajvbBwNVvty5dwSAxLUD3p3bdo+7sR/UMrpw==
-  dependencies:
-    fast-xml-parser "^3.19.0"
 
 is-symbol@^1.0.2, is-symbol@^1.0.3:
   version "1.0.4"
@@ -10423,11 +10357,6 @@ mimic-fn@^3.1.0:
   resolved "https://registry.npmmirror.com/mimic-fn/-/mimic-fn-3.1.0.tgz"
   integrity sha512-Ysbi9uYW9hFyfrThdDEQuykN4Ey6BuwPD2kpI5ES/nFTDn/98yxYNLZJcgUAKPT/mcrLLKaGzJR9YVxJrIdASQ==
 
-mimic-fn@^4.0.0:
-  version "4.0.0"
-  resolved "https://registry.npmmirror.com/mimic-fn/-/mimic-fn-4.0.0.tgz#60a90550d5cb0b239cca65d893b1a53b29871ecc"
-  integrity sha512-vqiC06CuhBTUdZH+RYl8sFrL096vA45Ok5ISO6sE/Mr1jRbGH4Csnhi8f3wKVl7x8mO4Au7Ir9D3Oyv1VYMFJw==
-
 mimic-response@^1.0.0:
   version "1.0.1"
   resolved "https://registry.npmmirror.com/mimic-response/-/mimic-response-1.0.1.tgz#4923538878eef42063cb8a3e3b0798781487ab1b"
@@ -10569,14 +10498,6 @@ move-concurrently@^1.0.1:
     mkdirp "^0.5.1"
     rimraf "^2.5.4"
     run-queue "^1.0.3"
-
-mozjpeg@^8.0.0:
-  version "8.0.0"
-  resolved "https://registry.npmmirror.com/mozjpeg/-/mozjpeg-8.0.0.tgz#cd990d96581626ca64b877146ce22ba00b3b308c"
-  integrity sha512-Ca2Yhah9hG0Iutgsn8MOrAl37P9ThnKsJatjXoWdUO+8X8GeG/6ahvHZrTyqvbs6leMww1SauWUCao/L9qBuFQ==
-  dependencies:
-    bin-build "^3.0.0"
-    bin-wrapper "^4.0.0"
 
 mrmime@^1.0.0:
   version "1.0.0"
@@ -10899,13 +10820,6 @@ npm-run-path@^4.0.0, npm-run-path@^4.0.1:
   dependencies:
     path-key "^3.0.0"
 
-npm-run-path@^5.1.0:
-  version "5.1.0"
-  resolved "https://registry.npmmirror.com/npm-run-path/-/npm-run-path-5.1.0.tgz#bc62f7f3f6952d9894bd08944ba011a6ee7b7e00"
-  integrity sha512-sJOdmRGrY2sjNTRMbSvluQqg+8X7ZK61yvzBEIDhz4f8z1TZFYABsqjjCBd/0PUNE9M6QDgHJXQkGUEm7Q+l9Q==
-  dependencies:
-    path-key "^4.0.0"
-
 npmlog@^4.0.1:
   version "4.1.2"
   resolved "https://registry.npmmirror.com/npmlog/-/npmlog-4.1.2.tgz"
@@ -11100,13 +11014,6 @@ onetime@^5.1.0, onetime@^5.1.2:
   integrity sha512-kbpaSSGJTWdAY5KPVeMOKXSrPtr8C8C7wodJbcsd51jRnmD+GZu8Y0VoU6Dm5Z4vWr0Ig/1NKuWRKf7j5aaYSg==
   dependencies:
     mimic-fn "^2.1.0"
-
-onetime@^6.0.0:
-  version "6.0.0"
-  resolved "https://registry.npmmirror.com/onetime/-/onetime-6.0.0.tgz#7c24c18ed1fd2e9bca4bd26806a33613c77d34b4"
-  integrity sha512-1FlR+gjXK7X+AsAHso35MnyN5KqGwJRi/31ft6x0M194ht7S+rWAvd7PHss9xSKMzE0asv1pyIHaJYq+BbacAQ==
-  dependencies:
-    mimic-fn "^4.0.0"
 
 only@~0.0.2:
   version "0.0.2"
@@ -11488,11 +11395,6 @@ path-key@^3.0.0, path-key@^3.1.0:
   version "3.1.1"
   resolved "https://registry.npmmirror.com/path-key/-/path-key-3.1.1.tgz"
   integrity sha512-ojmeN0qd+y0jszEtoY48r0Peq5dwMEkIlCOu6Q5f41lfkswXuKtYrhgoTpLnyIcHm24Uhqx+5Tqm2InSwLhE6Q==
-
-path-key@^4.0.0:
-  version "4.0.0"
-  resolved "https://registry.npmmirror.com/path-key/-/path-key-4.0.0.tgz#295588dc3aee64154f877adb9d780b81c554bf18"
-  integrity sha512-haREypq7xkM7ErfgIyA0z+Bj4AGKlMSdlQE2jvJo6huWD1EdkKYV+G/T4nq0YEF2vgTT8kqMFKo1uHn950r4SQ==
 
 path-parse@^1.0.7:
   version "1.0.7"
@@ -14050,11 +13952,6 @@ strip-final-newline@^2.0.0:
   resolved "https://registry.npmmirror.com/strip-final-newline/-/strip-final-newline-2.0.0.tgz"
   integrity sha512-BrpvfNAE3dcvq7ll3xVumzjKjZQ5tI1sEUIKr3Uoks0XUl45St3FlatVqef9prk4jRDzhW6WZg+3bk93y6pLjA==
 
-strip-final-newline@^3.0.0:
-  version "3.0.0"
-  resolved "https://registry.npmmirror.com/strip-final-newline/-/strip-final-newline-3.0.0.tgz#52894c313fbff318835280aed60ff71ebf12b8fd"
-  integrity sha512-dOESqjYr96iWYylGObzd39EuNTa5VJxyvVAEm5Jnh7KGo75V43Hk1odPQkNDyXNmUR6k+gEiDVXnjB8HJ3crXw==
-
 strip-indent@^1.0.1:
   version "1.0.1"
   resolved "https://registry.npmmirror.com/strip-indent/-/strip-indent-1.0.1.tgz#0c7962a6adefa7bbd4ac366460a638552ae1a0a2"
@@ -14085,11 +13982,6 @@ strip-outer@^1.0.0:
   integrity sha512-k55yxKHwaXnpYGsOzg4Vl8+tDrWylxDEpknGjhTiZB8dFRU5rTo9CAzeycivxV3s+zlTKwrs6WxMxR95n26kwg==
   dependencies:
     escape-string-regexp "^1.0.2"
-
-strnum@^1.0.4:
-  version "1.0.5"
-  resolved "https://registry.npmmirror.com/strnum/-/strnum-1.0.5.tgz#5c4e829fe15ad4ff0d20c3db5ac97b73c9b072db"
-  integrity sha512-J8bbNyKKXl5qYcR36TIO8W3mVGVHrmmxsd5PAItGkmyzwJvybiw2IVq5nqd0i4LSNSkB/sx9VHllbfFdr9k1JA==
 
 style-resources-loader@^1.4.1:
   version "1.5.0"
@@ -14278,19 +14170,6 @@ svgo@^1.0.0:
     stable "^0.1.8"
     unquote "~1.1.1"
     util.promisify "~1.0.0"
-
-svgo@^2.5.0:
-  version "2.8.0"
-  resolved "https://registry.npmmirror.com/svgo/-/svgo-2.8.0.tgz#4ff80cce6710dc2795f0c7c74101e6764cfccd24"
-  integrity sha512-+N/Q9kV1+F+UeWYoSiULYo4xYSDQlTgb+ayMobAXPwMnLvop7oxKMo9OzIrX5x3eS4L4f2UHhc9axXwY8DpChg==
-  dependencies:
-    "@trysound/sax" "0.2.0"
-    commander "^7.2.0"
-    css-select "^4.1.3"
-    css-tree "^1.1.3"
-    csso "^4.2.0"
-    picocolors "^1.0.0"
-    stable "^0.1.8"
 
 symbol-observable@^4.0.0:
   version "4.0.0"
