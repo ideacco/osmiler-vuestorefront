@@ -41,6 +41,7 @@
     "normalize.css": "^8.0.1",
     "nuxt": "^2.13.3",
     "nuxt-facebook-pixel-module": "^1.5.0",
+    "nuxt-precompress": "^0.5.9",
     "nuxt-purgecss": "^1.0.0",
     "uikit": "^3.14.1",
     "vee-validate": "^3.2.3",
