@@ -95,6 +95,7 @@ const config = {
     '@nuxtjs/google-analytics',
     // to core
     './modules/cms/build',
+    '@aceforth/nuxt-optimized-images',
     'nuxt-facebook-pixel-module',
     '@nuxtjs/composition-api/module',
     '@nuxtjs/pwa',
@@ -127,6 +128,9 @@ const config = {
       },
     ],
   ],
+  optimizedImages: {
+    optimizeImages: true
+  },
   script:[
    {src:'~/plugins/pixel.js',type: 'text/javascript'}
   ],
