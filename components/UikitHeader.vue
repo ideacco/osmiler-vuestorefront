@@ -127,7 +127,7 @@
                   :key="`${key}`"
                 >
                   <li :class="{ 'uk-active': category.name === navActive }">
-                    <a @click="navJump(category)">{{ category.name }}</a>
+                    <a @click="$router.push(localePath({ path: category.path }))">{{ category.name }}</a>
                   </li>
                 </ul>
               </div>
@@ -333,7 +333,6 @@ export default {
     navJump(category, key) {
       // console.log('navJump', category.name)
       this.navActive = category.name
-      this.$router.push({ path: category.path })
     }
   }
 }
