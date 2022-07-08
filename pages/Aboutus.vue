@@ -2,12 +2,13 @@
   <div>
     <div class="uk-section-primary uk-preserve-color uk-light">
       <div
-        style="background-image: url('/wp-content/themes/yootheme/cache/compay.jpg');height: 860px;"
+        style="background-image: url('/wp-content/themes/yootheme/cache/compay.jpg')"
         class="
           uk-background-norepeat
           uk-background-cover
           uk-background-center-center
           uk-section
+          uk-section-heigth
           uk-padding-remove-vertical
           uk-flex
           uk-flex-middle
@@ -527,11 +528,16 @@ export default {
   padding-left: 0;
   padding-right: 0;
 }
+.uk-section-heigth{
+  height: 860px;
+}
 .uk-width-1-2 {
   width: 1200px;
   text-align: center;
   @include for-desktop {
     margin: auto;
+    position: relative;
+    top: -430px;
   }
 }
 .uk-first-column {

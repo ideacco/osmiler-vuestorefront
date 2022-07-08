@@ -364,11 +364,20 @@ const config = {
     ],
   },
   build: {
-    optimization: {
+      extractCSS:true,
+      optimization: {
       splitChunks: {
       minSize: 10000,
-      maxSize: 250000
-    }
+      maxSize: 250000,
+      cacheGroups: {
+        styles: {
+          name: 'styles',
+          test: /\.(css|vue|scss)$/,
+          chunks: 'all',
+          enforce: true
+        }
+      }
+    },
   },
     // transpile: ['vee-validate/dist/rules', 'storefront-ui'],
     transpile: ['vee-validate/dist/rules'],
@@ -396,10 +405,6 @@ const config = {
         type: 'javascript/auto',
       })
     },
-    // extractCSS: {
-    //   allChunks: true,
-    //   ignoreOrder: true,
-    // },
   },
   pwa: {
     manifest: {

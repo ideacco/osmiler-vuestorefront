@@ -28,7 +28,7 @@
                     uk-scrollspy="target: [uk-scrollspy-class];"
                   >
                     <img
-                      src="/wp-content/themes/yootheme/cache/ic_location-1-f218cfc2.png"
+                      src="/wp-content/themes/yootheme/cache/ic_location.svg"
                       sizes="(min-width: 40px) 40px"
                       data-width="40"
                       data-height="40"
@@ -56,7 +56,7 @@
                     uk-scrollspy="target: [uk-scrollspy-class];"
                   >
                     <img
-                      src="/wp-content/themes/yootheme/cache/ic_emile-1-88d48444.png"
+                      src="/wp-content/themes/yootheme/cache/ic_emile.svg"
                       sizes="(min-width: 40px) 40px"
                       data-width="40"
                       data-height="40"
