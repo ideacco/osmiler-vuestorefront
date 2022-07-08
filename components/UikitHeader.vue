@@ -131,7 +131,7 @@
                   </li>
                 </ul>
               </div>
-              <div class="uk-navbar-right">
+              <div class="uk-navbar-right uk-position-top-right ">
                 <ul class="uk-navbar-nav" style="align-items: center">
                   <li v-if="!isUserAuthenticated" style="z-index: 999">
                     <button
