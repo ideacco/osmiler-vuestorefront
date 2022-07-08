@@ -38,8 +38,8 @@
                     <a
                       class="el-content uk-button uk-button-default uk-flex-inline uk-flex-center uk-flex-middle"
                     >
-                      <span class="uk-margin-small-right" uk-icon="bolt"></span>
-                      GO
+                      <!-- <span class="uk-margin-small-right" uk-icon="bolt"></span>
+                      GO -->
                     </a>
                   </div>
                 </div>
