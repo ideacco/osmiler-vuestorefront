@@ -228,7 +228,16 @@ const config = {
     pixelId: '769420814057414',
     autoPageView: true,
     disabled: false,
-    manualModef:false
+    manualModef:false,
+   Pixels:[
+   {
+    pixelId : '789343135804814',
+    autoPageView: true,
+    disabled: false,
+    manualModef:false,
+    track: 'PageView'
+   }
+   ]
   },
   publicRuntimeConfig: {
     gtm: {
