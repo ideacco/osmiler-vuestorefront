@@ -1,8 +1,7 @@
 // eslint-disable-next-line nuxt/no-cjs-in-config
 require('isomorphic-fetch')
-
 // console.log('当前服务状态:', process.env.NODE_ENV)
-
+const CompressionPlugin = require('compression-webpack-plugin');
 import webpack from 'webpack'
 // const platformENV = process.env.NODE_ENV !== 'production' ? 'http' : 'https'
 const Timestamp = new Date().getTime()
@@ -365,6 +364,13 @@ const config = {
     ],
   },
   build: {
+    analyze:true,
+    optimization: {
+      splitChunks: {
+      minSize: 10000,
+      maxSize: 250000
+    }
+  },
     // transpile: ['vee-validate/dist/rules', 'storefront-ui'],
     transpile: ['vee-validate/dist/rules'],
     plugins: [
@@ -375,6 +381,11 @@ const config = {
           lastCommit: process.env.LAST_COMMIT || '',
         }),
       }),
+      new CompressionPlugin({
+      test: /\.js$|\.html$|\.css/, // 匹配文件名
+      threshold: 10240,
+      deleteOriginalAssets: false
+      })
     ],
     extend(config, ctx) {
       config.output.filename = `js/[name].${Timestamp}.js` // 每次构建打包时给文件名加上时间戳，保证版本更新时与上版本文件名不一样
@@ -453,7 +464,6 @@ const config = {
     },
     build: {
       transpile: [/^@storefront-ui/, /^UIkit/],
-      analyze:true
     },
     workbox: {
       offlineStrategy: 'StaleWhileRevalidate',

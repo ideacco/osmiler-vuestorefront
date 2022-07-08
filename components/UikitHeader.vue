@@ -331,9 +331,7 @@ export default {
 
   methods: {
     navJump(category, key) {
-      this.$router.push({ path: category.path, query: {
-        t: Date.now()
-    }})
+      this.$router.push({ path: category.path})
       // console.log('navJump', category.name)
       this.navActive = category.name
     }

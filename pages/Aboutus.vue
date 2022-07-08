@@ -398,13 +398,11 @@
                               uk-margin-remove-bottom
                             "
                           >
-                            Full test
+                          sound adjustment
                           </h3>
                           <div class="el-meta uk-text-lead uk-margin-top">
-                            We hope that OSMILER&#8217;s products can accompany
-                            you for a long time, so a complete reliability test
-                            is essential, from keys to waterproofing, we
-                            continue to improve product quality
+                          osmiler’s swing is an original bone conduction sonic vibration toothbrush. The frequency of each song needs to be
+                          repeatedly debugged by the sound laboratory. We hope to bring perfect sound effects.
                           </div>
                         </div>
                       </div>
