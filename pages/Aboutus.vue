@@ -537,7 +537,6 @@ export default {
   @include for-desktop {
     margin: auto;
     position: relative;
-    top: -430px;
   }
 }
 .uk-first-column {

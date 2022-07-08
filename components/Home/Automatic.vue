@@ -3,6 +3,7 @@
     <div
       id="Automatic Amplitude"
       class="uk-visible@m uk-section-default uk-section uk-padding-remove-vertical"
+      style="background:#faf9fd"
     >
       <div class="uk-container uk-container-large">
         <div
