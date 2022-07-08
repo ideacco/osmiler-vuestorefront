@@ -372,7 +372,7 @@ const config = {
       cacheGroups: {
         styles: {
           name: 'styles',
-          test: /\.(css|vue|scss)$/,
+          test: /\.(css|scss)$/,
           chunks: 'all',
           enforce: true
         }
