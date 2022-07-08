@@ -364,7 +364,6 @@ const config = {
     ],
   },
   build: {
-    analyze:true,
     optimization: {
       splitChunks: {
       minSize: 10000,
