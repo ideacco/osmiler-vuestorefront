@@ -62,10 +62,8 @@ export default {
 
   setup() {
     const selectedMethod = ref(null)
-
     // eslint-disable-next-line no-return-assign
     const selectMethod = (method) => (selectedMethod.value = method)
-
     return {
       shippingMethods: SHIPPING_METHODS,
       selectedMethod,

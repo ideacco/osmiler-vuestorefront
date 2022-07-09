@@ -1,5 +1,5 @@
 <template>
-  <div id="category">
+  <div id="category" class="uk-section-default  uk-section">
     <SfBreadcrumbs
       class="breadcrumbs breadcrumbs-center"
       :breadcrumbs="breadcrumbs"
@@ -88,13 +88,11 @@
               v-e2e="'category-product-card'"
               :style="{ '--index': i }"
               :title="productGetters.getName(product)"
-              :image="productGetters.getCoverImage(product)"
-              :image-width="$device.isDesktopOrTablet ? 3000 : 3000"
-              :image-height="$device.isDesktopOrTablet ? 3000 : 3000"
-              :regular-price="
-                $n(productGetters.getPrice(product).regular, 'currency')
-              "
-              :special-price="null"
+              :image="getProductCoverImage(product)"
+              :image-width="$device.isDesktopOrTablet ? 30000 : 30000"
+              :image-height="$device.isDesktopOrTablet ? 30000 : 30000"
+              :regular-price="$n(productGetters.getPrice(product).regular, 'currency')>$n(productGetters.getPrice(product).special, 'currency')?$n(productGetters.getPrice(product).regular, 'currency'):null"
+              :special-price="$n(productGetters.getPrice(product).regular, 'currency')<$n(productGetters.getPrice(product).special, 'currency')?null:$n(productGetters.getPrice(product).special, 'currency')"
               :max-rating="5"
               :score-rating="productGetters.getAverageRating(product)"
               :show-add-to-cart-button="true"
@@ -159,13 +157,11 @@
               :style="{ '--index': i }"
               :title="productGetters.getName(product)"
               :description="productGetters.getDescription(product)"
-              :image="productGetters.getCoverImage(product)"
+              :image="getProductCoverImage(product)"
               :image-width="$device.isDesktopOrTablet ? 3000 : 3000"
               :image-height="$device.isDesktopOrTablet ? 3000 : 3000"
-              :regular-price="
-                $n(productGetters.getPrice(product).regular, 'currency')
-              "
-              :special-price="null"
+              :regular-price="$n(productGetters.getPrice(product).regular, 'currency')>$n(productGetters.getPrice(product).special, 'currency')?$n(productGetters.getPrice(product).regular, 'currency'):null"
+              :special-price="$n(productGetters.getPrice(product).regular, 'currency')<$n(productGetters.getPrice(product).special, 'currency')?null:$n(productGetters.getPrice(product).special, 'currency')"
               :add-to-cart-disabled="!productGetters.getStockStatus(product)"
               :max-rating="5"
               :score-rating="3"
@@ -355,7 +351,6 @@ import {
   SfHeading,
   SfFilter,
   SfProductCard,
-  SfProductCardHorizontal,
   SfPagination,
   SfAccordion,
   SfSelect,
@@ -367,6 +362,7 @@ import {
   SfLink,
   SfImage
 } from '@storefront-ui/vue'
+import SfProductCardHorizontal from '~/components/Strontui/SfProductCardHorizontal'
 import { computed, onMounted, ref } from '@nuxtjs/composition-api'
 import {
   useCart,
@@ -411,18 +407,33 @@ export default {
       facetGetters.getGrouped(result.value, ['color', 'size'])
     )
     const pagination = computed(() => facetGetters.getPagination(result.value))
+    const getProductCoverImage = (product, size = 'normal') => {
+    let imgResolution = '6000x6000'
+    if (size === 'medium') {
+        imgResolution = '295x295'
+    }
+    else if (size === 'small') {
+        imgResolution = '80x80'
+    }
+    if (product && product._coverImage && product._coverImage.src) {
+        const imgPath = product._coverImage.src.substring(0, product._coverImage.src.lastIndexOf('.'))
+        const imgext = product._coverImage.src.split('.').pop()
+        const resizedImg = imgPath + '_' + imgResolution + '.' + imgext
+        return resizedImg
+    }
+    const image = 'https://cdn.shopify.com/s/files/1/0407/1902/4288/files/placeholder_' + imgResolution + '.jpg?v=1625742127'
+    // return 'https://cdn.shopify.com/s/files/1/0407/1902/4288/files/placeholder_' + imgResolution + '.jpg?v=1625742127'
+    return image
+}
     onSSR(async () => {
       await search(th.getFacetsFromURL())
     })
-    console.log(products,888)
     const productsQuantity = ref({})
-
     const { isFacetColor } = useUiHelpers()
     const { toggleCategoryGridView } = useUiState()
-
     onMounted(() => {
       context.root.$scrollTo(context.root.$el, 2000)
-    })
+})
 
     return {
       ...uiState,
@@ -432,6 +443,7 @@ export default {
       loading,
       productGetters,
       pagination,
+      getProductCoverImage,
       sortBy,
       facets,
       currentCart,
@@ -538,7 +550,7 @@ export default {
   &__main {
     flex: 1;
     padding: 0;
-    justify-content: space-between;
+    // justify-content: space-between;
     @include for-desktop {
       padding: var(--spacer-xs) var(--spacer-xl);
     }
@@ -679,9 +691,6 @@ export default {
   margin: 0;
   &__grid {
     justify-content: space-between;
-    @include for-desktop {
-     justify-content:space-between;
-    }
   }
   &__grid,
   &__list {
@@ -722,11 +731,6 @@ export default {
     &__product-card-horizontal {
       margin: var(--spacer-lg) 0;
     }
-    &__product-card {
-      margin:60px 0;
-      transform: scale(1.3);
-      flex: 1 1 20%;
-    }
     &__list {
       margin: 0 0 0 var(--spacer-sm);
     }
@@ -746,6 +750,9 @@ export default {
   @include for-desktop {
     margin-top: 6.25rem;
   }
+}
+::v-deep .sf-price{
+  display: block !important;
 }
 ::v-deep .sf-sidebar__aside {
   --sidebar-z-index: 3;
@@ -807,4 +814,58 @@ export default {
     margin: var(--spacer-xs) 0 0 0;
   }
 }
+::v-deep.products__product-card-horizontal{
+  @include for-desktop {
+    margin: 20px 0;
+    }
+}
+::v-deep.sf-product-card__link{
+  @include for-desktop {
+    width: 360px;
+    height: 360px;
+    }
+}
+::v-deep.products__product-card{
+    @include for-desktop {
+    width: 360px;
+    }
+}
+::v-deep.sf-product-card__image{
+    @include for-desktop {
+    --image-width: 360px;
+    --image-height: 360px;
+    transition:none;
+    }
+}
+
+::v-deep .sf-product-card{
+@include for-desktop {
+   --product-card-max-width:380px;
+   margin: 20px 0;
+    }
+}
+::v-deep.navbar__counter{
+  position: absolute;
+  right: 10px;
+  @include for-desktop {
+  position: static;
+  right: 0;
+  }
+
+}
+::v-deep .sf-price__special{
+    // display: flex;
+    justify-content:center;
+    align-items: center;
+    background: #fff;
+  @include for-desktop {
+    margin-left: 0;
+    // display: flex;
+    justify-content: flex-start;
+    align-items: center;
+  }
+}
+// ::v-deep .sf-price__regular {
+//   display: block !important;
+// }
 </style>

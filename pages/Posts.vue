@@ -25,7 +25,7 @@
         </SfButton> -->
         <div class="navbar__sort desktop-only">
           <span class="navbar__label">Sort by:</span>
-          <SfComponentSelect v-model="sortBy" class="navbar__select">
+          <SfComponentSelect v-model.lazy="sortBy" class="navbar__select">
             <SfComponentSelectOption
               v-for="option in sortByOptions"
               :key="option.value"
@@ -351,7 +351,7 @@
           <SfRadio
             v-for="value in showOnPage"
             :key="value"
-            v-model="displayOnPage"
+            v-model.lazy="displayOnPage"
             :value="value"
             :label="value"
             class="filters__item"
@@ -366,7 +366,7 @@
           <SfRadio
             v-for="sort in sortByOptions"
             :key="sort.value"
-            v-model="sortBy"
+            v-model.lazy="sortBy"
             :value="sort.value"
             :label="sort.label"
             class="filters__item"
@@ -381,7 +381,7 @@
           <SfRadio
             v-for="cat in sidebarAccordion"
             :key="cat.header"
-            v-model="category"
+            v-model.lazy="category"
             :value="cat.header"
             :label="cat.header"
             class="filters__item"

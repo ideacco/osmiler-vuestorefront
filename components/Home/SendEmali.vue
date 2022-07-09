@@ -7,7 +7,7 @@
       <div
         class="uk-margin uk-container uk-container-large uk-container-expand-right"
       >
-        <div class="tm-grid-expand" uk-grid>
+        <div class="tm-grid-expand">
           <div class="uk-width-1-2@m">
             <div id="page#25-0-0-0"></div>
             <div
@@ -26,14 +26,14 @@
               </div>
             </div>
             <div class="uk-text-center">
-              <form class="uk-form uk-panel js-form-newsletter" method="post">
-                <div class="uk-child-width-expand@s" uk-grid>
+              <div class="uk-form uk-panel js-form-newsletter" >
+                <div class="uk-child-width-expand@s uk-display">
                   <div>
                     <input
                       class="el-input uk-input"
                       type="email"
                       name="email"
-                      v-model="emailaddress"
+                      v-model.lazy="emailaddress"
                       placeholder="Email address"
                       required
                     />
@@ -49,14 +49,13 @@
                 </div>
                 <input type="hidden" name="settings" value="" />
                 <div class="message uk-margin uk-hidden"></div>
-              </form>
+              </div>
             </div>
           </div>
           <div class="uk-grid-item-match uk-width-1-2@m uk-visible@m">
             <div class="uk-panel uk-width-1-1">
               <div
                 class="uk-visible@m uk-position-absolute uk-width-1-1 uk-text-right"
-                style="left: 150px; bottom: -240px"
               >
                 <img
                   src="/wp-content/themes/yootheme/cache/Frame-58-246b27e9.png"
@@ -170,4 +169,30 @@ input::-moz-placeholder {
 input:-ms-input-placeholder {
   color: #4132c7 !important;
 }
+.el-input{
+  margin-bottom: 20px;
+  @include for-desktop {
+  margin-bottom:0px;
+  }
+}
+.uk-display{
+@include for-desktop {
+ display: flex;
+  }
+}
+.el-button{
+  width: 100%;
+  @include for-desktop {
+   width: 138px;
+   margin-left: 30px;
+  }
+}
+.uk-position-absolute{
+  @include for-desktop {
+    position: absolute !important;
+    top: -80px;
+    right:-850px
+  }
+}
+
 </style>

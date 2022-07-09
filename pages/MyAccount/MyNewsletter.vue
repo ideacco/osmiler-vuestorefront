@@ -8,19 +8,19 @@
         <p class="form__title">{{ $t('Sections that interest you') }}</p>
         <div class="form__checkbox-group">
           <SfCheckbox
-            v-model="newsletter"
+            v-model.lazy="newsletter"
             label="Woman"
             value="woman"
             class="form__element"
           />
           <SfCheckbox
-            v-model="newsletter"
+            v-model.lazy="newsletter"
             label="Man"
             value="man"
             class="form__element"
           />
           <SfCheckbox
-            v-model="newsletter"
+            v-model.lazy="newsletter"
             label="Kids"
             value="kids"
             class="form__element"

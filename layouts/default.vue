@@ -30,8 +30,8 @@
     </LoadWhenVisible>
   </div>
 </template>
-
 <script>
+
 import AppHeader from '~/components/UikitHeader.vue'
 // import AppHeader from '~/components/AppHeader_new.vue'
 import LazyHydrate from 'vue-lazy-hydration'
@@ -52,6 +52,24 @@ import LoadWhenVisible from '~/components/utils/LoadWhenVisible'
 
 export default {
   name: 'DefaultLayout',
+    gtm: {
+    enabled: undefined, /* see below */
+    debug: false,
+    id: undefined,
+    layer: 'dataLayer',
+    variables: {},
+    pageTracking: false,
+    pageViewEventName: 'nuxtRoute',
+    autoInit: true,
+    respectDoNotTrack: true,
+    scriptId: 'gtm-script',
+    scriptDefer: false,
+    scriptURL: 'https://www.googletagmanager.com/gtm.js',
+    crossOrigin: false,
+    noscript: true,
+    noscriptId: 'gtm-noscript',
+    noscriptURL: 'https://www.googletagmanager.com/ns.html'
+  },
   components: {
     LazyHydrate,
     // AssHeader,
@@ -101,9 +119,19 @@ export default {
       route
     }
   },
+/* eslint-disable  */
+   mounted() {
+    // //* eslint-disable  */
+    // if (process.browser) {
+    //   this.$gtag('config', 'UA-233114703-1', {
+    //     // page_title: this.$metaInfo.title,
+    //     page_path: this.$route.fullPath,
+    //   })
+    // }
+  },
   methods: {
     getData(msg) {
-      console.log('父页面信息', msg)
+      // console.log('父页面信息', msg)
     }
   }
 }

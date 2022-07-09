@@ -1,5 +1,6 @@
 <template>
-  <div id="page" class="uk-section-default">
+<div>
+    <div id="page" class="uk-section-default">
     <VideoPlayback />
     <GridList />
     <BannerGrids />
@@ -19,6 +20,7 @@
     <SendEmali />
     <Contact />
   </div>
+</div>
 </template>
 
 <script type="module">
@@ -72,7 +74,7 @@ export default {
       setNavbarTransparent
     } = useUiState()
     onMounted(() => {
-      console.log('子页面初始化!,设置透明导航')
+      // console.log('子页面初始化!,设置透明导航')
       setNavbarTransparent(true)
     })
 
@@ -82,7 +84,7 @@ export default {
     }
     // console.log(Home, 444)
     onUnmounted(() => {
-      console.log('子页面卸载!,清除透明导航')
+      // console.log('子页面卸载!,清除透明导航')
       setNavbarTransparent(false)
     })
 
@@ -94,13 +96,20 @@ export default {
   }
 }
 </script>
-<style lang="css" scoped>
+<style lang="scss" scoped>
 .bg-purple-dark {
   background: #99a9bf;
 }
 
 .bg-purple {
   background: #d3dce6;
+}
+#page {
+  box-sizing: border-box;
+  @include for-desktop {
+    --font-family--secondary: var(--font-family--primary);
+    margin: 0 auto;
+  }
 }
 
 .bg-purple-light {

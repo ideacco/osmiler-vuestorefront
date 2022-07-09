@@ -19,7 +19,7 @@
           <SfInput
             type="email"
             :label="$t('Email address')"
-            v-model="emailAddress"
+            v-model.lazy="emailAddress"
             class="modal__input"
           />
           <SfButton class="modal__button" type="submit">

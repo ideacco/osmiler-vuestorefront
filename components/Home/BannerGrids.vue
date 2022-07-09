@@ -2,7 +2,7 @@
   <div>
     <div id="Bone" class="uk-visible@m uk-section-default uk-light">
       <div
-        style="background-image: url('/wp-content/themes/yootheme/cache/pic_02-ya-7b39abde.jpeg');"
+        style="background-image: url('/wp-content/themes/yootheme/cache/pic_02-ya-7b39abde.jpeg');height:860px ;"
         class="uk-background-norepeat uk-background-cover uk-background-top-left uk-section uk-padding-remove-vertical uk-flex uk-flex-middle"
         uk-height-viewport="offset-top: true;"
       >

@@ -25,10 +25,8 @@
                 v-e2e="'collected-product'"
                 :image="cartGetters.getItemImage(product)"
                 :title="cartGetters.getItemName(product)"
-                :regular-price="
-                  $n(cartGetters.getItemPrice(product).regular, 'currency')
-                "
-                :special-price="null"
+                :regular-price="$n(cartGetters.getItemPrice(product).regular, 'currency')>$n(cartGetters.getItemPrice(product).special, 'currency')?$n(cartGetters.getItemPrice(product).regular, 'currency'):null"
+                :special-price="$n(cartGetters.getItemPrice(product).regular, 'currency')<$n(cartGetters.getItemPrice(product).special, 'currency')?null:$n(cartGetters.getItemPrice(product).special, 'currency')"
                 :stock="99999"
                 class="collected-product"
                 @click:remove="removeItem({ product })"
@@ -92,7 +90,7 @@
           <div v-if="totalItems">
             <div v-if="!appliedCoupon" class="coupon-form-wrapper">
               <SfInput
-                v-model="couponcode"
+                v-model.lazy="couponcode"
                 :value="couponcode"
                 label="Apply coupon"
                 type="text"
@@ -176,7 +174,7 @@
           <div v-else>
             <SfButton
               class="sf-button--full-width color-primary"
-              @click="toggleCartSidebar"
+              @click="toggleCartSidebar,goback()"
             >{{ $t('Go back shopping') }}</SfButton
             >
           </div>
@@ -193,12 +191,12 @@ import {
   SfProperty,
   SfPrice,
   SfCollectedProduct,
-  SfImage,
   SfLink,
   SfInput,
   SfQuantitySelector,
   SfIcon
 } from '@storefront-ui/vue'
+import SfImage from './Strontui/Sfimage.vue'
 import { computed, ref, useRoute } from '@nuxtjs/composition-api'
 import { useCart, useUser, cartGetters } from '@vue-storefront/shopify'
 import { useUiState, useUiNotification } from '~/composables'
@@ -333,6 +331,11 @@ export default {
       appliedCoupon,
       handleRemoveCoupon,
       displayDiscountStr
+    }
+  },
+  methods: {
+    goback(){
+      this.$router.push('/c/all-products')
     }
   }
 }
@@ -493,6 +496,9 @@ export default {
 }
 .SfButtontwo {
   background: #5d47ee;
+}
+::v-deep .sf-price{
+  display: block !important;
 }
 .sf-size-small {
   --button-size: 30px;

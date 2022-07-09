@@ -11,7 +11,7 @@
 
       <!-- <SfGallery
         :images='productGallery'
-        
+
         :imageWidth="1000"
         :imageHeight="1000"
         :thumbWidth="160"
@@ -255,7 +255,7 @@ export default {
           desktop: { url: img.normal },
           big: { url: img.big }
         })
-        
+
       })
     )
 
@@ -286,18 +286,15 @@ export default {
 
     onMounted(() => {
       if (slug) {
-        console.log('子页面初始化!,获取产品', slug)
+        // console.log('子页面初始化!,获取产品', slug)
       }
-      
-      console.log('子页面初始化!,路由信息', route)
+      // console.log('子页面初始化!,路由信息', route)
       setNavbarTransparent(true)
-      console.log('product.value',product.value)
-      console.log('products.value',products.value)
-      console.log('conster!!!!',conster)
+      // console.log('product.value',product.value)
     })
 
     onUnmounted(() => {
-      console.log('子页面卸载!,清除透明导航')
+      // console.log('子页面卸载!,清除透明导航')
       setNavbarTransparent(false)
     })
 
@@ -333,7 +330,7 @@ export default {
       }
       const res = await this.$axios.$post('/v1/mailchimp/subscribed', datas)
       this.email = res
-      console.log('子页面fetchSomething,res', res)
+      // console.log('子页面fetchSomething,res', res)
     }
   }
 }

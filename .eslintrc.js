@@ -173,7 +173,7 @@ module.exports = {
       {
         ignoreReadBeforeAssign: false
       }
-    ],
+    ]
     // indent: [
     //   2,
     //   2,

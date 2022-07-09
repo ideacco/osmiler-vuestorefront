@@ -7,7 +7,10 @@
     <div />
   </SfLoader>
   <div v-else id="product">
-    <SfBreadcrumbs class="breadcrumbs" :breadcrumbs="breadcrumbs">
+    <SfBreadcrumbs
+      class="breadcrumbs breadcrumbs-center"
+      :breadcrumbs="breadcrumbs"
+    >
       <template #link="{ breadcrumb }">
         <nuxt-link
           :data-testid="breadcrumb.text"
@@ -19,15 +22,21 @@
       </template>
     </SfBreadcrumbs>
     <div class="product">
-   <SfGallery
-        :images='productGallery3'
+      <SfGallery
+        id="SfGallery"
+        ref="SfGallery"
+        :images="productGallery3"
         :imageWidth="1000"
         :imageHeight="1000"
         :thumbWidth="160"
         :thumbHeight="160"
-        ref="SfGallery"
-        :current="currentindex"
-        :sliderOptions='{"type":"slider","autoplay":false,"rewind":false,"gap":0}'
+        :current="ActiveVariantImage + 1"
+        :sliderOptions="{
+          type: 'slider',
+          autoplay: false,
+          rewind: false,
+          gap: 0,
+        }"
         :outsideZoom="false"
         enableZoom
       />
@@ -47,41 +56,43 @@
         </div>
         <div class="product__price-and-rating">
           <SfPrice
-            :regular="$n(productGetters.getPrice(product).regular, 'currency')"
-            :special="$n(productGetters.getPrice(product).special, 'currency')"
+            :regular="$n(productGetters.getPrice(product).regular, 'currency')>$n(productGetters.getPrice(product).special, 'currency')?$n(productGetters.getPrice(product).regular, 'currency'):null"
+            :special="$n(productGetters.getPrice(product).regular, 'currency')<$n(productGetters.getPrice(product).special, 'currency')?null:$n(productGetters.getPrice(product).special, 'currency')"
           />
           <!-- Reviews Here -->
         </div>
         <div class="product__details">
-          <div class="product__description"
-           v-show="
-           ispath ===
-          '/p/Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0Lzc3MTcwNTM0MzIwNjY=/osmiler-swing' ||
-          ispath ===
-          '/p/Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0Lzc3MTcwNTM0MzIwNjY=/osmiler-swing?Color=Silver' ||
-          ispath ===
-          '/p/Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0Lzc3MTcwNTM0MzIwNjY=/osmiler-swing?Color=Deep%20Blue'
-      "
+          <div
+            class="product__description"
+            v-show="
+              ispath ===
+                '/p/Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0Lzc3MTcwNTM0MzIwNjY=/osmiler-swing' ||
+                ispath ===
+                '/p/Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0Lzc3MTcwNTM0MzIwNjY=/osmiler-swing?Color=Silver' ||
+                ispath ===
+                '/p/Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0Lzc3MTcwNTM0MzIwNjY=/osmiler-swing?Color=Deep%20Blue'
+            "
           >
             {{ productdescription1 }}
           </div>
-          <div class="product__description"
-        v-show="
-        ispath ===
-          '/p/Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0Lzc3MTc0MDc1ODg2MTA=/osmiler-swing-head-5pcs' ||
-          ispath ===
-          '/p/Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0Lzc3MTc0MDc1ODg2MTA=/osmiler-swing-head-5pcs?Color=White' ||
-          ispath ===
-          '/p/Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0Lzc3MTc0MDc1ODg2MTA=/osmiler-swing-head-5pcs?Color=Deep%20Blue'||
-           ispath ===
-          '/p/Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0Lzc3MTcwNDc5OTI1Nzg=/osmiler-swing-head-3pcs' ||
-          ispath ===
-          '/p/Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0Lzc3MTcwNDc5OTI1Nzg=/osmiler-swing-head-3pcs?Color=White' ||
-          ispath ===
-          '/p/Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0Lzc3MTcwNDc5OTI1Nzg=/osmiler-swing-head-3pcs?Color=Deep%20Blue'
-      "
+          <div
+            class="product__description"
+            v-show="
+              ispath ===
+                '/p/Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0Lzc3MTc0MDc1ODg2MTA=/osmiler-swing-head-5pcs' ||
+                ispath ===
+                '/p/Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0Lzc3MTc0MDc1ODg2MTA=/osmiler-swing-head-5pcs?Color=White' ||
+                ispath ===
+                '/p/Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0Lzc3MTc0MDc1ODg2MTA=/osmiler-swing-head-5pcs?Color=Deep%20Blue' ||
+                ispath ===
+                '/p/Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0Lzc3MTcwNDc5OTI1Nzg=/osmiler-swing-head-3pcs' ||
+                ispath ===
+                '/p/Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0Lzc3MTcwNDc5OTI1Nzg=/osmiler-swing-head-3pcs?Color=White' ||
+                ispath ===
+                '/p/Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0Lzc3MTcwNDc5OTI1Nzg=/osmiler-swing-head-3pcs?Color=Deep%20Blue'
+            "
           >
-             {{ productdescription2 }}
+            {{ productdescription2 }}
           </div>
           <div
             v-if="options && Object.keys(options).length > 0"
@@ -114,11 +125,11 @@
               >
                 <label class="product__color-label">{{ $t(key) }}</label>
                 <div class="product__flex-break"></div>
-              <SfButton
+                <SfButton
                   v-for="(attribs, a) in option"
                   @click="
-                    ;(atttLbl = key),tocheckout(a),
-                      updateFilter(attribs, { [atttLbl]: attribs },)
+                    ;(atttLbl = key),
+                      updateFilter(attribs, { [atttLbl]: attribs })
                   "
                   :class="{ active: attribs == isProductCartButtonColor }"
                   :key="a"
@@ -145,7 +156,7 @@
             </template>
           </SfAlert>
           <SfAddToCart
-            v-model="qty"
+            v-model.lazy="qty"
             :disabled="!productGetters.getStockStatus(product)"
             data-cy="product-cart_add"
             :stock="stock"
@@ -155,7 +166,7 @@
             <template #add-to-cart-btn>
               <SfButton
                 class="sf-add-to-cart__button SfButtontwo"
-                :disabled=" !productGetters.getStockStatus(product)"
+                :disabled="!productGetters.getStockStatus(product)"
                 @click="
                   addingToCart({
                     product,
@@ -178,7 +189,7 @@
               <SfButton
                 v-else
                 class="sf-button--full-width sf-proceed_to_checkout SfButtontwo"
-                :disabled=" !productGetters.getStockStatus(product)"
+                :disabled="!productGetters.getStockStatus(product)"
                 @click="
                   addingToCarts({
                     product,
@@ -214,7 +225,7 @@
                 </template>
               </SfProperty>
             </SfTab>
-            <SfTab
+            <!-- <SfTab
               :title="$t('Additional Information')"
               data-cy="product-tab_additional"
               class="product__additional-info"
@@ -222,12 +233,12 @@
               <div class="product__additional-info">
                 <p class="product__additional-info__title">
                   {{ $t('Brand') }}
-                </p>
+                </p> -->
                 <!-- <p>{{ brand }}</p>
                 <p class="product__additional-info__title">
                   {{ $t('Instruction1') }}
                 </p> -->
-                <p class="product__additional-info__paragraph">
+                <!-- <p class="product__additional-info__paragraph">
                   {{ $t('Instruction2') }}
                 </p>
                 <p class="product__additional-info__paragraph">
@@ -235,12 +246,12 @@
                 </p>
                 <p>{{ careInstructions }}</p>
               </div>
-            </SfTab>
+            </SfTab> -->
           </SfTabs>
         </LazyHydrate>
       </div>
     </div>
-        <!-- <GridList /> -->
+    <!-- <GridList /> -->
     <div
       v-show="
         ispath ===
@@ -471,7 +482,6 @@
     >
       <Toothbrushheadfooter />
     </div>
-
   </div>
 </template>
 <script>
@@ -482,7 +492,6 @@ import {
   SfSelect,
   SfAddToCart,
   SfTabs,
-  SfGallery,
   SfIcon,
   SfAlert,
   SfBreadcrumbs,
@@ -490,7 +499,7 @@ import {
   SfButton,
   SfColor
 } from '@storefront-ui/vue'
-
+import SfGallery from '~/components/Strontui/SfGallery'
 import Certificate from '~/components/Home/Certificate'
 import Contact from '~/components/Home/Contact'
 // import GridList from '~/components/Home/GridList'
@@ -627,7 +636,7 @@ export default {
     const configuration = computed(() => {
       return productGetters.getSelectedVariant(route?.value?.query)
     })
-const { isProductCartButtonColor, setisProductCartButtonColor } =
+    const { isProductCartButtonColor, setisProductCartButtonColor } =
       useUiState()
     const ispath = route.value.fullPath
     const setBreadcrumb = () => {
@@ -682,31 +691,36 @@ const { isProductCartButtonColor, setisProductCartButtonColor } =
       return productGetters.getVariantImage(product.value) || 0
     })
 
-    const getProductGallery = (product) => (product ? product.images : []).map((image) => {
-      const imgPath = image.originalSrc.substring(0, image.originalSrc.lastIndexOf('.'))
-      const imgext = image.originalSrc.split('.').pop()
-      const imgSmall = imgPath + '_160x160.' + imgext
-      const imgBig = imgPath + '_295x295.' + imgext
-      const imgNormal = imgPath + '_1500x1500.' + imgext
-      return ({
-        small: imgSmall,
-        big: imgBig,
-        normal: imgNormal
+    const getProductGallery = (product) =>
+      (product ? product.images : []).map((image) => {
+        const imgPath = image.originalSrc.substring(
+          0,
+          image.originalSrc.lastIndexOf('.')
+        )
+        const imgext = image.originalSrc.split('.').pop()
+        const imgSmall = imgPath + '_160x160.' + imgext
+        const imgBig = imgPath + '_295x295.' + imgext
+        const imgNormal = imgPath + '_1500x1500.' + imgext
+        return {
+          small: imgSmall,
+          big: imgBig,
+          normal: imgNormal
+        }
       })
-    })
-    const productGallery3 = computed(() =>{
-      const img = getProductGallery(product.value).map((img) => {
-        // console.log('img?',img)
-        return ({
-          mobile: { url: img.small },
-          desktop: { url: img.normal },
-          big: { url: img.big },
-          alt: product.value._name || product.value.name
+    const productGallery3 = computed(() => {
+      const img = getProductGallery(product.value)
+        .map((img) => {
+          // console.log('img?',img)
+          return {
+            mobile: { url: img.small },
+            desktop: { url: img.normal },
+            big: { url: img.big },
+            alt: product.value._name || product.value.name
+          }
         })
-      }).slice(0,4)
+        .slice(0, 4)
       return img
-    }
-    )
+    })
 
     onSSR(async () => {
       await search({ slug, selectedOptions: configuration.value }).then(() => {
@@ -723,9 +737,8 @@ const { isProductCartButtonColor, setisProductCartButtonColor } =
         related: true
       })
     })
-    
-    const updateFilter = (colorname, filter) => {
 
+    const updateFilter = (colorname, filter) => {
       setisProductCartButtonColor(colorname)
       if (options.value) {
         Object.keys(options.value).forEach((attr) => {
@@ -738,15 +751,14 @@ const { isProductCartButtonColor, setisProductCartButtonColor } =
               : options.value[attr][0]
         })
       }
-      console.log(configuration.value,444,filter)
-      // $router.push({
-      //   path: $route?.value?.path,
-      //   query: {
-      //     ...configuration.value,
-      //     ...filter,
-      //     t: new Date().getTime()
-      //   }
-      // })
+      console.log(configuration.value, 444, filter)
+      $router.push({
+        path: $route?.value?.path,
+        query: {
+          ...configuration.value,
+          ...filter
+        }
+      })
     }
 
     return {
@@ -791,8 +803,10 @@ const { isProductCartButtonColor, setisProductCartButtonColor } =
   // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
   data() {
     return {
-      productdescription1: '\r\n✔️\tEnjoy music while brushin\r\n✔️\tUpload music to toothbrush via Bluetooth or PC\r\n✔️\tConstant high-frequency vibration\r\n✔️\tW-shaped three-dimensional cutting toothhead\r\n✔️\tThree built-in classic vibrating modes',
-      productdescription2: '\r\n✔️\tFood-grade Dupont brush\r\n✔️\tW-shaped three-dimensional cutting\r\n✔️\tThe rounded top',
+      productdescription1:
+        '\r\n✔️\tEnjoy music while brushin\r\n✔️\tUpload music to toothbrush via Bluetooth or PC\r\n✔️\tConstant high-frequency vibration\r\n✔️\tW-shaped three-dimensional cutting toothhead\r\n✔️\tThree built-in classic vibrating modes',
+      productdescription2:
+        '\r\n✔️\tFood-grade Dupont brush\r\n✔️\tW-shaped three-dimensional cutting\r\n✔️\tThe rounded top',
       properties: [
         // {
         //   name: 'Product Code',
@@ -823,6 +837,7 @@ const { isProductCartButtonColor, setisProductCartButtonColor } =
 
   // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
   mounted() {
+    // console.log(this.$refs, 5858588)
     window.addEventListener('load', () => {
       this.setGalleryWidth()
     })
@@ -838,15 +853,7 @@ const { isProductCartButtonColor, setisProductCartButtonColor } =
   },
   // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
   methods: {
-     // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
-    tocheckout(a,colorname){
-    if(a === 0){
-      this.currentindex = 0
-    }else if(a === 1){
-       this.currentindex = 2
-    }
-    this.$refs.SfGallery.go(this.currentindex)
-  },
+    // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
     // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
     async addingToCart(Productdata) {
       await this.addItem(Productdata).then((res) => {
@@ -860,7 +867,7 @@ const { isProductCartButtonColor, setisProductCartButtonColor } =
         this.qty = 1
       })
     },
-    async addingToCarts (Productdata) {
+    async addingToCarts(Productdata) {
       await this.addItem(Productdata).then((res) => {
         this.sendNotification({
           key: 'product_added',
@@ -898,13 +905,13 @@ const { isProductCartButtonColor, setisProductCartButtonColor } =
 .product__description {
   position: relative;
   white-space: pre-wrap;
-  top: 30px;
+  top: 10px;
 }
 .product__details {
   margin-top: 40px !important;
 }
 .sf-price {
-  margin-top: -40px;
+  position: relative;
 }
 
 .pdc-pdp-loader {
@@ -919,11 +926,10 @@ const { isProductCartButtonColor, setisProductCartButtonColor } =
 
 .sf-price__old {
   font-size: 20px;
-  display: none;
 }
 
 #product {
---loader-spinner-stroke: #fff !important;
+  --loader-spinner-stroke: #fff !important;
 }
 .SfButtontwo {
   width: 300px;
@@ -1003,7 +1009,6 @@ const { isProductCartButtonColor, setisProductCartButtonColor } =
     text-decoration: none;
     margin: 0 0 0 var(--spacer-xs);
   }
-
   &__details {
     margin: 0 var(--spacer-sm) var(--spacer-base);
 
@@ -1038,7 +1043,6 @@ const { isProductCartButtonColor, setisProductCartButtonColor } =
     margin: 0 var(--spacer-lg) var(--spacer-xs) 0;
     padding: 0 0 0 4px;
   }
-
 
   &__color {
     margin: 0 var(--spacer-2xs);
@@ -1130,11 +1134,11 @@ const { isProductCartButtonColor, setisProductCartButtonColor } =
 // width: 500px;
 // }
 .sf-price__special {
-  position: relative;
-  top: 50px;
+  position: absolute;
+  top: 30px;
   left:0;
   font-size: 48px;
-  background: #fff;
+  background: transparent !important;
 }
 
 .product__color-label {
@@ -1184,6 +1188,9 @@ const { isProductCartButtonColor, setisProductCartButtonColor } =
       margin: 0 0 0 calc(var(--spacer-xl) / 2);
     }
   }
+}
+::v-deep.sf-image--placeholder {
+  display: none;
 }
 
 ::v-deep .product__color {

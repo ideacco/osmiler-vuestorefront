@@ -2,8 +2,8 @@
   <div>
     <div
       class="uk-section-muted uk-section uk-padding-remove-top uk-padding-remove-bottom uk-flex uk-flex-middle"
-      uk-height-viewport="offset-top: true; offset-bottom: 20;"
-    >
+      style="height:860px"
+      >
       <div class="uk-width-1-1">
         <div class="uk-container uk-container-expand">
           <div class="uk-grid-margin uk-container uk-container-large">

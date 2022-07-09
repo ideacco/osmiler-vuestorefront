@@ -1,10 +1,11 @@
 // eslint-disable-next-line nuxt/no-cjs-in-config
 require('isomorphic-fetch')
 
-console.log('当前服务状态:', process.env.NODE_ENV)
+// console.log('当前服务状态:', process.env.NODE_ENV)
 
 import webpack from 'webpack'
 // const platformENV = process.env.NODE_ENV !== 'production' ? 'http' : 'https'
+const Timestamp = new Date().getTime()
 const config = {
   server: {
     port: process.env.APP_PORT || 8888,
@@ -79,6 +80,7 @@ const config = {
   },
   plugins: [
     '@/plugins/scrollToTop.client.js',
+    '~/plugins/gtm',
     // '@/plugins/element-ui',
     {
       src: '@/plugins/UIkit',
@@ -90,6 +92,7 @@ const config = {
     '@nuxtjs/eslint-module',
     // https://go.nuxtjs.dev/stylelint
     '@nuxtjs/stylelint-module',
+    '@nuxtjs/google-analytics',
     // to core
     './modules/cms/build',
     '@nuxtjs/composition-api/module',
@@ -122,6 +125,14 @@ const config = {
       },
     ],
   ],
+  // googleAnalytics: {
+  //   id: process.env.GOOGLE_ANALYTICS_ID, // Use as fallback if no runtime config is provided
+  // },
+  // publicRuntimeConfig: {
+  //   googleAnalytics: {
+  //     id: process.env.GOOGLE_ANALYTICS_ID,
+  //   },
+  // },
   css: [
     {
       src: '@/style/index.scss',
@@ -130,6 +141,8 @@ const config = {
   ],
   modules: [
     '@nuxtjs/i18n',
+    '@nuxtjs/gtm',
+    // '@nuxtjs/google-gtag',
     'cookie-universal-nuxt',
     'vue-scrollto/nuxt',
     '@vue-storefront/middleware/nuxt',
@@ -138,6 +151,34 @@ const config = {
     '@nuxt/image',
     '@nuxtjs/axios',
   ],
+  gtm: {
+    id: 'GTM-PB39ZGK', // Used as fallback if no runtime config is provided
+  },
+  publicRuntimeConfig: {
+    gtm: {
+      id: process.env.GOOGLE_TAG_MANAGER_ID
+    }
+  },
+  // 'google-gtag': {
+  //   id: 'UA-233114703-1',
+  //   config: {
+  //     anonymize_ip: true, // anonymize IP
+  //     send_page_view: false, // might be necessary to avoid duplicated page track on page reload
+  //     linker: {
+  //       domains: ['domain.com', 'domain.org'],
+  //     },
+  //   },
+  //   debug: true, // enable to track in dev mode
+  //   disableAutoPageTrack: false, // disable if you don't want to track each page route with router.afterEach(...).
+  //   additionalAccounts: [
+  //     {
+  //       id: 'GTM-PB39ZGK', // required if you are adding additional accounts
+  //       config: {
+  //         send_page_view: false, // optional configurations
+  //       },
+  //     },
+  //   ],
+  // },
   axios: {
     proxy: true,
     prefix: '/app',
@@ -258,9 +299,8 @@ const config = {
         }),
       }),
     ],
-    extend(config) {
+    extend(config, ctx) {
       config.resolve.extensions.push('.mjs')
-
       config.module.rules.push({
         test: /\.mjs$/,
         include: /node_modules/,
@@ -284,37 +324,37 @@ const config = {
       description: 'let your smile light up the world',
       icons: [
         {
-          src: '/icons/android-icon-48x48.png',
+          src: '/icons/LOGO.png',
           sizes: '48x48',
           type: 'image/png',
         },
         {
-          src: '/icons/android-icon-72x72.png',
+          src: '/icons/LOGO-1.png',
           sizes: '72x72',
           type: 'image/png',
         },
         {
-          src: '/icons/android-icon-96x96.png',
+          src: '/icons/LOGO-2.png',
           sizes: '96x96',
           type: 'image/png',
         },
         {
-          src: '/icons/android-icon-144x144.png',
+          src: '/icons/LOGO-3.png',
           sizes: '144x144',
           type: 'image/png',
         },
         {
-          src: '/icons/android-icon-168x168.png',
+          src: '/icons/LOGO-4.png',
           sizes: '168x168',
           type: 'image/png',
         },
         {
-          src: '/icons/android-icon-192x192.png',
+          src: '/icons/LOGO-5.png',
           sizes: '192x192',
           type: 'image/png',
         },
         {
-          src: '/icons/android-icon-512x512.png',
+          src: '/icons/LOGO-6.png',
           sizes: '512x512',
           type: 'image/png',
         },
