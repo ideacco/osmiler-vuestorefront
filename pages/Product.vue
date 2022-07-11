@@ -721,7 +721,9 @@ export default {
         .slice(0, 4)
       return img
     })
-
+    onMounted(()=>{
+      console.log($route.path, $router.path,888)
+    })
     onSSR(async () => {
       await search({ slug, selectedOptions: configuration.value }).then(() => {
         // "Product Title" serve as the flag if the product is existing or not

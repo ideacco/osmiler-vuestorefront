@@ -130,9 +130,9 @@ const config = {
   optimizedImages: {
     optimizeImages: true
   },
-  script:[
-   {src:'~/plugins/pixel.js',type: 'text/javascript'}
-  ],
+  // script:[
+  //  {src:'~/plugins/pixel.js',type: 'text/javascript'}
+  // ],
   // googleAnalytics: {
   //   id: 'UA-233114703-1'
   // },
