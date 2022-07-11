@@ -141,6 +141,11 @@ export default {
   font-family: 'osmiler-title';
   padding-top: 32px;
 }
+.uk-container-large{
+  margin: 0;
+  max-width: 2133px;
+  padding: 0;
+}
 // .uk-width-35{
 //  height: 792px;
 // }
