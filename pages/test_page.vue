@@ -61,6 +61,9 @@
         <br />
         产品的图333:
         {{ productGallery3 ? productGallery3 : 'no productGallery3' }}
+          <br />
+        产品的图555:
+        {{ page ? page : 'no page' }}
       </div>
 
       <p>
@@ -117,7 +120,7 @@ import { onSSR } from '@vue-storefront/core'
 import {
   useProduct,
   productGetters,
-  useCategory
+  useCategory,useContent,contentGetters
 } from '@vue-storefront/shopify'
 
 import {
@@ -144,6 +147,7 @@ export default {
     // 功能组件
 
     const { products, search } = useProduct('products')
+     const { search: searchs, content } = useContent('jkk')
     const { search: inSearch, categories, loading } = useCategory('categories')
 
     // 根据接口进行查询填充
@@ -152,15 +156,17 @@ export default {
 
     // 自定义查询id
     const id = 'Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0Lzc3MTcwNDc5OTI1Nzg='
-
+ const page = computed(() => contentGetters.getFiltered(content.value))
     // 初始化(ssr)钩子
     onSSR(async () => {
       console.log('后端执行的 ssr 查询')
       // 用来更新产品的钩子函数
-      await search({slug})
+      await searchs(slug)
+      // console.log(slug,777,page)
       // await search({})
       // await inSearch({})
     })
+
 
     // 自定义查询
     const productsSearchParams = {
@@ -288,7 +294,8 @@ export default {
       productTitle,
       productGallery,
       productGallery2,
-      productGallery3
+      productGallery3,
+      page
     }
   },
 

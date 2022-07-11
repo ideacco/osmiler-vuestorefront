@@ -65,5 +65,9 @@
     </div>
   </div>
 </template>
-<script></script>
+<script>
+export default {
+name: 'ShippingPolicy'
+}
+</script>
 <style lang="scss" scoped></style>

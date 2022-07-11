@@ -103,7 +103,7 @@ export default {
   },
   data(){
     return{
-      includeArr: ['Homne','Category']
+      includeArr: ['HoMe','CateGory','ContactUs','MuSic','AboutS','MyAccount','Services','ProDuct','TermsAndConditions','PrivacyPolicy','ShippingReturnPolicy','ShippingPolicy']
     }
   },
 /* eslint-disable  */
