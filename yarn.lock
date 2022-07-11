@@ -10891,6 +10891,13 @@ nuxt-purgecss@^1.0.0:
     purgecss "^2.0.5"
     purgecss-webpack-plugin "^2.0.5"
 
+nuxt-seo-meta@^2.3.1:
+  version "2.3.1"
+  resolved "https://registry.npmmirror.com/nuxt-seo-meta/-/nuxt-seo-meta-2.3.1.tgz#f26d20e3ef3a25d0b05c42dd06c648c4864e6a8e"
+  integrity sha512-WcImaUBklKKsQz7SHTvfwuARrfSmJGtC8hjgW0mBrEvo5rtAqT+8mQAAsblxI24hD9O+OYRKFM6J1B9hoVu13g==
+  dependencies:
+    requrl "^3.0.2"
+
 nuxt@^2.13.3:
   version "2.15.8"
   resolved "https://registry.npmmirror.com/nuxt/-/nuxt-2.15.8.tgz"

@@ -93,6 +93,18 @@ export default {
       toggleNavbarTransparent,
       Home
     }
+  },
+head({$seoMeta}){
+  const title = 'My awesome site'
+  return {
+    title,
+    meta: $seoMeta({
+      title,
+      description: 'awesome site description',
+      url: 'https://awesome.site',
+      image: 'https://awesome.cdn/awesome.png'
+    }, false)
+  }
   }
 }
 </script>
