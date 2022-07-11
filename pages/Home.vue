@@ -46,6 +46,14 @@ import { useUiState } from '~/composables'
 
 export default {
   name: 'HoMe',
+//   async asyncData({ $seoMeta }) {
+//   $seoMeta({
+//     title: 'My awesome site',
+//     description: 'awesome site description',
+//     url: 'https://awesome.site',
+//     image: 'https://awesome.cdn/awesome.png'
+//   })
+// },
   components: {
     Contact,
     VideoPlayback,
@@ -77,7 +85,6 @@ export default {
       // console.log('子页面初始化!,设置透明导航')
       setNavbarTransparent(true)
     })
-
     const Home = () => {
       toggleNavbarTransparent()
       console.log('子页面test,isNavbarTransparent', isNavbarTransparent)
@@ -95,14 +102,12 @@ export default {
     }
   },
 head({$seoMeta}){
-  const title = 'My awesome site'
+  const title = 'Osmiler'
   return {
     title,
     meta: $seoMeta({
       title,
-      description: 'awesome site description',
-      url: 'https://awesome.site',
-      image: 'https://awesome.cdn/awesome.png'
+      description: 'Osmiler site description'
     }, false)
   }
   }
