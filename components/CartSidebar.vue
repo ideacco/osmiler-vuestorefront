@@ -73,7 +73,7 @@
               class="empty-cart__image"
               src="/icons/empty-cart.jpg"
               :width="256"
-              :height="173"
+              :height="153"
             />
             <SfHeading
               title="Your cart is empty"

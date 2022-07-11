@@ -52,24 +52,6 @@ import LoadWhenVisible from '~/components/utils/LoadWhenVisible'
 
 export default {
   name: 'DefaultLayout',
-    gtm: {
-    enabled: undefined, /* see below */
-    debug: false,
-    id: undefined,
-    layer: 'dataLayer',
-    variables: {},
-    pageTracking: false,
-    pageViewEventName: 'nuxtRoute',
-    autoInit: true,
-    respectDoNotTrack: true,
-    scriptId: 'gtm-script',
-    scriptDefer: false,
-    scriptURL: 'https://www.googletagmanager.com/gtm.js',
-    crossOrigin: false,
-    noscript: true,
-    noscriptId: 'gtm-noscript',
-    noscriptURL: 'https://www.googletagmanager.com/ns.html'
-  },
   components: {
     LazyHydrate,
     // AssHeader,
@@ -121,6 +103,7 @@ export default {
   },
 /* eslint-disable  */
    mounted() {
+    //  console.log(this.$fb,888)
     // //* eslint-disable  */
     // if (process.browser) {
     //   this.$gtag('config', 'UA-233114703-1', {

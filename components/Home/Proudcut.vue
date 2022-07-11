@@ -78,10 +78,6 @@
           <div class="uk-margin">
             <img
               src="/wp-content/themes/yootheme/cache/14BG-iphoen-ya-320c541d.jpeg"
-              srcset="
-                /wp-content/themes/yootheme/cache/14BG-iphoen-ya-320c541d.jpeg 768w,
-                /wp-content/themes/yootheme/cache/14BG-iphoen-ya-320c541d.jpeg 960w
-              "
               sizes="(min-width: 960px) 960px"
               data-width="960"
               data-height="1412"

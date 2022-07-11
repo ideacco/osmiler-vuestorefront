@@ -28,12 +28,7 @@
           <div class="uk-width-1-2@m">
             <div class="uk-margin-large uk-text-center">
               <img
-                src="/wp-content/themes/yootheme/cache/Group-66-1-0a9ffd67.png"
-                srcset="
-                  /wp-content/themes/yootheme/cache/Group-66-1-43640bfd.png  768w,
-                  /wp-content/themes/yootheme/cache/Group-66-1-43640bfd.png 1024w,
-                  /wp-content/themes/yootheme/cache/Group-66-1-0a9ffd67.png 1200w
-                "
+                src="/wp-content/themes/yootheme/cache/WechatIMG712.jpeg"
                 sizes="(min-width: 1200px) 1200px"
                 data-width="1200"
                 data-height="1013"
@@ -444,10 +439,6 @@
               >
                 <img
                   src="/wp-content/themes/yootheme/cache/logo-pic-1149e4da.png"
-                  srcset="
-                    /wp-content/themes/yootheme/cache/logo-pic-1149e4da.png 200w,
-                    /wp-content/themes/yootheme/cache/logo-pic-839cd84c.png 400w
-                  "
                   sizes="(min-width: 200px) 200px"
                   data-width="200"
                   data-height="143"

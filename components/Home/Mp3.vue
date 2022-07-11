@@ -37,10 +37,9 @@
                   >
                     <a
                       class="el-content uk-button uk-button-default uk-flex-inline uk-flex-center uk-flex-middle"
-                      href="/music"
                     >
-                      <span class="uk-margin-small-right" uk-icon="bolt"></span>
-                      GO
+                      <!-- <span class="uk-margin-small-right" uk-icon="bolt"></span>
+                      GO -->
                     </a>
                   </div>
                 </div>
@@ -84,10 +83,6 @@
           <div class="uk-margin">
             <img
               src="/wp-content/themes/yootheme/cache/405-2-13c651c4.jpeg"
-              srcset="
-                /wp-content/themes/yootheme/cache/405-2-72a7fe03.jpeg 768w,
-                /wp-content/themes/yootheme/cache/405-2-13c651c4.jpeg 960w
-              "
               sizes="(min-width: 960px) 960px"
               data-width="960"
               data-height="1249"

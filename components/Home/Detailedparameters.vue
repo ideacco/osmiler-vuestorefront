@@ -123,9 +123,6 @@
                     >
                       <img
                         src="/wp-content/themes/yootheme/cache/ic_06-a5daadec.png"
-                        srcset="
-                          /wp-content/themes/yootheme/cache/ic_06-a5daadec.png 33w
-                        "
                         sizes="(min-width: 33px) 33px"
                         data-width="33"
                         data-height="33"

@@ -59,9 +59,6 @@
               >
                 <img
                   src="/wp-content/themes/yootheme/cache/Frame-58-246b27e9.png"
-                  srcset="
-                    /wp-content/themes/yootheme/cache/Frame-58-246b27e9.png 488w
-                  "
                   sizes="(min-width: 488px) 488px"
                   data-width="488"
                   data-height="401"

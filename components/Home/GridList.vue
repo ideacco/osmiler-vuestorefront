@@ -23,10 +23,6 @@
                       <div>
                         <img
                           src="/wp-content/themes/yootheme/cache/01-2-9aad7647.png"
-                          srcset="
-                            /wp-content/themes/yootheme/cache/01-2-9aad7647.png 100w,
-                            /wp-content/themes/yootheme/cache/01-2-35816000.png 120w
-                          "
                           sizes="(min-width: 100px) 100px"
                           data-width="100"
                           data-height="100"
@@ -52,10 +48,6 @@
                       <div>
                         <img
                           src="/wp-content/themes/yootheme/cache/04-2-4f7809bc.png"
-                          srcset="
-                            /wp-content/themes/yootheme/cache/04-2-4f7809bc.png 100w,
-                            /wp-content/themes/yootheme/cache/04-2-e0541ffb.png 120w
-                          "
                           sizes="(min-width: 100px) 100px"
                           data-width="100"
                           data-height="100"
@@ -81,10 +73,6 @@
                       <div>
                         <img
                           src="/wp-content/themes/yootheme/cache/02-2-d61e5cee.png"
-                          srcset="
-                            /wp-content/themes/yootheme/cache/02-2-d61e5cee.png 100w,
-                            /wp-content/themes/yootheme/cache/02-2-79324aa9.png 120w
-                          "
                           sizes="(min-width: 100px) 100px"
                           data-width="100"
                           data-height="100"
@@ -111,10 +99,6 @@
                       <div>
                         <img
                           src="/wp-content/themes/yootheme/cache/03-2-5b5fb8b6.png"
-                          srcset="
-                            /wp-content/themes/yootheme/cache/03-2-5b5fb8b6.png 100w,
-                            /wp-content/themes/yootheme/cache/03-2-f473aef1.png 120w
-                          "
                           sizes="(min-width: 100px) 100px"
                           data-width="100"
                           data-height="100"

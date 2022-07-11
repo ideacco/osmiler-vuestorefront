@@ -127,11 +127,11 @@
                   :key="`${key}`"
                 >
                   <li :class="{ 'uk-active': category.name === navActive }">
-                    <a @click="navJump(category)">{{ category.name }}</a>
+                    <a @click.prevent="navJump(category)">{{ category.name }}</a>
                   </li>
                 </ul>
               </div>
-              <div class="uk-navbar-right">
+              <div class="uk-navbar-right uk-position-top-right ">
                 <ul class="uk-navbar-nav" style="align-items: center">
                   <li v-if="!isUserAuthenticated" style="z-index: 999">
                     <button
@@ -331,9 +331,9 @@ export default {
 
   methods: {
     navJump(category, key) {
+      this.$router.push({ path: category.path})
       // console.log('navJump', category.name)
       this.navActive = category.name
-      this.$router.push({ path: category.path })
     }
   }
 }

@@ -28,11 +28,7 @@
                     uk-scrollspy="target: [uk-scrollspy-class];"
                   >
                     <img
-                      src="/wp-content/themes/yootheme/cache/ic_location-1-f218cfc2.png"
-                      srcset="
-                        /wp-content/themes/yootheme/cache/ic_location-1-f218cfc2.png 40w,
-                        /wp-content/themes/yootheme/cache/ic_location-1-ec56c1bd.png 60w
-                      "
+                      src="/wp-content/themes/yootheme/cache/ic_location.svg"
                       sizes="(min-width: 40px) 40px"
                       data-width="40"
                       data-height="40"
@@ -45,9 +41,12 @@
                       Address
                     </h2>
                     <div class="el-content uk-panel uk-margin-top">
-                      Room 309,Building 5<br />
-                      ShenZhen<br />
-                      China
+                    Room 1607E<br/>
+                    Education Techonology Building<br/>
+                    No. 26 Zizhu Seven Road<br/>
+                    Xiangmihu Street<br/>
+                    Futian District<br/>
+                    Shenzhen
                     </div>
                   </div>
                 </div>
@@ -57,11 +56,7 @@
                     uk-scrollspy="target: [uk-scrollspy-class];"
                   >
                     <img
-                      src="/wp-content/themes/yootheme/cache/ic_emile-1-88d48444.png"
-                      srcset="
-                        /wp-content/themes/yootheme/cache/ic_emile-1-88d48444.png 40w,
-                        /wp-content/themes/yootheme/cache/ic_emile-1-969a8a3b.png 60w
-                      "
+                      src="/wp-content/themes/yootheme/cache/ic_emile.svg"
                       sizes="(min-width: 40px) 40px"
                       data-width="40"
                       data-height="40"
@@ -93,11 +88,6 @@
           <div class="uk-margin uk-text-center">
             <img
               src="/wp-content/themes/yootheme/cache/image-59-c5c1dcb5.png"
-              srcset="
-                /wp-content/themes/yootheme/cache/image-59-c5c1dcb5.png  768w,
-                /wp-content/themes/yootheme/cache/image-59-6bbfcf07.png 1024w,
-                /wp-content/themes/yootheme/cache/image-59-c5c1dcb5.png 1080w
-              "
               sizes="(min-width: 1080px) 1080px"
               data-width="1080"
               data-height="560"

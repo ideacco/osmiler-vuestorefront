@@ -60,11 +60,6 @@
           <div class="uk-margin uk-margin-remove-top uk-text-center">
             <img
               src="/wp-content/themes/yootheme/cache/07-d33c0b7c.jpeg"
-              srcset="
-                /wp-content/themes/yootheme/cache/07-da47cdb5.jpeg  768w,
-                /wp-content/themes/yootheme/cache/07-f0413a3d.jpeg 1024w,
-                /wp-content/themes/yootheme/cache/07-d33c0b7c.jpeg 1125w
-              "
               sizes="(min-width: 1125px) 1125px"
               data-width="1125"
               data-height="1152"

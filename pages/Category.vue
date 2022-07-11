@@ -224,9 +224,7 @@
                   @click="
                     addItemToCart({
                       product,
-                      quantity: Number(
-                        productsQuantity[productData.getId(product)] || 1
-                      )
+                      quantity:1
                     })
                   "
                 />
@@ -503,6 +501,12 @@ export default {
     max-width: 1240px;
     margin: 0 auto;
   }
+}
+.uk-section{
+  @include for-desktop{
+    padding-top: 0px;
+  }
+
 }
 .sf-loader{
   --loader-spinner-stroke: #fff !important;
@@ -859,11 +863,14 @@ export default {
     align-items: center;
     background: #fff;
   @include for-desktop {
-    margin-left: 0;
     // display: flex;
     justify-content: flex-start;
     align-items: center;
-  }
+      }
+}
+
+::v-deep .sf-product-card__link{
+justify-content: flex-start;
 }
 // ::v-deep .sf-price__regular {
 //   display: block !important;

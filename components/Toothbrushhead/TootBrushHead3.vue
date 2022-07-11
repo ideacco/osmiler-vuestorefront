@@ -18,9 +18,6 @@
             <div class="uk-margin uk-text-center">
               <img
                 src="/wp-content/themes/yootheme/cache/Frame-1348-ea3dca33.jpeg"
-                srcset="
-                  /wp-content/themes/yootheme/cache/Frame-1348-ea3dca33.jpeg 695w
-                "
                 sizes="(min-width: 695px) 695px"
                 data-width="695"
                 data-height="539"

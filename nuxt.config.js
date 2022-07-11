@@ -1,8 +1,7 @@
 // eslint-disable-next-line nuxt/no-cjs-in-config
 require('isomorphic-fetch')
-
 // console.log('当前服务状态:', process.env.NODE_ENV)
-
+const CompressionPlugin = require('compression-webpack-plugin');
 import webpack from 'webpack'
 // const platformENV = process.env.NODE_ENV !== 'production' ? 'http' : 'https'
 const Timestamp = new Date().getTime()
@@ -95,6 +94,8 @@ const config = {
     '@nuxtjs/google-analytics',
     // to core
     './modules/cms/build',
+    '@aceforth/nuxt-optimized-images',
+    'nuxt-facebook-pixel-module',
     '@nuxtjs/composition-api/module',
     '@nuxtjs/pwa',
     '@nuxtjs/device',
@@ -115,6 +116,7 @@ const config = {
         },
       },
     ],
+
     ['@vue-storefront/nuxt-theme'],
     [
       '@vue-storefront/shopify/nuxt',
@@ -125,6 +127,33 @@ const config = {
       },
     ],
   ],
+  optimizedImages: {
+    optimizeImages: true
+  },
+  // script:[
+  //  {src:'~/plugins/pixel.js',type: 'text/javascript'}
+  // ],
+  // googleAnalytics: {
+  //   id: 'UA-233114703-1'
+  // },
+  // debug: {
+  //   enabled: false,
+  //   sendHitTask: false
+  // },
+  // publicRuntimeConfig: {
+  //   googleAnalytics: {
+  //     id: 'UA-233114703-1'
+  //   }
+  // },
+  // 'google-gtag': {
+  //   id: 'UA-233114703-1',
+  //   config: {
+  //     anonymize_ip: true, // anonymize IP
+  //     send_page_view: false, // might be necessary to avoid duplicated page track on page reload
+  //   },
+  //   debug: false, // enable to track in dev mode
+  //   disableAutoPageTrack: false, // disable if you don't want to track each page route with router.afterEach(...).
+  // },
   // googleAnalytics: {
   //   id: process.env.GOOGLE_ANALYTICS_ID, // Use as fallback if no runtime config is provided
   // },
@@ -141,7 +170,9 @@ const config = {
   ],
   modules: [
     '@nuxtjs/i18n',
+    'nuxt-facebook-pixel-module',
     '@nuxtjs/gtm',
+    'nuxt-precompress',
     // '@nuxtjs/google-gtag',
     'cookie-universal-nuxt',
     'vue-scrollto/nuxt',
@@ -151,12 +182,66 @@ const config = {
     '@nuxt/image',
     '@nuxtjs/axios',
   ],
+  nuxtPrecompress: {
+    enabled: true, // Enable in production
+    report: false, // set true to turn one console messages during module init
+    test: /\.(js|css|html|txt|xml|svg)$/, // files to compress on build
+    // Serving options
+    middleware: {
+      // You can disable middleware if you serve static files using nginx...
+      enabled: true,
+      // Enable if you have .gz or .br files in /static/ folder
+      enabledStatic: true,
+      // Priority of content-encodings, first matched with request Accept-Encoding will me served
+      encodingsPriority: ['br', 'gzip'],
+    },
+    gzip: {
+      // should compress to gzip?
+      enabled: true,
+      // compression config
+      // https://www.npmjs.com/package/compression-webpack-plugin
+      filename: '[path].gz[query]', // middleware will look for this filename
+      threshold: 10240,
+      minRatio: 0.8,
+      compressionOptions: { level: 9 },
+    },
+    brotli: {
+      // should compress to brotli?
+      enabled: true,
+      // compression config
+      // https://www.npmjs.com/package/compression-webpack-plugin
+      filename: '[path].br[query]', // middleware will look for this filename
+      compressionOptions: { level: 11 },
+      threshold: 10240,
+      minRatio: 0.8,
+    },
+  },
   gtm: {
     id: 'GTM-PB39ZGK', // Used as fallback if no runtime config is provided
+    enabled: true,
+    scriptDefer: true,
+    pageTracking: true,
+  },
+  facebook: {
+    /* module options */
+    track: 'PageView',
+    pixelId: '769420814057414',
+    autoPageView: true,
+    disabled: false,
+    manualModef:false,
+   Pixels:[
+   {
+    pixelId : '789343135804814',
+    autoPageView: true,
+    disabled: false,
+    manualModef:false,
+    track: 'PageView'
+   }
+   ]
   },
   publicRuntimeConfig: {
     gtm: {
-      id: process.env.GOOGLE_TAG_MANAGER_ID
+      id:'GTM-PB39ZGK'
     }
   },
   // 'google-gtag': {
@@ -288,6 +373,21 @@ const config = {
     ],
   },
   build: {
+      extractCSS:true,
+      optimization: {
+      splitChunks: {
+      minSize: 10000,
+      maxSize: 250000,
+      cacheGroups: {
+        styles: {
+          name: 'styles',
+          test: /\.(css|scss)$/,
+          chunks: 'all',
+          enforce: true
+        }
+      }
+    },
+  },
     // transpile: ['vee-validate/dist/rules', 'storefront-ui'],
     transpile: ['vee-validate/dist/rules'],
     plugins: [
@@ -298,8 +398,15 @@ const config = {
           lastCommit: process.env.LAST_COMMIT || '',
         }),
       }),
+      new CompressionPlugin({
+      test: /\.js$|\.html$|\.css/, // 匹配文件名
+      threshold: 10240,
+      deleteOriginalAssets: false
+      })
     ],
     extend(config, ctx) {
+      config.output.filename = `js/[name].${Timestamp}.js` // 每次构建打包时给文件名加上时间戳，保证版本更新时与上版本文件名不一样
+      config.output.chunkFilename = `js/[name].${Timestamp}.js`
       config.resolve.extensions.push('.mjs')
       config.module.rules.push({
         test: /\.mjs$/,
@@ -307,10 +414,6 @@ const config = {
         type: 'javascript/auto',
       })
     },
-    // extractCSS: {
-    //   allChunks: true,
-    //   ignoreOrder: true,
-    // },
   },
   pwa: {
     manifest: {

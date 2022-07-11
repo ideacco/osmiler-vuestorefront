@@ -13,7 +13,7 @@
                   class="el-link"
                   href="/"
                 ><img
-                  src="../static/icons/osmiler-logo-default.svg"
+                  src="../static/icons/osmiler-logo-default2.svg"
                   width="100"
                   class="el-image"
                   alt="Osmiler"
@@ -54,7 +54,6 @@
             </div>
 
             <div class="uk-width-1-2@s uk-width-1-5@m"></div>
-
             <div class="uk-width-1-3@s uk-width-1-5@m">
               <div class="uk-h5">Product Series</div>
               <ul class="uk-list">
@@ -119,7 +118,16 @@
                     <a
                       href="/ShippingReturnPolicy"
                       class="el-link uk-link-text uk-margin-remove-last-child"
-                    >Shipping &amp; Return Policy</a
+                    >Return Policy</a
+                    >
+                  </div>
+                </li>
+                    <li class="el-item">
+                  <div class="el-content uk-panel">
+                    <a
+                      href="/ShippingPolicy"
+                      class="el-link uk-link-text uk-margin-remove-last-child"
+                    >Shipping Policy </a
                     >
                   </div>
                 </li>
@@ -183,7 +191,7 @@
               <div
                 class="uk-panel uk-text-small uk-text-muted uk-visible@m uk-text-left@s uk-text-center"
               >
-                © 2022 OSMILER. All rights reserved.<br class="uk-hidden@s" />
+                © 2022 OSMILER™️. All rights reserved.<br class="uk-hidden@s" />
               </div>
             </div>
 
@@ -193,7 +201,25 @@
                   class="uk-child-width-auto uk-grid-small uk-flex-inline uk-grid"
                   uk-grid=""
                 >
-                  <div class="uk-first-column">
+                 <div class="uk-first-column">
+                    <a class="el-link uk-icon" rel="noreferrer">
+                      <img
+                        src="/homepage/logo_visa.svg"
+                        alt=""
+                        class="uk-icon1"
+                      />
+                    </a>
+                  </div>
+                   <div class="uk-first-column">
+                    <a class="el-link uk-icon" rel="noreferrer">
+                      <img
+                        src="/homepage/logo_mastercard.svg"
+                        alt=""
+                        class="uk-icon1"
+                      />
+                    </a>
+                  </div>
+                     <div class="uk-first-column">
                     <a class="el-link uk-icon" rel="noreferrer">
                       <img
                         src="/homepage/logo_dinersclub.png"
@@ -205,57 +231,43 @@
                   <div class="uk-first-column">
                     <a class="el-link uk-icon" rel="noreferrer">
                       <img
-                        src="/homepage/logo_dinersclub-1.png"
+                        src="/homepage/logo_jcb.svg"
                         alt=""
                         class="uk-icon1"
                       />
                     </a>
                   </div>
+
+                  <!-- <div class="uk-first-column">
+                    <a class="el-link uk-icon" rel="noreferrer">
+                      <img
+                        src="/homepage/logo_dinersclub.svg"
+                        alt=""
+                        class="uk-icon1"
+                      />
+                    </a>
+                  </div> -->
+
+                  <!-- <div class="uk-first-column">
+                    <a class="el-link uk-icon" rel="noreferrer">
+                      <img
+                        src="/homepage/logo_discover.svg"
+                        alt=""
+                        class="uk-icon1"
+                      />
+                    </a>
+                  </div>
+
+
                   <div class="uk-first-column">
                     <a class="el-link uk-icon" rel="noreferrer">
                       <img
-                        src="/homepage/logo_discover.png"
+                        src="/homepage/logo_palpay.svg"
                         alt=""
                         class="uk-icon1"
                       />
                     </a>
-                  </div>
-                  <div class="uk-first-column">
-                    <a class="el-link uk-icon" rel="noreferrer">
-                      <img
-                        src="/homepage/logo_jcb.png"
-                        alt=""
-                        class="uk-icon1"
-                      />
-                    </a>
-                  </div>
-                  <div class="uk-first-column">
-                    <a class="el-link uk-icon" rel="noreferrer">
-                      <img
-                        src="/homepage/logo_mastercard.png"
-                        alt=""
-                        class="uk-icon1"
-                      />
-                    </a>
-                  </div>
-                  <div class="uk-first-column">
-                    <a class="el-link uk-icon" rel="noreferrer">
-                      <img
-                        src="/homepage/logo_visa.png"
-                        alt=""
-                        class="uk-icon1"
-                      />
-                    </a>
-                  </div>
-                  <div class="uk-first-column">
-                    <a class="el-link uk-icon" rel="noreferrer">
-                      <img
-                        src="/homepage/logo_palpay.png"
-                        alt=""
-                        class="uk-icon1"
-                      />
-                    </a>
-                  </div>
+                  </div> -->
                 </div>
               </div>
             </div>

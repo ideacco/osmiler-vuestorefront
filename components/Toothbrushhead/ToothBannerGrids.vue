@@ -3,7 +3,7 @@
     <div
       id="page#4"
       class="uk-section-default uk-section uk-section-xsmall uk-padding-remove-bottom uk-flex uk-flex-bottom"
-      style="height:840px;background:#faf9fd"
+      style="background:#faf9fd"
     >
       <div class="uk-width-1-1">
         <div class="uk-container uk-container-xlarge">
@@ -40,9 +40,6 @@
                   >
                     <img
                       src="/wp-content/themes/yootheme/cache/Frame-1356-4f78375e.jpeg"
-                      srcset="
-                        /wp-content/themes/yootheme/cache/Frame-1356-4f78375e.jpeg 696w
-                      "
                       sizes="(min-width: 696px) 696px"
                       data-width="696"
                       data-height="903"
