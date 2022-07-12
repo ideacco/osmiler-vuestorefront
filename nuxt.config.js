@@ -6,6 +6,10 @@ import webpack from 'webpack'
 // const platformENV = process.env.NODE_ENV !== 'production' ? 'http' : 'https'
 const Timestamp = new Date().getTime()
 const config = {
+  env: { 
+    storeURL: process.env.SHOPIFY_DOMAIN,
+    storeToken: process.env.SHOPIFY_STOREFRONT_TOKEN
+   },
   server: {
     port: process.env.APP_PORT || 8888,
     host: '0.0.0.0',
@@ -130,38 +134,6 @@ const config = {
   optimizedImages: {
     optimizeImages: true
   },
-  // script:[
-  //  {src:'~/plugins/pixel.js',type: 'text/javascript'}
-  // ],
-  // googleAnalytics: {
-  //   id: 'UA-233114703-1'
-  // },
-  // debug: {
-  //   enabled: false,
-  //   sendHitTask: false
-  // },
-  // publicRuntimeConfig: {
-  //   googleAnalytics: {
-  //     id: 'UA-233114703-1'
-  //   }
-  // },
-  // 'google-gtag': {
-  //   id: 'UA-233114703-1',
-  //   config: {
-  //     anonymize_ip: true, // anonymize IP
-  //     send_page_view: false, // might be necessary to avoid duplicated page track on page reload
-  //   },
-  //   debug: false, // enable to track in dev mode
-  //   disableAutoPageTrack: false, // disable if you don't want to track each page route with router.afterEach(...).
-  // },
-  // googleAnalytics: {
-  //   id: process.env.GOOGLE_ANALYTICS_ID, // Use as fallback if no runtime config is provided
-  // },
-  // publicRuntimeConfig: {
-  //   googleAnalytics: {
-  //     id: process.env.GOOGLE_ANALYTICS_ID,
-  //   },
-  // },
   css: [
     {
       src: '@/style/index.scss',
@@ -244,26 +216,6 @@ const config = {
       id:'GTM-PB39ZGK'
     }
   },
-  // 'google-gtag': {
-  //   id: 'UA-233114703-1',
-  //   config: {
-  //     anonymize_ip: true, // anonymize IP
-  //     send_page_view: false, // might be necessary to avoid duplicated page track on page reload
-  //     linker: {
-  //       domains: ['domain.com', 'domain.org'],
-  //     },
-  //   },
-  //   debug: true, // enable to track in dev mode
-  //   disableAutoPageTrack: false, // disable if you don't want to track each page route with router.afterEach(...).
-  //   additionalAccounts: [
-  //     {
-  //       id: 'GTM-PB39ZGK', // required if you are adding additional accounts
-  //       config: {
-  //         send_page_view: false, // optional configurations
-  //       },
-  //     },
-  //   ],
-  // },
   axios: {
     proxy: true,
     prefix: '/app',

@@ -184,7 +184,7 @@ import {
   getCurrentInstance
 } from '@nuxtjs/composition-api'
 import { onSSR } from '@vue-storefront/core'
-import { useCategory, useContent } from '@vue-storefront/shopify'
+// import { useCategory, useContent } from '@vue-storefront/shopify'
 
 export default {
   name: 'UikitHeader',
@@ -196,10 +196,10 @@ export default {
     isUserAuthenticated: Boolean
   },
   setup(props) {
-    const { categories, search, loading } = useCategory('menu-categories')
-    onSSR(async () => {
-      await search({})
-    })
+    // const { categories, search, loading } = useCategory('menu-categories')
+    // onSSR(async () => {
+    //   await search({})
+    // })
 
     const {
       isNavbarTransparent,

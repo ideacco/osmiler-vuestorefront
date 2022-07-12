@@ -9,19 +9,6 @@
       <button @click="testRouterParams">获取路由信息</button>
       <button @click="fetchSomething">测试请求</button>
 
-      <!-- <SfGallery
-        :images='productGallery'
-
-        :imageWidth="1000"
-        :imageHeight="1000"
-        :thumbWidth="160"
-        :thumbHeight="160"
-        :current="1"
-        :sliderOptions='{"type":"slider","autoplay":false,"rewind":false,"gap":0}'
-        :outsideZoom="false"
-        enableZoom
-      /> -->
-
       <div class="uk-margin-large uk-light">
         <h3>获取的产品内容</h3>
 
@@ -61,50 +48,37 @@
         <br />
         产品的图333:
         {{ productGallery3 ? productGallery3 : 'no productGallery3' }}
+        <br />
+        <!-- blogs:
+        {{ blogs ? blogs : 'no blogs' }}
+
+        <br />
+        产品的 page:
+        {{ isPages ? isPages : 'no page' }}
+        <br />
+        产品的 page:
+        {{ isPages ? isPages : 'no page' }} -->
+
+        <br />
+        产品的 isComsterData:
+        {{ isComsterData ? isComsterData : 'no isComsterData' }}
+
+        <br />
+        产品的 isMetaDatas:
+        {{ isMetaDatas ? isMetaDatas : 'no isMetaDatas' }}
+
+        <br />
+        产品的 isMetaData:
+        {{ isMetaData ? isMetaData : 'no isMetaData' }}
       </div>
 
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati
-        placeat perspiciatis praesentium, accusantium illum nulla similique quas
-        illo aspernatur earum vitae consectetur, ullam eius corrupti accusamus
-        voluptate saepe dolores cupiditate.
-      </p>
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati
-        placeat perspiciatis praesentium, accusantium illum nulla similique quas
-        illo aspernatur earum vitae consectetur, ullam eius corrupti accusamus
-        voluptate saepe dolores cupiditate.
-      </p>
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati
-        placeat perspiciatis praesentium, accusantium illum nulla similique quas
-        illo aspernatur earum vitae consectetur, ullam eius corrupti accusamus
-        voluptate saepe dolores cupiditate.
-      </p>
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati
-        placeat perspiciatis praesentium, accusantium illum nulla similique quas
-        illo aspernatur earum vitae consectetur, ullam eius corrupti accusamus
-        voluptate saepe dolores cupiditate.
-      </p>
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati
-        placeat perspiciatis praesentium, accusantium illum nulla similique quas
-        illo aspernatur earum vitae consectetur, ullam eius corrupti accusamus
-        voluptate saepe dolores cupiditate.
-      </p>
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati
-        placeat perspiciatis praesentium, accusantium illum nulla similique quas
-        illo aspernatur earum vitae consectetur, ullam eius corrupti accusamus
-        voluptate saepe dolores cupiditate.
-      </p>
     </div>
   </div>
 </template>
 
 <script>
 import {
+  isRef,
   useRoute,
   useRouter,
   computed,
@@ -112,12 +86,16 @@ import {
   onUnmounted
 } from '@nuxtjs/composition-api'
 
-import { useUiState, useCustom } from '~/composables'
+import { useUiState, useCustom, useMeta } from '~/composables'
 import { onSSR } from '@vue-storefront/core'
 import {
   useProduct,
   productGetters,
-  useCategory
+  useCategory,
+  useContent,
+  ContentType,
+  contentGetters
+  // useRoute
 } from '@vue-storefront/shopify'
 
 import {
@@ -143,10 +121,18 @@ export default {
 
     // 功能组件
 
-    const { products, search } = useProduct('products')
+    const { products, search } = useProduct('products222')
     const { search: inSearch, categories, loading } = useCategory('categories')
 
-    const { search: isSearch, conster } = useCustom('custom')
+    const { search: isSearch, custom } = useCustom('custom')
+
+    const { search: getBlogs, result: blogs } = useContent('blogs')
+    const { search: searchBlog } = useContent('blog')
+
+    const { search: getPages, result: pages } = useContent('Pages')
+    const { search: searchPage } = useContent('Page')
+
+    const {search: isMeta, meta: isMetaDatas } = useMeta('test')
 
     // 根据接口进行查询填充
     // const { slug } = route?.value?.params
@@ -159,41 +145,65 @@ export default {
     onSSR(async () => {
       console.log('后端执行的 ssr 查询')
       // 用来更新产品的钩子函数
-      await search({
-        customQuery: {
-          products: 'myQsuery',
-          metadata: {}
-        }
-      })
+      // await search({
+      //   customQuery: {
+      //     products: 'myQsuery',
+      //     metadata: {}
+      //   }
+      // })
       // await search({slug})
       // await inSearch({})
-    })
+      // await isContent({slug})
+      // await getPages({ contentType: 'page' })
 
-    // isSearch ({
-    //     customQuery: {
-    //       products: 'my-products-query',
-    //       metadata: {}
-    //     }
-    //   }
-    // )
-
-    isSearch({
-      // customQuery: {
-      //   products: 'myQuery',
-      //   metadata: {}
+      // if(pages) {
+      //   await searchPage ({
+      //     // contentType: 'page'
+      //     // handle: pages?.value?.[0]?.handle
+      //   })
       // }
-      // shop:{}
+
+      // await getBlogs({ contentType: 'blog' })
+
+      // if (blogs) {
+      //   // console.log('测试???',blogs)
+      //   await searchBlog({
+      //     contentType: 'blog',
+      //     handle: blogs?.value?.[0]?.handle
+      //   })
+      // }
     })
 
-
-    // 自定义查询
-    const productsSearchParams = {
-      customQuery: {
-        first: 1,
-        sortKey: 'bestSelling',
-        reverse: false
+    onMounted(async() => {
+      if (slug) {
+        // console.log('子页面初始化!,获取产品', slug)
       }
+      console.log('onMounted')
+      await isMeta({slug})
+
+      await isSearch()
+
+      await search({})
+    
+      setNavbarTransparent(true)
+      // console.log('product.value',product.value)
+    })
+
+    onUnmounted(() => {
+      // console.log('子页面卸载!,清除透明导航')
+      setNavbarTransparent(false)
+    })
+
+    // console.log('获取路由?',route?.value?.query.id)
+
+    // const isPages = computed(()=> pages.value)
+    console.log('isRef?222',isRef(isMetaDatas))
+    const isComsterData = computed(()=> custom.value)
+    const isMetaData = computed(()=> isMetaDatas.value)
+    if(isMetaDatas){
+      console.log('isMetaDatas',isMetaDatas)
     }
+    
 
     // 产品根元素
     // const product = computed(() => productGetters.getFiltered(products.value))
@@ -244,8 +254,6 @@ export default {
     )
 
 
-
-
     // 高级写法,将不同的尺寸图片分类使用
     const productGallery = computed(() =>
       productGetters.getGallery(product.value).map((img) => {
@@ -261,42 +269,12 @@ export default {
 
     const productCategory = computed(() => [...categories.value])
 
-    // search 可以查询的单个选项
-    const params = {
-      id: '',
-      ids: [],
-      slug: slug,
-      customQuery: {
-        // first: 1,
-        // sortKey: 'bestSelling',
-        // reverse: false,
-        query: {
-          images: []
-        }
-      }
-    }
 
     const testRouterParams = () => {
-      // console.log('子页面初始化!,点击测试', route)
-      // router.push({name: 'test_page', params: 'osmiler-swing'})
       router.push({ path: '/test_page', params: 'osmiler-swing' })
-      // toggleNavbarTransparent()
-      // console.log('子页面test,isNavbarTransparent', isNavbarTransparent)
     }
 
-    onMounted(() => {
-      if (slug) {
-        // console.log('子页面初始化!,获取产品', slug)
-      }
-      // console.log('子页面初始化!,路由信息', route)
-      setNavbarTransparent(true)
-      // console.log('product.value',product.value)
-    })
-
-    onUnmounted(() => {
-      // console.log('子页面卸载!,清除透明导航')
-      setNavbarTransparent(false)
-    })
+    
 
     return {
       isNavbarTransparent,
@@ -313,7 +291,13 @@ export default {
       productTitle,
       productGallery,
       productGallery2,
-      productGallery3
+      productGallery3,
+      isComsterData,
+      // blogs,
+      // pages,
+      // isPages,
+      isMetaDatas,
+      isMetaData
     }
   },
 
