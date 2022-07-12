@@ -53,7 +53,7 @@
       >
         <div class="uk-container uk-container-xsmall">
           <div class="tm-grid-expand uk-child-width-1-1 uk-grid-margin " uk-grid>
-            <div style="margin-top:100%">
+            <div style="margin-top:80%">
               <h1
                 class="
                   uk-margin-remove-vertical

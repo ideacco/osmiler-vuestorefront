@@ -3,7 +3,7 @@
   <div>
     <div class="uk-section-default uk-dark">
       <div
-        style="background-image: url('/wp-content/themes/yootheme/cache/Group1362.jpg');"
+        style="background-image: url('/wp-content/themes/yootheme/cache/Group1362.jpg'); "
         class="
           uk-background-norepeat
           uk-background-cover
@@ -55,7 +55,7 @@ export default {
 .uk-section-large {
   height: 400px;
   @include for-desktop {
-    height: 600px;
+    height: 900px;
   }
 }
 .uk-fontsize {
