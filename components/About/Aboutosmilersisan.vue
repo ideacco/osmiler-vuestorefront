@@ -15,7 +15,7 @@
                                         <img src="/wp-content/themes/yootheme/cache/osmiler_42.jpg"
                                             class="el-image"
                                             alt
-                                            style="top:335px"
+                                            style="top:50%"
                                             uk-cover
                                       >
                                     </li>
@@ -23,7 +23,7 @@
                                         <img src="/wp-content/themes/yootheme/cache/x2.jpg"
                                             class="el-image"
                                             uk-cover
-                                            style="top:335px"
+                                            style="top:50%"
                                             alt
                                        >
                                     </li>
