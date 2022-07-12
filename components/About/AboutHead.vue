@@ -17,7 +17,7 @@
       >
         <div class="uk-width-1-1 uk-width-1-2">
           <div class="uk-container uk-textfont">
-            <div class="tm-grid-expand uk-grid-margin" uk-grid>
+            <div class="tm-grid-expand uk-grid-margin " uk-grid>
               <div>
                 <h1 style="color:black; font-family: osmiler-title">
                   About Osmiler
@@ -65,6 +65,7 @@ export default {
   font-size: 16px;
   @include for-desktop {
    margin: 0 ;
+  font-size: 18px;
   }
 }
 .uk-width-1-2 {
@@ -87,6 +88,7 @@ export default {
   @include for-desktop {
    text-align: left;
    margin-top: 0px;
+   margin-left: 40px;
   }
 }
 .uk-grid {

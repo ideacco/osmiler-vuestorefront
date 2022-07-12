@@ -67,7 +67,7 @@ export default {
  @include for-desktop {
   width: 601px;
   color: #fff;
-  font-size: 22px;
+  font-size: 18px;
   }
 }
 .uk-title{

@@ -34,7 +34,7 @@
                     Osmiler Type
                   </h1>
                   <div class="uk-panel uk-margin uk-text-left@m uk-text-center">
-                    <p>
+                    <p style="font-size:18px">
                       The Osmiler brand font is customized based on the Sansita
                       family font designed by Pablo Cosgaya. This is a glyph
                       between calligraphic and typographic fonts. It is very

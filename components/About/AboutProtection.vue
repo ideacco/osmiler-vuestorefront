@@ -28,7 +28,7 @@
                 >
                 Environmental Protection
                 </h1>
-                <div class="uk-panel uk-margin uk-text-left@m uk-text-center" style="font-size:24px">
+                <div class="uk-panel uk-margin uk-text-left@m uk-text-center" style="font-size:18px">
                   We want to be as environmentally friendly and resource
                   efficient as possible in all our production steps. So from
                   product to packaging, we use RoHS compliant and recyclable raw

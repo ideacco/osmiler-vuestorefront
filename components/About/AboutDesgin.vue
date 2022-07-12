@@ -55,7 +55,7 @@ export default {
 .uk-section-large {
   height: 400px;
   @include for-desktop {
-    height: 900px;
+    height: 800px;
   }
 }
 .uk-fontsize {
@@ -64,10 +64,10 @@ export default {
   margin: 0 15px;
   font-size: 16px;
   @include for-desktop {
-    width: 601px;
+    width: 500px;
     color: #fff;
     margin: 0 ;
-   font-size: 22px;
+   font-size: 18px;
   }
 }
 .uk-title {

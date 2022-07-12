@@ -1,11 +1,12 @@
 <template>
   <div>
     <AboutHead/>
+    <Aboutyuanjing/>
     <AboutDesgin/>
     <AboutType/>
-    <AboutProtection/>
     <AboutosmilerSisan/>
-    <AboutosmilerSisi/>
+    <!-- <AboutosmilerSisi/> -->
+    <AboutProtection/>
     <AboutResearch/>
     <AboutTesting/>
     <Contact />
@@ -21,6 +22,8 @@ import AboutosmilerSisan from '~/components/About/AboutosmilerSisan'
 import AboutosmilerSisi from '~/components/About/AboutosmilerSisi'
 import AboutResearch from '~/components/About/AboutResearch'
 import AboutTesting from '~/components/About/AboutTesting'
+import Aboutyuanjing from '~/components/About/Aboutyuanjing'
+
 export default {
   name: 'AboutS',
   components: {
@@ -32,7 +35,8 @@ export default {
     AboutosmilerSisan,
     AboutosmilerSisi,
     AboutResearch,
-    AboutTesting
+    AboutTesting,
+    Aboutyuanjing
   }
 }
 </script>
