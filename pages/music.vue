@@ -19,9 +19,10 @@
                   id="page#0-0-0-0"
                   uk-scrollspy-class
                 >
-                  Let music <br class="uk-visible@s" />
-                  activate your life
+                  Let music activate your life
                 </h1>
+                <p>welcome to be the osmiler community. where music fans<br/>can find create download. enjoy and share music</p>
+                <p style="color:#fff"> check out the latest list of music lovers around the world </p>
               </div>
             </div>
           </div>
@@ -101,6 +102,7 @@
         </div>
       </div>
     </div>
+    <MusicDownload/>
     <div
       class="uk-section-muted uk-section uk-section-large"
       uk-scrollspy="target: [uk-scrollspy-class]; cls: uk-animation-fade; delay: false;"
@@ -182,10 +184,15 @@
         </div>
       </div>
     </div>
+<MusicQuarter/>
+<CopyrightNotice/>
   </div>
 </template>
 
 <script type="module">
+import MusicDownload from '~/components/Music/MusicDownload.vue'
+import MusicQuarter from '~/components/Music/MusicQuarter.vue'
+import CopyrightNotice from '~/components/Music/CopyrightNotice.vue'
 // import '/static/wp-content/themes/yootheme/vendor/assets/uikit/dist/js/uikit-icons-union-dental.min.js'
 // // import '/static/wp-content/themes/yootheme/vendor/assets/uikit/dist/js/uikit.min.js'
 export default {
@@ -196,31 +203,38 @@ export default {
       mp3_info: [
         {
           id: 1,
-          music_name: 'Alpha (Intro)',
-          mins: '3:00',
+          music_name: 'Last Drunk',
+          mins: '1:50',
           speed: 'fast',
-          music_url: '/wp-content/uploads/2022/05/06-Up.mp3'
+          music_url: '/wp-content/uploads/2022/05/LastDrunk.mp3'
         },
         {
           id: 2,
-          music_name: 'We are not friends (ft. Goku)',
-          mins: '3:00',
+          music_name: 'Feeling Myself',
+          mins: '2:14',
           speed: 'fast',
-          music_url: '/wp-content/uploads/2022/05/06-Up.mp3'
+          music_url: '/wp-content/uploads/2022/05/FeelingMyself.mp3'
         },
         {
           id: 3,
-          music_name: 'Eat your Vegetables',
-          mins: '3:00',
+          music_name: 'Drama Club',
+          mins: '1:37',
           speed: 'fast',
-          music_url: '/wp-content/uploads/2022/05/06-Up.mp3'
+          music_url: '/wp-content/uploads/2022/05/DramaClub.mp3'
         },
         {
           id: 4,
-          music_name: 'Power Level 500K',
-          mins: '3:00',
+          music_name: 'daylight',
+          mins: '2:08',
           speed: 'fast',
-          music_url: '/wp-content/uploads/2022/05/06-Up.mp3'
+          music_url: '/wp-content/uploads/2022/05/daylight.mp3'
+        },
+        {
+          id: 5,
+          music_name: 'Boulevard',
+          mins: '1:26',
+          speed: 'fast',
+          music_url: '/wp-content/uploads/2022/05/Boulevard.mp3'
         }
       ],
       isPlaying: false,
@@ -228,6 +242,11 @@ export default {
       playingId: -1
       // uikitdom: null
     }
+  },
+  components: {
+    MusicDownload,
+    MusicQuarter,
+    CopyrightNotice
   },
   mounted() {
     this.audio = new Audio()

@@ -294,6 +294,10 @@ export default {
           path: '/c/all-products'
         },
         {
+          name: 'Music',
+          path: '/music'
+        },
+        {
           name: 'Services',
           path: '/Services'
         },
