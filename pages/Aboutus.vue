@@ -4,7 +4,7 @@
     <Aboutyuanjing/>
     <AboutDesgin/>
     <AboutType/>
-    <AboutosmilerSisan/>
+    <Aboutosmilersisan/>
     <!-- <AboutosmilerSisi/> -->
     <AboutProtection/>
     <AboutResearch/>
@@ -18,7 +18,7 @@ import AboutDesgin from '~/components/About/AboutDesgin'
 import AboutHead from '~/components/About/AboutHead'
 import AboutType from '~/components/About/AboutType.vue'
 import AboutProtection from '~/components/About/AboutProtection.vue'
-import AboutosmilerSisan from '~/components/About/AboutosmilerSisan'
+import Aboutosmilersisan from '~/components/About/Aboutosmilersisan'
 // import AboutosmilerSisi from '~/components/About/AboutosmilerSisi'
 import AboutResearch from '~/components/About/AboutResearch'
 import AboutTesting from '~/components/About/AboutTesting'
@@ -32,7 +32,7 @@ export default {
     AboutDesgin,
     AboutType,
     AboutProtection,
-    AboutosmilerSisan,
+    Aboutosmilersisan,
     // AboutosmilerSisi,
     AboutResearch,
     AboutTesting,
