@@ -19,7 +19,7 @@ import AboutHead from '~/components/About/AboutHead'
 import AboutType from '~/components/About/AboutType.vue'
 import AboutProtection from '~/components/About/AboutProtection.vue'
 import AboutosmilerSisan from '~/components/About/AboutosmilerSisan'
-import AboutosmilerSisi from '~/components/About/AboutosmilerSisi'
+// import AboutosmilerSisi from '~/components/About/AboutosmilerSisi'
 import AboutResearch from '~/components/About/AboutResearch'
 import AboutTesting from '~/components/About/AboutTesting'
 import Aboutyuanjing from '~/components/About/Aboutyuanjing'
@@ -33,7 +33,7 @@ export default {
     AboutType,
     AboutProtection,
     AboutosmilerSisan,
-    AboutosmilerSisi,
+    // AboutosmilerSisi,
     AboutResearch,
     AboutTesting,
     Aboutyuanjing
