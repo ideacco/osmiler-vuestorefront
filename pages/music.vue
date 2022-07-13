@@ -234,7 +234,7 @@ export default {
           music_name: 'Boulevard',
           mins: '1:26',
           speed: 'fast',
-          music_url: '/wp-content/uploads/2022/05/Boulevard.mp3'
+          music_url: '/wp-content/uploads/2022/05/06-Up.mp3'
         }
       ],
       isPlaying: false,

@@ -36,7 +36,7 @@
               <div class="uk-margin">
                 <a
                   class="uk-button uk-button-default"
-                  href="https://shop.osmiler.com/music013234/#"
+                  href="/MusicLicensingAgreement"
                 >
                  View more
                 </a>
@@ -84,7 +84,7 @@
               <div class="uk-margin" style="margin-top:60px">
                 <a
                   class=" uk-button uk-button-default"
-                  href="https://shop.osmiler.com/music013234/#"
+                  href="/MusicLicensingAgreement"
                 >
                    View more
                 </a>
