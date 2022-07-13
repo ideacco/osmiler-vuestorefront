@@ -52,7 +52,8 @@ export const useDetails = (id: string) => {
       loading.value = true
 
       if (params.slug) {
-        result.value = client.graphQLClient.send(pagesQuery).then(({ model }) => {
+        result.value = await client.graphQLClient.send(pagesQuery).then(({ model }) => {
+          // console.log('result.value??', JSON.stringify(model.pageByHandle))
           return model.pageByHandle
         })
       } else {
@@ -71,7 +72,7 @@ export const useDetails = (id: string) => {
       loading.value = false
     }
   }
-
+  
   return {
     search,
     details: computed(() => result.value),
