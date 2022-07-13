@@ -23,7 +23,7 @@
     />
 
     <div id="layout">
-      <nuxt @testPage="getData" :key="route.fullPath" />
+      <nuxt :keep-alive="false" :keep-alive-prrps= "{inclue:includeArr}" @testPage="getData" :key="route.fullPath" />
     </div>
     <LoadWhenVisible>
       <AppFooter />
@@ -99,6 +99,11 @@ export default {
       getCartTotalItems,
       isAuthenticated,
       route
+    }
+  },
+  data(){
+    return{
+      includeArr: ['Homne','Category']
     }
   },
 /* eslint-disable  */

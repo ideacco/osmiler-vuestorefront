@@ -47,14 +47,14 @@
                 </div>
               </div>
             </div>
-            <div class="uk-width-1-2@m">
+            <div class="uk-width-1-2@m ">
               <div id="page#10-0-1-0" class="uk-margin uk-text-right">
                 <img
-                  src="/wp-content/themes/yootheme/cache/4ea1db57.jpeg"
+                  src="/wp-content/themes/yootheme/cache/wright-f071959f.jpeg"
+                  class="el-image"
                   sizes="(min-width: 1510px) 1510px"
                   data-width="1510"
                   data-height="1759"
-                  class="el-image"
                   alt
                 />
               </div>
@@ -141,4 +141,7 @@ export default {
   font-family: 'osmiler-title';
   padding-top: 32px;
 }
+// .uk-width-35{
+//  height: 792px;
+// }
 </style>

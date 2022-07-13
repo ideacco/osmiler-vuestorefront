@@ -721,9 +721,9 @@ export default {
         .slice(0, 4)
       return img
     })
-    onMounted(()=>{
-      console.log($route.path, $router.path,888)
-    })
+    // onMounted(()=>{
+    //   console.log($route.path, $router.path,slug, $route?.value?.path,888)
+    // })
     onSSR(async () => {
       await search({ slug, selectedOptions: configuration.value }).then(() => {
         // "Product Title" serve as the flag if the product is existing or not
@@ -753,7 +753,7 @@ export default {
               : options.value[attr][0]
         })
       }
-      console.log(configuration.value, 444, filter)
+      // console.log(configuration.value, 444, filter)
       $router.push({
         path: $route?.value?.path,
         query: {
@@ -839,7 +839,7 @@ export default {
 
   // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
   mounted() {
-    // console.log(this.$refs, 5858588)
+    // console.log(window.location.href, 5858588)
     window.addEventListener('load', () => {
       this.setGalleryWidth()
     })

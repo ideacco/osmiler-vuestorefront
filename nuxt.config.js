@@ -3,6 +3,7 @@ require('isomorphic-fetch')
 // console.log('当前服务状态:', process.env.NODE_ENV)
 const CompressionPlugin = require('compression-webpack-plugin');
 import webpack from 'webpack'
+// import nuxtSeoMeta from "nuxt-seo-meta/src"
 // const platformENV = process.env.NODE_ENV !== 'production' ? 'http' : 'https'
 const Timestamp = new Date().getTime()
 const config = {
@@ -153,7 +154,14 @@ const config = {
     './modules/cms/runtime',
     '@nuxt/image',
     '@nuxtjs/axios',
+    'nuxt-seo-meta'
   ],
+  seoMeta: {
+    title: "SEO Meta - Title",
+    description: "SEO Meta - Description",
+    defaultImage: "defaultImage.png",
+    defaultUrl: "https://longbridgeapp.com"
+  },
   nuxtPrecompress: {
     enabled: true, // Enable in production
     report: false, // set true to turn one console messages during module init
