@@ -447,15 +447,15 @@ export default {
     // 获取页面详情数据
     const detailsPage = computed(()=> details.value)
     
-    const detailsHTML = computed(()=> details.value.body)
-    // const detailsHTML = computed(()=> getDetailsHTML(details.value))
+    // const detailsHTML = computed(()=> details.value.body)
+    const detailsHTML = computed(()=> getDetailsHTMLBody(details.value))
 
 
-    function getDetailsHTML(details) {
-      return details.then((data)=>data)
+    function getDetailsHTMLBody(details) {
+      return details.body
     }
 
-    console.log('detailsPage?',detailsPage.value)
+    // console.log('detailsPage?',detailsPage.value)
     // console.log('detailsHTML?',detailsHTML.value.body)
 
     /**
