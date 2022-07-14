@@ -49,18 +49,17 @@
               "
               uk-grid
             >
-              <div class="uk-grid-item-match uk-flex-middle uk-light">
+              <div class="uk-grid-item-match uk-flex-middle uk-light" style="margin:0 15px">
                 <div class="uk-panel uk-width-1-1">
                   <h2
                     class="uk-margin-remove-vertical uk-text-left@m uk-text-left"
                     id="page#17-0-0-0"
-                    style="font-size: 32px; margin-left: 36px"
-
+                    style="font-size: 32px;"
                   >
                  In the next quarter,we’ll have
                   </h2>
                   <div class="uk-panel uk-margin uk-text-left@m uk-text-left">
-                    <p class="uk-text-fontszie" style="margin-left: 36px">
+                    <p class="uk-text-fontszie" >
                       In the communication section, you can meet users all over
                   the world and share music and tips on brushing your teeth with
                   each other. · Upload your favorite music or your original
@@ -107,6 +106,9 @@ export default {
 }
 .uk-text-fontszie {
   font-size: 16px;
+  @include for-desktop{
+  margin-left: 0;
+  }
 }
 .uk-grid-marginbox2{
   width: 420px;

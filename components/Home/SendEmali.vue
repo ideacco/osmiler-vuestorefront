@@ -11,7 +11,7 @@
           <div class="uk-width-1-2@m">
             <div id="page#25-0-0-0"></div>
             <div
-              class="uk-panel uk-margin-remove-first-child uk-position-relative uk-margin uk-text-left@m uk-text-center"
+              class="uk-panel uk-margin-remove-first-child uk-position-relative uk-margin uk-text-left@m uk-text-center "
               id="page#25-0-0-1"
               style="z-index: 1"
             >

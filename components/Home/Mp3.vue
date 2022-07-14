@@ -2,7 +2,7 @@
   <div>
     <div id="Mp3" class="uk-visible@m uk-section-default uk-light">
       <div
-        style="background-image: url('/wp-content/themes/yootheme/cache/406-3-afe2690c.jpeg');height:840px;"
+        style="background-image: url('/wp-content/themes/yootheme/cache/BeaMusic.jpg');height:1000px;"
         class="uk-background-norepeat uk-background-cover uk-background-top-center uk-section uk-padding-remove-vertical uk-flex uk-flex-middle"
       >
         <div class="uk-width-1-1">
@@ -37,9 +37,10 @@
                   >
                     <a
                       class="el-content uk-button uk-button-default uk-flex-inline uk-flex-center uk-flex-middle"
+                      href="/music"
                     >
-                      <!-- <span class="uk-margin-small-right" uk-icon="bolt"></span>
-                      GO -->
+                      <span class="uk-margin-small-right" uk-icon="bolt"></span>
+                      GO
                     </a>
                   </div>
                 </div>

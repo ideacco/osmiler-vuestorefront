@@ -8,7 +8,7 @@
                     uk-grid>
                     <div>
                         <div uk-slideshow="ratio: false;" class="uk-margin">
-                            <div class="uk-position-relative">
+                            <div class="uk-position-relative" uk-slideshow="autoplay: true" >
                                 <ul class="uk-slideshow-items"
                                     uk-height-viewport="offset-top: true; ">
                                     <li class="el-item">
@@ -54,8 +54,8 @@ export default {
 <style lang="scss" scoped>
 
 .slideriht{
-width: 20px;
-height: 20px;
+width: 15px;
+height: 15px;
 background: rgba(255, 255, 255, 0.85);
 border-radius: 10px;
 padding-left: 0px;

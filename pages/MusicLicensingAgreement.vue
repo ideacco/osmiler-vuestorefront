@@ -183,7 +183,7 @@
                             class="el-content uk-panel"
                             style="color: #3a3543"
                           >
-                            <a href="/wp-content/themes/yootheme/cache/lastdrunk.jpg" download>    610003047259    </a>
+                            <a href="/wp-content/themes/yootheme/cache/lastdrunk.jpg" download>610003047259</a>
                           </div>
                         </td>
                       </tr>

@@ -2,7 +2,7 @@
   <div>
     <div id="Bone" class="uk-visible@m uk-section-default uk-light">
       <div
-        style="background-image: url('/wp-content/themes/yootheme/cache/Group1363.jpg');height: 860px;"
+        style="background-image: url('/wp-content/themes/yootheme/cache/x4.jpg'); height: 860px;"
         class="
           uk-background-norepeat
           uk-background-cover

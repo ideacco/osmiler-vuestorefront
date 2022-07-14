@@ -198,6 +198,11 @@ export default {
   }
 
 }
+.uk-tile {
+ @include for-desktop{
+    padding:70px 80px !important;
+ }
+}
 // .uk-width-35{
 //  height: 792px;
 // }

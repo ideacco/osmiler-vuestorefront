@@ -3,7 +3,7 @@
   <div>
     <div class="uk-visible@m uk-section-default">
       <div
-        style="background-image: url(/wp-content/themes/yootheme/cache/bannerbg2.jpg)"
+        style="background-image: url(/wp-content/themes/yootheme/cache/bannerbg2.jpg);"
         class="
           uk-background-norepeat
           uk-background-cover
@@ -38,7 +38,7 @@
                   class="uk-button uk-button-default"
                   href="/MusicLicensingAgreement"
                 >
-                 View more
+                  View more
                 </a>
               </div>
             </div>
@@ -66,27 +66,28 @@
                   uk-width-medium@m
                   uk-text-left@m
                   uk-text-left
-
                 "
                 id="page#4-0-0-0"
-                style="font-size: 32px !important"
+                style="font-size: 32px !important;margin: 0 15px;"
               >
-                Environmental Protection
+                Copyright Notice
               </h1>
               <div class="uk-panel uk-margin-small uk-text-left@m uk-text-left">
-                <p style="font-size: 16px;">
-                  We want to be as environmentally friendly and resource
-                  efficient as possible in all our production steps. So from
-                  product to packaging, we use RoHS compliant and recyclable raw
-                  materials.
+                <p style="font-size: 16px;margin: 0 15px;">
+                  · In the communication section, you can meet users all over
+                  the world and share music and tips on brushing your teeth with
+                  each other. · Upload your favorite music or your original
+                  music, if accepted, you will receive our membership Rewards
+                  points and gifts. Stay tuned with us!
                 </p>
               </div>
-              <div class="uk-margin" style="margin-top:60px">
+              <div class="uk-margin" style="margin:60px 15px 0 ">
                 <a
-                  class=" uk-button uk-button-default"
+                  class="uk-button uk-button-default"
                   href="/MusicLicensingAgreement"
+
                 >
-                   View more
+                  View more
                 </a>
               </div>
             </div>
@@ -115,10 +116,9 @@ export default {
   font-size: 16px;
 }
 
-.uk-button{
+.uk-button {
   background: transparent !important;
   border: 1px solid #fff !important;
   color: #ffff !important;
 }
-
 </style>

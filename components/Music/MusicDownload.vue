@@ -77,12 +77,12 @@
                       uk-margin-remove-vertical uk-text-left@m uk-text-left
                     "
                     id="page#17-0-0-0"
-                    style="font-size: 32px; margin-left: 36px;"
+                    style="font-size: 32px; margin:0 15px;"
                   >
                     Download <br/>custom-made<br/> music for<br/> brushing teeth
                   </h2>
                   <div class="uk-panel uk-margin uk-text-left@m uk-text-left">
-                    <p class="uk-text-fontszie" style=" margin-left: 36px;">
+                    <p class="uk-text-fontszie" style=" margin:0 15px;">
                       Each song is created by our professional musicians. After
                       extensive testing, the amplitude of the motor speed is
                       match to the toothbrush cleaning force, using our custom

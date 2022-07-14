@@ -83,4 +83,9 @@ export default {
 #page\#2-0-0-1 {
   color: #3a3543;
 }
+.uk-grid > * {
+  @include for-desktop {
+    padding-left: 80px;
+  }
+}
 </style>
