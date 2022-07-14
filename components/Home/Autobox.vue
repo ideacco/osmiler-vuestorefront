@@ -123,7 +123,7 @@
                             class="el-content uk-panel"
                             style="color: #3a3543"
                           >
-                            000 G
+                            465 G
                           </div>
                         </td>
                       </tr>
