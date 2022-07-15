@@ -5,7 +5,7 @@ const CompressionPlugin = require('compression-webpack-plugin');
 import webpack from 'webpack'
 // import nuxtSeoMeta from "nuxt-seo-meta/src"
 // const platformENV = process.env.NODE_ENV !== 'production' ? 'http' : 'https'
-const Timestamp = new Date().getTime()
+// const Timestamp = new Date().getTime()
 const config = {
   server: {
     port: process.env.APP_PORT || 8888,
@@ -413,8 +413,6 @@ const config = {
       })
     ],
     extend(config, ctx) {
-      config.output.filename = `js/[name].${Timestamp}.js` // 每次构建打包时给文件名加上时间戳，保证版本更新时与上版本文件名不一样
-      config.output.chunkFilename = `js/[name].${Timestamp}.js`
       config.resolve.extensions.push('.mjs')
       config.module.rules.push({
         test: /\.mjs$/,
