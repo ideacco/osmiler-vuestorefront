@@ -82,10 +82,10 @@ const config = {
   plugins: [
     '@/plugins/scrollToTop.client.js',
     '~/plugins/gtm',
-     {
-      src:'@/plugins/Vuegtag',
-      mode: 'client'
-     },
+    //  {
+    //   src:'@/plugins/Vuegtag',
+    //   mode: 'client'
+    //  },
     // '@/plugins/element-ui',
     {
       src: '@/plugins/UIkit',
