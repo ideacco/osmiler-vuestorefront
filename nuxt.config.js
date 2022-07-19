@@ -24,6 +24,7 @@ const config = {
     storeURL: process.env.SHOPIFY_DOMAIN,
     storeToken: process.env.SHOPIFY_STOREFRONT_TOKEN,
   },
+
   serverMiddleware: [
     // { path: '/custom', handler: '~/server-middleware/custom-features.js' }, // 去掉了原版使用的express的中间件
     {
@@ -81,6 +82,10 @@ const config = {
   plugins: [
     '@/plugins/scrollToTop.client.js',
     '~/plugins/gtm',
+     {
+      src:'@/plugins/Vuegtag',
+      mode: 'client'
+     },
     // '@/plugins/element-ui',
     {
       src: '@/plugins/UIkit',
