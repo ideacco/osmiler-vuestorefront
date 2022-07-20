@@ -6,7 +6,7 @@
                 <div class="uk-container uk-container-xlarge">
                     <div class="tm-grid-expand uk-grid-margin uk-grid  ukmargin" >
                         <div class="uk-width-1-2@m uk-first-column ">
-                            <h1>
+                            <h1    style="font-family: osmiler-title;font-size: 42px;">
                   <img src="/wp-content/themes/yootheme/cache/Star5.svg" /> In the next quarter, <br>we’ll have: </h1>
                         </div>
                         <div class="uk-width-1-2@m">
@@ -101,6 +101,11 @@ export default {
 //     wid
 //   }
 // }
+.uk-grid > * {
+  @include for-desktop {
+    padding-left: 15px;
+  }
+}
 .uk-section{
   padding-top: 125px;
 }

@@ -18,7 +18,6 @@
                     <div
                       class="el-item uk-margin-auto uk-width-xlarge uk-panel uk-tile-default uk-margin-remove-first-child"
                       uk-scrollspy-class
-                      @click="jump(1)"
                     >
                       <div>
                         <img
@@ -130,11 +129,6 @@ export default {
   name: 'GridList',
   data() {
     return {}
-  },
-  methods: {
-    jump(index) {
-      // console.log(this.$parent, 444)
-    }
   }
 }
 </script>
@@ -151,5 +145,10 @@ export default {
 }
 .el-item {
   background: #fff !important;
+}
+.uk-section-xsmall{
+ @include for-desktop{
+  padding-top: 30px;
+ }
 }
 </style>

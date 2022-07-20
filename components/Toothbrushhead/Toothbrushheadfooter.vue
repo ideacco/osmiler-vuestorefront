@@ -17,7 +17,7 @@
             <div id="page#6-0-0-1"></div>
             <div class="uk-margin uk-text-center">
               <img
-                src="/wp-content/themes/yootheme/cache/Frame1340.png"
+                src="/wp-content/themes/yootheme/cache/Group13467.png"
                 sizes="(min-width: 375px) 375px"
                 data-width="375"
                 data-height="542"

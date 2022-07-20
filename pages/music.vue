@@ -18,7 +18,7 @@
                   class="uk-heading-small uk-width-xlarge uk-text-left fontsize2"
                   id="page#0-0-0-0"
                   uk-scrollspy-class
-
+                  style="font-size:42px"
                 >
                   Let music activate your life
                 </h1>
@@ -115,7 +115,7 @@
             <h2
               class="uk-width-xlarge uk-margin-auto uk-text-center"
               uk-scrollspy-class
-              style="font-family: osmiler-title"
+              style="font-family: osmiler-title;font-size: 42px;"
             >
               All music downloads
             </h2>

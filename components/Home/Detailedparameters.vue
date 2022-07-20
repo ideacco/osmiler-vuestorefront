@@ -2,34 +2,52 @@
   <div>
     <div id="page#20" class="uk-section-secondary uk-section uk-section-xlarge">
       <div
-        class="uk-container uk-container-xlarge uk-padding-remove-horizontal uk-container-expand-left"
+        class="
+          uk-container
+          uk-container-xlarge
+          uk-padding-remove-horizontal
+          uk-container-expand-left
+        "
       >
         <div class="uk-grid-margin uk-container uk-container-large">
-          <div class="tm-grid-expand uk-child-width-1-1" uk-grid>
-            <div>
-              <h1
-                class="uk-text-left@m uk-text-center"
-                id="page#20-0-0-0"
-                style="font-size: 32px"
-              >
+          <div
+            class="tm-grid-expand uk-child-width-1-1 uk-grid uk-grid-stack"
+            uk-grid=""
+          >
+            <div class="uk-first-column">
+              <h1 class="uk-text-center@m uk-text-center" id="page#20-0-0-0">
                 Detailed parameters
               </h1>
               <div
                 id="page#20-0-0-1"
-                class="uk-position-relative uk-margin uk-text-left"
+                class="
+                  uk-position-relative uk-margin uk-text-center@m uk-text-center
+                "
               >
                 <div
-                  class="uk-child-width-1-2 uk-child-width-1-3@m uk-grid-small uk-grid-match"
-                  uk-grid
+                  class="
+                    uk-child-width-1-2
+                    uk-child-width-1-3@m
+                    uk-grid-small
+                    uk-grid-match
+                    uk-grid
+                  "
+                  uk-grid=""
                 >
-                  <div>
+                  <div class="uk-first-column">
                     <div
-                      class="el-item uk-margin-auto uk-width-2xlarge uk-panel uk-margin-remove-first-child"
+                      class="
+                        el-item
+                        uk-margin-auto
+                        uk-width-2xlarge
+                        uk-panel
+                        uk-margin-remove-first-child
+                      "
                     >
                       <img
                         src="/wp-content/uploads/2022/06/ic_01-2.svg"
                         class="el-image"
-                        alt
+                        alt=""
                       />
                       <h4
                         class="el-title uk-margin-top uk-margin-remove-bottom"
@@ -43,12 +61,18 @@
                   </div>
                   <div>
                     <div
-                      class="el-item uk-margin-auto uk-width-2xlarge uk-panel uk-margin-remove-first-child"
+                      class="
+                        el-item
+                        uk-margin-auto
+                        uk-width-2xlarge
+                        uk-panel
+                        uk-margin-remove-first-child
+                      "
                     >
                       <img
                         src="/wp-content/uploads/2022/06/ic_02-2.svg"
                         class="el-image"
-                        alt
+                        alt=""
                       />
                       <h4
                         class="el-title uk-margin-top uk-margin-remove-bottom"
@@ -62,12 +86,18 @@
                   </div>
                   <div>
                     <div
-                      class="el-item uk-margin-auto uk-width-2xlarge uk-panel uk-margin-remove-first-child"
+                      class="
+                        el-item
+                        uk-margin-auto
+                        uk-width-2xlarge
+                        uk-panel
+                        uk-margin-remove-first-child
+                      "
                     >
                       <img
                         src="/wp-content/uploads/2022/06/ic_03-2.svg"
                         class="el-image"
-                        alt
+                        alt=""
                       />
                       <h4
                         class="el-title uk-margin-top uk-margin-remove-bottom"
@@ -79,14 +109,20 @@
                       </div>
                     </div>
                   </div>
-                  <div>
+                  <div class="uk-grid-margin uk-first-column">
                     <div
-                      class="el-item uk-margin-auto uk-width-2xlarge uk-panel uk-margin-remove-first-child"
+                      class="
+                        el-item
+                        uk-margin-auto
+                        uk-width-2xlarge
+                        uk-panel
+                        uk-margin-remove-first-child
+                      "
                     >
                       <img
                         src="/wp-content/uploads/2022/06/ic_04-1.svg"
                         class="el-image"
-                        alt
+                        alt=""
                       />
                       <h4
                         class="el-title uk-margin-top uk-margin-remove-bottom"
@@ -98,14 +134,20 @@
                       </div>
                     </div>
                   </div>
-                  <div>
+                  <div class="uk-grid-margin">
                     <div
-                      class="el-item uk-margin-auto uk-width-2xlarge uk-panel uk-margin-remove-first-child"
+                      class="
+                        el-item
+                        uk-margin-auto
+                        uk-width-2xlarge
+                        uk-panel
+                        uk-margin-remove-first-child
+                      "
                     >
                       <img
                         src="/wp-content/uploads/2022/06/ic_05-1.svg"
                         class="el-image"
-                        alt
+                        alt=""
                       />
                       <h4
                         class="el-title uk-margin-top uk-margin-remove-bottom"
@@ -117,9 +159,15 @@
                       </div>
                     </div>
                   </div>
-                  <div>
+                  <div class="uk-grid-margin">
                     <div
-                      class="el-item uk-margin-auto uk-width-2xlarge uk-panel uk-margin-remove-first-child"
+                      class="
+                        el-item
+                        uk-margin-auto
+                        uk-width-2xlarge
+                        uk-panel
+                        uk-margin-remove-first-child
+                      "
                     >
                       <img
                         src="/wp-content/themes/yootheme/cache/ic_06-a5daadec.png"
@@ -127,7 +175,7 @@
                         data-width="33"
                         data-height="33"
                         class="el-image"
-                        alt
+                        alt=""
                       />
                       <h4
                         class="el-title uk-margin-top uk-margin-remove-bottom"

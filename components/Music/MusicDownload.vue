@@ -17,6 +17,7 @@
               <h1
                 class="uk-margin-remove-vertical uk-text-center@m uk-text-left"
                 id="page#16-0-0-0"
+                style="font-size:42px"
               >
                 Download custom-made music for brushing teeth
               </h1>
