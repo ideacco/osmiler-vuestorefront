@@ -387,6 +387,18 @@ const config = {
   },
   build: {
       extractCSS:true,
+      filenames: {
+        app: ({ isDev }) => (isDev ? '[name].js' : Version + '[chunkhash].js'),
+        chunk: ({ isDev }) => (isDev ? '[name].js' : Version + '[chunkhash].js'),
+        css: ({ isDev }) =>
+          isDev ? '[name].css' : Version + '[contenthash].css',
+        img: ({ isDev }) =>
+          isDev ? '[path][name].[ext]' : Version + 'img/[hash:7].[ext]',
+        font: ({ isDev }) =>
+          isDev ? '[path][name].[ext]' : Version + 'fonts/[hash:7].[ext]',
+        video: ({ isDev }) =>
+          isDev ? '[path][name].[ext]' : Version + 'videos/[hash:7].[ext]'
+      },
       optimization: {
       splitChunks: {
       minSize: 10000,
@@ -425,6 +437,7 @@ const config = {
         type: 'javascript/auto',
       })
     },
+    
   },
   pwa: {
     manifest: {
