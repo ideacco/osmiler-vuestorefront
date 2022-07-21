@@ -76,7 +76,7 @@
         >
           <div class="uk-grid-item-match">
             <div
-              class="uk-tile-default uk-tile uk-padding-remove uk-flex uk-flex-middle"
+              class="uk-tile-default uk-tile uk-padding-remove uk-flex uk-flex-middle uk-marginfontsize"
             >
               <div class="uk-panel uk-width-1-1">
                 <h1
@@ -140,6 +140,9 @@ export default {
 #page\#13-0-0-0 {
   font-family: 'osmiler-title';
   padding-top: 32px;
+}
+.uk-marginfontsize{
+margin: 0 12px;
 }
 .uk-container-large{
   margin: 0;

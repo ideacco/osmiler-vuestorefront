@@ -82,7 +82,7 @@
           <div>
             <div class="uk-margin">
               <img
-                src="/wp-content/themes/yootheme/cache/Hero-ya.jpg"
+                src="/wp-content/themes/yootheme/cache/Hero.png"
                 sizes="(min-width: 1125px) 1125px"
                 data-width="1125"
                 data-height="1086"
@@ -98,7 +98,7 @@
               <h1
                 class="uk-heading-medium uk-position-relative uk-margin uk-text-center@m uk-text-center"
                 id="page#1-1-0-0"
-                style="top: 8px; z-index: 1"
+                style="top: 8px; z-index: 1;font-size: 32px;"
               >
                 A musical revolution.
               </h1>

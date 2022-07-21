@@ -503,6 +503,7 @@ export default {
   }
 }
 .uk-section{
+  padding-top: 0;
   @include for-desktop{
     padding-top: 0px;
   }

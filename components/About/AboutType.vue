@@ -94,7 +94,7 @@
                 uk-tile-default uk-tile uk-padding-remove uk-flex uk-flex-middle
               "
             >
-              <div class="uk-panel uk-width-1-1">
+              <div class="uk-panel uk-width-1-1 uk-fontsize85">
                 <h1
                   class="
                     uk-margin-remove-vertical
@@ -203,6 +203,10 @@ export default {
     padding:70px 80px !important;
  }
 }
+.uk-fontsize85{
+padding-left: 15px;
+}
+
 // .uk-width-35{
 //  height: 792px;
 // }

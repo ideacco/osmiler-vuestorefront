@@ -143,6 +143,12 @@ export default {
 .uk-section-muted {
   background: #fff;
 }
+#page\#2-0-0-0 .el-item{
+  @include for-desktop{
+ padding-bottom: 12px;
+  }
+}
+
 .el-item {
   background: #fff !important;
 }

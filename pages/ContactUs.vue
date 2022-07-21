@@ -108,17 +108,16 @@
       <CantactMap/>
     </div>
    <Contact />
-    <MainChack />
+    <!-- <MainChack /> -->
   </div>
 </template>
 <script>
-import MainChack from '~/components/MainChack'
+// import MainChack from '~/components/MainChack'
 import Contact from '~/components/Home/Contact'
 import CantactMap from '~/components/CantactMap'
 export default {
   name: 'ContactUs',
   components: {
-    MainChack,
     Contact,
     CantactMap
   }

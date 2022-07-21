@@ -35,7 +35,7 @@
                       <div
                         class="uk-card-title uk-margin-top uk-margin-remove-bottom"
                       >
-                         Location
+                         Osilmer
                       </div>
                       <div class="el-content uk-panel uk-margin-top">
                         Room 309,Building 5, QianHai E-Hub, ShenZhen,China
@@ -62,7 +62,7 @@
                       <h3
                         class="el-title uk-card-title uk-margin-top uk-margin-remove-bottom"
                       >
-                        SHENZHEN Location
+                        SHENZHEN ONE
                       </h3>
                       <div class="el-content uk-panel uk-margin-top">
                         Room 309,Building 5, QianHai E-Hub, ShenZhen,China
@@ -81,7 +81,7 @@
                       <h3
                         class="el-title uk-card-title uk-margin-top uk-margin-remove-bottom"
                       >
-                     SHENZHEN Place of registration
+                      SHENZHEN TWO
                       </h3>
                       <div class="el-content uk-panel uk-margin-top">
                         Room 1607E Education Techonology Building

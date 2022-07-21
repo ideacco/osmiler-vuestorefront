@@ -73,4 +73,10 @@ export default {
     margin-left: 80px;
   }
 }
+.uk-section-large{
+  padding-top: 15px;
+  @include for-desktop{
+   padding-top: 70px;
+  }
+}
 </style>

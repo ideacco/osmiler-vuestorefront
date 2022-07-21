@@ -22,6 +22,8 @@
 
               <div class="uk-margin-medium uk-margin-remove-top">
                 let your smile light up the world
+                <p style="font-size:16px;"><span uk-icon="mail" style="margin-top:10px"></span> service@osmiler.com</p>
+                <span style="font-size:16px;"><span uk-icon="location"></span>Room 118, Building 7, No.35 Qianwan First Street, Qianhai District, Shenzhen</span>
               </div>
               <div class="uk-margin-remove-vertical">
                 <div

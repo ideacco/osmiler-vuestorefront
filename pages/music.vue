@@ -22,7 +22,7 @@
                 >
                   Let music activate your life
                 </h1>
-                <p class="fontsize2  uk-text-left ">welcome to be the osmiler community. where music fans<br/>can find create download. enjoy and share music</p>
+                <p class="fontsize2  uk-text-left "  style="color:#fff">welcome to be the osmiler community. where music fans<br/>can find create download. enjoy and share music</p>
                 <p style="color:#fff" class="fontsize2  uk-text-left"> check out the latest list of music lovers around the world </p>
               </div>
             </div>
@@ -115,7 +115,7 @@
             <h2
               class="uk-width-xlarge uk-margin-auto uk-text-center"
               uk-scrollspy-class
-              style="font-family: osmiler-title;font-size: 42px;"
+              style="font-family: osmiler-title;font-size: 32px;"
             >
               All music downloads
             </h2>

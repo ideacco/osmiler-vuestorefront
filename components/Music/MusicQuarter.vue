@@ -23,7 +23,7 @@
         </div>
     <div id="Community" class="uk-hidden@m uk-section-default uk-light">
       <div
-        style="background-image: url('/wp-content/themes/yootheme/cache/gradienta-7E5kq_sW0Ew-unsplash1.jpg');height: 496px;"
+        style="background-image: url('/wp-content/themes/yootheme/cache/gradienta-7E5kq_sW0Ew-unsplash1.jpg');height: 350px;"
         class="
           uk-background-norepeat
           uk-background-cover
@@ -54,7 +54,7 @@
                   <h2
                     class="uk-margin-remove-vertical uk-text-left@m uk-text-left"
                     id="page#17-0-0-0"
-                    style="font-size: 32px;"
+                    style="font-size: 32px;font-family: osmiler-title;"
                   >
                  In the next quarter,we’ll have
                   </h2>

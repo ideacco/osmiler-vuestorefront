@@ -48,7 +48,7 @@
     </div>
     <div id="Bone" class="uk-hidden@m uk-section-secondary">
       <div
-        style="background-image: url('/wp-content/themes/yootheme/cache/BGmoilhnb.jpg');height: 800px;"
+        style="background-image: url('/wp-content/themes/yootheme/cache/BGmoilhnb.jpg');height: 700px;"
         class="
           uk-background-norepeat
           uk-background-cover

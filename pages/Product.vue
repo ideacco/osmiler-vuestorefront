@@ -1212,4 +1212,11 @@ export default {
     transform: translate3d(0, 0, 0);
   }
 }
+.sf-breadcrumbs__list{
+  margin-left: 10px;
+  @include for-desktop{
+      margin-left: 0;
+  }
+}
+
 </style>

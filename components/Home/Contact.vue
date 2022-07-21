@@ -14,7 +14,7 @@
                   class="uk-panel uk-text-lead uk-position-relative uk-margin uk-width-medium uk-text-left@s uk-text-left"
                   id="page#26-0-0-1"
                 >
-                  <p>
+                  <p style="font-size:16px">
                     For product or technical support inquiries, email us and we
                     will respond you soon.
                   </p>

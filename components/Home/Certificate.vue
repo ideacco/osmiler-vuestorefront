@@ -112,7 +112,7 @@ export default {
 </script>
 <style lang="scss" scoped>
 .uk-padding-remove-bottom{
-  min-height: 680px;
+  min-height: 500px;
   @include for-desktop{
   min-height: 268px;
   }

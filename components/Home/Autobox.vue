@@ -3,12 +3,12 @@
     <div
       class="uk-section-muted uk-section uk-padding-remove-top uk-padding-remove-bottom uk-flex uk-flex-middle"
       >
-      <div class="uk-width-1-1">
+      <div class="uk-width-1-1 uk-height-1-1">
         <div class="uk-container uk-container-expand">
           <div class="uk-grid-margin uk-container uk-container-large">
             <div class="tm-grid-expand" uk-grid>
-              <div class="uk-width-1-2@m">
-                <h1 id="page#18-0-0-0" style="color: #4132c7; font-size: 32px">
+              <div class="uk-width-1-2@m  uk-height888">
+                <h1 id="page#18-0-0-0" style="color: #4132c7; font-size: 32px;padding-top: 0;">
                   What`s in the Box
                 </h1>
                 <h4 style="color: #4132c7">Package Contents</h4>
@@ -147,7 +147,7 @@
                     >
                       <li class="el-item">
                         <img
-                          src="/wp-content/themes/yootheme/cache/Frame 1293.jpg"
+                          src="/wp-content/themes/yootheme/cache/Frame1356.jpg"
                           sizes="(max-aspect-ratio: 721/840) 86vh"
                           data-width="721"
                           data-height="840"
@@ -212,4 +212,18 @@ export default {
   }
 }
 </script>
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.uk-slideshow-items{
+  @include for-desktop{
+    height: 621px !important;
+  }
+}
+[data-uk-cover],
+[uk-cover] {
+top: 50%;
+}
+.uk-height888{
+   @include for-desktop{
+  }
+}
+</style>

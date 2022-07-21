@@ -540,19 +540,16 @@
         </div>
       </div>
     </div>
-    <MainChack />
+    <!-- <MainChack /> -->
   </div>
 </template>
 
 <script lang="module">
 import { defineComponent } from '@nuxtjs/composition-api'
-import MainChack from '~/components/MainChack'
+// import MainChack from '~/components/MainChack'
 
 export default defineComponent({
-  name: 'TermsAndConditions',
-  components: {
-    MainChack
-  }
+  name: 'TermsAndConditions'
 })
 </script>
 

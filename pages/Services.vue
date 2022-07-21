@@ -435,7 +435,7 @@
             <div class="uk-panel uk-width-1-1">
               <div
                 class="uk-visible@l uk-position-absolute uk-width-1-1"
-                style="left: 20px; bottom: -140px"
+                style="left: 20px; bottom: -200px"
               >
                 <img
                   src="/wp-content/themes/yootheme/cache/logo-pic-1149e4da.png"

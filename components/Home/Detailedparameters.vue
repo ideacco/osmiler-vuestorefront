@@ -205,4 +205,15 @@ export default {
   }
 }
 </script>
-<style lang="scss"></style>
+<style lang="scss" scoped>
+.uk-container{
+@include for-desktop{
+    margin:0 auto;
+}
+}
+.uk-grid {
+  @include for-desktop {
+       margin-left: 0px;
+  }
+}
+</style>
