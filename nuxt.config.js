@@ -388,16 +388,12 @@ const config = {
   build: {
       extractCSS:true,
       filenames: {
-        app: ({ isDev }) => (isDev ? '[name].js' : Version + '[chunkhash].js'),
-        chunk: ({ isDev }) => (isDev ? '[name].js' : Version + '[chunkhash].js'),
-        css: ({ isDev }) =>
-          isDev ? '[name].css' : Version + '[contenthash].css',
-        img: ({ isDev }) =>
-          isDev ? '[path][name].[ext]' : Version + 'img/[hash:7].[ext]',
-        font: ({ isDev }) =>
-          isDev ? '[path][name].[ext]' : Version + 'fonts/[hash:7].[ext]',
-        video: ({ isDev }) =>
-          isDev ? '[path][name].[ext]' : Version + 'videos/[hash:7].[ext]'
+        app: ({ isDev }) => isDev ? '[name].js' : '[contenthash].js',
+        chunk: ({ isDev }) => isDev ? '[name].js' : '[contenthash].js',
+        css: ({ isDev }) => isDev ? '[name].css' : '[contenthash].css',
+        img: ({ isDev }) => isDev ? '[path][name].[ext]' : 'img/[contenthash:7].[ext]',
+        font: ({ isDev }) => isDev ? '[path][name].[ext]' : 'fonts/[contenthash:7].[ext]',
+        video: ({ isDev }) => isDev ? '[path][name].[ext]' : 'videos/[contenthash:7].[ext]'
       },
       optimization: {
       splitChunks: {
