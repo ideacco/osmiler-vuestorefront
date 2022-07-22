@@ -389,7 +389,6 @@ const config = {
 
   build: {
     extractCSS:true,
-    publicPath: 'https://cdn.nuxtjs.org',
       filenames: {
         app: ({ isDev }) => isDev ? '[name].js' : '[contenthash].js',
         chunk: ({ isDev }) => isDev ? '[name].js' : '[contenthash].js',
