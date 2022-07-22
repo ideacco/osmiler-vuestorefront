@@ -388,9 +388,7 @@ const config = {
   },
 
   build: {
-    extractCSS: {
-      ignoreOrder: true
-   },
+    extractCSS:true,
     publicPath: 'https://cdn.nuxtjs.org',
       filenames: {
         app: ({ isDev }) => isDev ? '[name].js' : '[contenthash].js',
@@ -413,10 +411,6 @@ const config = {
         }
       }
     },
-    minimize: true,
-    usedExports: true,
-    minimize: true,
-    concatenateModules: true
   },
     // transpile: ['vee-validate/dist/rules', 'storefront-ui'],
     transpile: ['vee-validate/dist/rules'],
