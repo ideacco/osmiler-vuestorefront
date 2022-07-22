@@ -40,7 +40,6 @@
                       <div class="el-content uk-panel uk-margin-top">
                         Room 309,Building 5, QianHai E-Hub, ShenZhen,China
                         <br />
-                        <br />
                         +86 755-25827634
                         <br />
                        service@osilmer.com
@@ -62,11 +61,10 @@
                       <h3
                         class="el-title uk-card-title uk-margin-top uk-margin-remove-bottom"
                       >
-                        SHENZHEN ONE
+                      ShenZhen China
                       </h3>
                       <div class="el-content uk-panel uk-margin-top">
-                        Room 309,Building 5, QianHai E-Hub, ShenZhen,China
-                        <br />
+                        Room 309,Building 5, QianHai E-Hub,
                         <br />
                         +86 755-25827634
                         <br />
@@ -81,7 +79,7 @@
                       <h3
                         class="el-title uk-card-title uk-margin-top uk-margin-remove-bottom"
                       >
-                      SHENZHEN TWO
+                     ShenZhen China
                       </h3>
                       <div class="el-content uk-panel uk-margin-top">
                         Room 1607E Education Techonology Building

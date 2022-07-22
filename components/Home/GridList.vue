@@ -108,7 +108,7 @@
                       <div
                         class="el-title uk-card-title uk-margin-small-top uk-margin-remove-bottom"
                       >
-                        Classic mode
+                        Classic Mode
                       </div>
                       <div class="el-content uk-panel uk-margin-small-top">
                         3 built-in classic vibrating modes

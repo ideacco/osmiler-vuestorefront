@@ -43,7 +43,7 @@
                     <div class="el-content uk-panel uk-margin-top">
                     Room 1607E&nbsp;Education Techonology Building<br/>
                     No. 26 Zizhu Seven Road&nbsp;Xiangmihu Street<br/>
-                    Futian DistrictE&nbsp;Shenzhen
+                    Futian DistrictE&nbsp;Shenzhen&nbsp;China
                     </div>
                   </div>
                 </div>

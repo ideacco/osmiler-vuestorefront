@@ -24,7 +24,6 @@ const config = {
     storeURL: process.env.SHOPIFY_DOMAIN,
     storeToken: process.env.SHOPIFY_STOREFRONT_TOKEN,
   },
-
   serverMiddleware: [
     // { path: '/custom', handler: '~/server-middleware/custom-features.js' }, // 去掉了原版使用的express的中间件
     {
@@ -72,6 +71,7 @@ const config = {
       },
     ],
   },
+
   loading: {
     color: '#fff',
   },
@@ -229,6 +229,7 @@ const config = {
       minRatio: 0.8,
     },
   },
+
   gtm: {
     id: 'GTM-PB39ZGK', // Used as fallback if no runtime config is provided
     enabled: true,
@@ -385,8 +386,12 @@ const config = {
       // './style/index.scss',
     ],
   },
+
   build: {
-      extractCSS:true,
+    extractCSS: {
+      ignoreOrder: true
+   },
+    publicPath: 'https://cdn.nuxtjs.org',
       filenames: {
         app: ({ isDev }) => isDev ? '[name].js' : '[contenthash].js',
         chunk: ({ isDev }) => isDev ? '[name].js' : '[contenthash].js',
@@ -408,6 +413,10 @@ const config = {
         }
       }
     },
+    minimize: true,
+    usedExports: true,
+    minimize: true,
+    concatenateModules: true
   },
     // transpile: ['vee-validate/dist/rules', 'storefront-ui'],
     transpile: ['vee-validate/dist/rules'],
@@ -433,7 +442,7 @@ const config = {
         type: 'javascript/auto',
       })
     },
-    
+
   },
   pwa: {
     manifest: {

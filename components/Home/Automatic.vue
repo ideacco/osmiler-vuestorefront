@@ -80,7 +80,7 @@
             >
               <div class="uk-panel uk-width-1-1">
                 <h1
-                  class="uk-margin-remove-vertical uk-width-xlarge uk-text-left@m uk-text-left"
+                  class="uk-margin-remove-vertical uk-width-xlarge uk-text-left@m uk-text-left uk-marginfontsize"
                   id="page#11-0-0-0"
                   style="font-size: 32px"
                 >
@@ -89,7 +89,7 @@
                 <div
                   class="uk-panel uk-margin uk-width-xlarge uk-text-left@m uk-text-left"
                 >
-                  <p>
+                  <p class="uk-marginfontsize">
                     In addition to being driven by music, the sonic toothbrush
                     can also use classic vibrating effects. The electric
                     toothbrush has three built-in classic vibrating modes.
@@ -142,7 +142,7 @@ export default {
   padding-top: 32px;
 }
 .uk-marginfontsize{
-margin: 0 12px;
+margin: 0 10px;
 }
 .uk-container-large{
   margin: 0;

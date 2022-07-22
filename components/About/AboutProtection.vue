@@ -53,7 +53,7 @@
       >
         <div class="uk-container uk-container-xsmall">
           <div class="tm-grid-expand uk-child-width-1-1 uk-grid-margin " uk-grid>
-            <div style="margin-top:80%">
+            <div class="uk-containerbox222">
               <h1
                 class="
                   uk-margin-remove-vertical
@@ -107,5 +107,11 @@ export default {
 }
 #page3-0-1-0 {
   font-family: 'osmiler-title';
+}
+.uk-containerbox222{
+  margin-bottom: -60px;
+  @include for-desktop{
+     margin-top: 90%;
+  }
 }
 </style>

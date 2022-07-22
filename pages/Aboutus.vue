@@ -13,7 +13,7 @@
   </div>
 </template>
 <script type="module">
-import Contact from '~/components/Home/Contact'
+import Contact from '~/components/About/AboutContact'
 import AboutDesgin from '~/components/About/AboutDesgin'
 import AboutHead from '~/components/About/AboutHead'
 import AboutType from '~/components/About/AboutType.vue'

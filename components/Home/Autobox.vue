@@ -158,7 +158,7 @@
                       </li>
                       <li class="el-item">
                         <img
-                          src="/wp-content/themes/yootheme/cache/Frame 1351.jpg"
+                          src="/wp-content/themes/yootheme/cache/Frame1357589.jpg"
                           sizes="(max-aspect-ratio: 721/840) 86vh"
                           data-width="721"
                           data-height="840"

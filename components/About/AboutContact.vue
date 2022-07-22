@@ -49,6 +49,11 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.uk-section-large {
+  @include for-desktop{
+    margin-top: 80px;
+  }
+}
 .uk-width-class{
   width: 200px;
   @include for-desktop{
@@ -56,4 +61,3 @@ export default {
   }
 }
 </style>
-
