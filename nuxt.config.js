@@ -255,11 +255,14 @@ const config = {
     manualModef:false,
    Pixels:[
    {
-    pixelId : '789343135804814',
+    pixelId: '789343135804814',
     autoPageView: true,
     disabled: false,
     manualModef:false,
-    track: 'PageView'
+    track: 'PageView',
+    routes: [
+      '/layouts/default'
+    ]
    }
    ]
   },

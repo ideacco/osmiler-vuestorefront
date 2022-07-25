@@ -22,9 +22,9 @@
 
               <div class="uk-margin-medium uk-margin-remove-top">
                 let your smile light up the world
-                <p style="font-size:15px;"><span uk-icon="mail" style="margin-top:10px;margin-right:5px;width: 18px;"></span> service@osmiler.com</p>
-                <p style="font-size:15px;"><span uk-icon="receiver" style="margin-top:10px;margin-right:5px;width: 18px;"></span>+ 86 – 755 – 25827634</p>
-                <span style="font-size:15px;"><span uk-icon="location" style="margin-right:5px;width: 18px;"></span><span>Room 118, Building 7, No.35 Qianwan First Street, Qianhai District, Shenzhen</span></span>
+                <p style="font-size:15px;margin:10px 0;"><span uk-icon="mail" style="margin-top:10px;margin-right:5px;width: 18px;"></span> service@osmiler.com</p>
+                <p style="font-size:15px;margin:10px 0;"><span uk-icon="receiver" style="margin-top:10px;margin-right:5px;width: 18px;"></span>+ 86 – 755 – 25827634</p>
+                <span style="font-size:15px;margin:10px 0;"><span uk-icon="location" style="margin-right:5px;width: 18px;"></span><span>Room 118, Building 7, No.35 Qianwan First Street, Qianhai District, Shenzhen</span></span>
              </div>
               <div class="uk-margin-remove-vertical">
                 <div
