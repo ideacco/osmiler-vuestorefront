@@ -231,7 +231,9 @@ import {
   reactive,
   computed,
   useRouter,
-  useContext
+  useContext,
+inject,
+onMounted
 } from '@nuxtjs/composition-api'
 import {
   SfModal,
@@ -291,7 +293,6 @@ export default {
       login: null,
       register: null
     })
-
     const resetErrorValues = () => {
       error.login = null
       error.register = null
