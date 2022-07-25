@@ -42,6 +42,10 @@ const config = {
         content: 'width=device-width, initial-scale=1',
       },
       {
+        name:'msvalidate.01',
+        content:'719FC6CF5FF4362D12CB7CB4AECA26A4',
+      },
+      {
         name: 'theme-color',
         content: '#5ece7b',
       },
@@ -50,6 +54,7 @@ const config = {
         name: 'description',
         content: process.env.npm_package_description || '',
       },
+
     ],
     link: [
       { rel: 'icon', href: '/icon.png' },
@@ -69,6 +74,11 @@ const config = {
         media: 'print',
         onload: "this.media='all'",
       },
+    ],
+  },
+  metaInfo: {
+    script: [
+      { src: '～/plugins/bing', async: true, defer: true }
     ],
   },
 
