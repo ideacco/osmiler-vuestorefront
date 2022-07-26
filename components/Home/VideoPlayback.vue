@@ -27,7 +27,7 @@
       ></video> -->
 
 <video
-      src="https://d3kyzzp5arlnnu.cloudfront.net/videos/Osmiler_video.mp4"
+      src="https://d3kyzzp5arlnnu.cloudfront.net/videos/Osmiler_video2.mp4?v=1658745087"
          loop
         autoplay
         playsinline
