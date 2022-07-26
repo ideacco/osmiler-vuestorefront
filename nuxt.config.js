@@ -312,7 +312,7 @@ const config = {
       },
     },
     debug: false, // enable to track in dev mode
-    disableAutoPageTrack: false, // disable if you don't want to track each page route with router.afterEach(...).
+    disableAutoPageTrack: true, // disable if you don't want to track each page route with router.afterEach(...).
     additionalAccounts: [
       {
         id: 'AW-10930264205', // required if you are adding additional accounts

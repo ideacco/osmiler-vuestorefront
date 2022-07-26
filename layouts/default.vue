@@ -106,8 +106,13 @@ export default {
       includeArr: ['HoMe','CateGory','ContactUs','MuSic','AboutS','MyAccount','Services','ProDuct','TermsAndConditions','PrivacyPolicy','ShippingReturnPolicy','ShippingPolicy']
     }
   },
+watch: {
+   '$route': 'getPath'
+},
 /* eslint-disable  */
    mounted() {
+ if (process.browser) {
+  this.$gtag('config', 'UA-233114703-1')
     // console.log(this.$gtag,888)
     //  console.log(this.$fb,888)
     // //* eslint-disable  */
@@ -117,11 +122,18 @@ export default {
     //     page_path: this.$route.fullPath,
     //   })
     // }
+ }
   },
   methods: {
     getData(msg) {
       // console.log('父页面信息', msg)
-    }
+    },
+      getPath(){
+     console.log( this .$route.path);
+     this.$gtag('event','UA-233114703-1',{
+       page_path:'this.$route.path',
+     })
+   }
   }
 }
 </script>

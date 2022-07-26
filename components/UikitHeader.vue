@@ -227,7 +227,6 @@ export default {
         animation: 'uk-animation-slide-top',
         showOnUp: true
       })
-
       proxy.$UIkit.util.on('.uk-navbar-container', 'active', () => {
         // console.log('导航栏活动状态')
         isActive.value = true
@@ -322,10 +321,6 @@ export default {
     }
   },
 
-  // mounted () {
-  //   console.log('cartTotalItems',this.cartTotalItems)
-  //   console.log('REFS',this.$refs.header)
-  // },
 
   watch: {
     isUserAuthenticated(val) {
@@ -336,6 +331,7 @@ export default {
     //   this.$UIkit.update('.uk-navbar-container','update')
     //   console.log('REFS2',this.$refs.header)
     // }
+
   },
 
   methods: {

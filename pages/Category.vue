@@ -468,6 +468,7 @@ export default {
     }
   },
   methods: {
+
     // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
     /* eslint-disable */
     handleAddToCart(productObj) {
