@@ -43,6 +43,14 @@ const config = {
         content: '719FC6CF5FF4362D12CB7CB4AECA26A4',
       },
       {
+        name: 'msvalidate.01',
+        content: '9DB7FA7D11413FB75AC4ACDE0FC5A174',
+      },
+      {
+        name: 'google-site-verification',
+        content: 'oYF5zEbAp7ZdlUJr8UVEjusEep7sXvmAbSrZLAWpOrc',
+      },
+      {
         name: 'theme-color',
         content: '#5ece7b',
       },
