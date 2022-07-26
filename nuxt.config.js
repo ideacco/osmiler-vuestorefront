@@ -97,16 +97,6 @@ const config = {
         charset: 'utf-8'
       },
       {
-        hid: 'gtag2',
-        innerHTML: `
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'AW-10930264205');`,
-        type: 'text/javascript',
-        charset: 'utf-8'
-      },
-      {
         hid: 'Pixel-Code',
         innerHTML: `!function(f,b,e,v,n,t,s)
         {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
@@ -238,7 +228,7 @@ const config = {
     '@nuxtjs/gtm',
     'nuxt-precompress',
     'nuxt-facebook-pixel-module',
-    // '@nuxtjs/google-gtag',
+    '@nuxtjs/google-gtag',
     'cookie-universal-nuxt',
     'vue-scrollto/nuxt',
     '@vue-storefront/middleware/nuxt',
@@ -305,45 +295,33 @@ const config = {
     pixelId: '769420814057414',
     autoPageView: true,
     disabled: false,
-    manualModef:false,
-   Pixels:[
-   {
-    pixelId: '789343135804814',
-    autoPageView: true,
-    disabled: false,
-    manualModef:false,
-    track: 'PageView',
-    routes: [
-      '/layouts/default'
-    ]
-   }
-   ]
+    manualModef:false
   },
   publicRuntimeConfig: {
     gtm: {
       id: 'GTM-PB39ZGK'
     }
   },
-  // 'google-gtag': {
-  //   id: 'UA-233114703-1',
-  //   config: {
-  //     anonymize_ip: true, // anonymize IP
-  //     send_page_view: false, // might be necessary to avoid duplicated page track on page reload
-  //     linker: {
-  //       domains: ['domain.com', 'domain.org'],
-  //     },
-  //   },
-  //   debug: true, // enable to track in dev mode
-  //   disableAutoPageTrack: false, // disable if you don't want to track each page route with router.afterEach(...).
-  //   additionalAccounts: [
-  //     {
-  //       id: 'GTM-PB39ZGK', // required if you are adding additional accounts
-  //       config: {
-  //         send_page_view: false, // optional configurations
-  //       },
-  //     },
-  //   ],
-  // },
+  'google-gtag': {
+    id: 'UA-233114703-1',
+    config: {
+      anonymize_ip: true, // anonymize IP
+      send_page_view: false, // might be necessary to avoid duplicated page track on page reload
+      linker: {
+        domains: ['https://www.osmiler.com/', 'domain.org'],
+      },
+    },
+    debug: false, // enable to track in dev mode
+    disableAutoPageTrack: false, // disable if you don't want to track each page route with router.afterEach(...).
+    additionalAccounts: [
+      {
+        id: 'AW-10930264205', // required if you are adding additional accounts
+        config: {
+          send_page_view: false, // optional configurations
+        },
+      },
+    ],
+  },
   axios: {
     proxy: true,
     prefix: '/app',

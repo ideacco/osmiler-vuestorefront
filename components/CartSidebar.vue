@@ -165,7 +165,7 @@
             >
               <SfButton
                 class="sf-button--full-width sf-proceed_to_checkout SfButtontwo"
-                @click="toggleCartSidebar"
+                @click="toggleCartSidebar,gotocheckout"
               >
                 {{ $t('Go to checkout') }}
               </SfButton>
@@ -292,6 +292,10 @@ export default {
         })
       }
     }
+    const gotocheckout = ()=>{
+      window.uetq = window.uetq || []
+      window.uetq.push('event', 'checkout', {})
+    }
     const handleRemoveCoupon = async (couponCode) => {
       await removeCoupon({ couponCode }).then(() => {
         errorMsg.value = 'Coupon removed'
@@ -314,6 +318,7 @@ export default {
       removeItem,
       handleCheckout,
       checkoutURL,
+      gotocheckout,
       isCartSidebarOpen,
       toggleCartSidebar,
       totals,

@@ -108,6 +108,7 @@ export default {
   },
 /* eslint-disable  */
    mounted() {
+    // console.log(this.$gtag,888)
     //  console.log(this.$fb,888)
     // //* eslint-disable  */
     // if (process.browser) {

@@ -199,7 +199,7 @@
               <SfButton
                 v-if="totalItems"
                 class="sf-button--full-width sf-proceed_to_checkout SfButtontwo"
-                @click="toggleCartSidebar"
+                @click="toggleCartSidebar,gotocheckout"
               >
                 {{ $t('Go to checkout') }}
               </SfButton>
@@ -214,7 +214,8 @@
                     customQuery: [
                       { key: 'CustomAttrKey', value: 'CustomAttrValue' },
                     ],
-                  })
+                  }),
+                  gotocheckout
                 "
               >
                 {{ $t('Go to checkout') }}
@@ -756,6 +757,10 @@ export default {
         related: true
       })
     })
+  const gotocheckout = ()=>{
+      window.uetq = window.uetq || []
+      window.uetq.push('event', 'checkout', {})
+    }
 
     const updateFilter = (colorname, filter) => {
       setisProductCartButtonColor(colorname)
@@ -799,6 +804,7 @@ export default {
       relatedLoading,
       options,
       stock,
+      gotocheckout,
       productTitle,
       breadcrumbs,
       totals,
@@ -875,6 +881,8 @@ export default {
     // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
     // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
     async addingToCart(Productdata) {
+      window.uetq = window.uetq || []
+      window.uetq.push('event', 'add-to-cart', {})
       await this.addItem(Productdata).then((res) => {
         this.sendNotification({
           key: 'product_added',
@@ -887,6 +895,8 @@ export default {
       })
     },
     async addingToCarts(Productdata) {
+      window.uetq = window.uetq || []
+      window.uetq.push('event', 'add-to-cart', {})
       await this.addItem(Productdata).then((res) => {
         this.sendNotification({
           key: 'product_added',

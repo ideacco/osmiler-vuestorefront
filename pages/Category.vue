@@ -469,7 +469,11 @@ export default {
   },
   methods: {
     // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
+    /* eslint-disable */
     handleAddToCart(productObj) {
+      window.uetq = window.uetq || [];
+      window.uetq.push('event', 'add-to-cart', {});
+      // console.log(productObj,888,productObj.product.id)
       this.addItemToCart(productObj).then(() => {
         this.sendNotification({
           key: 'added_to_cart',
@@ -480,6 +484,7 @@ export default {
         })
       })
     },
+    /* eslint-disable */
     // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
     removeSpaceFromText(str) {
       let i

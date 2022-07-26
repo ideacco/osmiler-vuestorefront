@@ -98,6 +98,8 @@ export default {
         )
         return
       }
+      window.uetq = window.uetq || []
+      window.uetq.push('event', 'mailto:', {})
       this.$axios
         .$post('/v1/mailchimp/subscribed', {
           email_address: this.emailaddress
