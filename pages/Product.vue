@@ -192,7 +192,7 @@
                       { key: 'CustomAttrKey', value: 'CustomAttrValue' },
                     ],
                   }),
-                  addingTo()
+                  gotocheckout()
                 "
               >
                 {{ $t('Add to Cart') }}
