@@ -1,212 +1,340 @@
 <template>
-  <div
-    style="background-image: url('/wp-content/themes/yootheme/cache/music-hero-4f873de3.jpeg');"
-    ref="hero"
+  <SfLoader
+    v-if="productloading"
+    class="pdc-pdp-loader"
+    :loading="productloading"
   >
-    <div class="uk-padding-large">
-      <h1>产品接口测试</h1>
+    <div />
+  </SfLoader>
+  <div
+    v-else
+    id="product"
+  >
+    <SfBreadcrumbs
+      class="breadcrumbs"
+      :breadcrumbs="breadcrumbs"
+    >
+      <template #link="{ breadcrumb }">
+        <nuxt-link
+          :data-testid="breadcrumb.text"
+          :to="breadcrumb.link ? localePath(breadcrumb.link) : ''"
+          class="sf-link disable-active-link sf-breadcrumbs__breadcrumb"
+        >
+          {{ breadcrumb.text }}
+        </nuxt-link>
+      </template>
+    </SfBreadcrumbs>
+    <div class="product">
+      <SfGallery
+        :images="productGallery"
+        :current="ActiveVariantImage + 1"
+        class="product__gallery"
+        image-width="422"
+        image-height="664"
+        thumb-width="160"
+        thumb-height="160"
+      />
+      <div class="product__info">
+        <div class="product__header">
+          <SfHeading
+            :title="productGetters.getFullName(product)"
+            :level="3"
+            class="sf-heading--no-underline sf-heading--left"
+          />
+          <SfIcon
+            icon="drag"
+            size="xxl"
+            color="var(--c-text-disabled)"
+            class="product__drag-icon smartphone-only"
+          />
+        </div>
+        <div class="product__price-and-rating">
+          <SfPrice
+            :regular="$n(productGetters.getPrice(product).regular, 'currency')"
+            :special="$n(productGetters.getPrice(product).special, 'currency')"
+          />
+          <!-- Reviews Here -->
+        </div>
+        <div class="product__details">
+          <div class="product__description">
+            {{ productDescription }}
+          </div>
 
-      <button @click="testRouterParams">获取路由信息</button>
-      <button @click="fetchSomething">测试请求</button>
+          <div
+            v-if="options && Object.keys(options).length > 0"
+            class="product__variants"
+          >
+            <template v-for="(option, key) in options">
+              <SfSelect
+                v-if="key.toLowerCase() !== 'color'"
+                :key="`attrib-${key}`"
+                :data-cy="`product-select_${key.toLowerCase()}`"
+                :set="(atttLbl = key)"
+                :value="configuration[key] || options[key][0]"
+                :label="$t(`${key}`)"
+                :class="`sf-select--underlined product__select-${key.toLowerCase()}`"
+                :required="true"
+                @input="(key) => updateFilter({ [atttLbl]: key })"
+              >
+                <SfSelectOption
+                  v-for="(attribs, a) in option"
+                  :key="`item-${a}`"
+                  :value="attribs"
+                >
+                  {{ attribs }}
+                </SfSelectOption>
+              </SfSelect>
+              <div
+                v-else-if="key.toLowerCase() === 'color'"
+                :key="`attrib-${key.toLowerCase()}`"
+                class="product__colors"
+              >
+                <label class="product__color-label">{{ $t(key) }}</label>
+                <div class="product__flex-break"></div>
+                <SfColor
+                  v-for="(attribs, a) in option"
+                  :key="`item-${a}`"
+                  label="Color"
+                  data-cy="product-color_update"
+                  :color="attribs"
+                  :class="`product__color ${attribs}`"
+                  :selected="
+                    configuration[key]
+                      ? configuration[key] === attribs
+                        ? true
+                        : false
+                      : a === 0
+                      ? true
+                      : false
+                  "
+                  @click="(atttLbl = key), updateFilter({ [atttLbl]: attribs })"
+                />
+              </div>
+            </template>
+          </div>
 
-      <div class="uk-margin-large uk-light">
-        <h3>获取的产品内容</h3>
+          <SfAlert
+            v-if="!productGetters.getStockStatus(product)"
+            :message="$t('Out of Stock')"
+            type="warning"
+            class="product__stock-information"
+          >
+            <template #icon>
+              <SfIcon
+                color="yellow-primary"
+                icon="info_shield"
+                size="lg"
+                view-box="0 0 24 24"
+              />
+            </template>
+          </SfAlert>
+          <SfAddToCart
+            v-model="qty"
+            :disabled="!productGetters.getStockStatus(product)"
+            data-cy="product-cart_add"
+            :stock="stock"
+            :can-add-to-cart="stock > 0"
+            class="product__add-to-cart"
+          >
+            <template #add-to-cart-btn>
+              <SfButton
+                class="sf-add-to-cart__button"
+                :disabled="loading || !productGetters.getStockStatus(product)"
+                @click="
+                  addingToCart({
+                    product,
+                    quantity: parseInt(qty),
+                    customQuery: [
+                      { key: 'CustomAttrKey', value: 'CustomAttrValue' }
+                    ]
+                  })
+                "
+              >
+                {{ $t( 'Add to Cart') }}
+              </SfButton>
+            </template>
+          </SfAddToCart>
+        </div>
+        <LazyHydrate when-idle>
+          <SfTabs
+            :open-tab="1"
+            class="product__tabs"
+          >
+            <SfTab
+              data-cy="product-tab_description"
+              title="Description"
+            >
+              <div
+                v-if="productDescriptionHtml"
+                class="product__description"
+              >
+                <div v-html="productDescriptionHtml"></div>
+              </div>
+              <SfProperty
+                v-for="(property, i) in properties"
+                :key="i"
+                :name="property.name"
+                :value="property.value"
+                class="product__property"
+              >
+                <template
+                  v-if="property.name === 'Category'"
+                  #value
+                >
+                  <SfButton class="product__property__button sf-button--text">
+                    {{ property.value }}
+                  </SfButton>
+                </template>
+              </SfProperty>
+            </SfTab>
+            <SfTab
+              :title="$t('Additional Information')"
+              data-cy="product-tab_additional"
+              class="product__additional-info"
+            >
+              <div class="product__additional-info">
+                <p class="product__additional-info__title">
+                  {{ $t('Brand') }}
+                </p>
+                <p>{{ brand }}</p>
+                <p class="product__additional-info__title">
+                  {{ $t('Instruction1') }}
+                </p>
+                <p class="product__additional-info__paragraph">
+                  {{ $t('Instruction2') }}
+                </p>
+                <p class="product__additional-info__paragraph">
+                  {{ $t('Instruction3') }}
+                </p>
+                <p>{{ careInstructions }}</p>
+              </div>
+            </SfTab>
+          </SfTabs>
+        </LazyHydrate>
+      </div>
+    </div>
 
-        产品Title:{{ productTitle ? productTitle : 'no Title' }}
-        <br />
-        产品Id:{{ productId ? productId : 'no Id' }}
-        <br />
-        产品图片:
-        <img
-          v-if="productImage"
-          :src="productImage"
-          alt=""
-        />
-        <br />
-        图片URL:{{ productImage ? productImage : 'no imags' }}
+    <div v-html="detailsHTML"></div>
 
-        <br />
+    <LazyHydrate when-visible>
+      <div>
+      产品信息:
 
-        产品的图库信息: {{ productGallery ? productGallery : 'no gallery' }}
+      <br/>
 
-        <br />
-        产品的描述: {{ prdDescription ? prdDescription : 'no Description' }}
-        <br />
-        产品的类别Id:
-        {{ productCategoryIds ? productCategoryIds : 'no productCategoryIds' }}
-        <br />
-        产品的loading信息: {{ loading ? loading : 'no loading' }}
+      产品信息productTitle:
+      {{ productTitle? productTitle: 'no productTitle' }}
 
-        <br />
-        产品的类别信息:
-        {{ productCategory ? productCategory : 'no productCategory' }}
+      <br/>
+      产品configuration:
+      {{configuration? configuration:'no configuration'}}
 
-        <br />
-        产品的图:
-        {{ productGallery2 ? productGallery2 : 'no productGallery2' }}
+      <br/>
+      产品options:
+      {{options? options:'no options'}}
 
-        <br />
-        产品的图333:
-        {{ productGallery3 ? productGallery3 : 'no productGallery3' }}
-        <br />
-        <!-- blogs:
-        {{ blogs ? blogs : 'no blogs' }}
+      <br/>
+      产品stock:
+      {{stock? stock:'no stock'}}
 
-        <br />
-        产品的 page:
-        {{ isPages ? isPages : 'no page' }}
-        <br />
-        产品的 page:
-        {{ isPages ? isPages : 'no page' }} -->
-
-        <br />
-        产品的 isComsterData:
-        {{ isComsterData ? isComsterData : 'no isComsterData' }}
-
-        <br />
-        产品的 isMetaDatas:
-        {{ isMetaDatas ? isMetaDatas : 'no isMetaDatas' }}
-
-        <br />
-        产品的 isMetaData:
-        {{ isMetaData ? isMetaData : 'no isMetaData' }}
+      <br/>
+      产品 detailsPage:
+      {{detailsPage? detailsPage:'no detailsPage'}}
       </div>
 
-    </div>
+    </LazyHydrate>
+
   </div>
 </template>
-
 <script>
 import {
-  isRef,
-  useRoute,
-  useRouter,
-  computed,
-  onMounted,
-  onUnmounted
-} from '@nuxtjs/composition-api'
-
-import { useUiState, useCustom, useMeta } from '~/composables'
-import { onSSR } from '@vue-storefront/core'
-import {
-  useProduct,
-  productGetters,
-  useCategory,
-  useContent,
-  ContentType,
-  contentGetters
-  // useRoute
-} from '@vue-storefront/shopify'
-
-import {
-  SfGallery
+  SfProperty,
+  SfHeading,
+  SfPrice,
+  SfSelect,
+  SfAddToCart,
+  SfTabs,
+  SfGallery,
+  SfIcon,
+  SfAlert,
+  SfBreadcrumbs,
+  SfLoader,
+  SfButton,
+  SfColor
 } from '@storefront-ui/vue'
 
+import InstagramFeed from '~/components/InstagramFeed.vue'
+import RelatedProducts from '~/components/RelatedProducts.vue'
+import { ref, computed, watch, useRoute, useRouter } from '@nuxtjs/composition-api'
+import { useProduct, useCart, productGetters } from '@vue-storefront/shopify'
+import MobileStoreBanner from '~/components/MobileStoreBanner.vue'
+import LazyHydrate from 'vue-lazy-hydration'
+import { onSSR } from '@vue-storefront/core'
+import useUiNotification from '~/composables/useUiNotification'
+import { useMeta, useDetails } from '~/composables'
+
 export default {
+  name: 'ProductPage',
   components: {
-    SfGallery
+    SfAlert,
+    SfColor,
+    SfLoader,
+    SfProperty,
+    SfHeading,
+    SfPrice,
+    SfSelect,
+    SfAddToCart,
+    SfTabs,
+    SfGallery,
+    SfIcon,
+    SfBreadcrumbs,
+    SfButton,
+    InstagramFeed,
+    RelatedProducts,
+    MobileStoreBanner,
+    LazyHydrate
   },
-  name: 'TestPage',
+  // 全局路由守卫,可以缓存路由路径
+  beforeRouteEnter(__, from, next) {
+    next((vm) => {
+      vm.prevRoute = from
+    })
+  },
+  transition: 'fade',
   setup() {
-    const {
-      isNavbarTransparent,
-      toggleNavbarTransparent,
-      setNavbarTransparent
-    } = useUiState()
-
-    // 程序化路由方法
-    const router = useRouter()
-    // 实例化路由信息
     const route = useRoute()
+    const router = useRouter()
+    const breadcrumbs = ref([])
+    const atttLbl = ''
+    const qty = ref(1)
+    // 获取路由传参
+    const { slug } = route?.value?.params
+    console.log('route?.value?.params', slug)
 
-    // 功能组件
+    // 实例化获取产品的工厂方法
+    const {
+      loading: productloading,
+      products,
+      search
+    } = useProduct('products')
 
-    const { products, search } = useProduct('products222')
-    const { search: inSearch, categories, loading } = useCategory('categories')
+    // 实例化获取产品详情图的方法
+    const {search: isDetails, details} = useDetails('pard')
 
-    const { search: isSearch, custom } = useCustom('custom')
+    // 全局通知方法
+    const { send: sendNotification } = useUiNotification()
 
-    const { search: getBlogs, result: blogs } = useContent('blogs')
-    const { search: searchBlog } = useContent('blog')
+    // 实例化获取相关产品的工厂方法 id='relatedProducts'
+    const {
+      products: relatedProducts,
+      search: searchRelatedProducts,
+      loading: relatedLoading
+    } = useProduct('relatedProducts')
 
-    const { search: getPages, result: pages } = useContent('Pages')
-    const { search: searchPage } = useContent('Page')
+    // 购物车方法
+    const { addItem, loading } = useCart()
 
-    const {search: isMeta, meta: isMetaDatas } = useMeta('test')
-
-    // 根据接口进行查询填充
-    // const { slug } = route?.value?.params
-    const slug = 'osmiler-swing'
-
-    // 自定义查询id
-    const id = 'Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0Lzc3MTcwNDc5OTI1Nzg='
-
-    // 初始化(ssr)钩子
-    onSSR(async () => {
-      console.log('后端执行的 ssr 查询')
-      // 用来更新产品的钩子函数
-      // await search({
-      //   customQuery: {
-      //     products: 'myQsuery',
-      //     metadata: {}
-      //   }
-      // })
-      // await search({slug})
-      // await inSearch({})
-      // await isContent({slug})
-      // await getPages({ contentType: 'page' })
-
-      // if(pages) {
-      //   await searchPage ({
-      //     // contentType: 'page'
-      //     // handle: pages?.value?.[0]?.handle
-      //   })
-      // }
-
-      // await getBlogs({ contentType: 'blog' })
-
-      // if (blogs) {
-      //   // console.log('测试???',blogs)
-      //   await searchBlog({
-      //     contentType: 'blog',
-      //     handle: blogs?.value?.[0]?.handle
-      //   })
-      // }
-    })
-
-    onMounted(async() => {
-      if (slug) {
-        // console.log('子页面初始化!,获取产品', slug)
-      }
-      console.log('onMounted')
-      await isMeta({slug})
-
-      await isSearch()
-
-      await search({})
-
-      setNavbarTransparent(true)
-      // console.log('product.value',product.value)
-    })
-
-    onUnmounted(() => {
-      // console.log('子页面卸载!,清除透明导航')
-      setNavbarTransparent(false)
-    })
-
-    // console.log('获取路由?',route?.value?.query.id)
-
-    // const isPages = computed(()=> pages.value)
-    console.log('isRef?222',isRef(isMetaDatas))
-    const isComsterData = computed(()=> custom.value)
-    const isMetaData = computed(()=> isMetaDatas.value)
-    if(isMetaDatas){
-      console.log('isMetaDatas',isMetaDatas)
-    }
-
-
-    // 产品根元素
-    // const product = computed(() => productGetters.getFiltered(products.value))
+    // 获取产品
     const product = computed(
       () =>
         productGetters.getFiltered(products.value, {
@@ -215,109 +343,459 @@ export default {
         })[0]
     )
 
-    // 获取信息
-    const productImage = computed(() =>
-      productGetters.getCoverImage(products.value)
+    // 获取产品 id
+    const id = computed(() => productGetters.getId(product.value))
+
+    const originalId = computed(() =>
+      productGetters.getProductOriginalId(product.value)
     )
-    const productCategoryIds = computed(() =>
-      productGetters.getCategoryIds(product.value)
+    // 产品标题
+    const productTitle = computed(() => productGetters.getName(product.value))
+    // 产品封面图
+    const productCoverImage = computed(() =>
+      productGetters.getPDPCoverImage(product.value)
     )
-    const prdDescription = computed(() =>
+    // 产品介绍
+    const productDescription = computed(() =>
+      productGetters.getDescription(product.value)
+    )
+    // 产品介绍HTML
+    const productDescriptionHtml = computed(() =>
       productGetters.getDescription(product.value, true)
     )
-    const productId = computed(() => productGetters.getId(product.value))
-    const productTitle = computed(() => productGetters.getName(product.value))
-    const productGallery2 = computed(() => productGetters.getGallery(product.value))
-
-    const getProductGallery = (product) => (product ? product.images : []).map((image) => {
-      const imgPath = image.originalSrc.substring(0, image.originalSrc.lastIndexOf('.'))
-      const imgext = image.originalSrc.split('.').pop()
-      const imgSmall = imgPath + '_160x160.' + imgext
-      const imgBig = imgPath + '_295x295.' + imgext
-      const imgNormal = imgPath + '_1500x1500.' + imgext
-      return ({
-        small: imgSmall,
-        big: imgBig,
-        normal: imgNormal
-      })
+    // 产品选项
+    const options = computed(() =>
+      productGetters.getAttributes(products.value)
+    )
+    // 配置configuration
+    const configuration = computed(() => {
+      return productGetters.getSelectedVariant(route?.value?.query)
     })
 
-    const productGallery3 = computed(() =>
-      getProductGallery(product.value).map((img) => {
-        // console.log('img?',img)
-        return ({
-          mobile: { url: img.small },
-          desktop: { url: img.normal },
-          big: { url: img.big }
-        })
-      })
-    )
-
-
-    // 高级写法,将不同的尺寸图片分类使用
-    const productGallery = computed(() =>
-      productGetters.getGallery(product.value).map((img) => {
-        // console.log('img?',img)
-        return ({
-          mobile: { url: img.small },
-          desktop: { url: img.normal },
-          big: { url: img.big }
-        })
-
-      })
-    )
-
-    const productCategory = computed(() => [...categories.value])
-
-
-    const testRouterParams = () => {
-      router.push({ path: '/test_page', params: 'osmiler-swing' })
+    // 面包屑导航栏路由配置
+    const setBreadcrumb = () => {
+      breadcrumbs.value = [
+        {
+          text: 'Home',
+          link: '/'
+        },
+        {
+          text: 'products',
+          link: '#'
+        },
+        {
+          text: productTitle.value,
+          link: '#'
+        }
+      ]
     }
 
+    // 通过监听productTitle来设置面包屑状态
+    watch(
+      productTitle,
+      (currproductTitle, prevproductTitle) => {
+        if (currproductTitle !== prevproductTitle) {
+          setBreadcrumb()
+        }
+      },
+      { deep: true }
+    )
+    // 产品图册
+    const productGallery = computed(() => {
+      if (product.value && product.value.images.length === 0) {
+        product.value.images.push({
+          originalSrc:
+            'https://cdn.shopify.com/s/files/1/0407/1902/4288/files/placeholder_600x600.jpg?v=1625742127'
+        })
+      }
+      return productGetters.getGallery(product.value).map((img) => ({
+        mobile: { url: img.small },
+        desktop: { url: img.normal },
+        big: { url: img.big },
+        alt: product.value._name || product.value.name
+      }))
+    })
 
+    // stock 产品库存
+    const stock = computed(() => {
+      return productGetters.getStock(product.value)
+    })
+    const ActiveVariantImage = computed(() => {
+      return productGetters.getVariantImage(product.value) || 0
+    })
+
+    // 使用后端请求
+    onSSR(async () => {
+      // 使用获取相关产品的方法
+      await search({ slug, selectedOptions: configuration.value }).then(() => {
+        // "Product Title" serve as the flag if the product is existing or not
+        // 如果没有产品标题,则视为不存在
+        if (!productTitle.value) {
+          return route?.value?.error({
+            statusCode: 404,
+            message: 'This product could not be found'
+          })
+        }
+      })
+      // 使用获取相关产品的方法
+      await searchRelatedProducts({ productId: id.value, related: true })
+    })
+
+    // 使用获取详情页的钩子方法获取详情页数据:传入slug句柄则返回单页面,如果不传参则返回页面列表
+    isDetails({ slug })
+    // isDetails({})
+    // 获取页面详情数据
+    const detailsPage = computed(()=> details.value)
+
+    // const detailsHTML = computed(()=> details.value.body)
+    const detailsHTML = computed(()=> getDetailsHTMLBody(details.value))
+
+
+    function getDetailsHTMLBody(details) {
+      return details
+    }
+
+    // console.log('detailsPage?',detailsPage.value)
+    // console.log('detailsHTML?',detailsHTML.value.body)
+
+    /**
+     * 更新过滤器
+     * @param {*} filter 传入一个对象
+     */
+    const updateFilter = (filter) => {
+      // 如果有选项信息
+      if (options.value) {
+        Object.keys(options.value).forEach((attr) => {
+          if (attr in filter) {
+            return
+          }
+          filter[attr] =
+            Object.keys(configuration.value).length > 0
+              ? configuration.value[attr]
+              : options.value[attr][0]
+        })
+      }
+      router.push({
+        path: route?.value?.path,
+        query: {
+          ...configuration.value,
+          ...filter
+        }
+      })
+    }
 
     return {
-      isNavbarTransparent,
-      toggleNavbarTransparent,
-      testRouterParams,
+      updateFilter,
+      configuration,
       product,
-      productImage,
-      prdDescription,
-      productCategoryIds,
-      productCategory,
-      categories,
-      loading,
-      productId,
+      productDescription,
+      productCoverImage,
+      productDescriptionHtml,
+      ActiveVariantImage,
+      sendNotification,
+      originalId,
+      relatedProducts: computed(() =>
+        productGetters.getFiltered(relatedProducts.value, { master: true })
+      ),
+      relatedLoading,
+      options,
+      stock,
       productTitle,
+      breadcrumbs,
+      qty,
+      addItem,
+      loading,
+      productloading,
       productGallery,
-      productGallery2,
-      productGallery3,
-      isComsterData,
-      // blogs,
-      // pages,
-      // isPages,
-      isMetaDatas,
-      isMetaData
+      productGetters,
+      setBreadcrumb,
+      atttLbl,
+      detailsPage,
+      detailsHTML
     }
   },
-
+  // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
   data() {
     return {
-      email: ''
+      properties: [
+        {
+          name: 'Product Code',
+          value: '578902-00'
+        },
+        {
+          name: 'Category',
+          value: 'Pants'
+        },
+        {
+          name: 'Material',
+          value: 'Cotton'
+        },
+        {
+          name: 'Country',
+          value: 'Germany'
+        }
+      ],
+      description:
+        'Find stunning women cocktail and party dresses. Stand out in lace and metallic cocktail dresses and party dresses from all your favorite brands.',
+      detailsIsActive: false,
+      brand:
+        'Brand name is the perfect pairing of quality and design. This label creates major everyday vibes with its collection of modern brooches, silver and gold jewellery, or clips it back with hair accessories in geo styles.',
+      careInstructions: 'Do not wash!'
     }
   },
-
+  // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
+  mounted() {
+    window.addEventListener('load', () => {
+      this.setGalleryWidth()
+    })
+    this.$nextTick(() => {
+      this.setGalleryWidth()
+      this.setBreadcrumb()
+      window.addEventListener('resize', this.setGalleryWidth)
+    })
+  },
+  // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
+  updated() {
+    this.setGalleryWidth()
+  },
+  // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
   methods: {
-    async fetchSomething() {
-      const datas = {
-        email_address: 'kensss@gmail.com'
-      }
-      const res = await this.$axios.$post('/v1/mailchimp/subscribed', datas)
-      this.email = res
-      // console.log('子页面fetchSomething,res', res)
+    // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
+    async addingToCart(Productdata) {
+      await this.addItem(Productdata).then(() => {
+        this.sendNotification({
+          key: 'product_added',
+          message: `${Productdata.product.name} has been successfully added to your cart.`,
+          type: 'success',
+          title: 'Product added!',
+          icon: 'check'
+        })
+        this.qty = 1
+      })
+    },
+    // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
+    updatedQuantity(value) {
+      this.qty = value
+    },
+    // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
+    setGalleryWidth() {
+      const gallary = document.getElementsByClassName('product__gallery')
+      const gallerySlider =
+        gallary.length > 0 && gallary[0].querySelectorAll('.glide__slides')
+      const galleryAllSlides =
+        gallerySlider.length > 0 &&
+        gallerySlider[0].querySelectorAll('.glide__slide')
+      typeof galleryAllSlides !== 'boolean' &&
+        galleryAllSlides.length > 0 &&
+        galleryAllSlides.forEach((gallerySlide) => {
+          gallerySlide.style.flexBasis = gallerySlide.style.width
+        })
     }
   }
 }
 </script>
 
-<style lang="scoped"></style>
+<style lang="scss" scoped>
+.pdc-pdp-loader {
+  min-height: 200px;
+  padding: 100px 0;
+}
+
+#product {
+  box-sizing: border-box;
+  @include for-desktop {
+    max-width: 1272px;
+    margin: 0 auto;
+  }
+}
+.product {
+  @include for-desktop {
+    display: flex;
+  }
+  &__info {
+    margin: var(--spacer-sm) auto;
+    @include for-desktop {
+      max-width: 32.625rem;
+      margin: 0 0 0 7.5rem;
+    }
+  }
+  &__header {
+    --heading-title-color: var(--c-link);
+    --heading-title-font-weight: var(--font-weight--bold);
+    --heading-padding: 0;
+    margin: 0 var(--spacer-sm);
+    display: flex;
+    justify-content: space-between;
+    @include for-desktop {
+      --heading-title-font-weight: var(--font-weight--semibold);
+      margin: 0 auto;
+    }
+  }
+  &__drag-icon {
+    animation: moveicon 1s ease-in-out infinite;
+  }
+  &__price-and-rating {
+    margin: 0 var(--spacer-sm) var(--spacer-base);
+    align-items: center;
+    @include for-desktop {
+      display: flex;
+      justify-content: space-between;
+      margin: var(--spacer-sm) 0 var(--spacer-lg) 0;
+    }
+  }
+  &__rating {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin: var(--spacer-xs) 0 var(--spacer-xs);
+  }
+  &__count {
+    @include font(
+      --count-font,
+      var(--font-weight--normal),
+      var(--font-size--sm),
+      1.4,
+      var(--font-family--secondary)
+    );
+    color: var(--c-text);
+    text-decoration: none;
+    margin: 0 0 0 var(--spacer-xs);
+  }
+  &__details {
+    margin: 0 var(--spacer-sm) var(--spacer-base);
+
+    @include for-desktop {
+      margin: var(--spacer-lg) 0;
+    }
+  }
+  &__description {
+    @include font(
+      --product-description-font,
+      var(--font-weight--light),
+      var(--font-size--base),
+      1.6,
+      var(--font-family--primary)
+    );
+  }
+  &__colors {
+    @include font(
+      --product-color-font,
+      var(--font-weight--normal),
+      var(--font-size--xs),
+      1.6,
+      var(--font-family--secondary)
+    );
+    display: flex;
+    flex-wrap: wrap;
+  }
+  &__color-label {
+    margin: 0 var(--spacer-lg) var(--spacer-xs) 0;
+    padding: 0 0 0 4px;
+  }
+  &__color {
+    margin: 0 var(--spacer-2xs);
+  }
+  &__add-to-cart,
+  &__stock-information {
+    margin-top: var(--spacer-xl);
+  }
+  &__guide,
+  &__compare,
+  &__save {
+    display: block;
+    margin: var(--spacer-xl) 0 var(--spacer-base) auto;
+  }
+  &__compare {
+    margin-top: 0;
+  }
+  &__tabs {
+    margin: var(--spacer-lg) auto var(--spacer-2xl);
+    --tabs-title-font-size: var(--font-size--lg);
+    --tabs-title-z-index: 0;
+    @include for-desktop {
+      margin-top: var(--spacer-2xl);
+    }
+  }
+  &__property {
+    margin: var(--spacer-base) 0;
+    &__button {
+      --button-font-size: var(--font-size--base);
+    }
+  }
+  &__review {
+    padding-bottom: 24px;
+    border-bottom: var(--c-light) solid 1px;
+    margin-bottom: var(--spacer-base);
+  }
+  &__additional-info {
+    color: var(--c-link);
+    @include font(
+      --additional-info-font,
+      var(--font-weight--light),
+      var(--font-size--sm),
+      1.6,
+      var(--font-family--primary)
+    );
+    &__title {
+      font-weight: var(--font-weight--normal);
+      font-size: var(--font-size--base);
+      margin: 0 0 var(--spacer-sm);
+      &:not(:first-child) {
+        margin-top: 3.5rem;
+      }
+    }
+    &__paragraph {
+      margin: 0;
+    }
+  }
+  &__gallery {
+    flex: 1;
+  }
+  &__flex-break {
+    flex-basis: 100%;
+    height: 0;
+  }
+}
+.breadcrumbs {
+  margin: var(--spacer-base) auto var(--spacer-lg);
+}
+.banner-app {
+  --banner-container-width: 100%;
+  --banner-title-margin: var(--spacer-base) 0 var(--spacer-xl) 0;
+  --banner-padding: 0 var(--spacer-2xl);
+  --banner-title-font-size: var(--h1-font-size);
+  --banner-subtitle-font-size: var(--font-size--xl);
+  --banner-title-font-weight: var(--font-weight--semibold);
+  --banner-subtitle-font-weight: var(--font-weight--medium);
+  --banner-title-text-transform: capitalize;
+  --banner-subtitle-text-transform: capitalize;
+  display: block;
+  min-height: 26.25rem;
+  max-width: 65rem;
+  margin: 0 auto;
+  padding: 0 calc(25% + var(--spacer-2xl)) 0 var(--spacer-xl);
+  &__call-to-action {
+    --button-background: transparent;
+    display: flex;
+  }
+  &__button {
+    --image-width: 8.375rem;
+    --image-height: 2.75rem;
+    --button-padding: 0;
+    & + & {
+      margin: 0 0 0 calc(var(--spacer-xl) / 2);
+    }
+  }
+}
+@keyframes moveicon {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  50% {
+    transform: translate3d(0, 30%, 0);
+  }
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+}
+</style>
