@@ -197,9 +197,9 @@
             <!-- <h3>Shipping to P.O. boxes</h3>
             <p>Not currently supported </p> -->
           </div>
+
         </div>
       </div>
-    </div>
   </div>
 </template>
 <script >
