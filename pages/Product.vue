@@ -191,7 +191,8 @@
                     customQuery: [
                       { key: 'CustomAttrKey', value: 'CustomAttrValue' },
                     ],
-                  })
+                  }),
+                  addingTo()
                 "
               >
                 {{ $t('Add to Cart') }}
@@ -199,7 +200,7 @@
               <SfButton
                 v-if="totalItems"
                 class="sf-button--full-width sf-proceed_to_checkout SfButtontwo"
-                @click="toggleCartSidebar,gotocheckout"
+                @click="toggleCartSidebar,gotocheckout()"
               >
                 {{ $t('Go to checkout') }}
               </SfButton>
@@ -215,7 +216,7 @@
                       { key: 'CustomAttrKey', value: 'CustomAttrValue' },
                     ],
                   }),
-                  gotocheckout
+                  gotocheckout()
                 "
               >
                 {{ $t('Go to checkout') }}
@@ -880,6 +881,9 @@ export default {
   methods: {
     // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
     // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
+    async addingTo(){
+      await console.log(this.$gtag,888)
+    },
     async addingToCart(Productdata) {
       window.uetq = window.uetq || []
       window.uetq.push('event', 'add-to-cart', {})

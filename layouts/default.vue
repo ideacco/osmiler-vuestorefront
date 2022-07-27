@@ -128,8 +128,8 @@ watch: {
     getData(msg) {
       // console.log('父页面信息', msg)
     },
+
       getPath(){
-     console.log( this .$route.path);
      this.$gtag('event','UA-233114703-1',{
        page_path:'this.$route.path',
      })

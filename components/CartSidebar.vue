@@ -161,11 +161,11 @@
             </SfProperty>
             <SfLink
               link="javascript:void(0);"
-              @click="handleCheckout(checkoutURL, parseFloat(totals.subtotal))"
+              @click="handleCheckout(checkoutURL, parseFloat(totals.subtotal)),gotocheckout"
             >
               <SfButton
                 class="sf-button--full-width sf-proceed_to_checkout SfButtontwo"
-                @click="toggleCartSidebar,gotocheckout"
+                @click="toggleCartSidebar,gotocheckout()"
               >
                 {{ $t('Go to checkout') }}
               </SfButton>
@@ -295,6 +295,7 @@ export default {
     const gotocheckout = ()=>{
       window.uetq = window.uetq || []
       window.uetq.push('event', 'checkout', {})
+      console.log(222,888)
     }
     const handleRemoveCoupon = async (couponCode) => {
       await removeCoupon({ couponCode }).then(() => {

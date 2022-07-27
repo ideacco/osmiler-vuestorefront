@@ -206,7 +206,7 @@
               type="submit"
               class="sf-button--full-width form__button"
               :disabled="loading"
-              @click="createAccounts"
+              @click="createAccounts()"
             >
               <SfLoader :class="{ loader: loading }" :loading="loading">
                 <div>{{ $t('Create an account') }}</div>
