@@ -23,6 +23,7 @@
                   <a
                     class="el-content uk-button uk-button-primary uk-button-small uk-flex-inline uk-flex-center uk-flex-middle"
                     href="mailto:servers@osmiler.com?subject=Hello Osmiler"
+                    @click="gitcheckoumail"
                   >
                     Contact us
                     <span class="uk-margin-small-left" uk-icon="mail"></span>
@@ -44,7 +45,12 @@ export default {
     return {}
   },
 
-  methods: {}
+  methods: {
+        gitcheckoumail(){
+    window.uetq = window.uetq || []
+    window.uetq.push('event', 'mailto:', {})
+    }
+  }
 }
 </script>
 
