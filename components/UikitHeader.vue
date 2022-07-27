@@ -54,6 +54,11 @@
                   >
                     <a href="/c/all-products"> Product</a>
                   </li>
+                     <li
+                    class="menu-item menu-item-type-post_type menu-item-object-page"
+                  >
+                    <a href="/music"> Music</a>
+                  </li>
                   <li
                     class="menu-item menu-item-type-post_type menu-item-object-page"
                   >
@@ -152,7 +157,7 @@
 
                   <li>
                     <a
-                      @click="toggleCartSidebar"
+                      @click="toggleCartSidebar(),gobuy()"
                       class="uk-icon-link"
                       uk-icon="cart"
                     >
@@ -222,7 +227,6 @@ export default {
         animation: 'uk-animation-slide-top',
         showOnUp: true
       })
-
       proxy.$UIkit.util.on('.uk-navbar-container', 'active', () => {
         // console.log('导航栏活动状态')
         isActive.value = true
@@ -293,6 +297,10 @@ export default {
           name: 'Product',
           path: '/c/all-products'
         },
+          {
+          name: 'Music',
+          path: '/music'
+        },
         {
           name: 'Services',
           path: '/Services'
@@ -313,10 +321,6 @@ export default {
     }
   },
 
-  // mounted () {
-  //   console.log('cartTotalItems',this.cartTotalItems)
-  //   console.log('REFS',this.$refs.header)
-  // },
 
   watch: {
     isUserAuthenticated(val) {
@@ -327,9 +331,16 @@ export default {
     //   this.$UIkit.update('.uk-navbar-container','update')
     //   console.log('REFS2',this.$refs.header)
     // }
+
   },
 
   methods: {
+    gobuy(){
+      this.$gtag('event','view_cart',{
+        currency: 'USD',
+        value: 7.77
+      })
+    },
     navJump(category, key) {
       this.$router.push({ path: category.path})
       // console.log('navJump', category.name)

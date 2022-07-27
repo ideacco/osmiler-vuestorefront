@@ -54,12 +54,28 @@
             class="product__drag-icon smartphone-only"
           />
         </div>
+        <div style="color:#00477d;font-size:16px;"
+                    v-show="
+              ispath ===
+                '/p/Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0Lzc3MTc0MDc1ODg2MTA=/osmiler-swing-head-5pcs' ||
+                ispath ===
+                '/p/Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0Lzc3MTc0MDc1ODg2MTA=/osmiler-swing-head-5pcs?Color=White' ||
+                ispath ===
+                '/p/Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0Lzc3MTc0MDc1ODg2MTA=/osmiler-swing-head-5pcs?Color=Deep%20Blue' ||
+                ispath ===
+                '/p/Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0Lzc3MTcwNDc5OTI1Nzg=/osmiler-swing-head-3pcs' ||
+                ispath ===
+                '/p/Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0Lzc3MTcwNDc5OTI1Nzg=/osmiler-swing-head-3pcs?Color=White' ||
+                ispath ===
+                '/p/Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0Lzc3MTcwNDc5OTI1Nzg=/osmiler-swing-head-3pcs?Color=Deep%20Blue'
+            "
+        >&nbsp;will start shipping at the end of the July</div>
+
         <div class="product__price-and-rating">
           <SfPrice
             :regular="$n(productGetters.getPrice(product).regular, 'currency')>$n(productGetters.getPrice(product).special, 'currency')?$n(productGetters.getPrice(product).regular, 'currency'):null"
             :special="$n(productGetters.getPrice(product).regular, 'currency')<$n(productGetters.getPrice(product).special, 'currency')?null:$n(productGetters.getPrice(product).special, 'currency')"
           />
-          <!-- Reviews Here -->
         </div>
         <div class="product__details">
           <div
@@ -182,7 +198,7 @@
               <SfButton
                 v-if="totalItems"
                 class="sf-button--full-width sf-proceed_to_checkout SfButtontwo"
-                @click="toggleCartSidebar"
+                @click="toggleCartSidebar(),gotocheckout()"
               >
                 {{ $t('Go to checkout') }}
               </SfButton>
@@ -251,7 +267,6 @@
         </LazyHydrate>
       </div>
     </div>
-    <!-- <GridList /> -->
     <div
       v-show="
         ispath ===
@@ -857,7 +872,22 @@ export default {
   methods: {
     // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
     // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
+     gotocheckout(){
+     window.uetq = window.uetq || []
+     window.uetq.push('event', 'checkout', {})
+        this.$gtag('event','begin_checkout',{
+        item_id: this.product.id,
+        item_name: this.product.name
+      })
+      console.log(this,888)
+     },
     async addingToCart(Productdata) {
+      window.uetq = window.uetq || []
+      window.uetq.push('event', 'add-to-cart', {})
+      this.$gtag('event','add_to_cart',{
+        item_id: Productdata.product.id,
+        item_name: Productdata.product.name
+      })
       await this.addItem(Productdata).then((res) => {
         this.sendNotification({
           key: 'product_added',
@@ -870,6 +900,12 @@ export default {
       })
     },
     async addingToCarts(Productdata) {
+      window.uetq = window.uetq || []
+      window.uetq.push('event', 'add-to-cart', {})
+      this.$gtag('event','add_to_cart',{
+        item_id: productObj.product.id,
+        item_name: productObj.product.name
+      })
       await this.addItem(Productdata).then((res) => {
         this.sendNotification({
           key: 'product_added',
@@ -1212,4 +1248,11 @@ export default {
     transform: translate3d(0, 0, 0);
   }
 }
+.sf-breadcrumbs__list{
+  margin-left: 10px;
+  @include for-desktop{
+      margin-left: 0;
+  }
+}
+
 </style>

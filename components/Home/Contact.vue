@@ -14,7 +14,7 @@
                   class="uk-panel uk-text-lead uk-position-relative uk-margin uk-width-medium uk-text-left@s uk-text-left"
                   id="page#26-0-0-1"
                 >
-                  <p>
+                  <p style="font-size:16px" class="uk-width-class">
                     For product or technical support inquiries, email us and we
                     will respond you soon.
                   </p>
@@ -23,6 +23,7 @@
                   <a
                     class="el-content uk-button uk-button-primary uk-button-small uk-flex-inline uk-flex-center uk-flex-middle"
                     href="mailto:servers@osmiler.com?subject=Hello Osmiler"
+                    @click="gitcheckoumail()"
                   >
                     Contact us
                     <span class="uk-margin-small-left" uk-icon="mail"></span>
@@ -44,8 +45,21 @@ export default {
     return {}
   },
 
-  methods: {}
+  methods: {
+        gitcheckoumail(){
+    window.uetq = window.uetq || []
+    window.uetq.push('event', 'mailto:', {})
+    }
+  }
 }
 </script>
 
-<style lang="scoped"></style>
+<style lang="scss" scoped>
+.uk-width-class{
+  width: 200px;
+  @include for-desktop{
+    width: 601px;
+  }
+}
+</style>
+

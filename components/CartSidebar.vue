@@ -161,11 +161,11 @@
             </SfProperty>
             <SfLink
               link="javascript:void(0);"
-              @click="handleCheckout(checkoutURL, parseFloat(totals.subtotal))"
+              @click="handleCheckout(checkoutURL, parseFloat(totals.subtotal)),gotocheckout()"
             >
               <SfButton
                 class="sf-button--full-width sf-proceed_to_checkout SfButtontwo"
-                @click="toggleCartSidebar"
+                @click="toggleCartSidebar(),gotocheckout(),gotocheckoutone()"
               >
                 {{ $t('Go to checkout') }}
               </SfButton>
@@ -292,6 +292,11 @@ export default {
         })
       }
     }
+    const gotocheckout = ()=>{
+      window.uetq = window.uetq || []
+      window.uetq.push('event', 'checkout', {})
+
+    }
     const handleRemoveCoupon = async (couponCode) => {
       await removeCoupon({ couponCode }).then(() => {
         errorMsg.value = 'Coupon removed'
@@ -314,6 +319,7 @@ export default {
       removeItem,
       handleCheckout,
       checkoutURL,
+      gotocheckout,
       isCartSidebarOpen,
       toggleCartSidebar,
       totals,
@@ -336,6 +342,15 @@ export default {
   methods: {
     goback(){
       this.$router.push('/c/all-products')
+    },
+    gotocheckoutone() {
+    this.products.map((array)=>{
+       this.$gtag('event','begin_checkout',{
+        item_id: array.id,
+        item_name: array.title
+      })
+    })
+
     }
   }
 }

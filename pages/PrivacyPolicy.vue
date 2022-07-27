@@ -274,5 +274,11 @@
     </div>
   </div>
 </template>
-<script></script>
-<style lang="scss" scoped></style>
+<script>
+export default {
+name: 'PrivacyPolicy'
+}
+</script>
+<style lang="scss" scoped>
+
+</style>

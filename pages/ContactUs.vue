@@ -41,12 +41,9 @@
                       Address
                     </h2>
                     <div class="el-content uk-panel uk-margin-top">
-                    Room 1607E<br/>
-                    Education Techonology Building<br/>
-                    No. 26 Zizhu Seven Road<br/>
-                    Xiangmihu Street<br/>
-                    Futian District<br/>
-                    Shenzhen
+                    Room 1607E&nbsp;Education Techonology Building<br/>
+                    No. 26 Zizhu Seven Road&nbsp;Xiangmihu Street<br/>
+                    Futian DistrictE&nbsp;Shenzhen&nbsp;China
                     </div>
                   </div>
                 </div>
@@ -83,10 +80,11 @@
           </div>
         </div>
       </div>
-      <div class="tm-grid-expand uk-child-width-1-1 uk-grid-margin" uk-grid>
+      <!-- <div class="tm-grid-expand uk-child-width-1-1 uk-grid-margin" uk-grid>
         <div>
           <div class="uk-margin uk-text-center">
-            <img
+          <div class="uk-box222">
+              <img
               src="/wp-content/themes/yootheme/cache/image-59-c5c1dcb5.png"
               sizes="(min-width: 1080px) 1080px"
               data-width="1080"
@@ -94,104 +92,48 @@
               class="el-image"
               alt
             />
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="uk-section-default uk-dark">
-      <div
-        style="background-image: url('/wp-content/themes/yootheme/cache/01-2-ya-0c515866.jpeg');"
-        class="uk-background-norepeat uk-background-cover uk-background-center-center uk-section uk-section-large"
-      >
-        <div class="uk-container uk-container-expand">
-          <div
-            class="uk-visible@m tm-grid-expand uk-child-width-1-1 uk-grid-margin"
-            uk-grid
-          >
-            <div class="uk-grid-item-match uk-visible@m">
-              <div class="uk-panel uk-width-1-1">
-                <div
-                  id="page#1-0-0-0"
-                  class="uk-visible@m uk-position-absolute uk-width-1-1 uk-text-right"
-                  style="right: 120px; bottom: 40px"
-                >
-                  <img
-                    loading="lazy"
-                    src="/wp-content/uploads/yootheme/cta-shape-01.svg"
-                    width="170"
-                    height="170"
-                    class="el-image"
-                    alt
-                    target="!*"
-                  />
-                </div>
-                <div
-                  id="page#1-0-0-1"
-                  class="uk-visible@m uk-position-absolute uk-width-1-1 uk-text-right"
-                >
-                  <img
-                    loading="lazy"
-                    src="/wp-content/uploads/yootheme/cta-shape-02.svg"
-                    width="120"
-                    height="120"
-                    class="el-image"
-                    alt
-                    target="!*"
-                  />
-                </div>
+                <div class="uk-position-bottom-right  uk-overlay-default">
+              <div class="uk-esllipse2"></div>
+              <div class="uk-esllipse3">
+                <div style="text-align:left !important;" class="fontsize">Osilmer<br/>
+                Room 309,Building 5, QianHai E-Hub, ShenZhen,China <br/><br/>
+                +86 755-25827634<br/>service@osilmer.com</div>
               </div>
+
             </div>
           </div>
-          <div class="uk-grid-margin uk-container uk-container-large">
-            <div class="tm-grid-expand uk-child-width-1-1" uk-grid>
-              <div>
-                <h2
-                  class="uk-h1 uk-position-relative uk-text-left@s uk-text-center"
-                  id="page#1-1-0-0"
-                  style="z-index: 1"
-                >
-                  “The first dental office <br class="uk-visible@s" />I actually
-                  like going to.”
-                </h2>
-                <div
-                  class="uk-panel uk-text-lead uk-position-relative uk-margin uk-width-xlarge uk-text-left@s uk-text-center"
-                  id="page#1-1-0-1"
-                  style="z-index: 1"
-                >
-                  Get in touch to make an appointment today.
-                </div>
-                <div
-                  class="uk-position-relative uk-margin-medium uk-text-left@s uk-text-center"
-                  style="z-index: 1"
-                >
-                  <a
-                    class="el-content uk-button uk-button-primary uk-button-large uk-flex-inline uk-flex-center uk-flex-middle"
-                    href="#"
-                    uk-scroll
-                  >
-                    Contact us
-                    <span class="uk-margin-small-left" uk-icon="mail"></span>
-                  </a>
-                </div>
-              </div>
-            </div>
           </div>
         </div>
-      </div>
+      </div> -->
+      <CantactMap/>
     </div>
-    <MainChack />
+   <Contact />
+    <!-- <MainChack /> -->
   </div>
 </template>
 <script>
-import MainChack from '~/components/MainChack'
+// import MainChack from '~/components/MainChack'
+import Contact from '~/components/Home/Contact'
+import CantactMap from '~/components/CantactMap'
 export default {
   name: 'ContactUs',
   components: {
-    MainChack
+    Contact,
+    CantactMap
   }
 }
 </script>
 <style lang="scss" scoped>
+.uk-section-default{
+background: #FAF9FD;
+}
+.fontsize{
+  @include for-desktop{
+    padding-top: 16px;
+    margin-left: 24px;
+    margin-top: 9px;
+  }
+}
 #page\#1-1-0-0 {
   font-family: 'osmiler-title';
   color: #3a3543;
@@ -199,4 +141,44 @@ export default {
 #page\#1-1-0-1 {
   color: #3a3543;
 }
+.uk-box222{
+ @include for-desktop{
+  position: relative;
+  width: 1080;
+  height: 560px;
+ }
+}
+.uk-box{
+  @include for-desktop{
+  position: absolute;
+  z-index: 99;
+  width: 364px;
+  height: 188px;
+  left: 1080px;
+  top: 322px;
+  }
+}
+.uk-esllipse2{
+@include for-desktop{
+width: 24px;
+height: 24px;
+background: #5D47EE;
+border-radius: 24px;
+}
+}
+.uk-esllipse3{
+@include for-desktop{
+width: 364px;
+height: 188px;
+background: #FFFFFF;
+border-radius: 20px;
+}
+}
+.el-content{
+  font-size: 10px;
+  @include for-desktop{
+    font-size: 16px;
+  }
+}
+
 </style>

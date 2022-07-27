@@ -1,11 +1,21 @@
 <template>
   <div>
     <div
-      class="uk-visible@m uk-section-primary uk-cover-container uk-section uk-padding-remove-vertical uk-flex uk-flex-middle"
+      class="
+        uk-visible@m
+        uk-section-primary
+        uk-cover-container
+        uk-section
+        uk-padding-remove-vertical
+        uk-flex
+        uk-flex-middle
+      "
       tm-header-transparent="light"
       uk-height-viewport="offset-top: true;"
       :style="{ marginTop: innerWidth > 940 ? '-100px' : '0px' }"
-      style="height:960px"
+      style="height: 960px"
+      @mouseenter="play_v1()"
+      @mouseleave="stop_v1()"
     >
       <!-- <video
         src="/homepage/Osmiler_video.mp4"
@@ -15,17 +25,24 @@
         playsinline
         uk-cover
       ></video> -->
-      <video
-        src="https://d3kyzzp5arlnnu.cloudfront.net/videos/Osmiler_video.mp4"
-        loop
+
+<video
+      src="https://d3kyzzp5arlnnu.cloudfront.net/videos/Osmiler_video2.mp4?v=1658745087"
+         loop
         autoplay
-        muted
         playsinline
         uk-cover
+        id="homeVideo"
       ></video>
+
       <div class="uk-width-1-1">
         <div
-          class="uk-container uk-container-large uk-container-expand-right uk-position-relative"
+          class="
+            uk-container
+            uk-container-large
+            uk-container-expand-right
+            uk-position-relative
+          "
         >
           <div class="tm-header-placeholder uk-margin-remove-adjacent"></div>
           <div class="tm-grid-expand uk-grid-collapse" uk-grid>
@@ -35,14 +52,29 @@
             >
               <div class="uk-panel uk-width-1-1">
                 <h1
-                  class="uk-heading-medium uk-position-relative uk-margin-remove-vertical uk-text-left@m uk-text-center"
+                  class="
+                    uk-heading-medium
+                    uk-position-relative
+                    uk-margin-remove-vertical
+                    uk-text-left@m
+                    uk-text-center
+                  "
                   id="page#0-0-0-0"
                   style="z-index: 1"
                 >
                   A musical revolution.
                 </h1>
                 <div
-                  class="uk-text-primary uk-margin-medium uk-width-large uk-margin-auto-right@m uk-margin-remove-left@m uk-margin-auto uk-text-left@m uk-text-center"
+                  class="
+                    uk-text-primary
+                    uk-margin-medium
+                    uk-width-large
+                    uk-margin-auto-right@m
+                    uk-margin-remove-left@m
+                    uk-margin-auto
+                    uk-text-left@m
+                    uk-text-center
+                  "
                 >
                   Beyond imagination, it&#8217;s the world&#8217;s first
                   electric sonic toothbrush that can listen to music.
@@ -68,7 +100,14 @@
     </div>
     <div
       id="page#1"
-      class="uk-hidden@m uk-section-primary uk-section uk-section-small uk-padding-remove-top uk-flex"
+      class="
+        uk-hidden@m
+        uk-section-primary
+        uk-section
+        uk-section-small
+        uk-padding-remove-top
+        uk-flex
+      "
       tm-header-transparent="light"
       uk-height-viewport="offset-top: true;"
       style="background: #411e7b"
@@ -82,11 +121,12 @@
           <div>
             <div class="uk-margin">
               <img
-                src="/wp-content/themes/yootheme/cache/Hero-ya.jpg"
+                src="/wp-content/themes/yootheme/cache/Hero.png"
                 sizes="(min-width: 1125px) 1125px"
                 data-width="1125"
                 data-height="1086"
                 class="el-image"
+                style="width:100%"
                 alt
               />
             </div>
@@ -96,14 +136,30 @@
           <div class="uk-grid-item-match uk-flex-middle" id="page#1-1-0">
             <div class="uk-panel uk-width-1-1">
               <h1
-                class="uk-heading-medium uk-position-relative uk-margin uk-text-center@m uk-text-center"
+                class="
+                  uk-heading-medium
+                  uk-position-relative
+                  uk-margin
+                  uk-text-center@m
+                  uk-text-center
+                "
                 id="page#1-1-0-0"
-                style="top: 8px; z-index: 1"
+                style="top: 8px; z-index: 1; font-size: 32px"
               >
                 A musical revolution.
               </h1>
               <div
-                class="uk-text-primary uk-margin-medium uk-margin-remove-top uk-width-medium uk-margin-auto-right@m uk-margin-remove-left@m uk-margin-auto uk-text-left@m uk-text-center"
+                class="
+                  uk-text-primary
+                  uk-margin-medium
+                  uk-margin-remove-top
+                  uk-width-medium
+                  uk-margin-auto-right@m
+                  uk-margin-remove-left@m
+                  uk-margin-auto
+                  uk-text-left@m
+                  uk-text-center
+                "
               >
                 Beyond imagination, it&#8217;s the original electric sonic
                 toothbrush that can listen to music.
@@ -170,9 +226,22 @@ export default {
   data() {
     return {}
   },
+
   methods: {
     buyNow() {
-      this.$router.push('/p/Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0Lzc3MTcwNTM0MzIwNjY=/osmiler-swing')
+      this.$router.push(
+        '/p/Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0Lzc3MTcwNTM0MzIwNjY=/osmiler-swing'
+      )
+    },
+      play_v1(){
+      const rotateEnlarge = document.getElementById('homeVideo')
+        rotateEnlarge.play()
+        rotateEnlarge.muted = false
+    },
+    stop_v1(){
+        const rotateEnlarge = document.getElementById('homeVideo')
+        rotateEnlarge.muted = false
+        rotateEnlarge.play()
     }
   }
 }

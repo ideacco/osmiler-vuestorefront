@@ -206,6 +206,7 @@
               type="submit"
               class="sf-button--full-width form__button"
               :disabled="loading"
+              @click="createAccounts()"
             >
               <SfLoader :class="{ loader: loading }" :loading="loading">
                 <div>{{ $t('Create an account') }}</div>
@@ -231,7 +232,9 @@ import {
   reactive,
   computed,
   useRouter,
-  useContext
+  useContext,
+inject,
+onMounted
 } from '@nuxtjs/composition-api'
 import {
   SfModal,
@@ -291,10 +294,13 @@ export default {
       login: null,
       register: null
     })
-
     const resetErrorValues = () => {
       error.login = null
       error.register = null
+    }
+    const createAccounts = () =>{
+    window.uetq = window.uetq || []
+    window.uetq.push('event', 'Create an account', {})
     }
 
     const barTitle = computed(() => {
@@ -404,6 +410,7 @@ export default {
       loading,
       isLogin,
       createAccount,
+      createAccounts,
       rememberMe,
       isLoginModalOpen,
       toggleLoginModal,

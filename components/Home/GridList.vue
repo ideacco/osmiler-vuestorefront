@@ -18,7 +18,6 @@
                     <div
                       class="el-item uk-margin-auto uk-width-xlarge uk-panel uk-tile-default uk-margin-remove-first-child"
                       uk-scrollspy-class
-                      @click="jump(1)"
                     >
                       <div>
                         <img
@@ -109,7 +108,7 @@
                       <div
                         class="el-title uk-card-title uk-margin-small-top uk-margin-remove-bottom"
                       >
-                        Classic mode
+                        Classic Mode
                       </div>
                       <div class="el-content uk-panel uk-margin-small-top">
                         3 built-in classic vibrating modes
@@ -130,11 +129,6 @@ export default {
   name: 'GridList',
   data() {
     return {}
-  },
-  methods: {
-    jump(index) {
-      // console.log(this.$parent, 444)
-    }
   }
 }
 </script>
@@ -149,7 +143,18 @@ export default {
 .uk-section-muted {
   background: #fff;
 }
+#page\#2-0-0-0 .el-item{
+  @include for-desktop{
+ padding-bottom: 12px;
+  }
+}
+
 .el-item {
   background: #fff !important;
+}
+.uk-section-xsmall{
+ @include for-desktop{
+  padding-top: 30px;
+ }
 }
 </style>

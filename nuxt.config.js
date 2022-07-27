@@ -5,12 +5,8 @@ const CompressionPlugin = require('compression-webpack-plugin');
 import webpack from 'webpack'
 // import nuxtSeoMeta from "nuxt-seo-meta/src"
 // const platformENV = process.env.NODE_ENV !== 'production' ? 'http' : 'https'
-const Timestamp = new Date().getTime()
+// const Timestamp = new Date().getTime()
 const config = {
-  env: { 
-    storeURL: process.env.SHOPIFY_DOMAIN,
-    storeToken: process.env.SHOPIFY_STOREFRONT_TOKEN
-   },
   server: {
     port: process.env.APP_PORT || 8888,
     host: '0.0.0.0',
@@ -19,10 +15,8 @@ const config = {
     appKey: 'vsf2spcon',
     appVersion: Date.now(),
     // middlewareUrl: `${platformENV}://${process.env.BASE_URL}/api/`,
-    middlewareUrl:
-      process.env.NODE_ENV === 'production'
-        ? `${process.env.BASE_URL}/api/`
-        : `${process.env.DEV_URL}/api/`,
+    middlewareUrl: process.env.NODE_ENV === 'production' ?
+      `${process.env.BASE_URL}/api/` : `${process.env.DEV_URL}/api/`,
   },
   privateRuntimeConfig: {
     storeURL: process.env.SHOPIFY_DOMAIN,
@@ -37,13 +31,24 @@ const config = {
   ],
   head: {
     title: 'Osmiler',
-    meta: [
-      {
+    meta: [{
         charset: 'utf-8',
       },
       {
         name: 'viewport',
         content: 'width=device-width, initial-scale=1',
+      },
+      {
+        name: 'msvalidate.01',
+        content: '719FC6CF5FF4362D12CB7CB4AECA26A4',
+      },
+      {
+        name: 'msvalidate.01',
+        content: '9DB7FA7D11413FB75AC4ACDE0FC5A174',
+      },
+      {
+        name: 'google-site-verification',
+        content: 'oYF5zEbAp7ZdlUJr8UVEjusEep7sXvmAbSrZLAWpOrc',
       },
       {
         name: 'theme-color',
@@ -55,8 +60,10 @@ const config = {
         content: process.env.npm_package_description || '',
       },
     ],
-    link: [
-      { rel: 'icon', href: '/icon.png' },
+    link: [{
+        rel: 'icon',
+        href: '/icon.png'
+      },
       {
         rel: 'preconnect',
         href: 'https://fonts.gstatic.com',
@@ -74,7 +81,47 @@ const config = {
         onload: "this.media='all'",
       },
     ],
+    script: [{
+        hid: 'ga4-script',
+        innerHTML: `window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config','G-934Z930PQ3');`,
+        type: 'text/javascript',
+        charset: 'utf-8'
+      },
+      {
+        hid: 'bing-script',
+        innerHTML: `(function(w,d,t,r,u){var f,n,i;w[u]=w[u]||[],f=function(){var o={ti:"27028530"};o.q=w[u],w[u]=new UET(o),w[u].push("pageLoad")},n=d.createElement(t),n.src=r,n.async=1,n.onload=n.onreadystatechange=function(){var s=this.readyState;s&&s!=="loaded"&&s!=="complete"||(f(),n.onload=n.onreadystatechange=null)},i=d.getElementsByTagName(t)[0],i.parentNode.insertBefore(n,i)})(window,document,"script","//bat.bing.com/bat.js","uetq");`,
+        type: 'text/javascript',
+        charset: 'utf-8'
+      },
+      {
+        hid: 'Pixel-Code',
+        innerHTML: `!function(f,b,e,v,n,t,s)
+        {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+        n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+        if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+        n.queue=[];t=b.createElement(e);t.async=!0;
+        t.src=v;s=b.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t,s)}(window, document,'script',
+        'https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', '789343135804814');
+        fbq('track', 'PageView');`,
+        type: 'text/javascript',
+        charset: 'utf-8'
+      }
+    ],
+    // metaInfo: {
+    //   noscript: [
+    //     {  hid: 'pixel-scrpit',
+    //       innerHTML: `<img height="1" width="1" style="display:none"
+    //     src="https://www.facebook.com/tr?id=789343135804814&ev=PageView&noscript=1"
+    //   />` }
+    //   ]
+    // }
   },
+
   loading: {
     color: '#fff',
   },
@@ -85,6 +132,11 @@ const config = {
   plugins: [
     '@/plugins/scrollToTop.client.js',
     '~/plugins/gtm',
+    // '~/plugins/vue-gtag' ,
+    //  {
+    //   src:'@/plugins/Vuegtag',
+    //   mode: 'client'
+    //  },
     // '@/plugins/element-ui',
     {
       src: '@/plugins/UIkit',
@@ -135,18 +187,48 @@ const config = {
   optimizedImages: {
     optimizeImages: true
   },
-  css: [
-    {
-      src: '@/style/index.scss',
-      lang: 'scss',
-    },
-  ],
+  // script:[
+  //  {src:'~/plugins/pixel.js',type: 'text/javascript'}
+  // ],
+  // googleAnalytics: {
+  //   id: 'UA-233114703-1'
+  // },
+  // debug: {
+  //   enabled: false,
+  //   sendHitTask: false
+  // },
+  // publicRuntimeConfig: {
+  //   googleAnalytics: {
+  //     id: 'UA-233114703-1'
+  //   }
+  // },
+  // 'google-gtag': {
+  //   id: 'UA-233114703-1',
+  //   config: {
+  //     anonymize_ip: true, // anonymize IP
+  //     send_page_view: false, // might be necessary to avoid duplicated page track on page reload
+  //   },
+  //   debug: false, // enable to track in dev mode
+  //   disableAutoPageTrack: false, // disable if you don't want to track each page route with router.afterEach(...).
+  // },
+  // googleAnalytics: {
+  //   id: process.env.GOOGLE_ANALYTICS_ID, // Use as fallback if no runtime config is provided
+  // },
+  // publicRuntimeConfig: {
+  //   googleAnalytics: {
+  //     id: process.env.GOOGLE_ANALYTICS_ID,
+  //   },
+  // },
+  css: [{
+    src: '@/style/index.scss',
+    lang: 'scss',
+  }, ],
   modules: [
     '@nuxtjs/i18n',
-    'nuxt-facebook-pixel-module',
     '@nuxtjs/gtm',
     'nuxt-precompress',
-    // '@nuxtjs/google-gtag',
+    'nuxt-facebook-pixel-module',
+    '@nuxtjs/google-gtag',
     'cookie-universal-nuxt',
     'vue-scrollto/nuxt',
     '@vue-storefront/middleware/nuxt',
@@ -183,7 +265,9 @@ const config = {
       filename: '[path].gz[query]', // middleware will look for this filename
       threshold: 10240,
       minRatio: 0.8,
-      compressionOptions: { level: 9 },
+      compressionOptions: {
+        level: 9
+      },
     },
     brotli: {
       // should compress to brotli?
@@ -191,11 +275,14 @@ const config = {
       // compression config
       // https://www.npmjs.com/package/compression-webpack-plugin
       filename: '[path].br[query]', // middleware will look for this filename
-      compressionOptions: { level: 11 },
+      compressionOptions: {
+        level: 11
+      },
       threshold: 10240,
       minRatio: 0.8,
     },
   },
+
   gtm: {
     id: 'GTM-PB39ZGK', // Used as fallback if no runtime config is provided
     enabled: true,
@@ -208,21 +295,32 @@ const config = {
     pixelId: '769420814057414',
     autoPageView: true,
     disabled: false,
-    manualModef:false,
-   Pixels:[
-   {
-    pixelId : '789343135804814',
-    autoPageView: true,
-    disabled: false,
-    manualModef:false,
-    track: 'PageView'
-   }
-   ]
+    manualModef:false
   },
   publicRuntimeConfig: {
     gtm: {
-      id:'GTM-PB39ZGK'
+      id: 'GTM-PB39ZGK'
     }
+  },
+  'google-gtag': {
+    id: 'UA-233114703-1',
+    config: {
+      anonymize_ip: true, // anonymize IP
+      send_page_view: false, // might be necessary to avoid duplicated page track on page reload
+      linker: {
+        domains: ['https://www.osmiler.com/', 'domain.org'],
+      },
+    },
+    debug: false, // enable to track in dev mode
+    disableAutoPageTrack: true, // disable if you don't want to track each page route with router.afterEach(...).
+    additionalAccounts: [
+      {
+        id: 'AW-10930264205', // required if you are adding additional accounts
+        config: {
+          send_page_view: false, // optional configurations
+        },
+      },
+    ],
   },
   axios: {
     proxy: true,
@@ -243,8 +341,7 @@ const config = {
   i18n: {
     currency: 'USD',
     country: 'US',
-    countries: [
-      {
+    countries: [{
         name: 'US',
         label: 'United States',
       },
@@ -253,8 +350,7 @@ const config = {
         label: 'Germany',
       },
     ],
-    currencies: [
-      {
+    currencies: [{
         name: 'EUR',
         label: 'Euro',
       },
@@ -263,8 +359,7 @@ const config = {
         label: 'Dollar',
       },
     ],
-    locales: [
-      {
+    locales: [{
         code: 'en',
         alias: 'us',
         label: 'English',
@@ -332,22 +427,43 @@ const config = {
       // './style/index.scss',
     ],
   },
+
   build: {
-      extractCSS:true,
-      optimization: {
-      splitChunks: {
-      minSize: 10000,
-      maxSize: 250000,
-      cacheGroups: {
-        styles: {
-          name: 'styles',
-          test: /\.(css|scss)$/,
-          chunks: 'all',
-          enforce: true
-        }
-      }
+    extractCSS: true,
+    filenames: {
+      app: ({
+        isDev
+      }) => isDev ? '[name].js' : '[contenthash].js',
+      chunk: ({
+        isDev
+      }) => isDev ? '[name].js' : '[contenthash].js',
+      css: ({
+        isDev
+      }) => isDev ? '[name].css' : '[contenthash].css',
+      img: ({
+        isDev
+      }) => isDev ? '[path][name].[ext]' : 'img/[contenthash:7].[ext]',
+      font: ({
+        isDev
+      }) => isDev ? '[path][name].[ext]' : 'fonts/[contenthash:7].[ext]',
+      video: ({
+        isDev
+      }) => isDev ? '[path][name].[ext]' : 'videos/[contenthash:7].[ext]'
     },
-  },
+    optimization: {
+      splitChunks: {
+        minSize: 10000,
+        maxSize: 250000,
+        cacheGroups: {
+          styles: {
+            name: 'styles',
+            test: /\.(css|scss)$/,
+            chunks: 'all',
+            enforce: true
+          }
+        }
+      },
+    },
     // transpile: ['vee-validate/dist/rules', 'storefront-ui'],
     transpile: ['vee-validate/dist/rules'],
     plugins: [
@@ -359,14 +475,12 @@ const config = {
         }),
       }),
       new CompressionPlugin({
-      test: /\.js$|\.html$|\.css/, // 匹配文件名
-      threshold: 10240,
-      deleteOriginalAssets: false
+        test: /\.js$|\.html$|\.css/, // 匹配文件名
+        threshold: 10240,
+        deleteOriginalAssets: false
       })
     ],
     extend(config, ctx) {
-      config.output.filename = `js/[name].${Timestamp}.js` // 每次构建打包时给文件名加上时间戳，保证版本更新时与上版本文件名不一样
-      config.output.chunkFilename = `js/[name].${Timestamp}.js`
       config.resolve.extensions.push('.mjs')
       config.module.rules.push({
         test: /\.mjs$/,
@@ -374,6 +488,7 @@ const config = {
         type: 'javascript/auto',
       })
     },
+
   },
   pwa: {
     manifest: {
@@ -385,8 +500,7 @@ const config = {
       backgroundColor: '#5d47ee',
       themeColor: '#5d47ee',
       description: 'let your smile light up the world',
-      icons: [
-        {
+      icons: [{
           src: '/icons/LOGO.png',
           sizes: '48x48',
           type: 'image/png',
@@ -429,7 +543,7 @@ const config = {
       backgroundColor: '#5d47ee',
       description: 'let your smile light up the world',
       themeColor: '#5d47ee',
-      ogHost: 'www.osmiler.com',
+      ogHost: 'shopify-pwa.aureatelabs.com',
     },
     icon: {
       source: '/icon.png',
@@ -440,8 +554,7 @@ const config = {
     },
     workbox: {
       offlineStrategy: 'StaleWhileRevalidate',
-      runtimeCaching: [
-        {
+      runtimeCaching: [{
           // Match any request that ends with .png, .jpg, .jpeg or .svg.
           urlPattern: /\.(?:png|jpg|jpeg|svg|woff|woff2)$/,
           // Apply a cache-first strategy.

@@ -147,6 +147,12 @@
                 >service@osmiler.com</a
                 >.
               </li>
+              <li>
+               If you use PayPal generally arrive within 1-2 working days.
+              </li>
+              <li>
+             If you use a credit card, it usually takes 5 to 7 business days to process the refund to the account, depending on the bank's processing time.
+              </li>
             </ol>
             <h3>SALE ITEMS (IF APPLICABLE)</h3>
             <p>
@@ -178,5 +184,10 @@
     </div>
   </div>
 </template>
-<script></script>
-<style lang="scss" scoped></style>
+<script>
+export default {
+name: 'ShippingReturnPolicy'
+}
+</script>
+<style lang="scss" scoped>
+</style>

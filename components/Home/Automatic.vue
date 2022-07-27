@@ -3,7 +3,7 @@
     <div
       id="Automatic Amplitude"
       class="uk-visible@m uk-section-default uk-section uk-padding-remove-vertical"
-      style="background:#faf9fd"
+      style="background:#faf9fd;"
     >
       <div class="uk-container uk-container-large">
         <div
@@ -16,9 +16,9 @@
             <div class="uk-grid-item-match uk-width-1-2@m">
               <div
                 class="uk-tile-default uk-tile uk-flex uk-flex-middle"
-                style="background: #faf9fd"
+                style="background: #faf9fd;margin-left: 80px;"
               >
-                <div class="uk-panel uk-width-1-1">
+                <div class="uk-panel uk-width-1-1" >
                   <h1
                     class="uk-margin-remove-vertical uk-text-left@m uk-text-center"
                     id="page#10-0-0-0"
@@ -50,11 +50,8 @@
             <div class="uk-width-1-2@m ">
               <div id="page#10-0-1-0" class="uk-margin uk-text-right">
                 <img
-                  src="/wp-content/themes/yootheme/cache/wright-f071959f.jpeg"
+                  src="/wp-content/themes/yootheme/cache/32078-11.jpg"
                   class="el-image"
-                  sizes="(min-width: 1510px) 1510px"
-                  data-width="1510"
-                  data-height="1759"
                   alt
                 />
               </div>
@@ -76,11 +73,11 @@
         >
           <div class="uk-grid-item-match">
             <div
-              class="uk-tile-default uk-tile uk-padding-remove uk-flex uk-flex-middle"
+              class="uk-tile-default uk-tile uk-padding-remove uk-flex uk-flex-middle uk-marginfontsize"
             >
               <div class="uk-panel uk-width-1-1">
                 <h1
-                  class="uk-margin-remove-vertical uk-width-xlarge uk-text-left@m uk-text-left"
+                  class="uk-margin-remove-vertical uk-width-xlarge uk-text-left@m uk-text-left uk-marginfontsize"
                   id="page#11-0-0-0"
                   style="font-size: 32px"
                 >
@@ -89,7 +86,7 @@
                 <div
                   class="uk-panel uk-margin uk-width-xlarge uk-text-left@m uk-text-left"
                 >
-                  <p>
+                  <p class="uk-marginfontsize">
                     In addition to being driven by music, the sonic toothbrush
                     can also use classic vibrating effects. The electric
                     toothbrush has three built-in classic vibrating modes.
@@ -141,6 +138,19 @@ export default {
   font-family: 'osmiler-title';
   padding-top: 32px;
 }
+.uk-marginfontsize{
+margin: 0 10px;
+}
+.uk-container-large{
+  margin: 0;
+  max-width: 2133px;
+  padding: 0;
+}
+// .uk-panel{
+//   @include for-desktop {
+//     margin-left: 60px;
+//   }
+// }
 // .uk-width-35{
 //  height: 792px;
 // }

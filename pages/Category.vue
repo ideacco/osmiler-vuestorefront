@@ -371,6 +371,7 @@ import {
 import { useUiHelpers, useUiState, useUiNotification } from '~/composables'
 import { onSSR } from '@vue-storefront/core'
 
+
 export default {
   name: 'CateGory',
   components: {
@@ -468,8 +469,16 @@ export default {
     }
   },
   methods: {
+
     // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
+    /* eslint-disable */
     handleAddToCart(productObj) {
+      window.uetq = window.uetq || [];
+      window.uetq.push('event', 'add-to-cart', {});
+      this.$gtag('event',"add_to_cart",{
+        item_id:productObj.product.id,
+        item_name:productObj.product.name
+      })
       this.addItemToCart(productObj).then(() => {
         this.sendNotification({
           key: 'added_to_cart',
@@ -480,6 +489,7 @@ export default {
         })
       })
     },
+    /* eslint-disable */
     // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
     removeSpaceFromText(str) {
       let i
@@ -503,6 +513,7 @@ export default {
   }
 }
 .uk-section{
+  padding-top: 0;
   @include for-desktop{
     padding-top: 0px;
   }

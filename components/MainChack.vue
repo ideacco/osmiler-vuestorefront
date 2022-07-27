@@ -35,7 +35,6 @@
 <script>
 export default {
   name: 'MainChack',
-
   data() {
     return {}
   },

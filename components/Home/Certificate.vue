@@ -26,7 +26,8 @@
                   class="el-item uk-card uk-card-default uk-card-small uk-card-body uk-margin-remove-first-child"
                   uk-scrollspy="target: [uk-scrollspy-class];"
                 >
-                  <img
+              <a href="/wp-content/themes/yootheme/cache/ROHS.pdf" >
+                    <img
                     src="/wp-content/uploads/2022/05/ic_rohs.svg"
                     width="120"
                     class="el-image"
@@ -36,6 +37,7 @@
                   <div class="el-content uk-panel uk-margin-small-top">
                     <p><span>Restriction of Hazardous Substances</span></p>
                   </div>
+              </a>
                 </div>
               </div>
               <div>
@@ -43,7 +45,9 @@
                   class="el-item uk-card uk-card-default uk-card-small uk-card-body uk-margin-remove-first-child"
                   uk-scrollspy="target: [uk-scrollspy-class];"
                 >
-                  <img
+
+            <a href="/wp-content/themes/yootheme/cache/CE.pdf">
+                    <img
                     src="/wp-content/uploads/2022/05/ic_ce.svg"
                     width="120"
                     class="el-image"
@@ -53,6 +57,7 @@
                   <div class="el-content uk-panel uk-margin-small-top">
                     <p>CE certification</p>
                   </div>
+            </a>
                 </div>
               </div>
               <div>
@@ -60,7 +65,8 @@
                   class="el-item uk-card uk-card-default uk-card-small uk-card-body uk-margin-remove-first-child"
                   uk-scrollspy="target: [uk-scrollspy-class];"
                 >
-                  <img
+               <a href="/wp-content/themes/yootheme/cache/FDA.pdf">
+                   <img
                     src="/wp-content/uploads/2022/05/ic_fda.svg"
                     width="120"
                     class="el-image"
@@ -70,6 +76,7 @@
                   <div class="el-content uk-panel uk-margin-small-top">
                     <p>Food and Drug Administration</p>
                   </div>
+               </a>
                 </div>
               </div>
               <div>
@@ -77,7 +84,8 @@
                   class="el-item uk-card uk-card-default uk-card-small uk-card-body uk-margin-remove-first-child"
                   uk-scrollspy="target: [uk-scrollspy-class];"
                 >
-                  <img
+                <a href="/wp-content/themes/yootheme/cache/FCC.pdf">
+                    <img
                     src="/wp-content/uploads/2022/05/ic_fc.svg"
                     width="120"
                     class="el-image"
@@ -87,6 +95,7 @@
                   <div class="el-content uk-panel uk-margin-small-top">
                     <p>Federal Communications Commission</p>
                   </div>
+                </a>
                 </div>
               </div>
             </div>
@@ -112,7 +121,7 @@ export default {
 </script>
 <style lang="scss" scoped>
 .uk-padding-remove-bottom{
-  min-height: 680px;
+  min-height: 500px;
   @include for-desktop{
   min-height: 268px;
   }

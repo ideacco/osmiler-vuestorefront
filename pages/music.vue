@@ -1,7 +1,7 @@
 <template>
   <div>
     <div
-      class="uk-section-default uk-light"
+      class="uk-section-default uk-light "
       tm-header-transparent="light"
       uk-scrollspy="target: [uk-scrollspy-class]; cls: uk-animation-slide-bottom-medium; delay: false;"
     >
@@ -15,13 +15,15 @@
             <div class="tm-grid-expand uk-child-width-1-1" uk-grid>
               <div class="uk-width-1-1@m">
                 <h1
-                  class="uk-heading-small uk-width-xlarge uk-text-left"
+                  class="uk-heading-small uk-width-xlarge uk-text-left fontsize2"
                   id="page#0-0-0-0"
                   uk-scrollspy-class
+                  style="font-size:42px"
                 >
-                  Let music <br class="uk-visible@s" />
-                  activate your life
+                  Let music activate your life
                 </h1>
+                <p class="fontsize2  uk-text-left "  style="color:#fff">welcome to be the osmiler community. where music fans<br/>can find create download. enjoy and share music</p>
+                <p style="color:#fff" class="fontsize2  uk-text-left"> check out the latest list of music lovers around the world </p>
               </div>
             </div>
           </div>
@@ -101,20 +103,23 @@
         </div>
       </div>
     </div>
+    <MusicDownload/>
     <div
       class="uk-section-muted uk-section uk-section-large"
       uk-scrollspy="target: [uk-scrollspy-class]; cls: uk-animation-fade; delay: false;"
+      style="background:#0c0b0e;color: #fff;"
     >
       <div class="uk-container">
-        <div class="tm-grid-expand uk-child-width-1-1 uk-grid-margin" uk-grid>
+         <div class="tm-grid-expand uk-child-width-1-1 uk-grid-margin" uk-grid>
           <div class="uk-width-1-1@m">
             <h2
               class="uk-width-xlarge uk-margin-auto uk-text-center"
               uk-scrollspy-class
+              style="font-family: osmiler-title;font-size: 32px;"
             >
               All music downloads
             </h2>
-            <div class="uk-divider-icon" uk-scrollspy-class></div>
+            <!-- <div class="uk-divider-icon" uk-scrollspy-class style="color:#fff"></div> -->
           </div>
         </div>
         <div class="tm-grid-expand uk-child-width-1-1 uk-margin-large" uk-grid>
@@ -129,8 +134,8 @@
                     Min
                   </th>
                   <th class="uk-text-left@m uk-text-center">Music name</th>
-                  <th class="uk-text-left@m uk-text-center">速度</th>
-                  <th class="uk-text-right@m uk-text-nowrap">试听/下载</th>
+                  <th class="uk-text-left@m uk-text-center">Speed/Strength</th>
+                  <th class="uk-text-right@m uk-text-nowrap" style="color:#fff">audition/Download</th>
                 </tr>
               </thead>
               <tbody>
@@ -140,18 +145,18 @@
                   :key="index"
                 >
                   <td class="uk-text-nowrap uk-table-shrink">
-                    <div class="el-meta uk-text-muted">{{ item.mins }}</div>
+                    <div class="el-meta uk-text-muted" style="color:#fff !important">{{ item.mins }}</div>
                   </td>
                   <td>
-                    <div class="el-title uk-h4">{{ item.music_name }}</div>
+                    <div class="el-title uk-h4" style="color:#fff">{{ item.music_name }}</div>
                   </td>
                   <td>
-                    <div class="el-content uk-panel uk-text-meta">
+                    <div class="el-content uk-panel uk-text-meta" style="color:#fff">
                       {{ item.speed }}
                     </div>
                   </td>
 
-                  <td class="uk-text-nowrap uk-text-right@m uk-table-shrink">
+                  <td class="uk-text-nowrap uk-text-right@m uk-table-shrink" >
                     <a
                       class="el-link uk-button uk-button-default"
                       href="#"
@@ -164,13 +169,13 @@
                         :src="
                           item.id == playingId && isPlaying
                             ? require('../static/icons/vieo.png')
-                            : require('../static/icons/play.png')
+                            : require('../static/icons/ic_play.png')
                         "
                       />
                     </a>
                     <a
                       class="el-link uk-button uk-button-primary"
-                      :href="item.music_url"
+                      :href="item.music_zip"
                       download
                     >Download
                     </a>
@@ -178,14 +183,22 @@
                 </tr>
               </tbody>
             </table>
+            <p style="font-size:16px" class="pfontsize">Note:The speed of the music is related to the vibration of the toothbrush（the faster,the stonger/the slower，the genteler)</p>
           </div>
         </div>
       </div>
     </div>
+<CopyrightNotice/>
+<MusicQuarter/>
+<MusicContact/>
   </div>
 </template>
 
 <script type="module">
+import MusicDownload from '~/components/Music/MusicDownload.vue'
+import MusicQuarter from '~/components/Music/MusicQuarter.vue'
+import CopyrightNotice from '~/components/Music/CopyrightNotice.vue'
+import MusicContact from '~/components/Music/MusicContact.vue'
 // import '/static/wp-content/themes/yootheme/vendor/assets/uikit/dist/js/uikit-icons-union-dental.min.js'
 // // import '/static/wp-content/themes/yootheme/vendor/assets/uikit/dist/js/uikit.min.js'
 export default {
@@ -194,33 +207,46 @@ export default {
     return {
       audio: null,
       mp3_info: [
-        {
+       {
           id: 1,
-          music_name: 'Alpha (Intro)',
-          mins: '3:00',
-          speed: 'fast',
-          music_url: '/wp-content/uploads/2022/05/06-Up.mp3'
+          music_name: 'Last Drunk',
+          mins: '1:50',
+          speed: '70/soft',
+          music_url: '/wp-content/uploads/2022/05/LastDrunk.mp3',
+          music_zip: '/wp-content/uploads/2022/05/LastDrunk.zip'
         },
         {
           id: 2,
-          music_name: 'We are not friends (ft. Goku)',
-          mins: '3:00',
-          speed: 'fast',
-          music_url: '/wp-content/uploads/2022/05/06-Up.mp3'
+          music_name: 'daylight',
+          mins: '2:08',
+          speed: '90/soft',
+          music_url: '/wp-content/uploads/2022/05/daylight.mp3',
+          music_zip: '/wp-content/uploads/2022/05/daylight.zip'
         },
-        {
+         {
           id: 3,
-          music_name: 'Eat your Vegetables',
-          mins: '3:00',
-          speed: 'fast',
-          music_url: '/wp-content/uploads/2022/05/06-Up.mp3'
+          music_name: 'Boulevard',
+          mins: '1:26',
+          speed: '90/soft',
+          music_url: '/wp-content/uploads/2022/05/Boulevard.mp3',
+          music_zip: '/wp-content/uploads/2022/05/Boulevard.zip'
         },
         {
           id: 4,
-          music_name: 'Power Level 500K',
-          mins: '3:00',
-          speed: 'fast',
-          music_url: '/wp-content/uploads/2022/05/06-Up.mp3'
+          music_name: 'Drama Club',
+          mins: '1:37',
+          speed: '85/standard',
+          music_url: '/wp-content/uploads/2022/05/DramaClub.mp3',
+          music_zip: '/wp-content/uploads/2022/05/DramaClub.zip'
+        },
+
+        {
+          id: 5,
+          music_name: 'Feeling Myself',
+          mins: '2:14',
+          speed: '126/strong',
+          music_url: '/wp-content/uploads/2022/05/FeelingMyself.mp3',
+          music_zip: '/wp-content/uploads/2022/05/FeelingMyself.zip'
         }
       ],
       isPlaying: false,
@@ -228,6 +254,12 @@ export default {
       playingId: -1
       // uikitdom: null
     }
+  },
+  components: {
+    MusicDownload,
+    MusicQuarter,
+    CopyrightNotice,
+    MusicContact
   },
   mounted() {
     this.audio = new Audio()
@@ -265,7 +297,7 @@ export default {
   }
 }
 </script>
-<style scoped>
+<style lang="scss" scoped>
 /* @import '../static/wp-includes/css/dist/block-library/style.min.css';
 @import '../static/wp-content/themes/yootheme/css/theme.1.css'; */
 
@@ -280,5 +312,34 @@ img.emoji {
   vertical-align: -0.1em !important;
   background: none !important;
   padding: 0 !important;
+}
+
+.uk-text-center {
+  color: #fff;
+}
+
+
+// .uk-table td{
+//    padding: 16px 20px;
+// }\
+
+.fontsize2 {
+ margin: 0 15px;
+ @include for-desktop {
+ margin: 0 10px;
+ }
+}
+.pfontsize{
+  font-size: 16px;
+  padding: 0 10px;
+  @include for-desktop{
+  padding: 0 ;
+  }
+}
+
+
+.uk-section-large{
+  padding-top: 40px;
+  padding-bottom: 40px;
 }
 </style>

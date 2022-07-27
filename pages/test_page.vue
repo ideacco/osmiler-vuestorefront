@@ -184,7 +184,7 @@ export default {
       await isSearch()
 
       await search({})
-    
+
       setNavbarTransparent(true)
       // console.log('product.value',product.value)
     })
@@ -203,7 +203,7 @@ export default {
     if(isMetaDatas){
       console.log('isMetaDatas',isMetaDatas)
     }
-    
+
 
     // 产品根元素
     // const product = computed(() => productGetters.getFiltered(products.value))
@@ -274,7 +274,7 @@ export default {
       router.push({ path: '/test_page', params: 'osmiler-swing' })
     }
 
-    
+
 
     return {
       isNavbarTransparent,

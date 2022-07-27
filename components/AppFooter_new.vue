@@ -22,7 +22,12 @@
 
               <div class="uk-margin-medium uk-margin-remove-top">
                 let your smile light up the world
-              </div>
+                <p style="font-size:15px;margin:10px 0;"><span uk-icon="mail" style="margin-top:10px;margin-right:5px;width: 18px;"></span> service@osmiler.com</p>
+                <p style="font-size:15px;margin:10px 0;"><span uk-icon="receiver" style="margin-top:10px;margin-right:5px;width: 18px;"></span>+ 86 – 755 – 25827634</p>
+                <span style="font-size:15px;margin:10px 0;"><span uk-icon="location" style="margin-right:5px;width: 18px;"></span><span>Room 1607E Education Techonology Building
+No. 26 Zizhu Seven Road Xiangmihu Street
+Futian DistrictE Shenzhen China</span></span>
+             </div>
               <div class="uk-margin-remove-vertical">
                 <div
                   class="uk-child-width-auto uk-grid-small uk-flex-inline uk-grid"
@@ -30,6 +35,7 @@
                 >
                   <div class="uk-first-column">
                     <a
+                      target="_blank"
                       class="el-link uk-icon-button"
                       href="https://business.facebook.com/latest/home?nav_ref=bm_home_redirect&mio=0&asset_id=109389548256610"
                       rel="noreferrer"
@@ -37,6 +43,7 @@
                   </div>
                   <div>
                        <a
+                      target="_blank"
                       class="el-link uk-icon-button"
                       href="https://www.instagram.com/osmiler.health/"
                       rel="noreferrer"
@@ -44,6 +51,7 @@
                   </div>
                   <div>
                     <a
+                      target="_blank"
                       class="el-link uk-icon-button"
                       href="https://www.youtube.com/channel/UCG8tuzvMGSQOlmw3q9E3g7Q/featured"
                       rel="noreferrer"
@@ -102,7 +110,15 @@
                     >
                   </div>
                 </li>
-
+             <li class="el-item">
+                  <div class="el-content uk-panel">
+                    <a
+                      href="/Exchanges"
+                      class="el-link uk-link-text uk-margin-remove-last-child"
+                    >Exchanges Policy</a
+                    >
+                  </div>
+                </li>
                 <li class="el-item">
                   <div class="el-content uk-panel">
                     <a
@@ -118,7 +134,7 @@
                     <a
                       href="/ShippingReturnPolicy"
                       class="el-link uk-link-text uk-margin-remove-last-child"
-                    >Return Policy</a
+                    >return & refund policy</a
                     >
                   </div>
                 </li>
@@ -220,7 +236,7 @@
                     </a>
                   </div>
                      <div class="uk-first-column">
-                    <a class="el-link uk-icon" rel="noreferrer">
+                    <a target="" class="el-link uk-icon" rel="noreferrer">
                       <img
                         src="/homepage/logo_dinersclub.png"
                         alt=""
@@ -238,7 +254,7 @@
                     </a>
                   </div>
 
-                  <!-- <div class="uk-first-column">
+     <div class="uk-first-column">
                     <a class="el-link uk-icon" rel="noreferrer">
                       <img
                         src="/homepage/logo_dinersclub.svg"
@@ -246,9 +262,9 @@
                         class="uk-icon1"
                       />
                     </a>
-                  </div> -->
+                  </div>
 
-                  <!-- <div class="uk-first-column">
+        <div class="uk-first-column">
                     <a class="el-link uk-icon" rel="noreferrer">
                       <img
                         src="/homepage/logo_discover.svg"
@@ -267,7 +283,7 @@
                         class="uk-icon1"
                       />
                     </a>
-                  </div> -->
+                  </div>
                 </div>
               </div>
             </div>
