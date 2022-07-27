@@ -76,7 +76,6 @@
             :regular="$n(productGetters.getPrice(product).regular, 'currency')>$n(productGetters.getPrice(product).special, 'currency')?$n(productGetters.getPrice(product).regular, 'currency'):null"
             :special="$n(productGetters.getPrice(product).regular, 'currency')<$n(productGetters.getPrice(product).special, 'currency')?null:$n(productGetters.getPrice(product).special, 'currency')"
           />
-          <!-- Reviews Here -->
         </div>
         <div class="product__details">
           <div
@@ -191,8 +190,7 @@
                     customQuery: [
                       { key: 'CustomAttrKey', value: 'CustomAttrValue' },
                     ],
-                  }),
-                  gotocheckout()
+                  })
                 "
               >
                 {{ $t('Add to Cart') }}
@@ -200,7 +198,7 @@
               <SfButton
                 v-if="totalItems"
                 class="sf-button--full-width sf-proceed_to_checkout SfButtontwo"
-                @click="toggleCartSidebar,gotocheckout()"
+                @click="toggleCartSidebar(),gotocheckout()"
               >
                 {{ $t('Go to checkout') }}
               </SfButton>
@@ -215,8 +213,7 @@
                     customQuery: [
                       { key: 'CustomAttrKey', value: 'CustomAttrValue' },
                     ],
-                  }),
-                  gotocheckout()
+                  })
                 "
               >
                 {{ $t('Go to checkout') }}
@@ -270,7 +267,6 @@
         </LazyHydrate>
       </div>
     </div>
-    <!-- <GridList /> -->
     <div
       v-show="
         ispath ===
@@ -758,10 +754,6 @@ export default {
         related: true
       })
     })
-  const gotocheckout = ()=>{
-      window.uetq = window.uetq || []
-      window.uetq.push('event', 'checkout', {})
-    }
 
     const updateFilter = (colorname, filter) => {
       setisProductCartButtonColor(colorname)
@@ -805,7 +797,6 @@ export default {
       relatedLoading,
       options,
       stock,
-      gotocheckout,
       productTitle,
       breadcrumbs,
       totals,
@@ -881,12 +872,22 @@ export default {
   methods: {
     // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
     // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
-    async addingTo(){
-      await console.log(this.$gtag,888)
-    },
+     gotocheckout(){
+     window.uetq = window.uetq || []
+     window.uetq.push('event', 'checkout', {})
+        this.$gtag('event','begin_checkout',{
+        item_id: this.product.id,
+        item_name: this.product.name
+      })
+      console.log(this,888)
+     },
     async addingToCart(Productdata) {
       window.uetq = window.uetq || []
       window.uetq.push('event', 'add-to-cart', {})
+      this.$gtag('event','add_to_cart',{
+        item_id: Productdata.product.id,
+        item_name: Productdata.product.name
+      })
       await this.addItem(Productdata).then((res) => {
         this.sendNotification({
           key: 'product_added',
@@ -901,6 +902,10 @@ export default {
     async addingToCarts(Productdata) {
       window.uetq = window.uetq || []
       window.uetq.push('event', 'add-to-cart', {})
+      this.$gtag('event','add_to_cart',{
+        item_id: productObj.product.id,
+        item_name: productObj.product.name
+      })
       await this.addItem(Productdata).then((res) => {
         this.sendNotification({
           key: 'product_added',

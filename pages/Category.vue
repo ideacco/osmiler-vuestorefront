@@ -371,6 +371,7 @@ import {
 import { useUiHelpers, useUiState, useUiNotification } from '~/composables'
 import { onSSR } from '@vue-storefront/core'
 
+
 export default {
   name: 'CateGory',
   components: {
@@ -474,7 +475,10 @@ export default {
     handleAddToCart(productObj) {
       window.uetq = window.uetq || [];
       window.uetq.push('event', 'add-to-cart', {});
-      // console.log(productObj,888,productObj.product.id)
+      this.$gtag('event',"add_to_cart",{
+        item_id:productObj.product.id,
+        item_name:productObj.product.name
+      })
       this.addItemToCart(productObj).then(() => {
         this.sendNotification({
           key: 'added_to_cart',

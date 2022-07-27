@@ -157,7 +157,7 @@
 
                   <li>
                     <a
-                      @click="toggleCartSidebar"
+                      @click="toggleCartSidebar(),gobuy()"
                       class="uk-icon-link"
                       uk-icon="cart"
                     >
@@ -335,6 +335,12 @@ export default {
   },
 
   methods: {
+    gobuy(){
+      this.$gtag('event','view_cart',{
+        currency: 'USD',
+        value: 7.77
+      })
+    },
     navJump(category, key) {
       this.$router.push({ path: category.path})
       // console.log('navJump', category.name)

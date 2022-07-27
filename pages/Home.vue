@@ -87,7 +87,6 @@ export default {
     })
     const Home = () => {
       toggleNavbarTransparent()
-      console.log('子页面test,isNavbarTransparent', isNavbarTransparent)
     }
     // console.log(Home, 444)
     onUnmounted(() => {
