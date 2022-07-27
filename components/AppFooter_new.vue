@@ -110,6 +110,15 @@ Futian DistrictE Shenzhen China</span></span>
                     >
                   </div>
                 </li>
+                 <li class="el-item">
+                  <div class="el-content uk-panel">
+                    <a
+                      href="/PaymentMethods"
+                      class="el-link uk-link-text uk-margin-remove-last-child"
+                    >PaymentMethods</a
+                    >
+                  </div>
+                </li>
              <li class="el-item">
                   <div class="el-content uk-panel">
                     <a
