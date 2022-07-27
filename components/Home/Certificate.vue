@@ -26,7 +26,8 @@
                   class="el-item uk-card uk-card-default uk-card-small uk-card-body uk-margin-remove-first-child"
                   uk-scrollspy="target: [uk-scrollspy-class];"
                 >
-                  <img
+              <a href="">
+                    <img
                     src="/wp-content/uploads/2022/05/ic_rohs.svg"
                     width="120"
                     class="el-image"
@@ -36,6 +37,7 @@
                   <div class="el-content uk-panel uk-margin-small-top">
                     <p><span>Restriction of Hazardous Substances</span></p>
                   </div>
+              </a>
                 </div>
               </div>
               <div>

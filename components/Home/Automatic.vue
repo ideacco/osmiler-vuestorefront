@@ -52,9 +52,6 @@
                 <img
                   src="/wp-content/themes/yootheme/cache/32078-11.jpg"
                   class="el-image"
-                  sizes="(min-width: 1510px) 1510px"
-                  data-width="1510"
-                  data-height="1759"
                   alt
                 />
               </div>
