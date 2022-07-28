@@ -110,6 +110,7 @@
               class="products__product-card"
               @click:add-to-cart="
                 handleAddToCart({ product, quantity: 1, currentCart })
+                ,toggleCartSidebar()
               "
             >
             <template #image="imageSlotProps">
@@ -175,7 +176,7 @@
                 )
               "
               @click:add-to-cart="
-                handleAddToCart({ product, quantity: 1, currentCart })
+                handleAddToCart({ product, quantity: 1, currentCart }),toggleCartSidebar()
               "
             ><template #image="imageSlotProps">
                   <SfLink
@@ -218,14 +219,18 @@
               </template>
               <template #add-to-cart>
                 <SfAddToCart
-                  v-model="productsQuantity[product.id]"
+                  v-model="qty"
                   :disabled="!productGetters.getStockStatus(product)"
                   class="sf-product-card-horizontal__add-to-cart desktop-only"
                   @click="
-                    addItemToCart({
-                      product,
-                      quantity:1
-                    })
+                    addingToCart({
+                    product,
+                    quantity: parseInt(qty),
+                    customQuery: [
+                      { key: 'CustomAttrKey', value: 'CustomAttrValue' }
+                    ]
+                  }),
+                    toggleCartSidebar()
                   "
                 />
               </template>
@@ -397,6 +402,7 @@ export default {
   setup(_, context) {
     const th = useUiHelpers()
     const uiState = useUiState()
+    const { isCartSidebarOpen, toggleCartSidebar } = useUiState()
     const { addItem: addItemToCart, isInCart, cart: currentCart } = useCart()
     const { send: sendNotification } = useUiNotification()
     const { result, search, loading } = useFacet()
@@ -405,6 +411,8 @@ export default {
     const facets = computed(() =>
       facetGetters.getGrouped(result.value, ['color', 'size'])
     )
+    const { addItem} = useCart()
+    const qty = ref(1)
     const pagination = computed(() => facetGetters.getPagination(result.value))
     const getProductCoverImage = (product, size = 'normal') => {
     let imgResolution = '6000x6000'
@@ -439,16 +447,19 @@ export default {
       productsQuantity,
       th,
       products,
+      toggleCartSidebar,
       loading,
       productGetters,
       pagination,
       getProductCoverImage,
       sortBy,
+      qty,
       facets,
       currentCart,
       sendNotification,
       addItemToCart,
       isInCart,
+      addItem,
       isFacetColor,
       toggleCategoryGridView
     }
@@ -469,7 +480,18 @@ export default {
     }
   },
   methods: {
-
+    async addingToCart(Productdata) {
+      await this.addItem(Productdata).then(() => {
+        this.sendNotification({
+          key: 'product_added',
+          message: `${Productdata.product.name} has been successfully added to your cart.`,
+          type: 'success',
+          title: 'Product added!',
+          icon: 'check'
+        })
+        this.qty = 1
+      })
+    },
     // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
     /* eslint-disable */
     handleAddToCart(productObj) {

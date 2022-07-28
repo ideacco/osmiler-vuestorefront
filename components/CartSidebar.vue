@@ -280,7 +280,6 @@ export default {
         }]`
         : 'Discount'
     )
-
     const handleApplyCoupon = async (couponCode) => {
       if (couponCode && couponCode !== '') {
         await applyCoupon({ couponCode }).then(() => {
