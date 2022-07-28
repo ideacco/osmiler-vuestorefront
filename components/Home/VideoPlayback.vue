@@ -12,6 +12,7 @@
       "
       tm-header-transparent="light"
       uk-height-viewport="offset-top: true;"
+
       :style="{ marginTop: innerWidth > 940 ? '-100px' : '0px' }"
       style="height: 960px"
       @mouseenter="play_v1()"
@@ -29,6 +30,7 @@
 <video
       src="https://d3kyzzp5arlnnu.cloudfront.net/videos/Osmiler_video2.mp4?v=1658745087"
          loop
+         muted
         autoplay
         playsinline
         uk-cover

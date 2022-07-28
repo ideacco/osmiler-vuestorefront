@@ -5,7 +5,7 @@
       :visible="isCartSidebarOpen"
       title="My Cart"
       class="sf-sidebar--right"
-      @close="toggleCartSidebar"
+      @close="toggleCartSidebar()"
     >
       <template #content-top>
         <SfProperty
@@ -174,7 +174,7 @@
           <div v-else>
             <SfButton
               class="sf-button--full-width color-primary"
-              @click="toggleCartSidebar,goback()"
+              @click="toggleCartSidebar(),goback()"
             >{{ $t('Go back shopping') }}</SfButton
             >
           </div>

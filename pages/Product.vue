@@ -213,7 +213,7 @@
                     customQuery: [
                       { key: 'CustomAttrKey', value: 'CustomAttrValue' },
                     ],
-                  })
+                  }),toggleCartSidebar()
                 "
               >
                 {{ $t('Go to checkout') }}
