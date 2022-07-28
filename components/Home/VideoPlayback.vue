@@ -15,8 +15,6 @@
 
       :style="{ marginTop: innerWidth > 940 ? '-100px' : '0px' }"
       style="height: 960px"
-      @mouseenter="play_v1()"
-      @mouseleave="stop_v1()"
     >
       <!-- <video
         src="/homepage/Osmiler_video.mp4"
@@ -230,15 +228,14 @@ export default {
   },
 
   methods: {
-    buyNow() {
-      this.$router.push(
-        '/p/Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0Lzc3MTcwNTM0MzIwNjY=/osmiler-swing'
-      )
-    },
       play_v1(){
       const rotateEnlarge = document.getElementById('homeVideo')
         rotateEnlarge.play()
         rotateEnlarge.muted = false
+    },
+    buyNow(){
+      window.open('https://osmiler.myshopify.com/63788810498/checkouts/75e53fded8f9c955c439653f5787732e?no_cookies_from_redirect=1','_blank')
+
     },
     stop_v1(){
         const rotateEnlarge = document.getElementById('homeVideo')

@@ -879,7 +879,6 @@ export default {
         item_id: this.product.id,
         item_name: this.product.name
       })
-      console.log(this,888)
      },
     addingToCart(Productdata) {
       this.addItem(Productdata).then((res) => {

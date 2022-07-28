@@ -73,7 +73,6 @@
               class="empty-cart__image"
               src="/icons/empty-cart.jpg"
               :width="256"
-              :height="153"
             />
             <SfHeading
               title="Your cart is empty"
@@ -197,10 +196,11 @@ import {
   SfIcon
 } from '@storefront-ui/vue'
 import SfImage from './Strontui/Sfimage.vue'
-import { computed, ref, useRoute } from '@nuxtjs/composition-api'
+import { computed, onMounted, ref, useRoute } from '@nuxtjs/composition-api'
 import { useCart, useUser, cartGetters } from '@vue-storefront/shopify'
 import { useUiState, useUiNotification } from '~/composables'
 import debounce from 'lodash.debounce'
+
 
 export default {
   name: 'CartSidebar',
@@ -235,6 +235,7 @@ export default {
     const couponcode = ''
     const products = computed(() => cartGetters.getItems(cart.value))
     const totals = computed(() => cartGetters.getTotals(cart.value))
+
     const lineItemsSubtotalPrice = computed(() =>
       cartGetters.getSubTotal(cart.value)
     )
@@ -297,6 +298,9 @@ export default {
       window.uetq.push('event', 'checkout', {})
 
     }
+    onMounted(()=>{
+      console.log(totalItems,888875)
+    })
     const handleRemoveCoupon = async (couponCode) => {
       await removeCoupon({ couponCode }).then(() => {
         errorMsg.value = 'Coupon removed'
