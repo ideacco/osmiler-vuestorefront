@@ -82,21 +82,27 @@ const config = {
       },
     ],
     script: [{
+        vmid: 'ga4-script',
         hid: 'ga4-script',
         innerHTML: `window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
         gtag('config','G-934Z930PQ3');`,
         type: 'text/javascript',
-        charset: 'utf-8'
+        charset: 'utf-8',
+        __dangerouslyDisableSanitizersByTagID: {
+
+        }
       },
       {
+        vmid: 'bing-script',
         hid: 'bing-script',
         innerHTML: `(function(w,d,t,r,u){var f,n,i;w[u]=w[u]||[],f=function(){var o={ti:"27028530"};o.q=w[u],w[u]=new UET(o),w[u].push("pageLoad")},n=d.createElement(t),n.src=r,n.async=1,n.onload=n.onreadystatechange=function(){var s=this.readyState;s&&s!=="loaded"&&s!=="complete"||(f(),n.onload=n.onreadystatechange=null)},i=d.getElementsByTagName(t)[0],i.parentNode.insertBefore(n,i)})(window,document,"script","//bat.bing.com/bat.js","uetq");`,
         type: 'text/javascript',
         charset: 'utf-8'
       },
       {
+        vmid: 'Pixel-Code',
         hid: 'Pixel-Code',
         innerHTML: `!function(f,b,e,v,n,t,s)
         {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
@@ -110,8 +116,31 @@ const config = {
         fbq('track', 'PageView');`,
         type: 'text/javascript',
         charset: 'utf-8'
-      }
+      },
+      {
+        vmid: 'Pixel-Code1',
+        hid: 'Pixel-Code1',
+        innerHTML: `!function(f,b,e,v,n,t,s)
+        {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+        n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+        if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+        n.queue=[];t=b.createElement(e);t.async=!0;
+        t.src=v;s=b.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t,s)}(window, document,'script',
+        'https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', '769420814057414');
+        fbq('track', 'PageView');`,
+        type: 'text/javascript',
+        charset: 'utf-8'
+      },
+
     ],
+    __dangerouslyDisableSanitizersByTagID: {
+      'ga4-script': ['innerHTML'],
+      'bing-script':['innerHTML'],
+      'Pixel-Code':['innerHTML'],
+      'Pixel-Code1':['innerHTML'],
+    },
     // metaInfo: {
     //   noscript: [
     //     {  hid: 'pixel-scrpit',
@@ -152,7 +181,6 @@ const config = {
     // to core
     './modules/cms/build',
     '@aceforth/nuxt-optimized-images',
-    'nuxt-facebook-pixel-module',
     '@nuxtjs/composition-api/module',
     '@nuxtjs/pwa',
     '@nuxtjs/device',
@@ -227,7 +255,6 @@ const config = {
     '@nuxtjs/i18n',
     '@nuxtjs/gtm',
     'nuxt-precompress',
-    'nuxt-facebook-pixel-module',
     '@nuxtjs/google-gtag',
     'cookie-universal-nuxt',
     'vue-scrollto/nuxt',
@@ -288,14 +315,6 @@ const config = {
     enabled: true,
     scriptDefer: true,
     pageTracking: true,
-  },
-  facebook: {
-    /* module options */
-    track: 'PageView',
-    pixelId: '769420814057414',
-    autoPageView: true,
-    disabled: false,
-    manualModef:false
   },
   publicRuntimeConfig: {
     gtm: {
