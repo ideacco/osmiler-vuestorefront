@@ -881,14 +881,14 @@ export default {
       })
       console.log(this,888)
      },
-    async addingToCart(Productdata) {
+    addingToCart(Productdata) {
       window.uetq = window.uetq || []
       window.uetq.push('event', 'add-to-cart', {})
       this.$gtag('event','add_to_cart',{
         item_id: Productdata.product.id,
         item_name: Productdata.product.name
       })
-      await this.addItem(Productdata).then((res) => {
+      this.addItem(Productdata).then((res) => {
         this.sendNotification({
           key: 'product_added',
           message: `${Productdata.product.name} has been successfully added to your cart.`,
@@ -899,14 +899,14 @@ export default {
         this.qty = 1
       })
     },
-    async addingToCarts(Productdata) {
+     addingToCarts(Productdata) {
       window.uetq = window.uetq || []
       window.uetq.push('event', 'add-to-cart', {})
       this.$gtag('event','add_to_cart',{
-        item_id: productObj.product.id,
-        item_name: productObj.product.name
+        item_id: Productdata.product.id,
+        item_name: Productdata.product.name
       })
-      await this.addItem(Productdata).then((res) => {
+     this.addItem(Productdata).then((res) => {
         this.sendNotification({
           key: 'product_added',
           message: `${Productdata.product.name} has been successfully added to your cart.`,

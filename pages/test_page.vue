@@ -240,6 +240,12 @@
       <br/>
       产品 detailsPage:
       {{detailsPage? detailsPage:'no detailsPage'}}
+
+      <br/>
+      产品 元数据:
+      {{metaData? metaData:'no detailsPage'}}
+
+
       </div>
 
     </LazyHydrate>
@@ -320,6 +326,10 @@ export default {
 
     // 实例化获取产品详情图的方法
     const {search: isDetails, details} = useDetails('pard')
+
+    // 实例化获取产品详情图的方法
+    const {search: isMeta, meta} = useMeta('meta')
+    console.log(useMeta,777)
 
     // 全局通知方法
     const { send: sendNotification } = useUiNotification()
@@ -443,7 +453,15 @@ export default {
 
     // 使用获取详情页的钩子方法获取详情页数据:传入slug句柄则返回单页面,如果不传参则返回页面列表
     isDetails({ slug })
-    // isDetails({})
+
+
+    // 获取元数据钩子
+    isMeta({slug})
+
+    // 获取产品 元数据
+    const metaData = computed(() => meta.value)
+    console.log(metaData,8888,meta.value)
+
     // 获取页面详情数据
     const detailsPage = computed(()=> details.value)
 
@@ -511,7 +529,8 @@ export default {
       setBreadcrumb,
       atttLbl,
       detailsPage,
-      detailsHTML
+      detailsHTML,
+      metaData
     }
   },
   // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
