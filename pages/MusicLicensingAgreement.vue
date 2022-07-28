@@ -129,7 +129,7 @@
                       <tr class="el-item">
                         <td>
                           <div class="el-title" style="color: #3a3543">
-                            <a href="/wp-content/themes/yootheme/cache/daylight.jpeg" download>Daylight</a>
+                            <a href="/wp-content/themes/yootheme/cache/daylight.jpg" download>Daylight</a>
                           </div>
                         </td>
                         <td class="uk-text-right">
@@ -137,7 +137,7 @@
                             class="el-content uk-panel"
                             style="color: #3a3543"
                           >
-                          <a href="/wp-content/themes/yootheme/cache/daylight.jpeg" download>610003047253</a>
+                          <a href="/wp-content/themes/yootheme/cache/daylight.jpg" download>ISRC-34790-5958-6820</a>
                           </div>
                         </td>
                       </tr>
@@ -152,7 +152,7 @@
                             class="el-content uk-panel"
                             style="color: #3a3543"
                           >
-                                <a href="/wp-content/themes/yootheme/cache/feelingmyself.jpg" download> 610003047262 </a>
+                                <a href="/wp-content/themes/yootheme/cache/feelingmyself.jpg" download>  ISRC-34790-5935-6817</a>
                           </div>
                         </td>
                       </tr>
@@ -167,7 +167,7 @@
                             class="el-content uk-panel"
                             style="color: #3a3543"
                           >
-                         <a href="/wp-content/themes/yootheme/cache/boulevard.jpg" download>   610003047303  </a>
+                         <a href="/wp-content/themes/yootheme/cache/boulevard.jpg" download>   ISRC-34790-5924-6814 </a>
                           </div>
                         </td>
                       </tr>
@@ -183,7 +183,23 @@
                             class="el-content uk-panel"
                             style="color: #3a3543"
                           >
-                            <a href="/wp-content/themes/yootheme/cache/lastdrunk.jpg" download>610003047259</a>
+                            <a href="/wp-content/themes/yootheme/cache/lastdrunk.jpg" download>ISRC-34790-5933-6818</a>
+                          </div>
+                        </td>
+                      </tr>
+                                       <tr class="el-item">
+                        <td>
+                          <div class="el-title" style="color: #3a3543">
+                           <a href="/wp-content/themes/yootheme/cache/DramaClub.jpg" download>    Drama Club  </a>
+
+                          </div>
+                        </td>
+                        <td class="uk-text-right">
+                          <div
+                            class="el-content uk-panel"
+                            style="color: #3a3543"
+                          >
+                            <a href="/wp-content/themes/yootheme/cache/DramaClub.jpg" download>ISRC-34790-5934-6815</a>
                           </div>
                         </td>
                       </tr>
@@ -197,9 +213,9 @@
             <!-- <h3>Shipping to P.O. boxes</h3>
             <p>Not currently supported </p> -->
           </div>
-
         </div>
       </div>
+    </div>
   </div>
 </template>
 <script >
