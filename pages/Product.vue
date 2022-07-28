@@ -882,12 +882,6 @@ export default {
       console.log(this,888)
      },
     addingToCart(Productdata) {
-      window.uetq = window.uetq || []
-      window.uetq.push('event', 'add-to-cart', {})
-      this.$gtag('event','add_to_cart',{
-        item_id: Productdata.product.id,
-        item_name: Productdata.product.name
-      })
       this.addItem(Productdata).then((res) => {
         this.sendNotification({
           key: 'product_added',
@@ -897,6 +891,12 @@ export default {
           icon: 'check'
         })
         this.qty = 1
+      })
+    window.uetq = window.uetq || []
+      window.uetq.push('event', 'add-to-cart', {})
+      this.$gtag('event','add_to_cart',{
+        item_id: Productdata.product.id,
+        item_name: Productdata.product.name
       })
     },
      addingToCarts(Productdata) {
