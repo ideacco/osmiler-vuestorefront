@@ -53,7 +53,8 @@
                       @input="
                         updateQuantity({ product, quantity: Number($event) })
                       "
-                    />
+                      :removeItem="removeItem({ product })"
+                     />
                   </div>
                 </template>
                 <template #actions>
@@ -192,10 +193,10 @@ import {
   SfCollectedProduct,
   SfLink,
   SfInput,
-  SfQuantitySelector,
   SfIcon
 } from '@storefront-ui/vue'
 import SfImage from './Strontui/Sfimage.vue'
+import SfQuantitySelector from './Strontui/SfQuantitySelector.vue'
 import { computed, onMounted, ref, useRoute } from '@nuxtjs/composition-api'
 import { useCart, useUser, cartGetters } from '@vue-storefront/shopify'
 import { useUiState, useUiNotification } from '~/composables'
