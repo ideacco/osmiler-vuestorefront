@@ -203,6 +203,104 @@
                           </div>
                         </td>
                       </tr>
+                    <!-- 后增六首歌以及版权号 -->
+                                          <tr class="el-item">
+                        <td>
+                          <div class="el-title" style="color: #3a3543">
+                           <a href="/wp-content/themes/yootheme/cache/PumpItUp.png" download> Pump It Up  </a>
+
+                          </div>
+                        </td>
+                        <td class="uk-text-right">
+                          <div
+                            class="el-content uk-panel"
+                            style="color: #3a3543"
+                          >
+                            <a href="/wp-content/themes/yootheme/cache/PumpItUp.png" download>ISRC-34790-6022-6902</a>
+                          </div>
+                        </td>
+                      </tr>
+
+                                                   <tr class="el-item">
+                        <td>
+                          <div class="el-title" style="color: #3a3543">
+                           <a href="/wp-content/themes/yootheme/cache/LoveLetter.png" download> Love Letter </a>
+
+                          </div>
+                        </td>
+                        <td class="uk-text-right">
+                          <div
+                            class="el-content uk-panel"
+                            style="color: #3a3543"
+                          >
+                            <a href="/wp-content/themes/yootheme/cache/LoveLetter.png" download>ISRC-34790-6023-6904</a>
+                          </div>
+                        </td>
+                      </tr>
+                                     <tr class="el-item">
+                        <td>
+                          <div class="el-title" style="color: #3a3543">
+                           <a href="/wp-content/themes/yootheme/cache/TropicalFish.png" download> Tropical Fish </a>
+
+                          </div>
+                        </td>
+                        <td class="uk-text-right">
+                          <div
+                            class="el-content uk-panel"
+                            style="color: #3a3543"
+                          >
+                            <a href="/wp-content/themes/yootheme/cache/TropicalFish.png" download>ISRC-34790-6023-6907</a>
+                          </div>
+                        </td>
+                      </tr>
+                                                  <tr class="el-item">
+                        <td>
+                          <div class="el-title" style="color: #3a3543">
+                           <a href="/wp-content/themes/yootheme/cache/Openyoureyes.png" download> Open your eyes </a>
+
+                          </div>
+                        </td>
+                        <td class="uk-text-right">
+                          <div
+                            class="el-content uk-panel"
+                            style="color: #3a3543"
+                          >
+                            <a href="/wp-content/themes/yootheme/cache/Openyoureyes.png" download>ISRC-34790-6023-6905</a>
+                          </div>
+                        </td>
+                      </tr>
+                                                             <tr class="el-item">
+                        <td>
+                          <div class="el-title" style="color: #3a3543">
+                           <a href="/wp-content/themes/yootheme/cache/TimeTunnel.png" download> Time Tunnel</a>
+
+                          </div>
+                        </td>
+                        <td class="uk-text-right">
+                          <div
+                            class="el-content uk-panel"
+                            style="color: #3a3543"
+                          >
+                            <a href="/wp-content/themes/yootheme/cache/TimeTunnel.png" download>ISRC-34790-6023-6906</a>
+                          </div>
+                        </td>
+                      </tr>
+                           <tr class="el-item">
+                        <td>
+                          <div class="el-title" style="color: #3a3543">
+                           <a href="/wp-content/themes/yootheme/cache/Childhood.png" download> Child hood</a>
+
+                          </div>
+                        </td>
+                        <td class="uk-text-right">
+                          <div
+                            class="el-content uk-panel"
+                            style="color: #3a3543"
+                          >
+                            <a href="/wp-content/themes/yootheme/cache/Childhood.png" download>ISRC-34790-6023-6903</a>
+                          </div>
+                        </td>
+                      </tr>
                     </tbody>
                   </table>
                 </div>

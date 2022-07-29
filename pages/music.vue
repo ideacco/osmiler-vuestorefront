@@ -217,31 +217,79 @@ export default {
         },
         {
           id: 2,
-          music_name: 'daylight',
-          mins: '2:08',
-          speed: '90/soft',
-          music_url: '/wp-content/uploads/2022/05/daylight.mp3',
-          music_zip: '/wp-content/uploads/2022/05/daylight.zip'
+          music_name: 'LoveLetter',
+          mins: '1:20',
+          speed: '72/soft',
+          music_url: '/wp-content/uploads/2022/05/LoveLetter.mp3',
+          music_zip: '/wp-content/uploads/2022/05/LoveLetter.zip'
         },
-         {
+        {
           id: 3,
-          music_name: 'Boulevard',
-          mins: '1:26',
-          speed: '90/soft',
-          music_url: '/wp-content/uploads/2022/05/Boulevard.mp3',
-          music_zip: '/wp-content/uploads/2022/05/Boulevard.zip'
+          music_name: 'Childhood',
+          mins: '1:45',
+          speed: '73/soft',
+          music_url: '/wp-content/uploads/2022/05/Childhood.mp3',
+          music_zip: '/wp-content/uploads/2022/05/Childhood.zip'
         },
         {
           id: 4,
+          music_name: 'Time Tunnel',
+          mins: '1:42',
+          speed: '75/soft',
+          music_url: '/wp-content/uploads/2022/05/TimeTunnel.mp3',
+          music_zip: '/wp-content/uploads/2022/05/TimeTunnel.zip'
+        },
+        {
+          id: 5,
+          music_name: 'Open your eyes',
+          mins: '1:51',
+          speed: '80/soft',
+          music_url: '/wp-content/uploads/2022/05/Openyoureyes.mp3',
+          music_zip: '/wp-content/uploads/2022/05/Openyoureyes.zip'
+        },
+
+        {
+          id: 6,
           music_name: 'Drama Club',
           mins: '1:37',
           speed: '85/standard',
           music_url: '/wp-content/uploads/2022/05/DramaClub.mp3',
           music_zip: '/wp-content/uploads/2022/05/DramaClub.zip'
         },
-
         {
-          id: 5,
+          id: 7,
+          music_name: 'Boulevard',
+          mins: '1:26',
+          speed: '90/standard',
+          music_url: '/wp-content/uploads/2022/05/Boulevard.mp3',
+          music_zip: '/wp-content/uploads/2022/05/Boulevard.zip'
+        },
+              {
+          id: 8,
+          music_name: 'daylight',
+          mins: '2:08',
+          speed: '90/soft',
+          music_url: '/wp-content/uploads/2022/05/daylight.mp3',
+          music_zip: '/wp-content/uploads/2022/05/daylight.zip'
+        },
+           {
+          id: 9,
+          music_name: 'Tropical Fish',
+          mins: '1:51',
+          speed: '95/standard',
+          music_url: '/wp-content/uploads/2022/05/TropicalFish.mp3',
+          music_zip: '/wp-content/uploads/2022/05/TropicalFish.zip'
+        },
+              {
+          id: 10,
+          music_name: 'Pump It Up',
+          mins: '2:06',
+          speed: '122/strong',
+          music_url: '/wp-content/uploads/2022/05/PumpItUp.mp3',
+          music_zip: '/wp-content/uploads/2022/05/PumpItUp.zip'
+        },
+        {
+          id: 11,
           music_name: 'Feeling Myself',
           mins: '2:14',
           speed: '126/strong',
