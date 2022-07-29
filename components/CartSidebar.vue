@@ -480,6 +480,12 @@ export default {
 ::v-deep .sf-collected-product__configuration {
   display: block;
 }
+
+::v-deep .sf-property{
+  margin-top: -8px;
+  margin-bottom: 8px;
+}
+
 .coupon-form-wrapper {
   display: flex;
   margin-bottom: 40px;

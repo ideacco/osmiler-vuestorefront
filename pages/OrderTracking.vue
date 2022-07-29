@@ -1,122 +1,94 @@
 <template>
   <div>
-    <el-row class="conatactbox">
-      <el-col class="conatactbox1">Order Tracking</el-col>
-      <el-col class="conatactbox2">
-        <p>Enter your tracking number to find out the status of your order,</p>
-        <p>which you can find in your order confirmation email.</p>
-      </el-col>
-      <el-col class="conatactbox3">
-        <el-input
-          class="conatactbox4"
-          type="text"
-          style="border-radius: 22px"
-          placeholder="Enter your tracking number"
-        ></el-input>
-        <el-col class="conatactbox5">
-          <el-col class="conatactbox6">
-            <el-col class="conatactbox7">
-              <el-col class="conatactbox8">TRACK </el-col></el-col
-            >
-          </el-col>
-        </el-col>
-      </el-col>
-    </el-row>
+      <div id="YQContainer" class="uk-section-muted uk-section">
+            <div class="uk-container">
+                <div class="tm-grid-expand uk-child-width-1-1 uk-grid-margin uk-grid uk-grid-stack" uk-grid="">
+                    <div class="uk-width-1-1@m uk-first-column">
+                        <h1 class="uk-text-center">  Order Tracking</h1>
+                        <h4 class="uk-text-muted uk-text-center">
+                            <p><span style="font-weight: 400;">Enter your tracking number to find out the status of your
+                                    order, which you can find in your order confirmation email.</span></p>
+                        </h4>
+                        <div>
+                            <!--单号输入框。-->
+                            <div class="uk-grid-small uk-margin-large-bottom uk-grid" uk-grid="">
+                                <div class="uk-width-expand uk-first-column">
+                                    <input class="uk-input"
+                                           style="border-radius:20px;"
+                                           type="text"
+                                           id="tracking_code"
+                                           maxlength="50"
+                                           placeholder="Enter your tracking number">
+                                </div>
+                                <!--用于调用脚本方法的按钮。-->
+                                <div class="uk-width-auto">
+                                    <input class="uk-button uk-button-primary"
+                                            type="button"
+                                            value="TRACK"
+                                            onclick="doTrack()">
+                                </div>
+                            </div>
+                            <div id="show" style="display: none;">
+                                <div class="uk-align-center uk-card uk-card-default uk-width-2xlarge  uk-margin-bottom">
+                                    <div class="uk-card-header"
+                                        style="background-color: #cdd2d1; border-top-left-radius: 10px;border-top-right-radius: 10px;">
+                                        <div class="uk-grid-small uk-grid uk-grid-stack" uk-grid="">
+                                            <div class="uk-width-auto"
+                                                 style="margin-top:20px">
+                                                <img loading="lazy"
+                                                      width="40"
+                                                      height="40"
+                                                  >
+                                            </div>
+                                            <div id="card_tittle" class="uk-width-expand">
+                                                <!-- 插入区域 -->
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="uk-card-body">
+                                        <dl id="card_body" class="uk-description-list uk-margin-large-left">
+                                            <!-- 插入区域2 -->
+                                        </dl>
+                                    </div>
+                                    <div class="uk-card-footer">
+                                        <p>If you have any questions, please contact our customer service agent. <a
+                                                href="mailto:service@sleepon.us">service@sleepon.us</a></p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="show_err" style="display: none;">
+                                <div class="uk-align-center uk-card uk-card-default uk-width-2xlarge uk-margin-bottom">
+                                    <div class="uk-card-header"
+                                        style="background-color: #cdd2d1; border-top-left-radius: 10px;border-top-right-radius: 10px;">
+                                        <div class="uk-grid-small uk-grid uk-grid-stack" uk-grid="">
+                                            <div class="uk-width-auto" style="margin-top:20px">
+                                                <img loading="lazy"
+                                                      width="40"
+                                                      height="40"
+                                                   >
+                                            </div>
+                                            <div id="card_err_tittle" class="uk-width-expand">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="uk-card-body">
+                                        <h3>Sorry, we can’t find your order. Please check the tracking number you
+                                            entered.</h3>
+                                    </div>
+                                    <div class="uk-card-footer">
+                                        <p>If you have any questions, please contact our customer service agent. <a
+                                                href="mailto:service@sleepon.us">service@sleepon.us</a></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
   </div>
 </template>
 <script></script>
 <style lang="scss" scoped>
-.conatactbox {
-  position: relative;
-  height: 600px;
-  background: red;
-  .conatactbox1 {
-    position: absolute;
-    width: 279px;
-    height: 46px;
-    left: 581px;
-    top: 174px;
-    /* 中文-标准/二级标题/二级标题_Heavy */
-    font-family: 'Alibaba PuHuiTi';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 38px;
-    line-height: 46px;
-    /* identical to box height, or 121% */
-    text-align: center;
-    /* 浅色模式文本/Title Text */
-    color: #0c0b0e;
-  }
-  .conatactbox2 {
-    position: absolute;
-    width: 538px;
-    height: 52px;
-    left: 451px;
-    top: 251px;
-    p {
-      font-family: 'Alibaba PuHuiTi';
-      font-style: normal;
-      font-weight: 400;
-      font-size: 18px;
-      line-height: 26px;
-      /* or 144% */
-      text-align: center;
-      /* 浅色模式文本/Title Text */
-      color: #0c0b0e;
-    }
-  }
-  .conatactbox3 {
-    position: absolute;
-    width: 464px;
-    height: 44px;
-    left: 488px;
-    top: 345px;
 
-    .conatactbox4 {
-      width: 279px;
-      height: 44px;
-      border-radius: 22px;
-      vertical-align: middle;
-      ::v-deep.el-input__inner {
-        border-radius: 22px;
-      }
-    }
-    .conatactbox5 {
-      padding: 0px;
-      position: absolute;
-      width: 169px;
-      height: 44px;
-      left: 294px;
-      top: -4px;
-      text-align: center;
-      vertical-align: middle;
-      .conatactbox6 {
-        padding: 12px 28px;
-        width: 169px;
-        height: 44px;
-        /* 功能色/品牌/Brand_light */
-        background: #5d47ee;
-        border-radius: 22px;
-        /* Inside auto layout */
-        flex: none;
-        order: 0;
-        flex-grow: 1;
-      }
-      .conatactbox7 {
-        padding: 0px;
-      }
-      .conatactbox8 {
-        font-family: 'Alibaba PuHuiTi';
-        font-style: normal;
-        font-weight: 400;
-        font-size: 16px;
-        line-height: 16px;
-        /* identical to box height, or 150% */
-        /* 浅色模式文本/Anti */
-        color: #ffffff;
-        /* Inside auto layout */
-      }
-    }
-  }
-}
 </style>
