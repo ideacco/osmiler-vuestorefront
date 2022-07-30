@@ -13,7 +13,8 @@
           Number(props.qty) - 1,
           listeners,
           props.min,
-          props.max
+          props.max,
+          Product
         )"
     >
       &minus;
@@ -51,7 +52,6 @@
 
 import SfInput from '@storefront-ui/vue'
 import SfButton from '@storefront-ui/vue'
-import { useCart } from '@vue-storefront/shopify'
 export default {
   name: 'SfQuantitySelector',
     inject: {
@@ -70,11 +70,6 @@ export default {
       type: [Number, String],
       default: 1
     },
-     removeItem: {
-     type: Function,
-     default: null
-    },
-
     disabled: {
       type: Boolean,
       default: false
@@ -95,9 +90,6 @@ export default {
 //         })
 //  return remove
 // },
-mounted(){
- console.log(this.props.removeItem,55)
-},
 
 handleBlur(listeners) {
     return listeners.blur && listeners.blur()
@@ -106,17 +98,18 @@ handleBlur(listeners) {
     const key = Math.random().toString(16).slice(2)
     return 'quantitySelector' + key
   },
-  handleInput(qty, listeners, min, max) {
-    // adjust qty per min/max if needed
-    const minimum = min || 1
-    if (qty < minimum || isNaN(qty)) {
-      qty = minimum
-      this.props.removeItem = ''
-    } else if (max !== null && qty > max) {
-      qty = max
+  handleInput(qty, listeners, min, max,Product) {
+      // adjust qty per min/max if needed
+        console.log(qty,min,listeners,max,this,444,Product)
+      const minimum = min || 1
+      if (qty < minimum || isNaN(qty)) {
+        qty = 0
+        listeners.removeItem(qty)
+      } else if (max !== null && qty > max) {
+        qty = max
+      }
+      return listeners.input && listeners.input(qty)
     }
-    return listeners.input && listeners.input(qty)
-  }
 }
 </script>
 <style lang="scss">

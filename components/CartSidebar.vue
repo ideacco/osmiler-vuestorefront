@@ -53,7 +53,7 @@
                       @input="
                         updateQuantity({ product, quantity: Number($event) })
                       "
-                      :removeItem="removeItem({ product })"
+                      @removeItem="removeItem({ product })"
                      />
                   </div>
                 </template>
