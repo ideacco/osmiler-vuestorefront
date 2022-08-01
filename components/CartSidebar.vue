@@ -298,9 +298,6 @@ export default {
       window.uetq.push('event', 'checkout', {})
 
     }
-    onMounted(()=>{
-      console.log(totalItems,888875)
-    })
     const handleRemoveCoupon = async (couponCode) => {
       await removeCoupon({ couponCode }).then(() => {
         errorMsg.value = 'Coupon removed'
