@@ -15,7 +15,7 @@
     <LazyHydrate when-visible>
       <Notification />
     </LazyHydrate>
-
+    <Headers />
     <!-- <AssHeader /> -->
     <AppHeader
       :cart-total-items="getCartTotalItems"
@@ -35,6 +35,7 @@
 import AppHeader from '~/components/UikitHeader.vue'
 // import AppHeader from '~/components/AppHeader_new.vue'
 import LazyHydrate from 'vue-lazy-hydration'
+import Headers from '~/components/Home/Headers.vue'
 import {
   useUser,
   cartGetters,
@@ -54,6 +55,7 @@ export default {
   name: 'DefaultLayout',
   components: {
     LazyHydrate,
+    Headers,
     // AssHeader,
     AppHeader,
     BottomNavigation: () =>

@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div >
     <div class="tm-header-mobile uk-hidden@m">
       <!-- <div class="uk-navbar-container uk-navbar-transparent"> -->
       <div class="uk-navbar-container">
@@ -106,9 +106,9 @@
       ref="header"
       id="pc-header"
       uk-header
-      style="z-index: 22"
+      style="z-index: 22;"
     >
-      <div>
+      <div >
         <nav class="uk-navbar-container" :class="classObject" id="pc-navbar">
           <div class="uk-container uk-container-expand">
             <div uk-navbar>
@@ -350,4 +350,8 @@ export default {
 }
 </script>
 
-<style lang="scoped"></style>
+<style lang="scss" scoped>
+.uk-position-top{
+  top: 30px !important;
+}
+</style>

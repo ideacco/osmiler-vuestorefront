@@ -355,7 +355,6 @@ export default {
 
     // 获取产品 id
     const id = computed(() => productGetters.getId(product.value))
-
     const originalId = computed(() =>
       productGetters.getProductOriginalId(product.value)
     )
