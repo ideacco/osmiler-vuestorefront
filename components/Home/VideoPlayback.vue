@@ -170,7 +170,7 @@
                   uk-scroll
                   @click="buyNow()"
                 >
-                  Buy now
+                  SHOP NOW
                 </a>
               </div>
             </div>
@@ -224,7 +224,9 @@ export default {
     }
   },
   data() {
-    return {}
+    return {
+      musicmp3: false
+    }
   },
 
   methods: {
