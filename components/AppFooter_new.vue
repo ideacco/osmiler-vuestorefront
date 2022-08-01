@@ -3,9 +3,9 @@
     <div class="uk-visible@m">
       <div class="uk-section-default uk-section">
         <div class="uk-container uk-container-large">
-               <div class="uk-first-column">
-              <hr class="uk-margin uk-margin-remove-top" />
-            </div>
+          <div class="uk-first-column">
+            <hr class="uk-margin uk-margin-remove-top" />
+          </div>
           <div class="tm-grid-expand uk-grid-margin uk-grid" uk-grid="">
             <div class="uk-width-1-2@s uk-width-1-5@m uk-first-column">
               <div class="uk-margin uk-text-left@s uk-text-center">
@@ -22,12 +22,32 @@
 
               <div class="uk-margin-medium uk-margin-remove-top">
                 let your smile light up the world
-                <p style="font-size:15px;margin:10px 0;"><span uk-icon="mail" style="margin-top:10px;margin-right:5px;width: 18px;"></span> service@osmiler.com</p>
-                <p style="font-size:15px;margin:10px 0;"><span uk-icon="receiver" style="margin-top:10px;margin-right:5px;width: 18px;"></span>+ 86 – 755 – 25827634</p>
-                <span style="font-size:15px;margin:10px 0;"><span uk-icon="location" style="margin-right:5px;width: 18px;"></span><span>Room 1607E Education Techonology Building
-No. 26 Zizhu Seven Road Xiangmihu Street
-Futian DistrictE Shenzhen China</span></span>
-             </div>
+                <p style="font-size: 15px; margin: 10px 0">
+                  <span
+                    uk-icon="mail"
+                    style="margin-top: 10px; margin-right: 5px; width: 18px"
+                  ></span>
+                  service@osmiler.com
+                </p>
+                <p style="font-size: 15px; margin: 10px 0">
+                  <span
+                    uk-icon="receiver"
+                    style="margin-top: 10px; margin-right: 5px; width: 18px"
+                  ></span
+                  >+ 86 – 755 – 25827634
+                </p>
+                <span style="font-size: 15px; margin: 10px 0"
+                ><span
+                  uk-icon="location"
+                  style="margin-right: 5px; width: 18px"
+                ></span
+                ><span
+                >Room 1607E Education Techonology Building No. 26 Zizhu
+                  Seven Road Xiangmihu Street Futian DistrictE Shenzhen
+                  China</span
+                ></span
+                >
+              </div>
               <div class="uk-margin-remove-vertical">
                 <div
                   class="uk-child-width-auto uk-grid-small uk-flex-inline uk-grid"
@@ -39,15 +59,23 @@ Futian DistrictE Shenzhen China</span></span>
                       class="el-link uk-icon-button"
                       href="https://business.facebook.com/latest/home?nav_ref=bm_home_redirect&mio=0&asset_id=109389548256610"
                       rel="noreferrer"
-                    ><img src="/homepage/ic_facebook.svg" style="width:24px;height:24px"  class="uk-icon"  /></a>
+                    ><img
+                      src="/homepage/ic_facebook.svg"
+                      style="width: 24px; height: 24px"
+                      class="uk-icon"
+                    /></a>
                   </div>
                   <div>
-                       <a
+                    <a
                       target="_blank"
                       class="el-link uk-icon-button"
                       href="https://www.instagram.com/osmiler.health/"
                       rel="noreferrer"
-                    ><img src="/homepage/ic_instagram.svg"  style="width:24px;height:24px"  class="uk-icon"  /></a>
+                    ><img
+                      src="/homepage/ic_instagram.svg"
+                      style="width: 24px; height: 24px"
+                      class="uk-icon"
+                    /></a>
                   </div>
                   <div>
                     <a
@@ -55,7 +83,11 @@ Futian DistrictE Shenzhen China</span></span>
                       class="el-link uk-icon-button"
                       href="https://www.youtube.com/channel/UCG8tuzvMGSQOlmw3q9E3g7Q/featured"
                       rel="noreferrer"
-                    ><img src="/homepage/ic_youtube.svg"  style="width:24px;height:24px"  class="uk-icon"  /></a>
+                    ><img
+                      src="/homepage/ic_youtube.svg"
+                      style="width: 24px; height: 24px"
+                      class="uk-icon"
+                    /></a>
                   </div>
                 </div>
               </div>
@@ -110,7 +142,7 @@ Futian DistrictE Shenzhen China</span></span>
                     >
                   </div>
                 </li>
-                 <li class="el-item">
+                <li class="el-item">
                   <div class="el-content uk-panel">
                     <a
                       href="/PaymentMethods"
@@ -119,7 +151,7 @@ Futian DistrictE Shenzhen China</span></span>
                     >
                   </div>
                 </li>
-             <li class="el-item">
+                <li class="el-item">
                   <div class="el-content uk-panel">
                     <a
                       href="/Exchanges"
@@ -128,7 +160,7 @@ Futian DistrictE Shenzhen China</span></span>
                     >
                   </div>
                 </li>
-                     <!-- <li class="el-item">
+                <li class="el-item">
                   <div class="el-content uk-panel">
                     <a
                       href="/OrderTracking"
@@ -136,7 +168,7 @@ Futian DistrictE Shenzhen China</span></span>
                     >Order Tracking</a
                     >
                   </div>
-                </li> -->
+                </li>
                 <li class="el-item">
                   <div class="el-content uk-panel">
                     <a
@@ -156,13 +188,13 @@ Futian DistrictE Shenzhen China</span></span>
                     >
                   </div>
                 </li>
-                    <li class="el-item">
+                <li class="el-item">
                   <div class="el-content uk-panel">
                     <a
                       href="/ShippingPolicy"
                       class="el-link uk-link-text uk-margin-remove-last-child"
-                    >Shipping Policy </a
-                    >
+                    >Shipping Policy
+                    </a>
                   </div>
                 </li>
               </ul>
@@ -235,7 +267,7 @@ Futian DistrictE Shenzhen China</span></span>
                   class="uk-child-width-auto uk-grid-small uk-flex-inline uk-grid"
                   uk-grid=""
                 >
-                 <div class="uk-first-column">
+                  <div class="uk-first-column">
                     <a class="el-link uk-icon" rel="noreferrer">
                       <img
                         src="/homepage/logo_visa.svg"
@@ -244,7 +276,7 @@ Futian DistrictE Shenzhen China</span></span>
                       />
                     </a>
                   </div>
-                   <div class="uk-first-column">
+                  <div class="uk-first-column">
                     <a class="el-link uk-icon" rel="noreferrer">
                       <img
                         src="/homepage/logo_mastercard.svg"
@@ -253,7 +285,7 @@ Futian DistrictE Shenzhen China</span></span>
                       />
                     </a>
                   </div>
-                     <div class="uk-first-column">
+                  <div class="uk-first-column">
                     <a target="" class="el-link uk-icon" rel="noreferrer">
                       <img
                         src="/homepage/logo_dinersclub.png"
@@ -272,7 +304,7 @@ Futian DistrictE Shenzhen China</span></span>
                     </a>
                   </div>
 
-     <div class="uk-first-column">
+                  <div class="uk-first-column">
                     <a class="el-link uk-icon" rel="noreferrer">
                       <img
                         src="/homepage/logo_dinersclub.svg"
@@ -282,7 +314,7 @@ Futian DistrictE Shenzhen China</span></span>
                     </a>
                   </div>
 
-        <div class="uk-first-column">
+                  <div class="uk-first-column">
                     <a class="el-link uk-icon" rel="noreferrer">
                       <img
                         src="/homepage/logo_discover.svg"
@@ -291,7 +323,6 @@ Futian DistrictE Shenzhen China</span></span>
                       />
                     </a>
                   </div>
-
 
                   <div class="uk-first-column">
                     <a class="el-link uk-icon" rel="noreferrer">
@@ -320,8 +351,8 @@ Futian DistrictE Shenzhen China</span></span>
   height: 32px;
   cursor: default;
 }
-.uk-section{
-  padding-top:0 ;
+.uk-section {
+  padding-top: 0;
 }
 .ukwidth888 {
   width: 500px;
