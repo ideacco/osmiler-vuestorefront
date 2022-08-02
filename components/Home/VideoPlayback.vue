@@ -9,11 +9,17 @@
         uk-padding-remove-vertical
         uk-flex
         uk-flex-middle
+        uk-background-norepeat
+        uk-background-cover
+        uk-background-center-center
+        uk-section
+        uk-section-large
       "
       tm-header-transparent="light"
       uk-height-viewport="offset-top: true;"
       :style="{ marginTop: innerWidth > 940 ? '-120px' : '0px' }"
-      style="height: 960px"
+
+      style="height: 1220px;background-image: url('/wp-content/themes/yootheme/cache/Hero_2.jpg')"
     >
       <!-- <video
         src="/homepage/Osmiler_video.mp4"
@@ -23,7 +29,7 @@
         playsinline
         uk-cover
       ></video> -->
-
+<!--
       <video
         src="https://d3kyzzp5arlnnu.cloudfront.net/videos/Osmiler_video2.mp4?v=1658745087"
         loop
@@ -32,7 +38,7 @@
         playsinline
         uk-cover
         id="homeVideo"
-      ></video>
+      ></video> -->
 
       <div class="uk-width-1-1">
         <div
@@ -358,9 +364,6 @@ export default {
         })
         .slice(0, 4)
       return img
-    })
-    onMounted(() => {
-      console.log($route.path, $router.path, slug, $route?.value?.path, 888)
     })
     onSSR(async () => {
       await search({ slug, selectedOptions: configuration.value }).then(() => {

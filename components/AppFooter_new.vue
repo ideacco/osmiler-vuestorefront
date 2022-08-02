@@ -14,6 +14,7 @@
                   href="/"
                 ><img
                   src="../static/icons/osmiler-logo-default2.svg"
+                  data-src="../static/icons/osmiler-logo-default2.svg"
                   width="100"
                   class="el-image"
                   alt="Osmiler"
@@ -61,6 +62,7 @@
                       rel="noreferrer"
                     ><img
                       src="/homepage/ic_facebook.svg"
+                      data-src="/homepage/ic_facebook.svg"
                       style="width: 24px; height: 24px"
                       class="uk-icon"
                     /></a>
@@ -73,6 +75,7 @@
                       rel="noreferrer"
                     ><img
                       src="/homepage/ic_instagram.svg"
+                      data-src="/homepage/ic_instagram.svg"
                       style="width: 24px; height: 24px"
                       class="uk-icon"
                     /></a>
@@ -85,6 +88,7 @@
                       rel="noreferrer"
                     ><img
                       src="/homepage/ic_youtube.svg"
+                      data-src="/homepage/ic_youtube.svg"
                       style="width: 24px; height: 24px"
                       class="uk-icon"
                     /></a>
@@ -271,6 +275,8 @@
                     <a class="el-link uk-icon" rel="noreferrer">
                       <img
                         src="/homepage/logo_visa.svg"
+                        data-src="/homepage/logo_visa.svg"
+                        uk-img
                         alt=""
                         class="uk-icon1"
                       />
@@ -280,6 +286,8 @@
                     <a class="el-link uk-icon" rel="noreferrer">
                       <img
                         src="/homepage/logo_mastercard.svg"
+                        data-src="/homepage/logo_mastercard.svg"
+                        uk-img
                         alt=""
                         class="uk-icon1"
                       />
@@ -289,6 +297,8 @@
                     <a target="" class="el-link uk-icon" rel="noreferrer">
                       <img
                         src="/homepage/logo_dinersclub.png"
+                        data-src="/homepage/logo_dinersclub.png"
+                        uk-img
                         alt=""
                         class="uk-icon1"
                       />
@@ -298,6 +308,8 @@
                     <a class="el-link uk-icon" rel="noreferrer">
                       <img
                         src="/homepage/logo_jcb.svg"
+                        data-src="/homepage/logo_jcb.svg"
+                        uk-img
                         alt=""
                         class="uk-icon1"
                       />
@@ -308,6 +320,8 @@
                     <a class="el-link uk-icon" rel="noreferrer">
                       <img
                         src="/homepage/logo_dinersclub.svg"
+                        data-src="/homepage/logo_dinersclub.svg"
+                        uk-img
                         alt=""
                         class="uk-icon1"
                       />
@@ -318,6 +332,8 @@
                     <a class="el-link uk-icon" rel="noreferrer">
                       <img
                         src="/homepage/logo_discover.svg"
+                        data-src="/homepage/logo_discover.svg"
+                        uk-img
                         alt=""
                         class="uk-icon1"
                       />
@@ -328,6 +344,7 @@
                     <a class="el-link uk-icon" rel="noreferrer">
                       <img
                         src="/homepage/logo_palpay.svg"
+
                         alt=""
                         class="uk-icon1"
                       />

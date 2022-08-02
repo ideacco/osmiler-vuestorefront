@@ -52,7 +52,7 @@
             <div class="uk-width-1-2@m">
               <div id="page#10-0-1-0" class="uk-margin uk-text-right">
                 <img
-                  src="/wp-content/themes/yootheme/cache/IMG_11.jpg"
+                  src="/wp-content/themes/yootheme/cache/IMG_11(1).jpeg"
                   class="el-image"
                   sizes="(min-width: 1510px) 1510px"
                   data-width="1510"

@@ -2,7 +2,7 @@
   <div>
     <div id="page#12" class="uk-visible@m uk-section-default uk-light">
       <div
-        style="background-image: url('/wp-content/themes/yootheme/cache/Frame-1313-ya-4d92e6f0.jpeg');"
+        style="background-image: url('/wp-content/themes/yootheme/cache/Frame1313.jpg');"
         class="uk-background-norepeat uk-background-cover uk-background-center-left uk-background-fixed uk-section uk-padding-remove-vertical uk-flex uk-flex-middle"
         uk-height-viewport="offset-top: true;"
       >
@@ -24,7 +24,6 @@
                     <div class="uk-panel uk-margin">
                       <p>
                         <span
-                          data-metadata="&lt;!--(figmeta)eyJmaWxlS2V5IjoiZHJFUEpWMGxYdnBabkF1elpOcEpiayIsInBhc3RlSUQiOjE0MzI3NTc4MTQsImRhdGFUeXBlIjoic2NlbmUifQo=(/figmeta)--&gt;"
                         ></span
                         >Not only brings happiness,but also brings a more
                         comfortable way of using experience.
@@ -84,7 +83,6 @@
             <div class="uk-panel uk-margin">
               <p>
                 <span
-                  data-metadata="&lt;!--(figmeta)eyJmaWxlS2V5IjoiZHJFUEpWMGxYdnBabkF1elpOcEpiayIsInBhc3RlSUQiOjE0MzI3NTc4MTQsImRhdGFUeXBlIjoic2NlbmUifQo=(/figmeta)--&gt;"
                 ></span
                 >Not only brings happiness,but also brings a more comfortable
                 way of using experience.

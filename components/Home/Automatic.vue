@@ -50,7 +50,7 @@
             <div class="uk-width-1-2@m ">
               <div id="page#10-0-1-0" class="uk-margin uk-text-right">
                 <img
-                  src="/wp-content/themes/yootheme/cache/32078-11.jpg"
+                  src="/wp-content/themes/yootheme/cache/right.jpg"
                   class="el-image"
                   alt
                 />

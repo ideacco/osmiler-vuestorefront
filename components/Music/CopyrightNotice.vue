@@ -3,7 +3,7 @@
   <div>
     <div class="uk-visible@m uk-section-default">
       <div
-        style="background-image: url(/wp-content/themes/yootheme/cache/bannerbg2.jpg);"
+        style="background-image: url(/wp-content/themes/yootheme/cache/Frame137888.jpg);"
         class="
           uk-background-norepeat
           uk-background-cover
