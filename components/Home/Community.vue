@@ -45,6 +45,7 @@
                         class="el-image"
                         alt
                         uk-gif
+                        loading="lazy"
                       />
                     </div>
                     <div id="page#6-0-0-4"></div>
@@ -97,6 +98,7 @@
                       class="el-image"
                       alt
                       uk-gif
+                      loading="lazy"
                     />
                   </div>
                   <div id="page#7-0-0-4"></div>

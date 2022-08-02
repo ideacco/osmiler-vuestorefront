@@ -34,6 +34,7 @@
                       data-height="40"
                       class="el-image"
                       alt
+                      loading="lazy"
                     />
                     <h2
                       class="el-title uk-h3 uk-margin-top uk-margin-remove-bottom"
@@ -59,6 +60,7 @@
                       data-height="40"
                       class="el-image"
                       alt
+                      loading="lazy"
                     />
                     <h2
                       class="el-title uk-h3 uk-margin-top uk-margin-remove-bottom"

@@ -1,4 +1,5 @@
 <template>
+
   <div>
     <div
       class="
@@ -21,6 +22,7 @@
 
       style="height: 1220px;background-image: url('/wp-content/themes/yootheme/cache/Hero_2.jpg')"
     >
+
       <!-- <video
         src="/homepage/Osmiler_video.mp4"
         loop
@@ -113,7 +115,6 @@
           </div>
         </div>
       </div>
-    </div>
     <div
       id="page#1"
       class="
@@ -144,6 +145,7 @@
                 class="el-image"
                 style="width: 100%"
                 alt
+                 loading="lazy"
               />
             </div>
           </div>
@@ -205,6 +207,7 @@
         </div>
       </div>
     </div>
+  </div>
   </div>
 </template>
 <script>

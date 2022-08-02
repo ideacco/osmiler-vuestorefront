@@ -28,6 +28,7 @@
                   :src="`https://cdn.shopify.com/s/files/1/0407/1902/4288/files/${lang.code}_20x20.jpg`"
                   width="20"
                   height="20"
+                  loading="lazy"
                 />
               </template>
             </SfCharacteristic>

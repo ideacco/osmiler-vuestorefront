@@ -51,6 +51,7 @@
                         data-height="204"
                         class="el-image"
                         alt
+                        loading="lazy"
                       />
                     </div>
                   </div>
@@ -118,6 +119,7 @@
               data-height="1290"
               class="el-image"
               alt
+              loading="lazy"
             />
           </div>
         </div>

@@ -23,6 +23,7 @@
                 data-height="539"
                 class="el-image"
                 alt=""
+                 loading="lazy"
               />
             </div>
           </div>

@@ -11,6 +11,7 @@
                 style="width: 120px"
                 class="el-image"
                 alt="Osmiler"
+                 loading="lazy"
               /></a>
             </div>
             <div class="uk-margin">let your smile light up the world</div>

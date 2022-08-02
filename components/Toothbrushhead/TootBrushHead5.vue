@@ -23,6 +23,7 @@
                 class="el-image"
                 alt=""
                 style="transform: scale(0.7);"
+                 loading="lazy"
               />
             </div>
           </div>

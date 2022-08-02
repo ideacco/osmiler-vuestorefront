@@ -41,6 +41,7 @@
                       data-height="92"
                       class="el-image"
                       alt
+                      loading="lazy"
                     />
                   </div>
                   <div id="page#10-0-0-4"></div>
@@ -53,6 +54,7 @@
                   src="/wp-content/themes/yootheme/cache/right.jpg"
                   class="el-image"
                   alt
+                  loading="lazy"
                 />
               </div>
             </div>
@@ -107,6 +109,7 @@
               data-height="2142"
               class="el-image"
               alt
+              loading="lazy"
             />
           </div>
         </div>

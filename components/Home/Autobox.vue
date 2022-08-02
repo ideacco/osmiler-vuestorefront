@@ -154,6 +154,7 @@
                           class="el-image"
                           alt
                           uk-cover
+                          loading="lazy"
                         />
                       </li>
                       <li class="el-item">
@@ -165,6 +166,7 @@
                           class="el-image"
                           alt="two brown wooden toothbrushes"
                           uk-cover
+                          loading="lazy"
                         />
                       </li>
                     </ul>

@@ -65,6 +65,7 @@
               data-height="1152"
               class="el-image"
               alt="two brown wooden toothbrushes"
+              loading="lazy"
             />
           </div>
         </div>

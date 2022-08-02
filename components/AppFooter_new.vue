@@ -18,6 +18,7 @@
                   width="100"
                   class="el-image"
                   alt="Osmiler"
+                  loading="lazy"
                 /></a>
               </div>
 
@@ -65,6 +66,7 @@
                       data-src="/homepage/ic_facebook.svg"
                       style="width: 24px; height: 24px"
                       class="uk-icon"
+                      loading="lazy"
                     /></a>
                   </div>
                   <div>
@@ -78,6 +80,7 @@
                       data-src="/homepage/ic_instagram.svg"
                       style="width: 24px; height: 24px"
                       class="uk-icon"
+                      loading="lazy"
                     /></a>
                   </div>
                   <div>
@@ -91,6 +94,7 @@
                       data-src="/homepage/ic_youtube.svg"
                       style="width: 24px; height: 24px"
                       class="uk-icon"
+                       loading="lazy"
                     /></a>
                   </div>
                 </div>
@@ -279,6 +283,7 @@
                         uk-img
                         alt=""
                         class="uk-icon1"
+                         loading="lazy"
                       />
                     </a>
                   </div>
@@ -290,6 +295,7 @@
                         uk-img
                         alt=""
                         class="uk-icon1"
+                        loading="lazy"
                       />
                     </a>
                   </div>
@@ -301,6 +307,7 @@
                         uk-img
                         alt=""
                         class="uk-icon1"
+                        loading="lazy"
                       />
                     </a>
                   </div>
@@ -312,6 +319,7 @@
                         uk-img
                         alt=""
                         class="uk-icon1"
+                        loading="lazy"
                       />
                     </a>
                   </div>
@@ -324,6 +332,7 @@
                         uk-img
                         alt=""
                         class="uk-icon1"
+                        loading="lazy"
                       />
                     </a>
                   </div>
@@ -336,6 +345,7 @@
                         uk-img
                         alt=""
                         class="uk-icon1"
+                        loading="lazy"
                       />
                     </a>
                   </div>
@@ -344,9 +354,9 @@
                     <a class="el-link uk-icon" rel="noreferrer">
                       <img
                         src="/homepage/logo_palpay.svg"
-
                         alt=""
                         class="uk-icon1"
+                         loading="lazy"
                       />
                     </a>
                   </div>

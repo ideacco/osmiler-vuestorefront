@@ -33,6 +33,7 @@
                     class="el-image"
                     alt
                     uk-svg
+                    loading="lazy"
                   />
                   <div class="el-content uk-panel uk-margin-small-top">
                     <p><span>Restriction of Hazardous Substances</span></p>
@@ -53,6 +54,7 @@
                     class="el-image"
                     alt
                     uk-svg
+                    loading="lazy"
                   />
                   <div class="el-content uk-panel uk-margin-small-top">
                     <p>CE certification</p>
@@ -72,6 +74,7 @@
                     class="el-image"
                     alt
                     uk-svg
+                    loading="lazy"
                   />
                   <div class="el-content uk-panel uk-margin-small-top">
                     <p>Food and Drug Administration</p>
@@ -91,6 +94,7 @@
                     class="el-image"
                     alt
                     uk-svg
+                    loading="lazy"
                   />
                   <div class="el-content uk-panel uk-margin-small-top">
                     <p>Federal Communications Commission</p>

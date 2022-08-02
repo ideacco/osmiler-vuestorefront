@@ -445,6 +445,8 @@
                   class="el-image"
                   alt
                   target="!*"
+                  loading="lazy"
+
                 />
               </div>
             </div>

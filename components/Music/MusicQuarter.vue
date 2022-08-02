@@ -7,7 +7,7 @@
                     <div class="tm-grid-expand uk-grid-margin uk-grid  ukmargin" >
                         <div class="uk-width-1-2@m uk-first-column ">
                             <h1    style="font-family: osmiler-title;font-size: 42px;">
-                  <img src="/wp-content/themes/yootheme/cache/Star5.svg" /> In the next quarter, <br>we’ll have: </h1>
+                  <img src="/wp-content/themes/yootheme/cache/Star5.svg"  loading="lazy" /> In the next quarter, <br>we’ll have: </h1>
                         </div>
                         <div class="uk-width-1-2@m">
                             <div class="uk-panel uk-margin uk-width-large">

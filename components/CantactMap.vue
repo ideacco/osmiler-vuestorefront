@@ -16,6 +16,7 @@
                   alt=""
                   src="/wp-content/themes/yootheme/cache/image-59-c5c1dcb5.png"
                   sizes="(min-width: 1080px) 1080px"
+                   loading="lazy"
                 />
                 <div class="tm-popover-items uk-visible@s">
                   <a
