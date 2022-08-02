@@ -5,6 +5,7 @@
       <div
         style="background-image: url('/wp-content/themes/yootheme/cache/32301-2-ya-0c515866.jpeg');"
         class="uk-background-norepeat uk-background-cover uk-background-center-center uk-section uk-section-large"
+        loading="lazy"
       >
         <div class="uk-container uk-container-expand">
           <div class="uk-grid-margin uk-container uk-container-large">

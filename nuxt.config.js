@@ -90,9 +90,6 @@ const config = {
         gtag('config','G-934Z930PQ3');`,
         type: 'text/javascript',
         charset: 'utf-8',
-        __dangerouslyDisableSanitizersByTagID: {
-
-        }
       },
       {
         vmid: 'bing-script',

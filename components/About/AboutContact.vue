@@ -5,6 +5,7 @@
       <div
         style="background-image: url('/wp-content/themes/yootheme/cache/wecomle.jpg');"
         class="uk-background-norepeat uk-background-cover uk-background-center-center uk-section uk-section-large"
+          loading="lazy"
       >
         <div class="uk-container uk-container-expand">
           <div class="uk-grid-margin uk-container uk-container-large">

@@ -11,6 +11,7 @@
           uk-section
           uk-section-large
         "
+          loading="lazy"
       >
         <div class="uk-container uk-container-expand">
           <div class="uk-grid-margin uk-container uk-container-large">

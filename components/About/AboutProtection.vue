@@ -13,6 +13,7 @@
           uk-flex-middle
 
         "
+        loading="lazy"
         uk-height-viewport="offset-top: true;"
       >
         <div class="uk-width-1-1">
@@ -50,6 +51,7 @@
           uk-section
           uk-padding-remove-vertical
         "
+          loading="lazy"
       >
         <div class="uk-container uk-container-xsmall">
           <div class="tm-grid-expand uk-child-width-1-1 uk-grid-margin " uk-grid>

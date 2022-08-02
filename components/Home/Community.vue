@@ -5,6 +5,7 @@
         style="background-image: url('/wp-content/themes/yootheme/cache/03.jpg');"
         class="uk-background-norepeat uk-background-cover uk-background-center-right uk-background-fixed uk-section uk-padding-remove-vertical uk-flex uk-flex-middle"
         uk-height-viewport="offset-top: true;"
+          loading="lazy"
       >
         <div class="uk-width-1-1">
           <div class="uk-container uk-container-large">
@@ -62,6 +63,7 @@
       <div
         style="background-image: url('/wp-content/themes/yootheme/cache/4646dcaf.jpeg');height: 100%;"
         class="uk-background-norepeat uk-background-cover uk-background-center-center uk-section uk-padding-remove-vertical"
+          loading="lazy"
       >
         <div class="uk-container uk-container-large">
           <div

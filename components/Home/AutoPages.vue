@@ -5,6 +5,7 @@
         style=" background-image: url('/wp-content/themes/yootheme/cache/07.jpg');height:840px;"
         class="uk-background-norepeat uk-background-cover uk-background-top-center uk-section uk-section-large uk-padding-remove-bottom"
         uk-height-viewport="offset-top: true;"
+          loading="lazy"
       >
         <div class="uk-container uk-container-large">
           <div

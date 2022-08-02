@@ -458,6 +458,7 @@
     <div class="uk-section-default uk-dark">
       <div
         style="background-image: url('/wp-content/themes/yootheme/cache/19a2f888.jpeg');"
+        loading="lazy"
         class="uk-background-norepeat uk-background-cover uk-background-center-center uk-section uk-section-large"
       >
         <div class="uk-container uk-container-expand">

@@ -21,6 +21,7 @@
       :style="{ marginTop: innerWidth > 940 ? '-120px' : '0px' }"
 
       style="height: 1220px;background-image: url('/wp-content/themes/yootheme/cache/Hero_2.jpg')"
+        loading="lazy"
     >
 
       <!-- <video
@@ -115,7 +116,9 @@
           </div>
         </div>
       </div>
-    <div
+
+  </div>
+      <div
       id="page#1"
       class="
         uk-hidden@m
@@ -145,7 +148,6 @@
                 class="el-image"
                 style="width: 100%"
                 alt
-                 loading="lazy"
               />
             </div>
           </div>
@@ -207,7 +209,6 @@
         </div>
       </div>
     </div>
-  </div>
   </div>
 </template>
 <script>

@@ -10,6 +10,7 @@
           uk-section
           uk-padding-remove-top
         "
+          loading="lazy"
       >
         <div class="uk-container uk-container-expand uk-containerfont">
           <div class="tm-grid-expand uk-child-width-1-1 uk-grid-margin" uk-grid>
@@ -53,6 +54,7 @@
           uk-section
           uk-padding-remove-vertical
         "
+          loading="lazy"
       >
         <div class="uk-container uk-container-large">
           <div
