@@ -2,7 +2,7 @@
   <div>
     <div id="page#12" class="uk-visible@m uk-section-default uk-light">
       <div
-        style="background-image: url('/wp-content/themes/yootheme/cache/Frame1313.jpg');"
+        style="background-image: url('/wp-content/themes/yootheme/cache/headbrush.webp');"
         class="uk-background-norepeat  uk-background-cover uk-background-center-left uk-background-fixed uk-section uk-padding-remove-vertical uk-flex uk-flex-middle"
         uk-height-viewport="offset-top: true;"
         data-src=""

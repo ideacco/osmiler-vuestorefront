@@ -19,12 +19,10 @@
       tm-header-transparent="light"
       uk-height-viewport="offset-top: true;"
       :style="{ marginTop: innerWidth > 940 ? '-120px' : '0px' }"
-
       style="height: 1220px;
-      background-image: url('/wp-content/themes/yootheme/cache/Hero_2.jpg')"
-
-
+      background-image: url('/wp-content/themes/yootheme/cache/hero.webp')"
     >
+
 
       <!-- <video
         src="/homepage/Osmiler_video.mp4"
@@ -150,7 +148,6 @@
                 class="el-image"
                 style="width: 100%"
                 alt
-                loading="lazy"
               />
             </div>
           </div>

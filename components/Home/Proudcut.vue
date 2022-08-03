@@ -27,7 +27,7 @@
             <div class="uk-visible@m uk-section-primary" data-v-69ab7cfe="">
                 <div uk-height-viewport="offset-top: true; offset-bottom: 20;"
                   class="uk-background-norepeat  uk-background-cover uk-background-center-center uk-section uk-section-large"
-                  style="background-image:url('/wp-content/themes/yootheme/cache/12.jpg'); height: 840px;"
+                  style="background-image:url('/wp-content/themes/yootheme/cache/12.webp'); height: 840px;"
                  >
                   <div class="uk-container uk-container-large" data-v-69ab7cfe="">
                     <div  class="tm-grid-expand uk-child-width-1-1 uk-grid-margin uk-grid uk-grid-stack"

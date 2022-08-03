@@ -2,6 +2,7 @@
 require('isomorphic-fetch')
 // console.log('当前服务状态:', process.env.NODE_ENV)
 const CompressionPlugin = require('compression-webpack-plugin');
+const TerserPlugin = require('terser-webpack-plugin');
 import webpack from 'webpack'
 // import nuxtSeoMeta from "nuxt-seo-meta/src"
 // const platformENV = process.env.NODE_ENV !== 'production' ? 'http' : 'https'
@@ -94,6 +95,7 @@ const config = {
         gtag('config','G-934Z930PQ3');`,
         type: 'text/javascript',
         charset: 'utf-8',
+
       },
       {
         vmid: 'bing-script',
@@ -132,7 +134,8 @@ const config = {
         fbq('init', '769420814057414');
         fbq('track', 'PageView');`,
         type: 'text/javascript',
-        charset: 'utf-8'
+        charset: 'utf-8',
+
       },
 
     ],
@@ -179,7 +182,6 @@ const config = {
     // https://go.nuxtjs.dev/stylelint
     '@nuxtjs/stylelint-module',
     '@nuxtjs/google-analytics',
-
     // to core
     './modules/cms/build',
     '@aceforth/nuxt-optimized-images',
@@ -472,6 +474,11 @@ const config = {
       }) => isDev ? '[path][name].[ext]' : 'videos/[contenthash:7].[ext]'
     },
     optimization: {
+      minimize: true,
+      minimizer: [
+        // js代码压缩插件,tree-shaking必须使用
+        new TerserPlugin(),
+      ],
       splitChunks: {
         minSize: 10000,
         maxSize: 250000,
