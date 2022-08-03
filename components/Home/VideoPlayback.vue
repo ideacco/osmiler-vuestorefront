@@ -15,14 +15,15 @@
         uk-background-center-center
         uk-section
         uk-section-large
+        lozad
       "
       tm-header-transparent="light"
       uk-height-viewport="offset-top: true;"
       :style="{ marginTop: innerWidth > 940 ? '-120px' : '0px' }"
 
-      style="height: 1220px;background-image: url('/wp-content/themes/yootheme/cache/Hero_2.jpg')"
-      data-src=""
-      uk-img
+      style="height: 1220px;
+      background-image: url('/wp-content/themes/yootheme/cache/Hero_2.jpg')"
+
 
     >
 
@@ -235,10 +236,15 @@ import {
 import { onSSR } from '@vue-storefront/core'
 import useUiNotification from '~/composables/useUiNotification'
 import { useUiState } from '~/composables'
-
+import lozad from 'lozad'
+if(process.client){
+const observer = lozad()
+observer.observe()
+}
 export default {
   name: 'VideoPlayback',
   setup(__, context) {
+
     const { isCartSidebarOpen, toggleCartSidebar } = useUiState()
     const route = useRoute()
     const router = useRouter()
@@ -511,4 +517,5 @@ export default {
   justify-content: center;
   align-items: center;
 }
+
 </style>

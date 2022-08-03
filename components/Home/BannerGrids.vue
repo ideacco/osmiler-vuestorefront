@@ -3,7 +3,7 @@
     <div id="Bone" class="uk-visible@m uk-section-default uk-light">
       <div
         style="background-image: url('/wp-content/themes/yootheme/cache/02.jpg');height:860px ;"
-        class="uk-background-norepeat uk-background-cover uk-background-top-left uk-section uk-padding-remove-vertical uk-flex uk-flex-middle"
+        class="uk-background-norepeat lozad uk-background-cover uk-background-top-left uk-section uk-padding-remove-vertical uk-flex uk-flex-middle"
         uk-height-viewport="offset-top: true;"
         data-src=""
         uk-img
@@ -95,6 +95,11 @@
   </div>
 </template>
 <script>
+import lozad from 'lozad'
+if(process.client){
+const observer = lozad()
+observer.observe()
+}
 export default {
   name: 'BannerGrids',
   data() {

@@ -175,6 +175,7 @@ const config = {
     // https://go.nuxtjs.dev/stylelint
     '@nuxtjs/stylelint-module',
     '@nuxtjs/google-analytics',
+    "lozad",
     // to core
     './modules/cms/build',
     '@aceforth/nuxt-optimized-images',

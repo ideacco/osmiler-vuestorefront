@@ -3,9 +3,7 @@
     <div id="Mp3" class="uk-visible@m uk-section-default uk-light">
       <div
         style="background-image: url('/wp-content/themes/yootheme/cache/04.jpg');height:1300px;"
-         data-src=""
-         uk-img
-        class="uk-background-norepeat uk-background-cover uk-background-top-center uk-section uk-padding-remove-vertical uk-flex uk-flex-middle"
+        class="uk-background-norepeat lozad uk-background-cover uk-background-top-center uk-section uk-padding-remove-vertical uk-flex uk-flex-middle"
       >
         <div class="uk-width-1-1">
           <div class="uk-container uk-container-large">
@@ -101,6 +99,11 @@
   </div>
 </template>
 <script>
+import lozad from 'lozad'
+if(process.client){
+const observer = lozad()
+observer.observe()
+}
 export default {
   name: 'MP3',
   data() {

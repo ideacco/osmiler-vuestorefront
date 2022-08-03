@@ -5,6 +5,7 @@
   font-weight: 500;
   src: url(./font-2bc258d4.woff2) format('woff2'),
     url(./font-9975ca18.woff) format('woff');
+    font-display: swap
 }
 @font-face {
   font-family: 'Inter';
@@ -12,6 +13,7 @@
   font-weight: 600;
   src: url(./font-bb2dbba5.woff2) format('woff2'),
     url(./font-c98b2a17.woff) format('woff');
+    font-display: swap
 }
 @font-face {
   font-family: 'Overpass';
@@ -19,4 +21,5 @@
   font-weight: 400;
   src: url(./font-9ceeb427.woff2) format('woff2'),
     url(./font-3e811dcd.woff) format('woff');
+    font-display: swap
 }

@@ -76,9 +76,7 @@
     <div id="Community" class="uk-hidden@m uk-section-default uk-light">
       <div
         style="background-image: url('/wp-content/themes/yootheme/cache/407-0a640e30.jpeg');"
-        class="uk-background-norepeat uk-background-cover uk-background-center-center uk-section uk-padding-remove-vertical"
-        data-src=""
-        uk-img
+        class="uk-background-norepeat uk-background-cover uk-background-center-center lozad uk-section uk-padding-remove-vertical"
       >
         <div class="uk-container uk-container-large">
           <div
@@ -156,11 +154,16 @@
   </div>
 </template>
 <script>
+import lozad from 'lozad'
+if(process.client){
+const observer = lozad()
+observer.observe()
+}
 export default {
   name: 'AutOuk',
   data() {
     return {}
+  },
   }
-}
 </script>
 <style lang="scss"></style>
