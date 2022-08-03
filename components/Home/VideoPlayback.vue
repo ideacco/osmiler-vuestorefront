@@ -21,7 +21,9 @@
       :style="{ marginTop: innerWidth > 940 ? '-120px' : '0px' }"
 
       style="height: 1220px;background-image: url('/wp-content/themes/yootheme/cache/Hero_2.jpg')"
-        loading="lazy"
+      data-src=""
+      uk-img
+
     >
 
       <!-- <video

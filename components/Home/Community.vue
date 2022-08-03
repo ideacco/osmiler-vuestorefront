@@ -5,7 +5,8 @@
         style="background-image: url('/wp-content/themes/yootheme/cache/03.jpg');"
         class="uk-background-norepeat uk-background-cover uk-background-center-right uk-background-fixed uk-section uk-padding-remove-vertical uk-flex uk-flex-middle"
         uk-height-viewport="offset-top: true;"
-          loading="lazy"
+        data-src=""
+        uk-img
       >
         <div class="uk-width-1-1">
           <div class="uk-container uk-container-large">
