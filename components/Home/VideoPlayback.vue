@@ -150,6 +150,7 @@
                 class="el-image"
                 style="width: 100%"
                 alt
+                loading="lazy"
               />
             </div>
           </div>

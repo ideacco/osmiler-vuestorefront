@@ -17,6 +17,7 @@
                 alt="OSMILER"
                 width="80"
                 src="../static/icons/osmiler-logo-default.svg"
+                loading="lazy"
               />
               <img
                 class="uk-logo-inverse"
@@ -24,6 +25,7 @@
                 width="90"
                 src="../static/icons/osmiler-logo-light.svg"
                 style="z-index: 1"
+               loading="lazy"
               />
             </a>
           </div>
