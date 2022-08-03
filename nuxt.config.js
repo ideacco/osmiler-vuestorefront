@@ -271,14 +271,14 @@ const config = {
     './modules/cms/runtime',
     '@nuxt/image',
     '@nuxtjs/axios',
-    'nuxt-seo-meta'
+    // 'nuxt-seo-meta'
   ],
-  seoMeta: {
-    title: "SEO Meta - Title",
-    description: "SEO Meta - Description",
-    defaultImage: "defaultImage.png",
-    defaultUrl: "https://longbridgeapp.com"
-  },
+  // seoMeta: {
+  //   title: "SEO Meta - Title",
+  //   description: "SEO Meta - Description",
+  //   defaultImage: "defaultImage.png",
+  //   defaultUrl: "https://longbridgeapp.com"
+  // },
   nuxtPrecompress: {
     enabled: true, // Enable in production
     report: false, // set true to turn one console messages during module init
