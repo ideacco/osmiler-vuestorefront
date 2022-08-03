@@ -91,7 +91,6 @@ const config = {
         type: 'text/javascript',
         charset: 'utf-8',
         __dangerouslyDisableSanitizersByTagID: {
-
         }
       },
       {
@@ -195,7 +194,7 @@ const config = {
         },
         performance: {
           purgeCSS: {
-            enabled: false,
+            enabled: true,
             paths: ['**/*.vue'],
           },
         },
