@@ -2,10 +2,11 @@
   <div>
     <div id="Bone" class="uk-visible@m uk-section-default uk-light">
       <div
-        style="background-image: url('/wp-content/themes/yootheme/cache/02.jpg');height:860px ;"
+        style="height:860px ;"
         class="uk-background-norepeat uk-background-cover uk-background-top-left uk-section uk-padding-remove-vertical uk-flex uk-flex-middle"
         uk-height-viewport="offset-top: true;"
         data-src=""
+        :style = backgroundStyles
         uk-img
       >
         <div class="uk-width-1-1">
@@ -25,14 +26,15 @@
                   allow your teeth and whole body to enjoy music.
                 </div>
                 <div class="uk-margin">
-                  <img
+                  <nuxt-img
                     src="/wp-content/themes/yootheme/cache/card-38c1e7bb.png"
-                    sizes="(min-width: 353px) 353px"
                     data-width="353"
                     data-height="234"
                     class="el-image"
                     alt
-                    loading="lazy"
+                   format="webp"
+                   quality="80"
+                   loading="lazy"
                   />
                 </div>
               </div>
@@ -43,10 +45,9 @@
     </div>
     <div id="Bone" class="uk-hidden@m uk-section-secondary">
       <div
-        style="background-image: url('/wp-content/themes/yootheme/cache/02-afe67aa2.jpeg');"
+        :style = backgroundStylees
         class="uk-background-norepeat uk-background-cover uk-background-bottom-center uk-section uk-padding-remove-vertical"
         uk-height-viewport="offset-top: true;"
-          loading="lazy"
       >
         <div class="uk-container uk-container-xsmall">
           <div class="tm-grid-expand uk-child-width-1-1 uk-grid-margin" uk-grid>
@@ -78,13 +79,14 @@
         <div class="tm-grid-expand uk-child-width-1-1 uk-grid-margin" uk-grid>
           <div>
             <div class="uk-margin">
-              <img
+              <nuxt-img
                 src="/wp-content/themes/yootheme/cache/Frame-1344-721e9d0d.jpeg"
-                sizes="(min-width: 960px) 960px"
                 data-width="960"
                 data-height="462"
                 class="el-image"
                 alt
+                format="webp"
+                quality="80"
                 loading="lazy"
               />
             </div>
@@ -98,6 +100,30 @@
 
 export default {
   name: 'BannerGrids',
+  computed: {
+    backgroundStyles() {
+      const imgUrl = this.$img('/wp-content/themes/yootheme/cache/02.jpg')
+      return {
+        backgroundImage: `url('${imgUrl}')`,
+        loading: 'lazy',
+        modifiers: {
+            format: 'webp',
+            quality: 80
+        }
+      }
+    },
+  backgroundStylees() {
+      const imgUrl = this.$img('/wp-content/themes/yootheme/cache/02-afe67aa2.jpeg')
+      return {
+        backgroundImage: `url('${imgUrl}')`,
+        loading: 'lazy',
+        modifiers: {
+            format: 'webp',
+            quality: 80
+        }
+      }
+    }
+  },
   data() {
     return {}
   }

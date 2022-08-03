@@ -20,13 +20,14 @@
                       uk-scrollspy-class
                     >
                       <div>
-                        <img
+                        <nuxt-img
                           src="/wp-content/themes/yootheme/cache/01-2-9aad7647.png"
-                          sizes="(min-width: 100px) 100px"
                           data-width="100"
                           data-height="100"
                           class="el-image"
                           alt
+                          format="webp"
+                          quality="80"
                           loading="lazy"
                         />
                       </div>
@@ -46,13 +47,14 @@
                       uk-scrollspy-class
                     >
                       <div>
-                        <img
+                        <nuxt-img
                           src="/wp-content/themes/yootheme/cache/04-2-4f7809bc.png"
-                          sizes="(min-width: 100px) 100px"
                           data-width="100"
                           data-height="100"
                           class="el-image"
                           alt
+                          format="webp"
+                          quality="80"
                           loading="lazy"
                         />
                       </div>
@@ -72,13 +74,14 @@
                       uk-scrollspy-class
                     >
                       <div>
-                        <img
+                        <nuxt-img
                           src="/wp-content/themes/yootheme/cache/02-2-d61e5cee.png"
-                          sizes="(min-width: 100px) 100px"
                           data-width="100"
                           data-height="100"
                           class="el-image"
                           alt
+                          format="webp"
+                          quality="80"
                           loading="lazy"
                         />
                       </div>
@@ -99,9 +102,10 @@
                       uk-scrollspy-class
                     >
                       <div>
-                        <img
+                        <nuxt-img
                           src="/wp-content/themes/yootheme/cache/03-2-5b5fb8b6.png"
-                          sizes="(min-width: 100px) 100px"
+                          format="webp"
+                          quality="80"
                           data-width="100"
                           data-height="100"
                           class="el-image"

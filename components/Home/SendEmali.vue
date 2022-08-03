@@ -57,15 +57,16 @@
               <div
                 class="uk-visible@m uk-position-absolute uk-width-1-1 uk-text-right"
               >
-                <img
+                <nuxt-img
                   src="/wp-content/themes/yootheme/cache/Frame-58-246b27e9.png"
-                  sizes="(min-width: 488px) 488px"
+                  format="webp"
+                  quality="80"
+                  loading="lazy"
                   data-width="488"
                   data-height="401"
                   class="el-image"
                   alt
                   target="!*"
-                 loading="lazy"
                 />
               </div>
             </div>

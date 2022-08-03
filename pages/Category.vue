@@ -434,6 +434,7 @@ export default {
     // return 'https://cdn.shopify.com/s/files/1/0407/1902/4288/files/placeholder_' + imgResolution + '.jpg?v=1625742127'
     return image
 }
+
     onSSR(async () => {
       await search(th.getFacetsFromURL())
     })
