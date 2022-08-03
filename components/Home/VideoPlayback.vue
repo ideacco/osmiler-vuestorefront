@@ -15,7 +15,6 @@
         uk-background-center-center
         uk-section
         uk-section-large
-        lozad
       "
       tm-header-transparent="light"
       uk-height-viewport="offset-top: true;"
@@ -236,11 +235,7 @@ import {
 import { onSSR } from '@vue-storefront/core'
 import useUiNotification from '~/composables/useUiNotification'
 import { useUiState } from '~/composables'
-import lozad from 'lozad'
-if(process.client){
-const observer = lozad()
-observer.observe()
-}
+
 export default {
   name: 'VideoPlayback',
   setup(__, context) {

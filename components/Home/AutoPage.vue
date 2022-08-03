@@ -3,7 +3,7 @@
     <div id="page#12" class="uk-visible@m uk-section-default uk-light">
       <div
         style="background-image: url('/wp-content/themes/yootheme/cache/Frame1313.jpg');"
-        class="uk-background-norepeat lozad uk-background-cover uk-background-center-left uk-background-fixed uk-section uk-padding-remove-vertical uk-flex uk-flex-middle"
+        class="uk-background-norepeat  uk-background-cover uk-background-center-left uk-background-fixed uk-section uk-padding-remove-vertical uk-flex uk-flex-middle"
         uk-height-viewport="offset-top: true;"
         data-src=""
         uk-img
@@ -130,11 +130,6 @@
   </div>
 </template>
 <script>
-import lozad from 'lozad'
-if(process.client){
-const observer = lozad()
-observer.observe()
-}
 export default {
   name: 'AutoPage',
   data() {

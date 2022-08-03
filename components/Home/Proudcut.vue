@@ -26,7 +26,7 @@
     </div> -->
             <div class="uk-visible@m uk-section-primary" data-v-69ab7cfe="">
                 <div uk-height-viewport="offset-top: true; offset-bottom: 20;"
-                  class="uk-background-norepeat lozad uk-background-cover uk-background-center-center uk-section uk-section-large"
+                  class="uk-background-norepeat  uk-background-cover uk-background-center-center uk-section uk-section-large"
                   style="background-image:url('/wp-content/themes/yootheme/cache/12.jpg'); height: 840px;"
                  >
                   <div class="uk-container uk-container-large" data-v-69ab7cfe="">
@@ -92,11 +92,7 @@
   </div>
 </template>
 <script>
-import lozad from 'lozad'
-if(process.client){
-const observer = lozad()
-observer.observe()
-}
+
 export default {
   name: 'ProuDcut',
   data() {

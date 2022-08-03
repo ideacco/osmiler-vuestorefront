@@ -4,7 +4,7 @@
     <div class="uk-section-default uk-dark">
       <div
         style="background-image: url('/wp-content/themes/yootheme/cache/wecomle.jpg');"
-        class="uk-background-norepeat lozad uk-background-cover uk-background-center-center uk-section uk-section-large"
+        class="uk-background-norepeat uk-background-cover uk-background-center-center uk-section uk-section-large"
         data-src=""
         uk-img
       >
@@ -41,11 +41,6 @@
 </template>
 
 <script>
-import lozad from 'lozad'
-if(process.client){
-const observer = lozad()
-observer.observe()
-}
 
 export default {
   name: 'ContactComponent',

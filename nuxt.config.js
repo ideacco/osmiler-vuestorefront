@@ -35,6 +35,10 @@ const config = {
         charset: 'utf-8',
       },
       {
+        'http-equiv': 'expires',
+         content: '0'
+      },
+      {
         name: 'viewport',
         content: 'width=device-width, initial-scale=1',
       },
@@ -175,7 +179,7 @@ const config = {
     // https://go.nuxtjs.dev/stylelint
     '@nuxtjs/stylelint-module',
     '@nuxtjs/google-analytics',
-    "lozad",
+
     // to core
     './modules/cms/build',
     '@aceforth/nuxt-optimized-images',
