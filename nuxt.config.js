@@ -10,6 +10,10 @@ const config = {
   server: {
     port: process.env.APP_PORT || 8888,
     host: '0.0.0.0',
+    // 添加服务器时间标头
+    timing: {
+      total: true
+    }
   },
   publicRuntimeConfig: {
     appKey: 'vsf2spcon',

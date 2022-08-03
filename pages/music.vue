@@ -6,7 +6,7 @@
       uk-scrollspy="target: [uk-scrollspy-class]; cls: uk-animation-slide-bottom-medium; delay: false;"
     >
       <div
-        style="background-image: url('/wp-content/themes/yootheme/cache/music-hero-4f873de3.jpeg');"
+        :style = backgroundStyles
         class="uk-background-norepeat uk-background-cover uk-background-top-center uk-section uk-section-large"
         data-src=""
         uk-img
@@ -37,14 +37,15 @@
                     class="uk-margin-large uk-text-left@m uk-text-center"
                     uk-scrollspy-class
                   >
-                    <img
+                    <nuxt-img
                       src="/wp-content/themes/yootheme/cache/music-vinyl-70a316b9.png"
-                      srcset=""
-                      sizes="(min-width: 900px) 900px"
-                      data-width="900"
-                      data-height="630"
+                      sizes="sm:100vw md:50vw lg:900px"
+                      format="webp"
+                      quality="80"
+                      width="900"
+                      height="630"
                       class="el-image"
-                      alt
+                      loading="lazy"
                     />
                   </div>
                 </div>
@@ -205,6 +206,14 @@ import MusicContact from '~/components/Music/MusicContact.vue'
 // // import '/static/wp-content/themes/yootheme/vendor/assets/uikit/dist/js/uikit.min.js'
 export default {
   name: 'MuSic',
+  computed: {
+    backgroundStyles() {
+      const imgUrl = this.$img('/wp-content/themes/yootheme/cache/music-hero-4f873de3.jpeg', { width: 100 })
+      return {
+        backgroundImage: `url('${imgUrl}')`
+      }
+    }
+  },
   data() {
     return {
       audio: null,
