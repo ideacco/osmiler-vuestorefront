@@ -196,7 +196,6 @@ const config = {
 
     // to core
     './modules/cms/build',
-    '@aceforth/nuxt-optimized-images',
     '@nuxtjs/composition-api/module',
     '@nuxtjs/pwa',
     '@nuxtjs/device',

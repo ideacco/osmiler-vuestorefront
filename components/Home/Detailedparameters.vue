@@ -44,10 +44,12 @@
                         uk-margin-remove-first-child
                       "
                     >
-                      <img
+                      <nuxt-img
                         src="/wp-content/uploads/2022/06/ic_01-2.svg"
                         class="el-image"
                         alt=""
+                        format="webp"
+                        quality="80"
                         loading="lazy"
                       />
                       <h4
@@ -70,10 +72,12 @@
                         uk-margin-remove-first-child
                       "
                     >
-                      <img
+                      <nuxt-img
                         src="/wp-content/uploads/2022/06/ic_02-2.svg"
                         class="el-image"
                         alt=""
+                        format="webp"
+                        quality="80"
                         loading="lazy"
                       />
                       <h4
@@ -96,10 +100,12 @@
                         uk-margin-remove-first-child
                       "
                     >
-                      <img
+                      <nuxt-img
                         src="/wp-content/uploads/2022/06/ic_03-2.svg"
                         class="el-image"
                         alt=""
+                        format="webp"
+                        quality="80"
                         loading="lazy"
                       />
                       <h4
@@ -122,10 +128,12 @@
                         uk-margin-remove-first-child
                       "
                     >
-                      <img
+                      <nuxt-img
                         src="/wp-content/uploads/2022/06/ic_04-1.svg"
                         class="el-image"
                         alt=""
+                        format="webp"
+                        quality="80"
                         loading="lazy"
                       />
                       <h4
@@ -148,10 +156,12 @@
                         uk-margin-remove-first-child
                       "
                     >
-                      <img
+                      <nuxt-img
                         src="/wp-content/uploads/2022/06/ic_05-1.svg"
                         class="el-image"
                         alt=""
+                        format="webp"
+                        quality="80"
                         loading="lazy"
                       />
                       <h4
@@ -174,13 +184,15 @@
                         uk-margin-remove-first-child
                       "
                     >
-                      <img
+                      <nuxt-img
                         src="/wp-content/themes/yootheme/cache/ic_06-a5daadec.png"
                         sizes="(min-width: 33px) 33px"
                         data-width="33"
                         data-height="33"
                         class="el-image"
                         alt=""
+                        format="webp"
+                        quality="80"
                         loading="lazy"
                       />
                       <h4

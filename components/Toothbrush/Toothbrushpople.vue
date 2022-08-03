@@ -2,8 +2,8 @@
   <div>
     <div id="page#18" class="uk-visible@m uk-section-default uk-light">
       <div
-        style="background-image: url('/wp-content/themes/yootheme/cache/Frame1353.jpg');height: 840px;"
-          loading="lazy"
+        style="height: 840px;"
+        :style = backgroundStyles
         class="uk-background-norepeat uk-background-cover uk-background-top-center uk-section uk-section-large uk-padding-remove-bottom"
         uk-height-viewport="offset-top: true;"
       >
@@ -53,13 +53,15 @@
       <div class="tm-grid-expand uk-child-width-1-1 uk-grid-margin" uk-grid>
         <div>
           <div class="uk-margin uk-margin-remove-top uk-text-center">
-            <img
+            <nuxt-img
               src="/wp-content/themes/yootheme/cache/Framepeploe.jpg"
-              sizes="(min-width: 1125px) 1125px"
               data-width="1125"
               data-height="1152"
               class="el-image"
               alt="two brown wooden toothbrushes"
+              format="webp"
+              quality="80"
+              loading="lazy"
             />
           </div>
         </div>
@@ -70,6 +72,19 @@
 <script>
 export default {
   name: 'AutoPages',
+    computed: {
+    backgroundStyles() {
+      const imgUrl = this.$img('/wp-content/themes/yootheme/cache/Frame1353.jpg')
+      return {
+        backgroundImage: `url('${imgUrl}')`,
+        loading: 'lazy',
+        modifiers: {
+            format: 'webp',
+            quality: 80
+        }
+      }
+    }
+  },
   data() {
     return {}
   }

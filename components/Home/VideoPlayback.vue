@@ -1,6 +1,6 @@
 <template>
 
-  <div>
+  <div  >
     <div
       class="
         uk-visible@m
@@ -18,12 +18,8 @@
       "
       tm-header-transparent="light"
       uk-height-viewport="offset-top: true;"
-      :style="{ marginTop: innerWidth > 940 ? '-120px' : '0px' }"
-
-      style="height: 1220px;
-      background-image: url('/wp-content/themes/yootheme/cache/Hero_2.jpg')"
-
-
+      :style ="{ marginTop: innerWidth > 940 ? '-120px' : '0px' },backgroundStyles"
+      style="height: 1220px;"
     >
 
       <!-- <video
@@ -142,14 +138,15 @@
         <div class="tm-grid-expand uk-child-width-1-1 uk-grid-margin" uk-grid>
           <div>
             <div class="uk-margin">
-              <img
+              <nuxt-img
                 src="/wp-content/themes/yootheme/cache/Hero.png"
-                sizes="(min-width: 1125px) 1125px"
                 data-width="1125"
                 data-height="1086"
                 class="el-image"
                 style="width: 100%"
                 alt
+                format="webp"
+                quality="80"
                 loading="lazy"
               />
             </div>
@@ -238,8 +235,20 @@ import { useUiState } from '~/composables'
 
 export default {
   name: 'VideoPlayback',
+    computed: {
+    backgroundStyles() {
+      const imgUrl = this.$img('/wp-content/themes/yootheme/cache/Hero_2.jpg')
+      return {
+        backgroundImage: `url('${imgUrl}')`,
+        loading: 'lazy',
+        modifiers: {
+            format: 'webp',
+            quality: 80
+        }
+      }
+    }
+  },
   setup(__, context) {
-
     const { isCartSidebarOpen, toggleCartSidebar } = useUiState()
     const route = useRoute()
     const router = useRouter()

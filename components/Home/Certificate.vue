@@ -27,12 +27,14 @@
                   uk-scrollspy="target: [uk-scrollspy-class];"
                 >
               <a href="/wp-content/themes/yootheme/cache/ROHS.pdf" >
-                    <img
+                    <nuxt-img
                     src="/wp-content/uploads/2022/05/ic_rohs.svg"
                     width="120"
                     class="el-image"
                     alt
                     uk-svg
+                    format="webp"
+                    quality="80"
                     loading="lazy"
                   />
                   <div class="el-content uk-panel uk-margin-small-top">
@@ -48,12 +50,14 @@
                 >
 
             <a href="/wp-content/themes/yootheme/cache/CE.pdf">
-                    <img
+                    <nuxt-img
                     src="/wp-content/uploads/2022/05/ic_ce.svg"
                     width="120"
                     class="el-image"
                     alt
                     uk-svg
+                    format="webp"
+                    quality="80"
                     loading="lazy"
                   />
                   <div class="el-content uk-panel uk-margin-small-top">
@@ -68,12 +72,14 @@
                   uk-scrollspy="target: [uk-scrollspy-class];"
                 >
                <a href="/wp-content/themes/yootheme/cache/FDA.pdf">
-                   <img
+                   <nuxt-img
                     src="/wp-content/uploads/2022/05/ic_fda.svg"
                     width="120"
                     class="el-image"
                     alt
                     uk-svg
+                    format="webp"
+                    quality="80"
                     loading="lazy"
                   />
                   <div class="el-content uk-panel uk-margin-small-top">
@@ -88,12 +94,14 @@
                   uk-scrollspy="target: [uk-scrollspy-class];"
                 >
                 <a href="/wp-content/themes/yootheme/cache/FCC.pdf">
-                    <img
+                    <nuxt-img
                     src="/wp-content/uploads/2022/05/ic_fc.svg"
                     width="120"
                     class="el-image"
                     alt
                     uk-svg
+                    format="webp"
+                    quality="80"
                     loading="lazy"
                   />
                   <div class="el-content uk-panel uk-margin-small-top">

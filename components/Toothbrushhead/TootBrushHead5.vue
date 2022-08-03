@@ -15,15 +15,16 @@
             </h1>
             <div id="page#5-0-0-1"></div>
             <div class="uk-margin uk-text-center">
-              <img
+              <nuxt-img
                 src="/wp-content/themes/yootheme/cache/Group1349.png"
-                sizes="(min-width: 695px) 695px"
                 data-width="695"
                 data-height="539"
                 class="el-image"
                 alt=""
                 style="transform: scale(0.7);"
-                 loading="lazy"
+            format="webp"
+                quality="80"
+                loading="lazy"
               />
             </div>
           </div>

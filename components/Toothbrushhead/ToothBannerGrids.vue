@@ -38,14 +38,15 @@
                   <div
                     class="uk-margin uk-margin-remove-top uk-margin-remove-bottom"
                   >
-                    <img
+                    <nuxt-img
                       src="/wp-content/themes/yootheme/cache/Frame-1356-4f78375e.jpeg"
-                      sizes="(min-width: 696px) 696px"
                       data-width="696"
                       data-height="903"
                       class="el-image"
                       alt=""
-                      loading="lazy"
+                      format="webp"
+                quality="80"
+                loading="lazy"
                     />
                   </div>
                 </div>
