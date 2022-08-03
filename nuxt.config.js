@@ -8,15 +8,15 @@ import Env from './env' // 环境配置文件
 // const platformENV = process.env.NODE_ENV !== 'production' ? 'http' : 'https'
 // const Timestamp = new Date().getTime()
 const config = {
-  // env: {
-  //   BASE_URL: Env[process.env.NODE_ENV].BASE_URL,
-  //   NODE_ENV: Env[process.env.NODE_ENV].NODE_ENV,
-  //   VUE_APP_TITLE: Env[process.env.NODE_ENV].VUE_APP_TITLE,
-  //   SHOPIFY_DOMAIN: Env[process.env.NODE_ENV].SHOPIFY_DOMAIN,
-  //   SHOPIFY_STOREFRONT_TOKEN: Env[process.env.NODE_ENV].SHOPIFY_STOREFRONT_TOKEN,
-  //   APP_PORT: Env[process.env.NODE_ENV].APP_PORT,
-  //   TEST: process.env.TEST,
-  // },
+  env: {
+    BASE_URL: process.env.BASE_URL,
+    NODE_ENV: process.env.NODE_ENV,
+    VUE_APP_TITLE: process.env.VUE_APP_TITLE,
+    SHOPIFY_DOMAIN: process.env.SHOPIFY_DOMAIN,
+    SHOPIFY_STOREFRONT_TOKEN: process.env.SHOPIFY_STOREFRONT_TOKEN,
+    APP_PORT: process.env.APP_PORT,
+    // TEST: process.env.TEST,
+  },
   server: {
     port: process.env.APP_PORT || 8888,
     host: '0.0.0.0',
@@ -172,7 +172,7 @@ const config = {
   },
   router: {
     // 在每页渲染前运行 middleware/user-agent.js 中间件的逻辑
-    middleware: 'user-agent',
+    // middleware: 'user-agent',
   },
   plugins: [
     '@/plugins/scrollToTop.client.js',
