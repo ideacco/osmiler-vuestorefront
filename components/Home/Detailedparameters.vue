@@ -48,6 +48,7 @@
                         src="/wp-content/uploads/2022/06/ic_01-2.svg"
                         class="el-image"
                         alt=""
+                        loading="lazy"
                       />
                       <h4
                         class="el-title uk-margin-top uk-margin-remove-bottom"
@@ -73,6 +74,7 @@
                         src="/wp-content/uploads/2022/06/ic_02-2.svg"
                         class="el-image"
                         alt=""
+                        loading="lazy"
                       />
                       <h4
                         class="el-title uk-margin-top uk-margin-remove-bottom"
@@ -98,6 +100,7 @@
                         src="/wp-content/uploads/2022/06/ic_03-2.svg"
                         class="el-image"
                         alt=""
+                        loading="lazy"
                       />
                       <h4
                         class="el-title uk-margin-top uk-margin-remove-bottom"
@@ -123,6 +126,7 @@
                         src="/wp-content/uploads/2022/06/ic_04-1.svg"
                         class="el-image"
                         alt=""
+                        loading="lazy"
                       />
                       <h4
                         class="el-title uk-margin-top uk-margin-remove-bottom"
@@ -148,6 +152,7 @@
                         src="/wp-content/uploads/2022/06/ic_05-1.svg"
                         class="el-image"
                         alt=""
+                        loading="lazy"
                       />
                       <h4
                         class="el-title uk-margin-top uk-margin-remove-bottom"
@@ -176,6 +181,7 @@
                         data-height="33"
                         class="el-image"
                         alt=""
+                        loading="lazy"
                       />
                       <h4
                         class="el-title uk-margin-top uk-margin-remove-bottom"

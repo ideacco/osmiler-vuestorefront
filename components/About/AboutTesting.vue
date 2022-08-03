@@ -38,6 +38,7 @@
                       alt
                       style="top: 50%"
                       uk-cover
+                      loading="lazy"
                     />
 
                     <div
@@ -83,6 +84,7 @@
                       uk-cover
                       style="top: 50%"
                       alt
+                     loading="lazy"
                     />
                     <div
                       class="
@@ -125,6 +127,7 @@
                       uk-cover
                       style="top: 50%"
                       alt
+                     loading="lazy"
                     />
                     <div
                       class="
@@ -212,6 +215,7 @@
                         data-width="2160"
                         data-height="1215"
                         class="el-image uk-height-1"
+                        loading="lazy"
                       />
                       <div
                       class="
@@ -260,6 +264,7 @@
                         data-width="1440"
                         data-height="810"
                         class="el-image uk-height-1"
+                        loading="lazy"
                       />
                            <div
                       class="
@@ -306,6 +311,7 @@
                         data-width="1440"
                         data-height="810"
                         class="el-image uk-height-1"
+                        loading="lazy"
                       />
                                <div
                       class="

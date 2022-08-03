@@ -1,6 +1,6 @@
 <template>
 <div class="uk-section-default">
-        <div style="background-image: url(/wp-content/themes/yootheme/cache/BG.jpg);"
+        <div style="background-image: url(/wp-content/themes/yootheme/cache/Frame1361.jpg);"
         class="uk-background-norepeat uk-background-cover uk-background-center-center uk-section uk-visible@m  uk-section-primary  ">
       <div
         class="
@@ -10,6 +10,7 @@
           uk-section
           uk-padding-remove-top
         "
+          loading="lazy"
       >
         <div class="uk-container uk-container-expand uk-containerfont">
           <div class="tm-grid-expand uk-child-width-1-1 uk-grid-margin" uk-grid>
@@ -53,6 +54,7 @@
           uk-section
           uk-padding-remove-vertical
         "
+          loading="lazy"
       >
         <div class="uk-container uk-container-large">
           <div

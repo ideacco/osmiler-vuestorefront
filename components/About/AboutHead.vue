@@ -14,6 +14,7 @@
           uk-flex
           uk-flex-middle
         "
+          loading="lazy"
       >
         <div class="uk-width-1-1 uk-width-1-2">
           <div class="uk-container uk-textfont">

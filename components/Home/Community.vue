@@ -2,9 +2,11 @@
   <div>
     <div id="Community" class="uk-visible@m uk-section-default uk-light">
       <div
-        style="background-image: url('/wp-content/themes/yootheme/cache/03BG.jpg');"
+        style="background-image: url('/wp-content/themes/yootheme/cache/03.jpg');"
         class="uk-background-norepeat uk-background-cover uk-background-center-right uk-background-fixed uk-section uk-padding-remove-vertical uk-flex uk-flex-middle"
         uk-height-viewport="offset-top: true;"
+        data-src=""
+        uk-img
       >
         <div class="uk-width-1-1">
           <div class="uk-container uk-container-large">
@@ -41,10 +43,11 @@
                       class="uk-margin uk-text-left@m uk-text-center"
                     >
                       <img
-                        src="/wp-content/uploads/2022/06/A24-1.gif"
+                        src="/wp-content/uploads/2022/06/A24-1(1).gif"
                         class="el-image"
                         alt
                         uk-gif
+                        loading="lazy"
                       />
                     </div>
                     <div id="page#6-0-0-4"></div>
@@ -60,7 +63,8 @@
     <div id="Community" class="uk-hidden@m uk-section-default">
       <div
         style="background-image: url('/wp-content/themes/yootheme/cache/4646dcaf.jpeg');height: 100%;"
-        class="uk-background-norepeat uk-background-cover uk-background-center-center uk-section uk-padding-remove-vertical"
+        class="uk-background-norepeat  uk-background-cover uk-background-center-center uk-section uk-padding-remove-vertical"
+
       >
         <div class="uk-container uk-container-large">
           <div
@@ -93,10 +97,11 @@
                     class="uk-margin uk-text-left@m uk-text-center"
                   >
                     <img
-                      src="/wp-content/uploads/2022/06/A24-1.gif"
+                      src="/wp-content/uploads/2022/06/A24-1(1).gif"
                       class="el-image"
                       alt
                       uk-gif
+                      loading="lazy"
                     />
                   </div>
                   <div id="page#7-0-0-4"></div>
@@ -110,6 +115,7 @@
   </div>
 </template>
 <script>
+
 export default {
   name: 'CoMmunity',
   data() {

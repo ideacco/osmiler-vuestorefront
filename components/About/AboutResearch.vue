@@ -2,7 +2,7 @@
   <div>
     <div id="Bone" class="uk-visible@m uk-section-default uk-light">
       <div
-        style="background-image: url('/wp-content/themes/yootheme/cache/_DSD2600.jpg');height: 860px;"
+        style="background-image: url('/wp-content/themes/yootheme/cache/409.jpg');height: 860px;"
         class="
           uk-background-norepeat
           uk-background-cover
@@ -13,6 +13,7 @@
           uk-flex-middle
         "
         uk-height-viewport="offset-top: true;"
+          loading="lazy"
       >
         <div class="uk-width-1-1">
           <div class="uk-container uk-container-expand">
@@ -52,6 +53,7 @@
           uk-padding-remove-vertical
         "
         uk-height-viewport="offset-top: true;"
+          loading="lazy"
       >
         <div class="uk-container uk-container-xsmall">
           <div class="tm-grid-expand uk-child-width-1-1 uk-grid-margin" uk-grid>

@@ -147,24 +147,26 @@
                     >
                       <li class="el-item">
                         <img
-                          src="/wp-content/themes/yootheme/cache/Frame1356.jpg"
+                          src="/wp-content/themes/yootheme/cache/Frame1356.jpeg"
                           sizes="(max-aspect-ratio: 721/840) 86vh"
                           data-width="721"
                           data-height="840"
                           class="el-image"
                           alt
                           uk-cover
+                          loading="lazy"
                         />
                       </li>
                       <li class="el-item">
                         <img
-                          src="/wp-content/themes/yootheme/cache/Frame1357589.jpg"
+                          src="/wp-content/themes/yootheme/cache/Frame1357589.jpeg"
                           sizes="(max-aspect-ratio: 721/840) 86vh"
                           data-width="721"
                           data-height="840"
                           class="el-image"
                           alt="two brown wooden toothbrushes"
                           uk-cover
+                          loading="lazy"
                         />
                       </li>
                     </ul>

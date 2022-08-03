@@ -17,15 +17,17 @@
                                             alt
                                             style="top:50%"
                                             uk-cover
-                                      >
+                                            loading="lazy"
+                                      />
                                     </li>
                                     <li class="el-item">
-                                        <img src="/wp-content/themes/yootheme/cache/x2.jpg"
+                                        <img src="/wp-content/themes/yootheme/cache/x2(1).jpg"
                                             class="el-image el-heightbox"
                                             uk-cover
                                             style="top:50%"
                                             alt
-                                       >
+                                            loading="lazy"
+                                       />
                                     </li>
                                 </ul>
                                 <div class="uk-position-bottom-center uk-position-medium uk-visible@s">
@@ -57,17 +59,20 @@
                                                                                                 sizes="(min-width: 2160px) 2160px"
                                                                                                 data-width="2160"
                                                                                                 data-height="1215"
-                                                                                                class="el-image" >
+                                                                                                class="el-image"
+                                                                                                loading="lazy"/>
                                                                                 </div>
                                                                         </li>
                                                                         <li class="uk-width-1-1 uk-width-1-1@m">
                                                                                 <div
                                                                                         class="el-item uk-panel uk-margin-remove-first-child">
-                                                                                        <img src="/wp-content/themes/yootheme/cache/x2.jpg"
+                                                                                        <img src="/wp-content/themes/yootheme/cache/x2(1).jpg"
                                                                                                 sizes="(min-width: 1440px) 1440px"
                                                                                                 data-width="1440"
                                                                                                 data-height="810"
-                                                                                                class="el-image" >
+                                                                                                class="el-image"
+                                                                                                loading="lazy"
+                                                                                                />
                                                                                 </div>
                                                                         </li>
                                                                 </ul>

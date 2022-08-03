@@ -8,6 +8,8 @@
       <div
         style="background-image: url('/wp-content/themes/yootheme/cache/music-hero-4f873de3.jpeg');"
         class="uk-background-norepeat uk-background-cover uk-background-top-center uk-section uk-section-large"
+        data-src=""
+        uk-img
       >
         <div class="uk-container uk-container-expand">
           <div class="tm-header-placeholder uk-margin-remove-adjacent"></div>

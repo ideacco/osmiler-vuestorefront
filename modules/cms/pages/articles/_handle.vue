@@ -2,7 +2,7 @@
   <SfLoader :loading="loading">
     <article>
       <header>
-        <img :src="getArticleImage(article)" />
+        <img :src="getArticleImage(article)"  loading="lazy" />
         <h2>{{ article.title }}</h2>
         <p>
           {{ $t('Published by') }} {{ article.fullAuthorName }} {{ $t('on') }}

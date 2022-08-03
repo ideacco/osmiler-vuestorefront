@@ -3,7 +3,7 @@
   <div>
     <div class="uk-section-default uk-dark">
       <div
-        style="background-image: url('/wp-content/themes/yootheme/cache/Group1362.jpg'); "
+        style="background-image: url('/wp-content/themes/yootheme/cache/Group13622.jpeg'); "
         class="
           uk-background-norepeat
           uk-background-cover
@@ -11,6 +11,7 @@
           uk-section
           uk-section-large
         "
+          loading="lazy"
       >
         <div class="uk-container uk-container-expand">
           <div class="uk-grid-margin uk-container uk-container-large">

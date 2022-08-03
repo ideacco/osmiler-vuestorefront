@@ -2,9 +2,11 @@
   <div>
     <div id="Bone" class="uk-visible@m uk-section-default uk-light">
       <div
-        style="background-image: url('/wp-content/themes/yootheme/cache/pic_02-ya-7b39abde.jpeg');height:860px ;"
+        style="background-image: url('/wp-content/themes/yootheme/cache/02.jpg');height:860px ;"
         class="uk-background-norepeat uk-background-cover uk-background-top-left uk-section uk-padding-remove-vertical uk-flex uk-flex-middle"
         uk-height-viewport="offset-top: true;"
+        data-src=""
+        uk-img
       >
         <div class="uk-width-1-1">
           <div class="uk-container uk-container-expand">
@@ -30,6 +32,7 @@
                     data-height="234"
                     class="el-image"
                     alt
+                    loading="lazy"
                   />
                 </div>
               </div>
@@ -43,6 +46,7 @@
         style="background-image: url('/wp-content/themes/yootheme/cache/02-afe67aa2.jpeg');"
         class="uk-background-norepeat uk-background-cover uk-background-bottom-center uk-section uk-padding-remove-vertical"
         uk-height-viewport="offset-top: true;"
+          loading="lazy"
       >
         <div class="uk-container uk-container-xsmall">
           <div class="tm-grid-expand uk-child-width-1-1 uk-grid-margin" uk-grid>
@@ -81,6 +85,7 @@
                 data-height="462"
                 class="el-image"
                 alt
+                loading="lazy"
               />
             </div>
           </div>
@@ -90,6 +95,7 @@
   </div>
 </template>
 <script>
+
 export default {
   name: 'BannerGrids',
   data() {

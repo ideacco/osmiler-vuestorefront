@@ -3,7 +3,8 @@
   <div>
     <div class="uk-section-default uk-dark">
       <div
-        style="background-image: url('/wp-content/themes/yootheme/cache/x2.jpg');"
+        style="background-image: url('/wp-content/themes/yootheme/cache/x2.jpg'); "
+  loading="lazy"
         class="uk-background-norepeat uk-background-cover uk-background-center-center uk-section uk-section-large"
       >
       </div>

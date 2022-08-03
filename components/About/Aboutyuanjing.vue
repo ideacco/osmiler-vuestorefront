@@ -20,6 +20,7 @@
                     src="/wp-content/themes/yootheme/cache/LOGO.png"
                     alt=""
                     class="logo"
+                    loading="lazy"
                   />
                   <p class="pfontsize">
                     We are committed to creating more possibilities for enjoying
@@ -58,6 +59,7 @@
                     data-height="977"
                     class="el-image"
                     alt
+                    loading="lazy"
                   />
                 </div>
               </div>

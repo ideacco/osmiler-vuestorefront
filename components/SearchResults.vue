@@ -74,6 +74,7 @@
                           :src="picture"
                           :width="imageSlotProps.imageWidth"
                           class="sf-product-card__picture"
+                          loading="lazy"
                         />
                       </template>
                       <nuxt-img
@@ -83,6 +84,7 @@
                         :src="imageSlotProps.image"
                         :width="imageSlotProps.imageWidth"
                         class="sf-product-card__image lol"
+                         loading="lazy"
                       />
                     </SfButton>
                   </template>
@@ -145,6 +147,7 @@
                         :src="picture"
                         :width="imageSlotProps.imageWidth"
                         class="sf-product-card__picture"
+                        loading="lazy"
                       />
                     </template>
                     <nuxt-img
@@ -154,6 +157,7 @@
                       :src="imageSlotProps.image"
                       :width="imageSlotProps.imageWidth"
                       class="sf-product-card__image lol"
+                      loading="lazy"
                     />
                   </SfButton>
                 </template>
@@ -226,6 +230,7 @@
                           :src="picture"
                           :width="imageSlotProps.imageWidth"
                           class="sf-product-card__picture"
+                          loading="lazy"
                         />
                       </template>
                       <nuxt-img
@@ -235,6 +240,7 @@
                         :src="imageSlotProps.image"
                         :width="imageSlotProps.imageWidth"
                         class="sf-product-card__image lol"
+                        loading="lazy"
                       />
                     </SfButton>
                   </template>
@@ -294,6 +300,7 @@
                         :src="picture"
                         :width="imageSlotProps.imageWidth"
                         class="sf-product-card__picture"
+                        loading="lazy"
                       />
                     </template>
                     <nuxt-img
@@ -303,6 +310,7 @@
                       :src="imageSlotProps.image"
                       :width="imageSlotProps.imageWidth"
                       class="sf-product-card__image lol"
+                      loading="lazy"
                     />
                   </SfButton>
                 </template>

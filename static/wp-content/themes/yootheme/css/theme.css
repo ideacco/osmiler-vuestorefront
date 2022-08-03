@@ -6,6 +6,7 @@
   font-weight: 500;
   src: url(./../fonts/font-2bc258d4.woff2) format('woff2'),
     url(./../fonts/font-9975ca18.woff) format('woff');
+    font-display: swap
 }
 @font-face {
   font-family: 'Inter';
@@ -13,6 +14,7 @@
   font-weight: 600;
   src: url(./../fonts/font-bb2dbba5.woff2) format('woff2'),
     url(./../fonts/font-c98b2a17.woff) format('woff');
+    font-display: swap
 }
 @font-face {
   font-family: 'Overpass';
@@ -20,6 +22,7 @@
   font-weight: 400;
   src: url(./../fonts/font-9ceeb427.woff2) format('woff2'),
     url(./../fonts/font-3e811dcd.woff) format('woff');
+    font-display: swap
 }
 .screen-reader-text {
   border: 0;
@@ -11358,4 +11361,5 @@ body {
     url('/static/osmiler-regular-webfont.woff') format('woff');
   font-weight: normal;
   font-style: normal;
+  font-display: swap
 }

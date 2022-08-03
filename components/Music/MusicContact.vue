@@ -3,7 +3,8 @@
   <div>
     <div class="uk-section-default uk-dark">
       <div
-        style="background-image: url('/wp-content/themes/yootheme/cache/Frame1405.jpg');"
+        style="background-image: url('/wp-content/themes/yootheme/cache/tongyong.jpg');"
+        loading="lazy"
         class="uk-background-norepeat uk-background-cover uk-background-center-center uk-section uk-section-large"
       >
         <div class="uk-container uk-container-expand">
@@ -26,7 +27,7 @@
                     @click="gitcheckoumail()"
                   >
                     Contact us
-                    <span class="uk-margin-small-left" uk-icon="mail"></span>
+                    <span class="uk-margin-small-left" uk-icon="mail" style="color:#fff"></span>
                   </a>
                 </div>
               </div>

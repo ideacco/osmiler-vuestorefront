@@ -21,6 +21,7 @@
                         data-height="60"
                         class="el-image"
                         alt
+                        loading="lazy"
                       />
                       <h3
                         class="el-title uk-margin-top uk-margin-remove-bottom"
@@ -55,6 +56,7 @@
                         data-height="60"
                         class="el-image"
                         alt
+                        loading="lazy"
                       />
                       <h3
                         class="el-title uk-margin-top uk-margin-remove-bottom"
@@ -80,6 +82,7 @@
                         data-height="60"
                         class="el-image"
                         alt
+                        loading="lazy"
                       />
                       <h3
                         class="el-title uk-margin-top uk-margin-remove-bottom"
@@ -105,6 +108,7 @@
                         data-height="60"
                         class="el-image"
                         alt
+                        loading="lazy"
                       />
                       <h3
                         class="el-title uk-margin-top uk-margin-remove-bottom"

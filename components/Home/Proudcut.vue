@@ -26,9 +26,9 @@
     </div> -->
             <div class="uk-visible@m uk-section-primary" data-v-69ab7cfe="">
                 <div uk-height-viewport="offset-top: true; offset-bottom: 20;"
-                  class="uk-background-norepeat uk-background-cover uk-background-center-center uk-section uk-section-large"
-                  style="background-image:url('/wp-content/themes/yootheme/cache/14BG-ya-39ecc9e1.jpeg'); height: 840px;"
-                  data-v-69ab7cfe="">
+                  class="uk-background-norepeat  uk-background-cover uk-background-center-center uk-section uk-section-large"
+                  style="background-image:url('/wp-content/themes/yootheme/cache/12.jpg'); height: 840px;"
+                 >
                   <div class="uk-container uk-container-large" data-v-69ab7cfe="">
                     <div  class="tm-grid-expand uk-child-width-1-1 uk-grid-margin uk-grid uk-grid-stack"
                       data-v-69ab7cfe="">
@@ -83,6 +83,7 @@
               data-height="1412"
               class="el-image"
               alt
+              loading="lazy"
             />
           </div>
         </div>
@@ -91,6 +92,7 @@
   </div>
 </template>
 <script>
+
 export default {
   name: 'ProuDcut',
   data() {

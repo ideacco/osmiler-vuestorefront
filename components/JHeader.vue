@@ -9,6 +9,7 @@
                 alt="OSMILER"
                 style="width: 80px"
                 src="/wp-content/uploads/2022/05/osmiler-logo-default.svg"
+                loading="lazy"
               /></a>
           </div>
           <div class="uk-navbar-right">
@@ -156,12 +157,14 @@
                       v-show="srcs == 1"
                       style="width: 90px"
                       src="/wp-content/uploads/2022/05/osmiler-logo-default.svg"
+                      loading="lazy"
                     />
                     <img
                       v-show="srcs == 0"
                       alt="OSMILER"
                       style="width: 90px"
                       src="/wp-content/uploads/2022/05/osmiler-logo-light.svg"
+                      loading="lazy"
                     />
                   </a>
                   <ul class="uk-navbar-nav">

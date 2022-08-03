@@ -28,6 +28,7 @@
         alt="Placeholder"
         :width="width || nuxtImgConfig.width"
         :height="height || nuxtImgConfig.height"
+         loading="lazy"
       />
     </slot>
     <span
@@ -44,6 +45,7 @@
       v-bind="$attrs"
       :width="width"
       :height="height"
+       loading="lazy"
       />
     </noscript>
   </span>
@@ -94,7 +96,7 @@ export default {
       type: String,
       default: 'img',
       validator: (value) =>
-        ['', 'img', 'nuxt-img', 'nuxt-picture'].includes(value)
+        ['', 'img', 'img', 'nuxt-picture'].includes(value)
     },
     nuxtImgConfig: {
       type: Object,
@@ -149,7 +151,7 @@ export default {
     },
     isPlaceholderVisible() {
       return (
-        this.imageComponentTag === 'nuxt-img' ||
+        this.imageComponentTag === 'img' ||
         this.imageComponentTag === 'nuxt-picture' ||
         this.loaded ||
         (!this.loaded && !this.placeholder)
@@ -195,7 +197,7 @@ export default {
   },
   created() {
     if (
-      this.imageComponentTag === 'nuxt-img' ||
+      this.imageComponentTag === 'img' ||
       this.imageComponentTag === 'nuxt-picture'
     )
       this.loaded = true

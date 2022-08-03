@@ -2,9 +2,11 @@
   <div>
     <div class="uk-visible@m uk-section-primary">
       <div
-        style="background-image: url('/wp-content/themes/yootheme/cache/408-1-951e4350.jpeg');height:837px;"
+        style="background-image: url('/wp-content/themes/yootheme/cache/08.jpg');height:837px;"
         class="uk-background-norepeat uk-background-cover uk-background-bottom-center uk-section uk-padding-remove-top"
         uk-height-viewport="offset-top: true;"
+        data-src=""
+        uk-img
       >
         <div class="uk-container uk-container-expand">
           <div class="tm-grid-expand uk-child-width-1-1 uk-grid-margin" uk-grid>
@@ -74,7 +76,7 @@
     <div id="Community" class="uk-hidden@m uk-section-default uk-light">
       <div
         style="background-image: url('/wp-content/themes/yootheme/cache/407-0a640e30.jpeg');"
-        class="uk-background-norepeat uk-background-cover uk-background-center-center uk-section uk-padding-remove-vertical"
+        class="uk-background-norepeat uk-background-cover uk-background-center-center  uk-section uk-padding-remove-vertical"
       >
         <div class="uk-container uk-container-large">
           <div
@@ -152,11 +154,12 @@
   </div>
 </template>
 <script>
+
 export default {
   name: 'AutOuk',
   data() {
     return {}
+  },
   }
-}
 </script>
 <style lang="scss"></style>
