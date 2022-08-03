@@ -3,7 +3,7 @@
   <div>
     <div class="uk-section-default uk-dark">
       <div
-        style="background-image: url('/wp-content/themes/yootheme/cache/wecomle.jpg');"
+        :style = backgroundStyles
         class="uk-background-norepeat uk-background-cover uk-background-center-center uk-section uk-section-large"
         data-src=""
         uk-img
@@ -44,6 +44,19 @@
 
 export default {
   name: 'ContactComponent',
+    computed: {
+          backgroundStyles() {
+      const imgUrl = this.$img('/wp-content/themes/yootheme/cache/wecomle.jpg')
+      return {
+        backgroundImage: `url('${imgUrl}')`,
+        loading: 'lazy',
+        modifiers: {
+            format: 'webp',
+            quality: 80
+        }
+      }
+    }
+  },
   data() {
     return {}
   },

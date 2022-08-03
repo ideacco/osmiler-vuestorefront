@@ -2,11 +2,9 @@
   <div>
     <div id="Community" class="uk-visible@m uk-section-default uk-light">
       <div
-        style="background-image: url('/wp-content/themes/yootheme/cache/03.jpg');"
         class="uk-background-norepeat uk-background-cover uk-background-center-right uk-background-fixed uk-section uk-padding-remove-vertical uk-flex uk-flex-middle"
         uk-height-viewport="offset-top: true;"
-        data-src=""
-        uk-img
+        :style = backgroundStyles
       >
         <div class="uk-width-1-1">
           <div class="uk-container uk-container-large">
@@ -62,7 +60,7 @@
     </div>
     <div id="Community" class="uk-hidden@m uk-section-default">
       <div
-        style="background-image: url('/wp-content/themes/yootheme/cache/4646dcaf.jpeg');height: 100%;"
+        :style = backgroundStylees
         class="uk-background-norepeat  uk-background-cover uk-background-center-center uk-section uk-padding-remove-vertical"
 
       >
@@ -101,7 +99,7 @@
                       class="el-image"
                       alt
                       uk-gif
-                      loading="lazy"
+                   loading="lazy"
                     />
                   </div>
                   <div id="page#7-0-0-4"></div>
@@ -118,6 +116,30 @@
 
 export default {
   name: 'CoMmunity',
+  computed: {
+    backgroundStyles() {
+      const imgUrl = this.$img('/wp-content/themes/yootheme/cache/03.jpg')
+      return {
+        backgroundImage: `url('${imgUrl}')`,
+        loading: 'lazy',
+        modifiers: {
+            format: 'webp',
+            quality: 80
+        }
+      }
+    },
+      backgroundStylees() {
+      const imgUrl = this.$img('/wp-content/themes/yootheme/cache/4646dcaf.jpeg')
+      return {
+        backgroundImage: `url('${imgUrl}')`,
+        loading: 'lazy',
+        modifiers: {
+            format: 'webp',
+            quality: 80
+        }
+      }
+    }
+  },
   data() {
     return {}
   }

@@ -27,7 +27,8 @@
             <div class="uk-visible@m uk-section-primary" data-v-69ab7cfe="">
                 <div uk-height-viewport="offset-top: true; offset-bottom: 20;"
                   class="uk-background-norepeat  uk-background-cover uk-background-center-center uk-section uk-section-large"
-                  style="background-image:url('/wp-content/themes/yootheme/cache/12.jpg'); height: 840px;"
+                  style=" height: 840px;"
+                  :style = backgroundStyles
                  >
                   <div class="uk-container uk-container-large" data-v-69ab7cfe="">
                     <div  class="tm-grid-expand uk-child-width-1-1 uk-grid-margin uk-grid uk-grid-stack"
@@ -76,14 +77,15 @@
       >
         <div>
           <div class="uk-margin">
-            <img
+            <nuxt-img
               src="/wp-content/themes/yootheme/cache/14BG-iphoen-ya-320c541d.jpeg"
-              sizes="(min-width: 960px) 960px"
               data-width="960"
               data-height="1412"
               class="el-image"
               alt
-              loading="lazy"
+                format="webp"
+                   quality="80"
+                   loading="lazy"
             />
           </div>
         </div>
@@ -95,6 +97,19 @@
 
 export default {
   name: 'ProuDcut',
+    computed: {
+    backgroundStyles() {
+      const imgUrl = this.$img('/wp-content/themes/yootheme/cache/12.jpg')
+      return {
+        backgroundImage: `url('${imgUrl}')`,
+        loading: 'lazy',
+        modifiers: {
+            format: 'webp',
+            quality: 80
+        }
+      }
+    }
+  },
   data() {
     return {}
   }
