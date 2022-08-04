@@ -144,15 +144,7 @@ const config = {
       'bing-script':['innerHTML'],
       'Pixel-Code':['innerHTML'],
       'Pixel-Code1':['innerHTML'],
-    },
-    // metaInfo: {
-    //   noscript: [
-    //     {  hid: 'pixel-scrpit',
-    //       innerHTML: `<img height="1" width="1" style="display:none"
-    //     src="https://www.facebook.com/tr?id=789343135804814&ev=PageView&noscript=1"
-    //   />` }
-    //   ]
-    // }
+    }
   },
 
   loading: {
@@ -266,15 +258,8 @@ const config = {
     '@nuxtjs/sitemap',
     './modules/cms/runtime',
     '@nuxt/image',
-    '@nuxtjs/axios',
-    'nuxt-seo-meta'
+    '@nuxtjs/axios'
   ],
-  seoMeta: {
-    title: "SEO Meta - Title",
-    description: "SEO Meta - Description",
-    defaultImage: "defaultImage.png",
-    defaultUrl: "https://longbridgeapp.com"
-  },
   nuxtPrecompress: {
     enabled: true, // Enable in production
     report: false, // set true to turn one console messages during module init
@@ -399,7 +384,6 @@ const config = {
     ],
     defaultLocale: 'en',
     lazy: true,
-    seo: true,
     langDir: 'lang/',
     vueI18n: {
       fallbackLocale: 'en',
@@ -564,14 +548,6 @@ const config = {
           type: 'image/png',
         },
       ],
-    },
-    meta: {
-      name: 'Osmiler',
-      author: 'Osmiler Team',
-      backgroundColor: '#5d47ee',
-      description: 'let your smile light up the world',
-      themeColor: '#5d47ee',
-      ogHost: 'shopify-pwa.aureatelabs.com',
     },
     icon: {
       source: '/icon.png',

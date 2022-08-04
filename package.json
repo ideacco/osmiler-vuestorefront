@@ -42,11 +42,11 @@
     "nuxt": "^2.13.3",
     "nuxt-precompress": "^0.5.9",
     "nuxt-purgecss": "^1.0.0",
-    "nuxt-seo-meta": "^2.3.1",
     "uikit": "^3.14.1",
     "vee-validate": "^3.2.3",
     "vue-scrollto": "^2.17.1",
-    "vuikit": "^0.8.10"
+    "vuikit": "^0.8.10",
+    "yarn": "^1.22.17"
   },
   "devDependencies": {
     "@aceforth/nuxt-optimized-images": "^1.4.0",
