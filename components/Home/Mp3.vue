@@ -105,13 +105,13 @@ export default {
   name: 'MP3',
     computed: {
     backgroundStyles() {
-      const imgUrl = this.$img('/wp-content/themes/yootheme/cache/04.jpg')
+      const imgUrl = this.$img('/wp-content/themes/yootheme/cache/042.jpg')
       return {
         backgroundImage: `url('${imgUrl}')`,
         loading: 'lazy',
         modifiers: {
             format: 'webp',
-            quality: 80
+            quality: 90
         }
       }
     }

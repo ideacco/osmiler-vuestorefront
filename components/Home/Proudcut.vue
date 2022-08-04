@@ -1,29 +1,6 @@
 <!--  -->
 <template>
   <div>
-    <!-- <div class="uk-visible@m uk-section-primary">
-      <div
-        style="background-image: url('/wp-content/themes/yootheme/cache/14BG-ya-39ecc9e1.jpeg');background-position: 60% 30%;"
-        class="uk-background-norepeat uk-background-cover uk-background-center-center uk-section uk-section-large"
-        uk-height-viewport="offset-top: true; offset-bottom: 20;"
-      >
-        <div class="uk-container uk-container-large">
-          <div class="tm-grid-expand uk-child-width-1-1 uk-grid-margin" uk-grid>
-            <div>
-              <h1
-                class="uk-margin-medium uk-margin-remove-bottom uk-width-large"
-                id="page#14-0-0-0"
-              >
-                No afraid of power-off
-              </h1>
-              <div class="uk-panel uk-margin">
-                <p>The battery can last up to more than 90 days.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div> -->
             <div class="uk-visible@m uk-section-primary" data-v-69ab7cfe="">
                 <div uk-height-viewport="offset-top: true; offset-bottom: 20;"
                   class="uk-background-norepeat  uk-background-cover uk-background-center-center uk-section uk-section-large"

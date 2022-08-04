@@ -1,6 +1,7 @@
 <template>
   <div>
     <div
+
       class="uk-section-default uk-light "
       tm-header-transparent="light"
       uk-scrollspy="target: [uk-scrollspy-class]; cls: uk-animation-slide-bottom-medium; delay: false;"
@@ -107,10 +108,12 @@
       </div>
     </div>
     <MusicDownload/>
-    <div
-      class="uk-section-muted uk-section uk-section-large"
+
+     <div
+
+      class="uk-section-muted uk-section uk-section-large uk-background-norepeat  uk-background-cover uk-background-center-center uk-section uk-section-large "
       uk-scrollspy="target: [uk-scrollspy-class]; cls: uk-animation-fade; delay: false;"
-      style="background:#0c0b0e;color: #fff;"
+      :style = backgroundStylees
     >
       <div class="uk-container">
          <div class="tm-grid-expand uk-child-width-1-1 uk-grid-margin" uk-grid>
@@ -186,7 +189,7 @@
                 </tr>
               </tbody>
             </table>
-            <p style="font-size:16px" class="pfontsize">Note:The speed of the music is related to the vibration of the toothbrush（the faster,the stonger/the slower，the genteler)</p>
+            <p style="font-size:16px;color:#fff" class="pfontsize" >Note:The speed of the music is related to the vibration of the toothbrush（the faster,the stonger/the slower，the genteler)</p>
           </div>
         </div>
       </div>
@@ -209,6 +212,17 @@ export default {
   computed: {
     backgroundStyles() {
       const imgUrl = this.$img('/wp-content/themes/yootheme/cache/music-hero-4f873de3.jpeg', { width: 100 })
+      return {
+        backgroundImage: `url('${imgUrl}')`,
+        loading: 'lazy',
+        modifiers: {
+            format: 'webp',
+            quality: 80
+        }
+      }
+    },
+    backgroundStylees(){
+            const imgUrl = this.$img('/wp-content/themes/yootheme/cache/bg.jpg')
       return {
         backgroundImage: `url('${imgUrl}')`,
         loading: 'lazy',
