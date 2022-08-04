@@ -19,7 +19,7 @@
       tm-header-transparent="light"
       uk-height-viewport="offset-top: true;"
       :style="{ marginTop: innerWidth > 940 ? '-120px' : '0px' }"
-      style="height: 1220px;
+      style="height: 960px;
       background-image: url('/wp-content/themes/yootheme/cache/Hero_2.webp')"
     >
 
