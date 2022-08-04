@@ -200,7 +200,7 @@ const config = {
         },
         performance: {
           purgeCSS: {
-            enabled: process.env.NODE_ENV === 'production',
+            enabled: false,
             paths: ['**/*.vue'],
           },
         },
@@ -534,7 +534,7 @@ const config = {
   },
   pwa: {
     manifest: {
-      name: `${process.env.vueAppTitle}`,
+      name: process.env.vueAppTitle,
       lang: 'en',
       shortName: 'SPVSF2',
       startUrl: '/',
