@@ -10,16 +10,15 @@ import Env from './env' // 环境配置文件
 // const Timestamp = new Date().getTime()
 const config = {
   env: {
-    BASE_URL: process.env.BASE_URL,
-    NODE_ENV: process.env.NODE_ENV,
-    VUE_APP_TITLE: process.env.VUE_APP_TITLE,
-    SHOPIFY_DOMAIN: process.env.SHOPIFY_DOMAIN,
-    SHOPIFY_STOREFRONT_TOKEN: process.env.SHOPIFY_STOREFRONT_TOKEN,
-    APP_PORT: process.env.APP_PORT,
-    // TEST: process.env.TEST,
+    baseUrl: Env[process.env.NODE_ENV].BASE_URL,
+    nodeEnv: Env[process.env.NODE_ENV].NODE_ENV,
+    vueAppTitle: Env[process.env.NODE_ENV].VUE_APP_TITLE,
+    storeURL: Env[process.env.NODE_ENV].SHOPIFY_DOMAIN,
+    storeToken: Env[process.env.NODE_ENV].SHOPIFY_STOREFRONT_TOKEN,
+    appPort: Env[process.env.NODE_ENV].APP_PORT
   },
   server: {
-    port: process.env.APP_PORT || 8888,
+    port: process.env.APP_PORT || process.env.appPort, // 优先运行时输入的端口
     host: '0.0.0.0',
     // 添加服务器时间标头
     timing: {
@@ -30,11 +29,11 @@ const config = {
     appKey: 'vsf2spcon',
     appVersion: Date.now(),
     // middlewareUrl: `${platformENV}://${process.env.BASE_URL}/api/`,
-    middlewareUrl: `${process.env.BASE_URL}/api/`,
+    middlewareUrl: `${process.env.baseUrl}/api/`,
   },
   privateRuntimeConfig: {
-    storeURL: process.env.SHOPIFY_DOMAIN,
-    storeToken: process.env.SHOPIFY_STOREFRONT_TOKEN,
+    storeURL: process.env.storeURL,
+    storeToken: process.env.storeToken,
   },
   serverMiddleware: [
     // { path: '/custom', handler: '~/server-middleware/custom-features.js' }, // 去掉了原版使用的express的中间件
@@ -44,7 +43,7 @@ const config = {
     },
   ],
   head: {
-    title: 'Osmiler',
+    title: process.env.vueAppTitle,
     meta: [{
         charset: 'utf-8',
       },
@@ -268,7 +267,28 @@ const config = {
     '@nuxtjs/sitemap',
     './modules/cms/runtime',
     '@nuxt/image',
-    '@nuxtjs/axios'
+    '@nuxtjs/axios',
+    ['@vue-storefront/cache/nuxt', {
+      enabled: process.env.VSF_REDIS_ENABLED === 'true', //可选使用环境变量控制开关
+      invalidation: {
+        endpoint: '/cache-invalidate',
+        key: 'uniqueKey',
+        handlers: [
+          '@vue-storefront/cache/defaultHandler'
+        ]
+      },
+      driver: [
+        '@vue-storefront/redis-cache',
+        {
+          defaultTimeout: 86400,
+          redis: {
+            host: '192.168.1.80',
+            port: 6379,
+            password: 'root'
+          }
+        }
+      ]
+    }]
   ],
   nuxtPrecompress: {
     enabled: true, // Enable in production
@@ -514,7 +534,7 @@ const config = {
   },
   pwa: {
     manifest: {
-      name: 'Osmiler',
+      name: `${process.env.vueAppTitle}`,
       lang: 'en',
       shortName: 'SPVSF2',
       startUrl: '/',

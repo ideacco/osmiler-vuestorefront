@@ -278,6 +278,7 @@ import LazyHydrate from 'vue-lazy-hydration'
 import { onSSR } from '@vue-storefront/core'
 import useUiNotification from '~/composables/useUiNotification'
 import { useMeta, useDetails } from '~/composables'
+import { useCache, CacheTagPrefix } from '@vue-storefront/cache'
 
 export default {
   name: 'ProductPage',
@@ -313,6 +314,9 @@ export default {
     const breadcrumbs = ref([])
     const atttLbl = ''
     const qty = ref(1)
+    // 缓存数据
+    const { addTags } = useCache()
+
     // 获取路由传参
     const { slug } = route?.value?.params
     console.log('route?.value?.params', slug)
@@ -448,6 +452,14 @@ export default {
       })
       // 使用获取相关产品的方法
       await searchRelatedProducts({ productId: id.value, related: true })
+
+      addTags([
+        // { prefix: CacheTagPrefix.View, value: 'category' },
+        // { prefix: CacheTagPrefix.Category, value: id }
+        // // or
+        { prefix: 'V', value: 'category' },
+        { prefix: 'C', value: id }
+      ])
     })
 
     // 使用获取详情页的钩子方法获取详情页数据:传入slug句柄则返回单页面,如果不传参则返回页面列表
