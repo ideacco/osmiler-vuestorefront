@@ -576,7 +576,6 @@ const config = {
           options: {
             // Use a custom cache name.
             cacheName: 'SPVSF2Assets',
-
             // Only cache 100 images.
             expiration: {
               maxEntries: 100,
