@@ -3,7 +3,7 @@
   <div>
     <div class="uk-section-default uk-dark">
       <div
-        style="background-image: url('/wp-content/themes/yootheme/cache/Group13622.jpeg'); "
+        :style = backgroundStyles
         class="
           uk-background-norepeat
           uk-background-cover
@@ -47,6 +47,19 @@
 <script>
 export default {
   name: 'AboutDesgin',
+    computed: {
+    backgroundStyles() {
+      const imgUrl = this.$img('/wp-content/themes/yootheme/cache/Group13622.jpeg')
+      return {
+        backgroundImage: `url('${imgUrl}')`,
+        loading: 'lazy',
+        modifiers: {
+            format: 'webp',
+            quality: 80
+        }
+      }
+    }
+  },
   data() {
     return {}
   }

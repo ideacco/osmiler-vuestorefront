@@ -18,11 +18,9 @@
       "
       tm-header-transparent="light"
       uk-height-viewport="offset-top: true;"
-      :style="{ marginTop: innerWidth > 940 ? '-120px' : '0px' }"
-      style="height: 960px;
-      background-image: url('/wp-content/themes/yootheme/cache/Hero_2.webp')"
+      :style ="{ marginTop: innerWidth > 940 ? '-120px' : '0px' },backgroundStyles"
+      style="height: 960px;"
     >
-
 
       <!-- <video
         src="/homepage/Osmiler_video.mp4"
@@ -239,7 +237,7 @@ export default {
   name: 'VideoPlayback',
     computed: {
     backgroundStyles() {
-      const imgUrl = this.$img('/wp-content/themes/yootheme/cache/Hero_2.jpg')
+      const imgUrl = this.$img('/wp-content/themes/yootheme/cache/Hero_2-ya.jpg')
       return {
         backgroundImage: `url('${imgUrl}')`,
         loading: 'lazy',

@@ -73,7 +73,7 @@ export default {
 <style lang="scss" scoped>
 .uk-section-large {
   @include for-desktop{
-    margin-top: 80px;
+    margin-top: 75px;
   }
 }
 .uk-width-class{
