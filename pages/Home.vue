@@ -12,7 +12,6 @@
     <Autouk />
     <AutoPages />
     <DetailedpParameters />
-
     <Certificate />
     <Autobox />
     <Autotitle />
