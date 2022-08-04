@@ -1,6 +1,7 @@
 <template>
 <div class="uk-section-default">
-        <div style="background-image: url(/wp-content/themes/yootheme/cache/Frame1361.webp);"
+ <div
+      :style ="backgroundStyles"
         class="uk-background-norepeat uk-background-cover uk-background-center-center uk-section uk-visible@m  uk-section-primary  ">
       <div
         class="
@@ -46,7 +47,7 @@
     </div>
     <div id="Community" class="uk-hidden@m uk-section-default uk-light">
       <div
-        style="background-image: url('/wp-content/themes/yootheme/cache/BGmobile.jpg');height: 496px;"
+        :style ="backgroundStylees"
         class="
           uk-background-norepeat
           uk-background-cover
@@ -105,6 +106,30 @@
 <script>
 export default {
   name: 'AutOuk',
+  computed: {
+    backgroundStyles() {
+      const imgUrl = this.$img('/wp-content/themes/yootheme/cache/Frame1361.jpg')
+      return {
+        backgroundImage: `url('${imgUrl}')`,
+        loading: 'lazy',
+        modifiers: {
+            format: 'webp',
+            quality: 80
+        }
+      }
+    },
+    backgroundStylees(){
+        const imgUrl = this.$img('/wp-content/themes/yootheme/cache/BGmobile.jpg')
+      return {
+        backgroundImage: `url('${imgUrl}')`,
+        loading: 'lazy',
+        modifiers: {
+            format: 'webp',
+            quality: 80
+        }
+      }
+    }
+  },
   data() {
     return {}
   }

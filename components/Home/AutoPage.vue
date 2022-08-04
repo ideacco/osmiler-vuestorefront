@@ -2,10 +2,10 @@
   <div>
     <div id="page#12" class="uk-visible@m uk-section-default uk-light">
       <div
-        style="background-image: url('/wp-content/themes/yootheme/cache/headbrush.webp');"
         class="uk-background-norepeat  uk-background-cover uk-background-center-left uk-background-fixed uk-section uk-padding-remove-vertical uk-flex uk-flex-middle"
         uk-height-viewport="offset-top: true;"
         data-src=""
+        :style=backgroundStyles
         uk-img
       >
         <div class="uk-width-1-1">
@@ -46,13 +46,14 @@
                       </p>
                     </div>
                     <div class="uk-margin">
-                      <img
+                      <nuxt-img
                         src="/wp-content/themes/yootheme/cache/Group-1317-1-b9ac3f73.png"
-                        sizes="(min-width: 416px) 416px"
                         data-width="416"
                         data-height="204"
                         class="el-image"
                         alt
+                        format="webp"
+                        quality="80"
                         loading="lazy"
                       />
                     </div>
@@ -114,13 +115,14 @@
       >
         <div>
           <div class="uk-margin">
-            <img
+            <nuxt-img
               src="/wp-content/themes/yootheme/cache/06-1-83e2cbb9.jpeg"
-              sizes="(min-width: 960px) 960px"
               data-width="960"
               data-height="1290"
               class="el-image"
               alt
+              format="webp"
+              quality="80"
               loading="lazy"
             />
           </div>
@@ -132,6 +134,19 @@
 <script>
 export default {
   name: 'AutoPage',
+   computed: {
+    backgroundStyles() {
+      const imgUrl = this.$img('/wp-content/themes/yootheme/cache/Frame1313.jpg')
+      return {
+        backgroundImage: `url('${imgUrl}')`,
+        loading: 'lazy',
+        modifiers: {
+            format: 'webp',
+            quality: 80
+        }
+      }
+    }
+  },
   data() {
     return {}
   }

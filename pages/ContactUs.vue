@@ -27,13 +27,14 @@
                     class="el-item uk-panel uk-margin-remove-first-child"
                     uk-scrollspy="target: [uk-scrollspy-class];"
                   >
-                    <img
+                    <nuxt-img
                       src="/wp-content/themes/yootheme/cache/ic_location.svg"
-                      sizes="(min-width: 40px) 40px"
                       data-width="40"
                       data-height="40"
                       class="el-image"
                       alt
+                      format="webp"
+                      quality="80"
                       loading="lazy"
                     />
                     <h2
@@ -53,14 +54,15 @@
                     class="el-item uk-panel uk-margin-remove-first-child"
                     uk-scrollspy="target: [uk-scrollspy-class];"
                   >
-                    <img
+                    <nuxt-img
                       src="/wp-content/themes/yootheme/cache/ic_emile.svg"
-                      sizes="(min-width: 40px) 40px"
                       data-width="40"
                       data-height="40"
                       class="el-image"
                       alt
-                      loading="lazy"
+                      format="webp"
+                     quality="80"
+                     loading="lazy"
                     />
                     <h2
                       class="el-title uk-h3 uk-margin-top uk-margin-remove-bottom"

@@ -34,14 +34,15 @@
                   </div>
                   <div id="page#10-0-0-2"></div>
                   <div class="uk-margin">
-                    <img
+                    <nuxt-img
                       src="/wp-content/themes/yootheme/cache/icon_grop-3-56768954.png"
-                      sizes="(min-width: 268px) 268px"
                       data-width="268"
                       data-height="92"
                       class="el-image"
                       alt
-                      loading="lazy"
+                     format="webp"
+                     quality="80"
+                     loading="lazy"
                     />
                   </div>
                   <div id="page#10-0-0-4"></div>
@@ -50,10 +51,12 @@
             </div>
             <div class="uk-width-1-2@m ">
               <div id="page#10-0-1-0" class="uk-margin uk-text-right">
-                <img
-                  src="/wp-content/themes/yootheme/cache/right.webp"
+                <nuxt-img
+                  src="/wp-content/themes/yootheme/cache/right.jpg"
                   class="el-image"
                   alt
+                  format="webp"
+                  quality="80"
                   loading="lazy"
                 />
               </div>
@@ -102,13 +105,14 @@
       <div class="tm-grid-expand uk-child-width-1-1 uk-grid-margin" uk-grid>
         <div>
           <div id="page#11-1-0-0" class="uk-margin uk-text-right">
-            <img
+            <nuxt-img
               src="/wp-content/themes/yootheme/cache/Frame-1341-ya-2a53457d.jpeg"
-              sizes="(min-width: 1510px) 1510px"
               data-width="1510"
               data-height="2142"
               class="el-image"
               alt
+              format="webp"
+              quality="80"
               loading="lazy"
             />
           </div>

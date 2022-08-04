@@ -27,13 +27,15 @@
           </div>
           <div class="uk-width-1-2@m">
             <div class="uk-margin-large uk-text-center">
-              <img
+              <nuxt-img
                 src="/wp-content/themes/yootheme/cache/WechatIMG712.jpeg"
-                sizes="(min-width: 1200px) 1200px"
                 data-width="1200"
                 data-height="1013"
                 class="el-image"
                 alt
+                format="webp"
+                quality="80"
+                loading="lazy"
               />
             </div>
           </div>
@@ -70,13 +72,15 @@
                         is the buffer distance reserved for the vibrating motor.
                       </p>
                       <p>
-                        <img
-                          loading="lazy"
+                        <nuxt-img
                           src="/wp-content/uploads/2022/06/资源-4@4x-80.jpg"
                           alt=""
                           width="400"
                           height="250"
                           class="alignnone size-medium wp-image-2027"
+                          format="webp"
+                          quality="80"
+                          loading="lazy"
                         />
                       </p>
                     </div>
@@ -138,8 +142,7 @@
                         <div></div>
                       </div>
                       <p>
-                        <img
-                          loading="lazy"
+                        <nuxt-img
                           src="/wp-content/uploads/2022/06/资源-1@4x-80-300x195.jpg"
                           alt=""
                           width="300"
@@ -151,12 +154,13 @@
                             /wp-content/uploads/2022/06/资源-1@4x-80-768x500.jpg   768w,
                             /wp-content/uploads/2022/06/资源-1@4x-80.jpg          1119w
                           "
-                          sizes="(max-width: 300px) 100vw, 300px"
+                        format="webp"
+                        quality="80"
+                        loading="lazy"
                         />
                       </p>
                       <p>
-                        <img
-                          loading="lazy"
+                        <nuxt-img
                           src="/wp-content/uploads/2022/06/资源-2@4x-80-300x195.jpg"
                           alt=""
                           width="300"
@@ -168,12 +172,13 @@
                             /wp-content/uploads/2022/06/资源-2@4x-80-768x500.jpg   768w,
                             /wp-content/uploads/2022/06/资源-2@4x-80.jpg          1119w
                           "
-                          sizes="(max-width: 300px) 100vw, 300px"
+                        format="webp"
+                        quality="80"
+                        loading="lazy"
                         />
                       </p>
                       <p>
-                        <img
-                          loading="lazy"
+                        <nuxt-img
                           src="/wp-content/uploads/2022/06/资源-3@4x-80-300x195.jpg"
                           alt=""
                           width="300"
@@ -185,7 +190,9 @@
                             /wp-content/uploads/2022/06/资源-3@4x-80-768x500.jpg   768w,
                             /wp-content/uploads/2022/06/资源-3@4x-80.jpg          1119w
                           "
-                          sizes="(max-width: 300px) 100vw, 300px"
+                          format="webp"
+                          quality="80"
+                          loading="lazy"
                         />
                       </p>
                       <p></p>
@@ -437,16 +444,16 @@
                 class="uk-visible@l uk-position-absolute uk-width-1-1"
                 style="left: 20px; bottom: -200px"
               >
-                <img
+                <nuxt-img
                   src="/wp-content/themes/yootheme/cache/logo-pic-1149e4da.png"
-                  sizes="(min-width: 200px) 200px"
                   data-width="200"
                   data-height="143"
                   class="el-image"
                   alt
                   target="!*"
                   loading="lazy"
-
+                  format="webp"
+                  quality="80"
                 />
               </div>
             </div>
@@ -457,7 +464,7 @@
 <div>
     <div class="uk-section-default uk-dark">
       <div
-        style="background-image: url('/wp-content/themes/yootheme/cache/19a2f888.jpeg');"
+        :style=backgroundStyles
         loading="lazy"
         class="uk-background-norepeat uk-background-cover uk-background-center-center uk-section uk-section-large"
       >
@@ -498,6 +505,19 @@ export default {
   name: 'SerViCes',
   data() {
     return {}
+  },
+  computed: {
+          backgroundStyles() {
+      const imgUrl = this.$img('/wp-content/themes/yootheme/cache/19a2f888.jpeg')
+      return {
+        backgroundImage: `url('${imgUrl}')`,
+        loading: 'lazy',
+        modifiers: {
+            format: 'webp',
+            quality: 80
+        }
+      }
+    }
   },
   methods: {
     gitcheckoumail(){

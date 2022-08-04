@@ -339,6 +339,18 @@
     >
       <Proudcut />
     </div>
+        <div
+      v-show="
+        ispath ===
+          '/p/Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0Lzc3MTcwNTM0MzIwNjY=/osmiler-swing' ||
+          ispath ===
+          '/p/Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0Lzc3MTcwNTM0MzIwNjY=/osmiler-swing?Color=Silver' ||
+          ispath ===
+          '/p/Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0Lzc3MTcwNTM0MzIwNjY=/osmiler-swing?Color=Deep%20Blue'
+      "
+    >
+      <Chargepc />
+    </div>
     <div
       v-show="
         ispath ===
@@ -530,6 +542,7 @@ import AutoPage from '~/components/Home/AutoPage'
 import AutoPages from '~/components/Home/AutoPages'
 import Proudcut from '~/components/Home/Proudcut'
 import Toothbrushpople from '~/components/Toothbrush/Toothbrushpople'
+import Chargepc from '~/components/Toothbrush/Chargepc.vue'
 import Autobox from '~/components/Home/Autobox'
 import HomeLogolist from '~/components/Home/HomeLogolist'
 import SendEmali from '~/components/Home/SendEmali'
@@ -592,7 +605,8 @@ export default {
     ToothBannerGrids,
     TootBrushHead3,
     Toothbrushheadfooter,
-    TootBrushHead5
+    TootBrushHead5,
+    Chargepc
   },
   beforeRouteEnter(__, from, next) {
     next((vm) => {

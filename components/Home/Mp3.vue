@@ -2,7 +2,8 @@
   <div>
     <div id="Mp3" class="uk-visible@m uk-section-default uk-light">
       <div
-        style="background-image: url('/wp-content/themes/yootheme/cache/04.webp');height:1300px;"
+        style="height:900px;"
+        :style = backgroundStyles
         class="uk-background-norepeat uk-background-cover uk-background-top-center uk-section uk-padding-remove-vertical uk-flex uk-flex-middle"
       >
         <div class="uk-width-1-1">
@@ -82,15 +83,14 @@
       <div class="tm-grid-expand uk-child-width-1-1 uk-grid-margin" uk-grid>
         <div>
           <div class="uk-margin">
-            <nuxt-img
-              src="../../static/wp-content/themes/yootheme/cache/405-2-13c651c4.jpeg"
+            <img
+              src="/wp-content/themes/yootheme/cache/405-2-13c651c4.jpeg"
               sizes="(min-width: 960px) 960px"
               data-width="960"
               data-height="1249"
               class="el-image"
               alt
               loading="lazy"
-              format="webp"
             />
           </div>
         </div>
@@ -103,6 +103,19 @@
 
 export default {
   name: 'MP3',
+    computed: {
+    backgroundStyles() {
+      const imgUrl = this.$img('/wp-content/themes/yootheme/cache/042.jpg')
+      return {
+        backgroundImage: `url('${imgUrl}')`,
+        loading: 'lazy',
+        modifiers: {
+            format: 'webp',
+            quality: 90
+        }
+      }
+    }
+  },
   data() {
     return {}
   }

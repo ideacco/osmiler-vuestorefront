@@ -4,20 +4,33 @@ require('isomorphic-fetch')
 const CompressionPlugin = require('compression-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
 import webpack from 'webpack'
+import Env from './env' // 环境配置文件
 // import nuxtSeoMeta from "nuxt-seo-meta/src"
 // const platformENV = process.env.NODE_ENV !== 'production' ? 'http' : 'https'
 // const Timestamp = new Date().getTime()
 const config = {
+  env: {
+    BASE_URL: process.env.BASE_URL,
+    NODE_ENV: process.env.NODE_ENV,
+    VUE_APP_TITLE: process.env.VUE_APP_TITLE,
+    SHOPIFY_DOMAIN: process.env.SHOPIFY_DOMAIN,
+    SHOPIFY_STOREFRONT_TOKEN: process.env.SHOPIFY_STOREFRONT_TOKEN,
+    APP_PORT: process.env.APP_PORT,
+    // TEST: process.env.TEST,
+  },
   server: {
     port: process.env.APP_PORT || 8888,
     host: '0.0.0.0',
+    // 添加服务器时间标头
+    timing: {
+      total: true
+    }
   },
   publicRuntimeConfig: {
     appKey: 'vsf2spcon',
     appVersion: Date.now(),
     // middlewareUrl: `${platformENV}://${process.env.BASE_URL}/api/`,
-    middlewareUrl: process.env.NODE_ENV === 'production' ?
-      `${process.env.BASE_URL}/api/` : `${process.env.DEV_URL}/api/`,
+    middlewareUrl: `${process.env.BASE_URL}/api/`,
   },
   privateRuntimeConfig: {
     storeURL: process.env.SHOPIFY_DOMAIN,
@@ -95,7 +108,8 @@ const config = {
         gtag('config','G-934Z930PQ3');`,
         type: 'text/javascript',
         charset: 'utf-8',
-
+        __dangerouslyDisableSanitizersByTagID: {
+        }
       },
       {
         vmid: 'bing-script',
@@ -135,9 +149,7 @@ const config = {
         fbq('track', 'PageView');`,
         type: 'text/javascript',
         charset: 'utf-8',
-
       },
-
     ],
     __dangerouslyDisableSanitizersByTagID: {
       'ga4-script': ['innerHTML'],
@@ -152,7 +164,7 @@ const config = {
   },
   router: {
     // 在每页渲染前运行 middleware/user-agent.js 中间件的逻辑
-    middleware: 'user-agent',
+    // middleware: 'user-agent',
   },
   plugins: [
     '@/plugins/scrollToTop.client.js',
@@ -162,7 +174,6 @@ const config = {
     //   src:'@/plugins/Vuegtag',
     //   mode: 'client'
     //  },
-    // '@/plugins/element-ui',
     {
       src: '@/plugins/UIkit',
       ssr: false,
@@ -176,7 +187,6 @@ const config = {
     '@nuxtjs/google-analytics',
     // to core
     './modules/cms/build',
-    '@aceforth/nuxt-optimized-images',
     '@nuxtjs/composition-api/module',
     '@nuxtjs/pwa',
     '@nuxtjs/device',
@@ -191,7 +201,7 @@ const config = {
         },
         performance: {
           purgeCSS: {
-            enabled: false,
+            enabled: process.env.NODE_ENV === 'production',
             paths: ['**/*.vue'],
           },
         },
@@ -436,7 +446,7 @@ const config = {
   },
 
   build: {
-    extractCSS: true,
+    extractCSS: process.env.NODE_ENV === 'production'? true : false,
     filenames: {
       app: ({
         isDev
@@ -566,7 +576,6 @@ const config = {
           options: {
             // Use a custom cache name.
             cacheName: 'SPVSF2Assets',
-
             // Only cache 100 images.
             expiration: {
               maxEntries: 100,
