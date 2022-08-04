@@ -49,7 +49,7 @@
               uk-grid
             >
               <div class="uk-grid-item-match uk-flex-middle uk-light">
-                <div class="uk-panel uk-width-1-1" style="margin-left: 15px;margin-top: 57px;">
+                <div class="uk-panel uk-width-1-1" style="margin-top: 57px;">
                   <h1
                     class="uk-margin-remove-vertical uk-text-left@m uk-text-left"
                     id="page#7-0-0-0"
