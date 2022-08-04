@@ -201,7 +201,7 @@ const config = {
         },
         performance: {
           purgeCSS: {
-            enabled: process.env.NODE_ENV === 'production',
+            enabled: false,
             paths: ['**/*.vue'],
           },
         },
