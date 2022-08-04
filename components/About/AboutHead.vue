@@ -3,7 +3,7 @@
   <div>
     <div class="uk-section-primary uk-preserve-color uk-light">
       <div
-        style="background-image: url('/wp-content/themes/yootheme/cache/gongsiweijing.jpg');"
+        :style ="backgroundStyles"
         class="
           uk-background-norepeat
           uk-background-cover
@@ -44,7 +44,20 @@
 </template>
 <script >
 export default {
-  name: 'AboutHead'
+  name: 'AboutHead',
+  computed: {
+    backgroundStyles() {
+      const imgUrl = this.$img('/wp-content/themes/yootheme/cache/gongsiweijing.jpg')
+      return {
+        backgroundImage: `url('${imgUrl}')`,
+        loading: 'lazy',
+        modifiers: {
+            format: 'webp',
+            quality: 80
+        }
+      }
+    }
+  }
 }
 </script>
 <style lang='scss' scoped>

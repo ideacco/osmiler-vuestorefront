@@ -1,14 +1,19 @@
 <template>
 <div class="uk-section-default ">
      <div id="page#1" class="uk-section-default uk-light uk-visible@m">
-            <div style="background-image: url(/wp-content/themes/yootheme/cache/Frame1362.jpg);"
+            <div
+                :style ="backgroundStyles"
                 loading="lazy"
                 class="uk-background-norepeat uk-background-cover uk-background-center-center uk-section">
                 <div class="uk-container uk-container-xlarge">
                     <div class="tm-grid-expand uk-grid-margin uk-grid  ukmargin" >
                         <div class="uk-width-1-2@m uk-first-column ">
                             <h1    style="font-family: osmiler-title;font-size: 42px;">
-                  <img src="/wp-content/themes/yootheme/cache/Star5.svg"  loading="lazy" /> In the next quarter, <br>we’ll have: </h1>
+                  <nuxt-img
+                          src="/wp-content/themes/yootheme/cache/Star5.svg"
+                           format="webp"
+                           quality="80"
+                           loading="lazy"/> In the next quarter, <br>we’ll have: </h1>
                         </div>
                         <div class="uk-width-1-2@m">
                             <div class="uk-panel uk-margin uk-width-large">
@@ -24,7 +29,8 @@
         </div>
     <div id="Community" class="uk-hidden@m uk-section-default uk-light">
       <div
-        style="background-image: url('/wp-content/themes/yootheme/cache/gradienta-7E5kq_sW0Ew-unsplash1.jpg');height: 350px;"
+        :style ="backgroundStylees"
+        style="height: 350px;"
         class="
           uk-background-norepeat
           uk-background-cover
@@ -80,6 +86,31 @@
 <script>
 export default {
   name: 'AutOuk',
+    computed: {
+    backgroundStyles() {
+      const imgUrl = this.$img('/wp-content/themes/yootheme/cache/Frame1362.jpg')
+      return {
+        backgroundImage: `url('${imgUrl}')`,
+        loading: 'lazy',
+        modifiers: {
+            format: 'webp',
+            quality: 80
+        }
+      }
+    },
+    backgroundStylees(){
+          const imgUrl = this.$img('/wp-content/themes/yootheme/cache/gradienta-7E5kq_sW0Ew-unsplash1.jpg')
+      return {
+        backgroundImage: `url('${imgUrl}')`,
+        loading: 'lazy',
+        modifiers: {
+            format: 'webp',
+            quality: 80
+        }
+      }
+    }
+  },
+
   data() {
     return {}
   }

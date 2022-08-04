@@ -3,7 +3,7 @@
   <div>
     <div class="uk-visible@m uk-section-default">
       <div
-        style="background-image: url(/wp-content/themes/yootheme/cache/Frame137888.jpg);"
+        :style ="backgroundStyles"
         class="
           uk-background-norepeat
           uk-background-cover
@@ -49,7 +49,8 @@
     </div>
     <div id="Bone" class="uk-hidden@m uk-section-secondary">
       <div
-        style="background-image: url('/wp-content/themes/yootheme/cache/BGmoilhnb.jpg');height: 700px;"
+        :style ="backgroundStylees"
+        style="height: 700px;"
         class="
           uk-background-norepeat
           uk-background-cover
@@ -101,7 +102,31 @@
 </template>
 <script >
 export default {
-  name: 'CopyrightNotice'
+  name: 'CopyrightNotice',
+    computed: {
+    backgroundStyles() {
+      const imgUrl = this.$img('/wp-content/themes/yootheme/cache/Frame137888.jpg')
+      return {
+        backgroundImage: `url('${imgUrl}')`,
+        loading: 'lazy',
+        modifiers: {
+            format: 'webp',
+            quality: 80
+        }
+      }
+    },
+    backgroundStylees(){
+          const imgUrl = this.$img('/wp-content/themes/yootheme/cache/BGmoilhnb.jpg')
+      return {
+        backgroundImage: `url('${imgUrl}')`,
+        loading: 'lazy',
+        modifiers: {
+            format: 'webp',
+            quality: 80
+        }
+      }
+    }
+  }
 }
 </script>
 <style lang='scss' scoped>

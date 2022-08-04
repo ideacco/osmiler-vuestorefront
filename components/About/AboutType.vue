@@ -51,14 +51,13 @@
             </div>
             <div class="uk-width-1-2@m">
               <div id="page#10-0-1-0" class="uk-margin uk-text-right">
-                <img
-                  src="/wp-content/themes/yootheme/cache/IMG_11(1).jpeg"
-                  class="el-image"
-                  sizes="(min-width: 1510px) 1510px"
-                  data-width="1510"
-                  data-height="1759"
-                  alt
-                />
+         <nuxt-img
+              src="/wp-content/themes/yootheme/cache/IMG_11.jpeg"
+              class="el-image"
+                   format="webp"
+                        quality="80"
+                        loading="lazy"
+            />
               </div>
             </div>
           </div>
@@ -137,14 +136,12 @@
       <div class="tm-grid-expand uk-child-width-1-1 uk-grid-margin" uk-grid>
         <div>
           <div id="page#11-1-0-0" class="uk-margin uk-text-right">
-            <img
-              src="/wp-content/themes/yootheme/cache/IMG_11.jpg"
-              sizes="(min-width: 1510px) 1510px"
-              data-width="1510"
-              data-height="2142"
+              <nuxt-img
+              src="/wp-content/themes/yootheme/cache/IMG_11.jpeg"
               class="el-image"
-              alt
-              loading="lazy"
+              format="webp"
+              quality="80"
+              oading="lazy"
             />
           </div>
         </div>

@@ -12,20 +12,24 @@
                                 <ul class="uk-slideshow-items"
                                     uk-height-viewport="offset-top: true; ">
                                     <li class="el-item">
-                                        <img src="/wp-content/themes/yootheme/cache/osmiler_42.jpg"
+                                        <nuxt-img src="/wp-content/themes/yootheme/cache/osmiler_42.jpg"
                                             class="el-image el-heightbox"
                                             alt
                                             style="top:50%"
                                             uk-cover
+                                            format="webp"
+                                            quality="80"
                                             loading="lazy"
                                       />
                                     </li>
                                     <li class="el-item">
-                                        <img src="/wp-content/themes/yootheme/cache/x2(1).jpg"
+                                        <nuxt-img src="/wp-content/themes/yootheme/cache/x2.jpg"
                                             class="el-image el-heightbox"
                                             uk-cover
                                             style="top:50%"
                                             alt
+                                            format="webp"
+                                            quality="80"
                                             loading="lazy"
                                        />
                                     </li>
@@ -55,22 +59,23 @@
                                                                         <li class="uk-width-1-1 uk-width-1-1@m">
                                                                                 <div
                                                                                         class="el-item uk-panel uk-margin-remove-first-child">
-                                                                                        <img src="/wp-content/themes/yootheme/cache/osmiler_42.jpg"
-                                                                                                sizes="(min-width: 2160px) 2160px"
+                                                                                        <nuxt-img src="/wp-content/themes/yootheme/cache/osmiler_42.jpg"
                                                                                                 data-width="2160"
                                                                                                 data-height="1215"
-                                                                                                class="el-image"
+                                                                                                format="webp"
+                                                                                                quality="80"
                                                                                                 loading="lazy"/>
                                                                                 </div>
                                                                         </li>
                                                                         <li class="uk-width-1-1 uk-width-1-1@m">
                                                                                 <div
                                                                                         class="el-item uk-panel uk-margin-remove-first-child">
-                                                                                        <img src="/wp-content/themes/yootheme/cache/x2(1).jpg"
-                                                                                                sizes="(min-width: 1440px) 1440px"
+                                                                                        <nuxt-img  src="/wp-content/themes/yootheme/cache/x2.jpg"
                                                                                                 data-width="1440"
                                                                                                 data-height="810"
                                                                                                 class="el-image"
+                                                                                                format="webp"
+                                                                                                quality="80"
                                                                                                 loading="lazy"
                                                                                                 />
                                                                                 </div>

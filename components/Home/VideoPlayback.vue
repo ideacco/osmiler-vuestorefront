@@ -237,7 +237,7 @@ export default {
   name: 'VideoPlayback',
     computed: {
     backgroundStyles() {
-      const imgUrl = this.$img('/wp-content/themes/yootheme/cache/Hero_2.jpg')
+      const imgUrl = this.$img('/wp-content/themes/yootheme/cache/Hero_2-ya.jpg')
       return {
         backgroundImage: `url('${imgUrl}')`,
         loading: 'lazy',
