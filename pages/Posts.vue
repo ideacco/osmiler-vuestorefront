@@ -116,7 +116,7 @@
             image-tag="nuxt-img"
             :nuxt-img-config="{
               format: 'webp',
-              fit: 'cover',
+              fit:'cover',
             }"
             class="products__product-card"
             @click:wishlist="toggleWishlist(i)"

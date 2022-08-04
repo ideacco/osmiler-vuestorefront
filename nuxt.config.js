@@ -2,6 +2,7 @@
 require('isomorphic-fetch')
 // console.log('当前服务状态:', process.env.NODE_ENV)
 const CompressionPlugin = require('compression-webpack-plugin');
+const TerserPlugin = require('terser-webpack-plugin');
 import webpack from 'webpack'
 import Env from './env' // 环境配置文件
 // import nuxtSeoMeta from "nuxt-seo-meta/src"
@@ -147,24 +148,15 @@ const config = {
         fbq('init', '769420814057414');
         fbq('track', 'PageView');`,
         type: 'text/javascript',
-        charset: 'utf-8'
+        charset: 'utf-8',
       },
-
     ],
     __dangerouslyDisableSanitizersByTagID: {
       'ga4-script': ['innerHTML'],
       'bing-script':['innerHTML'],
       'Pixel-Code':['innerHTML'],
       'Pixel-Code1':['innerHTML'],
-    },
-    // metaInfo: {
-    //   noscript: [
-    //     {  hid: 'pixel-scrpit',
-    //       innerHTML: `<img height="1" width="1" style="display:none"
-    //     src="https://www.facebook.com/tr?id=789343135804814&ev=PageView&noscript=1"
-    //   />` }
-    //   ]
-    // }
+    }
   },
 
   loading: {
@@ -193,7 +185,6 @@ const config = {
     // https://go.nuxtjs.dev/stylelint
     '@nuxtjs/stylelint-module',
     '@nuxtjs/google-analytics',
-
     // to core
     './modules/cms/build',
     '@nuxtjs/composition-api/module',
@@ -277,15 +268,8 @@ const config = {
     '@nuxtjs/sitemap',
     './modules/cms/runtime',
     '@nuxt/image',
-    '@nuxtjs/axios',
-    'nuxt-seo-meta'
+    '@nuxtjs/axios'
   ],
-  // seoMeta: {
-  //   title: "SEO Meta - Title",
-  //   description: "SEO Meta - Description",
-  //   defaultImage: "defaultImage.png",
-  //   defaultUrl: "https://longbridgeapp.com"
-  // },
   nuxtPrecompress: {
     enabled: true, // Enable in production
     report: false, // set true to turn one console messages during module init
@@ -410,7 +394,6 @@ const config = {
     ],
     defaultLocale: 'en',
     lazy: true,
-    seo: true,
     langDir: 'lang/',
     vueI18n: {
       fallbackLocale: 'en',
@@ -485,6 +468,11 @@ const config = {
       }) => isDev ? '[path][name].[ext]' : 'videos/[contenthash:7].[ext]'
     },
     optimization: {
+      minimize: true,
+      minimizer: [
+        // js代码压缩插件,tree-shaking必须使用
+        new TerserPlugin(),
+      ],
       splitChunks: {
         minSize: 10000,
         maxSize: 250000,
@@ -570,14 +558,6 @@ const config = {
           type: 'image/png',
         },
       ],
-    },
-    meta: {
-      name: 'Osmiler',
-      author: 'Osmiler Team',
-      backgroundColor: '#5d47ee',
-      description: 'let your smile light up the world',
-      themeColor: '#5d47ee',
-      ogHost: 'shopify-pwa.aureatelabs.com',
     },
     icon: {
       source: '/icon.png',
