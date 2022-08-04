@@ -1,7 +1,7 @@
 <template>
 <div class="uk-section-default ">
      <div id="page#1" class="uk-section-default uk-light uk-visible@m">
-            <div style="background-image: url(/wp-content/themes/yootheme/cache/Frame1362.webp);"
+            <div style="background-image: url(/wp-content/themes/yootheme/cache/Frame1362.jpg);"
                 loading="lazy"
                 class="uk-background-norepeat uk-background-cover uk-background-center-center uk-section">
                 <div class="uk-container uk-container-xlarge">

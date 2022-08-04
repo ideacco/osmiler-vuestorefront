@@ -1,6 +1,6 @@
 <template>
 <div class="uk-section-default">
-        <div style="background-image: url(/wp-content/themes/yootheme/cache/Frame1361.webp);"
+        <div style="background-image: url(/wp-content/themes/yootheme/cache/Frame1361.jpg);"
         class="uk-background-norepeat uk-background-cover uk-background-center-center uk-section uk-visible@m  uk-section-primary  ">
       <div
         class="
