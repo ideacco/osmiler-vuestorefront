@@ -2,7 +2,7 @@
   <div>
     <div id="Community" class="uk-visible@m uk-section-default uk-light">
       <div
-        style="background-image: url('/wp-content/themes/yootheme/cache/03.jpg');"
+        style="background-image: url('/wp-content/themes/yootheme/cache/03.webp');"
         class="uk-background-norepeat uk-background-cover uk-background-center-right uk-background-fixed uk-section uk-padding-remove-vertical uk-flex uk-flex-middle"
         uk-height-viewport="offset-top: true;"
         data-src=""

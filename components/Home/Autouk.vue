@@ -2,7 +2,7 @@
   <div>
     <div class="uk-visible@m uk-section-primary">
       <div
-        style="background-image: url('/wp-content/themes/yootheme/cache/08.jpg');height:837px;"
+        style="background-image: url('/wp-content/themes/yootheme/cache/08.webp');height:837px;"
         class="uk-background-norepeat uk-background-cover uk-background-bottom-center uk-section uk-padding-remove-top"
         uk-height-viewport="offset-top: true;"
         data-src=""
@@ -159,7 +159,7 @@ export default {
   name: 'AutOuk',
   data() {
     return {}
-  },
+  }
   }
 </script>
 <style lang="scss"></style>

@@ -3,7 +3,7 @@
   <div>
     <div class="uk-section-default uk-dark">
       <div
-        style="background-image: url('/wp-content/themes/yootheme/cache/wecomle.jpg');"
+        style="background-image: url('/wp-content/themes/yootheme/cache/weclome.webp');"
         class="uk-background-norepeat uk-background-cover uk-background-center-center uk-section uk-section-large"
         data-src=""
         uk-img
