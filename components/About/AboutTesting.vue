@@ -32,13 +32,15 @@
                   uk-height-viewport="offset-top: true; "
                 >
                   <li class="el-item">
-                    <img
+                    <nuxt-img
                       src="/wp-content/themes/yootheme/cache/_DSD2424.jpg"
                       class="el-image"
                       alt
                       style="top: 50%"
                       uk-cover
-                      loading="lazy"
+                     format="webp"
+                     quality="80"
+                     loading="lazy"
                     />
 
                     <div
@@ -78,12 +80,14 @@
                     </div>
                   </li>
                   <li class="el-item">
-                    <img
+                    <nuxt-img
                       src="/wp-content/themes/yootheme/cache/_DSD2509.jpg"
                       class="el-image"
                       uk-cover
                       style="top: 50%"
                       alt
+                      format="webp"
+                     quality="80"
                      loading="lazy"
                     />
                     <div
@@ -121,12 +125,14 @@
                     </div>
                   </li>
                   <li class="el-item">
-                    <img
+                    <nuxt-img
                       src="/wp-content/themes/yootheme/cache/_DSD2534.jpg"
                       class="el-image"
                       uk-cover
                       style="top: 50%"
                       alt
+                      format="webp"
+                     quality="80"
                      loading="lazy"
                     />
                     <div
@@ -209,13 +215,14 @@
                 <ul class="uk-slider-items uk-grid uk-grid-match">
                   <li class="uk-width-1-1 uk-width-1-1@m uk-height-1">
                     <div class="el-item uk-panel uk-margin-remove-first-child">
-                      <img
+                      <nuxt-img
                         src="/wp-content/themes/yootheme/cache/_DSD2424.jpg"
-                        sizes="(min-width: 2160px) 2160px"
                         data-width="2160"
                         data-height="1215"
                         class="el-image uk-height-1"
-                        loading="lazy"
+                        format="webp"
+                       quality="80"
+                       loading="lazy"
                       />
                       <div
                       class="
@@ -258,12 +265,13 @@
                   </li>
                   <li class="uk-width-1-1 uk-width-1-1@m uk-height-1">
                     <div class="el-item uk-panel uk-margin-remove-first-child">
-                      <img
+                      <nuxt-img
                         src="/wp-content/themes/yootheme/cache/_DSD2509.jpg"
-                        sizes="(min-width: 1440px) 1440px"
                         data-width="1440"
                         data-height="810"
                         class="el-image uk-height-1"
+                        format="webp"
+                        quality="80"
                         loading="lazy"
                       />
                            <div
@@ -305,13 +313,14 @@
                   </li>
                   <li class="uk-width-1-1 uk-width-1-1@m uk-height-1">
                     <div class="el-item uk-panel uk-margin-remove-first-child">
-                      <img
+                      <nuxt-img
                         src="/wp-content/themes/yootheme/cache/_DSD2534.jpg"
-                        sizes="(min-width: 1440px) 1440px"
                         data-width="1440"
                         data-height="810"
                         class="el-image uk-height-1"
-                        loading="lazy"
+                        format="webp"
+                       quality="80"
+                       loading="lazy"
                       />
                                <div
                       class="

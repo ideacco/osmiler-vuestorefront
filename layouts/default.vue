@@ -23,7 +23,7 @@
     />
 
     <div id="layout">
-      <nuxt :keep-alive="false" :keep-alive-prrps= "{inclue:includeArr}" @testPage="getData" :key="route.fullPath" />
+      <nuxt :keep-alive="false"  @testPage="getData" :key="route.fullPath" />
     </div>
     <LoadWhenVisible>
       <AppFooter />

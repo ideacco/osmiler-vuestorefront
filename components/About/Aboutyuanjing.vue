@@ -16,11 +16,13 @@
                 "
               >
                 <div class="uk-panel uk-width-1-1">
-                  <img
+                  <nuxt-img
                     src="/wp-content/themes/yootheme/cache/LOGO.png"
                     alt=""
                     class="logo"
                     loading="lazy"
+                    format="webp"
+                    quality="80"
                   />
                   <p class="pfontsize">
                     We are committed to creating more possibilities for enjoying
@@ -52,14 +54,15 @@
                     uk-text-right
                   "
                 >
-                  <img
+                  <nuxt-img
                     src="/wp-content/themes/yootheme/cache/Frame1400.jpg"
-                    sizes="(min-width: 1300px) 1300px"
                     data-width="1300"
                     data-height="977"
                     class="el-image"
                     alt
                     loading="lazy"
+                    format="webp"
+                    quality="80"
                   />
                 </div>
               </div>

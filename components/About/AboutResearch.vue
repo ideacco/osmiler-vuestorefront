@@ -2,7 +2,8 @@
   <div>
     <div id="Bone" class="uk-visible@m uk-section-default uk-light">
       <div
-        style="background-image: url('/wp-content/themes/yootheme/cache/409.jpg');height: 860px;"
+        :style = backgroundStyles
+        style="height: 860px;"
         class="
           uk-background-norepeat
           uk-background-cover
@@ -44,7 +45,7 @@
     </div>
     <div id="Bone" class="uk-hidden@m uk-section-secondary">
       <div
-        style="background-image: url('/wp-content/themes/yootheme/cache/_DSD26002231.jpg');"
+        :style = backgroundStylees
         class="
           uk-background-norepeat
           uk-background-cover
@@ -90,6 +91,30 @@
 <script>
 export default {
   name: 'AboutResearch',
+      computed: {
+    backgroundStyles() {
+      const imgUrl = this.$img('/wp-content/themes/yootheme/cache/409.jpg')
+      return {
+        backgroundImage: `url('${imgUrl}')`,
+        loading: 'lazy',
+        modifiers: {
+            format: 'webp',
+            quality: 80
+        }
+      }
+    },
+     backgroundStylees(){
+          const imgUrl = this.$img('/wp-content/themes/yootheme/cache/_DSD26002231.jpg')
+      return {
+        backgroundImage: `url('${imgUrl}')`,
+        loading: 'lazy',
+        modifiers: {
+            format: 'webp',
+            quality: 80
+        }
+      }
+     }
+  },
   data() {
     return {}
   }
