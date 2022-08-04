@@ -99,16 +99,6 @@ export default {
       toggleNavbarTransparent,
       Home
     }
-  },
-head({$seoMeta}){
-  const title = 'Osmiler'
-  return {
-    title,
-    meta: $seoMeta({
-      title,
-      description: 'Osmiler site description'
-    }, false)
-  }
   }
 }
 </script>

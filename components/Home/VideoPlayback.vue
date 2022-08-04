@@ -20,7 +20,7 @@
       uk-height-viewport="offset-top: true;"
       :style="{ marginTop: innerWidth > 940 ? '-120px' : '0px' }"
       style="height: 1220px;
-      background-image: url('/wp-content/themes/yootheme/cache/hero.webp')"
+      background-image: url('/wp-content/themes/yootheme/cache/Hero_2.webp')"
     >
 
 
