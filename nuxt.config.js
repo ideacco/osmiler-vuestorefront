@@ -7,6 +7,11 @@ import webpack from 'webpack'
 // import nuxtSeoMeta from "nuxt-seo-meta/src"
 // const Timestamp = new Date().getTime()
 const config = {
+  // 设置前端环境参数兼容
+  env: {
+    storeURL : process.env.SHOPIFY_DOMAIN,
+    storeToken : process.env.SHOPIFY_STOREFRONT_TOKEN
+  },
   server: {
     port: process.env.APP_PORT || 8888,
     host: '0.0.0.0'
