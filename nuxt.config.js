@@ -1,39 +1,27 @@
 // eslint-disable-next-line nuxt/no-cjs-in-config
 require('isomorphic-fetch')
-// console.log('当前服务状态:', process.env.NODE_ENV)
 const CompressionPlugin = require('compression-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
 import webpack from 'webpack'
-import Env from './env' // 环境配置文件
 // import nuxtSeoMeta from "nuxt-seo-meta/src"
-// const platformENV = process.env.NODE_ENV !== 'production' ? 'http' : 'https'
-// const Timestamp = new Date().getTime()
 const config = {
+  // 设置前端环境参数兼容
   env: {
-    baseUrl: Env[process.env.NODE_ENV].BASE_URL,
-    nodeEnv: Env[process.env.NODE_ENV].NODE_ENV,
-    vueAppTitle: Env[process.env.NODE_ENV].VUE_APP_TITLE,
-    storeURL: Env[process.env.NODE_ENV].SHOPIFY_DOMAIN,
-    storeToken: Env[process.env.NODE_ENV].SHOPIFY_STOREFRONT_TOKEN,
-    appPort: Env[process.env.NODE_ENV].APP_PORT
+    storeURL : process.env.SHOPIFY_DOMAIN,
+    storeToken : process.env.SHOPIFY_STOREFRONT_TOKEN
   },
   server: {
-    port: process.env.APP_PORT || process.env.appPort, // 优先运行时输入的端口
-    host: '0.0.0.0',
-    // 添加服务器时间标头
-    timing: {
-      total: true
-    }
+    port: process.env.APP_PORT || 8888,
+    host: '0.0.0.0'
   },
   publicRuntimeConfig: {
     appKey: 'vsf2spcon',
     appVersion: Date.now(),
-    // middlewareUrl: `${platformENV}://${process.env.BASE_URL}/api/`,
-    middlewareUrl: `${process.env.baseUrl}/api/`,
+    middlewareUrl: `${process.env.BASE_URL}/api/`,
   },
   privateRuntimeConfig: {
-    storeURL: process.env.storeURL,
-    storeToken: process.env.storeToken,
+    storeURL: process.env.SHOPIFY_DOMAIN,
+    storeToken: process.env.SHOPIFY_STOREFRONT_TOKEN,
   },
   serverMiddleware: [
     // { path: '/custom', handler: '~/server-middleware/custom-features.js' }, // 去掉了原版使用的express的中间件
@@ -43,7 +31,7 @@ const config = {
     },
   ],
   head: {
-    title: process.env.vueAppTitle,
+    title: process.env.VUE_APP_TITLE,
     meta: [{
         charset: 'utf-8',
       },
@@ -534,7 +522,7 @@ const config = {
   },
   pwa: {
     manifest: {
-      name: process.env.vueAppTitle,
+      name: process.env.VUE_APP_TITLE,
       lang: 'en',
       shortName: 'SPVSF2',
       startUrl: '/',
