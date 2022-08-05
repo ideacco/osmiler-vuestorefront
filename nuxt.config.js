@@ -4,14 +4,12 @@ require('isomorphic-fetch')
 const CompressionPlugin = require('compression-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
 import webpack from 'webpack'
-// import Env from './env' // 环境配置文件
 // import nuxtSeoMeta from "nuxt-seo-meta/src"
-// const platformENV = process.env.NODE_ENV !== 'production' ? 'http' : 'https'
 // const Timestamp = new Date().getTime()
 const config = {
   server: {
     port: process.env.APP_PORT || 8888,
-    host: '0.0.0.0',
+    host: '0.0.0.0'
   },
   publicRuntimeConfig: {
     appKey: 'vsf2spcon',
