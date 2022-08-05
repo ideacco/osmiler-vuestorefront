@@ -4,32 +4,18 @@ require('isomorphic-fetch')
 const CompressionPlugin = require('compression-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
 import webpack from 'webpack'
-import Env from './env' // 环境配置文件
+// import Env from './env' // 环境配置文件
 // import nuxtSeoMeta from "nuxt-seo-meta/src"
 // const platformENV = process.env.NODE_ENV !== 'production' ? 'http' : 'https'
 // const Timestamp = new Date().getTime()
 const config = {
-  env: {
-    BASE_URL: process.env.BASE_URL,
-    NODE_ENV: process.env.NODE_ENV,
-    VUE_APP_TITLE: process.env.VUE_APP_TITLE,
-    SHOPIFY_DOMAIN: process.env.SHOPIFY_DOMAIN,
-    SHOPIFY_STOREFRONT_TOKEN: process.env.SHOPIFY_STOREFRONT_TOKEN,
-    APP_PORT: process.env.APP_PORT,
-    // TEST: process.env.TEST,
-  },
   server: {
     port: process.env.APP_PORT || 8888,
     host: '0.0.0.0',
-    // 添加服务器时间标头
-    timing: {
-      total: true
-    }
   },
   publicRuntimeConfig: {
     appKey: 'vsf2spcon',
     appVersion: Date.now(),
-    // middlewareUrl: `${platformENV}://${process.env.BASE_URL}/api/`,
     middlewareUrl: `${process.env.BASE_URL}/api/`,
   },
   privateRuntimeConfig: {
