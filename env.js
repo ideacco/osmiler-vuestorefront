@@ -7,7 +7,7 @@ module.exports = {
     SHOPIFY_STOREFRONT_TOKEN:'d91f449799cb2244a9ed112e71f233ed',
     BASE_URL: 'http://localhost:8888', // 开发服务器地址
     APP_PORT: '8888',
-    VSF_REDIS_ENABLED: true
+    VSF_REDIS_ENABLED: false
   },
   // 测试环境 release
   pre: {
@@ -17,7 +17,7 @@ module.exports = {
     SHOPIFY_STOREFRONT_TOKEN:'d91f449799cb2244a9ed112e71f233ed',
     BASE_URL: 'http://release.osmiler.com', // 预上线服务器地址
     APP_PORT: '9999',
-    VSF_REDIS_ENABLED: true
+    VSF_REDIS_ENABLED: false
   },
   // 生产环境 master
   production: {
