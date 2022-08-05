@@ -548,6 +548,9 @@ const config = {
         },
       ],
     },
+    meta: {
+      theme_color:'#5d47ee'
+    },
     icon: {
       source: '/icon.png',
       fileName: 'icon.png',

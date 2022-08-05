@@ -18,8 +18,7 @@
       "
       tm-header-transparent="light"
       uk-height-viewport="offset-top: true;"
-      :style ="{ marginTop: innerWidth > 940 ? '-120px' : '0px' },backgroundStyles"
-      style="height: 960px;"
+      :style ="[{ marginTop: innerWidth > 940 ? '-120px' : '0px' },backgroundStyles,{ height : '960px'}]"
     >
 
       <!-- <video
