@@ -210,7 +210,12 @@ export default {
     backgroundStyles() {
       const imgUrl = this.$img('/wp-content/themes/yootheme/cache/music-hero-4f873de3.jpeg', { width: 100 })
       return {
-        backgroundImage: `url('${imgUrl}')`
+        backgroundImage: `url('${imgUrl}')`,
+        loading: 'lazy',
+        modifiers: {
+            format: 'webp',
+            quality: 80
+        }
       }
     }
   },

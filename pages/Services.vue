@@ -34,8 +34,8 @@
                 class="el-image"
                 alt
                 format="webp"
-                        quality="80"
-                        loading="lazy"
+                quality="80"
+                loading="lazy"
               />
             </div>
           </div>
@@ -446,7 +446,6 @@
               >
                 <nuxt-img
                   src="/wp-content/themes/yootheme/cache/logo-pic-1149e4da.png"
-                  sizes="(min-width: 200px) 200px"
                   data-width="200"
                   data-height="143"
                   class="el-image"

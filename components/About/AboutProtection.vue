@@ -2,7 +2,8 @@
   <div>
     <div id="Bone" class="uk-visible@m uk-section-default uk-light">
       <div
-        style="background-image: url('/wp-content/themes/yootheme/cache/Group1363banner.jpg'); height: 860px;"
+        :style ="backgroundStyles"
+        style="height: 860px;"
         class="
           uk-background-norepeat
           uk-background-cover
@@ -43,7 +44,8 @@
     </div>
     <div id="Bone" class="uk-hidden@m uk-section-secondary">
       <div
-        style="background-image: url('/wp-content/themes/yootheme/cache/image.jpg');height:600px;"
+        :style ="backgroundStylees"
+        style="height:600px;"
         class="
           uk-background-norepeat
           uk-background-cover
@@ -96,6 +98,30 @@
 <script>
 export default {
   name: 'BannerGrids',
+    computed: {
+    backgroundStyles() {
+      const imgUrl = this.$img('/wp-content/themes/yootheme/cache/Group1363banner.jpg')
+      return {
+        backgroundImage: `url('${imgUrl}')`,
+        loading: 'lazy',
+        modifiers: {
+            format: 'webp',
+            quality: 80
+        }
+      }
+    },
+    backgroundStylees(){
+         const imgUrl = this.$img('/wp-content/themes/yootheme/cache/image.jpg')
+      return {
+        backgroundImage: `url('${imgUrl}')`,
+        loading: 'lazy',
+        modifiers: {
+            format: 'webp',
+            quality: 80
+        }
+      }
+    }
+  },
   data() {
     return {}
   }
